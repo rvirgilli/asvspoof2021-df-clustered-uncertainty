@@ -346,7 +346,7 @@ check_presence("fall below their own detectable effect",
                "per-pair figures now live in Table 1, whose rows are checked above")
 check_presence("no cell-level agreement", "H4: the withdrawal must be stated, not merely implied")
 check_presence("which we treat as inadmissible",
-               "say WHY the published count is not given, or a reviewer re-derives it and wonders")
+               "say WHY the published count is not given, or a reader re-derives it and wonders")
 check_presence("At least six of the ten unresolved pairs",
                "must lead with six; leading with eight lets a skimmer take the withdrawn count")
 check_presence("\\textbf{Scope.}", "pool caveat; Limitations refers back to it")
@@ -370,8 +370,8 @@ check_presence("Poh, Martin and Bengio", "M7: the nearest antecedent must be eng
 check_presence("conditional on that exchangeability",
                "the estimand must be named and the result stated as conditional on it: "
                "93 speakers and 110 attacks are not a probability sample")
-check_presence("anonymous audit package",
-               "the release sentence must point at something a reviewer can open")
+check_presence("We release an audit package",
+               "the release sentence must point at something a reader can open")
 check_presence("adding attacks alone",
                "the attack-budget claim holds the observed effect and speaker pool fixed")
 # The lapse claim now lives only in the abstract and S1, each naming its sources; the

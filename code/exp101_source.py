@@ -1,7 +1,6 @@
 """EXP-101: how much of the speaker floor is between SOURCE CORPUS, not between speaker?
 
-Raised by external review. The 21DF bona-fide pool is not one homogeneous speaker
-sample: column 4 of the metadata records three source corpora (asvspoof, vcc2018,
+The 21DF bona-fide pool is not one homogeneous speaker sample: column 4 of the metadata records three source corpora (asvspoof, vcc2018,
 vcc2020), with different recording provenance. If a large share of the speaker
 variance is really between corpora, two things follow and they cut opposite ways:
 

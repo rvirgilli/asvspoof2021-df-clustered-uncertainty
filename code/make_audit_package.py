@@ -1,24 +1,28 @@
-"""Build the anonymous one-command audit package for all 28 comparisons.
+"""Emit the audit package for all 28 pairwise comparisons.
 
-External review's single highest-value change: the eight-system table, the modern-score
-intersections, the fitted variance components and the simulation cannot be audited from
-the PDF alone, so the sentence "we release the estimator and every result file" has
-nothing a reviewer can point at. This emits everything that sentence promises.
+The paper reports intervals over eight systems, but the score intersections, fitted
+variance components and simulation settings behind them cannot be checked from the PDF.
+This derives each of those from the score files and the evaluation key, so every figure
+in the paper can be recomputed rather than taken on trust.
 
-Contents, all derived here rather than copied from prose:
+Contents, all computed here rather than copied from prose:
   provenance   sha256 + byte/line counts for all eight score files and the eval key
-  intersection the exact trial-ID rule, and proof that all eight are scored on the
-               identical set (reviewer Question 2)
-  eer_rule     the tie/interpolation rule, stated and demonstrated on the observed
-               statistic and on a bootstrap replicate (Question 6)
-  cluster_size why n0 = 159.15 and not 14,869/93 = 159.88 (Question 5)
-  seeds        every seed and replicate count in the campaign
+  intersection the trial-ID rule, and the proof that all eight systems are scored on
+               one identical set
+  eer_rule     the tie and interpolation rule, demonstrated on the observed statistic
+               and on a bootstrap replicate to show one routine serves both
+  cluster_size the unbalanced effective cluster size n0 = 159.15, and why it differs
+               from the arithmetic mean 14,869/93 = 159.88
+  seeds        every seed and replicate count
   incidence    the speaker x attack incidence summary
-  contrasts    all 28 pairs: delta, both certified intervals, verdict
-  floor_scope  which pairs the attack-budget statement covers (Question 3)
-  coverage_mc  binomial Monte Carlo intervals on the four coverage figures (Question 4)
+  contrasts    all 28 pairs: delta, both interval variants, verdict
+  floor_scope  the pairs the attack-budget statement covers, and its conditions
+  coverage_mc  binomial Monte Carlo intervals on the coverage figures
+  variant_by_pair  what each resampling variant resolves alone, since a pair counts as
+               resolved only when both exclude zero
 
-Writes audit_package/ (JSON + README.md). Modifies nothing.
+Writes audit_package/ (JSON + README.md). Modifies nothing. Inputs are not
+redistributed; see the package README for the three path variables.
 """
 
 import hashlib
@@ -76,7 +80,7 @@ def main():
     att = np.unique([utt2meta[u][1] for u in utts], return_inverse=True)[1]
     is_spoof = labels == 0
 
-    # Cluster size: the reviewer's 159.88 is N/k; the design effect needs the unbalanced
+    # Cluster size: N/k is the arithmetic mean; the design effect needs the unbalanced
     # effective size, which is smaller whenever speakers contribute unequal trial counts.
     cnt = np.bincount(spk[labels == 1])
     cnt = cnt[cnt > 0]

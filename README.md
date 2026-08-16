@@ -21,6 +21,7 @@ to check its numbers; it will be updated as the paper changes.
 
 | Path | Contents |
 |---|---|
+| `ANALYSIS-PLAN.md` | the analysis plan, frozen before the campaign ran |
 | `audit/audit.json` | every quantity the paper reports, derived rather than transcribed |
 | `audit/README.md` | what each key answers, the estimand, and the scope statements |
 | `code/` | the estimator, the analysis scripts, and three checkers |
