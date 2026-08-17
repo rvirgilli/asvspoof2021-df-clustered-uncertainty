@@ -65,17 +65,22 @@ including the matched perturbation diagnostic, coherent covariance result, incid
 and separate Arena replication. It also verifies the exact historical result identities and
 the hashes of the public path-adapted scripts. It does not pretend to regenerate an experiment.
 
-To re-derive the audit package from the third-party score files, obtain the inputs described
+To re-derive the raw-score core of the audit package from the third-party score files, obtain the inputs described
 in [`data/README.md`](data/README.md), set the listed environment variables, then run:
 
 ```
 uv run python code/make_audit_package.py
-diff -u audit/audit.json audit-regenerated/audit.json
+uv run python code/compare_audit_core.py
 uv run python code/check_tie_safety.py
 ```
 
 The builder reads the public score files plus the committed campaign outputs in `derived/`
-and writes only to ignored `audit-regenerated/`; it never overwrites the canonical artifact.
+and writes only `audit-regenerated/audit-core.json`; it never overwrites the canonical
+artifact. The comparator requires exact equality for all 16 core blocks. The canonical
+`audit/audit.json` is deliberately composite: it adds five later closures (matched
+perturbation, coherent covariance, coverage, composition, and ASV5), each bound to its own
+committed result and verifier by `code/check_numbers.py`. No single raw-score command is
+claimed to rerun those later campaigns.
 The generating-script map in `derived/README.md` distinguishes runnable public
 regeneration paths from historical byte identities. Public regenerations write either to
 ignored `regenerated/` paths or, for EXP-108, to a disposable clone; canonical artifacts

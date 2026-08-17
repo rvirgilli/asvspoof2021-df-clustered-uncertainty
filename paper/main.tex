@@ -99,13 +99,13 @@ Three bona-fide policies (empirical, source-balanced, source--speaker-balanced) 
 \textbf{Independent re-score layer.} All eleven complete Speech DF Arena files map one-to-one to the same 533,928 trials, but remain a separate stratum because they are re-scores and same-named implementations need not match: Arena RawNet2 has 40.67\% EER against 22.38\% in the organizer release and score correlation 0.36. Applying the same procedure descriptively to the full 55-pair family changes the count of zero-excluding bands from 52 under trial-i.i.d. inference to 38 after speaker$\times$attack resampling; two score-adjacent edges change labels, and the median clustered/i.i.d. pointwise-width ratio is 8.45. These are provenance and sensitivity measurements, not coverage-validated Arena confidence claims.
 
 \begin{table}[tb]
-\caption{Pairs within the selected modern and baseline blocks: empirical gap and product-perturbation half-width (EER points), plus the smallest verified constructive $r_{TV}$ upper bound. A bound is a found reversal, not a minimum or confidence limit.}
+\caption{Pairs within the selected modern and baseline blocks: empirical gap and product-perturbation half-width (EER points), plus the smallest verified constructive $r_{TV}$ upper bound. Printed bounds are rounded approximations to found reversals, not minima or confidence limits.}
 \label{tab:pairs}
 \centering\footnotesize
 \vspace{2pt}
 \begin{tabular}{llccc}
 \toprule
-pair & & gap & half-w. & $r_{TV}\leq$ \\
+pair & & gap & half-w. & $r_{TV}$ bound \\
 \midrule
 XLSR-Mamba & XLS-R+SLS & 0.032 & 0.452 & 0.010 \\
 XLSR-Mamba & XLSR-Conf & 0.389 & 0.619 & 0.343 \\

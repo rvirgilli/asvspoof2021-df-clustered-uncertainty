@@ -20,7 +20,7 @@ uv run --frozen python code/check_numbers.py
 uv run --frozen python audit/verify_asv5_package.py
 ```
 
-## Level 2 — rebuild figures and the primary audit package
+## Level 2 — rebuild figures and the raw-score audit core
 
 Figures use committed derived data:
 
@@ -28,17 +28,19 @@ Figures use committed derived data:
 uv run --frozen python paper/figures_m1.py
 ```
 
-To rebuild `audit.json`, obtain the nine public inputs listed in
+To rebuild the raw-score core of `audit.json`, obtain the nine public inputs listed in
 `data/README.md`, set `M1_DATA_ROOT` and `M1_SSL_AASIST_SCORES`, and run:
 
 ```bash
 uv run --frozen python code/make_audit_package.py
-diff -u audit/audit.json audit-regenerated/audit.json
+uv run --frozen python code/compare_audit_core.py
 ```
 
-Run regeneration in a disposable clone. Public JSONs use logical paths; a
-locally rebuilt package may retain local input paths while preserving the same
-content hashes and numerical payload.
+The builder writes `audit-regenerated/audit-core.json`. The comparator requires
+all 16 reconstructed blocks to equal the corresponding blocks in the canonical
+composite package. The five later closures embedded in `audit/audit.json` are
+verified from their separately committed artifacts at Level 1 and regenerated
+through the Level 3 campaigns below; Level 2 does not claim to rerun them.
 
 ## Level 3 — full CPU campaigns
 

@@ -1,9 +1,10 @@
 """Emit the audit package for all 28 pairwise comparisons.
 
 The paper reports intervals over eight systems, but the score intersections, fitted
-variance components and simulation settings behind them cannot be checked from the PDF.
-This derives each of those from the score files and the evaluation key, so every figure
-in the paper can be recomputed rather than taken on trust.
+variance components and simulation settings behind the original campaign cannot be
+checked from the PDF. This derives that raw-score core from the score files and the
+evaluation key. Later closures are regenerated and verified by their separately listed
+scripts and artifacts rather than being attributed to this builder.
 
 Contents, all computed here rather than copied from prose:
   provenance   sha256 + byte/line counts for all eight score files and the eval key
@@ -19,13 +20,15 @@ Contents, all computed here rather than copied from prose:
                jackknife interval, verdict
   multiway_intersection  every exact speaker, attack and observed-cell variance term
   floor_scope  the pairs the attack-budget statement covers, and its conditions
-  coverage_mc  the superseded R=200 pilot, retained and explicitly labelled
-  coverage_validation  the completed 48-cell EXP-105 closure and reading rule
+  coverage_mc  the historical R=200 pilot retained in the raw-score core
   variant_by_pair  what each resampling variant resolves alone, since a pair counts as
                resolved only when both exclude zero
 
-Writes audit-regenerated/audit.json. Inputs are not
-redistributed; see the package README for the three path variables.
+Writes audit-regenerated/audit-core.json.  The canonical audit/audit.json is a
+composite release: this raw-score core plus five later, separately verified
+closures.  compare_audit_core.py checks this output against exactly the core
+keys of that composite package.  Inputs are not redistributed; see the package
+README for the three path variables.
 """
 
 import hashlib
@@ -161,7 +164,6 @@ def main():
     pkg["seeds"] = {"selection_B5000": 20260817, "widths": 20260818, "scaling": 20260819,
                     "floor_ci_B4000": 20260820, "verdict_ci_R150": 20260821,
                     "source_permutation_B20000": 20260822,
-                    "exp105_outer": 20260824,
                     "supt_critical_value": sel["supt_critical_value"]}
 
     _mw_ratios = [v["explicit_cell_jackknife"]["se_psd_floor"] /
@@ -225,11 +227,9 @@ def main():
     cov = json.loads((DERIVED / "results_coverage_real.json").read_text())
     R = cov["R"]
     pkg["coverage_mc"] = {
-                          "status": "SUPERSEDED_DIAGNOSTIC_PILOT_NOT_VALIDATION",
-                          "superseded_by": "coverage_validation / EXP-105",
                           "R": R,
-                          "note": "historical fitted-DGP pilot retained for audit history; "
-                                  "its low-EER values may not support coverage claims",
+                          "note": "binomial (Wilson) Monte Carlo intervals; at R=200 a "
+                                  "coverage near .95 carries about +/-3 points",
                           "organizer_era": {v: {"coverage": cov[v]["coverage"],
                                                 "mc_interval": wilson(cov[v]["coverage"], R)}
                                             for v in ("iid", "twoway", "jackknife", "wild")
@@ -238,94 +238,6 @@ def main():
     pkg["coverage_mc"]["low_eer"] = {
         v: {"coverage": low[v]["coverage"], "mc_interval": wilson(low[v]["coverage"], low["R"])}
         for v in ("twoway", "jackknife") if v in low and "coverage" in low[v]}
-
-    # The completed EXP-105 grid supersedes the small pilot above.  This block
-    # is built from the strict closure artifacts rather than transcribed from
-    # the paper so the adverse reading rule is mechanically preserved.
-    cov_original = json.loads(
-        (DERIVED / "results_coverage_interaction.json").read_text())
-    cov_grid = json.loads(
-        (DERIVED / "results_coverage_interaction_recalibrated.json").read_text())
-    cov_diag = json.loads(
-        (DERIVED / "results_coverage_diagnostics.json").read_text())
-    cov_verified = json.loads(
-        (DERIVED / "results_exp105_verified.json").read_text())
-    cov_crosspath = json.loads(
-        (DERIVED / "results_crosspath_gate.json").read_text())
-    org_cells = [row for row in cov_grid["grid"]
-                 if row["spec"]["regime"] == "organizer"]
-    low_cells = [row for row in cov_grid["grid"]
-                 if row["spec"]["regime"] == "low_eer"]
-
-    def coverage_range(cells, name):
-        values = [row["coverage"][name]["coverage"] for row in cells]
-        return [min(values), max(values)]
-
-    former_failure = next(
-        row for row in low_cells
-        if row["spec"] == {"regime": "low_eer", "interaction_share": 0.0,
-                           "tail": "gaussian", "target_delta_pts": 2.0})
-    pkg["coverage_validation"] = {
-        "experiment": "EXP-105",
-        "status_under_preregistered_reading_rule":
-            cov_verified["status_under_preregistered_reading_rule"],
-        "confirmed_estimators": cov_verified["confirmed_estimators"],
-        "contract": {
-            "seed": cov_original["seed"],
-            "outer_replicates_per_cell": cov_original["R"],
-            "product_bootstrap_draws_per_replicate":
-                cov_original["grid"][0]["product"]["B"],
-            "n_cells": len(cov_original["grid"]),
-            "n_outer_replicates_total":
-                cov_original["R"] * len(cov_original["grid"]),
-        },
-        "organizer": {
-            "n_cells": len(org_cells),
-            "coverage_ranges": {name: coverage_range(org_cells, name)
-                                for name in ("raw", "floor", "product")},
-            "all_cells_inside_092_098": {
-                name: all(0.92 <= row["coverage"][name]["coverage"] <= 0.98
-                          for row in org_cells)
-                for name in ("raw", "floor", "product")},
-            "baseline_pairs_resolved":
-                cov_verified["organizer_baseline_pairs_resolved"],
-            "six_pair_conclusion_invariant":
-                cov_verified["six_pair_conclusion_invariant"],
-        },
-        "low_eer": {
-            "n_cells": len(low_cells),
-            "coverage_ranges": {name: coverage_range(low_cells, name)
-                                for name in ("raw", "floor", "product")},
-            "n_cells_any_estimator_below_090": sum(
-                any(row["coverage"][name]["coverage"] < 0.90
-                    for name in ("raw", "floor", "product"))
-                for row in low_cells),
-            "n_cells_all_estimators_below_090": sum(
-                all(row["coverage"][name]["coverage"] < 0.90
-                    for name in ("raw", "floor", "product"))
-                for row in low_cells),
-            "former_failure_condition": {
-                "index": former_failure["index"],
-                "spec": former_failure["spec"],
-                "coverage": {name: former_failure["coverage"][name]["coverage"]
-                             for name in ("raw", "floor", "product")},
-            },
-            "oracle_constant_sd_minimum_coverage":
-                cov_diag["low_eer_minimum_coverage"]["oracle_sd_normal"],
-        },
-        "truth_sensitivity_minimum_coverage":
-            cov_grid["minimum_coverage_under_truth_sensitivity"],
-        "crosspath_gate": {
-            "pass": cov_crosspath["pass"],
-            "weighted_real_score_comparisons": cov_crosspath["comparisons"],
-            "max_product_weight_eer_difference":
-                cov_crosspath["max_real_product_weight_eer_difference"],
-        },
-        "scope_consequence": (
-            "formal coverage support is retained for the organizer-baseline "
-            "reversal; modern low-EER and Arena intervals/ranks are descriptive"),
-        "authoritative_artifact": "derived/results_exp105_verified.json",
-    }
 
     # Variant-by-pair. S3.2 requires BOTH the product-weight bootstrap and the
     # delete-one-cluster jackknife to exclude zero, and states that the crossed product
@@ -416,8 +328,8 @@ def main():
     }
     pkg["leave_one_corpus_out"] = src["leave_one_corpus_out"]
 
-    (OUT / "audit.json").write_text(json.dumps(pkg, indent=2) + "\n")
-    print(f"wrote {OUT/'audit.json'}")
+    (OUT / "audit-core.json").write_text(json.dumps(pkg, indent=2) + "\n")
+    print(f"wrote {OUT/'audit-core.json'}")
     print(f"  intersection identical across all eight systems: "
           f"{pkg['intersection']['identical_across_systems']}")
     print(f"  n0 {pkg['cluster_size']['unbalanced_effective_size_n0']} vs mean "

@@ -3,12 +3,12 @@
 ## Reproducing this
 
 Run these commands from the repository root. The first needs no third-party data;
-the latter two need the inputs below:
+the remaining raw-score checks need the inputs below:
 
 ```
 uv run python code/check_numbers.py
 uv run python code/make_audit_package.py
-diff -u audit/audit.json audit-regenerated/audit.json
+uv run python code/compare_audit_core.py
 uv run python code/check_tie_safety.py
 ```
 
@@ -22,9 +22,11 @@ sha256 of each so you can confirm you have the same bytes we did. Point the code
 | `M1_SSL_AASIST_SCORES` | `inputs/anti-spoofing/author-scores/ssl-aasist/Scores_DF.txt` | the SSL-AASIST score file |
 | `M1_EXP001_SCORES` | `inputs/exp001-scores` | not needed for anything in this package |
 
-With those set, `make_audit_package.py` regenerates `audit.json` byte-identically under
-`audit-regenerated/`; that diff is the input-level check. `check_numbers.py` independently
-binds the versioned paper source to the committed derived JSON files in a clean clone.
+With those set, `make_audit_package.py` regenerates the 16-block raw-score core as
+`audit-regenerated/audit-core.json`; `compare_audit_core.py` requires exact equality with
+the corresponding blocks in this canonical composite. The five post-audit closures are
+not silently transcribed or attributed to that builder: `check_numbers.py` independently
+binds each to its own committed result and verifier, as well as binding the paper source.
 
 `audit.json` is derived, never transcribed. If a number here disagrees with the paper, the
 paper is wrong.
@@ -62,12 +64,17 @@ under that imposed DGP; they do not establish the DGP as a model of 21DF.
 | `floor_scope` | the withdrawn attack-budget extrapolation and the finite-$A$ component it was based on |
 | `finite_A_component_count` | shared-speaker uncertainty for the number of gaps below half that measured component |
 | `coverage_mc` | the superseded R=200 pilot, retained as labelled audit history |
-| `coverage_validation` | the 48-cell EXP-105 contract, Refuted reading rule, regime-specific coverage and correctness gates |
 | `variant_by_pair` | product-bootstrap and exact-cell simultaneous verdicts for every pair |
+| `matched_perturbation` | identical-threshold-refit trial-i.i.d. versus speaker×attack diagnostic and artifact hash |
+| `coherent_marginal_sum` | the separately generated PSD marginal-sum sensitivity construction |
+| `coverage_closure` | recalibrated EXP-105 grid, diagnostics, Refuted verdict and content hashes |
+| `composition_sensitivity` | registered policy multiverse, independent verification and constructive witnesses |
+| `asv5_descriptive_replication` | portable fixed-roster result, run contract and independent execution audit |
 
-The post-audit matched and coherent results live under `derived/` rather than the historical
-`audit.json` schema. `code/check_numbers.py` binds both to the paper and verifies their plans,
-canonical result hashes, historical emitter identities and released path-adapted code hashes.
+The five post-audit closures are embedded in the canonical composite but generated and
+verified from artifacts outside the raw-score core. `code/check_numbers.py` binds them to
+the paper and verifies their plans, canonical result hashes, historical emitter identities
+and released path-adapted code hashes.
 
 ## Three scope statements the paper depends on
 
