@@ -1,0 +1,28 @@
+{
+  "design": "real 21DF incidence (unbalanced, sparse), organizer-era calibration",
+  "calibration_pair": "RawNet2 vs LFCC-LCNN",
+  "R": 200,
+  "B": 300,
+  "seed": 20260818,
+  "true_delta_pts": 0.5,
+  "n_trials": 533928,
+  "n_spk": 93,
+  "n_att": 111,
+  "occupied_cells": 1062,
+  "iid": {
+    "coverage": 0.16,
+    "mean_width": 0.735
+  },
+  "twoway": {
+    "coverage": 0.955,
+    "mean_width": 6.932
+  },
+  "jackknife": {
+    "coverage": 0.965,
+    "mean_width": 6.972
+  },
+  "wild": {
+    "coverage": 0.965,
+    "mean_width": 6.894
+  }
+}

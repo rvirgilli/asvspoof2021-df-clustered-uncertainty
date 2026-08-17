@@ -1,0 +1,2312 @@
+{
+  "attack_metadata": {
+    "A07": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A08": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A09": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A10": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A11": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A12": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A13": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A14": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A15": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A16": {
+      "family": "waveform_concatenation",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A17": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A18": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "A19": {
+      "family": "traditional_vocoder",
+      "source": "asvspoof",
+      "task": "-"
+    },
+    "HUB-B00": {
+      "family": "unknown",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-B01": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-D01": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-D02": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-D03": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-D04": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-D05": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N03": {
+      "family": "unknown",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N04": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N05": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N06": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N07": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N08": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N09": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N10": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N11": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N12": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N13": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N14": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N15": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N16": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N17": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N18": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N19": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "HUB-N20": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "HUB"
+    },
+    "SPO-B00": {
+      "family": "unknown",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-B01": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N03": {
+      "family": "unknown",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N04": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N05": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N06": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N10": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N11": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N12": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N13": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N16": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N17": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "SPO-N18": {
+      "family": "traditional_vocoder",
+      "source": "vcc2018",
+      "task": "SPO"
+    },
+    "Task1-team01": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team02": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team03": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team04": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team06": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team07": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team08": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team09": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team10": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team11": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team12": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team13": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team14": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team16": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team17": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team18": {
+      "family": "unknown",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team19": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team20": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team21": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team22": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team23": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team24": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team25": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team26": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team27": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team28": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team29": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team30": {
+      "family": "unknown",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team31": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team32": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task1-team33": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task1"
+    },
+    "Task2-team02": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team03": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team05": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team06": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team07": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team08": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team09": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team10": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team11": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team12": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team13": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team15": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team16": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team18": {
+      "family": "unknown",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team19": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team20": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team22": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team23": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team24": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team25": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team26": {
+      "family": "traditional_vocoder",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team27": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team28": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team29": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team30": {
+      "family": "unknown",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team31": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team32": {
+      "family": "neural_vocoder_autoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    },
+    "Task2-team33": {
+      "family": "neural_vocoder_nonautoregressive",
+      "source": "vcc2020",
+      "task": "Task2"
+    }
+  },
+  "bipartite_connected_components": [
+    {
+      "attacks": [
+        "HUB-B00",
+        "HUB-B01",
+        "HUB-D01",
+        "HUB-D02",
+        "HUB-D03",
+        "HUB-D04",
+        "HUB-D05",
+        "HUB-N03",
+        "HUB-N04",
+        "HUB-N05",
+        "HUB-N06",
+        "HUB-N07",
+        "HUB-N08",
+        "HUB-N09",
+        "HUB-N10",
+        "HUB-N11",
+        "HUB-N12",
+        "HUB-N13",
+        "HUB-N14",
+        "HUB-N15",
+        "HUB-N16",
+        "HUB-N17",
+        "HUB-N18",
+        "HUB-N19",
+        "HUB-N20",
+        "SPO-B00",
+        "SPO-B01",
+        "SPO-N03",
+        "SPO-N04",
+        "SPO-N05",
+        "SPO-N06",
+        "SPO-N10",
+        "SPO-N11",
+        "SPO-N12",
+        "SPO-N13",
+        "SPO-N16",
+        "SPO-N17",
+        "SPO-N18"
+      ],
+      "n_attacks": 38,
+      "n_observed_cells": 146,
+      "n_speakers": 4,
+      "n_trials": 182403,
+      "speakers": [
+        "VCC2TF1",
+        "VCC2TF2",
+        "VCC2TM1",
+        "VCC2TM2"
+      ]
+    },
+    {
+      "attacks": [
+        "Task2-team02",
+        "Task2-team03",
+        "Task2-team05",
+        "Task2-team06",
+        "Task2-team07",
+        "Task2-team08",
+        "Task2-team09",
+        "Task2-team10",
+        "Task2-team11",
+        "Task2-team12",
+        "Task2-team13",
+        "Task2-team15",
+        "Task2-team16",
+        "Task2-team18",
+        "Task2-team19",
+        "Task2-team20",
+        "Task2-team22",
+        "Task2-team23",
+        "Task2-team24",
+        "Task2-team25",
+        "Task2-team26",
+        "Task2-team27",
+        "Task2-team28",
+        "Task2-team29",
+        "Task2-team30",
+        "Task2-team31",
+        "Task2-team32",
+        "Task2-team33"
+      ],
+      "n_attacks": 28,
+      "n_observed_cells": 168,
+      "n_speakers": 6,
+      "n_trials": 151200,
+      "speakers": [
+        "TFF1",
+        "TFM1",
+        "TGF1",
+        "TGM1",
+        "TMF1",
+        "TMM1"
+      ]
+    },
+    {
+      "attacks": [
+        "Task1-team01",
+        "Task1-team02",
+        "Task1-team03",
+        "Task1-team04",
+        "Task1-team06",
+        "Task1-team07",
+        "Task1-team08",
+        "Task1-team09",
+        "Task1-team10",
+        "Task1-team11",
+        "Task1-team12",
+        "Task1-team13",
+        "Task1-team14",
+        "Task1-team16",
+        "Task1-team17",
+        "Task1-team18",
+        "Task1-team19",
+        "Task1-team20",
+        "Task1-team21",
+        "Task1-team22",
+        "Task1-team23",
+        "Task1-team24",
+        "Task1-team25",
+        "Task1-team26",
+        "Task1-team27",
+        "Task1-team28",
+        "Task1-team29",
+        "Task1-team30",
+        "Task1-team31",
+        "Task1-team32",
+        "Task1-team33"
+      ],
+      "n_attacks": 31,
+      "n_observed_cells": 124,
+      "n_speakers": 4,
+      "n_trials": 111600,
+      "speakers": [
+        "TEF1",
+        "TEF2",
+        "TEM1",
+        "TEM2"
+      ]
+    },
+    {
+      "attacks": [
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19"
+      ],
+      "n_attacks": 13,
+      "n_observed_cells": 624,
+      "n_speakers": 48,
+      "n_trials": 73856,
+      "speakers": [
+        "LA_0001",
+        "LA_0002",
+        "LA_0003",
+        "LA_0004",
+        "LA_0005",
+        "LA_0006",
+        "LA_0007",
+        "LA_0008",
+        "LA_0009",
+        "LA_0010",
+        "LA_0011",
+        "LA_0012",
+        "LA_0013",
+        "LA_0014",
+        "LA_0015",
+        "LA_0016",
+        "LA_0017",
+        "LA_0018",
+        "LA_0019",
+        "LA_0020",
+        "LA_0021",
+        "LA_0022",
+        "LA_0023",
+        "LA_0024",
+        "LA_0025",
+        "LA_0026",
+        "LA_0027",
+        "LA_0028",
+        "LA_0029",
+        "LA_0030",
+        "LA_0031",
+        "LA_0032",
+        "LA_0033",
+        "LA_0034",
+        "LA_0035",
+        "LA_0036",
+        "LA_0037",
+        "LA_0038",
+        "LA_0039",
+        "LA_0040",
+        "LA_0041",
+        "LA_0042",
+        "LA_0043",
+        "LA_0044",
+        "LA_0045",
+        "LA_0046",
+        "LA_0047",
+        "LA_0048"
+      ]
+    }
+  ],
+  "bona_fide_sources": {
+    "asvspoof": {
+      "n_speakers": 67,
+      "n_trials": 7939,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 42.722287633134954,
+        "maximum_mass_share": 0.04471595918881471
+      },
+      "speakers": [
+        "LA_0001",
+        "LA_0002",
+        "LA_0003",
+        "LA_0004",
+        "LA_0005",
+        "LA_0006",
+        "LA_0007",
+        "LA_0008",
+        "LA_0009",
+        "LA_0010",
+        "LA_0011",
+        "LA_0012",
+        "LA_0013",
+        "LA_0014",
+        "LA_0015",
+        "LA_0016",
+        "LA_0017",
+        "LA_0018",
+        "LA_0019",
+        "LA_0020",
+        "LA_0021",
+        "LA_0022",
+        "LA_0023",
+        "LA_0024",
+        "LA_0025",
+        "LA_0026",
+        "LA_0027",
+        "LA_0028",
+        "LA_0029",
+        "LA_0030",
+        "LA_0031",
+        "LA_0032",
+        "LA_0033",
+        "LA_0034",
+        "LA_0035",
+        "LA_0036",
+        "LA_0037",
+        "LA_0038",
+        "LA_0039",
+        "LA_0040",
+        "LA_0041",
+        "LA_0042",
+        "LA_0043",
+        "LA_0044",
+        "LA_0045",
+        "LA_0046",
+        "LA_0047",
+        "LA_0048",
+        "LA_0049",
+        "LA_0050",
+        "LA_0051",
+        "LA_0052",
+        "LA_0053",
+        "LA_0054",
+        "LA_0055",
+        "LA_0056",
+        "LA_0057",
+        "LA_0058",
+        "LA_0059",
+        "LA_0060",
+        "LA_0061",
+        "LA_0063",
+        "LA_0064",
+        "LA_0065",
+        "LA_0066",
+        "LA_0067",
+        "LA_0068"
+      ],
+      "trials_per_speaker": {
+        "max": 355,
+        "median": 110,
+        "min": 8
+      }
+    },
+    "vcc2018": {
+      "n_speakers": 12,
+      "n_trials": 3780,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 11.999999999999996,
+        "maximum_mass_share": 0.08333333333333333
+      },
+      "speakers": [
+        "VCC2SF1",
+        "VCC2SF2",
+        "VCC2SF3",
+        "VCC2SF4",
+        "VCC2SM1",
+        "VCC2SM2",
+        "VCC2SM3",
+        "VCC2SM4",
+        "VCC2TF1",
+        "VCC2TF2",
+        "VCC2TM1",
+        "VCC2TM2"
+      ],
+      "trials_per_speaker": {
+        "max": 315,
+        "median": 315,
+        "min": 315
+      }
+    },
+    "vcc2020": {
+      "n_speakers": 14,
+      "n_trials": 3150,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 14.0,
+        "maximum_mass_share": 0.07142857142857142
+      },
+      "speakers": [
+        "SEF1",
+        "SEF2",
+        "SEM1",
+        "SEM2",
+        "TEF1",
+        "TEF2",
+        "TEM1",
+        "TEM2",
+        "TFF1",
+        "TFM1",
+        "TGF1",
+        "TGM1",
+        "TMF1",
+        "TMM1"
+      ],
+      "trials_per_speaker": {
+        "max": 225,
+        "median": 225,
+        "min": 225
+      }
+    }
+  },
+  "contract": {
+    "eer_evaluated": false,
+    "exp105_regenerated": false,
+    "kind": "metadata_only_structural_audit",
+    "resampling_performed": false,
+    "scores_loaded": false
+  },
+  "global": {
+    "bonafide_source_trial_mass_shares": {
+      "asvspoof": 0.5339296522967247,
+      "vcc2018": 0.254220189656332,
+      "vcc2020": 0.2118501580469433
+    },
+    "fraction_global_structural_zeros_removed_by_stratification": 0.9989579715178881,
+    "global_cell_occupancy_fraction": 0.1557184750733138,
+    "n_all_speakers": 93,
+    "n_attacks": 110,
+    "n_bonafide_trials": 14869,
+    "n_eval_trials": 533928,
+    "n_global_cartesian_cells": 6820,
+    "n_observed_spoof_cells": 1062,
+    "n_observed_within_stratum_cells": 1062,
+    "n_source_task_strata": 5,
+    "n_spoof_speakers": 62,
+    "n_spoof_trials": 519059,
+    "n_within_stratum_cartesian_cells": 1068,
+    "spoof_stratum_trial_mass_shares": {
+      "asvspoof": 0.1422882562483263,
+      "vcc2018/HUB": 0.23425082697728003,
+      "vcc2018/SPO": 0.11716009162734872,
+      "vcc2020/Task1": 0.2150044599939506,
+      "vcc2020/Task2": 0.29129636515309437
+    },
+    "within_stratum_cell_occupancy_fraction": 0.9943820224719101
+  },
+  "metadata": {
+    "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/trial_metadata.txt",
+    "sha256": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800"
+  },
+  "speaker_overlap_between_spoof_strata": {
+    "asvspoof & vcc2018/HUB": 0,
+    "asvspoof & vcc2018/SPO": 0,
+    "asvspoof & vcc2020/Task1": 0,
+    "asvspoof & vcc2020/Task2": 0,
+    "vcc2018/HUB & vcc2018/SPO": 4,
+    "vcc2018/HUB & vcc2020/Task1": 0,
+    "vcc2018/HUB & vcc2020/Task2": 0,
+    "vcc2018/SPO & vcc2020/Task1": 0,
+    "vcc2018/SPO & vcc2020/Task2": 0,
+    "vcc2020/Task1 & vcc2020/Task2": 0
+  },
+  "speaker_participation_details": {
+    "LA_0001": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 257,
+      "n_spoof_trials": 2570,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0002": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 191,
+      "n_spoof_trials": 1881,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0003": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 2757,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0004": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 107,
+      "n_spoof_trials": 1282,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0005": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 205,
+      "n_spoof_trials": 1907,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0006": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 31,
+      "n_spoof_trials": 346,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0007": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 138,
+      "n_spoof_trials": 1277,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0008": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 112,
+      "n_spoof_trials": 1297,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0009": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 79,
+      "n_spoof_trials": 864,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0010": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 110,
+      "n_spoof_trials": 1391,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0011": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 223,
+      "n_spoof_trials": 2528,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0012": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 10,
+      "n_spoof_trials": 317,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0013": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 273,
+      "n_spoof_trials": 2932,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0014": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 221,
+      "n_spoof_trials": 2223,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0015": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 151,
+      "n_spoof_trials": 1192,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0016": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 135,
+      "n_spoof_trials": 1229,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0017": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 114,
+      "n_spoof_trials": 1309,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0018": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 355,
+      "n_spoof_trials": 3178,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0019": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 129,
+      "n_spoof_trials": 1301,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0020": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 107,
+      "n_spoof_trials": 764,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0021": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 226,
+      "n_spoof_trials": 2487,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0022": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 94,
+      "n_spoof_trials": 1268,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0023": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 191,
+      "n_spoof_trials": 2223,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0024": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 110,
+      "n_spoof_trials": 827,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0025": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 47,
+      "n_spoof_trials": 591,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0026": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 214,
+      "n_spoof_trials": 2273,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0027": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 91,
+      "n_spoof_trials": 849,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0028": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 236,
+      "n_spoof_trials": 2191,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0029": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 141,
+      "n_spoof_trials": 1302,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0030": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 130,
+      "n_spoof_trials": 878,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0031": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 92,
+      "n_spoof_trials": 740,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0032": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 226,
+      "n_spoof_trials": 2538,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0033": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 111,
+      "n_spoof_trials": 1276,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0034": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 102,
+      "n_spoof_trials": 1251,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0035": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 42,
+      "n_spoof_trials": 383,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0036": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 206,
+      "n_spoof_trials": 2200,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0037": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 110,
+      "n_spoof_trials": 835,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0038": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 25,
+      "n_spoof_trials": 267,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0039": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 219,
+      "n_spoof_trials": 1713,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0040": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 217,
+      "n_spoof_trials": 1777,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0041": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 103,
+      "n_spoof_trials": 1209,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0042": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 120,
+      "n_spoof_trials": 1352,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0043": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 1760,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0044": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 245,
+      "n_spoof_trials": 2593,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0045": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 126,
+      "n_spoof_trials": 1307,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0046": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 317,
+      "n_spoof_trials": 2686,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0047": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 117,
+      "n_spoof_trials": 1291,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0048": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 135,
+      "n_spoof_trials": 1244,
+      "source": "asvspoof",
+      "spoof_strata": [
+        "asvspoof"
+      ]
+    },
+    "LA_0049": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 32,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0050": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 16,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0051": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 34,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0052": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 8,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0053": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 30,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0054": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 15,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0055": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 25,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0056": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 38,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0057": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 10,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0058": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 33,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0059": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 28,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0060": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 18,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0061": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 13,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0063": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 19,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0064": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 27,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0065": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 28,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0066": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 30,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0067": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 29,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "LA_0068": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 25,
+      "n_spoof_trials": 0,
+      "source": "asvspoof",
+      "spoof_strata": []
+    },
+    "SEF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 0,
+      "source": "vcc2020",
+      "spoof_strata": []
+    },
+    "SEF2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 0,
+      "source": "vcc2020",
+      "spoof_strata": []
+    },
+    "SEM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 0,
+      "source": "vcc2020",
+      "spoof_strata": []
+    },
+    "SEM2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 0,
+      "source": "vcc2020",
+      "spoof_strata": []
+    },
+    "TEF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 27900,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task1"
+      ]
+    },
+    "TEF2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 27900,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task1"
+      ]
+    },
+    "TEM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 27900,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task1"
+      ]
+    },
+    "TEM2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 27900,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task1"
+      ]
+    },
+    "TFF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "TFM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "TGF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "TGM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "TMF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "TMM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 225,
+      "n_spoof_trials": 25200,
+      "source": "vcc2020",
+      "spoof_strata": [
+        "vcc2020/Task2"
+      ]
+    },
+    "VCC2SF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SF2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SF3": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SF4": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SM2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SM3": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2SM4": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 0,
+      "source": "vcc2018",
+      "spoof_strata": []
+    },
+    "VCC2TF1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 46323,
+      "source": "vcc2018",
+      "spoof_strata": [
+        "vcc2018/HUB",
+        "vcc2018/SPO"
+      ]
+    },
+    "VCC2TF2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 45360,
+      "source": "vcc2018",
+      "spoof_strata": [
+        "vcc2018/HUB",
+        "vcc2018/SPO"
+      ]
+    },
+    "VCC2TM1": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 45360,
+      "source": "vcc2018",
+      "spoof_strata": [
+        "vcc2018/HUB",
+        "vcc2018/SPO"
+      ]
+    },
+    "VCC2TM2": {
+      "has_bonafide": true,
+      "n_bonafide_trials": 315,
+      "n_spoof_trials": 45360,
+      "source": "vcc2018",
+      "spoof_strata": [
+        "vcc2018/HUB",
+        "vcc2018/SPO"
+      ]
+    }
+  },
+  "speaker_participation_patterns": {
+    "source=asvspoof;bona=true;spoof=asvspoof": {
+      "n_speakers": 48,
+      "speakers": [
+        "LA_0001",
+        "LA_0002",
+        "LA_0003",
+        "LA_0004",
+        "LA_0005",
+        "LA_0006",
+        "LA_0007",
+        "LA_0008",
+        "LA_0009",
+        "LA_0010",
+        "LA_0011",
+        "LA_0012",
+        "LA_0013",
+        "LA_0014",
+        "LA_0015",
+        "LA_0016",
+        "LA_0017",
+        "LA_0018",
+        "LA_0019",
+        "LA_0020",
+        "LA_0021",
+        "LA_0022",
+        "LA_0023",
+        "LA_0024",
+        "LA_0025",
+        "LA_0026",
+        "LA_0027",
+        "LA_0028",
+        "LA_0029",
+        "LA_0030",
+        "LA_0031",
+        "LA_0032",
+        "LA_0033",
+        "LA_0034",
+        "LA_0035",
+        "LA_0036",
+        "LA_0037",
+        "LA_0038",
+        "LA_0039",
+        "LA_0040",
+        "LA_0041",
+        "LA_0042",
+        "LA_0043",
+        "LA_0044",
+        "LA_0045",
+        "LA_0046",
+        "LA_0047",
+        "LA_0048"
+      ]
+    },
+    "source=asvspoof;bona=true;spoof=none": {
+      "n_speakers": 19,
+      "speakers": [
+        "LA_0049",
+        "LA_0050",
+        "LA_0051",
+        "LA_0052",
+        "LA_0053",
+        "LA_0054",
+        "LA_0055",
+        "LA_0056",
+        "LA_0057",
+        "LA_0058",
+        "LA_0059",
+        "LA_0060",
+        "LA_0061",
+        "LA_0063",
+        "LA_0064",
+        "LA_0065",
+        "LA_0066",
+        "LA_0067",
+        "LA_0068"
+      ]
+    },
+    "source=vcc2018;bona=true;spoof=none": {
+      "n_speakers": 8,
+      "speakers": [
+        "VCC2SF1",
+        "VCC2SF2",
+        "VCC2SF3",
+        "VCC2SF4",
+        "VCC2SM1",
+        "VCC2SM2",
+        "VCC2SM3",
+        "VCC2SM4"
+      ]
+    },
+    "source=vcc2018;bona=true;spoof=vcc2018/HUB+vcc2018/SPO": {
+      "n_speakers": 4,
+      "speakers": [
+        "VCC2TF1",
+        "VCC2TF2",
+        "VCC2TM1",
+        "VCC2TM2"
+      ]
+    },
+    "source=vcc2020;bona=true;spoof=none": {
+      "n_speakers": 4,
+      "speakers": [
+        "SEF1",
+        "SEF2",
+        "SEM1",
+        "SEM2"
+      ]
+    },
+    "source=vcc2020;bona=true;spoof=vcc2020/Task1": {
+      "n_speakers": 4,
+      "speakers": [
+        "TEF1",
+        "TEF2",
+        "TEM1",
+        "TEM2"
+      ]
+    },
+    "source=vcc2020;bona=true;spoof=vcc2020/Task2": {
+      "n_speakers": 6,
+      "speakers": [
+        "TFF1",
+        "TFM1",
+        "TGF1",
+        "TGM1",
+        "TMF1",
+        "TMM1"
+      ]
+    }
+  },
+  "spoof_strata": {
+    "asvspoof": {
+      "attack_counts_by_family": {
+        "neural_vocoder_autoregressive": 3,
+        "neural_vocoder_nonautoregressive": 1,
+        "traditional_vocoder": 8,
+        "waveform_concatenation": 1
+      },
+      "attack_mass_concentration": {
+        "effective_count_inverse_herfindahl": 12.997732907541561,
+        "maximum_mass_share": 0.07849057625649913
+      },
+      "attacks": [
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19"
+      ],
+      "cell_mass_concentration": {
+        "effective_count_inverse_herfindahl": 501.4247230755937,
+        "maximum_mass_share": 0.0035203639514731367
+      },
+      "cell_occupancy_fraction": 1.0,
+      "codec_trial_counts": {
+        "high_m4a": 3483,
+        "high_mp3": 3473,
+        "high_ogg": 14157,
+        "low_m4a": 3428,
+        "low_mp3": 3391,
+        "low_ogg": 14157,
+        "mp3m4a": 14157,
+        "nocodec": 3453,
+        "oggm4a": 14157
+      },
+      "missing_within_stratum_cells": [],
+      "n_attacks": 13,
+      "n_missing_within_stratum_cells": 0,
+      "n_observed_cells": 624,
+      "n_possible_within_stratum_cells": 624,
+      "n_speakers": 48,
+      "n_trials": 73856,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 38.85453490041552,
+        "maximum_mass_share": 0.04302967937608319
+      },
+      "speakers": [
+        "LA_0001",
+        "LA_0002",
+        "LA_0003",
+        "LA_0004",
+        "LA_0005",
+        "LA_0006",
+        "LA_0007",
+        "LA_0008",
+        "LA_0009",
+        "LA_0010",
+        "LA_0011",
+        "LA_0012",
+        "LA_0013",
+        "LA_0014",
+        "LA_0015",
+        "LA_0016",
+        "LA_0017",
+        "LA_0018",
+        "LA_0019",
+        "LA_0020",
+        "LA_0021",
+        "LA_0022",
+        "LA_0023",
+        "LA_0024",
+        "LA_0025",
+        "LA_0026",
+        "LA_0027",
+        "LA_0028",
+        "LA_0029",
+        "LA_0030",
+        "LA_0031",
+        "LA_0032",
+        "LA_0033",
+        "LA_0034",
+        "LA_0035",
+        "LA_0036",
+        "LA_0037",
+        "LA_0038",
+        "LA_0039",
+        "LA_0040",
+        "LA_0041",
+        "LA_0042",
+        "LA_0043",
+        "LA_0044",
+        "LA_0045",
+        "LA_0046",
+        "LA_0047",
+        "LA_0048"
+      ],
+      "trials_per_observed_cell": {
+        "max": 260,
+        "median": 107,
+        "min": 5
+      }
+    },
+    "vcc2018/HUB": {
+      "attack_counts_by_family": {
+        "neural_vocoder_autoregressive": 2,
+        "traditional_vocoder": 21,
+        "unknown": 2
+      },
+      "attack_mass_concentration": {
+        "effective_count_inverse_herfindahl": 24.234873129472987,
+        "maximum_mass_share": 0.04145077720207254
+      },
+      "attacks": [
+        "HUB-B00",
+        "HUB-B01",
+        "HUB-D01",
+        "HUB-D02",
+        "HUB-D03",
+        "HUB-D04",
+        "HUB-D05",
+        "HUB-N03",
+        "HUB-N04",
+        "HUB-N05",
+        "HUB-N06",
+        "HUB-N07",
+        "HUB-N08",
+        "HUB-N09",
+        "HUB-N10",
+        "HUB-N11",
+        "HUB-N12",
+        "HUB-N13",
+        "HUB-N14",
+        "HUB-N15",
+        "HUB-N16",
+        "HUB-N17",
+        "HUB-N18",
+        "HUB-N19",
+        "HUB-N20"
+      ],
+      "cell_mass_concentration": {
+        "effective_count_inverse_herfindahl": 96.75064935064951,
+        "maximum_mass_share": 0.010362694300518135
+      },
+      "cell_occupancy_fraction": 0.97,
+      "codec_trial_counts": {
+        "high_m4a": 13510,
+        "high_mp3": 13510,
+        "high_ogg": 13510,
+        "low_m4a": 13510,
+        "low_mp3": 13510,
+        "low_ogg": 13510,
+        "mp3m4a": 13510,
+        "nocodec": 13510,
+        "oggm4a": 13510
+      },
+      "missing_within_stratum_cells": [
+        [
+          "VCC2TF2",
+          "HUB-B00"
+        ],
+        [
+          "VCC2TM1",
+          "HUB-B00"
+        ],
+        [
+          "VCC2TM2",
+          "HUB-B00"
+        ]
+      ],
+      "n_attacks": 25,
+      "n_missing_within_stratum_cells": 3,
+      "n_observed_cells": 97,
+      "n_possible_within_stratum_cells": 100,
+      "n_speakers": 4,
+      "n_trials": 121590,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 3.9996778696445823,
+        "maximum_mass_share": 0.2538860103626943
+      },
+      "speakers": [
+        "VCC2TF1",
+        "VCC2TF2",
+        "VCC2TM1",
+        "VCC2TM2"
+      ],
+      "trials_per_observed_cell": {
+        "max": 1260,
+        "median": 1260,
+        "min": 630
+      }
+    },
+    "vcc2018/SPO": {
+      "attack_counts_by_family": {
+        "neural_vocoder_autoregressive": 2,
+        "traditional_vocoder": 9,
+        "unknown": 2
+      },
+      "attack_mass_concentration": {
+        "effective_count_inverse_herfindahl": 12.128094610564979,
+        "maximum_mass_share": 0.08287701642740862
+      },
+      "attacks": [
+        "SPO-B00",
+        "SPO-B01",
+        "SPO-N03",
+        "SPO-N04",
+        "SPO-N05",
+        "SPO-N06",
+        "SPO-N10",
+        "SPO-N11",
+        "SPO-N12",
+        "SPO-N13",
+        "SPO-N16",
+        "SPO-N17",
+        "SPO-N18"
+      ],
+      "cell_mass_concentration": {
+        "effective_count_inverse_herfindahl": 48.459510979452695,
+        "maximum_mass_share": 0.020719254106852155
+      },
+      "cell_occupancy_fraction": 0.9423076923076923,
+      "codec_trial_counts": {
+        "high_m4a": 6757,
+        "high_mp3": 6757,
+        "high_ogg": 6757,
+        "low_m4a": 6757,
+        "low_mp3": 6757,
+        "low_ogg": 6757,
+        "mp3m4a": 6757,
+        "nocodec": 6757,
+        "oggm4a": 6757
+      },
+      "missing_within_stratum_cells": [
+        [
+          "VCC2TF2",
+          "SPO-B00"
+        ],
+        [
+          "VCC2TM1",
+          "SPO-B00"
+        ],
+        [
+          "VCC2TM2",
+          "SPO-B00"
+        ]
+      ],
+      "n_attacks": 13,
+      "n_missing_within_stratum_cells": 3,
+      "n_observed_cells": 49,
+      "n_possible_within_stratum_cells": 52,
+      "n_speakers": 4,
+      "n_trials": 60813,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 3.9996402193584415,
+        "maximum_mass_share": 0.25410685215332246
+      },
+      "speakers": [
+        "VCC2TF1",
+        "VCC2TF2",
+        "VCC2TM1",
+        "VCC2TM2"
+      ],
+      "trials_per_observed_cell": {
+        "max": 1260,
+        "median": 1260,
+        "min": 333
+      }
+    },
+    "vcc2020/Task1": {
+      "attack_counts_by_family": {
+        "neural_vocoder_autoregressive": 11,
+        "neural_vocoder_nonautoregressive": 14,
+        "traditional_vocoder": 4,
+        "unknown": 2
+      },
+      "attack_mass_concentration": {
+        "effective_count_inverse_herfindahl": 30.999999999999993,
+        "maximum_mass_share": 0.03225806451612903
+      },
+      "attacks": [
+        "Task1-team01",
+        "Task1-team02",
+        "Task1-team03",
+        "Task1-team04",
+        "Task1-team06",
+        "Task1-team07",
+        "Task1-team08",
+        "Task1-team09",
+        "Task1-team10",
+        "Task1-team11",
+        "Task1-team12",
+        "Task1-team13",
+        "Task1-team14",
+        "Task1-team16",
+        "Task1-team17",
+        "Task1-team18",
+        "Task1-team19",
+        "Task1-team20",
+        "Task1-team21",
+        "Task1-team22",
+        "Task1-team23",
+        "Task1-team24",
+        "Task1-team25",
+        "Task1-team26",
+        "Task1-team27",
+        "Task1-team28",
+        "Task1-team29",
+        "Task1-team30",
+        "Task1-team31",
+        "Task1-team32",
+        "Task1-team33"
+      ],
+      "cell_mass_concentration": {
+        "effective_count_inverse_herfindahl": 123.99999999999987,
+        "maximum_mass_share": 0.008064516129032258
+      },
+      "cell_occupancy_fraction": 1.0,
+      "codec_trial_counts": {
+        "high_m4a": 12400,
+        "high_mp3": 12400,
+        "high_ogg": 12400,
+        "low_m4a": 12400,
+        "low_mp3": 12400,
+        "low_ogg": 12400,
+        "mp3m4a": 12400,
+        "nocodec": 12400,
+        "oggm4a": 12400
+      },
+      "missing_within_stratum_cells": [],
+      "n_attacks": 31,
+      "n_missing_within_stratum_cells": 0,
+      "n_observed_cells": 124,
+      "n_possible_within_stratum_cells": 124,
+      "n_speakers": 4,
+      "n_trials": 111600,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 4.0,
+        "maximum_mass_share": 0.25
+      },
+      "speakers": [
+        "TEF1",
+        "TEF2",
+        "TEM1",
+        "TEM2"
+      ],
+      "trials_per_observed_cell": {
+        "max": 900,
+        "median": 900,
+        "min": 900
+      }
+    },
+    "vcc2020/Task2": {
+      "attack_counts_by_family": {
+        "neural_vocoder_autoregressive": 11,
+        "neural_vocoder_nonautoregressive": 11,
+        "traditional_vocoder": 4,
+        "unknown": 2
+      },
+      "attack_mass_concentration": {
+        "effective_count_inverse_herfindahl": 27.999999999999986,
+        "maximum_mass_share": 0.03571428571428571
+      },
+      "attacks": [
+        "Task2-team02",
+        "Task2-team03",
+        "Task2-team05",
+        "Task2-team06",
+        "Task2-team07",
+        "Task2-team08",
+        "Task2-team09",
+        "Task2-team10",
+        "Task2-team11",
+        "Task2-team12",
+        "Task2-team13",
+        "Task2-team15",
+        "Task2-team16",
+        "Task2-team18",
+        "Task2-team19",
+        "Task2-team20",
+        "Task2-team22",
+        "Task2-team23",
+        "Task2-team24",
+        "Task2-team25",
+        "Task2-team26",
+        "Task2-team27",
+        "Task2-team28",
+        "Task2-team29",
+        "Task2-team30",
+        "Task2-team31",
+        "Task2-team32",
+        "Task2-team33"
+      ],
+      "cell_mass_concentration": {
+        "effective_count_inverse_herfindahl": 168.00000000000014,
+        "maximum_mass_share": 0.005952380952380952
+      },
+      "cell_occupancy_fraction": 1.0,
+      "codec_trial_counts": {
+        "high_m4a": 16800,
+        "high_mp3": 16800,
+        "high_ogg": 16800,
+        "low_m4a": 16800,
+        "low_mp3": 16800,
+        "low_ogg": 16800,
+        "mp3m4a": 16800,
+        "nocodec": 16800,
+        "oggm4a": 16800
+      },
+      "missing_within_stratum_cells": [],
+      "n_attacks": 28,
+      "n_missing_within_stratum_cells": 0,
+      "n_observed_cells": 168,
+      "n_possible_within_stratum_cells": 168,
+      "n_speakers": 6,
+      "n_trials": 151200,
+      "speaker_mass_concentration": {
+        "effective_count_inverse_herfindahl": 5.999999999999999,
+        "maximum_mass_share": 0.16666666666666666
+      },
+      "speakers": [
+        "TFF1",
+        "TFM1",
+        "TGF1",
+        "TGM1",
+        "TMF1",
+        "TMM1"
+      ],
+      "trials_per_observed_cell": {
+        "max": 900,
+        "median": 900,
+        "min": 900
+      }
+    }
+  }
+}

@@ -120,7 +120,7 @@ def main():
                                                for m in results["21df"] if m not in ssl_era), 3)],
     }
     print("summary:", results["summary"], flush=True)
-    out = Path(__file__).parent / "results_icc.json"
+    out = Path(__file__).parent.parent / "derived" / "results_icc.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

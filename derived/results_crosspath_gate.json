@@ -1,0 +1,63 @@
+{
+  "experiment": "EXP-105-crosspath-gate",
+  "seed": 20260826,
+  "draws": 32,
+  "comparisons": 256,
+  "scripts": {
+    "verify_crosspath_gate.py": "dde53df8d353eb997569f3712e488b467fd659089472270b8ac7dc4383e9828f",
+    "coverage_interaction.py": "570727728b78300d30371a4c0e163f7d4d72028ccc006cc02c85a6a6c53b40ef",
+    "analyze_multiway.py": "e89d3836588b561035ad5bee36fbf0b989ae841b85aae550328921cb14f0ddd4"
+  },
+  "counts": {
+    "n_trials": 533928,
+    "n_speakers": 93,
+    "n_attacks": 110,
+    "n_cells": 1062
+  },
+  "point_eers": {
+    "XLSR-Mamba": {
+      "weighted_eer": 0.018839346773953825,
+      "independent_eer": 0.018839346773953825,
+      "reversed_orientation_eer": 0.9811606532260462
+    },
+    "XLS-R+SLS": {
+      "weighted_eer": 0.019160643599319578,
+      "independent_eer": 0.019160643599319578,
+      "reversed_orientation_eer": 0.9808393564006804
+    },
+    "XLSR-Conformer": {
+      "weighted_eer": 0.022731689076041544,
+      "independent_eer": 0.022731689076041544,
+      "reversed_orientation_eer": 0.9772683109239584
+    },
+    "SSL-AASIST": {
+      "weighted_eer": 0.028515383324081836,
+      "independent_eer": 0.028515383324081836,
+      "reversed_orientation_eer": 0.9714846166759181
+    },
+    "RawNet2": {
+      "weighted_eer": 0.22383341606423213,
+      "independent_eer": 0.22383341606423213,
+      "reversed_orientation_eer": 0.7761665839357679
+    },
+    "LFCC-LCNN": {
+      "weighted_eer": 0.23477064572291734,
+      "independent_eer": 0.23477064572291734,
+      "reversed_orientation_eer": 0.7652293542770827
+    },
+    "LFCC-GMM": {
+      "weighted_eer": 0.25247192374132776,
+      "independent_eer": 0.25247192374132776,
+      "reversed_orientation_eer": 0.7475271129770414
+    },
+    "CQCC-GMM": {
+      "weighted_eer": 0.2556321750488839,
+      "independent_eer": 0.2556321750488839,
+      "reversed_orientation_eer": 0.7443678249511161
+    }
+  },
+  "max_point_system_eer_difference": 0.0,
+  "max_pair_delta_difference_pts_after_six_decimal_release_rounding": 4.6652862550899954e-07,
+  "max_real_product_weight_eer_difference": 0.0,
+  "pass": true
+}

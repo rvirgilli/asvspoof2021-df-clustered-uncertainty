@@ -112,7 +112,8 @@ def main():
         w = np.bincount(rng.integers(0, n, n), minlength=n).astype(np.float64)
         for k, m in enumerate(names):
             boot[i, k] = 100 * weighted_eer(orders[m], labels, w)
-    sel_path = Path(__file__).parent / "results_selection.json"
+    derived = Path(__file__).parent.parent / "derived"
+    sel_path = derived / "results_selection.json"
     sel = json.load(open(sel_path))["21df"]["pairs"]
     ratios, n_iid_res = [], 0
     for i, a in enumerate(names):
@@ -137,7 +138,7 @@ def main():
     results["_input_provenance_sha256"] = {
         "results_selection.json": hashlib.sha256(sel_path.read_bytes()).hexdigest()[:16]}
     print("\nsummary:", json.dumps(results["summary"]), flush=True)
-    out = Path(__file__).parent / "results_scaling.json"
+    out = derived / "results_scaling.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out} in {(time.time()-t0)/60:.1f} min")
 

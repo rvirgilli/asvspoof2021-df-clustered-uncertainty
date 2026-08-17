@@ -1,0 +1,334 @@
+{
+  "estimator": "one-way random-effects ANOVA ICC (Searle et al. 1992)",
+  "supersedes": "m1_campaign.variance_components in results_pairs.json (unweighted group-mean variance / total variance; not an ICC)",
+  "21df": {
+    "XLSR-Mamba": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 0.0248,
+        "sigma2_within": 0.1143,
+        "icc": 0.178,
+        "icc_raw": 0.178
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.0055,
+        "sigma2_within": 0.1337,
+        "icc": 0.0394,
+        "icc_raw": 0.0394
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 3.7341,
+        "sigma2_within": 3.2234,
+        "icc": 0.5367,
+        "icc_raw": 0.5367
+      }
+    },
+    "XLS-R+SLS": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 1.1726,
+        "sigma2_within": 1.2249,
+        "icc": 0.4891,
+        "icc_raw": 0.4891
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.2552,
+        "sigma2_within": 2.1458,
+        "icc": 0.1063,
+        "icc_raw": 0.1063
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 3.7947,
+        "sigma2_within": 5.8273,
+        "icc": 0.3944,
+        "icc_raw": 0.3944
+      }
+    },
+    "XLSR-Conformer": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 0.0685,
+        "sigma2_within": 0.1868,
+        "icc": 0.2684,
+        "icc_raw": 0.2684
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.013,
+        "sigma2_within": 0.2423,
+        "icc": 0.051,
+        "icc_raw": 0.051
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 6.1164,
+        "sigma2_within": 1.8602,
+        "icc": 0.7668,
+        "icc_raw": 0.7668
+      }
+    },
+    "SSL-AASIST": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 0.0024,
+        "sigma2_within": 0.0308,
+        "icc": 0.0732,
+        "icc_raw": 0.0732
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.0011,
+        "sigma2_within": 0.0322,
+        "icc": 0.0336,
+        "icc_raw": 0.0336
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 5.1644,
+        "sigma2_within": 4.8912,
+        "icc": 0.5136,
+        "icc_raw": 0.5136
+      }
+    },
+    "RawNet2": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 2.2981,
+        "sigma2_within": 5.6034,
+        "icc": 0.2908,
+        "icc_raw": 0.2908
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.2201,
+        "sigma2_within": 7.6722,
+        "icc": 0.0279,
+        "icc_raw": 0.0279
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 19.3196,
+        "sigma2_within": 6.2983,
+        "icc": 0.7541,
+        "icc_raw": 0.7541
+      }
+    },
+    "LFCC-LCNN": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 60.0554,
+        "sigma2_within": 54.3814,
+        "icc": 0.5248,
+        "icc_raw": 0.5248
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 24.0066,
+        "sigma2_within": 91.2319,
+        "icc": 0.2083,
+        "icc_raw": 0.2083
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 45.1086,
+        "sigma2_within": 32.5415,
+        "icc": 0.5809,
+        "icc_raw": 0.5809
+      }
+    },
+    "LFCC-GMM": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 1.4168,
+        "sigma2_within": 5.2784,
+        "icc": 0.2116,
+        "icc_raw": 0.2116
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.4894,
+        "sigma2_within": 6.2202,
+        "icc": 0.0729,
+        "icc_raw": 0.0729
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 0.1562,
+        "sigma2_within": 0.7443,
+        "icc": 0.1735,
+        "icc_raw": 0.1735
+      }
+    },
+    "CQCC-GMM": {
+      "attack_icc_spoof": {
+        "k_groups": 110,
+        "n_trials": 519059,
+        "n0": 4716.89,
+        "sigma2_between": 0.1845,
+        "sigma2_within": 0.2678,
+        "icc": 0.408,
+        "icc_raw": 0.408
+      },
+      "speaker_icc_spoof": {
+        "k_groups": 62,
+        "n_trials": 519059,
+        "n0": 8023.33,
+        "sigma2_between": 0.0856,
+        "sigma2_within": 0.3699,
+        "icc": 0.188,
+        "icc_raw": 0.188
+      },
+      "speaker_icc_bona": {
+        "k_groups": 93,
+        "n_trials": 14869,
+        "n0": 159.15,
+        "sigma2_between": 0.0693,
+        "sigma2_within": 0.3823,
+        "icc": 0.1535,
+        "icc_raw": 0.1535
+      }
+    }
+  },
+  "itw": {
+    "XLSR-Mamba": {
+      "speaker_icc_spoof": {
+        "k_groups": 54,
+        "n_trials": 11816,
+        "n0": 209.32,
+        "sigma2_between": 0.1551,
+        "sigma2_within": 0.2145,
+        "icc": 0.4197,
+        "icc_raw": 0.4197
+      },
+      "speaker_icc_bona": {
+        "k_groups": 54,
+        "n_trials": 19963,
+        "n0": 344.78,
+        "sigma2_between": 1.1024,
+        "sigma2_within": 2.5475,
+        "icc": 0.302,
+        "icc_raw": 0.302
+      }
+    },
+    "XLS-R+SLS": {
+      "speaker_icc_spoof": {
+        "k_groups": 54,
+        "n_trials": 11816,
+        "n0": 209.32,
+        "sigma2_between": 1.5205,
+        "sigma2_within": 2.5353,
+        "icc": 0.3749,
+        "icc_raw": 0.3749
+      },
+      "speaker_icc_bona": {
+        "k_groups": 54,
+        "n_trials": 19963,
+        "n0": 344.78,
+        "sigma2_between": 6.1248,
+        "sigma2_within": 12.5388,
+        "icc": 0.3282,
+        "icc_raw": 0.3282
+      }
+    },
+    "SSL-AASIST": {
+      "speaker_icc_spoof": {
+        "k_groups": 54,
+        "n_trials": 11816,
+        "n0": 209.32,
+        "sigma2_between": 0.8488,
+        "sigma2_within": 1.5208,
+        "icc": 0.3582,
+        "icc_raw": 0.3582
+      },
+      "speaker_icc_bona": {
+        "k_groups": 54,
+        "n_trials": 19963,
+        "n0": 344.78,
+        "sigma2_between": 2.4436,
+        "sigma2_within": 4.9418,
+        "icc": 0.3309,
+        "icc_raw": 0.3309
+      }
+    },
+    "AASIST": {
+      "speaker_icc_spoof": {
+        "k_groups": 54,
+        "n_trials": 11816,
+        "n0": 209.32,
+        "sigma2_between": 1.4933,
+        "sigma2_within": 1.8552,
+        "icc": 0.446,
+        "icc_raw": 0.446
+      },
+      "speaker_icc_bona": {
+        "k_groups": 54,
+        "n_trials": 19963,
+        "n0": 344.78,
+        "sigma2_between": 2.368,
+        "sigma2_within": 2.8754,
+        "icc": 0.4516,
+        "icc_raw": 0.4516
+      }
+    }
+  },
+  "summary": {
+    "attack_icc_all": [
+      0.073,
+      0.525
+    ],
+    "attack_icc_ssl_era": [
+      0.073,
+      0.489
+    ],
+    "attack_icc_organizer_era": [
+      0.212,
+      0.525
+    ]
+  }
+}

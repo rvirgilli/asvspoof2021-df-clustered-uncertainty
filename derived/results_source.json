@@ -1,0 +1,1081 @@
+{
+  "_input_provenance_sha256": {
+    "results_floor.json": "d92372f10e555bc7"
+  },
+  "question": "what share of the delete-one-speaker sum of squares is BETWEEN source corpus rather than between speaker within corpus",
+  "n_bonafide_speakers": 93,
+  "n_spoof_side_speaker_ids": 62,
+  "sources": {
+    "asvspoof": {
+      "n_speakers": 67
+    },
+    "vcc2018": {
+      "n_speakers": 12
+    },
+    "vcc2020": {
+      "n_speakers": 14
+    }
+  },
+  "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.239,
+      "finite_A_speaker_component_width_pts": 0.655,
+      "descriptive_between_source_width_component_pts": 0.32,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.1,
+      "finite_A_speaker_component_width_pts": 1.167,
+      "descriptive_between_source_width_component_pts": 0.37,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.38,
+      "finite_A_speaker_component_width_pts": 1.113,
+      "descriptive_between_source_width_component_pts": 0.686,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.091,
+      "finite_A_speaker_component_width_pts": 1.215,
+      "descriptive_between_source_width_component_pts": 0.367,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.377,
+      "finite_A_speaker_component_width_pts": 0.889,
+      "descriptive_between_source_width_component_pts": 0.546,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "block": "within-modern",
+      "between_source_share_of_speaker_ss": 0.095,
+      "finite_A_speaker_component_width_pts": 1.082,
+      "descriptive_between_source_width_component_pts": 0.334,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.13,
+      "finite_A_speaker_component_width_pts": 5.273,
+      "descriptive_between_source_width_component_pts": 1.9,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "RawNet2 vs LFCC-GMM": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.373,
+      "finite_A_speaker_component_width_pts": 8.135,
+      "descriptive_between_source_width_component_pts": 4.97,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "RawNet2 vs CQCC-GMM": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.306,
+      "finite_A_speaker_component_width_pts": 6.982,
+      "descriptive_between_source_width_component_pts": 3.86,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.482,
+      "finite_A_speaker_component_width_pts": 4.452,
+      "descriptive_between_source_width_component_pts": 3.09,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.275,
+      "finite_A_speaker_component_width_pts": 3.864,
+      "descriptive_between_source_width_component_pts": 2.025,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+      "block": "within-baseline",
+      "between_source_share_of_speaker_ss": 0.14,
+      "finite_A_speaker_component_width_pts": 3.085,
+      "descriptive_between_source_width_component_pts": 1.156,
+      "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated"
+    }
+  },
+  "permutation_null": {
+    "B": 20000,
+    "seed": 20260822,
+    "p_value_rule": "(number of permuted statistics >= observed + 1) / (B + 1)",
+    "analytic_expected_share_under_no_effect": 0.0217,
+    "note": "share of the delete-one-speaker sum of squares falling between corpora when speaker labels are permuted; (k-1)/(n-1) with k=3, n=93",
+    "pairs": {
+      "XLSR-Mamba vs XLS-R+SLS": {
+        "observed": 0.239,
+        "null_mean": 0.0218,
+        "null_p95": 0.0677,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "XLSR-Mamba vs XLSR-Conformer": {
+        "observed": 0.1,
+        "null_mean": 0.0219,
+        "null_p95": 0.0759,
+        "exceedances": 335,
+        "p_value": 0.0168
+      },
+      "XLSR-Mamba vs SSL-AASIST": {
+        "observed": 0.38,
+        "null_mean": 0.0215,
+        "null_p95": 0.0646,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "XLS-R+SLS vs XLSR-Conformer": {
+        "observed": 0.091,
+        "null_mean": 0.0217,
+        "null_p95": 0.0718,
+        "exceedances": 412,
+        "p_value": 0.02065
+      },
+      "XLS-R+SLS vs SSL-AASIST": {
+        "observed": 0.377,
+        "null_mean": 0.0217,
+        "null_p95": 0.0647,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "XLSR-Conformer vs SSL-AASIST": {
+        "observed": 0.095,
+        "null_mean": 0.0216,
+        "null_p95": 0.0654,
+        "exceedances": 266,
+        "p_value": 0.01335
+      },
+      "RawNet2 vs LFCC-LCNN": {
+        "observed": 0.13,
+        "null_mean": 0.0221,
+        "null_p95": 0.0656,
+        "exceedances": 54,
+        "p_value": 0.00275
+      },
+      "RawNet2 vs LFCC-GMM": {
+        "observed": 0.373,
+        "null_mean": 0.0219,
+        "null_p95": 0.0638,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "RawNet2 vs CQCC-GMM": {
+        "observed": 0.306,
+        "null_mean": 0.0216,
+        "null_p95": 0.0631,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "LFCC-LCNN vs LFCC-GMM": {
+        "observed": 0.482,
+        "null_mean": 0.0217,
+        "null_p95": 0.0638,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "LFCC-LCNN vs CQCC-GMM": {
+        "observed": 0.275,
+        "null_mean": 0.0216,
+        "null_p95": 0.0646,
+        "exceedances": 0,
+        "p_value": 5e-05
+      },
+      "LFCC-GMM vs CQCC-GMM": {
+        "observed": 0.14,
+        "null_mean": 0.0217,
+        "null_p95": 0.0643,
+        "exceedances": 38,
+        "p_value": 0.00195
+      }
+    },
+    "n_pairs_p_below_0.05": 12
+  },
+  "leave_one_corpus_out": {
+    "estimator": "exact delete-one V_speaker + V_attack - V_observed_speaker_attack_cell, with transparent max(raw, V_speaker, V_attack, 0) floor",
+    "multiplicity": "a separately recomputed Gaussian max-t band over all 28 pairs for each leave-one-corpus-out covariance",
+    "note": "drop each source corpus, refit paired Delta-EER and the exact-cell multiway jackknife on the remaining two; a verdict that survives all three refits is not driven by any single provenance",
+    "by_corpus": {
+      "asvspoof": {
+        "n_speakers_kept": 26,
+        "n_attacks_kept": 97,
+        "n_observed_cells_kept": 438,
+        "q95_gaussian_exact_cell_max_t": 2.8744205218356407,
+        "q_draws": 200000,
+        "q_seed_components": [
+          20260822,
+          900,
+          0
+        ],
+        "raw_system_covariance_eigenvalues": [
+          0.018076731529009224,
+          0.06209349390189676,
+          0.0967740080429953,
+          0.5222761452944946,
+          0.6924113468680055,
+          1.3135191280159333,
+          3.568648021684049,
+          29.39886656722542
+        ],
+        "pairs": {
+          "XLSR-Mamba vs XLS-R+SLS": {
+            "delta_eer_pts": 0.26,
+            "V_speaker": 0.07216813841451969,
+            "V_attack": 0.042659407390132874,
+            "V_speaker_attack_cell": 0.010597639676765941,
+            "V_raw_inclusion_exclusion": 0.10422990612788663,
+            "V_psd_floor": 0.10422990612788663,
+            "resolved": false
+          },
+          "XLSR-Mamba vs XLSR-Conformer": {
+            "delta_eer_pts": -0.636,
+            "V_speaker": 0.20873464701015657,
+            "V_attack": 0.013084526149895748,
+            "V_speaker_attack_cell": 0.025606280423743508,
+            "V_raw_inclusion_exclusion": 0.19621289273630882,
+            "V_psd_floor": 0.20873464701015657,
+            "resolved": false
+          },
+          "XLSR-Mamba vs SSL-AASIST": {
+            "delta_eer_pts": -1.645,
+            "V_speaker": 0.1581672934488397,
+            "V_attack": 0.025820844163821688,
+            "V_speaker_attack_cell": 0.016194643557791526,
+            "V_raw_inclusion_exclusion": 0.16779349405486987,
+            "V_psd_floor": 0.16779349405486987,
+            "resolved": true
+          },
+          "XLSR-Mamba vs RawNet2": {
+            "delta_eer_pts": -30.592,
+            "V_speaker": 4.54623501566095,
+            "V_attack": 1.4025088171623572,
+            "V_speaker_attack_cell": 0.24864033599825155,
+            "V_raw_inclusion_exclusion": 5.700103496825056,
+            "V_psd_floor": 5.700103496825056,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-LCNN": {
+            "delta_eer_pts": -29.625,
+            "V_speaker": 7.428385928164119,
+            "V_attack": 1.432219855998162,
+            "V_speaker_attack_cell": 0.5965495645830639,
+            "V_raw_inclusion_exclusion": 8.264056219579217,
+            "V_psd_floor": 8.264056219579217,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-GMM": {
+            "delta_eer_pts": -25.353,
+            "V_speaker": 7.357724050625352,
+            "V_attack": 1.0288199709904766,
+            "V_speaker_attack_cell": 0.18215422537791953,
+            "V_raw_inclusion_exclusion": 8.204389796237908,
+            "V_psd_floor": 8.204389796237908,
+            "resolved": true
+          },
+          "XLSR-Mamba vs CQCC-GMM": {
+            "delta_eer_pts": -26.955,
+            "V_speaker": 7.021374198120506,
+            "V_attack": 1.849536684432003,
+            "V_speaker_attack_cell": 0.5013173054075084,
+            "V_raw_inclusion_exclusion": 8.369593577145,
+            "V_psd_floor": 8.369593577145,
+            "resolved": true
+          },
+          "XLS-R+SLS vs XLSR-Conformer": {
+            "delta_eer_pts": -0.896,
+            "V_speaker": 0.223137126485202,
+            "V_attack": 0.07066528875576561,
+            "V_speaker_attack_cell": 0.05144290155841317,
+            "V_raw_inclusion_exclusion": 0.24235951368255446,
+            "V_psd_floor": 0.24235951368255446,
+            "resolved": false
+          },
+          "XLS-R+SLS vs SSL-AASIST": {
+            "delta_eer_pts": -1.905,
+            "V_speaker": 0.10219409982959146,
+            "V_attack": 0.01942131016591294,
+            "V_speaker_attack_cell": 0.003793568656331095,
+            "V_raw_inclusion_exclusion": 0.11782184133917331,
+            "V_psd_floor": 0.11782184133917331,
+            "resolved": true
+          },
+          "XLS-R+SLS vs RawNet2": {
+            "delta_eer_pts": -30.851,
+            "V_speaker": 4.869085602949466,
+            "V_attack": 1.4777975218179293,
+            "V_speaker_attack_cell": 0.25735085813138026,
+            "V_raw_inclusion_exclusion": 6.089532266636015,
+            "V_psd_floor": 6.089532266636015,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-LCNN": {
+            "delta_eer_pts": -29.885,
+            "V_speaker": 7.662079123665355,
+            "V_attack": 1.4799393370386438,
+            "V_speaker_attack_cell": 0.6164460734757411,
+            "V_raw_inclusion_exclusion": 8.525572387228257,
+            "V_psd_floor": 8.525572387228257,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-GMM": {
+            "delta_eer_pts": -25.613,
+            "V_speaker": 7.525806013400052,
+            "V_attack": 1.0180127803910606,
+            "V_speaker_attack_cell": 0.18151208033963856,
+            "V_raw_inclusion_exclusion": 8.362306713451474,
+            "V_psd_floor": 8.362306713451474,
+            "resolved": true
+          },
+          "XLS-R+SLS vs CQCC-GMM": {
+            "delta_eer_pts": -27.215,
+            "V_speaker": 7.442663398148594,
+            "V_attack": 1.8142257667298893,
+            "V_speaker_attack_cell": 0.5096506878247329,
+            "V_raw_inclusion_exclusion": 8.74723847705375,
+            "V_psd_floor": 8.74723847705375,
+            "resolved": true
+          },
+          "XLSR-Conformer vs SSL-AASIST": {
+            "delta_eer_pts": -1.009,
+            "V_speaker": 0.2604261143936547,
+            "V_attack": 0.046703655164239896,
+            "V_speaker_attack_cell": 0.062314355647799156,
+            "V_raw_inclusion_exclusion": 0.24481541391009545,
+            "V_psd_floor": 0.2604261143936547,
+            "resolved": false
+          },
+          "XLSR-Conformer vs RawNet2": {
+            "delta_eer_pts": -29.955,
+            "V_speaker": 4.09727190222657,
+            "V_attack": 1.344037040414908,
+            "V_speaker_attack_cell": 0.2374321788080805,
+            "V_raw_inclusion_exclusion": 5.203876763833398,
+            "V_psd_floor": 5.203876763833398,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-LCNN": {
+            "delta_eer_pts": -28.988,
+            "V_speaker": 6.431569972755386,
+            "V_attack": 1.411988167647153,
+            "V_speaker_attack_cell": 0.5913071223007833,
+            "V_raw_inclusion_exclusion": 7.252251018101756,
+            "V_psd_floor": 7.252251018101756,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-GMM": {
+            "delta_eer_pts": -24.717,
+            "V_speaker": 6.543568593675642,
+            "V_attack": 1.0723603293232729,
+            "V_speaker_attack_cell": 0.20837421811390677,
+            "V_raw_inclusion_exclusion": 7.407554704885008,
+            "V_psd_floor": 7.407554704885008,
+            "resolved": true
+          },
+          "XLSR-Conformer vs CQCC-GMM": {
+            "delta_eer_pts": -26.319,
+            "V_speaker": 6.54833443601244,
+            "V_attack": 1.9164047359917828,
+            "V_speaker_attack_cell": 0.5225652605017589,
+            "V_raw_inclusion_exclusion": 7.942173911502463,
+            "V_psd_floor": 7.942173911502463,
+            "resolved": true
+          },
+          "SSL-AASIST vs RawNet2": {
+            "delta_eer_pts": -28.947,
+            "V_speaker": 4.470325426165993,
+            "V_attack": 1.4134231565646882,
+            "V_speaker_attack_cell": 0.264472207610104,
+            "V_raw_inclusion_exclusion": 5.619276375120577,
+            "V_psd_floor": 5.619276375120577,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-LCNN": {
+            "delta_eer_pts": -27.98,
+            "V_speaker": 7.080745398547268,
+            "V_attack": 1.4301172915235374,
+            "V_speaker_attack_cell": 0.6236037441009364,
+            "V_raw_inclusion_exclusion": 7.887258945969869,
+            "V_psd_floor": 7.887258945969869,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-GMM": {
+            "delta_eer_pts": -23.709,
+            "V_speaker": 6.847008685407681,
+            "V_attack": 0.9924118224533143,
+            "V_speaker_attack_cell": 0.18413460271900794,
+            "V_raw_inclusion_exclusion": 7.655285905141986,
+            "V_psd_floor": 7.655285905141986,
+            "resolved": true
+          },
+          "SSL-AASIST vs CQCC-GMM": {
+            "delta_eer_pts": -25.31,
+            "V_speaker": 6.604110983413523,
+            "V_attack": 1.7809079090846067,
+            "V_speaker_attack_cell": 0.5089508429982715,
+            "V_raw_inclusion_exclusion": 7.876068049499859,
+            "V_psd_floor": 7.876068049499859,
+            "resolved": true
+          },
+          "RawNet2 vs LFCC-LCNN": {
+            "delta_eer_pts": 0.967,
+            "V_speaker": 5.71936086270028,
+            "V_attack": 1.2322034647242346,
+            "V_speaker_attack_cell": 0.5755712946319864,
+            "V_raw_inclusion_exclusion": 6.375993032792528,
+            "V_psd_floor": 6.375993032792528,
+            "resolved": false
+          },
+          "RawNet2 vs LFCC-GMM": {
+            "delta_eer_pts": 5.238,
+            "V_speaker": 5.068472825264874,
+            "V_attack": 1.2859347945944457,
+            "V_speaker_attack_cell": 0.2757773496367928,
+            "V_raw_inclusion_exclusion": 6.0786302702225266,
+            "V_psd_floor": 6.0786302702225266,
+            "resolved": false
+          },
+          "RawNet2 vs CQCC-GMM": {
+            "delta_eer_pts": 3.636,
+            "V_speaker": 4.002448929136993,
+            "V_attack": 1.8609839415135947,
+            "V_speaker_attack_cell": 0.47276024778485126,
+            "V_raw_inclusion_exclusion": 5.390672622865736,
+            "V_psd_floor": 5.390672622865736,
+            "resolved": false
+          },
+          "LFCC-LCNN vs LFCC-GMM": {
+            "delta_eer_pts": 4.271,
+            "V_speaker": 1.1845291759487466,
+            "V_attack": 0.6655337068365194,
+            "V_speaker_attack_cell": 0.4054239155405661,
+            "V_raw_inclusion_exclusion": 1.4446389672447,
+            "V_psd_floor": 1.4446389672447,
+            "resolved": true
+          },
+          "LFCC-LCNN vs CQCC-GMM": {
+            "delta_eer_pts": 2.67,
+            "V_speaker": 2.0433735626009746,
+            "V_attack": 1.2151415967823542,
+            "V_speaker_attack_cell": 0.5597366375803081,
+            "V_raw_inclusion_exclusion": 2.6987785218030207,
+            "V_psd_floor": 2.6987785218030207,
+            "resolved": false
+          },
+          "LFCC-GMM vs CQCC-GMM": {
+            "delta_eer_pts": -1.602,
+            "V_speaker": 1.45659311508122,
+            "V_attack": 0.4479116257467106,
+            "V_speaker_attack_cell": 0.20812720962315798,
+            "V_raw_inclusion_exclusion": 1.6963775312047726,
+            "V_psd_floor": 1.6963775312047726,
+            "resolved": false
+          }
+        }
+      },
+      "vcc2018": {
+        "n_speakers_kept": 81,
+        "n_attacks_kept": 72,
+        "n_observed_cells_kept": 916,
+        "q95_gaussian_exact_cell_max_t": 2.8267185996649147,
+        "q_draws": 200000,
+        "q_seed_components": [
+          20260822,
+          900,
+          1
+        ],
+        "raw_system_covariance_eigenvalues": [
+          0.000984228334111209,
+          0.004625483592267687,
+          0.028031002819990186,
+          0.16891664353881314,
+          0.38029178427921745,
+          0.7257090320097234,
+          3.0520810663147624,
+          12.733129573505728
+        ],
+        "pairs": {
+          "XLSR-Mamba vs XLS-R+SLS": {
+            "delta_eer_pts": 0.172,
+            "V_speaker": 0.007022177122118167,
+            "V_attack": 0.009932129582854079,
+            "V_speaker_attack_cell": 0.006282361731441778,
+            "V_raw_inclusion_exclusion": 0.010671944973530467,
+            "V_psd_floor": 0.010671944973530467,
+            "resolved": false
+          },
+          "XLSR-Mamba vs XLSR-Conformer": {
+            "delta_eer_pts": -0.297,
+            "V_speaker": 0.018969912919811156,
+            "V_attack": 0.013376502195993241,
+            "V_speaker_attack_cell": 0.006836553938557989,
+            "V_raw_inclusion_exclusion": 0.025509861177246407,
+            "V_psd_floor": 0.025509861177246407,
+            "resolved": false
+          },
+          "XLSR-Mamba vs SSL-AASIST": {
+            "delta_eer_pts": -0.27,
+            "V_speaker": 0.023539725422335896,
+            "V_attack": 0.008801273265014495,
+            "V_speaker_attack_cell": 0.00813971249174073,
+            "V_raw_inclusion_exclusion": 0.024201286195609663,
+            "V_psd_floor": 0.024201286195609663,
+            "resolved": false
+          },
+          "XLSR-Mamba vs RawNet2": {
+            "delta_eer_pts": -16.223,
+            "V_speaker": 6.862189765639251,
+            "V_attack": 0.8319351386948054,
+            "V_speaker_attack_cell": 0.14192671493360182,
+            "V_raw_inclusion_exclusion": 7.552198189400455,
+            "V_psd_floor": 7.552198189400455,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-LCNN": {
+            "delta_eer_pts": -18.423,
+            "V_speaker": 3.495373350935718,
+            "V_attack": 0.8401597329943636,
+            "V_speaker_attack_cell": 0.1587196260759539,
+            "V_raw_inclusion_exclusion": 4.176813457854127,
+            "V_psd_floor": 4.176813457854127,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-GMM": {
+            "delta_eer_pts": -24.313,
+            "V_speaker": 1.354441700444189,
+            "V_attack": 1.261253038505617,
+            "V_speaker_attack_cell": 0.5318430480349049,
+            "V_raw_inclusion_exclusion": 2.0838516909149014,
+            "V_psd_floor": 2.0838516909149014,
+            "resolved": true
+          },
+          "XLSR-Mamba vs CQCC-GMM": {
+            "delta_eer_pts": -23.23,
+            "V_speaker": 1.6348772608993225,
+            "V_attack": 0.9963362892851534,
+            "V_speaker_attack_cell": 0.1993933250724078,
+            "V_raw_inclusion_exclusion": 2.431820225112068,
+            "V_psd_floor": 2.431820225112068,
+            "resolved": true
+          },
+          "XLS-R+SLS vs XLSR-Conformer": {
+            "delta_eer_pts": -0.469,
+            "V_speaker": 0.025485276344402816,
+            "V_attack": 0.025704421828480966,
+            "V_speaker_attack_cell": 0.0040320099671347105,
+            "V_raw_inclusion_exclusion": 0.047157688205749074,
+            "V_psd_floor": 0.047157688205749074,
+            "resolved": false
+          },
+          "XLS-R+SLS vs SSL-AASIST": {
+            "delta_eer_pts": -0.442,
+            "V_speaker": 0.011542531662047873,
+            "V_attack": 0.009409384151907531,
+            "V_speaker_attack_cell": 0.003071967249961438,
+            "V_raw_inclusion_exclusion": 0.017879948563993966,
+            "V_psd_floor": 0.017879948563993966,
+            "resolved": true
+          },
+          "XLS-R+SLS vs RawNet2": {
+            "delta_eer_pts": -16.395,
+            "V_speaker": 6.759685387451748,
+            "V_attack": 0.7903336861112532,
+            "V_speaker_attack_cell": 0.14236357834370458,
+            "V_raw_inclusion_exclusion": 7.407655495219297,
+            "V_psd_floor": 7.407655495219297,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-LCNN": {
+            "delta_eer_pts": -18.595,
+            "V_speaker": 3.478682915651553,
+            "V_attack": 0.8103030341278159,
+            "V_speaker_attack_cell": 0.16807464373945907,
+            "V_raw_inclusion_exclusion": 4.120911306039909,
+            "V_psd_floor": 4.120911306039909,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-GMM": {
+            "delta_eer_pts": -24.485,
+            "V_speaker": 1.39026158652469,
+            "V_attack": 1.2755539720434321,
+            "V_speaker_attack_cell": 0.5245881140574065,
+            "V_raw_inclusion_exclusion": 2.141227444510715,
+            "V_psd_floor": 2.141227444510715,
+            "resolved": true
+          },
+          "XLS-R+SLS vs CQCC-GMM": {
+            "delta_eer_pts": -23.402,
+            "V_speaker": 1.6653548562243368,
+            "V_attack": 0.9382230662000267,
+            "V_speaker_attack_cell": 0.19228181475683465,
+            "V_raw_inclusion_exclusion": 2.4112961076675288,
+            "V_psd_floor": 2.4112961076675288,
+            "resolved": true
+          },
+          "XLSR-Conformer vs SSL-AASIST": {
+            "delta_eer_pts": 0.027,
+            "V_speaker": 0.0292818156686117,
+            "V_attack": 0.028910012257689292,
+            "V_speaker_attack_cell": 0.004683059998238498,
+            "V_raw_inclusion_exclusion": 0.0535087679280625,
+            "V_psd_floor": 0.0535087679280625,
+            "resolved": false
+          },
+          "XLSR-Conformer vs RawNet2": {
+            "delta_eer_pts": -15.926,
+            "V_speaker": 6.505140453744534,
+            "V_attack": 0.7364131018751856,
+            "V_speaker_attack_cell": 0.1361194570727984,
+            "V_raw_inclusion_exclusion": 7.1054340985469215,
+            "V_psd_floor": 7.1054340985469215,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-LCNN": {
+            "delta_eer_pts": -18.126,
+            "V_speaker": 3.240161289229415,
+            "V_attack": 0.7577574888974032,
+            "V_speaker_attack_cell": 0.16756679258839646,
+            "V_raw_inclusion_exclusion": 3.830351985538422,
+            "V_psd_floor": 3.830351985538422,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-GMM": {
+            "delta_eer_pts": -24.016,
+            "V_speaker": 1.3312816972148092,
+            "V_attack": 1.2492184486135065,
+            "V_speaker_attack_cell": 0.5271602447811612,
+            "V_raw_inclusion_exclusion": 2.0533399010471545,
+            "V_psd_floor": 2.0533399010471545,
+            "resolved": true
+          },
+          "XLSR-Conformer vs CQCC-GMM": {
+            "delta_eer_pts": -22.933,
+            "V_speaker": 1.5687817306995357,
+            "V_attack": 0.9756144178276088,
+            "V_speaker_attack_cell": 0.199689363771543,
+            "V_raw_inclusion_exclusion": 2.344706784755602,
+            "V_psd_floor": 2.344706784755602,
+            "resolved": true
+          },
+          "SSL-AASIST vs RawNet2": {
+            "delta_eer_pts": -15.953,
+            "V_speaker": 6.494067804254184,
+            "V_attack": 0.8515722529373303,
+            "V_speaker_attack_cell": 0.14665851289997725,
+            "V_raw_inclusion_exclusion": 7.198981544291538,
+            "V_psd_floor": 7.198981544291538,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-LCNN": {
+            "delta_eer_pts": -18.153,
+            "V_speaker": 3.2793149295041166,
+            "V_attack": 0.8563713899994356,
+            "V_speaker_attack_cell": 0.17049932321047684,
+            "V_raw_inclusion_exclusion": 3.9651869962930753,
+            "V_psd_floor": 3.9651869962930753,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-GMM": {
+            "delta_eer_pts": -24.043,
+            "V_speaker": 1.3943576571318679,
+            "V_attack": 1.274090343854219,
+            "V_speaker_attack_cell": 0.521473576616559,
+            "V_raw_inclusion_exclusion": 2.146974424369528,
+            "V_psd_floor": 2.146974424369528,
+            "resolved": true
+          },
+          "SSL-AASIST vs CQCC-GMM": {
+            "delta_eer_pts": -22.96,
+            "V_speaker": 1.6074121978977423,
+            "V_attack": 0.9719349923560829,
+            "V_speaker_attack_cell": 0.1943794954644462,
+            "V_raw_inclusion_exclusion": 2.3849676947893794,
+            "V_psd_floor": 2.3849676947893794,
+            "resolved": true
+          },
+          "RawNet2 vs LFCC-LCNN": {
+            "delta_eer_pts": -2.2,
+            "V_speaker": 1.474804740392035,
+            "V_attack": 0.3119255869878146,
+            "V_speaker_attack_cell": 0.1748189039753505,
+            "V_raw_inclusion_exclusion": 1.611911423404499,
+            "V_psd_floor": 1.611911423404499,
+            "resolved": false
+          },
+          "RawNet2 vs LFCC-GMM": {
+            "delta_eer_pts": -8.09,
+            "V_speaker": 7.432830965923329,
+            "V_attack": 1.793824084891356,
+            "V_speaker_attack_cell": 0.5567362021456684,
+            "V_raw_inclusion_exclusion": 8.669918848669017,
+            "V_psd_floor": 8.669918848669017,
+            "resolved": false
+          },
+          "RawNet2 vs CQCC-GMM": {
+            "delta_eer_pts": -7.007,
+            "V_speaker": 4.915872688377588,
+            "V_attack": 1.1677739622674896,
+            "V_speaker_attack_cell": 0.2641418270303658,
+            "V_raw_inclusion_exclusion": 5.819504823614712,
+            "V_psd_floor": 5.819504823614712,
+            "resolved": true
+          },
+          "LFCC-LCNN vs LFCC-GMM": {
+            "delta_eer_pts": -5.89,
+            "V_speaker": 3.535299127826847,
+            "V_attack": 1.199768450771604,
+            "V_speaker_attack_cell": 0.41516191252265566,
+            "V_raw_inclusion_exclusion": 4.319905666075795,
+            "V_psd_floor": 4.319905666075795,
+            "resolved": true
+          },
+          "LFCC-LCNN vs CQCC-GMM": {
+            "delta_eer_pts": -4.807,
+            "V_speaker": 1.9362269749776575,
+            "V_attack": 0.956831065509069,
+            "V_speaker_attack_cell": 0.25164868576666916,
+            "V_raw_inclusion_exclusion": 2.6414093547200577,
+            "V_psd_floor": 2.6414093547200577,
+            "resolved": true
+          },
+          "LFCC-GMM vs CQCC-GMM": {
+            "delta_eer_pts": 1.083,
+            "V_speaker": 1.2531221812687177,
+            "V_attack": 0.772778892233913,
+            "V_speaker_attack_cell": 0.27574775802972007,
+            "V_raw_inclusion_exclusion": 1.7501533154729108,
+            "V_psd_floor": 1.7501533154729108,
+            "resolved": false
+          }
+        }
+      },
+      "vcc2020": {
+        "n_speakers_kept": 79,
+        "n_attacks_kept": 51,
+        "n_observed_cells_kept": 770,
+        "q95_gaussian_exact_cell_max_t": 2.887590271041335,
+        "q_draws": 200000,
+        "q_seed_components": [
+          20260822,
+          900,
+          2
+        ],
+        "raw_system_covariance_eigenvalues": [
+          0.017279550370015186,
+          0.06532949092068582,
+          0.14832576482158633,
+          0.4506303942389374,
+          0.8699420330650807,
+          1.0738830338533114,
+          5.275497357337795,
+          15.86233173107711
+        ],
+        "pairs": {
+          "XLSR-Mamba vs XLS-R+SLS": {
+            "delta_eer_pts": -0.495,
+            "V_speaker": 0.04943159806689487,
+            "V_attack": 0.12992372347460443,
+            "V_speaker_attack_cell": 0.012063965389112807,
+            "V_raw_inclusion_exclusion": 0.1672913561523865,
+            "V_psd_floor": 0.1672913561523865,
+            "resolved": false
+          },
+          "XLSR-Mamba vs XLSR-Conformer": {
+            "delta_eer_pts": -0.34,
+            "V_speaker": 0.12002851835964837,
+            "V_attack": 0.11815041003353438,
+            "V_speaker_attack_cell": 0.006228771122928733,
+            "V_raw_inclusion_exclusion": 0.231950157270254,
+            "V_psd_floor": 0.231950157270254,
+            "resolved": false
+          },
+          "XLSR-Mamba vs SSL-AASIST": {
+            "delta_eer_pts": -1.254,
+            "V_speaker": 0.1195922382655353,
+            "V_attack": 0.050583535395770596,
+            "V_speaker_attack_cell": 0.004857274169724796,
+            "V_raw_inclusion_exclusion": 0.16531849949158112,
+            "V_psd_floor": 0.16531849949158112,
+            "resolved": true
+          },
+          "XLSR-Mamba vs RawNet2": {
+            "delta_eer_pts": -15.401,
+            "V_speaker": 4.250871791632384,
+            "V_attack": 1.6688284308093038,
+            "V_speaker_attack_cell": 0.2553153454009953,
+            "V_raw_inclusion_exclusion": 5.664384877040692,
+            "V_psd_floor": 5.664384877040692,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-LCNN": {
+            "delta_eer_pts": -17.672,
+            "V_speaker": 3.963990420458587,
+            "V_attack": 1.1834193063360496,
+            "V_speaker_attack_cell": 0.04217194549599564,
+            "V_raw_inclusion_exclusion": 5.105237781298641,
+            "V_psd_floor": 5.105237781298641,
+            "resolved": true
+          },
+          "XLSR-Mamba vs LFCC-GMM": {
+            "delta_eer_pts": -19.677,
+            "V_speaker": 2.6358003392660985,
+            "V_attack": 2.363751981662086,
+            "V_speaker_attack_cell": 0.4258162992396351,
+            "V_raw_inclusion_exclusion": 4.57373602168855,
+            "V_psd_floor": 4.57373602168855,
+            "resolved": true
+          },
+          "XLSR-Mamba vs CQCC-GMM": {
+            "delta_eer_pts": -20.164,
+            "V_speaker": 1.9411814088891775,
+            "V_attack": 0.9232253109042827,
+            "V_speaker_attack_cell": 0.07548401965652665,
+            "V_raw_inclusion_exclusion": 2.7889227001369337,
+            "V_psd_floor": 2.7889227001369337,
+            "resolved": true
+          },
+          "XLS-R+SLS vs XLSR-Conformer": {
+            "delta_eer_pts": 0.155,
+            "V_speaker": 0.11174417628434441,
+            "V_attack": 0.23240252355728258,
+            "V_speaker_attack_cell": 0.011772596773884588,
+            "V_raw_inclusion_exclusion": 0.3323741030677424,
+            "V_psd_floor": 0.3323741030677424,
+            "resolved": false
+          },
+          "XLS-R+SLS vs SSL-AASIST": {
+            "delta_eer_pts": -0.76,
+            "V_speaker": 0.040552658660260976,
+            "V_attack": 0.18263462858045343,
+            "V_speaker_attack_cell": 0.01031460546341032,
+            "V_raw_inclusion_exclusion": 0.2128726817773041,
+            "V_psd_floor": 0.2128726817773041,
+            "resolved": false
+          },
+          "XLS-R+SLS vs RawNet2": {
+            "delta_eer_pts": -14.906,
+            "V_speaker": 4.076651972638344,
+            "V_attack": 1.3128304611956452,
+            "V_speaker_attack_cell": 0.23321300153640898,
+            "V_raw_inclusion_exclusion": 5.15626943229758,
+            "V_psd_floor": 5.15626943229758,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-LCNN": {
+            "delta_eer_pts": -17.177,
+            "V_speaker": 3.725172426565046,
+            "V_attack": 0.8485620161567335,
+            "V_speaker_attack_cell": 0.039738779823762484,
+            "V_raw_inclusion_exclusion": 4.5339956628980165,
+            "V_psd_floor": 4.5339956628980165,
+            "resolved": true
+          },
+          "XLS-R+SLS vs LFCC-GMM": {
+            "delta_eer_pts": -19.183,
+            "V_speaker": 2.5362535061033267,
+            "V_attack": 2.10537040863104,
+            "V_speaker_attack_cell": 0.3825343232141111,
+            "V_raw_inclusion_exclusion": 4.259089591520255,
+            "V_psd_floor": 4.259089591520255,
+            "resolved": true
+          },
+          "XLS-R+SLS vs CQCC-GMM": {
+            "delta_eer_pts": -19.669,
+            "V_speaker": 1.8768987646863013,
+            "V_attack": 0.6175180615842379,
+            "V_speaker_attack_cell": 0.06937409164937662,
+            "V_raw_inclusion_exclusion": 2.4250427346211625,
+            "V_psd_floor": 2.4250427346211625,
+            "resolved": true
+          },
+          "XLSR-Conformer vs SSL-AASIST": {
+            "delta_eer_pts": -0.914,
+            "V_speaker": 0.10743461718333802,
+            "V_attack": 0.14515865473636552,
+            "V_speaker_attack_cell": 0.006586441086376762,
+            "V_raw_inclusion_exclusion": 0.24600683083332678,
+            "V_psd_floor": 0.24600683083332678,
+            "resolved": false
+          },
+          "XLSR-Conformer vs RawNet2": {
+            "delta_eer_pts": -15.061,
+            "V_speaker": 3.703853922051565,
+            "V_attack": 1.579142620453145,
+            "V_speaker_attack_cell": 0.24120790142994647,
+            "V_raw_inclusion_exclusion": 5.041788641074763,
+            "V_psd_floor": 5.041788641074763,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-LCNN": {
+            "delta_eer_pts": -17.332,
+            "V_speaker": 3.347177795087192,
+            "V_attack": 1.0770608630392833,
+            "V_speaker_attack_cell": 0.04092165868728864,
+            "V_raw_inclusion_exclusion": 4.383316999439186,
+            "V_psd_floor": 4.383316999439186,
+            "resolved": true
+          },
+          "XLSR-Conformer vs LFCC-GMM": {
+            "delta_eer_pts": -19.337,
+            "V_speaker": 2.4370764152042588,
+            "V_attack": 2.1640569260867673,
+            "V_speaker_attack_cell": 0.40552153271757796,
+            "V_raw_inclusion_exclusion": 4.195611808573449,
+            "V_psd_floor": 4.195611808573449,
+            "resolved": true
+          },
+          "XLSR-Conformer vs CQCC-GMM": {
+            "delta_eer_pts": -19.824,
+            "V_speaker": 1.8096412196950586,
+            "V_attack": 0.9254522926600712,
+            "V_speaker_attack_cell": 0.0699691611888209,
+            "V_raw_inclusion_exclusion": 2.665124351166309,
+            "V_psd_floor": 2.665124351166309,
+            "resolved": true
+          },
+          "SSL-AASIST vs RawNet2": {
+            "delta_eer_pts": -14.146,
+            "V_speaker": 3.7003337621294867,
+            "V_attack": 1.9281048246513417,
+            "V_speaker_attack_cell": 0.2637633403891807,
+            "V_raw_inclusion_exclusion": 5.364675246391648,
+            "V_psd_floor": 5.364675246391648,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-LCNN": {
+            "delta_eer_pts": -16.418,
+            "V_speaker": 3.200217353086464,
+            "V_attack": 1.2409695871382493,
+            "V_speaker_attack_cell": 0.04155772968568592,
+            "V_raw_inclusion_exclusion": 4.399629210539027,
+            "V_psd_floor": 4.399629210539027,
+            "resolved": true
+          },
+          "SSL-AASIST vs LFCC-GMM": {
+            "delta_eer_pts": -18.423,
+            "V_speaker": 2.2298589019800925,
+            "V_attack": 2.2380326056265227,
+            "V_speaker_attack_cell": 0.4296498081236758,
+            "V_raw_inclusion_exclusion": 4.038241699482939,
+            "V_psd_floor": 4.038241699482939,
+            "resolved": true
+          },
+          "SSL-AASIST vs CQCC-GMM": {
+            "delta_eer_pts": -18.909,
+            "V_speaker": 1.6933244069978617,
+            "V_attack": 0.9157656693395224,
+            "V_speaker_attack_cell": 0.07610674400626387,
+            "V_raw_inclusion_exclusion": 2.53298333233112,
+            "V_psd_floor": 2.53298333233112,
+            "resolved": true
+          },
+          "RawNet2 vs LFCC-LCNN": {
+            "delta_eer_pts": -2.271,
+            "V_speaker": 1.966866399365482,
+            "V_attack": 0.8950124402000492,
+            "V_speaker_attack_cell": 0.22749465208844621,
+            "V_raw_inclusion_exclusion": 2.6343841874770852,
+            "V_psd_floor": 2.6343841874770852,
+            "resolved": false
+          },
+          "RawNet2 vs LFCC-GMM": {
+            "delta_eer_pts": -4.277,
+            "V_speaker": 6.564346432269364,
+            "V_attack": 2.5479058380125803,
+            "V_speaker_attack_cell": 0.3206239679097544,
+            "V_raw_inclusion_exclusion": 8.79162830237219,
+            "V_psd_floor": 8.79162830237219,
+            "resolved": false
+          },
+          "RawNet2 vs CQCC-GMM": {
+            "delta_eer_pts": -4.763,
+            "V_speaker": 4.443335080209952,
+            "V_attack": 1.1851188874440595,
+            "V_speaker_attack_cell": 0.18402008046904722,
+            "V_raw_inclusion_exclusion": 5.444433887184965,
+            "V_psd_floor": 5.444433887184965,
+            "resolved": false
+          },
+          "LFCC-LCNN vs LFCC-GMM": {
+            "delta_eer_pts": -2.005,
+            "V_speaker": 3.30185172987606,
+            "V_attack": 1.559235214549607,
+            "V_speaker_attack_cell": 0.3754618443851605,
+            "V_raw_inclusion_exclusion": 4.485625100040506,
+            "V_psd_floor": 4.485625100040506,
+            "resolved": false
+          },
+          "LFCC-LCNN vs CQCC-GMM": {
+            "delta_eer_pts": -2.492,
+            "V_speaker": 2.6401881850914597,
+            "V_attack": 0.6032262401797891,
+            "V_speaker_attack_cell": 0.07913873764594223,
+            "V_raw_inclusion_exclusion": 3.164275687625307,
+            "V_psd_floor": 3.164275687625307,
+            "resolved": false
+          },
+          "LFCC-GMM vs CQCC-GMM": {
+            "delta_eer_pts": -0.487,
+            "V_speaker": 0.9536439802789443,
+            "V_attack": 0.8381536499586659,
+            "V_speaker_attack_cell": 0.26121886421549273,
+            "V_raw_inclusion_exclusion": 1.5305787660221175,
+            "V_psd_floor": 1.5305787660221175,
+            "resolved": false
+          }
+        }
+      }
+    },
+    "verdict_flips_vs_full_data": [
+      {
+        "pair": "XLSR-Mamba vs SSL-AASIST",
+        "dropped_corpus": "vcc2018",
+        "full_data": true,
+        "refit": false
+      },
+      {
+        "pair": "XLS-R+SLS vs SSL-AASIST",
+        "dropped_corpus": "vcc2020",
+        "full_data": true,
+        "refit": false
+      },
+      {
+        "pair": "RawNet2 vs CQCC-GMM",
+        "dropped_corpus": "vcc2018",
+        "full_data": false,
+        "refit": true
+      },
+      {
+        "pair": "LFCC-LCNN vs LFCC-GMM",
+        "dropped_corpus": "asvspoof",
+        "full_data": false,
+        "refit": true
+      },
+      {
+        "pair": "LFCC-LCNN vs LFCC-GMM",
+        "dropped_corpus": "vcc2018",
+        "full_data": false,
+        "refit": true
+      },
+      {
+        "pair": "LFCC-LCNN vs CQCC-GMM",
+        "dropped_corpus": "vcc2018",
+        "full_data": false,
+        "refit": true
+      }
+    ],
+    "n_flips": 6
+  },
+  "summary": {
+    "between_source_share_range": [
+      0.091,
+      0.482
+    ],
+    "median": 0.257,
+    "reading": "a substantial share of the measured finite-A delete-speaker sum of squares is between three recording provenances. This is descriptive: speaker-by-attack interaction is not separated and no speaker-count or attack-count asymptote is inferred."
+  }
+}

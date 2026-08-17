@@ -1,0 +1,177 @@
+{
+  "B_bootstrap": 4000,
+  "seed": 20260820,
+  "n_speakers": 93,
+  "method": "resample the 93 delete-one-speaker deviations with replacement; recompute the finite-A component width = 2*z*sqrt(V_spk); gap held at its point estimate; no A-to-infinity interpretation",
+  "_input_provenance_sha256": {
+    "results_floor.json": "d92372f10e555bc7"
+  },
+  "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+      "block": "within-modern",
+      "gap": 0.032,
+      "finite_A_component_point": 0.655,
+      "finite_A_component_ci95": [
+        0.409,
+        0.877
+      ],
+      "half_finite_A_component_point": 0.328,
+      "p_gap_below_half_finite_A_component": 1.0,
+      "resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "block": "within-modern",
+      "gap": 0.389,
+      "finite_A_component_point": 1.167,
+      "finite_A_component_ci95": [
+        0.393,
+        1.883
+      ],
+      "half_finite_A_component_point": 0.584,
+      "p_gap_below_half_finite_A_component": 0.643,
+      "resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+      "block": "within-modern",
+      "gap": 0.968,
+      "finite_A_component_point": 1.113,
+      "finite_A_component_ci95": [
+        0.625,
+        1.503
+      ],
+      "half_finite_A_component_point": 0.556,
+      "p_gap_below_half_finite_A_component": 0.0,
+      "resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "block": "within-modern",
+      "gap": 0.357,
+      "finite_A_component_point": 1.215,
+      "finite_A_component_ci95": [
+        0.64,
+        1.819
+      ],
+      "half_finite_A_component_point": 0.608,
+      "p_gap_below_half_finite_A_component": 0.916,
+      "resolved_simultaneous": false
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+      "block": "within-modern",
+      "gap": 0.935,
+      "finite_A_component_point": 0.889,
+      "finite_A_component_ci95": [
+        0.602,
+        1.171
+      ],
+      "half_finite_A_component_point": 0.445,
+      "p_gap_below_half_finite_A_component": 0.0,
+      "resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "block": "within-modern",
+      "gap": 0.578,
+      "finite_A_component_point": 1.082,
+      "finite_A_component_ci95": [
+        0.668,
+        1.427
+      ],
+      "half_finite_A_component_point": 0.541,
+      "p_gap_below_half_finite_A_component": 0.312,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "block": "within-baseline",
+      "gap": 1.094,
+      "finite_A_component_point": 5.273,
+      "finite_A_component_ci95": [
+        4.053,
+        6.334
+      ],
+      "half_finite_A_component_point": 2.636,
+      "p_gap_below_half_finite_A_component": 1.0,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs LFCC-GMM": {
+      "block": "within-baseline",
+      "gap": 2.864,
+      "finite_A_component_point": 8.135,
+      "finite_A_component_ci95": [
+        6.228,
+        9.658
+      ],
+      "half_finite_A_component_point": 4.067,
+      "p_gap_below_half_finite_A_component": 0.995,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs CQCC-GMM": {
+      "block": "within-baseline",
+      "gap": 3.18,
+      "finite_A_component_point": 6.982,
+      "finite_A_component_ci95": [
+        5.504,
+        8.153
+      ],
+      "half_finite_A_component_point": 3.491,
+      "p_gap_below_half_finite_A_component": 0.794,
+      "resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+      "block": "within-baseline",
+      "gap": 1.77,
+      "finite_A_component_point": 4.452,
+      "finite_A_component_ci95": [
+        3.476,
+        5.275
+      ],
+      "half_finite_A_component_point": 2.226,
+      "p_gap_below_half_finite_A_component": 0.964,
+      "resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+      "block": "within-baseline",
+      "gap": 2.086,
+      "finite_A_component_point": 3.864,
+      "finite_A_component_ci95": [
+        2.915,
+        4.786
+      ],
+      "half_finite_A_component_point": 1.932,
+      "p_gap_below_half_finite_A_component": 0.226,
+      "resolved_simultaneous": false
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+      "block": "within-baseline",
+      "gap": 0.316,
+      "finite_A_component_point": 3.085,
+      "finite_A_component_ci95": [
+        2.42,
+        3.646
+      ],
+      "half_finite_A_component_point": 1.542,
+      "p_gap_below_half_finite_A_component": 1.0,
+      "resolved_simultaneous": false
+    }
+  },
+  "summary": {
+    "n_unresolved_pairs": 10,
+    "point_estimate_count_below_half_finite_A_component": 8,
+    "bootstrap_count_median": 8,
+    "bootstrap_count_ci95": [
+      5,
+      10
+    ],
+    "p_at_least_8_of_10": 0.647,
+    "p_at_least_6_of_10": 0.968,
+    "p_at_least_5_of_10": 0.997,
+    "count_distribution": {
+      "3": 2,
+      "4": 10,
+      "5": 115,
+      "6": 388,
+      "7": 898,
+      "8": 1357,
+      "9": 991,
+      "10": 239
+    }
+  }
+}

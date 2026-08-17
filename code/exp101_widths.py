@@ -110,7 +110,7 @@ def main():
         entry["width_scaling_exponent"] = round(gamma, 3)
         print(f"[{key}] width ~ A^-{gamma:.2f} over the observed range", flush=True)
 
-    out = Path(__file__).parent / "results_widths.json"
+    out = Path(__file__).parent.parent / "derived" / "results_widths.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out} in {(time.time()-t0)/60:.1f} min")
 

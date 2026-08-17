@@ -1,3 +1,12 @@
-audit_package/
 __pycache__/
 *.pyc
+audit-regenerated/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+regenerated/
+inputs/

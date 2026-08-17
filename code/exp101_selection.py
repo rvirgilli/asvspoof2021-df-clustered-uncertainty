@@ -249,7 +249,7 @@ def main():
                "note": "certified variants after audit: two-way percentile + two-way jackknife"}
     results["21df"] = analyse("21df", *load_21df())
     results["itw"] = analyse("itw", *load_itw())
-    out = Path(__file__).parent / "results_selection.json"
+    out = Path(__file__).parent.parent / "derived" / "results_selection.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

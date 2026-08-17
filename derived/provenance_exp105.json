@@ -1,0 +1,29 @@
+{
+  "purpose": "Preserve the byte identities of the completed internal-layout EXP-105 campaign and the released path-adapted public code without conflating them.",
+  "historical_campaign_code_sha256": {
+    "coverage_interaction.py": "570727728b78300d30371a4c0e163f7d4d72028ccc006cc02c85a6a6c53b40ef",
+    "recalibrate_truth.py": "18ef7a5fc2be641a10bd8b073c9020f71710c1f17d20b169e6d8037822feca29",
+    "verify_crosspath_gate.py": "dde53df8d353eb997569f3712e488b467fd659089472270b8ac7dc4383e9828f",
+    "diagnose_low_eer.py": "a804455f1957a8ff2949b5dc6a949c6dac2a1a5ab13fb5ec221d7e78d5fb06e0",
+    "aggregate_verified.py": "b99a92dc74bf1d6347093cd5a0579490ad01c9cdbf2e7a975942fa83ad2bfe91",
+    "power_curves.py": "563b505030fb40a9ed893f4d30011d07942c5e8f930d682a38e12ed8f2ae670f",
+    "analyze_multiway.py": "e89d3836588b561035ad5bee36fbf0b989ae841b85aae550328921cb14f0ddd4"
+  },
+  "released_path_adapted_code_sha256": {
+    "coverage_interaction.py": "57460c9e167d52d9239427d92a0dfdfedc4e6e090293280d4109d694c049c8fe",
+    "recalibrate_truth.py": "2ab923a08b8219932ac1c6721da46f4f70df2e43101bc0e03d8d8165eea31e12",
+    "verify_crosspath_gate.py": "a26b5658c117ecdf11f2ab0878ff9a8693ad69cb1e31d7e50c7e5ee331b58bda",
+    "diagnose_low_eer.py": "566b82de342def189f45665b31d58a5ba6c8db8c0ab44467534d59fc6256fb86",
+    "aggregate_verified.py": "5f83fef6484545de9222697cc7f34f95e2e8d8f3aca821a339d2363a7298a14f",
+    "power_curves.py": "fad35b1ec692a7976166446de84a4d0f2755b9bd32db39a81cf4ec3eb0be387a",
+    "analyze_multiway.py": "18acc43663cedb48e665ec24b732b63c7f08619d38f29f1114f227e9c73e0796"
+  },
+  "canonical_artifact_sha256": {
+    "results_coverage_interaction.json": "ec261bee657b19551bf64d87415fa72043eddb5c17814f879041541d5f6bf751",
+    "results_coverage_interaction_recalibrated.json": "259f382e100488b36ce2e1d672718e6cada576b49805e3e9363b840cd9495c74",
+    "results_crosspath_gate.json": "4b82b8ef74675745813cd579b288777be22857b330a7f7924854877fbe970a60",
+    "results_coverage_diagnostics.json": "ddf290ba12f37b646db646a9129540b65a57881121fb8b3fdd23e7405d07609c",
+    "results_exp105_verified.json": "83653a5e2da338f3884926d6cc26f0db2711cb83d3ae0749f94ca0949f63c4a6",
+    "results_multiway_real.json": "bf00c3a9848a428d886e5686b5714fb548573fad2384c9a93a7c697250bd38fd"
+  }
+}

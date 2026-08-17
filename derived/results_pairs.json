@@ -1,0 +1,429 @@
+{
+  "_SUPERSEDED_FIELDS_2026-08-14": "'variance_components' is NOT an ICC (unweighted variance of group means over trial-level total variance; the file contains a structurally impossible icc_spk = 1.099). Superseded by results_icc.json (one-way ANOVA ICC). 'pigeonhole' CIs are withdrawn (see results_contingency.json); twoway/jackknife/naive CIs, deltas and verdicts in this file stand and are unaffected.",
+  "21df": {
+    "pooled_eer": {
+      "XLSR-Mamba": 1.884,
+      "XLS-R+SLS": 1.916,
+      "XLSR-Conformer": 2.273,
+      "SSL-AASIST": 2.852,
+      "RawNet2": 22.383,
+      "LFCC-LCNN": 23.477,
+      "LFCC-GMM": 25.247,
+      "CQCC-GMM": 25.563
+    },
+    "pairs": {
+      "XLSR-Mamba vs XLS-R+SLS": {
+        "delta_eer_pts": -0.032,
+        "naive": [
+          -0.108,
+          0.045
+        ],
+        "twoway": [
+          -0.611,
+          0.336
+        ],
+        "pigeonhole": [
+          -0.488,
+          0.424
+        ],
+        "jackknife": [
+          -0.528,
+          0.463
+        ],
+        "width_ratio_twoway": 6.19,
+        "ztest": {
+          "z": -0.4,
+          "p": 0.689
+        },
+        "perm_p": 0.9171,
+        "fixed_set_resolved": false,
+        "generalization_resolved_consensus": false
+      },
+      "XLS-R+SLS vs XLSR-Conformer": {
+        "delta_eer_pts": -0.357,
+        "naive": [
+          -0.489,
+          -0.244
+        ],
+        "twoway": [
+          -1.081,
+          0.414
+        ],
+        "pigeonhole": [
+          -1.093,
+          0.379
+        ],
+        "jackknife": [
+          -1.09,
+          0.376
+        ],
+        "width_ratio_twoway": 6.12,
+        "ztest": {
+          "z": -4.24,
+          "p": 0.0
+        },
+        "perm_p": 0.2258,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "XLSR-Conformer vs SSL-AASIST": {
+        "delta_eer_pts": -0.578,
+        "naive": [
+          -0.769,
+          -0.416
+        ],
+        "twoway": [
+          -1.261,
+          0.052
+        ],
+        "pigeonhole": [
+          -1.238,
+          0.081
+        ],
+        "jackknife": [
+          -1.186,
+          0.03
+        ],
+        "width_ratio_twoway": 3.72,
+        "ztest": {
+          "z": -6.22,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "SSL-AASIST vs RawNet2": {
+        "delta_eer_pts": -19.532,
+        "naive": [
+          -19.941,
+          -19.173
+        ],
+        "twoway": [
+          -23.713,
+          -15.123
+        ],
+        "pigeonhole": [
+          -23.661,
+          -15.402
+        ],
+        "jackknife": [
+          -23.482,
+          -15.582
+        ],
+        "width_ratio_twoway": 11.19,
+        "ztest": {
+          "z": -104.64,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": true
+      },
+      "RawNet2 vs LFCC-LCNN": {
+        "delta_eer_pts": -1.094,
+        "naive": [
+          -1.495,
+          -0.688
+        ],
+        "twoway": [
+          -4.074,
+          1.668
+        ],
+        "pigeonhole": [
+          -4.012,
+          1.825
+        ],
+        "jackknife": [
+          -4.04,
+          1.852
+        ],
+        "width_ratio_twoway": 7.12,
+        "ztest": {
+          "z": -4.42,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "LFCC-LCNN vs LFCC-GMM": {
+        "delta_eer_pts": -1.77,
+        "naive": [
+          -2.222,
+          -1.362
+        ],
+        "twoway": [
+          -5.433,
+          0.788
+        ],
+        "pigeonhole": [
+          -4.791,
+          1.251
+        ],
+        "jackknife": [
+          -4.379,
+          0.839
+        ],
+        "width_ratio_twoway": 7.23,
+        "ztest": {
+          "z": -7.01,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "LFCC-GMM vs CQCC-GMM": {
+        "delta_eer_pts": -0.316,
+        "naive": [
+          -0.7,
+          0.106
+        ],
+        "twoway": [
+          -1.978,
+          1.797
+        ],
+        "pigeonhole": [
+          -2.21,
+          1.578
+        ],
+        "jackknife": [
+          -2.184,
+          1.552
+        ],
+        "width_ratio_twoway": 4.68,
+        "ztest": {
+          "z": -1.23,
+          "p": 0.2171
+        },
+        "perm_p": 0.1309,
+        "fixed_set_resolved": false,
+        "generalization_resolved_consensus": false
+      }
+    },
+    "variance_components": {
+      "XLSR-Mamba": {
+        "bona": {
+          "var_total": 6.9,
+          "icc_spk": 0.4
+        },
+        "spoof": {
+          "var_total": 0.139,
+          "icc_spk": 0.051,
+          "icc_att": 0.167
+        }
+      },
+      "XLS-R+SLS": {
+        "bona": {
+          "var_total": 9.564,
+          "icc_spk": 0.258
+        },
+        "spoof": {
+          "var_total": 2.386,
+          "icc_spk": 0.133,
+          "icc_att": 0.454
+        }
+      },
+      "XLSR-Conformer": {
+        "bona": {
+          "var_total": 7.883,
+          "icc_spk": 0.582
+        },
+        "spoof": {
+          "var_total": 0.255,
+          "icc_spk": 0.049,
+          "icc_att": 0.258
+        }
+      },
+      "SSL-AASIST": {
+        "bona": {
+          "var_total": 9.976,
+          "icc_spk": 0.397
+        },
+        "spoof": {
+          "var_total": 0.033,
+          "icc_spk": 0.045,
+          "icc_att": 0.067
+        }
+      },
+      "RawNet2": {
+        "bona": {
+          "var_total": 25.323,
+          "icc_spk": 0.585
+        },
+        "spoof": {
+          "var_total": 7.88,
+          "icc_spk": 0.027,
+          "icc_att": 0.265
+        }
+      },
+      "LFCC-LCNN": {
+        "bona": {
+          "var_total": 76.959,
+          "icc_spk": 0.474
+        },
+        "spoof": {
+          "var_total": 113.868,
+          "icc_spk": 0.093,
+          "icc_att": 0.496
+        }
+      },
+      "LFCC-GMM": {
+        "bona": {
+          "var_total": 0.898,
+          "icc_spk": 0.138
+        },
+        "spoof": {
+          "var_total": 6.682,
+          "icc_spk": 0.023,
+          "icc_att": 0.197
+        }
+      },
+      "CQCC-GMM": {
+        "bona": {
+          "var_total": 0.45,
+          "icc_spk": 0.157
+        },
+        "spoof": {
+          "var_total": 0.451,
+          "icc_spk": 0.053,
+          "icc_att": 0.386
+        }
+      }
+    }
+  },
+  "itw": {
+    "pooled_eer": {
+      "XLSR-Mamba": 6.709,
+      "XLS-R+SLS": 7.464,
+      "SSL-AASIST": 11.196,
+      "AASIST": 43.016
+    },
+    "pairs": {
+      "XLSR-Mamba vs XLS-R+SLS": {
+        "delta_eer_pts": -0.755,
+        "naive": [
+          -1.086,
+          -0.431
+        ],
+        "twoway": [
+          -2.889,
+          1.811
+        ],
+        "pigeonhole": [
+          -3.096,
+          1.587
+        ],
+        "jackknife": [
+          -3.435,
+          1.925
+        ],
+        "width_ratio_twoway": 7.17,
+        "ztest": {
+          "z": -3.58,
+          "p": 0.0003
+        },
+        "perm_p": 0.0749,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "XLS-R+SLS vs SSL-AASIST": {
+        "delta_eer_pts": -3.732,
+        "naive": [
+          -4.141,
+          -3.37
+        ],
+        "twoway": [
+          -7.891,
+          -0.886
+        ],
+        "pigeonhole": [
+          -7.278,
+          -0.186
+        ],
+        "jackknife": [
+          -7.64,
+          0.175
+        ],
+        "width_ratio_twoway": 9.09,
+        "ztest": {
+          "z": -15.67,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": false
+      },
+      "SSL-AASIST vs AASIST": {
+        "delta_eer_pts": -31.82,
+        "naive": [
+          -32.407,
+          -31.235
+        ],
+        "twoway": [
+          -39.092,
+          -26.06
+        ],
+        "pigeonhole": [
+          -38.264,
+          -25.376
+        ],
+        "jackknife": [
+          -37.945,
+          -25.695
+        ],
+        "width_ratio_twoway": 11.12,
+        "ztest": {
+          "z": -93.41,
+          "p": 0.0
+        },
+        "perm_p": 0.001,
+        "fixed_set_resolved": true,
+        "generalization_resolved_consensus": true
+      }
+    },
+    "variance_components": {
+      "XLSR-Mamba": {
+        "bona": {
+          "var_total": 3.556,
+          "icc_spk": 0.453
+        },
+        "spoof": {
+          "var_total": 0.36,
+          "icc_spk": 1.099
+        }
+      },
+      "XLS-R+SLS": {
+        "bona": {
+          "var_total": 18.144,
+          "icc_spk": 0.598
+        },
+        "spoof": {
+          "var_total": 3.963,
+          "icc_spk": 0.947
+        }
+      },
+      "SSL-AASIST": {
+        "bona": {
+          "var_total": 7.178,
+          "icc_spk": 0.549
+        },
+        "spoof": {
+          "var_total": 2.318,
+          "icc_spk": 0.998
+        }
+      },
+      "AASIST": {
+        "bona": {
+          "var_total": 5.043,
+          "icc_spk": 0.566
+        },
+        "spoof": {
+          "var_total": 3.257,
+          "icc_spk": 0.982
+        }
+      }
+    }
+  }
+}

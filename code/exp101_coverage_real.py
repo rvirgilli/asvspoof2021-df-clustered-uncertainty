@@ -177,7 +177,7 @@ def main():
     }
     print(json.dumps({k: v for k, v in results.items() if k in cov or k == "true_delta_pts"},
                      indent=1), flush=True)
-    out = Path(__file__).parent / "results_coverage_real.json"
+    out = Path(__file__).parent.parent / "derived" / "results_coverage_real.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out} in {(time.time()-t0)/60:.1f} min")
 

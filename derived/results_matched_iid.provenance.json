@@ -1,0 +1,17 @@
+{
+  "schema": "exp101-matched-iid-provenance-v1",
+  "sealed_after_successful_run": "2026-08-16",
+  "note": "The result embeds input-score and protocol hashes. The historical hashes seal the exact internal campaign bytes; released_path_adapted_sha256 seals the public copies whose only intended changes are repository-local paths.",
+  "sha256": {
+    "MATCHED-IID-DIAGNOSTIC.md": "c408b5872d3289ec58402d03da87ba5025361c17356b5d364eba4cda51a408e7",
+    "exp101_matched_iid.py": "7745e9c498e9e5b3c995b233ab026379245815d6657a3fa30fcfe9e46d6b96d3",
+    "exp101_selection.py": "e97bd6a84d59c21e3175359e3f611e0c1657a7a8f2747a516f297b86714de7d2",
+    "m1_campaign.py": "66756f430c8a0e28e76b3b0c296d6f593c030b7620894f8bf57630a5d52be65a",
+    "results_matched_iid.json": "7c716a09631b2c6a5d92626ac18e0544d1f2d1ff147d101c19a5bfdbb3dbbe74"
+  },
+  "released_path_adapted_sha256": {
+    "exp101_matched_iid.py": "eb39c5731583f696cf0aa0438b880ef29f584fdf2c3853c3fa47e26250c05a65",
+    "exp101_selection.py": "527e42261b25fc9d8a1af50b99dcf9541833b7ebe385973c9f7eb03ea75c8c6a",
+    "m1_campaign.py": "9fbb8439f960ce52b714a0604f01edf24e3ac999eab7be6422fcf4729a0555db"
+  }
+}

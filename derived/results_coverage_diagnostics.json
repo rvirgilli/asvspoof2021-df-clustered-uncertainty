@@ -1,0 +1,4294 @@
+{
+  "experiment": "EXP-105-post-result-diagnostics",
+  "status": "diagnostic_only_original_reading_rule_remains_refuted",
+  "q_2_981_provenance": "pre-existing real-data 28-pair product-bootstrap critical value; post-hoc relative to the EXP-105 coverage preregistration",
+  "inputs": {
+    "coverage_interaction.py": "570727728b78300d30371a4c0e163f7d4d72028ccc006cc02c85a6a6c53b40ef",
+    "corrected_truth": "259f382e100488b36ce2e1d672718e6cada576b49805e3e9363b840cd9495c74"
+  },
+  "diagnostic_script_sha256": "a804455f1957a8ff2949b5dc6a949c6dac2a1a5ab13fb5ec221d7e78d5fb06e0",
+  "grid": [
+    {
+      "index": 0,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.10330991830964785,
+        "bias": 0.10330991830964785,
+        "direct_mc_variance": 3.5635467509587744
+      },
+      "estimated_variance": {
+        "mean_raw": 3.69132567751172,
+        "mean_floor": 3.69132567751172,
+        "mean_raw_over_direct_mc": 1.0358572331115248,
+        "mean_floor_over_direct_mc": 1.0358572331115248,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 26,
+          "truth_above_interval": 18,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 26,
+          "truth_above_interval": 18
+        },
+        "product_percentile": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 27,
+          "truth_above_interval": 16
+        },
+        "oracle_sd_normal": {
+          "covered": 951,
+          "coverage": 0.951,
+          "truth_below_interval": 31,
+          "truth_above_interval": 18
+        },
+        "product_basic_posthoc": {
+          "covered": 961,
+          "coverage": 0.961,
+          "truth_below_interval": 24,
+          "truth_above_interval": 15
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 966,
+          "coverage": 0.966,
+          "truth_below_interval": 20,
+          "truth_above_interval": 14
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 0,
+          "truth_above_interval": 2
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 0,
+          "truth_above_interval": 2
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.7794593961505965,
+          0.0620262482231914,
+          1.9635670484987553
+        ],
+        "mean": 0.04959784441979334,
+        "sd": 0.994987819907481
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.09905121645996887,
+        "spearman_abs_error_vs_raw_variance": 0.116103930901597,
+        "median_raw_variance_failures": 3.5131724718730757,
+        "median_raw_variance_passes": 3.5878441702070143
+      }
+    },
+    {
+      "index": 1,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "point_estimate": {
+        "mean": 0.5581487730959146,
+        "bias": 0.05814877309591408,
+        "direct_mc_variance": 3.804619326078115
+      },
+      "estimated_variance": {
+        "mean_raw": 3.7014631059117376,
+        "mean_floor": 3.7014631059117376,
+        "mean_raw_over_direct_mc": 0.9728865856672412,
+        "mean_floor_over_direct_mc": 0.9728865856672412,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 942,
+          "coverage": 0.942,
+          "truth_below_interval": 30,
+          "truth_above_interval": 28,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 942,
+          "coverage": 0.942,
+          "truth_below_interval": 30,
+          "truth_above_interval": 28
+        },
+        "product_percentile": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 24,
+          "truth_above_interval": 24
+        },
+        "oracle_sd_normal": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 23,
+          "truth_above_interval": 20
+        },
+        "product_basic_posthoc": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 23,
+          "truth_above_interval": 23
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 22,
+          "truth_above_interval": 19
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 4,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 4,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9946361397439847,
+          0.038331800431118335,
+          2.0533065375058093
+        ],
+        "mean": 0.023478844371984334,
+        "sd": 1.030156755927334
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.09009338641552503,
+        "spearman_abs_error_vs_raw_variance": 0.08631814246141341,
+        "median_raw_variance_failures": 3.3836960458352836,
+        "median_raw_variance_passes": 3.5733534143877446
+      }
+    },
+    {
+      "index": 2,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "point_estimate": {
+        "mean": 2.0933142664368587,
+        "bias": 0.09331426643685953,
+        "direct_mc_variance": 3.4804606848183703
+      },
+      "estimated_variance": {
+        "mean_raw": 3.5765657391290966,
+        "mean_floor": 3.5765657391290966,
+        "mean_raw_over_direct_mc": 1.0276127395232282,
+        "mean_floor_over_direct_mc": 1.0276127395232282,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 27,
+          "truth_above_interval": 26,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 27,
+          "truth_above_interval": 26
+        },
+        "product_percentile": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 25,
+          "truth_above_interval": 20
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 24,
+          "truth_above_interval": 24
+        },
+        "product_basic_posthoc": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 23,
+          "truth_above_interval": 20
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 21,
+          "truth_above_interval": 15
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9744279817136157,
+          0.04925258635204939,
+          2.048944690384071
+        ],
+        "mean": 0.03817632827168863,
+        "sd": 1.010171812860564
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.04689518668544309,
+        "spearman_abs_error_vs_raw_variance": 0.04275449667844907,
+        "median_raw_variance_failures": 3.0627085018998788,
+        "median_raw_variance_passes": 3.516133183255459
+      }
+    },
+    {
+      "index": 3,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.00873618647115465,
+      "point_estimate": {
+        "mean": 0.001745555335469418,
+        "bias": -0.0069906311356852414,
+        "direct_mc_variance": 3.465583426554242
+      },
+      "estimated_variance": {
+        "mean_raw": 3.4492793331970635,
+        "mean_floor": 3.4492793331970635,
+        "mean_raw_over_direct_mc": 0.9952954260941312,
+        "mean_floor_over_direct_mc": 0.9952954260941312,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 25,
+          "truth_above_interval": 30,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 25,
+          "truth_above_interval": 30
+        },
+        "product_percentile": {
+          "covered": 948,
+          "coverage": 0.948,
+          "truth_below_interval": 20,
+          "truth_above_interval": 32
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 23,
+          "truth_above_interval": 28
+        },
+        "product_basic_posthoc": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 18,
+          "truth_above_interval": 28
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 17,
+          "truth_above_interval": 24
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 994,
+          "coverage": 0.994,
+          "truth_below_interval": 1,
+          "truth_above_interval": 5
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 994,
+          "coverage": 0.994,
+          "truth_below_interval": 1,
+          "truth_above_interval": 5
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.054192619904766,
+          0.02200128925953475,
+          1.9559678394883027
+        ],
+        "mean": -0.00011363200014348162,
+        "sd": 1.023708649407637
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.07278198114887022,
+        "spearman_abs_error_vs_raw_variance": 0.045345058433339844,
+        "median_raw_variance_failures": 3.0224007432008624,
+        "median_raw_variance_passes": 3.2897999434996494
+      }
+    },
+    {
+      "index": 4,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5061598842489468,
+      "point_estimate": {
+        "mean": 0.5865148744260695,
+        "bias": 0.0803549901771228,
+        "direct_mc_variance": 3.1132678616769347
+      },
+      "estimated_variance": {
+        "mean_raw": 3.4070579828006884,
+        "mean_floor": 3.4070579828006884,
+        "mean_raw_over_direct_mc": 1.0943671197522677,
+        "mean_floor_over_direct_mc": 1.0943671197522677,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 953,
+          "coverage": 0.953,
+          "truth_below_interval": 24,
+          "truth_above_interval": 23,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 953,
+          "coverage": 0.953,
+          "truth_below_interval": 24,
+          "truth_above_interval": 23
+        },
+        "product_percentile": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 22,
+          "truth_above_interval": 16
+        },
+        "oracle_sd_normal": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 20,
+          "truth_above_interval": 26
+        },
+        "product_basic_posthoc": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 23,
+          "truth_above_interval": 15
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 970,
+          "coverage": 0.97,
+          "truth_below_interval": 19,
+          "truth_above_interval": 11
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 2,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 2,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9165650521753357,
+          0.08923929473470497,
+          1.9568823315401638
+        ],
+        "mean": 0.049275265465690894,
+        "sd": 0.9818848666416773
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.0631993474953535,
+        "spearman_abs_error_vs_raw_variance": 0.04181401944476623,
+        "median_raw_variance_failures": 3.0098888325055135,
+        "median_raw_variance_passes": 3.265896146800573
+      }
+    },
+    {
+      "index": 5,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.001180678166767,
+      "point_estimate": {
+        "mean": 1.9801115038453243,
+        "bias": -0.02106917432144264,
+        "direct_mc_variance": 3.410011733612543
+      },
+      "estimated_variance": {
+        "mean_raw": 3.316461197523727,
+        "mean_floor": 3.316461197523727,
+        "mean_raw_over_direct_mc": 0.9725659195929777,
+        "mean_floor_over_direct_mc": 0.9725659195929777,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 29,
+          "truth_above_interval": 27,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 29,
+          "truth_above_interval": 27
+        },
+        "product_percentile": {
+          "covered": 948,
+          "coverage": 0.948,
+          "truth_below_interval": 26,
+          "truth_above_interval": 26
+        },
+        "oracle_sd_normal": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 30,
+          "truth_above_interval": 26
+        },
+        "product_basic_posthoc": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 23,
+          "truth_above_interval": 22
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 18,
+          "truth_above_interval": 20
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 3,
+          "truth_above_interval": 0
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 3,
+          "truth_above_interval": 0
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9672668228850032,
+          -0.02232320379398181,
+          1.9895623198455128
+        ],
+        "mean": -0.012346054398594148,
+        "sd": 1.0206806706895086
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.16732979595844524,
+        "spearman_abs_error_vs_raw_variance": 0.13767976352751027,
+        "median_raw_variance_failures": 3.036668076946384,
+        "median_raw_variance_passes": 3.172680799069649
+      }
+    },
+    {
+      "index": 6,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.1548515349646475,
+        "bias": 0.1548515349646475,
+        "direct_mc_variance": 3.177376216165495
+      },
+      "estimated_variance": {
+        "mean_raw": 3.1512863701313427,
+        "mean_floor": 3.1512863701313427,
+        "mean_raw_over_direct_mc": 0.9917888709868805,
+        "mean_floor_over_direct_mc": 0.9917888709868805,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 928,
+          "coverage": 0.928,
+          "truth_below_interval": 38,
+          "truth_above_interval": 34,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 928,
+          "coverage": 0.928,
+          "truth_below_interval": 38,
+          "truth_above_interval": 34
+        },
+        "product_percentile": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 30,
+          "truth_above_interval": 24
+        },
+        "oracle_sd_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 33,
+          "truth_above_interval": 22
+        },
+        "product_basic_posthoc": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 26,
+          "truth_above_interval": 27
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 24,
+          "truth_above_interval": 20
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 1,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 1,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.170816814989119,
+          0.0979341731220948,
+          2.117983269067445
+        ],
+        "mean": 0.0669466105604035,
+        "sd": 1.031221058155437
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.029530255784007718,
+        "spearman_abs_error_vs_raw_variance": 0.024611336531020857,
+        "median_raw_variance_failures": 2.821209349240404,
+        "median_raw_variance_passes": 3.084957189899324
+      }
+    },
+    {
+      "index": 7,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "point_estimate": {
+        "mean": 0.40390321859972933,
+        "bias": -0.09609678140027114,
+        "direct_mc_variance": 2.823857616439886
+      },
+      "estimated_variance": {
+        "mean_raw": 3.1522138962702657,
+        "mean_floor": 3.1522138962702657,
+        "mean_raw_over_direct_mc": 1.1162793328951008,
+        "mean_floor_over_direct_mc": 1.1162793328951008,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 17,
+          "truth_above_interval": 28,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 17,
+          "truth_above_interval": 28
+        },
+        "product_percentile": {
+          "covered": 968,
+          "coverage": 0.968,
+          "truth_below_interval": 12,
+          "truth_above_interval": 20
+        },
+        "oracle_sd_normal": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 20,
+          "truth_above_interval": 33
+        },
+        "product_basic_posthoc": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 13,
+          "truth_above_interval": 22
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 972,
+          "coverage": 0.972,
+          "truth_below_interval": 11,
+          "truth_above_interval": 17
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 1,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 998,
+          "coverage": 0.998,
+          "truth_below_interval": 1,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.0301475158411715,
+          -0.06254435441428813,
+          1.7787526030862955
+        ],
+        "mean": -0.06765729690960913,
+        "sd": 0.9733027577909835
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.02338773300985471,
+        "spearman_abs_error_vs_raw_variance": 0.004701256926917265,
+        "median_raw_variance_failures": 2.6802955895785927,
+        "median_raw_variance_passes": 3.0815291480125997
+      }
+    },
+    {
+      "index": 8,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "point_estimate": {
+        "mean": 2.079520804415646,
+        "bias": 0.07952080441564706,
+        "direct_mc_variance": 2.9471600300239578
+      },
+      "estimated_variance": {
+        "mean_raw": 3.114319707478568,
+        "mean_floor": 3.114319707478568,
+        "mean_raw_over_direct_mc": 1.0567189008237368,
+        "mean_floor_over_direct_mc": 1.0567189008237368,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 21,
+          "truth_above_interval": 23,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 21,
+          "truth_above_interval": 23
+        },
+        "product_percentile": {
+          "covered": 967,
+          "coverage": 0.967,
+          "truth_below_interval": 17,
+          "truth_above_interval": 16
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 29,
+          "truth_above_interval": 19
+        },
+        "product_basic_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 18,
+          "truth_above_interval": 18
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 971,
+          "coverage": 0.971,
+          "truth_below_interval": 14,
+          "truth_above_interval": 15
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 3,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 3,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.8639234725940201,
+          0.04240956969912546,
+          1.9079266284338965
+        ],
+        "mean": 0.029104929969214564,
+        "sd": 0.9922625398918978
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.05445086984788317,
+        "spearman_abs_error_vs_raw_variance": 0.03209956031443006,
+        "median_raw_variance_failures": 2.6416516178757097,
+        "median_raw_variance_passes": 3.0199054155411202
+      }
+    },
+    {
+      "index": 9,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": -0.016949296932569635,
+      "point_estimate": {
+        "mean": -0.02173786659109834,
+        "bias": -0.004788569658528729,
+        "direct_mc_variance": 2.786435431931136
+      },
+      "estimated_variance": {
+        "mean_raw": 2.9836819464662203,
+        "mean_floor": 2.9836819464662203,
+        "mean_raw_over_direct_mc": 1.0707881159831443,
+        "mean_floor_over_direct_mc": 1.0707881159831443,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 16,
+          "truth_above_interval": 27,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 16,
+          "truth_above_interval": 27
+        },
+        "product_percentile": {
+          "covered": 968,
+          "coverage": 0.968,
+          "truth_below_interval": 14,
+          "truth_above_interval": 18
+        },
+        "oracle_sd_normal": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 20,
+          "truth_above_interval": 25
+        },
+        "product_basic_posthoc": {
+          "covered": 966,
+          "coverage": 0.966,
+          "truth_below_interval": 14,
+          "truth_above_interval": 20
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 975,
+          "coverage": 0.975,
+          "truth_below_interval": 11,
+          "truth_above_interval": 14
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 1,
+          "truth_above_interval": 4
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 1,
+          "truth_above_interval": 4
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.989212110916336,
+          0.01682994605121491,
+          1.8124814261922866
+        ],
+        "mean": -0.017662088853542333,
+        "sd": 0.9914433717047322
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.08008493749845368,
+        "spearman_abs_error_vs_raw_variance": 0.050128485933111464,
+        "median_raw_variance_failures": 2.4749188877355968,
+        "median_raw_variance_passes": 2.8492127084433734
+      }
+    },
+    {
+      "index": 10,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.4825321839961628,
+      "point_estimate": {
+        "mean": 0.5218840745641056,
+        "bias": 0.03935189056794284,
+        "direct_mc_variance": 3.0262741781256657
+      },
+      "estimated_variance": {
+        "mean_raw": 2.994493241136607,
+        "mean_floor": 2.994493241136607,
+        "mean_raw_over_direct_mc": 0.9894983285986525,
+        "mean_floor_over_direct_mc": 0.9894983285986525,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 941,
+          "coverage": 0.941,
+          "truth_below_interval": 29,
+          "truth_above_interval": 30,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 941,
+          "coverage": 0.941,
+          "truth_below_interval": 29,
+          "truth_above_interval": 30
+        },
+        "product_percentile": {
+          "covered": 951,
+          "coverage": 0.951,
+          "truth_below_interval": 23,
+          "truth_above_interval": 26
+        },
+        "oracle_sd_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 28,
+          "truth_above_interval": 27
+        },
+        "product_basic_posthoc": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 23,
+          "truth_above_interval": 20
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 17,
+          "truth_above_interval": 20
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 993,
+          "coverage": 0.993,
+          "truth_below_interval": 4,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 993,
+          "coverage": 0.993,
+          "truth_below_interval": 4,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.0908881627359097,
+          0.025021527671294223,
+          2.0622894429284635
+        ],
+        "mean": 0.021602546528516325,
+        "sd": 1.0279012630007032
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.09852902446563577,
+        "spearman_abs_error_vs_raw_variance": 0.08158753301420947,
+        "median_raw_variance_failures": 2.5437461290187597,
+        "median_raw_variance_passes": 2.865887757158097
+      }
+    },
+    {
+      "index": 11,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9836434343763552,
+      "point_estimate": {
+        "mean": 2.0689200299385884,
+        "bias": 0.08527659556223319,
+        "direct_mc_variance": 3.04348876526152
+      },
+      "estimated_variance": {
+        "mean_raw": 2.885801498267997,
+        "mean_floor": 2.885801498267997,
+        "mean_raw_over_direct_mc": 0.9481886482403449,
+        "mean_floor_over_direct_mc": 0.9481886482403449,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 33,
+          "truth_above_interval": 22,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 33,
+          "truth_above_interval": 22
+        },
+        "product_percentile": {
+          "covered": 953,
+          "coverage": 0.953,
+          "truth_below_interval": 28,
+          "truth_above_interval": 19
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 31,
+          "truth_above_interval": 20
+        },
+        "product_basic_posthoc": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 23,
+          "truth_above_interval": 18
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 22,
+          "truth_above_interval": 15
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 993,
+          "coverage": 0.993,
+          "truth_below_interval": 4,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 993,
+          "coverage": 0.993,
+          "truth_below_interval": 4,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9203949362525157,
+          0.04401040026341296,
+          2.0099483872624373
+        ],
+        "mean": 0.03398020618118787,
+        "sd": 1.050712153311908
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.11416541625627973,
+        "spearman_abs_error_vs_raw_variance": 0.09481696366147262,
+        "median_raw_variance_failures": 2.4583228377658326,
+        "median_raw_variance_passes": 2.7814228018570453
+      }
+    },
+    {
+      "index": 12,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.0759814596893637,
+        "bias": 0.0759814596893637,
+        "direct_mc_variance": 2.7361355290610594
+      },
+      "estimated_variance": {
+        "mean_raw": 2.668097032297202,
+        "mean_floor": 2.668097032297202,
+        "mean_raw_over_direct_mc": 0.9751333601566128,
+        "mean_floor_over_direct_mc": 0.9751333601566128,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 937,
+          "coverage": 0.937,
+          "truth_below_interval": 33,
+          "truth_above_interval": 30,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 937,
+          "coverage": 0.937,
+          "truth_below_interval": 33,
+          "truth_above_interval": 30
+        },
+        "product_percentile": {
+          "covered": 958,
+          "coverage": 0.958,
+          "truth_below_interval": 23,
+          "truth_above_interval": 19
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 31,
+          "truth_above_interval": 17
+        },
+        "product_basic_posthoc": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 25,
+          "truth_above_interval": 21
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 19,
+          "truth_above_interval": 17
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.031432737834293,
+          0.0276939680660537,
+          2.117845117042727
+        ],
+        "mean": 0.01848005331702158,
+        "sd": 1.0367713640563123
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.043515316493712236,
+        "spearman_abs_error_vs_raw_variance": 0.03443516739383185,
+        "median_raw_variance_failures": 2.2848353346530845,
+        "median_raw_variance_passes": 2.5761911988731683
+      }
+    },
+    {
+      "index": 13,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "point_estimate": {
+        "mean": 0.4568239597802802,
+        "bias": -0.0431760402197202,
+        "direct_mc_variance": 2.4614205913531824
+      },
+      "estimated_variance": {
+        "mean_raw": 2.610747213247372,
+        "mean_floor": 2.610747213247372,
+        "mean_raw_over_direct_mc": 1.0606668451620032,
+        "mean_floor_over_direct_mc": 1.0606668451620032,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 23,
+          "truth_above_interval": 31,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 23,
+          "truth_above_interval": 31
+        },
+        "product_percentile": {
+          "covered": 967,
+          "coverage": 0.967,
+          "truth_below_interval": 14,
+          "truth_above_interval": 19
+        },
+        "oracle_sd_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 30,
+          "truth_above_interval": 27
+        },
+        "product_basic_posthoc": {
+          "covered": 960,
+          "coverage": 0.96,
+          "truth_below_interval": 18,
+          "truth_above_interval": 22
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 971,
+          "coverage": 0.971,
+          "truth_below_interval": 13,
+          "truth_above_interval": 16
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 1,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 1,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.1097631509854087,
+          -0.0678883738738682,
+          1.8525985889582048
+        ],
+        "mean": -0.052987300041031235,
+        "sd": 0.9848323889959733
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.10854886412161109,
+        "spearman_abs_error_vs_raw_variance": 0.05042361081046515,
+        "median_raw_variance_failures": 2.339062114437813,
+        "median_raw_variance_passes": 2.5366360482373262
+      }
+    },
+    {
+      "index": 14,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "point_estimate": {
+        "mean": 1.9502813601692264,
+        "bias": -0.04971863983077254,
+        "direct_mc_variance": 2.7191471876831357
+      },
+      "estimated_variance": {
+        "mean_raw": 2.65225966822054,
+        "mean_floor": 2.65225966822054,
+        "mean_raw_over_direct_mc": 0.9754012876663777,
+        "mean_floor_over_direct_mc": 0.9754012876663777,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 933,
+          "coverage": 0.933,
+          "truth_below_interval": 23,
+          "truth_above_interval": 44,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 933,
+          "coverage": 0.933,
+          "truth_below_interval": 23,
+          "truth_above_interval": 44
+        },
+        "product_percentile": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 17,
+          "truth_above_interval": 26
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 25,
+          "truth_above_interval": 23
+        },
+        "product_basic_posthoc": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 14,
+          "truth_above_interval": 34
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 10,
+          "truth_above_interval": 26
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 992,
+          "coverage": 0.992,
+          "truth_below_interval": 2,
+          "truth_above_interval": 6
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 992,
+          "coverage": 0.992,
+          "truth_below_interval": 2,
+          "truth_above_interval": 6
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.2368593636010963,
+          -0.016511569079375645,
+          1.900640956501568
+        ],
+        "mean": -0.06988024616435438,
+        "sd": 1.04949245788662
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": -0.022184822235911728,
+        "spearman_abs_error_vs_raw_variance": -0.047592289020057715,
+        "median_raw_variance_failures": 2.1432968667830536,
+        "median_raw_variance_passes": 2.6105650498238253
+      }
+    },
+    {
+      "index": 15,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.003559174185494701,
+      "point_estimate": {
+        "mean": -0.08889249820159785,
+        "bias": -0.09245167238709252,
+        "direct_mc_variance": 2.388841774146148
+      },
+      "estimated_variance": {
+        "mean_raw": 2.5413390373027096,
+        "mean_floor": 2.5413390373027096,
+        "mean_raw_over_direct_mc": 1.0638373226753661,
+        "mean_floor_over_direct_mc": 1.0638373226753661,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 13,
+          "truth_above_interval": 37,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 13,
+          "truth_above_interval": 37
+        },
+        "product_percentile": {
+          "covered": 967,
+          "coverage": 0.967,
+          "truth_below_interval": 13,
+          "truth_above_interval": 20
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 20,
+          "truth_above_interval": 31
+        },
+        "product_basic_posthoc": {
+          "covered": 969,
+          "coverage": 0.969,
+          "truth_below_interval": 12,
+          "truth_above_interval": 19
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 974,
+          "coverage": 0.974,
+          "truth_below_interval": 11,
+          "truth_above_interval": 15
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 1,
+          "truth_above_interval": 2
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 1,
+          "truth_above_interval": 2
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.060995695959998,
+          -0.07439116435525281,
+          1.809655258621657
+        ],
+        "mean": -0.08217629931843362,
+        "sd": 1.0038216941587155
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.07341197987288726,
+        "spearman_abs_error_vs_raw_variance": -0.010556206936230392,
+        "median_raw_variance_failures": 1.9811219408438543,
+        "median_raw_variance_passes": 2.4736386289394448
+      }
+    },
+    {
+      "index": 16,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5031278736994111,
+      "point_estimate": {
+        "mean": 0.5540413657537904,
+        "bias": 0.050913492054379235,
+        "direct_mc_variance": 2.4333986462932407
+      },
+      "estimated_variance": {
+        "mean_raw": 2.514609871580562,
+        "mean_floor": 2.514609871580562,
+        "mean_raw_over_direct_mc": 1.0333735803671253,
+        "mean_floor_over_direct_mc": 1.0333735803671253,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 23,
+          "truth_above_interval": 25,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 23,
+          "truth_above_interval": 25
+        },
+        "product_percentile": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 19,
+          "truth_above_interval": 16
+        },
+        "oracle_sd_normal": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 26,
+          "truth_above_interval": 28
+        },
+        "product_basic_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 18,
+          "truth_above_interval": 18
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 972,
+          "coverage": 0.972,
+          "truth_below_interval": 14,
+          "truth_above_interval": 14
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 2,
+          "truth_above_interval": 2
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 2,
+          "truth_above_interval": 2
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9599128246281319,
+          0.039894737467108636,
+          1.8924964954832757
+        ],
+        "mean": 0.02251072433886356,
+        "sd": 0.9957383607962231
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.13233133572346417,
+        "spearman_abs_error_vs_raw_variance": 0.0814870864206216,
+        "median_raw_variance_failures": 2.286477658460766,
+        "median_raw_variance_passes": 2.3698674226444556
+      }
+    },
+    {
+      "index": 17,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9992005676842532,
+      "point_estimate": {
+        "mean": 1.9766707985490606,
+        "bias": -0.022529769135192588,
+        "direct_mc_variance": 2.4168959083555848
+      },
+      "estimated_variance": {
+        "mean_raw": 2.4841317213540792,
+        "mean_floor": 2.4841317213540792,
+        "mean_raw_over_direct_mc": 1.0278190768440005,
+        "mean_floor_over_direct_mc": 1.0278190768440005,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 22,
+          "truth_above_interval": 28,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 22,
+          "truth_above_interval": 28
+        },
+        "product_percentile": {
+          "covered": 961,
+          "coverage": 0.961,
+          "truth_below_interval": 19,
+          "truth_above_interval": 20
+        },
+        "oracle_sd_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 21,
+          "truth_above_interval": 29
+        },
+        "product_basic_posthoc": {
+          "covered": 969,
+          "coverage": 0.969,
+          "truth_below_interval": 15,
+          "truth_above_interval": 16
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 972,
+          "coverage": 0.972,
+          "truth_below_interval": 15,
+          "truth_above_interval": 13
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 2,
+          "truth_above_interval": 1
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 2,
+          "truth_above_interval": 1
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.9673826810489077,
+          -0.04544376139139,
+          1.8677677119685088
+        ],
+        "mean": -0.02902238729828668,
+        "sd": 1.001569369020746
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.11890316572352184,
+        "spearman_abs_error_vs_raw_variance": 0.09868248830739029,
+        "median_raw_variance_failures": 2.2344023625130074,
+        "median_raw_variance_passes": 2.403905421832754
+      }
+    },
+    {
+      "index": 18,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.045056183264096966,
+        "bias": 0.045056183264096966,
+        "direct_mc_variance": 2.297965271746571
+      },
+      "estimated_variance": {
+        "mean_raw": 2.2389513951331916,
+        "mean_floor": 2.2389886987707714,
+        "mean_raw_over_direct_mc": 0.9743190737741106,
+        "mean_floor_over_direct_mc": 0.974335307108025,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 936,
+          "coverage": 0.936,
+          "truth_below_interval": 31,
+          "truth_above_interval": 33,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 936,
+          "coverage": 0.936,
+          "truth_below_interval": 31,
+          "truth_above_interval": 33
+        },
+        "product_percentile": {
+          "covered": 958,
+          "coverage": 0.958,
+          "truth_below_interval": 21,
+          "truth_above_interval": 21
+        },
+        "oracle_sd_normal": {
+          "covered": 951,
+          "coverage": 0.951,
+          "truth_below_interval": 32,
+          "truth_above_interval": 17
+        },
+        "product_basic_posthoc": {
+          "covered": 960,
+          "coverage": 0.96,
+          "truth_below_interval": 19,
+          "truth_above_interval": 21
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 969,
+          "coverage": 0.969,
+          "truth_below_interval": 15,
+          "truth_above_interval": 16
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 994,
+          "coverage": 0.994,
+          "truth_below_interval": 0,
+          "truth_above_interval": 6
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 994,
+          "coverage": 0.994,
+          "truth_below_interval": 0,
+          "truth_above_interval": 6
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.104617385731276,
+          -0.03473194018871297,
+          2.0294872094531455
+        ],
+        "mean": -0.015313606300413138,
+        "sd": 1.0418287411324978
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.06799372728485825,
+        "spearman_abs_error_vs_raw_variance": 0.042101524901099016,
+        "median_raw_variance_failures": 1.8656235140878343,
+        "median_raw_variance_passes": 2.177106194547747
+      }
+    },
+    {
+      "index": 19,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "point_estimate": {
+        "mean": 0.4469813024713583,
+        "bias": -0.05301869752864212,
+        "direct_mc_variance": 2.1081026229258666
+      },
+      "estimated_variance": {
+        "mean_raw": 2.241940001872979,
+        "mean_floor": 2.242176834393892,
+        "mean_raw_over_direct_mc": 1.063487126998285,
+        "mean_floor_over_direct_mc": 1.0635994709223129,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 19,
+          "truth_above_interval": 38,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 19,
+          "truth_above_interval": 38
+        },
+        "product_percentile": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 11,
+          "truth_above_interval": 26
+        },
+        "oracle_sd_normal": {
+          "covered": 936,
+          "coverage": 0.936,
+          "truth_below_interval": 29,
+          "truth_above_interval": 35
+        },
+        "product_basic_posthoc": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 9,
+          "truth_above_interval": 29
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 969,
+          "coverage": 0.969,
+          "truth_below_interval": 8,
+          "truth_above_interval": 23
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 0,
+          "truth_above_interval": 5
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 0,
+          "truth_above_interval": 5
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.2198603665923287,
+          -0.01822393856661691,
+          1.8992413611465384
+        ],
+        "mean": -0.07507068764859412,
+        "sd": 1.0037126828889544
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.022775224332245443,
+        "spearman_abs_error_vs_raw_variance": -0.007475798081337752,
+        "median_raw_variance_failures": 1.8428768128106126,
+        "median_raw_variance_passes": 2.1946565160661273
+      }
+    },
+    {
+      "index": 20,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "point_estimate": {
+        "mean": 1.9621760617607158,
+        "bias": -0.03782393823928335,
+        "direct_mc_variance": 2.2026662670193335
+      },
+      "estimated_variance": {
+        "mean_raw": 2.241546084454558,
+        "mean_floor": 2.2415918693461045,
+        "mean_raw_over_direct_mc": 1.0176512520382115,
+        "mean_floor_over_direct_mc": 1.0176720381610262,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 935,
+          "coverage": 0.935,
+          "truth_below_interval": 16,
+          "truth_above_interval": 49,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 935,
+          "coverage": 0.935,
+          "truth_below_interval": 16,
+          "truth_above_interval": 49
+        },
+        "product_percentile": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 12,
+          "truth_above_interval": 25
+        },
+        "oracle_sd_normal": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 24,
+          "truth_above_interval": 26
+        },
+        "product_basic_posthoc": {
+          "covered": 961,
+          "coverage": 0.961,
+          "truth_below_interval": 10,
+          "truth_above_interval": 29
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 973,
+          "coverage": 0.973,
+          "truth_below_interval": 7,
+          "truth_above_interval": 20
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 992,
+          "coverage": 0.992,
+          "truth_below_interval": 2,
+          "truth_above_interval": 6
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 992,
+          "coverage": 0.992,
+          "truth_below_interval": 2,
+          "truth_above_interval": 6
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.2403775988411296,
+          -0.048908574306255614,
+          1.8161943372883262
+        ],
+        "mean": -0.07157514282143655,
+        "sd": 1.0352608003603752
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": -0.010681032188113884,
+        "spearman_abs_error_vs_raw_variance": -0.029499865358356938,
+        "median_raw_variance_failures": 1.7612646469832982,
+        "median_raw_variance_passes": 2.2019903457946777
+      }
+    },
+    {
+      "index": 21,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.03392722360617273,
+      "point_estimate": {
+        "mean": 0.011415085494439758,
+        "bias": -0.022512138111732995,
+        "direct_mc_variance": 1.8959175873256127
+      },
+      "estimated_variance": {
+        "mean_raw": 2.0352093824917588,
+        "mean_floor": 2.035227172619507,
+        "mean_raw_over_direct_mc": 1.0734693301530218,
+        "mean_floor_over_direct_mc": 1.073478713539656,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 22,
+          "truth_above_interval": 35,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 22,
+          "truth_above_interval": 35
+        },
+        "product_percentile": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 16,
+          "truth_above_interval": 19
+        },
+        "oracle_sd_normal": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 28,
+          "truth_above_interval": 25
+        },
+        "product_basic_posthoc": {
+          "covered": 969,
+          "coverage": 0.969,
+          "truth_below_interval": 17,
+          "truth_above_interval": 14
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 974,
+          "coverage": 0.974,
+          "truth_below_interval": 13,
+          "truth_above_interval": 13
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 1,
+          "truth_above_interval": 2
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 997,
+          "coverage": 0.997,
+          "truth_below_interval": 1,
+          "truth_above_interval": 2
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.1304058647902164,
+          -0.03485924862300477,
+          1.9290563753201677
+        ],
+        "mean": -0.04994742568631567,
+        "sd": 0.9982625799084998
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.019962417213524312,
+        "spearman_abs_error_vs_raw_variance": -0.0070235893396508675,
+        "median_raw_variance_failures": 1.6177969751918813,
+        "median_raw_variance_passes": 1.9739191022261648
+      }
+    },
+    {
+      "index": 22,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5374382727954908,
+      "point_estimate": {
+        "mean": 0.5546592648646028,
+        "bias": 0.017220992069111908,
+        "direct_mc_variance": 2.093640529740426
+      },
+      "estimated_variance": {
+        "mean_raw": 2.051682490435005,
+        "mean_floor": 2.0517783706556454,
+        "mean_raw_over_direct_mc": 0.9799592916217461,
+        "mean_floor_over_direct_mc": 0.9800050875543708,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 29,
+          "truth_above_interval": 28,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 943,
+          "coverage": 0.943,
+          "truth_below_interval": 29,
+          "truth_above_interval": 28
+        },
+        "product_percentile": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 19,
+          "truth_above_interval": 16
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 30,
+          "truth_above_interval": 18
+        },
+        "product_basic_posthoc": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 17,
+          "truth_above_interval": 18
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 970,
+          "coverage": 0.97,
+          "truth_below_interval": 15,
+          "truth_above_interval": 15
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 0,
+          "truth_above_interval": 4
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 996,
+          "coverage": 0.996,
+          "truth_below_interval": 0,
+          "truth_above_interval": 4
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -1.998071321444831,
+          0.015565058844284017,
+          2.014467718253172
+        ],
+        "mean": -0.017608367196013924,
+        "sd": 1.0254688016909095
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.15829850107985566,
+        "spearman_abs_error_vs_raw_variance": 0.11092286024715765,
+        "median_raw_variance_failures": 1.6794136505735555,
+        "median_raw_variance_passes": 1.9936880782041058
+      }
+    },
+    {
+      "index": 23,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.029295804203765,
+      "point_estimate": {
+        "mean": 1.9678838936446688,
+        "bias": -0.06141191055909659,
+        "direct_mc_variance": 1.9665672444475812
+      },
+      "estimated_variance": {
+        "mean_raw": 2.069971209437998,
+        "mean_floor": 2.0700566375085656,
+        "mean_raw_over_direct_mc": 1.0525809454430648,
+        "mean_floor_over_direct_mc": 1.05262438564111,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 942,
+          "coverage": 0.942,
+          "truth_below_interval": 15,
+          "truth_above_interval": 43,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 942,
+          "coverage": 0.942,
+          "truth_below_interval": 15,
+          "truth_above_interval": 43
+        },
+        "product_percentile": {
+          "covered": 966,
+          "coverage": 0.966,
+          "truth_below_interval": 13,
+          "truth_above_interval": 21
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 27,
+          "truth_above_interval": 24
+        },
+        "product_basic_posthoc": {
+          "covered": 970,
+          "coverage": 0.97,
+          "truth_below_interval": 10,
+          "truth_above_interval": 20
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 973,
+          "coverage": 0.973,
+          "truth_below_interval": 9,
+          "truth_above_interval": 18
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 995,
+          "coverage": 0.995,
+          "truth_below_interval": 2,
+          "truth_above_interval": 3
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.181031795018014,
+          -0.11371518895334765,
+          1.7822417026843251
+        ],
+        "mean": -0.09418023887533829,
+        "sd": 1.002022231480054
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.10815763152576671,
+        "spearman_abs_error_vs_raw_variance": 0.06736990060365591,
+        "median_raw_variance_failures": 1.662554204250813,
+        "median_raw_variance_passes": 2.0140807557539278
+      }
+    },
+    {
+      "index": 24,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": -0.0014293027137294203,
+        "bias": -0.0014293027137294203,
+        "direct_mc_variance": 0.19908108083989207
+      },
+      "estimated_variance": {
+        "mean_raw": 0.21196359448093857,
+        "mean_floor": 0.21196851872724118,
+        "mean_raw_over_direct_mc": 1.0647098839663578,
+        "mean_floor_over_direct_mc": 1.0647346188446387,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 913,
+          "coverage": 0.913,
+          "truth_below_interval": 6,
+          "truth_above_interval": 81,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 913,
+          "coverage": 0.913,
+          "truth_below_interval": 6,
+          "truth_above_interval": 81
+        },
+        "product_percentile": {
+          "covered": 916,
+          "coverage": 0.916,
+          "truth_below_interval": 16,
+          "truth_above_interval": 68
+        },
+        "oracle_sd_normal": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 36,
+          "truth_above_interval": 20
+        },
+        "product_basic_posthoc": {
+          "covered": 924,
+          "coverage": 0.924,
+          "truth_below_interval": 6,
+          "truth_above_interval": 70
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 937,
+          "coverage": 0.937,
+          "truth_below_interval": 5,
+          "truth_above_interval": 58
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 980,
+          "coverage": 0.98,
+          "truth_below_interval": 0,
+          "truth_above_interval": 20
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 980,
+          "coverage": 0.98,
+          "truth_below_interval": 0,
+          "truth_above_interval": 20
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.87933228596966,
+          -0.11130230121551188,
+          1.6820754325704377
+        ],
+        "mean": -0.2113443169195951,
+        "sd": 1.1203407337206646
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.273486162390358,
+        "spearman_abs_error_vs_raw_variance": 0.06892161967240312,
+        "median_raw_variance_failures": 0.08421234932785536,
+        "median_raw_variance_passes": 0.18709031443562082
+      }
+    },
+    {
+      "index": 25,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "point_estimate": {
+        "mean": 0.5056717351771574,
+        "bias": 0.005671735177157217,
+        "direct_mc_variance": 0.21587144167984618
+      },
+      "estimated_variance": {
+        "mean_raw": 0.23206663019801874,
+        "mean_floor": 0.23208773905448005,
+        "mean_raw_over_direct_mc": 1.0750223762446134,
+        "mean_floor_over_direct_mc": 1.075120160630992,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 916,
+          "coverage": 0.916,
+          "truth_below_interval": 9,
+          "truth_above_interval": 75,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 916,
+          "coverage": 0.916,
+          "truth_below_interval": 9,
+          "truth_above_interval": 75
+        },
+        "product_percentile": {
+          "covered": 923,
+          "coverage": 0.923,
+          "truth_below_interval": 11,
+          "truth_above_interval": 66
+        },
+        "oracle_sd_normal": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 34,
+          "truth_above_interval": 12
+        },
+        "product_basic_posthoc": {
+          "covered": 918,
+          "coverage": 0.918,
+          "truth_below_interval": 3,
+          "truth_above_interval": 79
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 940,
+          "coverage": 0.94,
+          "truth_below_interval": 3,
+          "truth_above_interval": 57
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 977,
+          "coverage": 0.977,
+          "truth_below_interval": 0,
+          "truth_above_interval": 23
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 977,
+          "coverage": 0.977,
+          "truth_below_interval": 0,
+          "truth_above_interval": 23
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.9536401533201424,
+          -0.07877298275147468,
+          1.5118330095123362
+        ],
+        "mean": -0.23301078067419642,
+        "sd": 1.1521925525194683
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.33419109519200524,
+        "spearman_abs_error_vs_raw_variance": 0.07331103687840658,
+        "median_raw_variance_failures": 0.08411457209395788,
+        "median_raw_variance_passes": 0.19449330623064853
+      }
+    },
+    {
+      "index": 26,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0,
+      "point_estimate": {
+        "mean": 1.9702111459667178,
+        "bias": -0.02978885403328224,
+        "direct_mc_variance": 0.3504896930882974
+      },
+      "estimated_variance": {
+        "mean_raw": 0.3312471747610176,
+        "mean_floor": 0.3313821739144922,
+        "mean_raw_over_direct_mc": 0.9450981905980553,
+        "mean_floor_over_direct_mc": 0.9454833635607324,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 879,
+          "coverage": 0.879,
+          "truth_below_interval": 6,
+          "truth_above_interval": 115,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 880,
+          "coverage": 0.88,
+          "truth_below_interval": 6,
+          "truth_above_interval": 114
+        },
+        "product_percentile": {
+          "covered": 883,
+          "coverage": 0.883,
+          "truth_below_interval": 11,
+          "truth_above_interval": 106
+        },
+        "oracle_sd_normal": {
+          "covered": 953,
+          "coverage": 0.953,
+          "truth_below_interval": 39,
+          "truth_above_interval": 8
+        },
+        "product_basic_posthoc": {
+          "covered": 848,
+          "coverage": 0.848,
+          "truth_below_interval": 3,
+          "truth_above_interval": 149
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 892,
+          "coverage": 0.892,
+          "truth_below_interval": 2,
+          "truth_above_interval": 106
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 0,
+          "truth_above_interval": 43
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 0,
+          "truth_above_interval": 43
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.3842890236174727,
+          -0.18186471322959236,
+          1.5715843020954456
+        ],
+        "mean": -0.4049192141702932,
+        "sd": 1.3209110040736505
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.28605918564260274,
+        "spearman_abs_error_vs_raw_variance": -0.02725996091720476,
+        "median_raw_variance_failures": 0.09077840203941002,
+        "median_raw_variance_passes": 0.2824596895837708
+      }
+    },
+    {
+      "index": 27,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.004965775170723882,
+      "point_estimate": {
+        "mean": 0.004159222804587351,
+        "bias": -0.0008065523661365175,
+        "direct_mc_variance": 0.34294518067837215
+      },
+      "estimated_variance": {
+        "mean_raw": 0.3429293941826003,
+        "mean_floor": 0.3429654448913801,
+        "mean_raw_over_direct_mc": 0.999953967873989,
+        "mean_floor_over_direct_mc": 1.0000590887819676,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 909,
+          "coverage": 0.909,
+          "truth_below_interval": 5,
+          "truth_above_interval": 86,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 910,
+          "coverage": 0.91,
+          "truth_below_interval": 5,
+          "truth_above_interval": 85
+        },
+        "product_percentile": {
+          "covered": 901,
+          "coverage": 0.901,
+          "truth_below_interval": 13,
+          "truth_above_interval": 86
+        },
+        "oracle_sd_normal": {
+          "covered": 954,
+          "coverage": 0.954,
+          "truth_below_interval": 34,
+          "truth_above_interval": 12
+        },
+        "product_basic_posthoc": {
+          "covered": 938,
+          "coverage": 0.938,
+          "truth_below_interval": 3,
+          "truth_above_interval": 59
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 3,
+          "truth_above_interval": 53
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 985,
+          "coverage": 0.985,
+          "truth_below_interval": 0,
+          "truth_above_interval": 15
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 985,
+          "coverage": 0.985,
+          "truth_below_interval": 0,
+          "truth_above_interval": 15
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.647384782994471,
+          -0.11949792782122574,
+          1.5718894809566524
+        ],
+        "mean": -0.24477597282367175,
+        "sd": 1.1169600508862054
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.45840389319465114,
+        "spearman_abs_error_vs_raw_variance": 0.26479169430298716,
+        "median_raw_variance_failures": 0.1041938792260323,
+        "median_raw_variance_passes": 0.27341250569723363
+      }
+    },
+    {
+      "index": 28,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.4995560363562329,
+      "point_estimate": {
+        "mean": 0.4792666216611002,
+        "bias": -0.02028941469513269,
+        "direct_mc_variance": 0.3503103721425158
+      },
+      "estimated_variance": {
+        "mean_raw": 0.3621637379491751,
+        "mean_floor": 0.36223964167841877,
+        "mean_raw_over_direct_mc": 1.0338367537739848,
+        "mean_floor_over_direct_mc": 1.0340534294287176,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 909,
+          "coverage": 0.909,
+          "truth_below_interval": 5,
+          "truth_above_interval": 86,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 909,
+          "coverage": 0.909,
+          "truth_below_interval": 5,
+          "truth_above_interval": 86
+        },
+        "product_percentile": {
+          "covered": 906,
+          "coverage": 0.906,
+          "truth_below_interval": 13,
+          "truth_above_interval": 81
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 35,
+          "truth_above_interval": 16
+        },
+        "product_basic_posthoc": {
+          "covered": 930,
+          "coverage": 0.93,
+          "truth_below_interval": 2,
+          "truth_above_interval": 68
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 939,
+          "coverage": 0.939,
+          "truth_below_interval": 2,
+          "truth_above_interval": 59
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 982,
+          "coverage": 0.982,
+          "truth_below_interval": 0,
+          "truth_above_interval": 18
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 983,
+          "coverage": 0.983,
+          "truth_below_interval": 0,
+          "truth_above_interval": 17
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.7374414020119118,
+          -0.2058486531012258,
+          1.5068427245270897
+        ],
+        "mean": -0.2993265487885995,
+        "sd": 1.1076390720871703
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.44746033788425693,
+        "spearman_abs_error_vs_raw_variance": 0.20034166806058068,
+        "median_raw_variance_failures": 0.1173705617377706,
+        "median_raw_variance_passes": 0.2783506371844173
+      }
+    },
+    {
+      "index": 29,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.004767809062912,
+      "point_estimate": {
+        "mean": 2.0249251424930352,
+        "bias": 0.02015733343012321,
+        "direct_mc_variance": 0.5422862306022587
+      },
+      "estimated_variance": {
+        "mean_raw": 0.5348637296209884,
+        "mean_floor": 0.5349627038898073,
+        "mean_raw_over_direct_mc": 0.9863125770812456,
+        "mean_floor_over_direct_mc": 0.9864950900480768,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 857,
+          "coverage": 0.857,
+          "truth_below_interval": 3,
+          "truth_above_interval": 140,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 857,
+          "coverage": 0.857,
+          "truth_below_interval": 3,
+          "truth_above_interval": 140
+        },
+        "product_percentile": {
+          "covered": 869,
+          "coverage": 0.869,
+          "truth_below_interval": 9,
+          "truth_above_interval": 122
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 44,
+          "truth_above_interval": 7
+        },
+        "product_basic_posthoc": {
+          "covered": 848,
+          "coverage": 0.848,
+          "truth_below_interval": 1,
+          "truth_above_interval": 151
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 889,
+          "coverage": 0.889,
+          "truth_below_interval": 1,
+          "truth_above_interval": 110
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 0,
+          "truth_above_interval": 50
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 950,
+          "coverage": 0.95,
+          "truth_below_interval": 0,
+          "truth_above_interval": 50
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.84194666731579,
+          -0.13288661569327984,
+          1.4482782392718268
+        ],
+        "mean": -0.4274916653413203,
+        "sd": 1.4201180699986102
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.48389265203984855,
+        "spearman_abs_error_vs_raw_variance": 0.10438705408743269,
+        "median_raw_variance_failures": 0.09886931828497345,
+        "median_raw_variance_passes": 0.43847662521901304
+      }
+    },
+    {
+      "index": 30,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.029640491701541465,
+        "bias": 0.029640491701541465,
+        "direct_mc_variance": 0.20577565674726178
+      },
+      "estimated_variance": {
+        "mean_raw": 0.2097869467313516,
+        "mean_floor": 0.20980629506186774,
+        "mean_raw_over_direct_mc": 1.0194935107849834,
+        "mean_floor_over_direct_mc": 1.0195875371184284,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 923,
+          "coverage": 0.923,
+          "truth_below_interval": 9,
+          "truth_above_interval": 68,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 923,
+          "coverage": 0.923,
+          "truth_below_interval": 9,
+          "truth_above_interval": 68
+        },
+        "product_percentile": {
+          "covered": 925,
+          "coverage": 0.925,
+          "truth_below_interval": 17,
+          "truth_above_interval": 58
+        },
+        "oracle_sd_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 36,
+          "truth_above_interval": 8
+        },
+        "product_basic_posthoc": {
+          "covered": 925,
+          "coverage": 0.925,
+          "truth_below_interval": 7,
+          "truth_above_interval": 68
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 940,
+          "coverage": 0.94,
+          "truth_below_interval": 6,
+          "truth_above_interval": 54
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 984,
+          "coverage": 0.984,
+          "truth_below_interval": 0,
+          "truth_above_interval": 16
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 984,
+          "coverage": 0.984,
+          "truth_below_interval": 0,
+          "truth_above_interval": 16
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.7207119454864293,
+          -0.043216489192041706,
+          1.5783452957140724
+        ],
+        "mean": -0.16471290199346353,
+        "sd": 1.107744775748454
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.41595794743960235,
+        "spearman_abs_error_vs_raw_variance": 0.15016452865407678,
+        "median_raw_variance_failures": 0.07610069089489391,
+        "median_raw_variance_passes": 0.1738738961546316
+      }
+    },
+    {
+      "index": 31,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "point_estimate": {
+        "mean": 0.5031748580491986,
+        "bias": 0.0031748580491984713,
+        "direct_mc_variance": 0.2053430220798698
+      },
+      "estimated_variance": {
+        "mean_raw": 0.2237667229167448,
+        "mean_floor": 0.2238198633000858,
+        "mean_raw_over_direct_mc": 1.0897215822104194,
+        "mean_floor_over_direct_mc": 1.0899803705675926,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 901,
+          "coverage": 0.901,
+          "truth_below_interval": 1,
+          "truth_above_interval": 98,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 901,
+          "coverage": 0.901,
+          "truth_below_interval": 1,
+          "truth_above_interval": 98
+        },
+        "product_percentile": {
+          "covered": 913,
+          "coverage": 0.913,
+          "truth_below_interval": 4,
+          "truth_above_interval": 83
+        },
+        "oracle_sd_normal": {
+          "covered": 952,
+          "coverage": 0.952,
+          "truth_below_interval": 34,
+          "truth_above_interval": 14
+        },
+        "product_basic_posthoc": {
+          "covered": 903,
+          "coverage": 0.903,
+          "truth_below_interval": 0,
+          "truth_above_interval": 97
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 923,
+          "coverage": 0.923,
+          "truth_below_interval": 0,
+          "truth_above_interval": 77
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 971,
+          "coverage": 0.971,
+          "truth_below_interval": 0,
+          "truth_above_interval": 29
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 971,
+          "coverage": 0.971,
+          "truth_below_interval": 0,
+          "truth_above_interval": 29
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.138231559255043,
+          -0.0846712793663437,
+          1.4027550042169852
+        ],
+        "mean": -0.2927656214633583,
+        "sd": 1.2061163106743527
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.28996706173577147,
+        "spearman_abs_error_vs_raw_variance": 0.05025614821906865,
+        "median_raw_variance_failures": 0.06608325081128756,
+        "median_raw_variance_passes": 0.1908494618285152
+      }
+    },
+    {
+      "index": 32,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0,
+      "point_estimate": {
+        "mean": 2.0004220469946734,
+        "bias": 0.00042204699467332497,
+        "direct_mc_variance": 0.340590631549199
+      },
+      "estimated_variance": {
+        "mean_raw": 0.34551287865692587,
+        "mean_floor": 0.34583323542022454,
+        "mean_raw_over_direct_mc": 1.0144520919008773,
+        "mean_floor_over_direct_mc": 1.0153926837246792,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 896,
+          "coverage": 0.896,
+          "truth_below_interval": 6,
+          "truth_above_interval": 98,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 896,
+          "coverage": 0.896,
+          "truth_below_interval": 6,
+          "truth_above_interval": 98
+        },
+        "product_percentile": {
+          "covered": 891,
+          "coverage": 0.891,
+          "truth_below_interval": 12,
+          "truth_above_interval": 97
+        },
+        "oracle_sd_normal": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 40,
+          "truth_above_interval": 5
+        },
+        "product_basic_posthoc": {
+          "covered": 874,
+          "coverage": 0.874,
+          "truth_below_interval": 4,
+          "truth_above_interval": 122
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 899,
+          "coverage": 0.899,
+          "truth_below_interval": 4,
+          "truth_above_interval": 97
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 0,
+          "truth_above_interval": 35
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 0,
+          "truth_above_interval": 35
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.5565521347165583,
+          -0.14767603860954837,
+          1.492696811214571
+        ],
+        "mean": -0.33797185011854963,
+        "sd": 1.2842280747889212
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.37843056622751875,
+        "spearman_abs_error_vs_raw_variance": -0.021604185205635777,
+        "median_raw_variance_failures": 0.09191273370671979,
+        "median_raw_variance_passes": 0.29957141986551566
+      }
+    },
+    {
+      "index": 33,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0028042430413019286,
+      "point_estimate": {
+        "mean": 0.0002519672067950358,
+        "bias": -0.0025522758345068904,
+        "direct_mc_variance": 0.28830822001230233
+      },
+      "estimated_variance": {
+        "mean_raw": 0.30170237506319664,
+        "mean_floor": 0.30175461601620884,
+        "mean_raw_over_direct_mc": 1.0464577633281589,
+        "mean_floor_over_direct_mc": 1.046638961606203,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 911,
+          "coverage": 0.911,
+          "truth_below_interval": 2,
+          "truth_above_interval": 87,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 911,
+          "coverage": 0.911,
+          "truth_below_interval": 2,
+          "truth_above_interval": 87
+        },
+        "product_percentile": {
+          "covered": 911,
+          "coverage": 0.911,
+          "truth_below_interval": 10,
+          "truth_above_interval": 79
+        },
+        "oracle_sd_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 33,
+          "truth_above_interval": 11
+        },
+        "product_basic_posthoc": {
+          "covered": 920,
+          "coverage": 0.92,
+          "truth_below_interval": 3,
+          "truth_above_interval": 77
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 936,
+          "coverage": 0.936,
+          "truth_below_interval": 2,
+          "truth_above_interval": 62
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 970,
+          "coverage": 0.97,
+          "truth_below_interval": 0,
+          "truth_above_interval": 30
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 970,
+          "coverage": 0.97,
+          "truth_below_interval": 0,
+          "truth_above_interval": 30
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.1420011996824315,
+          -0.1333371640777276,
+          1.442859872167061
+        ],
+        "mean": -0.3012635728025164,
+        "sd": 1.1732425572360783
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.4385034301135349,
+        "spearman_abs_error_vs_raw_variance": 0.17877057242401195,
+        "median_raw_variance_failures": 0.08445158304144515,
+        "median_raw_variance_passes": 0.2380204443893667
+      }
+    },
+    {
+      "index": 34,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.49920829743686324,
+      "point_estimate": {
+        "mean": 0.5156308877654132,
+        "bias": 0.016422590328549987,
+        "direct_mc_variance": 0.35299348898291777
+      },
+      "estimated_variance": {
+        "mean_raw": 0.34875513895301163,
+        "mean_floor": 0.34882633714317424,
+        "mean_raw_over_direct_mc": 0.9879931212269152,
+        "mean_floor_over_direct_mc": 0.9881948195368975,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 876,
+          "coverage": 0.876,
+          "truth_below_interval": 1,
+          "truth_above_interval": 123,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 876,
+          "coverage": 0.876,
+          "truth_below_interval": 1,
+          "truth_above_interval": 123
+        },
+        "product_percentile": {
+          "covered": 876,
+          "coverage": 0.876,
+          "truth_below_interval": 11,
+          "truth_above_interval": 113
+        },
+        "oracle_sd_normal": {
+          "covered": 958,
+          "coverage": 0.958,
+          "truth_below_interval": 38,
+          "truth_above_interval": 4
+        },
+        "product_basic_posthoc": {
+          "covered": 886,
+          "coverage": 0.886,
+          "truth_below_interval": 2,
+          "truth_above_interval": 112
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 908,
+          "coverage": 0.908,
+          "truth_below_interval": 2,
+          "truth_above_interval": 90
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 0,
+          "truth_above_interval": 41
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 0,
+          "truth_above_interval": 41
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.3997244451394764,
+          -0.11031336898499611,
+          1.4651081601896383
+        ],
+        "mean": -0.3440730892947077,
+        "sd": 1.265944804710952
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.5019929523892741,
+        "spearman_abs_error_vs_raw_variance": 0.13532707419436427,
+        "median_raw_variance_failures": 0.07673032807575142,
+        "median_raw_variance_passes": 0.2801952035438011
+      }
+    },
+    {
+      "index": 35,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0034365211609697,
+      "point_estimate": {
+        "mean": 1.9621609470238985,
+        "bias": -0.04127557413707103,
+        "direct_mc_variance": 0.4629149085039334
+      },
+      "estimated_variance": {
+        "mean_raw": 0.475295983874863,
+        "mean_floor": 0.4755040682751068,
+        "mean_raw_over_direct_mc": 1.0267458989621727,
+        "mean_floor_over_direct_mc": 1.0271954079246648,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 875,
+          "coverage": 0.875,
+          "truth_below_interval": 1,
+          "truth_above_interval": 124,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 876,
+          "coverage": 0.876,
+          "truth_below_interval": 1,
+          "truth_above_interval": 123
+        },
+        "product_percentile": {
+          "covered": 880,
+          "coverage": 0.88,
+          "truth_below_interval": 5,
+          "truth_above_interval": 115
+        },
+        "oracle_sd_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 40,
+          "truth_above_interval": 4
+        },
+        "product_basic_posthoc": {
+          "covered": 853,
+          "coverage": 0.853,
+          "truth_below_interval": 1,
+          "truth_above_interval": 146
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 892,
+          "coverage": 0.892,
+          "truth_below_interval": 1,
+          "truth_above_interval": 107
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 0,
+          "truth_above_interval": 55
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 0,
+          "truth_above_interval": 55
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -4.010026526456314,
+          -0.2849063706449386,
+          1.4029497965049018
+        ],
+        "mean": -0.5241179301282819,
+        "sd": 1.3856523459958916
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.4685425648820327,
+        "spearman_abs_error_vs_raw_variance": -0.02287191433074628,
+        "median_raw_variance_failures": 0.09260488224596378,
+        "median_raw_variance_passes": 0.36698883013130046
+      }
+    },
+    {
+      "index": 36,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": 0.011251827436567522,
+        "bias": 0.011251827436567522,
+        "direct_mc_variance": 0.18551965287249136
+      },
+      "estimated_variance": {
+        "mean_raw": 0.1893110026087074,
+        "mean_floor": 0.18954533440809795,
+        "mean_raw_over_direct_mc": 1.020436377912058,
+        "mean_floor_over_direct_mc": 1.0216994882928843,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 903,
+          "coverage": 0.903,
+          "truth_below_interval": 8,
+          "truth_above_interval": 89,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 903,
+          "coverage": 0.903,
+          "truth_below_interval": 8,
+          "truth_above_interval": 89
+        },
+        "product_percentile": {
+          "covered": 923,
+          "coverage": 0.923,
+          "truth_below_interval": 10,
+          "truth_above_interval": 67
+        },
+        "oracle_sd_normal": {
+          "covered": 951,
+          "coverage": 0.951,
+          "truth_below_interval": 43,
+          "truth_above_interval": 6
+        },
+        "product_basic_posthoc": {
+          "covered": 905,
+          "coverage": 0.905,
+          "truth_below_interval": 4,
+          "truth_above_interval": 91
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 934,
+          "coverage": 0.934,
+          "truth_below_interval": 4,
+          "truth_above_interval": 62
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 974,
+          "coverage": 0.974,
+          "truth_below_interval": 0,
+          "truth_above_interval": 26
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 974,
+          "coverage": 0.974,
+          "truth_below_interval": 0,
+          "truth_above_interval": 26
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -2.984644240440264,
+          -0.09184992926140995,
+          1.59486276390015
+        ],
+        "mean": -0.25577188237063575,
+        "sd": 1.1817101014055509
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.34392121358811073,
+        "spearman_abs_error_vs_raw_variance": 0.055541341185138204,
+        "median_raw_variance_failures": 0.057731085446436785,
+        "median_raw_variance_passes": 0.1610736655827032
+      }
+    },
+    {
+      "index": 37,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "point_estimate": {
+        "mean": 0.4988559237592,
+        "bias": -0.0011440762408000858,
+        "direct_mc_variance": 0.20918498639104627
+      },
+      "estimated_variance": {
+        "mean_raw": 0.20384679022019883,
+        "mean_floor": 0.20413285331030048,
+        "mean_raw_over_direct_mc": 0.9744809784729563,
+        "mean_floor_over_direct_mc": 0.9758484910035492,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 886,
+          "coverage": 0.886,
+          "truth_below_interval": 5,
+          "truth_above_interval": 109,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 886,
+          "coverage": 0.886,
+          "truth_below_interval": 5,
+          "truth_above_interval": 109
+        },
+        "product_percentile": {
+          "covered": 900,
+          "coverage": 0.9,
+          "truth_below_interval": 11,
+          "truth_above_interval": 89
+        },
+        "oracle_sd_normal": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 32,
+          "truth_above_interval": 9
+        },
+        "product_basic_posthoc": {
+          "covered": 882,
+          "coverage": 0.882,
+          "truth_below_interval": 5,
+          "truth_above_interval": 113
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 910,
+          "coverage": 0.91,
+          "truth_below_interval": 5,
+          "truth_above_interval": 85
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 966,
+          "coverage": 0.966,
+          "truth_below_interval": 0,
+          "truth_above_interval": 34
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 966,
+          "coverage": 0.966,
+          "truth_below_interval": 0,
+          "truth_above_interval": 34
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.175375093820834,
+          -0.08965310529386007,
+          1.446673291262731
+        ],
+        "mean": -0.32511495938717566,
+        "sd": 1.2781025109580928
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.3364444164386334,
+        "spearman_abs_error_vs_raw_variance": 0.0016197265478301256,
+        "median_raw_variance_failures": 0.059160152612699114,
+        "median_raw_variance_passes": 0.18121787740130138
+      }
+    },
+    {
+      "index": 38,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0,
+      "point_estimate": {
+        "mean": 1.9971988673467544,
+        "bias": -0.002801132653245693,
+        "direct_mc_variance": 0.325068184929517
+      },
+      "estimated_variance": {
+        "mean_raw": 0.33123149572823535,
+        "mean_floor": 0.33176879947079246,
+        "mean_raw_over_direct_mc": 1.0189600554113123,
+        "mean_floor_over_direct_mc": 1.0206129509189843,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 890,
+          "coverage": 0.89,
+          "truth_below_interval": 7,
+          "truth_above_interval": 103,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 890,
+          "coverage": 0.89,
+          "truth_below_interval": 7,
+          "truth_above_interval": 103
+        },
+        "product_percentile": {
+          "covered": 901,
+          "coverage": 0.901,
+          "truth_below_interval": 11,
+          "truth_above_interval": 88
+        },
+        "oracle_sd_normal": {
+          "covered": 958,
+          "coverage": 0.958,
+          "truth_below_interval": 39,
+          "truth_above_interval": 3
+        },
+        "product_basic_posthoc": {
+          "covered": 863,
+          "coverage": 0.863,
+          "truth_below_interval": 5,
+          "truth_above_interval": 132
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 907,
+          "coverage": 0.907,
+          "truth_below_interval": 5,
+          "truth_above_interval": 88
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 961,
+          "coverage": 0.961,
+          "truth_below_interval": 0,
+          "truth_above_interval": 39
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 0,
+          "truth_above_interval": 38
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.203892591296528,
+          -0.10632403381345772,
+          1.4782089963018743
+        ],
+        "mean": -0.3282502993179914,
+        "sd": 1.232916007237212
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.34164874883106816,
+        "spearman_abs_error_vs_raw_variance": -0.03172085523552778,
+        "median_raw_variance_failures": 0.08902036711309477,
+        "median_raw_variance_passes": 0.29204458211978396
+      }
+    },
+    {
+      "index": 39,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": -0.004086361052783958,
+      "point_estimate": {
+        "mean": -0.0038755987712847315,
+        "bias": 0.00021076228149921806,
+        "direct_mc_variance": 0.2780433685920295
+      },
+      "estimated_variance": {
+        "mean_raw": 0.2953555166697953,
+        "mean_floor": 0.29553267585978094,
+        "mean_raw_over_direct_mc": 1.0622642006009062,
+        "mean_floor_over_direct_mc": 1.0629013644753145,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 888,
+          "coverage": 0.888,
+          "truth_below_interval": 4,
+          "truth_above_interval": 108,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 888,
+          "coverage": 0.888,
+          "truth_below_interval": 4,
+          "truth_above_interval": 108
+        },
+        "product_percentile": {
+          "covered": 908,
+          "coverage": 0.908,
+          "truth_below_interval": 6,
+          "truth_above_interval": 86
+        },
+        "oracle_sd_normal": {
+          "covered": 951,
+          "coverage": 0.951,
+          "truth_below_interval": 45,
+          "truth_above_interval": 4
+        },
+        "product_basic_posthoc": {
+          "covered": 918,
+          "coverage": 0.918,
+          "truth_below_interval": 1,
+          "truth_above_interval": 81
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 931,
+          "coverage": 0.931,
+          "truth_below_interval": 1,
+          "truth_above_interval": 68
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 973,
+          "coverage": 0.973,
+          "truth_below_interval": 0,
+          "truth_above_interval": 27
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 973,
+          "coverage": 0.973,
+          "truth_below_interval": 0,
+          "truth_above_interval": 27
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.037319058734441,
+          -0.17493056886221353,
+          1.4312028463891524
+        ],
+        "mean": -0.37444780293025814,
+        "sd": 1.1944524987212122
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.4968478611585431,
+        "spearman_abs_error_vs_raw_variance": 0.10571711134157895,
+        "median_raw_variance_failures": 0.06959039641355133,
+        "median_raw_variance_passes": 0.2210365053723944
+      }
+    },
+    {
+      "index": 40,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.4987148106651139,
+      "point_estimate": {
+        "mean": 0.5180632865176132,
+        "bias": 0.019348475852499353,
+        "direct_mc_variance": 0.3128121530980166
+      },
+      "estimated_variance": {
+        "mean_raw": 0.32566540132378047,
+        "mean_floor": 0.32592002805055514,
+        "mean_raw_over_direct_mc": 1.0410893505845868,
+        "mean_floor_over_direct_mc": 1.041903343021431,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 884,
+          "coverage": 0.884,
+          "truth_below_interval": 2,
+          "truth_above_interval": 114,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 884,
+          "coverage": 0.884,
+          "truth_below_interval": 2,
+          "truth_above_interval": 114
+        },
+        "product_percentile": {
+          "covered": 889,
+          "coverage": 0.889,
+          "truth_below_interval": 9,
+          "truth_above_interval": 102
+        },
+        "oracle_sd_normal": {
+          "covered": 959,
+          "coverage": 0.959,
+          "truth_below_interval": 33,
+          "truth_above_interval": 8
+        },
+        "product_basic_posthoc": {
+          "covered": 890,
+          "coverage": 0.89,
+          "truth_below_interval": 2,
+          "truth_above_interval": 108
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 910,
+          "coverage": 0.91,
+          "truth_below_interval": 2,
+          "truth_above_interval": 88
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 0,
+          "truth_above_interval": 54
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 946,
+          "coverage": 0.946,
+          "truth_below_interval": 0,
+          "truth_above_interval": 54
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.730988037034164,
+          -0.06559742860440854,
+          1.4028323697083003
+        ],
+        "mean": -0.372521074995488,
+        "sd": 1.3207896808223605
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.47699026089100455,
+        "spearman_abs_error_vs_raw_variance": 0.09696798562161611,
+        "median_raw_variance_failures": 0.06056873571554712,
+        "median_raw_variance_passes": 0.2660546631660774
+      }
+    },
+    {
+      "index": 41,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 1.9990507283389845,
+      "point_estimate": {
+        "mean": 1.9831212472471924,
+        "bias": -0.015929481091791823,
+        "direct_mc_variance": 0.4947321179263145
+      },
+      "estimated_variance": {
+        "mean_raw": 0.502385085884715,
+        "mean_floor": 0.5027680866140345,
+        "mean_raw_over_direct_mc": 1.015468912732972,
+        "mean_floor_over_direct_mc": 1.0162430705356325,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 845,
+          "coverage": 0.845,
+          "truth_below_interval": 2,
+          "truth_above_interval": 153,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 845,
+          "coverage": 0.845,
+          "truth_below_interval": 2,
+          "truth_above_interval": 153
+        },
+        "product_percentile": {
+          "covered": 855,
+          "coverage": 0.855,
+          "truth_below_interval": 8,
+          "truth_above_interval": 137
+        },
+        "oracle_sd_normal": {
+          "covered": 962,
+          "coverage": 0.962,
+          "truth_below_interval": 36,
+          "truth_above_interval": 2
+        },
+        "product_basic_posthoc": {
+          "covered": 821,
+          "coverage": 0.821,
+          "truth_below_interval": 1,
+          "truth_above_interval": 178
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 866,
+          "coverage": 0.866,
+          "truth_below_interval": 1,
+          "truth_above_interval": 133
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 927,
+          "coverage": 0.927,
+          "truth_below_interval": 0,
+          "truth_above_interval": 73
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 927,
+          "coverage": 0.927,
+          "truth_below_interval": 0,
+          "truth_above_interval": 73
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -4.658560532045492,
+          -0.18191129198144396,
+          1.3192716467028545
+        ],
+        "mean": -0.5429748043172737,
+        "sd": 1.4882354820643515
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.426056720260401,
+        "spearman_abs_error_vs_raw_variance": -0.0171626727394468,
+        "median_raw_variance_failures": 0.0899327070106477,
+        "median_raw_variance_passes": 0.4095101387113091
+      }
+    },
+    {
+      "index": 42,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.0,
+      "point_estimate": {
+        "mean": -0.0010113451213499545,
+        "bias": -0.0010113451213499545,
+        "direct_mc_variance": 0.1744075598283757
+      },
+      "estimated_variance": {
+        "mean_raw": 0.17709582564090887,
+        "mean_floor": 0.17794331601303418,
+        "mean_raw_over_direct_mc": 1.0154137000436136,
+        "mean_floor_over_direct_mc": 1.0202729525494068,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 894,
+          "coverage": 0.894,
+          "truth_below_interval": 6,
+          "truth_above_interval": 100,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 898,
+          "coverage": 0.898,
+          "truth_below_interval": 4,
+          "truth_above_interval": 98
+        },
+        "product_percentile": {
+          "covered": 902,
+          "coverage": 0.902,
+          "truth_below_interval": 12,
+          "truth_above_interval": 86
+        },
+        "oracle_sd_normal": {
+          "covered": 956,
+          "coverage": 0.956,
+          "truth_below_interval": 39,
+          "truth_above_interval": 5
+        },
+        "product_basic_posthoc": {
+          "covered": 897,
+          "coverage": 0.897,
+          "truth_below_interval": 7,
+          "truth_above_interval": 96
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 916,
+          "coverage": 0.916,
+          "truth_below_interval": 6,
+          "truth_above_interval": 78
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 0,
+          "truth_above_interval": 37
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 963,
+          "coverage": 0.963,
+          "truth_below_interval": 0,
+          "truth_above_interval": 37
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.3595758345028304,
+          -0.13712857690995284,
+          1.5247754016499646
+        ],
+        "mean": -0.3162101077418332,
+        "sd": 1.2414661591136744
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.3444987101482342,
+        "spearman_abs_error_vs_raw_variance": 0.031457943287364926,
+        "median_raw_variance_failures": 0.04768003899150227,
+        "median_raw_variance_passes": 0.14841244087198466
+      }
+    },
+    {
+      "index": 43,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "point_estimate": {
+        "mean": 0.5105760884174376,
+        "bias": 0.010576088417437525,
+        "direct_mc_variance": 0.2106777965418516
+      },
+      "estimated_variance": {
+        "mean_raw": 0.21331242834668973,
+        "mean_floor": 0.21420436013415223,
+        "mean_raw_over_direct_mc": 1.012505502943756,
+        "mean_floor_over_direct_mc": 1.0167391326954573,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 892,
+          "coverage": 0.892,
+          "truth_below_interval": 5,
+          "truth_above_interval": 103,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 894,
+          "coverage": 0.894,
+          "truth_below_interval": 5,
+          "truth_above_interval": 101
+        },
+        "product_percentile": {
+          "covered": 911,
+          "coverage": 0.911,
+          "truth_below_interval": 11,
+          "truth_above_interval": 78
+        },
+        "oracle_sd_normal": {
+          "covered": 953,
+          "coverage": 0.953,
+          "truth_below_interval": 43,
+          "truth_above_interval": 4
+        },
+        "product_basic_posthoc": {
+          "covered": 886,
+          "coverage": 0.886,
+          "truth_below_interval": 3,
+          "truth_above_interval": 111
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 922,
+          "coverage": 0.922,
+          "truth_below_interval": 3,
+          "truth_above_interval": 75
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 964,
+          "coverage": 0.964,
+          "truth_below_interval": 0,
+          "truth_above_interval": 36
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 965,
+          "coverage": 0.965,
+          "truth_below_interval": 0,
+          "truth_above_interval": 35
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.3661088254368843,
+          -0.10088670752849274,
+          1.5172430092461235
+        ],
+        "mean": -0.3224338024437212,
+        "sd": 1.2611212664220792
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.38480152247188837,
+        "spearman_abs_error_vs_raw_variance": 0.03833077944424643,
+        "median_raw_variance_failures": 0.054436563019632934,
+        "median_raw_variance_passes": 0.1822178570871525
+      }
+    },
+    {
+      "index": 44,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0,
+      "point_estimate": {
+        "mean": 1.9653266978215367,
+        "bias": -0.03467330217846325,
+        "direct_mc_variance": 0.2971223126982426
+      },
+      "estimated_variance": {
+        "mean_raw": 0.31472409686870945,
+        "mean_floor": 0.3155866493469677,
+        "mean_raw_over_direct_mc": 1.0592408695618334,
+        "mean_floor_over_direct_mc": 1.0621438911169134,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 880,
+          "coverage": 0.88,
+          "truth_below_interval": 1,
+          "truth_above_interval": 119,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 882,
+          "coverage": 0.882,
+          "truth_below_interval": 0,
+          "truth_above_interval": 118
+        },
+        "product_percentile": {
+          "covered": 887,
+          "coverage": 0.887,
+          "truth_below_interval": 5,
+          "truth_above_interval": 108
+        },
+        "oracle_sd_normal": {
+          "covered": 955,
+          "coverage": 0.955,
+          "truth_below_interval": 27,
+          "truth_above_interval": 18
+        },
+        "product_basic_posthoc": {
+          "covered": 861,
+          "coverage": 0.861,
+          "truth_below_interval": 1,
+          "truth_above_interval": 138
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 891,
+          "coverage": 0.891,
+          "truth_below_interval": 1,
+          "truth_above_interval": 108
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 0,
+          "truth_above_interval": 56
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 944,
+          "coverage": 0.944,
+          "truth_below_interval": 0,
+          "truth_above_interval": 56
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -4.065178120958118,
+          -0.13804485934289584,
+          1.4116196428954404
+        ],
+        "mean": -0.41758528196562383,
+        "sd": 1.3782220485377241
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.1805339010354997,
+        "spearman_abs_error_vs_raw_variance": -0.11191689027950223,
+        "median_raw_variance_failures": 0.07640606249578918,
+        "median_raw_variance_passes": 0.2895745710326355
+      }
+    },
+    {
+      "index": 45,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.013195982195825327,
+      "point_estimate": {
+        "mean": 0.022627515016795236,
+        "bias": 0.00943153282096991,
+        "direct_mc_variance": 0.27566307179671445
+      },
+      "estimated_variance": {
+        "mean_raw": 0.28421948472798053,
+        "mean_floor": 0.28517697329643316,
+        "mean_raw_over_direct_mc": 1.0310393875955062,
+        "mean_floor_over_direct_mc": 1.0345127892456145,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 867,
+          "coverage": 0.867,
+          "truth_below_interval": 4,
+          "truth_above_interval": 129,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 867,
+          "coverage": 0.867,
+          "truth_below_interval": 4,
+          "truth_above_interval": 129
+        },
+        "product_percentile": {
+          "covered": 882,
+          "coverage": 0.882,
+          "truth_below_interval": 9,
+          "truth_above_interval": 109
+        },
+        "oracle_sd_normal": {
+          "covered": 960,
+          "coverage": 0.96,
+          "truth_below_interval": 35,
+          "truth_above_interval": 5
+        },
+        "product_basic_posthoc": {
+          "covered": 897,
+          "coverage": 0.897,
+          "truth_below_interval": 2,
+          "truth_above_interval": 101
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 912,
+          "coverage": 0.912,
+          "truth_below_interval": 2,
+          "truth_above_interval": 86
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 945,
+          "coverage": 0.945,
+          "truth_below_interval": 0,
+          "truth_above_interval": 55
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 947,
+          "coverage": 0.947,
+          "truth_below_interval": 0,
+          "truth_above_interval": 53
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.7306169340855755,
+          -0.11946453569690199,
+          1.3712015595730773
+        ],
+        "mean": -0.418989893972502,
+        "sd": 1.348935585904252
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.429080716549442,
+        "spearman_abs_error_vs_raw_variance": 0.08176677826106675,
+        "median_raw_variance_failures": 0.05132006578824702,
+        "median_raw_variance_passes": 0.2261408449924588
+      }
+    },
+    {
+      "index": 46,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 0.5152130655088921,
+      "point_estimate": {
+        "mean": 0.5099994001908505,
+        "bias": -0.0052136653180415845,
+        "direct_mc_variance": 0.299815123386906
+      },
+      "estimated_variance": {
+        "mean_raw": 0.30716171734733033,
+        "mean_floor": 0.30805791206707644,
+        "mean_raw_over_direct_mc": 1.0245037471006546,
+        "mean_floor_over_direct_mc": 1.027492904917719,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 851,
+          "coverage": 0.851,
+          "truth_below_interval": 3,
+          "truth_above_interval": 146,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 852,
+          "coverage": 0.852,
+          "truth_below_interval": 3,
+          "truth_above_interval": 145
+        },
+        "product_percentile": {
+          "covered": 882,
+          "coverage": 0.882,
+          "truth_below_interval": 6,
+          "truth_above_interval": 112
+        },
+        "oracle_sd_normal": {
+          "covered": 949,
+          "coverage": 0.949,
+          "truth_below_interval": 46,
+          "truth_above_interval": 5
+        },
+        "product_basic_posthoc": {
+          "covered": 870,
+          "coverage": 0.87,
+          "truth_below_interval": 1,
+          "truth_above_interval": 129
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 894,
+          "coverage": 0.894,
+          "truth_below_interval": 1,
+          "truth_above_interval": 105
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 934,
+          "coverage": 0.934,
+          "truth_below_interval": 0,
+          "truth_above_interval": 66
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 935,
+          "coverage": 0.935,
+          "truth_below_interval": 0,
+          "truth_above_interval": 65
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -3.9778209166055802,
+          -0.11784928749322154,
+          1.4224148553419995
+        ],
+        "mean": -0.4771693054846104,
+        "sd": 1.4063323834710233
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.42612771929154497,
+        "spearman_abs_error_vs_raw_variance": -0.034063626399617436,
+        "median_raw_variance_failures": 0.05864136277003871,
+        "median_raw_variance_passes": 0.25822799836198806
+      }
+    },
+    {
+      "index": 47,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "R": 1000,
+      "population_truth_delta_pts": 2.0139062662996623,
+      "point_estimate": {
+        "mean": 2.021392041223293,
+        "bias": 0.007485774923630428,
+        "direct_mc_variance": 0.524982145119346
+      },
+      "estimated_variance": {
+        "mean_raw": 0.48416409987086695,
+        "mean_floor": 0.485000803314303,
+        "mean_raw_over_direct_mc": 0.9222486981167716,
+        "mean_floor_over_direct_mc": 0.9238424731645798,
+        "raw_invalid_count": 0
+      },
+      "coverage": {
+        "raw_normal": {
+          "covered": 846,
+          "coverage": 0.846,
+          "truth_below_interval": 4,
+          "truth_above_interval": 150,
+          "invalid_variance": 0
+        },
+        "floor_normal": {
+          "covered": 847,
+          "coverage": 0.847,
+          "truth_below_interval": 4,
+          "truth_above_interval": 149
+        },
+        "product_percentile": {
+          "covered": 863,
+          "coverage": 0.863,
+          "truth_below_interval": 7,
+          "truth_above_interval": 130
+        },
+        "oracle_sd_normal": {
+          "covered": 957,
+          "coverage": 0.957,
+          "truth_below_interval": 43,
+          "truth_above_interval": 0
+        },
+        "product_basic_posthoc": {
+          "covered": 827,
+          "coverage": 0.827,
+          "truth_below_interval": 2,
+          "truth_above_interval": 171
+        },
+        "product_symmetric_widest_tail_posthoc": {
+          "covered": 872,
+          "coverage": 0.872,
+          "truth_below_interval": 2,
+          "truth_above_interval": 126
+        },
+        "q_2_981_raw_posthoc": {
+          "covered": 926,
+          "coverage": 0.926,
+          "truth_below_interval": 0,
+          "truth_above_interval": 74
+        },
+        "q_2_981_floor_posthoc": {
+          "covered": 926,
+          "coverage": 0.926,
+          "truth_below_interval": 0,
+          "truth_above_interval": 74
+        }
+      },
+      "studentized_raw": {
+        "quantiles_0.025_0.5_0.975": [
+          -4.371478914645568,
+          -0.11110948554508894,
+          1.4347329188015787
+        ],
+        "mean": -0.524087952157427,
+        "sd": 1.5492877072084905
+      },
+      "error_variance_association": {
+        "pearson_abs_error_vs_raw_variance": 0.4833625956760162,
+        "spearman_abs_error_vs_raw_variance": -0.004871958801254869,
+        "median_raw_variance_failures": 0.08508838812784526,
+        "median_raw_variance_passes": 0.38384000763769366
+      }
+    }
+  ],
+  "low_eer_minimum_coverage": {
+    "raw_normal": 0.845,
+    "floor_normal": 0.845,
+    "product_percentile": 0.855,
+    "oracle_sd_normal": 0.944,
+    "product_basic_posthoc": 0.821,
+    "product_symmetric_widest_tail_posthoc": 0.866,
+    "q_2_981_raw_posthoc": 0.926,
+    "q_2_981_floor_posthoc": 0.926
+  }
+}

@@ -161,7 +161,7 @@ def main():
     results["cell5_dgp_robustness_mctruth"] = coverage_run(
         rng, "cell5-mc", "high_icc_organizer", 0.5, 400, 30, 3, True)
 
-    out = Path(__file__).parent / "results_contingency.json"
+    out = Path(__file__).parent.parent / "derived" / "results_contingency.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

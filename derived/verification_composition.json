@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "local_full_reference_system_eers": 430,
+    "policy_pair_deltas": 336,
+    "policy_system_eers": 96,
+    "policy_weight_hashes": 12,
+    "registered_path_grid_pair_signs": 3080308,
+    "score_file_hashes": 8
+  },
+  "experiment": "EXP-108",
+  "imports_analysis_or_policy_builder": false,
+  "independent_implementation": true,
+  "passed": true,
+  "result_sha256": "ba05285c82627876950c697cdb80a3cc6a02549301e68e8adbed4309451a0496"
+}

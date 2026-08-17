@@ -1,0 +1,1299 @@
+{
+  "experiment": "EXP-105-real-data",
+  "provenance": {
+    "key": {
+      "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/trial_metadata.txt",
+      "sha256": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800"
+    },
+    "scores": {
+      "CQCC-GMM": {
+        "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/CQCC-GMM/score.txt",
+        "sha256": "97e05bdbbbe671303b7f5bee9b55663d1903c424ae16cffa56a7f5abc267a04d"
+      },
+      "LFCC-GMM": {
+        "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/LFCC-GMM/score.txt",
+        "sha256": "488c214482d5f4fb9500c7c6b90e3cdec714741b42f0d3d8440371676f97aafc"
+      },
+      "LFCC-LCNN": {
+        "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/LFCC-LCNN/score.txt",
+        "sha256": "ae95b18160ab0132e0c9ee4c9745d379c50629ebf6d0b4ddfee86bf0b3b993d0"
+      },
+      "RawNet2": {
+        "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/RawNet2/score.txt",
+        "sha256": "a9ac140df41ec0638b287605283e8a4163f12b6da48eb2706a0e21efcc262797"
+      },
+      "SSL-AASIST": {
+        "path": "inputs/anti-spoofing/author-scores/ssl-aasist/Scores_DF.txt",
+        "sha256": "b58885aef1322f48098d0d7379f4e8a9fc5a831ac869e01cd4b567169a0122ce"
+      },
+      "XLS-R+SLS": {
+        "path": "inputs/anti-spoofing/official-scores/xlsr-sls/scores_DF.txt",
+        "sha256": "b0c20e37bd67899f736b03497e35e67665a1a9f238bee4dfb573e6495045149b"
+      },
+      "XLSR-Conformer": {
+        "path": "inputs/anti-spoofing/official-scores/xlsr-conformer-rosello/Scores_Best_DF_Fixed_size_train.txt",
+        "sha256": "fd00e8ddb2838a9a0760609c029cb344474d85fe9b7a040969b89544502630fc"
+      },
+      "XLSR-Mamba": {
+        "path": "inputs/anti-spoofing/official-scores/xlsr-mamba/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
+        "sha256": "0698327cafdadec1f7d4f16a5c7769ead2c0aba1d805098c175307d53136397d"
+      }
+    },
+    "script_sha256": "e89d3836588b561035ad5bee36fbf0b989ae841b85aae550328921cb14f0ddd4"
+  },
+  "density_bandwidth_probability": 0.005,
+  "n_trials": 533928,
+  "n_speakers": 93,
+  "n_spoof_attacks": 110,
+  "n_observed_spoof_cells": 1062,
+  "cell_size": {
+    "min": 5,
+    "median": 192.0,
+    "max": 1260
+  },
+  "system_influence": {
+    "XLSR-Mamba": {
+      "cut": 509555,
+      "threshold": -4.13089656829834,
+      "frr": 0.018831125159728294,
+      "far": 0.01884756838817936,
+      "eer": 0.018839346773953825,
+      "cdf_bona_at_threshold": 0.018831125159728294,
+      "cdf_spoof_at_threshold": 0.9811524316118206,
+      "density_bona": 0.030149498566330597,
+      "density_spoof": 0.018892517772240942,
+      "alpha_bona": 0.385231260513691,
+      "alpha_spoof": 0.6147687394863091,
+      "influence_sum": -3.713392440762853e-18
+    },
+    "XLS-R+SLS": {
+      "cut": 509401,
+      "threshold": -11.522233963012695,
+      "frr": 0.0191673952518663,
+      "far": 0.01915389194677286,
+      "eer": 0.019160643599319578,
+      "cdf_bona_at_threshold": 0.0191673952518663,
+      "cdf_spoof_at_threshold": 0.9808461080532271,
+      "density_bona": 0.01218538860237552,
+      "density_spoof": 0.009017780239291206,
+      "alpha_bona": 0.4253034207589861,
+      "alpha_spoof": 0.574696579241014,
+      "influence_sum": 1.1926223897340549e-18
+    },
+    "XLSR-Conformer": {
+      "cut": 507597,
+      "threshold": -3.477797508239746,
+      "frr": 0.022731858228529155,
+      "far": 0.022731519923553933,
+      "eer": 0.022731689076041544,
+      "cdf_bona_at_threshold": 0.022731858228529155,
+      "cdf_spoof_at_threshold": 0.9772684800764461,
+      "density_bona": 0.030726918929570985,
+      "density_spoof": 0.025389772546566748,
+      "alpha_bona": 0.45244599919728223,
+      "alpha_spoof": 0.5475540008027178,
+      "influence_sum": -1.734723475976807e-18
+    },
+    "SSL-AASIST": {
+      "cut": 504681,
+      "threshold": -3.5327157974243164,
+      "frr": 0.028515703813302845,
+      "far": 0.028515062834860827,
+      "eer": 0.028515383324081836,
+      "cdf_bona_at_threshold": 0.028515703813302845,
+      "cdf_spoof_at_threshold": 0.9714849371651392,
+      "density_bona": 0.3697311193711962,
+      "density_spoof": 0.5502304604418523,
+      "alpha_bona": 0.5981015647997695,
+      "alpha_spoof": 0.40189843520023055,
+      "influence_sum": 2.2497195079074217e-18
+    },
+    "RawNet2": {
+      "cut": 406197,
+      "threshold": -10.259778022766113,
+      "frr": 0.2238213733270563,
+      "far": 0.22384545880140794,
+      "eer": 0.22383341606423213,
+      "cdf_bona_at_threshold": 0.2238213733270563,
+      "cdf_spoof_at_threshold": 0.7761545411985921,
+      "density_bona": 0.08307111000740906,
+      "density_spoof": 0.10992973955513055,
+      "alpha_bona": 0.5695816355435739,
+      "alpha_spoof": 0.43041836445642623,
+      "influence_sum": 1.452830911130576e-17
+    },
+    "LFCC-LCNN": {
+      "cut": 400696,
+      "threshold": -7.595213,
+      "frr": 0.23478377833075526,
+      "far": 0.23475751311507942,
+      "eer": 0.23477064572291734,
+      "cdf_bona_at_threshold": 0.23478377833075526,
+      "cdf_spoof_at_threshold": 0.7652424868849206,
+      "density_bona": 0.05661745485261216,
+      "density_spoof": 0.06539662585102118,
+      "alpha_bona": 0.5359760568115627,
+      "alpha_spoof": 0.46402394318843726,
+      "influence_sum": 1.4094628242311558e-17
+    },
+    "LFCC-GMM": {
+      "cut": 391764,
+      "threshold": 0.682516,
+      "frr": 0.25247158517721435,
+      "far": 0.2524722623054412,
+      "eer": 0.25247192374132776,
+      "cdf_bona_at_threshold": 0.25253883919564196,
+      "cdf_spoof_at_threshold": 0.7475296642578204,
+      "density_bona": 0.3157569078093839,
+      "density_spoof": 0.4797200764732437,
+      "alpha_bona": 0.6030596559696344,
+      "alpha_spoof": 0.39694034403036554,
+      "influence_sum": -2.862293735361732e-17
+    },
+    "CQCC-GMM": {
+      "cut": 390171,
+      "threshold": 0.321826,
+      "frr": 0.2556325240433116,
+      "far": 0.2556318260544562,
+      "eer": 0.2556321750488839,
+      "cdf_bona_at_threshold": 0.2556325240433116,
+      "cdf_spoof_at_threshold": 0.7443681739455438,
+      "density_bona": 0.5398975517841806,
+      "density_spoof": 0.9162514669333158,
+      "alpha_bona": 0.629229189564887,
+      "alpha_spoof": 0.370770810435113,
+      "influence_sum": -3.903127820947816e-18
+    }
+  },
+  "linearization_gate_all_pairs_pass": false,
+  "crve_system_covariance_raw_eigenvalues": [
+    0.02164757890565084,
+    0.026445103047712044,
+    0.06672359988841077,
+    0.2768709932860268,
+    0.4382722882883838,
+    0.5175708019283258,
+    2.7315698853391774,
+    13.207074868877628
+  ],
+  "jackknife_system_covariance_raw_eigenvalues": [
+    0.021011294657537274,
+    0.02709385911123847,
+    0.0637484332925639,
+    0.2956849382580488,
+    0.48240338159707774,
+    0.512871863481309,
+    2.786734649979452,
+    13.755524542346906
+  ],
+  "q95_gaussian_crve_psd": 2.8755087756653035,
+  "q95_gaussian_explicit_cell_jackknife_psd": 2.8791679662554563,
+  "q95_product_bootstrap": 2.981,
+  "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+      "delta_eer_pts": -0.03213,
+      "current_iid_proxy_se": 0.252811,
+      "crve": {
+        "V_speaker": 0.02147391097119683,
+        "V_attack": 0.03237337117582986,
+        "V_speaker_attack_cell": 0.0031298608667046854,
+        "V_raw_inclusion_exclusion": 0.050717421280322,
+        "V_psd_floor": 0.050717421280322,
+        "se_psd_floor": 0.22520528697240214,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.02796233135258322,
+        "V_attack": 0.03747673229270265,
+        "V_speaker_attack_cell": 0.007970030573105247,
+        "V_raw_inclusion_exclusion": 0.057469033072180625,
+        "V_psd_floor": 0.057469033072180625,
+        "se_psd_floor": 0.23972699696150332,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.982,
+          "slope": 1.093182,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.977913,
+          "slope": 1.05058,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "delta_eer_pts": -0.389234,
+      "current_iid_proxy_se": 0.335465,
+      "crve": {
+        "V_speaker": 0.08491475564691081,
+        "V_attack": 0.02250475131580558,
+        "V_speaker_attack_cell": 0.003282094067161897,
+        "V_raw_inclusion_exclusion": 0.10413741289555448,
+        "V_psd_floor": 0.10413741289555448,
+        "se_psd_floor": 0.3227032892543156,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.08867264631319483,
+        "V_attack": 0.027526427454636807,
+        "V_speaker_attack_cell": 0.010832137714287968,
+        "V_raw_inclusion_exclusion": 0.10536693605354369,
+        "V_psd_floor": 0.10536693605354369,
+        "se_psd_floor": 0.3246027357456244,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.975792,
+          "slope": 0.985217,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.928568,
+          "slope": 1.025197,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+      "delta_eer_pts": -0.967604,
+      "current_iid_proxy_se": 0.299495,
+      "crve": {
+        "V_speaker": 0.080921051034677,
+        "V_attack": 0.007555962719408005,
+        "V_speaker_attack_cell": 0.0024664666282331535,
+        "V_raw_inclusion_exclusion": 0.08601054712585188,
+        "V_psd_floor": 0.08601054712585188,
+        "se_psd_floor": 0.29327554812130496,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.08054799064230103,
+        "V_attack": 0.014039854973260685,
+        "V_speaker_attack_cell": 0.009723089339258075,
+        "V_raw_inclusion_exclusion": 0.08486475627630363,
+        "V_psd_floor": 0.08486475627630363,
+        "se_psd_floor": 0.2913155613356479,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.976082,
+          "slope": 0.96191,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.911417,
+          "slope": 1.24131,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Mamba vs RawNet2": {
+      "delta_eer_pts": -20.499407,
+      "current_iid_proxy_se": 2.11458,
+      "crve": {
+        "V_speaker": 4.021573291976496,
+        "V_attack": 0.6258799054593055,
+        "V_speaker_attack_cell": 0.11156528316897062,
+        "V_raw_inclusion_exclusion": 4.535887914266832,
+        "V_psd_floor": 4.535887914266832,
+        "se_psd_floor": 2.1297624079382262,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.943771236006071,
+        "V_attack": 0.5655779648058037,
+        "V_speaker_attack_cell": 0.11849461733954665,
+        "V_raw_inclusion_exclusion": 4.390854583472327,
+        "V_psd_floor": 4.390854583472327,
+        "se_psd_floor": 2.0954366092708048,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998336,
+          "slope": 0.980064,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.995736,
+          "slope": 0.94568,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+      "delta_eer_pts": -21.59313,
+      "current_iid_proxy_se": 1.928097,
+      "crve": {
+        "V_speaker": 3.070348880593204,
+        "V_attack": 0.7223088571333978,
+        "V_speaker_attack_cell": 0.1820203359674803,
+        "V_raw_inclusion_exclusion": 3.6106374017591216,
+        "V_psd_floor": 3.6106374017591216,
+        "se_psd_floor": 1.9001677299015267,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 2.9439466405649477,
+        "V_attack": 0.807102320602965,
+        "V_speaker_attack_cell": 0.2790518435719273,
+        "V_raw_inclusion_exclusion": 3.4719971175959854,
+        "V_psd_floor": 3.4719971175959854,
+        "se_psd_floor": 1.8633295783612693,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997982,
+          "slope": 0.95251,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.995514,
+          "slope": 1.051314,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+      "delta_eer_pts": -23.363258,
+      "current_iid_proxy_se": 2.017384,
+      "crve": {
+        "V_speaker": 2.7973437228161764,
+        "V_attack": 0.7414491364670123,
+        "V_speaker_attack_cell": 0.18374643804007973,
+        "V_raw_inclusion_exclusion": 3.355046421243108,
+        "V_psd_floor": 3.355046421243108,
+        "se_psd_floor": 1.8316785802217344,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.2731132785062798,
+        "V_attack": 0.8423498177495006,
+        "V_speaker_attack_cell": 0.18974364878019742,
+        "V_raw_inclusion_exclusion": 3.925719447475583,
+        "V_psd_floor": 3.925719447475583,
+        "se_psd_floor": 1.981342839459033,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997385,
+          "slope": 1.028412,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.992353,
+          "slope": 1.057041,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+      "delta_eer_pts": -23.679283,
+      "current_iid_proxy_se": 1.870953,
+      "crve": {
+        "V_speaker": 2.641830635846769,
+        "V_attack": 0.6897445908347005,
+        "V_speaker_attack_cell": 0.16355696250189822,
+        "V_raw_inclusion_exclusion": 3.168018264179571,
+        "V_psd_floor": 3.168018264179571,
+        "se_psd_floor": 1.779892767606962,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.0274254926359245,
+        "V_attack": 0.5283337063875174,
+        "V_speaker_attack_cell": 0.1306481267852394,
+        "V_raw_inclusion_exclusion": 3.4251110722382028,
+        "V_psd_floor": 3.4251110722382028,
+        "se_psd_floor": 1.8507055606546934,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998061,
+          "slope": 1.024765,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.992138,
+          "slope": 0.86779,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "delta_eer_pts": -0.357105,
+      "current_iid_proxy_se": 0.374497,
+      "crve": {
+        "V_speaker": 0.09292804672907473,
+        "V_attack": 0.051448936975270546,
+        "V_speaker_attack_cell": 0.004816080456661993,
+        "V_raw_inclusion_exclusion": 0.13956090324768328,
+        "V_psd_floor": 0.13956090324768328,
+        "se_psd_floor": 0.37357851015239524,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.0961061711927573,
+        "V_attack": 0.04771791399465991,
+        "V_speaker_attack_cell": 0.006044481363223131,
+        "V_raw_inclusion_exclusion": 0.13777960382419407,
+        "V_psd_floor": 0.13777960382419407,
+        "se_psd_floor": 0.37118675060432055,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.983557,
+          "slope": 0.986201,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.978288,
+          "slope": 0.940691,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+      "delta_eer_pts": -0.935474,
+      "current_iid_proxy_se": 0.272199,
+      "crve": {
+        "V_speaker": 0.05579484919565067,
+        "V_attack": 0.025246301691517495,
+        "V_speaker_attack_cell": 0.002857901208763846,
+        "V_raw_inclusion_exclusion": 0.07818324967840434,
+        "V_psd_floor": 0.07818324967840434,
+        "se_psd_floor": 0.2796126779643662,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.05147868279915396,
+        "V_attack": 0.027517301709713282,
+        "V_speaker_attack_cell": 0.006020951332769647,
+        "V_raw_inclusion_exclusion": 0.0729750331760976,
+        "V_psd_floor": 0.0729750331760976,
+        "se_psd_floor": 0.27013891459043365,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.972603,
+          "slope": 0.922069,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.966579,
+          "slope": 1.007549,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs RawNet2": {
+      "delta_eer_pts": -20.467277,
+      "current_iid_proxy_se": 2.129631,
+      "crve": {
+        "V_speaker": 4.16007935575272,
+        "V_attack": 0.5717333902482267,
+        "V_speaker_attack_cell": 0.11098035344956281,
+        "V_raw_inclusion_exclusion": 4.6208323925513834,
+        "V_psd_floor": 4.6208323925513834,
+        "se_psd_floor": 2.1496121493309865,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 4.079603328995203,
+        "V_attack": 0.49395690936936115,
+        "V_speaker_attack_cell": 0.11666523022371872,
+        "V_raw_inclusion_exclusion": 4.456895008140846,
+        "V_psd_floor": 4.456895008140846,
+        "se_psd_floor": 2.111135952074344,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998449,
+          "slope": 0.979438,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.995626,
+          "slope": 0.924684,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+      "delta_eer_pts": -21.561,
+      "current_iid_proxy_se": 1.938811,
+      "crve": {
+        "V_speaker": 3.198654556582901,
+        "V_attack": 0.6499404637401114,
+        "V_speaker_attack_cell": 0.17968746771328725,
+        "V_raw_inclusion_exclusion": 3.6689075526097255,
+        "V_psd_floor": 3.6689075526097255,
+        "se_psd_floor": 1.9154392583973332,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.0649862076098726,
+        "V_attack": 0.7276900450119109,
+        "V_speaker_attack_cell": 0.28467940829311095,
+        "V_raw_inclusion_exclusion": 3.507996844328672,
+        "V_psd_floor": 3.507996844328672,
+        "se_psd_floor": 1.8729647205243007,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998203,
+          "slope": 0.952437,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.993591,
+          "slope": 1.050425,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+      "delta_eer_pts": -23.331128,
+      "current_iid_proxy_se": 2.038303,
+      "crve": {
+        "V_speaker": 2.8933003617847466,
+        "V_attack": 0.71831919929309,
+        "V_speaker_attack_cell": 0.1847619827755042,
+        "V_raw_inclusion_exclusion": 3.426857578302332,
+        "V_psd_floor": 3.426857578302332,
+        "se_psd_floor": 1.8511773492300332,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.378119509026674,
+        "V_attack": 0.8224286575363721,
+        "V_speaker_attack_cell": 0.19337600367932778,
+        "V_raw_inclusion_exclusion": 4.007172162883719,
+        "V_psd_floor": 4.007172162883719,
+        "se_psd_floor": 2.0017922376919435,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.9973,
+          "slope": 1.027015,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.990553,
+          "slope": 1.05928,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+      "delta_eer_pts": -23.647153,
+      "current_iid_proxy_se": 1.882688,
+      "crve": {
+        "V_speaker": 2.770783401540973,
+        "V_attack": 0.5989688238103663,
+        "V_speaker_attack_cell": 0.16083655753670822,
+        "V_raw_inclusion_exclusion": 3.2089156678146313,
+        "V_psd_floor": 3.2089156678146313,
+        "se_psd_floor": 1.7913446535534783,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.1704914734375063,
+        "V_attack": 0.43060919060525105,
+        "V_speaker_attack_cell": 0.13552985974480913,
+        "V_raw_inclusion_exclusion": 3.4655708042979483,
+        "V_psd_floor": 3.4655708042979483,
+        "se_psd_floor": 1.8616043629885348,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998126,
+          "slope": 1.023753,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.995907,
+          "slope": 0.844046,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "delta_eer_pts": -0.578369,
+      "current_iid_proxy_se": 0.31123,
+      "crve": {
+        "V_speaker": 0.08724979670212608,
+        "V_attack": 0.030573280880213508,
+        "V_speaker_attack_cell": 0.003954376729116957,
+        "V_raw_inclusion_exclusion": 0.11386870085322265,
+        "V_psd_floor": 0.11386870085322265,
+        "se_psd_floor": 0.3374443670491814,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.0762136892749804,
+        "V_attack": 0.02800059418198944,
+        "V_speaker_attack_cell": 0.002553465614903064,
+        "V_raw_inclusion_exclusion": 0.10166081784206679,
+        "V_psd_floor": 0.10166081784206679,
+        "se_psd_floor": 0.3188429360077886,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.974788,
+          "slope": 0.899685,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.960379,
+          "slope": 0.917709,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "XLSR-Conformer vs RawNet2": {
+      "delta_eer_pts": -20.110173,
+      "current_iid_proxy_se": 2.013047,
+      "crve": {
+        "V_speaker": 3.701620732157589,
+        "V_attack": 0.5679172699681411,
+        "V_speaker_attack_cell": 0.10399558560134252,
+        "V_raw_inclusion_exclusion": 4.165542416524386,
+        "V_psd_floor": 4.165542416524386,
+        "se_psd_floor": 2.0409660498216002,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.5776956714517905,
+        "V_attack": 0.5111912980702914,
+        "V_speaker_attack_cell": 0.1149990685158255,
+        "V_raw_inclusion_exclusion": 3.9738879010062567,
+        "V_psd_floor": 3.9738879010062567,
+        "se_psd_floor": 1.9934612865581958,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998255,
+          "slope": 0.972684,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.996533,
+          "slope": 0.944626,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+      "delta_eer_pts": -21.203896,
+      "current_iid_proxy_se": 1.824013,
+      "crve": {
+        "V_speaker": 2.7613550403281586,
+        "V_attack": 0.6705527799522838,
+        "V_speaker_attack_cell": 0.17947088445289974,
+        "V_raw_inclusion_exclusion": 3.252436935827543,
+        "V_psd_floor": 3.252436935827543,
+        "se_psd_floor": 1.8034513954713454,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 2.600209834619642,
+        "V_attack": 0.7600152242221083,
+        "V_speaker_attack_cell": 0.29186660204667386,
+        "V_raw_inclusion_exclusion": 3.0683584567950755,
+        "V_psd_floor": 3.0683584567950755,
+        "se_psd_floor": 1.7516730450615137,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997666,
+          "slope": 0.941522,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.9929,
+          "slope": 1.056083,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+      "delta_eer_pts": -22.974023,
+      "current_iid_proxy_se": 1.964832,
+      "crve": {
+        "V_speaker": 2.5896584417387416,
+        "V_attack": 0.7182065209872706,
+        "V_speaker_attack_cell": 0.18374381044509902,
+        "V_raw_inclusion_exclusion": 3.124121152280913,
+        "V_psd_floor": 3.124121152280913,
+        "se_psd_floor": 1.767518359814379,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.0801593714085933,
+        "V_attack": 0.8259456490405498,
+        "V_speaker_attack_cell": 0.19488473328671813,
+        "V_raw_inclusion_exclusion": 3.7112202871624254,
+        "V_psd_floor": 3.7112202871624254,
+        "se_psd_floor": 1.9264527731461327,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.996344,
+          "slope": 1.032057,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.987971,
+          "slope": 1.058852,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+      "delta_eer_pts": -23.290049,
+      "current_iid_proxy_se": 1.813299,
+      "crve": {
+        "V_speaker": 2.452514490168783,
+        "V_attack": 0.6829321860422048,
+        "V_speaker_attack_cell": 0.16518470187735523,
+        "V_raw_inclusion_exclusion": 2.9702619743336327,
+        "V_psd_floor": 2.9702619743336327,
+        "se_psd_floor": 1.7234447987486088,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 2.8334644598699583,
+        "V_attack": 0.5084906849486853,
+        "V_speaker_attack_cell": 0.14144585995649223,
+        "V_raw_inclusion_exclusion": 3.200509284862152,
+        "V_psd_floor": 3.200509284862152,
+        "se_psd_floor": 1.7889967257829602,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997939,
+          "slope": 1.025312,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.996199,
+          "slope": 0.859106,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "SSL-AASIST vs RawNet2": {
+      "delta_eer_pts": -19.531803,
+      "current_iid_proxy_se": 2.015088,
+      "crve": {
+        "V_speaker": 3.6196590688005172,
+        "V_attack": 0.6472231042063572,
+        "V_speaker_attack_cell": 0.11095683349632818,
+        "V_raw_inclusion_exclusion": 4.155925339510547,
+        "V_psd_floor": 4.155925339510547,
+        "se_psd_floor": 2.0386086773852767,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.536688970272828,
+        "V_attack": 0.5636834872430941,
+        "V_speaker_attack_cell": 0.11932369835235351,
+        "V_raw_inclusion_exclusion": 3.9810487591635684,
+        "V_psd_floor": 3.9810487591635684,
+        "se_psd_floor": 1.995256564746391,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997967,
+          "slope": 0.977235,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.99626,
+          "slope": 0.928847,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+      "delta_eer_pts": -20.625526,
+      "current_iid_proxy_se": 1.837024,
+      "crve": {
+        "V_speaker": 2.746153418877244,
+        "V_attack": 0.7249281379381616,
+        "V_speaker_attack_cell": 0.18049839458788897,
+        "V_raw_inclusion_exclusion": 3.2905831622275166,
+        "V_psd_floor": 3.2905831622275166,
+        "se_psd_floor": 1.813996461470506,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 2.6125453653982165,
+        "V_attack": 0.7976914750331023,
+        "V_speaker_attack_cell": 0.29291800355469766,
+        "V_raw_inclusion_exclusion": 3.1173188368766214,
+        "V_psd_floor": 3.1173188368766214,
+        "se_psd_floor": 1.7655930552866992,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.998573,
+          "slope": 0.946896,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.994292,
+          "slope": 1.041982,
+          "pass": true
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+      "delta_eer_pts": -22.395654,
+      "current_iid_proxy_se": 1.970955,
+      "crve": {
+        "V_speaker": 2.654346075784002,
+        "V_attack": 0.7412070743340912,
+        "V_speaker_attack_cell": 0.18125327248623277,
+        "V_raw_inclusion_exclusion": 3.21429987763186,
+        "V_psd_floor": 3.21429987763186,
+        "se_psd_floor": 1.79284686396576,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.103102893071931,
+        "V_attack": 0.8294360842127779,
+        "V_speaker_attack_cell": 0.19508286629853078,
+        "V_raw_inclusion_exclusion": 3.7374561109861784,
+        "V_psd_floor": 3.7374561109861784,
+        "se_psd_floor": 1.933250141855983,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.99737,
+          "slope": 1.024822,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.989776,
+          "slope": 1.046336,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+      "delta_eer_pts": -22.711679,
+      "current_iid_proxy_se": 1.805645,
+      "crve": {
+        "V_speaker": 2.476302081253524,
+        "V_attack": 0.6728714175866889,
+        "V_speaker_attack_cell": 0.15853295057816158,
+        "V_raw_inclusion_exclusion": 2.9906405482620513,
+        "V_psd_floor": 2.9906405482620513,
+        "se_psd_floor": 1.7293468559725234,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 2.831534247942543,
+        "V_attack": 0.4863431393455441,
+        "V_speaker_attack_cell": 0.1405663356971339,
+        "V_raw_inclusion_exclusion": 3.1773110515909537,
+        "V_psd_floor": 3.1773110515909537,
+        "se_psd_floor": 1.7825013468693238,
+        "resolved_pointwise": true,
+        "resolved_simultaneous_product_q": true,
+        "resolved_simultaneous_own_q": true
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997204,
+          "slope": 1.019095,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.994947,
+          "slope": 0.845343,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": true
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "delta_eer_pts": -1.093723,
+      "current_iid_proxy_se": 1.502834,
+      "crve": {
+        "V_speaker": 1.7664789166677473,
+        "V_attack": 0.4423185541839711,
+        "V_speaker_attack_cell": 0.16859411722799,
+        "V_raw_inclusion_exclusion": 2.0402033536237276,
+        "V_psd_floor": 2.0402033536237276,
+        "se_psd_floor": 1.4283568719419275,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 1.8092827737697945,
+        "V_attack": 0.49290225147083844,
+        "V_speaker_attack_cell": 0.24303713872198987,
+        "V_raw_inclusion_exclusion": 2.0591478865186432,
+        "V_psd_floor": 2.0591478865186432,
+        "se_psd_floor": 1.4349731309396156,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.99437,
+          "slope": 0.984136,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.987024,
+          "slope": 1.041287,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "RawNet2 vs LFCC-GMM": {
+      "delta_eer_pts": -2.863851,
+      "current_iid_proxy_se": 2.256674,
+      "crve": {
+        "V_speaker": 4.04166232933466,
+        "V_attack": 0.8630081496490196,
+        "V_speaker_attack_cell": 0.19132366935469772,
+        "V_raw_inclusion_exclusion": 4.71334680962898,
+        "V_psd_floor": 4.71334680962898,
+        "se_psd_floor": 2.1710243687321844,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 4.306995460776013,
+        "V_attack": 0.8571538644340686,
+        "V_speaker_attack_cell": 0.19326691423476702,
+        "V_raw_inclusion_exclusion": 4.970882410975315,
+        "V_psd_floor": 4.970882410975315,
+        "se_psd_floor": 2.229547579885954,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997834,
+          "slope": 1.008191,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.985267,
+          "slope": 0.981056,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "RawNet2 vs CQCC-GMM": {
+      "delta_eer_pts": -3.179876,
+      "current_iid_proxy_se": 1.919933,
+      "crve": {
+        "V_speaker": 3.1202794092789587,
+        "V_attack": 0.7306701488797559,
+        "V_speaker_attack_cell": 0.17381448312406592,
+        "V_raw_inclusion_exclusion": 3.6771350750346485,
+        "V_psd_floor": 3.6771350750346485,
+        "se_psd_floor": 1.9175857412472195,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 3.1726249578145387,
+        "V_attack": 0.5901036555296735,
+        "V_speaker_attack_cell": 0.15200883141457341,
+        "V_raw_inclusion_exclusion": 3.610719781929639,
+        "V_psd_floor": 3.610719781929639,
+        "se_psd_floor": 1.900189406856495,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.997075,
+          "slope": 0.985815,
+          "pass": true
+        },
+        "attack": {
+          "correlation": 0.991792,
+          "slope": 0.890698,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+      "delta_eer_pts": -1.770128,
+      "current_iid_proxy_se": 1.330126,
+      "crve": {
+        "V_speaker": 1.1903428727856276,
+        "V_attack": 0.5147091292036007,
+        "V_speaker_attack_cell": 0.14335602145632165,
+        "V_raw_inclusion_exclusion": 1.5616959805329067,
+        "V_psd_floor": 1.5616959805329067,
+        "se_psd_floor": 1.2496783508298872,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 1.289831178019234,
+        "V_attack": 0.5297163565007064,
+        "V_speaker_attack_cell": 0.1907662580368561,
+        "V_raw_inclusion_exclusion": 1.628781276483084,
+        "V_psd_floor": 1.628781276483084,
+        "se_psd_floor": 1.2762371552666394,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.988253,
+          "slope": 1.008143,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.984513,
+          "slope": 0.998003,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+      "delta_eer_pts": -2.086153,
+      "current_iid_proxy_se": 1.213798,
+      "crve": {
+        "V_speaker": 0.9360158179151563,
+        "V_attack": 0.5471223595458751,
+        "V_speaker_attack_cell": 0.17997152995463692,
+        "V_raw_inclusion_exclusion": 1.3031666475063939,
+        "V_psd_floor": 1.3031666475063939,
+        "se_psd_floor": 1.1415632472650799,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.9717526007069051,
+        "V_attack": 0.5540842333399459,
+        "V_speaker_attack_cell": 0.22519105221710856,
+        "V_raw_inclusion_exclusion": 1.300645781829742,
+        "V_psd_floor": 1.300645781829742,
+        "se_psd_floor": 1.1404585840045847,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.978893,
+          "slope": 0.970957,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.96543,
+          "slope": 0.970957,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+      "delta_eer_pts": -0.316025,
+      "current_iid_proxy_se": 0.952058,
+      "crve": {
+        "V_speaker": 0.518905451704073,
+        "V_attack": 0.2540655874139298,
+        "V_speaker_attack_cell": 0.06507168518538584,
+        "V_raw_inclusion_exclusion": 0.7078993539326173,
+        "V_psd_floor": 0.7078993539326173,
+        "se_psd_floor": 0.8413675498452607,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "explicit_cell_jackknife": {
+        "V_speaker": 0.619471212539374,
+        "V_attack": 0.3290932779059075,
+        "V_speaker_attack_cell": 0.073255950325893,
+        "V_raw_inclusion_exclusion": 0.8753085401193887,
+        "V_psd_floor": 0.8753085401193887,
+        "se_psd_floor": 0.9355792537884692,
+        "resolved_pointwise": false,
+        "resolved_simultaneous_product_q": false,
+        "resolved_simultaneous_own_q": false
+      },
+      "linearization_gate": {
+        "speaker": {
+          "correlation": 0.985213,
+          "slope": 1.050013,
+          "pass": false
+        },
+        "attack": {
+          "correlation": 0.925348,
+          "slope": 1.052174,
+          "pass": false
+        }
+      },
+      "product_bootstrap_resolved_simultaneous": false
+    }
+  },
+  "organizer_baseline_pairs": [
+    "RawNet2 vs LFCC-LCNN",
+    "RawNet2 vs LFCC-GMM",
+    "RawNet2 vs CQCC-GMM",
+    "LFCC-LCNN vs LFCC-GMM",
+    "LFCC-LCNN vs CQCC-GMM",
+    "LFCC-GMM vs CQCC-GMM"
+  ],
+  "organizer_baseline_resolved": {
+    "product_bootstrap": 0,
+    "crve_floor_product_q": 0,
+    "explicit_cell_floor_product_q": 0
+  }
+}

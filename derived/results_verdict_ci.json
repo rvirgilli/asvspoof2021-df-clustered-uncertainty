@@ -1,0 +1,170 @@
+{
+  "R": 150,
+  "q_supt_fixed": 2.98,
+  "seed": 20260821,
+  "method": "outer bootstrap over speakers and attacks; two-way jackknife SE; resolved iff |Delta| > q*SE",
+  "point_estimates": {
+    "all": 18,
+    "cross": 16,
+    "within_ssl": 2,
+    "within_baseline": 0
+  },
+  "point_estimate_check": "proxy rule reproduces the campaign's resolved/unresolved verdict on all 28 pairs (asserted, not asserted-to)",
+  "blocks": {
+    "all": {
+      "median": 16,
+      "ci95": [
+        16,
+        18
+      ],
+      "mean": 16.34,
+      "distribution": {
+        "16": 110,
+        "17": 29,
+        "18": 11
+      }
+    },
+    "cross": {
+      "median": 16,
+      "ci95": [
+        16,
+        16
+      ],
+      "mean": 16.0,
+      "distribution": {
+        "16": 150
+      }
+    },
+    "within_ssl": {
+      "median": 0,
+      "ci95": [
+        0,
+        2
+      ],
+      "mean": 0.31,
+      "distribution": {
+        "0": 113,
+        "1": 27,
+        "2": 10
+      }
+    },
+    "within_baseline": {
+      "median": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "mean": 0.03,
+      "distribution": {
+        "0": 146,
+        "1": 4
+      }
+    }
+  },
+  "se_inflation_diagnostic": {
+    "note": "ratio > 1 means the resampled design is harder to resolve on than the real one. NOT common across blocks -- compare the per-block entries before reading any between-block contrast as robustness.",
+    "pooled": {
+      "mean": 1.492,
+      "median": 1.461,
+      "p95": 2.081,
+      "pct_inflated": 95.2
+    },
+    "by_block": {
+      "cross": {
+        "mean": 1.472,
+        "median": 1.442,
+        "p95": 1.955,
+        "pct_inflated": 97.9
+      },
+      "within_ssl": {
+        "mean": 1.445,
+        "median": 1.368,
+        "p95": 2.379,
+        "pct_inflated": 83.9
+      },
+      "within_baseline": {
+        "mean": 1.594,
+        "median": 1.563,
+        "p95": 2.077,
+        "pct_inflated": 99.4
+      }
+    }
+  },
+  "studentized_margin_point_estimate": {
+    "XLSR-Mamba vs XLS-R+SLS": 0.042,
+    "XLSR-Mamba vs XLSR-Conformer": 0.383,
+    "XLSR-Mamba vs SSL-AASIST": 1.056,
+    "XLSR-Mamba vs RawNet2": 3.239,
+    "XLSR-Mamba vs LFCC-LCNN": 3.741,
+    "XLSR-Mamba vs LFCC-GMM": 3.865,
+    "XLSR-Mamba vs CQCC-GMM": 4.214,
+    "XLS-R+SLS vs XLSR-Conformer": 0.316,
+    "XLS-R+SLS vs SSL-AASIST": 1.117,
+    "XLS-R+SLS vs RawNet2": 3.212,
+    "XLS-R+SLS vs LFCC-LCNN": 3.715,
+    "XLS-R+SLS vs LFCC-GMM": 3.82,
+    "XLS-R+SLS vs CQCC-GMM": 4.182,
+    "XLSR-Conformer vs SSL-AASIST": 0.601,
+    "XLSR-Conformer vs RawNet2": 3.337,
+    "XLSR-Conformer vs LFCC-LCNN": 3.882,
+    "XLSR-Conformer vs LFCC-GMM": 3.901,
+    "XLSR-Conformer vs CQCC-GMM": 4.275,
+    "SSL-AASIST vs RawNet2": 3.237,
+    "SSL-AASIST vs LFCC-LCNN": 3.748,
+    "SSL-AASIST vs LFCC-GMM": 3.79,
+    "SSL-AASIST vs CQCC-GMM": 4.184,
+    "RawNet2 vs LFCC-LCNN": 0.242,
+    "RawNet2 vs LFCC-GMM": 0.423,
+    "RawNet2 vs CQCC-GMM": 0.55,
+    "LFCC-LCNN vs LFCC-GMM": 0.44,
+    "LFCC-LCNN vs CQCC-GMM": 0.567,
+    "LFCC-GMM vs CQCC-GMM": 0.109
+  },
+  "margin_by_block": {
+    "cross": {
+      "min": 3.212,
+      "max": 4.275,
+      "n": 16
+    },
+    "within_ssl": {
+      "min": 0.042,
+      "max": 1.117,
+      "n": 6
+    },
+    "within_baseline": {
+      "min": 0.109,
+      "max": 0.567,
+      "n": 6
+    }
+  },
+  "per_pair_p_resolved": {
+    "XLSR-Mamba vs XLS-R+SLS": 0.0,
+    "XLSR-Mamba vs XLSR-Conformer": 0.0,
+    "XLSR-Mamba vs SSL-AASIST": 0.153,
+    "XLSR-Mamba vs RawNet2": 1.0,
+    "XLSR-Mamba vs LFCC-LCNN": 1.0,
+    "XLSR-Mamba vs LFCC-GMM": 1.0,
+    "XLSR-Mamba vs CQCC-GMM": 1.0,
+    "XLS-R+SLS vs XLSR-Conformer": 0.0,
+    "XLS-R+SLS vs SSL-AASIST": 0.16,
+    "XLS-R+SLS vs RawNet2": 1.0,
+    "XLS-R+SLS vs LFCC-LCNN": 1.0,
+    "XLS-R+SLS vs LFCC-GMM": 1.0,
+    "XLS-R+SLS vs CQCC-GMM": 1.0,
+    "XLSR-Conformer vs SSL-AASIST": 0.0,
+    "XLSR-Conformer vs RawNet2": 1.0,
+    "XLSR-Conformer vs LFCC-LCNN": 1.0,
+    "XLSR-Conformer vs LFCC-GMM": 1.0,
+    "XLSR-Conformer vs CQCC-GMM": 1.0,
+    "SSL-AASIST vs RawNet2": 1.0,
+    "SSL-AASIST vs LFCC-LCNN": 1.0,
+    "SSL-AASIST vs LFCC-GMM": 1.0,
+    "SSL-AASIST vs CQCC-GMM": 1.0,
+    "RawNet2 vs LFCC-LCNN": 0.007,
+    "RawNet2 vs LFCC-GMM": 0.0,
+    "RawNet2 vs CQCC-GMM": 0.02,
+    "LFCC-LCNN vs LFCC-GMM": 0.0,
+    "LFCC-LCNN vs CQCC-GMM": 0.0,
+    "LFCC-GMM vs CQCC-GMM": 0.0
+  }
+}

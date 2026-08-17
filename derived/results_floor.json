@@ -1,0 +1,142 @@
+{
+  "_input_provenance_sha256": {
+    "results_selection.json": "fec86edc41b3397d"
+  },
+  "measured_width_source": "results_selection.json pointwise CI (B=5000); the subsampling run in results_widths.json reports the same full-set widths to within ~2%",
+  "estimator": "delete-one-cluster jackknife components of paired Delta-EER at the observed A=110; width = 2*1.96*sqrt(V_spk)",
+  "n_speakers": 93,
+  "n_attacks": 110,
+  "identification_note": "V_spk contains speaker-by-attack interaction divided by A. It is a finite-A component, not an A-to-infinity floor; no counterfactual attack-budget claim is made.",
+  "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.032,
+      "V_spk": 0.028,
+      "V_att": 0.0375,
+      "speaker_fraction_of_two_marginal_components": 0.427,
+      "finite_A_speaker_component_width_pts": 0.655,
+      "measured_width_pts_A110": 0.904,
+      "resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.389,
+      "V_spk": 0.0887,
+      "V_att": 0.0275,
+      "speaker_fraction_of_two_marginal_components": 0.763,
+      "finite_A_speaker_component_width_pts": 1.167,
+      "measured_width_pts_A110": 1.239,
+      "resolved_simultaneous": false
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.968,
+      "V_spk": 0.0805,
+      "V_att": 0.014,
+      "speaker_fraction_of_two_marginal_components": 0.852,
+      "finite_A_speaker_component_width_pts": 1.113,
+      "measured_width_pts_A110": 1.11,
+      "resolved_simultaneous": true
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.357,
+      "V_spk": 0.0961,
+      "V_att": 0.0477,
+      "speaker_fraction_of_two_marginal_components": 0.668,
+      "finite_A_speaker_component_width_pts": 1.215,
+      "measured_width_pts_A110": 1.503,
+      "resolved_simultaneous": false
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.935,
+      "V_spk": 0.0515,
+      "V_att": 0.0275,
+      "speaker_fraction_of_two_marginal_components": 0.652,
+      "finite_A_speaker_component_width_pts": 0.889,
+      "measured_width_pts_A110": 1.122,
+      "resolved_simultaneous": true
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "block": "within-modern",
+      "delta_eer_pts": -0.578,
+      "V_spk": 0.0762,
+      "V_att": 0.028,
+      "speaker_fraction_of_two_marginal_components": 0.731,
+      "finite_A_speaker_component_width_pts": 1.082,
+      "measured_width_pts_A110": 1.349,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "block": "within-baseline",
+      "delta_eer_pts": -1.094,
+      "V_spk": 1.8093,
+      "V_att": 0.4929,
+      "speaker_fraction_of_two_marginal_components": 0.786,
+      "finite_A_speaker_component_width_pts": 5.273,
+      "measured_width_pts_A110": 5.735,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs LFCC-GMM": {
+      "block": "within-baseline",
+      "delta_eer_pts": -2.864,
+      "V_spk": 4.307,
+      "V_att": 0.8572,
+      "speaker_fraction_of_two_marginal_components": 0.834,
+      "finite_A_speaker_component_width_pts": 8.135,
+      "measured_width_pts_A110": 9.275,
+      "resolved_simultaneous": false
+    },
+    "RawNet2 vs CQCC-GMM": {
+      "block": "within-baseline",
+      "delta_eer_pts": -3.18,
+      "V_spk": 3.1726,
+      "V_att": 0.5901,
+      "speaker_fraction_of_two_marginal_components": 0.843,
+      "finite_A_speaker_component_width_pts": 6.982,
+      "measured_width_pts_A110": 7.904,
+      "resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+      "block": "within-baseline",
+      "delta_eer_pts": -1.77,
+      "V_spk": 1.2898,
+      "V_att": 0.5297,
+      "speaker_fraction_of_two_marginal_components": 0.709,
+      "finite_A_speaker_component_width_pts": 4.452,
+      "measured_width_pts_A110": 6.148,
+      "resolved_simultaneous": false
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+      "block": "within-baseline",
+      "delta_eer_pts": -2.086,
+      "V_spk": 0.9718,
+      "V_att": 0.5541,
+      "speaker_fraction_of_two_marginal_components": 0.637,
+      "finite_A_speaker_component_width_pts": 3.864,
+      "measured_width_pts_A110": 5.273,
+      "resolved_simultaneous": false
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+      "block": "within-baseline",
+      "delta_eer_pts": -0.316,
+      "V_spk": 0.6195,
+      "V_att": 0.3291,
+      "speaker_fraction_of_two_marginal_components": 0.653,
+      "finite_A_speaker_component_width_pts": 3.085,
+      "measured_width_pts_A110": 3.993,
+      "resolved_simultaneous": false
+    }
+  },
+  "summary": {
+    "speaker_fraction_of_two_marginal_components_within_modern": [
+      0.427,
+      0.852
+    ],
+    "speaker_fraction_of_two_marginal_components_within_baseline": [
+      0.637,
+      0.843
+    ]
+  }
+}

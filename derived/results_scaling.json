@@ -1,0 +1,327 @@
+{
+  "B": 1000,
+  "reps": 8,
+  "seed": 20260819,
+  "n_speakers_full": 93,
+  "speaker_scaling": {
+    "XLSR-Conformer vs SSL-AASIST": {
+      "12": {
+        "mean_width_pts": 2.776,
+        "width_sd": 1.09,
+        "n_reps": 8,
+        "n_trials": 61683
+      },
+      "25": {
+        "mean_width_pts": 2.353,
+        "width_sd": 0.56,
+        "n_reps": 8,
+        "n_trials": 76156
+      },
+      "50": {
+        "mean_width_pts": 1.767,
+        "width_sd": 0.226,
+        "n_reps": 8,
+        "n_trials": 219315
+      },
+      "93": {
+        "mean_width_pts": 1.337,
+        "width_sd": null,
+        "n_reps": 1,
+        "n_trials": 533928
+      },
+      "fitted_exponent": 0.361
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "12": {
+        "mean_width_pts": 3.132,
+        "width_sd": 1.384,
+        "n_reps": 8,
+        "n_trials": 61683
+      },
+      "25": {
+        "mean_width_pts": 1.887,
+        "width_sd": 0.409,
+        "n_reps": 8,
+        "n_trials": 76156
+      },
+      "50": {
+        "mean_width_pts": 1.472,
+        "width_sd": 0.197,
+        "n_reps": 8,
+        "n_trials": 219315
+      },
+      "93": {
+        "mean_width_pts": 1.446,
+        "width_sd": null,
+        "n_reps": 1,
+        "n_trials": 533928
+      },
+      "fitted_exponent": 0.381
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "12": {
+        "mean_width_pts": 15.93,
+        "width_sd": 7.358,
+        "n_reps": 8,
+        "n_trials": 61683
+      },
+      "25": {
+        "mean_width_pts": 11.353,
+        "width_sd": 2.738,
+        "n_reps": 8,
+        "n_trials": 76156
+      },
+      "50": {
+        "mean_width_pts": 7.368,
+        "width_sd": 0.495,
+        "n_reps": 8,
+        "n_trials": 219315
+      },
+      "93": {
+        "mean_width_pts": 5.914,
+        "width_sd": null,
+        "n_reps": 1,
+        "n_trials": 533928
+      },
+      "fitted_exponent": 0.499
+    }
+  },
+  "iid_over_all_pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+      "ci_iid": [
+        -0.111,
+        0.045
+      ],
+      "resolved_iid": false,
+      "width_ratio_clustered_over_iid": 5.79
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "ci_iid": [
+        -0.515,
+        -0.282
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 5.3
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+      "ci_iid": [
+        -1.123,
+        -0.844
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 3.97
+    },
+    "XLSR-Mamba vs RawNet2": {
+      "ci_iid": [
+        -20.923,
+        -20.154
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 11.11
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+      "ci_iid": [
+        -21.978,
+        -21.231
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.66
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+      "ci_iid": [
+        -23.799,
+        -22.957
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 9.67
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+      "ci_iid": [
+        -24.157,
+        -23.266
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 8.31
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "ci_iid": [
+        -0.481,
+        -0.241
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 6.25
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+      "ci_iid": [
+        -1.094,
+        -0.81
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 3.94
+    },
+    "XLS-R+SLS vs RawNet2": {
+      "ci_iid": [
+        -20.904,
+        -20.121
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.97
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+      "ci_iid": [
+        -21.953,
+        -21.19
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.59
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+      "ci_iid": [
+        -23.768,
+        -22.931
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 9.76
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+      "ci_iid": [
+        -24.118,
+        -23.231
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 8.43
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "ci_iid": [
+        -0.751,
+        -0.415
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 4.01
+    },
+    "XLSR-Conformer vs RawNet2": {
+      "ci_iid": [
+        -20.518,
+        -19.769
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.83
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+      "ci_iid": [
+        -21.579,
+        -20.824
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.2
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+      "ci_iid": [
+        -23.408,
+        -22.573
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 9.46
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+      "ci_iid": [
+        -23.756,
+        -22.846
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 7.92
+    },
+    "SSL-AASIST vs RawNet2": {
+      "ci_iid": [
+        -19.97,
+        -19.162
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 10.16
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+      "ci_iid": [
+        -21.033,
+        -20.255
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 9.89
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+      "ci_iid": [
+        -22.838,
+        -21.972
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 9.29
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+      "ci_iid": [
+        -23.167,
+        -22.267
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 8.04
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "ci_iid": [
+        -1.497,
+        -0.651
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 6.78
+    },
+    "RawNet2 vs LFCC-GMM": {
+      "ci_iid": [
+        -3.397,
+        -2.288
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 8.36
+    },
+    "RawNet2 vs CQCC-GMM": {
+      "ci_iid": [
+        -3.731,
+        -2.554
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 6.72
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+      "ci_iid": [
+        -2.256,
+        -1.319
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 6.56
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+      "ci_iid": [
+        -2.546,
+        -1.634
+      ],
+      "resolved_iid": true,
+      "width_ratio_clustered_over_iid": 5.78
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+      "ci_iid": [
+        -0.69,
+        0.095
+      ],
+      "resolved_iid": false,
+      "width_ratio_clustered_over_iid": 5.09
+    }
+  },
+  "summary": {
+    "n_pairs": 28,
+    "n_resolved_iid": 26,
+    "width_ratio_all_28": [
+      3.9,
+      11.1
+    ],
+    "width_ratio_median": 8.3
+  },
+  "_input_provenance_sha256": {
+    "results_selection.json": "fec86edc41b3397d"
+  }
+}

@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(os.environ.get("M1_DATA_ROOT",
-                           Path.home() / "data/corpora/anti-spoofing"))
+                           Path(__file__).resolve().parent.parent / "inputs/anti-spoofing"))
 KEY = DATA / "DF-keys-full/keys/DF/CM/trial_metadata.txt"
 OFF = DATA / "official-scores"
 PAIRS = {
@@ -271,7 +271,7 @@ def main():
     }
     print(f"DGP-robustness: {results['dgp_robustness']}", flush=True)
 
-    out = Path(__file__).parent / "results_power.json"
+    out = Path(__file__).parent.parent / "derived" / "results_power.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out} in {(time.time()-t0)/60:.1f} min")
 

@@ -1,0 +1,3824 @@
+{
+  "experiment": "EXP-105-population-truth-recalibration",
+  "coverage_script_sha256": "570727728b78300d30371a4c0e163f7d4d72028ccc006cc02c85a6a6c53b40ef",
+  "recalibration_script_sha256": "18ef7a5fc2be641a10bd8b073c9020f71710c1f17d20b169e6d8037822feca29",
+  "run_root": "external-runs/EXP-105-m1-multiway-correctness/coverage",
+  "t5_population_mc": {
+    "antithetic_total_per_repeat": 10000000,
+    "independent_repeats": 8,
+    "workers": 8
+  },
+  "grid": [
+    {
+      "index": 0,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 956,
+          "coverage": 0.956,
+          "wilson95": [
+            0.9414482108495923,
+            0.9670617854115815
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 956,
+          "coverage": 0.956,
+          "wilson95": [
+            0.9414482108495923,
+            0.9670617854115815
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 957,
+          "coverage": 0.957,
+          "wilson95": [
+            0.942580996155916,
+            0.9679213465882865
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.956,
+          "coverage_max": 0.956
+        },
+        "floor": {
+          "coverage_min": 0.956,
+          "coverage_max": 0.956
+        },
+        "product": {
+          "coverage_min": 0.957,
+          "coverage_max": 0.957
+        }
+      }
+    },
+    {
+      "index": 1,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "population_truth_repeat_estimates": [
+        0.5000000000000004
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 942,
+          "coverage": 0.942,
+          "wilson95": [
+            0.9257504237337675,
+            0.9548667217650018
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 942,
+          "coverage": 0.942,
+          "wilson95": [
+            0.9257504237337675,
+            0.9548667217650018
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 952,
+          "coverage": 0.952,
+          "wilson95": [
+            0.936933911349866,
+            0.963606698979192
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.942,
+          "coverage_max": 0.942
+        },
+        "floor": {
+          "coverage_min": 0.942,
+          "coverage_max": 0.942
+        },
+        "product": {
+          "coverage_min": 0.952,
+          "coverage_max": 0.952
+        }
+      }
+    },
+    {
+      "index": 2,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "population_truth_repeat_estimates": [
+        1.9999999999999991
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 947,
+          "coverage": 0.947,
+          "wilson95": [
+            0.9313253831625082,
+            0.9592534947514054
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 947,
+          "coverage": 0.947,
+          "wilson95": [
+            0.9313253831625082,
+            0.9592534947514054
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 955,
+          "coverage": 0.955,
+          "wilson95": [
+            0.9403171620637766,
+            0.9662004877143683
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.947,
+          "coverage_max": 0.947
+        },
+        "floor": {
+          "coverage_min": 0.947,
+          "coverage_max": 0.947
+        },
+        "product": {
+          "coverage_min": 0.955,
+          "coverage_max": 0.955
+        }
+      }
+    },
+    {
+      "index": 3,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.00873618647115465,
+      "population_truth_repeat_estimates": [
+        0.014690158909830275,
+        0.025701234095942826,
+        0.01833426073585276,
+        0.003365404430943908,
+        0.0047813180050038095,
+        -0.0009082169575513888,
+        0.017499818706723236,
+        -0.013574486157508225
+      ],
+      "population_truth_sd": 0.012691132017559151,
+      "population_truth_se_mean": 0.0044869927552748925,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.2238167293018254,
+            0.22394780004511466,
+            0.22393090228865892,
+            0.22384092201378186,
+            0.22388133400718285,
+            0.22378479747507835,
+            0.22384687865412695,
+            0.22363037367593047
+          ],
+          "mean": 0.22383496718271242,
+          "sd": 9.926166563131383e-05,
+          "se_mean": 3.509429843988684e-05
+        },
+        "system1": {
+          "estimates": [
+            0.2236698277127271,
+            0.22369078770415524,
+            0.2237475596813004,
+            0.22380726796947242,
+            0.22383352082713281,
+            0.22379387964465386,
+            0.2236718804670597,
+            0.22376611853750555
+          ],
+          "mean": 0.2237476053180009,
+          "sd": 6.373719653124531e-05,
+          "se_mean": 2.2534501940531627e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 945,
+          "coverage": 0.945,
+          "wilson95": [
+            0.9290916123226243,
+            0.9575025726252315
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 945,
+          "coverage": 0.945,
+          "wilson95": [
+            0.9290916123226243,
+            0.9575025726252315
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 948,
+          "coverage": 0.948,
+          "wilson95": [
+            0.93244426068072,
+            0.9601269637162226
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.944,
+          "coverage_max": 0.946
+        },
+        "floor": {
+          "coverage_min": 0.944,
+          "coverage_max": 0.946
+        },
+        "product": {
+          "coverage_min": 0.949,
+          "coverage_max": 0.95
+        }
+      }
+    },
+    {
+      "index": 4,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5061598842489468,
+      "population_truth_repeat_estimates": [
+        0.5135044907125408,
+        0.5225508209187824,
+        0.5190525473274032,
+        0.5007446393881954,
+        0.5014946089176409,
+        0.49418929393378885,
+        0.5150983773434148,
+        0.4826442954498078
+      ],
+      "population_truth_sd": 0.013711783717228683,
+      "population_truth_se_mean": 0.004847847624307843,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.2238167293018254,
+            0.22394780004511466,
+            0.22393090228865892,
+            0.22384092201378186,
+            0.22388133400718285,
+            0.22378479747507835,
+            0.22384687865412695,
+            0.22363037367593047
+          ],
+          "mean": 0.22383496718271242,
+          "sd": 9.926166563131383e-05,
+          "se_mean": 3.509429843988684e-05
+        },
+        "system1": {
+          "estimates": [
+            0.21868168439469998,
+            0.21872229183592684,
+            0.21874037681538488,
+            0.2188334756198999,
+            0.21886638791800644,
+            0.21884290453574046,
+            0.2186958948806928,
+            0.2188039307214324
+          ],
+          "mean": 0.21877336834022296,
+          "sd": 7.185322475505551e-05,
+          "se_mean": 2.5403951237210427e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 953,
+          "coverage": 0.953,
+          "wilson95": [
+            0.9380600619184716,
+            0.9644728948936154
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 953,
+          "coverage": 0.953,
+          "wilson95": [
+            0.9380600619184716,
+            0.9644728948936154
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 962,
+          "coverage": 0.962,
+          "wilson95": [
+            0.9482730796686497,
+            0.9721909954906974
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.95,
+          "coverage_max": 0.954
+        },
+        "floor": {
+          "coverage_min": 0.95,
+          "coverage_max": 0.954
+        },
+        "product": {
+          "coverage_min": 0.961,
+          "coverage_max": 0.962
+        }
+      }
+    },
+    {
+      "index": 5,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 2.001180678166767,
+      "population_truth_repeat_estimates": [
+        2.0061246935214214,
+        2.018409588794584,
+        2.016884890364179,
+        1.9949610195230227,
+        1.9947593487133763,
+        1.9913361651189732,
+        2.0083350005525578,
+        1.9786347187460196
+      ],
+      "population_truth_sd": 0.013649895906109561,
+      "population_truth_se_mean": 0.004825966978850282,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.2238167293018254,
+            0.22394780004511466,
+            0.22393090228865892,
+            0.22384092201378186,
+            0.22388133400718285,
+            0.22378479747507835,
+            0.22384687865412695,
+            0.22363037367593047
+          ],
+          "mean": 0.22383496718271242,
+          "sd": 9.926166563131383e-05,
+          "se_mean": 3.509429843988684e-05
+        },
+        "system1": {
+          "estimates": [
+            0.20375548236661117,
+            0.20376370415716882,
+            0.20376205338501713,
+            0.20389131181855163,
+            0.2039337405200491,
+            0.2038714358238886,
+            0.20376352864860137,
+            0.20384402648847028
+          ],
+          "mean": 0.20382316040104476,
+          "sd": 7.075497263727444e-05,
+          "se_mean": 2.5015660477242685e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 944,
+          "coverage": 0.944,
+          "wilson95": [
+            0.927976651850269,
+            0.9566251866145581
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 944,
+          "coverage": 0.944,
+          "wilson95": [
+            0.927976651850269,
+            0.9566251866145581
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 948,
+          "coverage": 0.948,
+          "wilson95": [
+            0.93244426068072,
+            0.9601269637162226
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.945
+        },
+        "floor": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.945
+        },
+        "product": {
+          "coverage_min": 0.947,
+          "coverage_max": 0.949
+        }
+      }
+    },
+    {
+      "index": 6,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 928,
+          "coverage": 0.928,
+          "wilson95": [
+            0.9102882164172793,
+            0.9424360783190856
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 928,
+          "coverage": 0.928,
+          "wilson95": [
+            0.9102882164172793,
+            0.9424360783190856
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 946,
+          "coverage": 0.946,
+          "wilson95": [
+            0.9302078451539475,
+            0.9583786862769372
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.928,
+          "coverage_max": 0.928
+        },
+        "floor": {
+          "coverage_min": 0.928,
+          "coverage_max": 0.928
+        },
+        "product": {
+          "coverage_min": 0.946,
+          "coverage_max": 0.946
+        }
+      }
+    },
+    {
+      "index": 7,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "population_truth_repeat_estimates": [
+        0.5000000000000004
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 955,
+          "coverage": 0.955,
+          "wilson95": [
+            0.9403171620637766,
+            0.9662004877143683
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 955,
+          "coverage": 0.955,
+          "wilson95": [
+            0.9403171620637766,
+            0.9662004877143683
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 968,
+          "coverage": 0.968,
+          "wilson95": [
+            0.9551752619162314,
+            0.9772428921412891
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.955,
+          "coverage_max": 0.955
+        },
+        "floor": {
+          "coverage_min": 0.955,
+          "coverage_max": 0.955
+        },
+        "product": {
+          "coverage_min": 0.968,
+          "coverage_max": 0.968
+        }
+      }
+    },
+    {
+      "index": 8,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "population_truth_repeat_estimates": [
+        1.9999999999999991
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 956,
+          "coverage": 0.956,
+          "wilson95": [
+            0.9414482108495923,
+            0.9670617854115815
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 956,
+          "coverage": 0.956,
+          "wilson95": [
+            0.9414482108495923,
+            0.9670617854115815
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 967,
+          "coverage": 0.967,
+          "wilson95": [
+            0.9540187355329184,
+            0.9764070720415732
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.956,
+          "coverage_max": 0.956
+        },
+        "floor": {
+          "coverage_min": 0.956,
+          "coverage_max": 0.956
+        },
+        "product": {
+          "coverage_min": 0.967,
+          "coverage_max": 0.967
+        }
+      }
+    },
+    {
+      "index": 9,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": -0.016949296932569635,
+      "population_truth_repeat_estimates": [
+        -0.017660201300934153,
+        -0.014888584839883867,
+        -0.010425597125346409,
+        -0.011736703427667194,
+        -0.01143170542245997,
+        -0.02146542500707782,
+        -0.0278725622840037,
+        -0.02011359605318397
+      ],
+      "population_truth_sd": 0.006031482325412841,
+      "population_truth_se_mean": 0.002132451026453113,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22376724276119664,
+            0.2239025963733357,
+            0.22390806679920294,
+            0.2238619073353773,
+            0.22392328920952048,
+            0.22376019132336716,
+            0.22381112520183305,
+            0.2236210648283033
+          ],
+          "mean": 0.22381943547901706,
+          "sd": 0.00010213060736664668,
+          "se_mean": 3.6108622517828316e-05
+        },
+        "system1": {
+          "estimates": [
+            0.22394384477420598,
+            0.22405148222173454,
+            0.2240123227704564,
+            0.22397927436965398,
+            0.22403760626374508,
+            0.22397484557343794,
+            0.2240898508246731,
+            0.22382220078883514
+          ],
+          "mean": 0.22398892844834278,
+          "sd": 8.20603465650964e-05,
+          "se_mean": 2.9012713761348937e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 957,
+          "coverage": 0.957,
+          "wilson95": [
+            0.942580996155916,
+            0.9679213465882865
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 957,
+          "coverage": 0.957,
+          "wilson95": [
+            0.942580996155916,
+            0.9679213465882865
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 968,
+          "coverage": 0.968,
+          "wilson95": [
+            0.9551752619162314,
+            0.9772428921412891
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.957,
+          "coverage_max": 0.957
+        },
+        "floor": {
+          "coverage_min": 0.957,
+          "coverage_max": 0.957
+        },
+        "product": {
+          "coverage_min": 0.966,
+          "coverage_max": 0.968
+        }
+      }
+    },
+    {
+      "index": 10,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.4825321839961628,
+      "population_truth_repeat_estimates": [
+        0.4829569881094342,
+        0.4835011479847884,
+        0.49291839545990146,
+        0.486431574040197,
+        0.48588666011656345,
+        0.47584845321748115,
+        0.4733928103447749,
+        0.4793214426961623
+      ],
+      "population_truth_sd": 0.00625596582277797,
+      "population_truth_se_mean": 0.002211817928078791,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22376724276119664,
+            0.2239025963733357,
+            0.22390806679920294,
+            0.2238619073353773,
+            0.22392328920952048,
+            0.22376019132336716,
+            0.22381112520183305,
+            0.2236210648283033
+          ],
+          "mean": 0.22381943547901706,
+          "sd": 0.00010213060736664668,
+          "se_mean": 3.6108622517828316e-05
+        },
+        "system1": {
+          "estimates": [
+            0.2189376728801023,
+            0.21906758489348782,
+            0.21897888284460393,
+            0.21899759159497534,
+            0.21906442260835485,
+            0.21900170679119235,
+            0.2190771970983853,
+            0.21882785040134167
+          ],
+          "mean": 0.21899411363905544,
+          "sd": 8.313069772410897e-05,
+          "se_mean": 2.939114004274327e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 941,
+          "coverage": 0.941,
+          "wilson95": [
+            0.9246390972285408,
+            0.9539857017871995
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 941,
+          "coverage": 0.941,
+          "wilson95": [
+            0.9246390972285408,
+            0.9539857017871995
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 951,
+          "coverage": 0.951,
+          "wilson95": [
+            0.9358092984933898,
+            0.9627389653526394
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.941,
+          "coverage_max": 0.941
+        },
+        "floor": {
+          "coverage_min": 0.941,
+          "coverage_max": 0.941
+        },
+        "product": {
+          "coverage_min": 0.95,
+          "coverage_max": 0.952
+        }
+      }
+    },
+    {
+      "index": 11,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9836434343763552,
+      "population_truth_repeat_estimates": [
+        1.9839198745454478,
+        1.9835353512130005,
+        1.9949155039491462,
+        1.9881883071253936,
+        1.9901662732237368,
+        1.9780672399774213,
+        1.9724228263780286,
+        1.977932098598667
+      ],
+      "population_truth_sd": 0.007367557190793651,
+      "population_truth_se_mean": 0.0026048248251949505,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22376724276119664,
+            0.2239025963733357,
+            0.22390806679920294,
+            0.2238619073353773,
+            0.22392328920952048,
+            0.22376019132336716,
+            0.22381112520183305,
+            0.2236210648283033
+          ],
+          "mean": 0.22381943547901706,
+          "sd": 0.00010213060736664668,
+          "se_mean": 3.6108622517828316e-05
+        },
+        "system1": {
+          "estimates": [
+            0.20392804401574216,
+            0.2040672428612057,
+            0.20395891175971148,
+            0.20398002426412337,
+            0.2040216264772831,
+            0.20397951892359295,
+            0.20408689693805276,
+            0.20384174384231663
+          ],
+          "mean": 0.20398300113525353,
+          "sd": 7.833820144934784e-05,
+          "se_mean": 2.7696736735395838e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 945,
+          "coverage": 0.945,
+          "wilson95": [
+            0.9290916123226243,
+            0.9575025726252315
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 945,
+          "coverage": 0.945,
+          "wilson95": [
+            0.9290916123226243,
+            0.9575025726252315
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 953,
+          "coverage": 0.953,
+          "wilson95": [
+            0.9380600619184716,
+            0.9644728948936154
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.945
+        },
+        "floor": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.945
+        },
+        "product": {
+          "coverage_min": 0.952,
+          "coverage_max": 0.953
+        }
+      }
+    },
+    {
+      "index": 12,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 937,
+          "coverage": 0.937,
+          "wilson95": [
+            0.920205076295354,
+            0.9504503367882711
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 937,
+          "coverage": 0.937,
+          "wilson95": [
+            0.920205076295354,
+            0.9504503367882711
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 958,
+          "coverage": 0.958,
+          "wilson95": [
+            0.9437155747733968,
+            0.9687791144538346
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.937,
+          "coverage_max": 0.937
+        },
+        "floor": {
+          "coverage_min": 0.937,
+          "coverage_max": 0.937
+        },
+        "product": {
+          "coverage_min": 0.958,
+          "coverage_max": 0.958
+        }
+      }
+    },
+    {
+      "index": 13,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "population_truth_repeat_estimates": [
+        0.5000000000000004
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 946,
+          "coverage": 0.946,
+          "wilson95": [
+            0.9302078451539475,
+            0.9583786862769372
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 946,
+          "coverage": 0.946,
+          "wilson95": [
+            0.9302078451539475,
+            0.9583786862769372
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 967,
+          "coverage": 0.967,
+          "wilson95": [
+            0.9540187355329184,
+            0.9764070720415732
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.946,
+          "coverage_max": 0.946
+        },
+        "floor": {
+          "coverage_min": 0.946,
+          "coverage_max": 0.946
+        },
+        "product": {
+          "coverage_min": 0.967,
+          "coverage_max": 0.967
+        }
+      }
+    },
+    {
+      "index": 14,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "population_truth_repeat_estimates": [
+        1.9999999999999991
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 933,
+          "coverage": 0.933,
+          "wilson95": [
+            0.9157879467581331,
+            0.9468980803933762
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 933,
+          "coverage": 0.933,
+          "wilson95": [
+            0.9157879467581331,
+            0.9468980803933762
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 957,
+          "coverage": 0.957,
+          "wilson95": [
+            0.942580996155916,
+            0.9679213465882865
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.933,
+          "coverage_max": 0.933
+        },
+        "floor": {
+          "coverage_min": 0.933,
+          "coverage_max": 0.933
+        },
+        "product": {
+          "coverage_min": 0.957,
+          "coverage_max": 0.957
+        }
+      }
+    },
+    {
+      "index": 15,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.003559174185494701,
+      "population_truth_repeat_estimates": [
+        0.005082517861138003,
+        0.01198054722768016,
+        0.012144407629871568,
+        -0.008055626526848325,
+        0.014230140060361718,
+        -0.004604819709885799,
+        0.010145668491151616,
+        -0.01244944154951133
+      ],
+      "population_truth_sd": 0.010433653809856844,
+      "population_truth_se_mean": 0.0036888536807513153,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22370532330566872,
+            0.2239039827063879,
+            0.22382244309383414,
+            0.22383019612863425,
+            0.22387743438302632,
+            0.22371658247546528,
+            0.22377081156214224,
+            0.2236683890431052
+          ],
+          "mean": 0.223786895337283,
+          "sd": 8.531094118131392e-05,
+          "se_mean": 3.0161972509356883e-05
+        },
+        "system1": {
+          "estimates": [
+            0.22365449812705734,
+            0.2237841772341111,
+            0.22370099901753543,
+            0.22391075239390273,
+            0.2237351329824227,
+            0.22376263067256413,
+            0.22366935487723072,
+            0.22379288345860032
+          ],
+          "mean": 0.22375130359542805,
+          "sd": 8.215030958617971e-05,
+          "se_mean": 2.9044520492480955e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 950,
+          "coverage": 0.95,
+          "wilson95": [
+            0.9346861797557492,
+            0.9618697376072513
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 950,
+          "coverage": 0.95,
+          "wilson95": [
+            0.9346861797557492,
+            0.9618697376072513
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 967,
+          "coverage": 0.967,
+          "wilson95": [
+            0.9540187355329184,
+            0.9764070720415732
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.95,
+          "coverage_max": 0.953
+        },
+        "floor": {
+          "coverage_min": 0.95,
+          "coverage_max": 0.953
+        },
+        "product": {
+          "coverage_min": 0.967,
+          "coverage_max": 0.967
+        }
+      }
+    },
+    {
+      "index": 16,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5031278736994111,
+      "population_truth_repeat_estimates": [
+        0.5052486456207539,
+        0.50916811771895,
+        0.5149264193108516,
+        0.4907546095694437,
+        0.5154928079192711,
+        0.49355966323364475,
+        0.5092005576743386,
+        0.48667216854803574
+      ],
+      "population_truth_sd": 0.011246558442475497,
+      "population_truth_se_mean": 0.00397625886984262,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22370532330566872,
+            0.2239039827063879,
+            0.22382244309383414,
+            0.22383019612863425,
+            0.22387743438302632,
+            0.22371658247546528,
+            0.22377081156214224,
+            0.2236683890431052
+          ],
+          "mean": 0.223786895337283,
+          "sd": 8.531094118131392e-05,
+          "se_mean": 3.0161972509356883e-05
+        },
+        "system1": {
+          "estimates": [
+            0.21865283684946119,
+            0.2188123015291984,
+            0.21867317890072563,
+            0.21892265003293981,
+            0.2187225063038336,
+            0.21878098584312883,
+            0.21867880598539885,
+            0.21880166735762485
+          ],
+          "mean": 0.21875561660028892,
+          "sd": 9.120889156432063e-05,
+          "se_mean": 3.2247212864819804e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 952,
+          "coverage": 0.952,
+          "wilson95": [
+            0.936933911349866,
+            0.963606698979192
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 952,
+          "coverage": 0.952,
+          "wilson95": [
+            0.936933911349866,
+            0.963606698979192
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 965,
+          "coverage": 0.965,
+          "wilson95": [
+            0.9517133776255466,
+            0.9747277369828871
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.951,
+          "coverage_max": 0.953
+        },
+        "floor": {
+          "coverage_min": 0.951,
+          "coverage_max": 0.953
+        },
+        "product": {
+          "coverage_min": 0.965,
+          "coverage_max": 0.966
+        }
+      }
+    },
+    {
+      "index": 17,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9992005676842532,
+      "population_truth_repeat_estimates": [
+        2.0019882679323695,
+        2.0002023061632848,
+        2.01184121277414,
+        1.9867783678144013,
+        2.010301593891578,
+        1.9889993010900664,
+        2.0077806667825993,
+        1.9857128250255873
+      ],
+      "population_truth_sd": 0.01072851764553548,
+      "population_truth_se_mean": 0.0037931037896188347,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22370532330566872,
+            0.2239039827063879,
+            0.22382244309383414,
+            0.22383019612863425,
+            0.22387743438302632,
+            0.22371658247546528,
+            0.22377081156214224,
+            0.2236683890431052
+          ],
+          "mean": 0.223786895337283,
+          "sd": 8.531094118131392e-05,
+          "se_mean": 3.0161972509356883e-05
+        },
+        "system1": {
+          "estimates": [
+            0.20368544062634503,
+            0.20390195964475505,
+            0.20370403096609274,
+            0.20396241245049024,
+            0.20377441844411054,
+            0.2038265894645646,
+            0.20369300489431624,
+            0.20381126079284934
+          ],
+          "mean": 0.20379488966044046,
+          "sd": 0.00010130204338247577,
+          "se_mean": 3.581568091190122e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 950,
+          "coverage": 0.95,
+          "wilson95": [
+            0.9346861797557492,
+            0.9618697376072513
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 950,
+          "coverage": 0.95,
+          "wilson95": [
+            0.9346861797557492,
+            0.9618697376072513
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 961,
+          "coverage": 0.961,
+          "wilson95": [
+            0.9471306895804986,
+            0.9713410390958196
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.948,
+          "coverage_max": 0.953
+        },
+        "floor": {
+          "coverage_min": 0.948,
+          "coverage_max": 0.953
+        },
+        "product": {
+          "coverage_min": 0.961,
+          "coverage_max": 0.961
+        }
+      }
+    },
+    {
+      "index": 18,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 936,
+          "coverage": 0.936,
+          "wilson95": [
+            0.9190992674988255,
+            0.9495637991017706
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 936,
+          "coverage": 0.936,
+          "wilson95": [
+            0.9190992674988255,
+            0.9495637991017706
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 958,
+          "coverage": 0.958,
+          "wilson95": [
+            0.9437155747733968,
+            0.9687791144538346
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.936,
+          "coverage_max": 0.936
+        },
+        "floor": {
+          "coverage_min": 0.936,
+          "coverage_max": 0.936
+        },
+        "product": {
+          "coverage_min": 0.958,
+          "coverage_max": 0.958
+        }
+      }
+    },
+    {
+      "index": 19,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5000000000000004,
+      "population_truth_repeat_estimates": [
+        0.5000000000000004
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 963,
+          "coverage": 0.963,
+          "wilson95": [
+            0.9494176025179306,
+            0.9730388191244452
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.943
+        },
+        "floor": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.943
+        },
+        "product": {
+          "coverage_min": 0.963,
+          "coverage_max": 0.963
+        }
+      }
+    },
+    {
+      "index": 20,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 1.9999999999999991,
+      "population_truth_repeat_estimates": [
+        1.9999999999999991
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 935,
+          "coverage": 0.935,
+          "wilson95": [
+            0.9179944906866292,
+            0.948676229430938
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 935,
+          "coverage": 0.935,
+          "wilson95": [
+            0.9179944906866292,
+            0.948676229430938
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 963,
+          "coverage": 0.963,
+          "wilson95": [
+            0.9494176025179306,
+            0.9730388191244452
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.935,
+          "coverage_max": 0.935
+        },
+        "floor": {
+          "coverage_min": 0.935,
+          "coverage_max": 0.935
+        },
+        "product": {
+          "coverage_min": 0.963,
+          "coverage_max": 0.963
+        }
+      }
+    },
+    {
+      "index": 21,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.03392722360617273,
+      "population_truth_repeat_estimates": [
+        0.03857961021490053,
+        0.04564833892239384,
+        0.0400542298013562,
+        0.028347252267119094,
+        0.03425500162426154,
+        0.029576523471447347,
+        0.038877642927465095,
+        0.016079189620438195
+      ],
+      "population_truth_sd": 0.009179173081163537,
+      "population_truth_se_mean": 0.0032453277656878756,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22393018839996498,
+            0.2240401479280692,
+            0.22408576299163246,
+            0.22401838032398425,
+            0.2240502993824422,
+            0.22393032868723683,
+            0.22391547553364288,
+            0.2238132990969801
+          ],
+          "mean": 0.22397298529299411,
+          "sd": 9.081065058044911e-05,
+          "se_mean": 3.2106413414698824e-05
+        },
+        "system1": {
+          "estimates": [
+            0.22354439229781597,
+            0.22358366453884526,
+            0.2236852206936189,
+            0.22373490780131305,
+            0.22370774936619958,
+            0.22363456345252236,
+            0.22352669910436823,
+            0.22365250720077573
+          ],
+          "mean": 0.2236337130569324,
+          "sd": 7.621751696664234e-05,
+          "se_mean": 2.6946961546156766e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 965,
+          "coverage": 0.965,
+          "wilson95": [
+            0.9517133776255466,
+            0.9747277369828871
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.944
+        },
+        "floor": {
+          "coverage_min": 0.943,
+          "coverage_max": 0.944
+        },
+        "product": {
+          "coverage_min": 0.965,
+          "coverage_max": 0.965
+        }
+      }
+    },
+    {
+      "index": 22,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000004,
+      "population_truth_delta_pts": 0.5374382727954908,
+      "population_truth_repeat_estimates": [
+        0.541748544578341,
+        0.5478956945269509,
+        0.5493546135012961,
+        0.5296918673993123,
+        0.5362990936952916,
+        0.5299388008888739,
+        0.5459435191332795,
+        0.5186340486405816
+      ],
+      "population_truth_sd": 0.01077974260046149,
+      "population_truth_se_mean": 0.0038112145461159136,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22393018839996498,
+            0.2240401479280692,
+            0.22408576299163246,
+            0.22401838032398425,
+            0.2240502993824422,
+            0.22393032868723683,
+            0.22391547553364288,
+            0.2238132990969801
+          ],
+          "mean": 0.22397298529299411,
+          "sd": 9.081065058044911e-05,
+          "se_mean": 3.2106413414698824e-05
+        },
+        "system1": {
+          "estimates": [
+            0.21851270295418157,
+            0.2185611909827997,
+            0.2185922168566195,
+            0.21872146164999112,
+            0.21868730844548928,
+            0.2186309406783481,
+            0.2184560403423101,
+            0.2186269586105743
+          ],
+          "mean": 0.2185986025650392,
+          "sd": 8.779524972917508e-05,
+          "se_mean": 3.104030821973305e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 943,
+          "coverage": 0.943,
+          "wilson95": [
+            0.9268629323405141,
+            0.9557465596412841
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 965,
+          "coverage": 0.965,
+          "wilson95": [
+            0.9517133776255466,
+            0.9747277369828871
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.942,
+          "coverage_max": 0.945
+        },
+        "floor": {
+          "coverage_min": 0.942,
+          "coverage_max": 0.945
+        },
+        "product": {
+          "coverage_min": 0.965,
+          "coverage_max": 0.966
+        }
+      }
+    },
+    {
+      "index": 23,
+      "spec": {
+        "regime": "organizer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 1.9999999999999991,
+      "population_truth_delta_pts": 2.029295804203765,
+      "population_truth_repeat_estimates": [
+        2.0276998389203826,
+        2.0389683751470766,
+        2.0436513093875175,
+        2.0216441970687393,
+        2.029564913596149,
+        2.023970214775911,
+        2.037325033656101,
+        2.011542551078244
+      ],
+      "population_truth_sd": 0.010480009538060707,
+      "population_truth_se_mean": 0.0037052429056312116,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.22393018839996498,
+            0.2240401479280692,
+            0.22408576299163246,
+            0.22401838032398425,
+            0.2240502993824422,
+            0.22393032868723683,
+            0.22391547553364288,
+            0.2238132990969801
+          ],
+          "mean": 0.22397298529299411,
+          "sd": 9.081065058044911e-05,
+          "se_mean": 3.2106413414698824e-05
+        },
+        "system1": {
+          "estimates": [
+            0.20365319001076115,
+            0.20365046417659843,
+            0.2036492498977573,
+            0.20380193835329685,
+            0.2037546502464807,
+            0.20369062653947773,
+            0.20354222519708187,
+            0.20369787358619768
+          ],
+          "mean": 0.20368002725095646,
+          "sd": 7.782086507060416e-05,
+          "se_mean": 2.7513830704613765e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 942,
+          "coverage": 0.942,
+          "wilson95": [
+            0.9257504237337675,
+            0.9548667217650018
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 942,
+          "coverage": 0.942,
+          "wilson95": [
+            0.9257504237337675,
+            0.9548667217650018
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 966,
+          "coverage": 0.966,
+          "wilson95": [
+            0.9528648097546889,
+            0.9755686513367737
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.941,
+          "coverage_max": 0.943
+        },
+        "floor": {
+          "coverage_min": 0.941,
+          "coverage_max": 0.943
+        },
+        "product": {
+          "coverage_min": 0.966,
+          "coverage_max": 0.966
+        }
+      }
+    },
+    {
+      "index": 24,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 913,
+          "coverage": 0.913,
+          "wilson95": [
+            0.8939135189433066,
+            0.928925578547625
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 913,
+          "coverage": 0.913,
+          "wilson95": [
+            0.8939135189433066,
+            0.928925578547625
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 916,
+          "coverage": 0.916,
+          "wilson95": [
+            0.8971749506177824,
+            0.9316411863222358
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.913,
+          "coverage_max": 0.913
+        },
+        "floor": {
+          "coverage_min": 0.913,
+          "coverage_max": 0.913
+        },
+        "product": {
+          "coverage_min": 0.916,
+          "coverage_max": 0.916
+        }
+      }
+    },
+    {
+      "index": 25,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "population_truth_repeat_estimates": [
+        0.5000000000000001
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 916,
+          "coverage": 0.916,
+          "wilson95": [
+            0.8971749506177824,
+            0.9316411863222358
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 916,
+          "coverage": 0.916,
+          "wilson95": [
+            0.8971749506177824,
+            0.9316411863222358
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 923,
+          "coverage": 0.923,
+          "wilson95": [
+            0.9048104693818263,
+            0.9379520929393942
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.916,
+          "coverage_max": 0.916
+        },
+        "floor": {
+          "coverage_min": 0.916,
+          "coverage_max": 0.916
+        },
+        "product": {
+          "coverage_min": 0.923,
+          "coverage_max": 0.923
+        }
+      }
+    },
+    {
+      "index": 26,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0,
+      "population_truth_repeat_estimates": [
+        2.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 879,
+          "coverage": 0.879,
+          "wilson95": [
+            0.8573230993571588,
+            0.8977762177107904
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 880,
+          "coverage": 0.88,
+          "wilson95": [
+            0.8583909241522872,
+            0.8987007393986909
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 883,
+          "coverage": 0.883,
+          "wilson95": [
+            0.8615970906192936,
+            0.9014716123807713
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.879,
+          "coverage_max": 0.879
+        },
+        "floor": {
+          "coverage_min": 0.88,
+          "coverage_max": 0.88
+        },
+        "product": {
+          "coverage_min": 0.883,
+          "coverage_max": 0.883
+        }
+      }
+    },
+    {
+      "index": 27,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.004965775170723882,
+      "population_truth_repeat_estimates": [
+        0.0027675051070048806,
+        0.004151861263627238,
+        0.008693498580233244,
+        0.000910337366567121,
+        0.00673418516645638,
+        0.006118233114234262,
+        0.004651127248437442,
+        0.005699453519230485
+      ],
+      "population_truth_sd": 0.0024180885361620927,
+      "population_truth_se_mean": 0.0008549234007148339,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03009154436550881,
+            0.0300060166306537,
+            0.03008674950886949,
+            0.0300088117110699,
+            0.029976042603616915,
+            0.02998782317953446,
+            0.03001926585904894,
+            0.030024049043895433
+          ],
+          "mean": 0.030025037862774707,
+          "sd": 4.255466954165292e-05,
+          "se_mean": 1.5045347702027705e-05
+        },
+        "system1": {
+          "estimates": [
+            0.03006386931443876,
+            0.029964498018017427,
+            0.02999981452306716,
+            0.02999970833740423,
+            0.02990870075195235,
+            0.029926640848392118,
+            0.029972754586564565,
+            0.029967054508703128
+          ],
+          "mean": 0.029975380111067467,
+          "sd": 4.786218883521264e-05,
+          "se_mean": 1.692183914390496e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 909,
+          "coverage": 0.909,
+          "wilson95": [
+            0.88957441593046,
+            0.9252952956283559
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 910,
+          "coverage": 0.91,
+          "wilson95": [
+            0.8906582073569279,
+            0.926203850684917
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 901,
+          "coverage": 0.901,
+          "wilson95": [
+            0.8809263810632503,
+            0.9180045586313347
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.909,
+          "coverage_max": 0.911
+        },
+        "floor": {
+          "coverage_min": 0.91,
+          "coverage_max": 0.911
+        },
+        "product": {
+          "coverage_min": 0.901,
+          "coverage_max": 0.902
+        }
+      }
+    },
+    {
+      "index": 28,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.4995560363562329,
+      "population_truth_repeat_estimates": [
+        0.4986459389307918,
+        0.500714067298539,
+        0.5004955784355225,
+        0.4966659199724395,
+        0.4978135176374687,
+        0.4992835022282621,
+        0.5012566956922087,
+        0.5015730706546311
+      ],
+      "population_truth_sd": 0.0017515764691870446,
+      "population_truth_se_mean": 0.0006192757995644745,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03009154436550881,
+            0.0300060166306537,
+            0.03008674950886949,
+            0.0300088117110699,
+            0.029976042603616915,
+            0.02998782317953446,
+            0.03001926585904894,
+            0.030024049043895433
+          ],
+          "mean": 0.030025037862774707,
+          "sd": 4.255466954165292e-05,
+          "se_mean": 1.5045347702027705e-05
+        },
+        "system1": {
+          "estimates": [
+            0.02510508497620089,
+            0.02499887595766831,
+            0.025081793724514266,
+            0.025042152511345506,
+            0.024997907427242227,
+            0.02499498815725184,
+            0.025006698902126853,
+            0.025008318337349122
+          ],
+          "mean": 0.025029477499212374,
+          "sd": 4.2600045360247925e-05,
+          "se_mean": 1.5061390476542913e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 909,
+          "coverage": 0.909,
+          "wilson95": [
+            0.88957441593046,
+            0.9252952956283559
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 909,
+          "coverage": 0.909,
+          "wilson95": [
+            0.88957441593046,
+            0.9252952956283559
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 906,
+          "coverage": 0.906,
+          "wilson95": [
+            0.8863268456834931,
+            0.9225658264262363
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.907,
+          "coverage_max": 0.909
+        },
+        "floor": {
+          "coverage_min": 0.907,
+          "coverage_max": 0.909
+        },
+        "product": {
+          "coverage_min": 0.906,
+          "coverage_max": 0.907
+        }
+      }
+    },
+    {
+      "index": 29,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.0,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.004767809062912,
+      "population_truth_repeat_estimates": [
+        2.007723857658238,
+        2.0031661267699987,
+        2.0103802557329398,
+        2.0044243981794394,
+        1.9998649957854941,
+        2.0013728086113574,
+        2.0064376778442043,
+        2.004772351921625
+      ],
+      "population_truth_sd": 0.003407411808055573,
+      "population_truth_se_mean": 0.001204701997885605,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03009154436550881,
+            0.0300060166306537,
+            0.03008674950886949,
+            0.0300088117110699,
+            0.029976042603616915,
+            0.02998782317953446,
+            0.03001926585904894,
+            0.030024049043895433
+          ],
+          "mean": 0.030025037862774707,
+          "sd": 4.255466954165292e-05,
+          "se_mean": 1.5045347702027705e-05
+        },
+        "system1": {
+          "estimates": [
+            0.010014305788926425,
+            0.009974355362953713,
+            0.009982946951540093,
+            0.009964567729275509,
+            0.009977392645761973,
+            0.009974095093420888,
+            0.009954889080606894,
+            0.00997632552467918
+          ],
+          "mean": 0.009977359772145583,
+          "sd": 1.7260807872326274e-05,
+          "se_mean": 6.102617147640025e-06
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 857,
+          "coverage": 0.857,
+          "wilson95": [
+            0.8339350119390162,
+            0.8773326825022975
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 857,
+          "coverage": 0.857,
+          "wilson95": [
+            0.8339350119390162,
+            0.8773326825022975
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 869,
+          "coverage": 0.869,
+          "wilson95": [
+            0.8466683584396694,
+            0.888507493797991
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.856,
+          "coverage_max": 0.86
+        },
+        "floor": {
+          "coverage_min": 0.856,
+          "coverage_max": 0.86
+        },
+        "product": {
+          "coverage_min": 0.868,
+          "coverage_max": 0.869
+        }
+      }
+    },
+    {
+      "index": 30,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 923,
+          "coverage": 0.923,
+          "wilson95": [
+            0.9048104693818263,
+            0.9379520929393942
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 923,
+          "coverage": 0.923,
+          "wilson95": [
+            0.9048104693818263,
+            0.9379520929393942
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 925,
+          "coverage": 0.925,
+          "wilson95": [
+            0.9069990602607456,
+            0.9397481950265327
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.923,
+          "coverage_max": 0.923
+        },
+        "floor": {
+          "coverage_min": 0.923,
+          "coverage_max": 0.923
+        },
+        "product": {
+          "coverage_min": 0.925,
+          "coverage_max": 0.925
+        }
+      }
+    },
+    {
+      "index": 31,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "population_truth_repeat_estimates": [
+        0.5000000000000001
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 901,
+          "coverage": 0.901,
+          "wilson95": [
+            0.8809263810632503,
+            0.9180045586313347
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 901,
+          "coverage": 0.901,
+          "wilson95": [
+            0.8809263810632503,
+            0.9180045586313347
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 913,
+          "coverage": 0.913,
+          "wilson95": [
+            0.8939135189433066,
+            0.928925578547625
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.901,
+          "coverage_max": 0.901
+        },
+        "floor": {
+          "coverage_min": 0.901,
+          "coverage_max": 0.901
+        },
+        "product": {
+          "coverage_min": 0.913,
+          "coverage_max": 0.913
+        }
+      }
+    },
+    {
+      "index": 32,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0,
+      "population_truth_repeat_estimates": [
+        2.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 896,
+          "coverage": 0.896,
+          "wilson95": [
+            0.8755402353777084,
+            0.9134289719017319
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 896,
+          "coverage": 0.896,
+          "wilson95": [
+            0.8755402353777084,
+            0.9134289719017319
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 891,
+          "coverage": 0.891,
+          "wilson95": [
+            0.8701675082488096,
+            0.9088399666154863
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.896,
+          "coverage_max": 0.896
+        },
+        "floor": {
+          "coverage_min": 0.896,
+          "coverage_max": 0.896
+        },
+        "product": {
+          "coverage_min": 0.891,
+          "coverage_max": 0.891
+        }
+      }
+    },
+    {
+      "index": 33,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0028042430413019286,
+      "population_truth_repeat_estimates": [
+        -0.0014343225082855127,
+        0.0010098234016577001,
+        0.005230092256894303,
+        0.0002863547850576187,
+        0.003636126471923823,
+        0.007562653898463001,
+        0.0003975586368970552,
+        0.00574565738780744
+      ],
+      "population_truth_sd": 0.003189008747847592,
+      "population_truth_se_mean": 0.0011274848554331265,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.030082229490596128,
+            0.030011125845887693,
+            0.030067910112074527,
+            0.030030961813202237,
+            0.029967999521145823,
+            0.029996484671180268,
+            0.03001137677072055,
+            0.030005577961187753
+          ],
+          "mean": 0.030021708273249372,
+          "sd": 3.757436530412077e-05,
+          "se_mean": 1.3284544252662164e-05
+        },
+        "system1": {
+          "estimates": [
+            0.030096572715678983,
+            0.030001027611871116,
+            0.030015609189505583,
+            0.03002809826535166,
+            0.029931638256426585,
+            0.029920858132195638,
+            0.03000740118435158,
+            0.02994812138730968
+          ],
+          "mean": 0.029993665842836352,
+          "sd": 5.821446009027264e-05,
+          "se_mean": 2.0581919746472707e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 911,
+          "coverage": 0.911,
+          "wilson95": [
+            0.8917426484378812,
+            0.9271117560869926
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 911,
+          "coverage": 0.911,
+          "wilson95": [
+            0.8917426484378812,
+            0.9271117560869926
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 911,
+          "coverage": 0.911,
+          "wilson95": [
+            0.8917426484378812,
+            0.9271117560869926
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.909,
+          "coverage_max": 0.911
+        },
+        "floor": {
+          "coverage_min": 0.909,
+          "coverage_max": 0.911
+        },
+        "product": {
+          "coverage_min": 0.911,
+          "coverage_max": 0.912
+        }
+      }
+    },
+    {
+      "index": 34,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.49920829743686324,
+      "population_truth_repeat_estimates": [
+        0.4974769163436664,
+        0.49896107294373215,
+        0.4997045354302468,
+        0.49661003139248455,
+        0.49668520290511653,
+        0.5012648370093832,
+        0.5008375822195626,
+        0.5021262012507139
+      ],
+      "population_truth_sd": 0.002132072486801212,
+      "population_truth_se_mean": 0.0007538014566992013,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.030082229490596128,
+            0.030011125845887693,
+            0.030067910112074527,
+            0.030030961813202237,
+            0.029967999521145823,
+            0.029996484671180268,
+            0.03001137677072055,
+            0.030005577961187753
+          ],
+          "mean": 0.030021708273249372,
+          "sd": 3.757436530412077e-05,
+          "se_mean": 1.3284544252662164e-05
+        },
+        "system1": {
+          "estimates": [
+            0.025107460327159464,
+            0.02502151511645037,
+            0.02507086475777206,
+            0.02506486149927739,
+            0.025001147492094658,
+            0.024983836301086436,
+            0.025003000948524923,
+            0.024984315948680613
+          ],
+          "mean": 0.02502962529888074,
+          "sd": 4.588146298580509e-05,
+          "se_mean": 1.622154680401118e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 876,
+          "coverage": 0.876,
+          "wilson95": [
+            0.8541222509908473,
+            0.8950000266280154
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 876,
+          "coverage": 0.876,
+          "wilson95": [
+            0.8541222509908473,
+            0.8950000266280154
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 876,
+          "coverage": 0.876,
+          "wilson95": [
+            0.8541222509908473,
+            0.8950000266280154
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.876,
+          "coverage_max": 0.877
+        },
+        "floor": {
+          "coverage_min": 0.876,
+          "coverage_max": 0.877
+        },
+        "product": {
+          "coverage_min": 0.875,
+          "coverage_max": 0.877
+        }
+      }
+    },
+    {
+      "index": 35,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.25,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0034365211609697,
+      "population_truth_repeat_estimates": [
+        2.005616597223186,
+        2.0031465544543074,
+        2.0053361700665997,
+        2.0019960550360505,
+        1.9981069118653323,
+        2.0036779383843406,
+        2.0074192563316977,
+        2.0021926859262447
+      ],
+      "population_truth_sd": 0.0028383280793177128,
+      "population_truth_se_mean": 0.0010035005160588717,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.030082229490596128,
+            0.030011125845887693,
+            0.030067910112074527,
+            0.030030961813202237,
+            0.029967999521145823,
+            0.029996484671180268,
+            0.03001137677072055,
+            0.030005577961187753
+          ],
+          "mean": 0.030021708273249372,
+          "sd": 3.757436530412077e-05,
+          "se_mean": 1.3284544252662164e-05
+        },
+        "system1": {
+          "estimates": [
+            0.01002606351836427,
+            0.009979660301344617,
+            0.01001454841140853,
+            0.010011001262841733,
+            0.0099869304024925,
+            0.009959705287336862,
+            0.009937184207403572,
+            0.009983651101925308
+          ],
+          "mean": 0.009987343061639675,
+          "sd": 2.9644797654109114e-05,
+          "se_mean": 1.0481018724061804e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 875,
+          "coverage": 0.875,
+          "wilson95": [
+            0.8530561617710384,
+            0.8940737693647953
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 876,
+          "coverage": 0.876,
+          "wilson95": [
+            0.8541222509908473,
+            0.8950000266280154
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 880,
+          "coverage": 0.88,
+          "wilson95": [
+            0.8583909241522872,
+            0.8987007393986909
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.872,
+          "coverage_max": 0.879
+        },
+        "floor": {
+          "coverage_min": 0.872,
+          "coverage_max": 0.88
+        },
+        "product": {
+          "coverage_min": 0.88,
+          "coverage_max": 0.881
+        }
+      }
+    },
+    {
+      "index": 36,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 903,
+          "coverage": 0.903,
+          "wilson95": [
+            0.8830847944509657,
+            0.9198308382096769
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 903,
+          "coverage": 0.903,
+          "wilson95": [
+            0.8830847944509657,
+            0.9198308382096769
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 923,
+          "coverage": 0.923,
+          "wilson95": [
+            0.9048104693818263,
+            0.9379520929393942
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.903,
+          "coverage_max": 0.903
+        },
+        "floor": {
+          "coverage_min": 0.903,
+          "coverage_max": 0.903
+        },
+        "product": {
+          "coverage_min": 0.923,
+          "coverage_max": 0.923
+        }
+      }
+    },
+    {
+      "index": 37,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "population_truth_repeat_estimates": [
+        0.5000000000000001
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 886,
+          "coverage": 0.886,
+          "wilson95": [
+            0.8648073995463684,
+            0.904238342902783
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 886,
+          "coverage": 0.886,
+          "wilson95": [
+            0.8648073995463684,
+            0.904238342902783
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 900,
+          "coverage": 0.9,
+          "wilson95": [
+            0.8798480368046516,
+            0.9170905564069044
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.886,
+          "coverage_max": 0.886
+        },
+        "floor": {
+          "coverage_min": 0.886,
+          "coverage_max": 0.886
+        },
+        "product": {
+          "coverage_min": 0.9,
+          "coverage_max": 0.9
+        }
+      }
+    },
+    {
+      "index": 38,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0,
+      "population_truth_repeat_estimates": [
+        2.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 890,
+          "coverage": 0.89,
+          "wilson95": [
+            0.8690945010531241,
+            0.9079206273281428
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 890,
+          "coverage": 0.89,
+          "wilson95": [
+            0.8690945010531241,
+            0.9079206273281428
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 901,
+          "coverage": 0.901,
+          "wilson95": [
+            0.8809263810632503,
+            0.9180045586313347
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.89,
+          "coverage_max": 0.89
+        },
+        "floor": {
+          "coverage_min": 0.89,
+          "coverage_max": 0.89
+        },
+        "product": {
+          "coverage_min": 0.901,
+          "coverage_max": 0.901
+        }
+      }
+    },
+    {
+      "index": 39,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": -0.004086361052783958,
+      "population_truth_repeat_estimates": [
+        -0.005750786086902715,
+        -0.004441010887795693,
+        -0.0012742853057599868,
+        -0.007519764476369983,
+        0.00011716390138291621,
+        -0.001369180639462092,
+        -0.008367774189958765,
+        -0.004085250737405344
+      ],
+      "population_truth_sd": 0.0030700234386863427,
+      "population_truth_se_mean": 0.001085417195948378,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.0300523994542497,
+            0.029966198091116003,
+            0.0300440398456878,
+            0.029981257273987996,
+            0.02993290433268788,
+            0.0299654785422254,
+            0.029969149460013056,
+            0.029980732295832452
+          ],
+          "mean": 0.029986519911975037,
+          "sd": 4.095629606485566e-05,
+          "se_mean": 1.4480237339871674e-05
+        },
+        "system1": {
+          "estimates": [
+            0.030109907315118728,
+            0.03001060819999396,
+            0.0300567826987454,
+            0.030056454918751696,
+            0.02993173269367405,
+            0.02997917034862002,
+            0.030052827201912644,
+            0.030021584803206505
+          ],
+          "mean": 0.030027383522502876,
+          "sd": 5.4714378621374384e-05,
+          "se_mean": 1.9344454075791043e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 888,
+          "coverage": 0.888,
+          "wilson95": [
+            0.8669499763240903,
+            0.906080459091119
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 888,
+          "coverage": 0.888,
+          "wilson95": [
+            0.8669499763240903,
+            0.906080459091119
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 908,
+          "coverage": 0.908,
+          "wilson95": [
+            0.8884912646437558,
+            0.9243861004320312
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.886,
+          "coverage_max": 0.889
+        },
+        "floor": {
+          "coverage_min": 0.887,
+          "coverage_max": 0.889
+        },
+        "product": {
+          "coverage_min": 0.906,
+          "coverage_max": 0.911
+        }
+      }
+    },
+    {
+      "index": 40,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.4987148106651139,
+      "population_truth_repeat_estimates": [
+        0.4984961232654045,
+        0.5001611974071972,
+        0.5018397701850092,
+        0.49494732797200414,
+        0.49924432293377563,
+        0.4989561227303686,
+        0.4968043614630893,
+        0.49926925936406297
+      ],
+      "population_truth_sd": 0.0020837809351244093,
+      "population_truth_se_mean": 0.0007367278148668574,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.0300523994542497,
+            0.029966198091116003,
+            0.0300440398456878,
+            0.029981257273987996,
+            0.02993290433268788,
+            0.0299654785422254,
+            0.029969149460013056,
+            0.029980732295832452
+          ],
+          "mean": 0.029986519911975037,
+          "sd": 4.095629606485566e-05,
+          "se_mean": 1.4480237339871674e-05
+        },
+        "system1": {
+          "estimates": [
+            0.025067438221595656,
+            0.02496458611704403,
+            0.025025642143837706,
+            0.025031783994267955,
+            0.024940461103350124,
+            0.024975917314921714,
+            0.025001105845382163,
+            0.024988039702191822
+          ],
+          "mean": 0.024999371805323897,
+          "sd": 4.0945554781141506e-05,
+          "se_mean": 1.4476439722595209e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 884,
+          "coverage": 0.884,
+          "wilson95": [
+            0.8626667265227275,
+            0.9023943229603661
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 884,
+          "coverage": 0.884,
+          "wilson95": [
+            0.8626667265227275,
+            0.9023943229603661
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 889,
+          "coverage": 0.889,
+          "wilson95": [
+            0.8680219923564878,
+            0.9070007895417505
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.884,
+          "coverage_max": 0.885
+        },
+        "floor": {
+          "coverage_min": 0.884,
+          "coverage_max": 0.885
+        },
+        "product": {
+          "coverage_min": 0.886,
+          "coverage_max": 0.89
+        }
+      }
+    },
+    {
+      "index": 41,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.5,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 1.9990507283389845,
+      "population_truth_repeat_estimates": [
+        2.001345705793911,
+        1.9979940764799813,
+        2.00460497189348,
+        1.9982426022859874,
+        1.9951147584867501,
+        1.9966201887527375,
+        2.000525963705707,
+        1.997957559313321
+      ],
+      "population_truth_sd": 0.002991818441632672,
+      "population_truth_se_mean": 0.0010577675540787157,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.0300523994542497,
+            0.029966198091116003,
+            0.0300440398456878,
+            0.029981257273987996,
+            0.02993290433268788,
+            0.0299654785422254,
+            0.029969149460013056,
+            0.029980732295832452
+          ],
+          "mean": 0.029986519911975037,
+          "sd": 4.095629606485566e-05,
+          "se_mean": 1.4480237339871674e-05
+        },
+        "system1": {
+          "estimates": [
+            0.01003894239631059,
+            0.009986257326316191,
+            0.009997990126752999,
+            0.009998831251128121,
+            0.00998175674782038,
+            0.009999276654698026,
+            0.009963889822955985,
+            0.010001156702699243
+          ],
+          "mean": 0.009996012628585191,
+          "sd": 2.1454956650713356e-05,
+          "se_mean": 7.585472668891416e-06
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 845,
+          "coverage": 0.845,
+          "wilson95": [
+            0.821253161260159,
+            0.866106375384808
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 845,
+          "coverage": 0.845,
+          "wilson95": [
+            0.821253161260159,
+            0.866106375384808
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 855,
+          "coverage": 0.855,
+          "wilson95": [
+            0.8318179377037748,
+            0.875465063771481
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.844,
+          "coverage_max": 0.847
+        },
+        "floor": {
+          "coverage_min": 0.844,
+          "coverage_max": 0.847
+        },
+        "product": {
+          "coverage_min": 0.854,
+          "coverage_max": 0.855
+        }
+      }
+    },
+    {
+      "index": 42,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.0,
+      "population_truth_repeat_estimates": [
+        0.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 894,
+          "coverage": 0.894,
+          "wilson95": [
+            0.8733895811764342,
+            0.9115949331369485
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 898,
+          "coverage": 0.898,
+          "wilson95": [
+            0.8776930354303454,
+            0.9152608648151528
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 902,
+          "coverage": 0.902,
+          "wilson95": [
+            0.882005297700964,
+            0.9189179884766496
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.894,
+          "coverage_max": 0.894
+        },
+        "floor": {
+          "coverage_min": 0.898,
+          "coverage_max": 0.898
+        },
+        "product": {
+          "coverage_min": 0.902,
+          "coverage_max": 0.902
+        }
+      }
+    },
+    {
+      "index": 43,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.5000000000000001,
+      "population_truth_repeat_estimates": [
+        0.5000000000000001
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 892,
+          "coverage": 0.892,
+          "wilson95": [
+            0.8712410199098767,
+            0.9097588014374481
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 894,
+          "coverage": 0.894,
+          "wilson95": [
+            0.8733895811764342,
+            0.9115949331369485
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 911,
+          "coverage": 0.911,
+          "wilson95": [
+            0.8917426484378812,
+            0.9271117560869926
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.892,
+          "coverage_max": 0.892
+        },
+        "floor": {
+          "coverage_min": 0.894,
+          "coverage_max": 0.894
+        },
+        "product": {
+          "coverage_min": 0.911,
+          "coverage_max": 0.911
+        }
+      }
+    },
+    {
+      "index": 44,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "gaussian",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0,
+      "population_truth_repeat_estimates": [
+        2.0
+      ],
+      "population_truth_sd": 0.0,
+      "population_truth_se_mean": 0.0,
+      "population_eers": null,
+      "coverage": {
+        "raw": {
+          "covered": 880,
+          "coverage": 0.88,
+          "wilson95": [
+            0.8583909241522872,
+            0.8987007393986909
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 882,
+          "coverage": 0.882,
+          "wilson95": [
+            0.8605279149182592,
+            0.9005484415987768
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 887,
+          "coverage": 0.887,
+          "wilson95": [
+            0.8658784472486151,
+            0.9051596416835653
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.88,
+          "coverage_max": 0.88
+        },
+        "floor": {
+          "coverage_min": 0.882,
+          "coverage_max": 0.882
+        },
+        "product": {
+          "coverage_min": 0.887,
+          "coverage_max": 0.887
+        }
+      }
+    },
+    {
+      "index": 45,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.0
+      },
+      "nominal_truth_delta_pts": 0.0,
+      "population_truth_delta_pts": 0.013195982195825327,
+      "population_truth_repeat_estimates": [
+        0.013019553115135168,
+        0.011146060105247935,
+        0.014960464408431823,
+        0.007930570435670664,
+        0.01351126671073205,
+        0.01537317250168077,
+        0.011813580345092917,
+        0.017813189944611285
+      ],
+      "population_truth_sd": 0.0030033426736159564,
+      "population_truth_se_mean": 0.0010618419853703892,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03014287403230547,
+            0.030065438204032277,
+            0.03014742366474068,
+            0.030089027463089717,
+            0.0300404635202697,
+            0.03006370646251643,
+            0.030094947980136108,
+            0.030095705906583406
+          ],
+          "mean": 0.030092448404209222,
+          "sd": 3.7515070425390606e-05,
+          "se_mean": 1.3263580347242297e-05
+        },
+        "system1": {
+          "estimates": [
+            0.03001267850115412,
+            0.029953977602979798,
+            0.02999781902065636,
+            0.03000972175873301,
+            0.029905350853162378,
+            0.029909974737499623,
+            0.02997681217668518,
+            0.029917574007137293
+          ],
+          "mean": 0.02996048858225097,
+          "sd": 4.5172029837195534e-05,
+          "se_mean": 1.597072430892101e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 867,
+          "coverage": 0.867,
+          "wilson95": [
+            0.8445423199288764,
+            0.8866488393427261
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 867,
+          "coverage": 0.867,
+          "wilson95": [
+            0.8445423199288764,
+            0.8866488393427261
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 882,
+          "coverage": 0.882,
+          "wilson95": [
+            0.8605279149182592,
+            0.9005484415987768
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.866,
+          "coverage_max": 0.868
+        },
+        "floor": {
+          "coverage_min": 0.866,
+          "coverage_max": 0.869
+        },
+        "product": {
+          "coverage_min": 0.88,
+          "coverage_max": 0.884
+        }
+      }
+    },
+    {
+      "index": 46,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 0.5
+      },
+      "nominal_truth_delta_pts": 0.5000000000000001,
+      "population_truth_delta_pts": 0.5152130655088921,
+      "population_truth_repeat_estimates": [
+        0.5154707706927164,
+        0.5152781960735917,
+        0.517371884260983,
+        0.5104512837945065,
+        0.5114343440836243,
+        0.5159353766195967,
+        0.5163457569577673,
+        0.5194169115883509
+      ],
+      "population_truth_sd": 0.0029559020421770503,
+      "population_truth_se_mean": 0.001045069189273278,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03014287403230547,
+            0.030065438204032277,
+            0.03014742366474068,
+            0.030089027463089717,
+            0.0300404635202697,
+            0.03006370646251643,
+            0.030094947980136108,
+            0.030095705906583406
+          ],
+          "mean": 0.030092448404209222,
+          "sd": 3.7515070425390606e-05,
+          "se_mean": 1.3263580347242297e-05
+        },
+        "system1": {
+          "estimates": [
+            0.024988166325378307,
+            0.02491265624329636,
+            0.02497370482213085,
+            0.02498451462514465,
+            0.024926120079433456,
+            0.024904352696320464,
+            0.024931490410558435,
+            0.024901536790699896
+          ],
+          "mean": 0.024940317749120304,
+          "sd": 3.625238738623636e-05,
+          "se_mean": 1.2817154477504694e-05
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 851,
+          "coverage": 0.851,
+          "wilson95": [
+            0.8275879764800763,
+            0.871725639063064
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 852,
+          "coverage": 0.852,
+          "wilson95": [
+            0.828644950702635,
+            0.8726610113235342
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 882,
+          "coverage": 0.882,
+          "wilson95": [
+            0.8605279149182592,
+            0.9005484415987768
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.851,
+          "coverage_max": 0.854
+        },
+        "floor": {
+          "coverage_min": 0.851,
+          "coverage_max": 0.856
+        },
+        "product": {
+          "coverage_min": 0.879,
+          "coverage_max": 0.883
+        }
+      }
+    },
+    {
+      "index": 47,
+      "spec": {
+        "regime": "low_eer",
+        "interaction_share": 0.75,
+        "tail": "t5",
+        "target_delta_pts": 2.0
+      },
+      "nominal_truth_delta_pts": 2.0,
+      "population_truth_delta_pts": 2.0139062662996623,
+      "population_truth_repeat_estimates": [
+        2.017615945144945,
+        2.0132120961319235,
+        2.0187437765712524,
+        2.0115512716733805,
+        2.0080170244435056,
+        2.0120457563656826,
+        2.0164454523599673,
+        2.0136188077066417
+      ],
+      "population_truth_sd": 0.0035429176802010127,
+      "population_truth_se_mean": 0.001252610558427924,
+      "population_eers": {
+        "system0": {
+          "estimates": [
+            0.03014287403230547,
+            0.030065438204032277,
+            0.03014742366474068,
+            0.030089027463089717,
+            0.0300404635202697,
+            0.03006370646251643,
+            0.030094947980136108,
+            0.030095705906583406
+          ],
+          "mean": 0.030092448404209222,
+          "sd": 3.7515070425390606e-05,
+          "se_mean": 1.3263580347242297e-05
+        },
+        "system1": {
+          "estimates": [
+            0.009966714580856018,
+            0.009933317242713041,
+            0.009959985899028155,
+            0.00997351474635591,
+            0.009960293275834642,
+            0.009943248898859607,
+            0.009930493456536436,
+            0.009959517829516991
+          ],
+          "mean": 0.0099533857412126,
+          "sd": 1.5771902420026785e-05,
+          "se_mean": 5.57620957670673e-06
+        }
+      },
+      "coverage": {
+        "raw": {
+          "covered": 846,
+          "coverage": 0.846,
+          "wilson95": [
+            0.8223081403024968,
+            0.8670437428254991
+          ],
+          "failure_rate": 0.0
+        },
+        "floor": {
+          "covered": 847,
+          "coverage": 0.847,
+          "wilson95": [
+            0.823363445235336,
+            0.8679807843756888
+          ],
+          "failure_rate": 0.0
+        },
+        "product": {
+          "covered": 863,
+          "coverage": 0.863,
+          "wilson95": [
+            0.8402949039724817,
+            0.8829268693670053
+          ],
+          "failure_rate": 0.0
+        }
+      },
+      "truth_uncertainty_sensitivity": {
+        "raw": {
+          "coverage_min": 0.846,
+          "coverage_max": 0.847
+        },
+        "floor": {
+          "coverage_min": 0.846,
+          "coverage_max": 0.849
+        },
+        "product": {
+          "coverage_min": 0.863,
+          "coverage_max": 0.864
+        }
+      }
+    }
+  ],
+  "all_cells_raw_inside_092_098": false,
+  "all_cells_floor_inside_092_098": false,
+  "all_cells_product_inside_092_098": false,
+  "all_cells_inside_092_098_under_truth_sensitivity": {
+    "raw": false,
+    "floor": false,
+    "product": false
+  },
+  "minimum_coverage": {
+    "raw": 0.845,
+    "floor": 0.845,
+    "product": 0.855
+  },
+  "minimum_coverage_under_truth_sensitivity": {
+    "raw": 0.844,
+    "floor": 0.844,
+    "product": 0.854
+  },
+  "product_never_below_090": false
+}

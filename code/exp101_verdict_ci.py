@@ -115,7 +115,8 @@ def main():
     # checked before any resampling: a distribution built on a rule that disagreed at
     # the point estimate would measure the substitution, not the sampling.
     point_flags, point_counts, point_ses, point_deltas = verdicts(np.ones(n))
-    sel = json.load(open(Path(__file__).parent / "results_selection.json"))["21df"]["pairs"]
+    derived = Path(__file__).parent.parent / "derived"
+    sel = json.load(open(derived / "results_selection.json"))["21df"]["pairs"]
     disagree = [k for k, v in point_flags.items()
                 if v != (sel.get(k) or sel[" vs ".join(k.split(" vs ")[::-1])])["resolved_simultaneous"]]
     assert not disagree, f"proxy rule disagrees with campaign verdicts on: {disagree}"
@@ -206,7 +207,7 @@ def main():
     results["per_pair_p_resolved"] = {
         k: round(c / len(counts["all"]), 3) for k, c in per_pair_res.items()}
     print("\n" + json.dumps(results["blocks"], indent=1), flush=True)
-    out = Path(__file__).parent / "results_verdict_ci.json"
+    out = derived / "results_verdict_ci.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out} in {(time.time()-t0)/60:.1f} min")
 

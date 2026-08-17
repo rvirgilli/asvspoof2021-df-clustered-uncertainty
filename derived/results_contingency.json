@@ -1,0 +1,105 @@
+{
+  "_SUPERSEDED_2026-08-14": "'pigeonhole' entries are WITHDRAWN: V_pig = max(V_two - V_iid, V_iid) is neither the Owen correction nor an inclusion-exclusion identity. Certified set is {twoway, jackknife}; wild is reported as tested. Low-EER coverage rows inherit the mis-specified DGP (see results_power.json) and are not used for certification; the certification of record is results_coverage_real.json.",
+  "C2_grouped_icc": {
+    "codec_levels": [
+      "high_m4a",
+      "high_mp3",
+      "high_ogg",
+      "low_m4a",
+      "low_mp3",
+      "low_ogg",
+      "mp3m4a",
+      "nocodec",
+      "oggm4a"
+    ],
+    "family_levels": [
+      "neural_vocoder_autoregressive",
+      "neural_vocoder_nonautoregressive",
+      "traditional_vocoder",
+      "unknown",
+      "waveform_concatenation"
+    ],
+    "systems": {
+      "XLSR-Mamba": {
+        "icc_codec": 0.002,
+        "icc_family": 0.034
+      },
+      "XLS-R+SLS": {
+        "icc_codec": 0.006,
+        "icc_family": 0.099
+      },
+      "XLSR-Conformer": {
+        "icc_codec": 0.006,
+        "icc_family": 0.07
+      },
+      "SSL-AASIST": {
+        "icc_codec": 0.001,
+        "icc_family": 0.012
+      },
+      "RawNet2": {
+        "icc_codec": 0.001,
+        "icc_family": 0.025
+      },
+      "LFCC-LCNN": {
+        "icc_codec": 0.009,
+        "icc_family": 0.043
+      },
+      "LFCC-GMM": {
+        "icc_codec": 0.052,
+        "icc_family": 0.037
+      },
+      "CQCC-GMM": {
+        "icc_codec": 0.063,
+        "icc_family": 0.09
+      }
+    }
+  },
+  "C1b_low_eer_semisynth_mctruth": {
+    "pair": "low_eer_sota",
+    "true_delta_pts": 0.2884,
+    "R": 200,
+    "NB": 100,
+    "NC": 10,
+    "semisynthetic": true,
+    "twoway": {
+      "coverage": 0.945,
+      "mean_width": 0.311
+    },
+    "pigeonhole": {
+      "coverage": 0.87,
+      "mean_width": 0.249
+    },
+    "jackknife": {
+      "coverage": 0.935,
+      "mean_width": 0.339
+    },
+    "wild": {
+      "coverage": 0.905,
+      "mean_width": 0.298
+    }
+  },
+  "cell5_dgp_robustness_mctruth": {
+    "pair": "high_icc_organizer",
+    "true_delta_pts": -1.7344,
+    "R": 400,
+    "NB": 30,
+    "NC": 3,
+    "semisynthetic": true,
+    "twoway": {
+      "coverage": 0.9325,
+      "mean_width": 5.865
+    },
+    "pigeonhole": {
+      "coverage": 0.9375,
+      "mean_width": 5.687
+    },
+    "jackknife": {
+      "coverage": 0.945,
+      "mean_width": 5.929
+    },
+    "wild": {
+      "coverage": 0.945,
+      "mean_width": 5.859
+    }
+  }
+}

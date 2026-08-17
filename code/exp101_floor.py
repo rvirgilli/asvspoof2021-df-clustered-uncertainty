@@ -1,17 +1,15 @@
-"""EXP-101: the speaker-variance floor, and the per-pair variance decomposition.
+"""EXP-101: finite-A speaker component and per-pair variance decomposition.
 
 Replaces the withdrawn A^-0.2 power-law claim. Subsampling attacks holds
 the 93 speakers fixed, so the attack component of the paired Delta-EER variance
-shrinks with A while the speaker component does not. The limit is therefore not
-zero but a floor:
+shrinks with A. The measured V_spk at A=110 is a finite-A component: under a
+two-way random-effects decomposition it contains speaker-by-attack interaction
+divided by A. The observed width 2*z_.975*sqrt(V_spk) therefore must not be
+interpreted as an A-to-infinity floor unless that interaction is identified.
 
-    width(A -> infinity)  ->  2 * z_.975 * sqrt(V_spk)
-
-computed from the same delete-one-cluster jackknife the paper already uses. This
-needs no power-law fit, so it is immune to the finite-population artifact that
-subsampling from a fixed pool of 110 attacks induces (the fitted exponent flattens
-as A approaches 110 by construction). The measured local slope is likewise an
-identity, not a finding: d log(width) / d log(A) = -1/2 * V_att / (V_spk + V_att).
+The output names the quantity directly as a finite-A speaker-component width. No
+local slope or maximum attainable narrowing is reported because neither follows
+without identifying how the interaction changes with A.
 
 The same decomposition answers a separate question the paper raises but must not
 guess at: why four baselines spanning 3.18 EER points are mutually unresolved while
@@ -88,18 +86,20 @@ def main():
     point = eers(np.ones(n))
     print("jackknife done", flush=True)
 
-    sel_path = Path(__file__).parent / "results_selection.json"
+    derived = Path(__file__).parent.parent / "derived"
+    sel_path = derived / "results_selection.json"
     sel = json.load(open(sel_path))["21df"]["pairs"]
     results = {
         "_input_provenance_sha256": input_provenance(sel_path),
         "measured_width_source": "results_selection.json pointwise CI (B=5000); the "
                                  "subsampling run in results_widths.json reports the same "
                                  "full-set widths to within ~2%",
-        "estimator": "delete-one-cluster jackknife variance components of the paired "
-                     "Delta-EER; floor = 2*1.96*sqrt(V_spk) as A -> infinity",
+        "estimator": "delete-one-cluster jackknife components of paired Delta-EER at "
+                     "the observed A=110; width = 2*1.96*sqrt(V_spk)",
         "n_speakers": int(n_spk), "n_attacks": int(len(spoof_atts)),
-        "note": "V_spk does not shrink when attacks are added, so it bounds "
-                "what any number of new attacks can buy. No power-law fit is involved.",
+        "identification_note": "V_spk contains speaker-by-attack interaction divided "
+                               "by A. It is a finite-A component, not an A-to-infinity "
+                               "floor; no counterfactual attack-budget claim is made.",
         "pairs": {},
     }
     na = len(spoof_atts)
@@ -111,7 +111,7 @@ def main():
                 da = jack_att[:, ia] - jack_att[:, ib]
                 v_spk = (n_spk - 1) / n_spk * float(np.sum((ds - ds.mean()) ** 2))
                 v_att = (na - 1) / na * float(np.sum((da - da.mean()) ** 2))
-                floor_w = 2 * Z95 * np.sqrt(v_spk)
+                component_w = 2 * Z95 * np.sqrt(v_spk)
                 key = f"{a} vs {b}"
                 hit = sel.get(key) or sel.get(f"{b} vs {a}")
                 meas_w = hit["ci_pointwise"][1] - hit["ci_pointwise"][0]
@@ -119,37 +119,30 @@ def main():
                     "block": block,
                     "delta_eer_pts": round(float(point[ia] - point[ib]), 3),
                     "V_spk": round(v_spk, 4), "V_att": round(v_att, 4),
-                    "speaker_share_of_clustered_variance": round(v_spk / (v_spk + v_att), 3),
-                    "implied_local_slope": round(0.5 * v_att / (v_spk + v_att), 3),
-                    "floor_width_pts": round(float(floor_w), 3),
+                    "speaker_fraction_of_two_marginal_components":
+                        round(v_spk / (v_spk + v_att), 3),
+                    "finite_A_speaker_component_width_pts": round(float(component_w), 3),
                     "measured_width_pts_A110": round(meas_w, 3),
-                    "max_possible_narrowing_pct": round(100 * (1 - floor_w / meas_w), 1),
                     "resolved_simultaneous": hit["resolved_simultaneous"],
                 }
                 r = results["pairs"][key]
                 print(f"  [{block:<16}] {key:<34} d={r['delta_eer_pts']:7.3f} "
                       f"V_spk={r['V_spk']:7.4f} V_att={r['V_att']:7.4f} "
-                      f"floor={r['floor_width_pts']:6.3f} vs meas={r['measured_width_pts_A110']:6.3f} "
-                      f"(max {r['max_possible_narrowing_pct']:4.1f}% narrower)", flush=True)
+                      f"finite-A component={r['finite_A_speaker_component_width_pts']:6.3f} "
+                      f"vs measured={r['measured_width_pts_A110']:6.3f}", flush=True)
 
     mod = [v for v in results["pairs"].values() if v["block"] == "within-modern"]
     base = [v for v in results["pairs"].values() if v["block"] == "within-baseline"]
     results["summary"] = {
-        "max_narrowing_pct_within_modern": [round(min(v["max_possible_narrowing_pct"] for v in mod), 1),
-                                            round(max(v["max_possible_narrowing_pct"] for v in mod), 1)],
-        "max_narrowing_pct_within_baseline": [round(min(v["max_possible_narrowing_pct"] for v in base), 1),
-                                              round(max(v["max_possible_narrowing_pct"] for v in base), 1)],
-        "speaker_share_within_modern": [round(min(v["speaker_share_of_clustered_variance"] for v in mod), 3),
-                                        round(max(v["speaker_share_of_clustered_variance"] for v in mod), 3)],
-        "speaker_share_within_baseline": [round(min(v["speaker_share_of_clustered_variance"] for v in base), 3),
-                                          round(max(v["speaker_share_of_clustered_variance"] for v in base), 3)],
-        "total_clustered_variance_within_modern": [round(min(v["V_spk"] + v["V_att"] for v in mod), 3),
-                                                   round(max(v["V_spk"] + v["V_att"] for v in mod), 3)],
-        "total_clustered_variance_within_baseline": [round(min(v["V_spk"] + v["V_att"] for v in base), 3),
-                                                     round(max(v["V_spk"] + v["V_att"] for v in base), 3)],
+        "speaker_fraction_of_two_marginal_components_within_modern": [
+            round(min(v["speaker_fraction_of_two_marginal_components"] for v in mod), 3),
+            round(max(v["speaker_fraction_of_two_marginal_components"] for v in mod), 3)],
+        "speaker_fraction_of_two_marginal_components_within_baseline": [
+            round(min(v["speaker_fraction_of_two_marginal_components"] for v in base), 3),
+            round(max(v["speaker_fraction_of_two_marginal_components"] for v in base), 3)],
     }
     print("\nsummary:", json.dumps(results["summary"], indent=1), flush=True)
-    out = Path(__file__).parent / "results_floor.json"
+    out = derived / "results_floor.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

@@ -1,0 +1,135 @@
+{
+  "B": 1000,
+  "reps": 10,
+  "seed": 20260817,
+  "n_attacks_full": 110,
+  "note": "measured on real 21DF scores; no simulator involved",
+  "pairs": {
+    "XLSR-Conformer vs SSL-AASIST": {
+      "era": "ssl-era",
+      "delta_full": -0.578,
+      "by_A": {
+        "10": {
+          "n_reps": 10,
+          "n_trials": 63336,
+          "mean_width_pts": 2.254,
+          "mean_half_width_pts": 1.127,
+          "width_sd": 0.792
+        },
+        "20": {
+          "n_reps": 10,
+          "n_trials": 107426,
+          "mean_width_pts": 1.507,
+          "mean_half_width_pts": 0.754,
+          "width_sd": 0.196
+        },
+        "40": {
+          "n_reps": 10,
+          "n_trials": 193563,
+          "mean_width_pts": 1.744,
+          "mean_half_width_pts": 0.872,
+          "width_sd": 0.314
+        },
+        "80": {
+          "n_reps": 10,
+          "n_trials": 392185,
+          "mean_width_pts": 1.412,
+          "mean_half_width_pts": 0.706,
+          "width_sd": 0.106
+        },
+        "110": {
+          "n_reps": 1,
+          "n_trials": 533928,
+          "mean_width_pts": 1.334,
+          "mean_half_width_pts": 0.667,
+          "width_sd": null
+        }
+      },
+      "width_scaling_exponent": 0.18
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "era": "ssl-era",
+      "delta_full": -0.357,
+      "by_A": {
+        "10": {
+          "n_reps": 10,
+          "n_trials": 63336,
+          "mean_width_pts": 2.289,
+          "mean_half_width_pts": 1.145,
+          "width_sd": 0.812
+        },
+        "20": {
+          "n_reps": 10,
+          "n_trials": 107426,
+          "mean_width_pts": 1.863,
+          "mean_half_width_pts": 0.931,
+          "width_sd": 0.665
+        },
+        "40": {
+          "n_reps": 10,
+          "n_trials": 193563,
+          "mean_width_pts": 1.789,
+          "mean_half_width_pts": 0.894,
+          "width_sd": 0.38
+        },
+        "80": {
+          "n_reps": 10,
+          "n_trials": 392185,
+          "mean_width_pts": 1.535,
+          "mean_half_width_pts": 0.767,
+          "width_sd": 0.103
+        },
+        "110": {
+          "n_reps": 1,
+          "n_trials": 533928,
+          "mean_width_pts": 1.531,
+          "mean_half_width_pts": 0.766,
+          "width_sd": null
+        }
+      },
+      "width_scaling_exponent": 0.164
+    },
+    "RawNet2 vs LFCC-LCNN": {
+      "era": "organizer-era",
+      "delta_full": -1.094,
+      "by_A": {
+        "10": {
+          "n_reps": 10,
+          "n_trials": 63336,
+          "mean_width_pts": 11.356,
+          "mean_half_width_pts": 5.678,
+          "width_sd": 1.95
+        },
+        "20": {
+          "n_reps": 10,
+          "n_trials": 107426,
+          "mean_width_pts": 8.721,
+          "mean_half_width_pts": 4.36,
+          "width_sd": 0.746
+        },
+        "40": {
+          "n_reps": 10,
+          "n_trials": 193563,
+          "mean_width_pts": 7.124,
+          "mean_half_width_pts": 3.562,
+          "width_sd": 0.514
+        },
+        "80": {
+          "n_reps": 10,
+          "n_trials": 392185,
+          "mean_width_pts": 6.164,
+          "mean_half_width_pts": 3.082,
+          "width_sd": 0.183
+        },
+        "110": {
+          "n_reps": 1,
+          "n_trials": 533928,
+          "mean_width_pts": 5.905,
+          "mean_half_width_pts": 2.952,
+          "width_sd": null
+        }
+      },
+      "width_scaling_exponent": 0.271
+    }
+  }
+}

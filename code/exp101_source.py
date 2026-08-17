@@ -18,6 +18,7 @@ Writes results_source.json. Modifies nothing.
 """
 
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -25,9 +26,25 @@ import numpy as np
 from exp101_floor import input_provenance
 from m1_campaign import DF_SCORES, KEY, weighted_eer
 
+EXP105 = Path(__file__).resolve().parent
+sys.path.insert(0, str(EXP105))
+from coverage_interaction import exact_refits, jack_var  # noqa: E402
+
 Z95 = 1.959963984540054
+Q_DRAWS = 200000
 SSL_ERA = ["XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"]
 BASELINE = ["RawNet2", "LFCC-LCNN", "LFCC-GMM", "CQCC-GMM"]
+
+
+def jack_cov(refits):
+    g = len(refits)
+    centred = refits - refits.mean(axis=0, keepdims=True)
+    return (g - 1.0) / g * centred.T @ centred
+
+
+def nearest_psd(matrix):
+    values, vectors = np.linalg.eigh((matrix + matrix.T) / 2.0)
+    return (vectors * np.maximum(values, 0.0)) @ vectors.T, values
 
 
 def main():
@@ -56,9 +73,11 @@ def main():
 
     names = SSL_ERA + BASELINE
     orders = {}
+    score_vectors = {}
     for m in names:
         d = dict(l.split()[:2] for l in DF_SCORES[m].read_text().splitlines())
-        orders[m] = np.argsort(np.array([float(d[u]) for u in utts]))
+        score_vectors[m] = np.array([float(d[u]) for u in utts])
+        orders[m] = np.argsort(score_vectors[m])
 
     def eers(w):
         return np.array([100 * weighted_eer(orders[m], labels, w) for m in names])
@@ -76,7 +95,8 @@ def main():
         w[spk_idx == k] = 0.0
         jack[k] = eers(w)
 
-    fl_path = Path(__file__).parent / "results_floor.json"
+    derived = Path(__file__).parent.parent / "derived"
+    fl_path = derived / "results_floor.json"
     fl = json.load(open(fl_path))["pairs"]
     results = {
         "_input_provenance_sha256": input_provenance(fl_path),
@@ -100,19 +120,22 @@ def main():
             if m.sum():
                 ss_bet += float(m.sum()) * (float(d[m].mean()) - grand) ** 2
         share = ss_bet / ss_tot if ss_tot > 0 else float("nan")
-        # The floor scales as sqrt(V_spk). Adding speakers WITHIN these three corpora
-        # shrinks only the within-corpus part, so the floor tends to sqrt(share) of
-        # its current value rather than to zero.
+        # This is a decomposition of the measured finite-A delete-speaker term. It
+        # is not an A-to-infinity or S-to-infinity variance decomposition because
+        # speaker-by-attack interaction remains inside the term.
         results["pairs"][key] = {
             "block": v["block"],
             "between_source_share_of_speaker_ss": round(share, 3),
-            "floor_width_pts": v["floor_width_pts"],
-            "floor_limit_if_speakers_added_within_these_corpora":
-                round(v["floor_width_pts"] * float(np.sqrt(share)), 3),
+            "finite_A_speaker_component_width_pts":
+                v["finite_A_speaker_component_width_pts"],
+            "descriptive_between_source_width_component_pts":
+                round(v["finite_A_speaker_component_width_pts"] * float(np.sqrt(share)), 3),
+            "asymptotic_interpretation": "none; speaker-by-attack interaction is not separated",
         }
         print(f"  {key:<34} between-source {100*share:5.1f}%  "
-              f"floor {v['floor_width_pts']:6.3f} -> asymptote "
-              f"{results['pairs'][key]['floor_limit_if_speakers_added_within_these_corpora']:6.3f}",
+              f"finite-A component {v['finite_A_speaker_component_width_pts']:6.3f}; "
+              f"descriptive between-source "
+              f"component {results['pairs'][key]['descriptive_between_source_width_component_pts']:6.3f}",
               flush=True)
 
     # Is the between-corpus share larger than chance? Under no corpus effect the
@@ -142,16 +165,19 @@ def main():
                 pos += c
             null[t] = ss_b / ss_tot
         obs = v["between_source_share_of_speaker_ss"]
+        exceedances = int(np.sum(null >= obs))
         perm[key] = {
             "observed": obs,
             "null_mean": round(float(null.mean()), 4),
             "null_p95": round(float(np.percentile(null, 95)), 4),
-            "p_value": round(float((null >= obs).mean()), 5),
+            "exceedances": exceedances,
+            "p_value": round((exceedances + 1) / (B_PERM + 1), 5),
         }
         print(f"  perm {key:<34} obs {obs:.3f}  null mean {null.mean():.3f}  p={perm[key]['p_value']:.4f}",
               flush=True)
     results["permutation_null"] = {
         "B": B_PERM, "seed": 20260822,
+        "p_value_rule": "(number of permuted statistics >= observed + 1) / (B + 1)",
         "analytic_expected_share_under_no_effect": round(exp_null, 4),
         "note": "share of the delete-one-speaker sum of squares falling between corpora "
                 "when speaker labels are permuted; (k-1)/(n-1) with k=3, n=93",
@@ -159,48 +185,84 @@ def main():
         "n_pairs_p_below_0.05": int(sum(1 for v in perm.values() if v["p_value"] < 0.05)),
     }
 
-    # Leave-one-corpus-out. The concession "if the corpus is the exchangeable unit our
-    # intervals are anti-conservative" names a direction without a magnitude, which reads
-    # as conceding our own numbers are wrong. Clustering on 3 corpora is not estimable
-    # (2 df), so instead we drop each corpus in turn and refit on the remaining two: if
-    # no single provenance drives a verdict, the corpus effect does not change what the
-    # paper concludes, and that is a bound rather than a concession.
-    Q = 2.98
+    # Leave-one-corpus-out. Clustering on 3 corpora is not stably estimable (2 df),
+    # so drop each corpus and recompute the exact observed-cell multiway jackknife.
+    # This supersedes the earlier V_speaker + V_attack implementation, which called
+    # itself two-way while omitting the inclusion-exclusion intersection term.
     ALL_PAIRS = [f"{a} vs {b}" for i, a in enumerate(names) for b in names[i + 1:]]
+    contrast = np.zeros((len(ALL_PAIRS), len(names)))
+    for i, key in enumerate(ALL_PAIRS):
+        a, b = key.split(" vs ")
+        contrast[i, names.index(a)] = 1.0
+        contrast[i, names.index(b)] = -1.0
     att_idx_all = np.unique([utt2meta[u][1] for u in utts], return_inverse=True)[1]
-    is_spoof = labels == 0
-    spoof_atts = np.unique(att_idx_all[is_spoof])
     loco = {}
     for drop in sources:
         keep_spk = src_of_spk != drop
         keep_trial = keep_spk[spk_idx]
-        w0 = keep_trial.astype(np.float64)
-        base = eers(w0)
-        ks = np.where(keep_spk)[0]
-        js = np.empty((len(ks), len(names)))
-        for i, k in enumerate(ks):
-            w = w0.copy(); w[spk_idx == k] = 0.0
-            js[i] = eers(w)
-        ja = np.empty((len(spoof_atts), len(names)))
-        for i, k in enumerate(spoof_atts):
-            w = w0.copy(); w[is_spoof & (att_idx_all == k)] = 0.0
-            ja[i] = eers(w)
-        ns, na = len(ks), len(spoof_atts)
+        sub_labels = labels[keep_trial]
+        _, sub_spk = np.unique(spk_idx[keep_trial], return_inverse=True)
+        sub_spoof = sub_labels == 0
+        sub_att = np.full(len(sub_labels), -1, dtype=np.int32)
+        _, sub_att[sub_spoof] = np.unique(att_idx_all[keep_trial][sub_spoof],
+                                          return_inverse=True)
+        sub_cell = np.full(len(sub_labels), -1, dtype=np.int32)
+        _, sub_cell[sub_spoof] = np.unique(
+            np.column_stack([sub_spk[sub_spoof], sub_att[sub_spoof]]), axis=0,
+            return_inverse=True)
+        ns, na, nc = sub_spk.max() + 1, sub_att.max() + 1, sub_cell.max() + 1
+        base = np.empty(len(names))
+        ref_s = np.empty((ns, len(names)))
+        ref_a = np.empty((na, len(names)))
+        ref_c = np.empty((nc, len(names)))
+        for j, name in enumerate(names):
+            scores = score_vectors[name][keep_trial]
+            order = np.argsort(scores)
+            base[j] = 100 * weighted_eer(order, sub_labels, np.ones(len(sub_labels)))
+            ref_s[:, j] = 100 * exact_refits(scores, sub_labels, sub_spk, ns, order=order)
+            ref_a[:, j] = 100 * exact_refits(scores, sub_labels, sub_att, na, order=order)
+            ref_c[:, j] = 100 * exact_refits(scores, sub_labels, sub_cell, nc, order=order)
+        cov_s, cov_a, cov_c = jack_cov(ref_s), jack_cov(ref_a), jack_cov(ref_c)
+        cov_raw = cov_s + cov_a - cov_c
+        cov_psd, raw_eigenvalues = nearest_psd(cov_raw)
+        pair_cov_psd = contrast @ cov_psd @ contrast.T
+        q_seed = [20260822, 900, sources.index(drop)]
+        rng_q = np.random.default_rng(np.random.SeedSequence(q_seed))
+        system_draws = rng_q.multivariate_normal(
+            np.zeros(len(names)), cov_psd, size=Q_DRAWS, check_valid="ignore")
+        pair_draws = system_draws @ contrast.T
+        q = float(np.percentile(
+            np.max(np.abs(pair_draws) /
+                   np.sqrt(np.maximum(np.diag(pair_cov_psd), 1e-18)), axis=1), 95))
         ent = {}
-        for key in ALL_PAIRS:
+        for pair_index, key in enumerate(ALL_PAIRS):
             a, b = key.split(" vs ")
             ia, ib = names.index(a), names.index(b)
-            ds, da = js[:, ia] - js[:, ib], ja[:, ia] - ja[:, ib]
-            v = ((ns - 1) / ns * float(np.sum((ds - ds.mean()) ** 2))
-                 + (na - 1) / na * float(np.sum((da - da.mean()) ** 2)))
+            c = contrast[pair_index]
+            vs = float(c @ cov_s @ c)
+            va = float(c @ cov_a @ c)
+            vc = float(c @ cov_c @ c)
+            raw = vs + va - vc
+            v = max(raw, vs, va, 0.0)
             ent[key] = {"delta_eer_pts": round(float(base[ia] - base[ib]), 3),
-                        "resolved": bool(abs(base[ia] - base[ib]) > Q * np.sqrt(v))}
-        loco[drop] = {"n_speakers_kept": int(ns), "pairs": ent}
+                        "V_speaker": vs, "V_attack": va,
+                        "V_speaker_attack_cell": vc,
+                        "V_raw_inclusion_exclusion": raw,
+                        "V_psd_floor": v,
+                        "resolved": bool(abs(base[ia] - base[ib]) > q * np.sqrt(v))}
+        loco[drop] = {"n_speakers_kept": int(ns),
+                      "n_attacks_kept": int(na),
+                      "n_observed_cells_kept": int(nc),
+                      "q95_gaussian_exact_cell_max_t": q,
+                      "q_draws": Q_DRAWS,
+                      "q_seed_components": q_seed,
+                      "raw_system_covariance_eigenvalues": raw_eigenvalues.tolist(),
+                      "pairs": ent}
         print(f"  LOCO drop {drop:<9} kept {ns:2d} speakers, "
               f"{sum(e['resolved'] for e in ent.values())}/28 pairs resolved", flush=True)
 
     full = {k: (SEL := None) for k in ()}
-    sel_full = json.load(open(Path(__file__).parent / "results_selection.json"))["21df"]["pairs"]
+    sel_full = json.load(open(derived / "results_selection.json"))["21df"]["pairs"]
     flips = []
     for key in ALL_PAIRS:
         a, b = key.split(" vs ")
@@ -210,10 +272,13 @@ def main():
                 flips.append({"pair": key, "dropped_corpus": drop,
                               "full_data": ref, "refit": loco[drop]["pairs"][key]["resolved"]})
     results["leave_one_corpus_out"] = {
-        "critical_value": Q,
-        "note": "drop each source corpus, refit the paired Delta-EER and its two-way "
-                "jackknife SE on the remaining two; a verdict that survives all three "
-                "refits is not driven by any single provenance",
+        "estimator": "exact delete-one V_speaker + V_attack - V_observed_speaker_attack_cell, "
+                     "with transparent max(raw, V_speaker, V_attack, 0) floor",
+        "multiplicity": "a separately recomputed Gaussian max-t band over all 28 pairs "
+                        "for each leave-one-corpus-out covariance",
+        "note": "drop each source corpus, refit paired Delta-EER and the exact-cell "
+                "multiway jackknife on the remaining two; a verdict that survives all "
+                "three refits is not driven by any single provenance",
         "by_corpus": loco,
         "verdict_flips_vs_full_data": flips,
         "n_flips": len(flips),
@@ -228,14 +293,13 @@ def main():
     results["summary"] = {
         "between_source_share_range": [round(min(shares), 3), round(max(shares), 3)],
         "median": round(float(np.median(shares)), 3),
-        "reading": "a substantial share of what the paper calls speaker variance is "
-                   "between three recording provenances. Adding speakers within these "
-                   "corpora cannot shrink it, so the prescription is 'more sources', "
-                   "not 'more speakers'; and if the corpus is the honest exchangeable "
-                   "unit on the bona-fide side then our intervals are anti-conservative.",
+        "reading": "a substantial share of the measured finite-A delete-speaker sum of "
+                   "squares is between three recording provenances. This is descriptive: "
+                   "speaker-by-attack interaction is not separated and no speaker-count or "
+                   "attack-count asymptote is inferred.",
     }
     print("\nsummary:", json.dumps(results["summary"], indent=1), flush=True)
-    out = Path(__file__).parent / "results_source.json"
+    out = derived / "results_source.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

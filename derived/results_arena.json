@@ -1,0 +1,1956 @@
+{
+  "experiment": "EXP-104",
+  "B": 5000,
+  "seed": 20260823,
+  "provenance": {
+    "key": {
+      "path": "inputs/anti-spoofing/DF-keys-full/keys/DF/CM/trial_metadata.txt",
+      "sha256": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800"
+    },
+    "script_sha256": "d5484ccd1175ee33c8970ce265b8713cbe934f167f25172e6a4e06bc8cf4b090",
+    "released_path_adapted_analyzer_sha256": "86b7e43b9ef3637c1e860ff497bdb89d35c269d1fb7c5844edb466ab0b1eb43e",
+    "released_analyzer_note": "The committed B=5000 artifact was emitted by the internal-layout script named by script_sha256. code/analyze_arena.py is the path-adapted release of the same numeric implementation; its input/intersection path and a B=2 end-to-end run were checked before release.",
+    "score_files": {
+      "AASIST-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/aasist/asvspoof_2021_df.txt",
+        "sha256": "ffebeaa69c89077d7eb65fada708d86589fa4f4d08bebab7831432080d2bc50d",
+        "score_vector_sha256": "6f5895b64d1475d290a3e4d469680a0713d50bd2ccc9e4d80c6c2c7b92102e6f"
+      },
+      "HuBERT-ECAPA-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/hubert_ecapa/asvspoof_2021_df.txt",
+        "sha256": "e79e078f20d7a8844954298d0dfc29e4922ac524d7bcb139b64853193a715c0a",
+        "score_vector_sha256": "c2249e7a634d11fe2bd6358468f33dab09a4f93580c71892c57e463052c41e3e"
+      },
+      "RawGAT-ST-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/rawgat_st/asvspoof_2021_df.txt",
+        "sha256": "23aaa74ba4f6a8c46aaf31333d9a5e2035ea72fb494f08e22a629a98d9e4f9e3",
+        "score_vector_sha256": "202c16a9fda83c37db3dc20899e5d6cdef3072b03486ce5c7a610fcaeb6bdd36"
+      },
+      "RawNet2-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/rawnet_2/asvspoof_2021_df.txt",
+        "sha256": "5bb4a74381088b474a5f29d130b98d9b2e5d3b209c4e696082feaf8a5cd01e0c",
+        "score_vector_sha256": "3334a5848d34a9b5667b7db0629b2fc24c4380e4b7f78f32f63c43bfa215b3d0"
+      },
+      "Resemble-AI-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/resemble_ai/asvspoof_2021_df.txt",
+        "sha256": "00e43c8111f889112b214739b07805ea235db264a45e5e3ac8abca602f0b4d72",
+        "score_vector_sha256": "c753d4a5a9494360c56457ade14d561c879f5117e9e645e319f2f2b9b0acdc15"
+      },
+      "TCM-ADD-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/tcm_add/asvspoof_2021_df.txt",
+        "sha256": "f00e15c37b619bae91a5c050c14f626850d91fc2b08bd13c259e4544e1ebc953",
+        "score_vector_sha256": "4ac33bb43091801e6816752d6699fd4e053dd4b8355ffa5c7def7af7c2f9d1f9"
+      },
+      "Wav2Vec2-ECAPA-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/wav2vec2_ecapa/asvspoof_2021_df.txt",
+        "sha256": "e44ae756b27c4ff186f87ad84d4283072d2e017d963b2f8186bdb12e971f1e37",
+        "score_vector_sha256": "6db74cb3361efedecd2f2856e4f5379a120685d757c220ca22c3ba9b0e84a3a0"
+      },
+      "WavLM-ECAPA-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/wavlm_ecapa/asvspoof_2021_df.txt",
+        "sha256": "76689404ece7dcb9c196634482e9a1e1430ec93d200532a4ea3a5213f228b978",
+        "score_vector_sha256": "abaa6514229dda32059f8608daad69764a1334899ba4aaba7978d7d8e85084ba"
+      },
+      "Whisper-MesoNet-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/whisper_mesonet/asvspoof_2021_df.txt",
+        "sha256": "2379439b3e66f114e894ae81a1f5cd0746a722e60d2d95ed567d7fc394363dbe",
+        "score_vector_sha256": "3083ea38f43a2a5ad4c33a78de1f66929a3552f0b5b919e51b5eabc2debb4677"
+      },
+      "XLS-R+SLS-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/xlsr_sls/asvspoof_2021_df.txt",
+        "sha256": "b8a65eb82080494bf02b5ba92c676603a7e117affe588e3a8ababe63ff5d8586",
+        "score_vector_sha256": "01e28bcfd87e4dfefebb78e1241cbefc2bd4638d7f94ee18ed7c619daf91ac7c"
+      },
+      "XLSR-Mamba-Arena": {
+        "path": "inputs/anti-spoofing/speech-df-arena/asvspoof2021-df/xlsr_mamba/asvspoof_2021_df.txt",
+        "sha256": "2d32e1da093cd60cd437500bf0f9f2b557b53de47a17ea9fb749d725f76195c7",
+        "score_vector_sha256": "0fbb128a4d0d619344e8b54f74a1b1287d37a17263116ee0933a57509490f274"
+      }
+    },
+    "exact_duplicate_groups": [],
+    "aliases_retained": [],
+    "aliases_dropped": []
+  },
+  "n_trials": 533928,
+  "n_speakers": 93,
+  "n_spoof_attacks": 110,
+  "systems_sorted_by_eer": [
+    "XLSR-Mamba-Arena",
+    "XLS-R+SLS-Arena",
+    "Whisper-MesoNet-Arena",
+    "TCM-ADD-Arena",
+    "Resemble-AI-Arena",
+    "HuBERT-ECAPA-Arena",
+    "WavLM-ECAPA-Arena",
+    "AASIST-Arena",
+    "Wav2Vec2-ECAPA-Arena",
+    "RawGAT-ST-Arena",
+    "RawNet2-Arena"
+  ],
+  "pooled_eer": {
+    "XLSR-Mamba-Arena": 1.883935,
+    "XLS-R+SLS-Arena": 1.910486,
+    "Whisper-MesoNet-Arena": 2.111356,
+    "TCM-ADD-Arena": 2.145412,
+    "Resemble-AI-Arena": 3.793169,
+    "HuBERT-ECAPA-Arena": 13.792744,
+    "WavLM-ECAPA-Arena": 15.945275,
+    "AASIST-Arena": 21.070561,
+    "Wav2Vec2-ECAPA-Arena": 22.4376,
+    "RawGAT-ST-Arena": 23.261667,
+    "RawNet2-Arena": 40.66855
+  },
+  "schemes": {
+    "iid": {
+      "supt_critical_value": 3.157462,
+      "pairs": {
+        "AASIST-Arena vs HuBERT-ECAPA-Arena": {
+          "delta_eer_pts": 7.277817,
+          "bootstrap_sd": 0.231971,
+          "ci95_pointwise": [
+            6.809353,
+            7.74438
+          ],
+          "ci95_simultaneous": [
+            6.545376,
+            8.010257
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.73244
+        },
+        "AASIST-Arena vs RawGAT-ST-Arena": {
+          "delta_eer_pts": -2.191106,
+          "bootstrap_sd": 0.188622,
+          "ci95_pointwise": [
+            -2.562336,
+            -1.824969
+          ],
+          "ci95_simultaneous": [
+            -2.786672,
+            -1.595541
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.595565
+        },
+        "AASIST-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -19.597989,
+          "bootstrap_sd": 0.290671,
+          "ci95_pointwise": [
+            -20.136734,
+            -19.000171
+          ],
+          "ci95_simultaneous": [
+            -20.515771,
+            -18.680207
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.917782
+        },
+        "AASIST-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 17.277392,
+          "bootstrap_sd": 0.224319,
+          "ci95_pointwise": [
+            16.826624,
+            17.69689
+          ],
+          "ci95_simultaneous": [
+            16.569114,
+            17.98567
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.708278
+        },
+        "AASIST-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 18.925149,
+          "bootstrap_sd": 0.205826,
+          "ci95_pointwise": [
+            18.524896,
+            19.313162
+          ],
+          "ci95_simultaneous": [
+            18.275261,
+            19.575036
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.649888
+        },
+        "AASIST-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -1.36704,
+          "bootstrap_sd": 0.21656,
+          "ci95_pointwise": [
+            -1.801501,
+            -0.969436
+          ],
+          "ci95_simultaneous": [
+            -2.050819,
+            -0.683261
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.683779
+        },
+        "AASIST-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 5.125285,
+          "bootstrap_sd": 0.247939,
+          "ci95_pointwise": [
+            4.65048,
+            5.611146
+          ],
+          "ci95_simultaneous": [
+            4.342426,
+            5.908144
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.782859
+        },
+        "AASIST-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 18.959205,
+          "bootstrap_sd": 0.211107,
+          "ci95_pointwise": [
+            18.536858,
+            19.347305
+          ],
+          "ci95_simultaneous": [
+            18.292641,
+            19.625769
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.666564
+        },
+        "AASIST-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 19.160074,
+          "bootstrap_sd": 0.205114,
+          "ci95_pointwise": [
+            18.751622,
+            19.531032
+          ],
+          "ci95_simultaneous": [
+            18.512433,
+            19.807716
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.647641
+        },
+        "AASIST-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 19.186626,
+          "bootstrap_sd": 0.206605,
+          "ci95_pointwise": [
+            18.778726,
+            19.572629
+          ],
+          "ci95_simultaneous": [
+            18.534277,
+            19.838975
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.652349
+        },
+        "HuBERT-ECAPA-Arena vs RawGAT-ST-Arena": {
+          "delta_eer_pts": -9.468923,
+          "bootstrap_sd": 0.228109,
+          "ci95_pointwise": [
+            -9.929241,
+            -9.035466
+          ],
+          "ci95_simultaneous": [
+            -10.189169,
+            -8.748677
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.720246
+        },
+        "HuBERT-ECAPA-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -26.875806,
+          "bootstrap_sd": 0.293341,
+          "ci95_pointwise": [
+            -27.437666,
+            -26.273087
+          ],
+          "ci95_simultaneous": [
+            -27.802018,
+            -25.949594
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.926212
+        },
+        "HuBERT-ECAPA-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 9.999575,
+          "bootstrap_sd": 0.197873,
+          "ci95_pointwise": [
+            9.59089,
+            10.369057
+          ],
+          "ci95_simultaneous": [
+            9.374799,
+            10.624351
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.624776
+        },
+        "HuBERT-ECAPA-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 11.647332,
+          "bootstrap_sd": 0.182705,
+          "ci95_pointwise": [
+            11.268016,
+            11.998582
+          ],
+          "ci95_simultaneous": [
+            11.070446,
+            12.224217
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.576885
+        },
+        "HuBERT-ECAPA-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -8.644857,
+          "bootstrap_sd": 0.196995,
+          "ci95_pointwise": [
+            -9.048795,
+            -8.271235
+          ],
+          "ci95_simultaneous": [
+            -9.266861,
+            -8.022852
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.622004
+        },
+        "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -2.152532,
+          "bootstrap_sd": 0.192717,
+          "ci95_pointwise": [
+            -2.533494,
+            -1.777122
+          ],
+          "ci95_simultaneous": [
+            -2.761027,
+            -1.544036
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.608496
+        },
+        "HuBERT-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 11.681388,
+          "bootstrap_sd": 0.195581,
+          "ci95_pointwise": [
+            11.282781,
+            12.055688
+          ],
+          "ci95_simultaneous": [
+            11.063849,
+            12.298927
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.617539
+        },
+        "HuBERT-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 11.882258,
+          "bootstrap_sd": 0.184397,
+          "ci95_pointwise": [
+            11.494202,
+            12.234988
+          ],
+          "ci95_simultaneous": [
+            11.30003,
+            12.464486
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.582228
+        },
+        "HuBERT-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 11.908809,
+          "bootstrap_sd": 0.185633,
+          "ci95_pointwise": [
+            11.524879,
+            12.265628
+          ],
+          "ci95_simultaneous": [
+            11.322679,
+            12.49494
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.586131
+        },
+        "RawGAT-ST-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -17.406883,
+          "bootstrap_sd": 0.30501,
+          "ci95_pointwise": [
+            -17.967281,
+            -16.785505
+          ],
+          "ci95_simultaneous": [
+            -18.369939,
+            -16.443826
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.963057
+        },
+        "RawGAT-ST-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 19.468498,
+          "bootstrap_sd": 0.23651,
+          "ci95_pointwise": [
+            19.000474,
+            19.921382
+          ],
+          "ci95_simultaneous": [
+            18.721727,
+            20.21527
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.746772
+        },
+        "RawGAT-ST-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 21.116255,
+          "bootstrap_sd": 0.219178,
+          "ci95_pointwise": [
+            20.699702,
+            21.542548
+          ],
+          "ci95_simultaneous": [
+            20.424207,
+            21.808303
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.692048
+        },
+        "RawGAT-ST-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": 0.824067,
+          "bootstrap_sd": 0.227059,
+          "ci95_pointwise": [
+            0.391881,
+            1.260557
+          ],
+          "ci95_simultaneous": [
+            0.107137,
+            1.540996
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.71693
+        },
+        "RawGAT-ST-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 7.316392,
+          "bootstrap_sd": 0.239431,
+          "ci95_pointwise": [
+            6.866957,
+            7.797577
+          ],
+          "ci95_simultaneous": [
+            6.560397,
+            8.072387
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.755995
+        },
+        "RawGAT-ST-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 21.150311,
+          "bootstrap_sd": 0.227144,
+          "ci95_pointwise": [
+            20.713216,
+            21.591718
+          ],
+          "ci95_simultaneous": [
+            20.433112,
+            21.867511
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.717199
+        },
+        "RawGAT-ST-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 21.351181,
+          "bootstrap_sd": 0.216947,
+          "ci95_pointwise": [
+            20.929647,
+            21.760072
+          ],
+          "ci95_simultaneous": [
+            20.666178,
+            22.036183
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.685003
+        },
+        "RawGAT-ST-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 21.377732,
+          "bootstrap_sd": 0.218817,
+          "ci95_pointwise": [
+            20.955926,
+            21.79985
+          ],
+          "ci95_simultaneous": [
+            20.686827,
+            22.068637
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.690905
+        },
+        "RawNet2-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 36.875381,
+          "bootstrap_sd": 0.250722,
+          "ci95_pointwise": [
+            36.347935,
+            37.317927
+          ],
+          "ci95_simultaneous": [
+            36.083736,
+            37.667027
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.791645
+        },
+        "RawNet2-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 38.523138,
+          "bootstrap_sd": 0.230812,
+          "ci95_pointwise": [
+            38.045752,
+            38.944275
+          ],
+          "ci95_simultaneous": [
+            37.794357,
+            39.251918
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.72878
+        },
+        "RawNet2-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": 18.230949,
+          "bootstrap_sd": 0.228958,
+          "ci95_pointwise": [
+            17.745269,
+            18.642015
+          ],
+          "ci95_simultaneous": [
+            17.508024,
+            18.953875
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.722925
+        },
+        "RawNet2-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 24.723274,
+          "bootstrap_sd": 0.300567,
+          "ci95_pointwise": [
+            24.12608,
+            25.287158
+          ],
+          "ci95_simultaneous": [
+            23.774244,
+            25.672305
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.94903
+        },
+        "RawNet2-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 38.557194,
+          "bootstrap_sd": 0.228733,
+          "ci95_pointwise": [
+            38.077057,
+            38.968181
+          ],
+          "ci95_simultaneous": [
+            37.834978,
+            39.27941
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.722216
+        },
+        "RawNet2-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 38.758064,
+          "bootstrap_sd": 0.229704,
+          "ci95_pointwise": [
+            38.273569,
+            39.166238
+          ],
+          "ci95_simultaneous": [
+            38.032782,
+            39.483346
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.725282
+        },
+        "RawNet2-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 38.784615,
+          "bootstrap_sd": 0.227584,
+          "ci95_pointwise": [
+            38.305583,
+            39.192272
+          ],
+          "ci95_simultaneous": [
+            38.066027,
+            39.503203
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.718588
+        },
+        "Resemble-AI-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 1.647757,
+          "bootstrap_sd": 0.127802,
+          "ci95_pointwise": [
+            1.405954,
+            1.911146
+          ],
+          "ci95_simultaneous": [
+            1.244227,
+            2.051286
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.40353
+        },
+        "Resemble-AI-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -18.644432,
+          "bootstrap_sd": 0.135681,
+          "ci95_pointwise": [
+            -18.900643,
+            -18.379774
+          ],
+          "ci95_simultaneous": [
+            -19.072839,
+            -18.216024
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.428408
+        },
+        "Resemble-AI-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -12.152107,
+          "bootstrap_sd": 0.214225,
+          "ci95_pointwise": [
+            -12.547262,
+            -11.702298
+          ],
+          "ci95_simultaneous": [
+            -12.828514,
+            -11.4757
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.676407
+        },
+        "Resemble-AI-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 1.681813,
+          "bootstrap_sd": 0.133736,
+          "ci95_pointwise": [
+            1.426154,
+            1.947079
+          ],
+          "ci95_simultaneous": [
+            1.259548,
+            2.104078
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.422265
+        },
+        "Resemble-AI-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 1.882682,
+          "bootstrap_sd": 0.124583,
+          "ci95_pointwise": [
+            1.643249,
+            2.129536
+          ],
+          "ci95_simultaneous": [
+            1.489316,
+            2.276048
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.393366
+        },
+        "Resemble-AI-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 1.909234,
+          "bootstrap_sd": 0.123721,
+          "ci95_pointwise": [
+            1.67307,
+            2.151387
+          ],
+          "ci95_simultaneous": [
+            1.518591,
+            2.299877
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.390643
+        },
+        "TCM-ADD-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -20.292188,
+          "bootstrap_sd": 0.078061,
+          "ci95_pointwise": [
+            -20.4546,
+            -20.148573
+          ],
+          "ci95_simultaneous": [
+            -20.538662,
+            -20.045715
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.246473
+        },
+        "TCM-ADD-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -13.799863,
+          "bootstrap_sd": 0.20175,
+          "ci95_pointwise": [
+            -14.199487,
+            -13.399642
+          ],
+          "ci95_simultaneous": [
+            -14.436882,
+            -13.162844
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.637019
+        },
+        "TCM-ADD-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 0.034056,
+          "bootstrap_sd": 0.076837,
+          "ci95_pointwise": [
+            -0.12069,
+            0.181196
+          ],
+          "ci95_simultaneous": [
+            -0.208553,
+            0.276666
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.24261
+        },
+        "TCM-ADD-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 0.234926,
+          "bootstrap_sd": 0.046054,
+          "ci95_pointwise": [
+            0.131419,
+            0.314025
+          ],
+          "ci95_simultaneous": [
+            0.089513,
+            0.380338
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.145412
+        },
+        "TCM-ADD-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.261477,
+          "bootstrap_sd": 0.039501,
+          "ci95_pointwise": [
+            0.175577,
+            0.329836
+          ],
+          "ci95_simultaneous": [
+            0.136756,
+            0.386199
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.124722
+        },
+        "Wav2Vec2-ECAPA-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 6.492325,
+          "bootstrap_sd": 0.213542,
+          "ci95_pointwise": [
+            6.073788,
+            6.932342
+          ],
+          "ci95_simultaneous": [
+            5.818074,
+            7.166577
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.674251
+        },
+        "Wav2Vec2-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 20.326245,
+          "bootstrap_sd": 0.081104,
+          "ci95_pointwise": [
+            20.173823,
+            20.492594
+          ],
+          "ci95_simultaneous": [
+            20.070163,
+            20.582326
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.256082
+        },
+        "Wav2Vec2-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 20.527114,
+          "bootstrap_sd": 0.07551,
+          "ci95_pointwise": [
+            20.376061,
+            20.667446
+          ],
+          "ci95_simultaneous": [
+            20.288694,
+            20.765535
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.238421
+        },
+        "Wav2Vec2-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 20.553666,
+          "bootstrap_sd": 0.069575,
+          "ci95_pointwise": [
+            20.420794,
+            20.692492
+          ],
+          "ci95_simultaneous": [
+            20.333986,
+            20.773345
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.21968
+        },
+        "WavLM-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 13.83392,
+          "bootstrap_sd": 0.213699,
+          "ci95_pointwise": [
+            13.401483,
+            14.260135
+          ],
+          "ci95_simultaneous": [
+            13.159173,
+            14.508666
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.674746
+        },
+        "WavLM-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 14.034789,
+          "bootstrap_sd": 0.203707,
+          "ci95_pointwise": [
+            13.614383,
+            14.430176
+          ],
+          "ci95_simultaneous": [
+            13.391592,
+            14.677987
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.643197
+        },
+        "WavLM-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 14.061341,
+          "bootstrap_sd": 0.203292,
+          "ci95_pointwise": [
+            13.641275,
+            14.457197
+          ],
+          "ci95_simultaneous": [
+            13.419454,
+            14.703227
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.641886
+        },
+        "Whisper-MesoNet-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 0.20087,
+          "bootstrap_sd": 0.074487,
+          "ci95_pointwise": [
+            0.046868,
+            0.335144
+          ],
+          "ci95_simultaneous": [
+            -0.034321,
+            0.436061
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.235191
+        },
+        "Whisper-MesoNet-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.227421,
+          "bootstrap_sd": 0.068755,
+          "ci95_pointwise": [
+            0.088921,
+            0.356307
+          ],
+          "ci95_simultaneous": [
+            0.010329,
+            0.444513
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 0.217092
+        },
+        "XLS-R+SLS-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.026551,
+          "bootstrap_sd": 0.038496,
+          "ci95_pointwise": [
+            -0.041811,
+            0.108851
+          ],
+          "ci95_simultaneous": [
+            -0.095,
+            0.148103
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.121551
+        }
+      },
+      "rank_ci95_simultaneous": {
+        "AASIST-Arena": [
+          8,
+          8
+        ],
+        "HuBERT-ECAPA-Arena": [
+          6,
+          6
+        ],
+        "RawGAT-ST-Arena": [
+          10,
+          10
+        ],
+        "RawNet2-Arena": [
+          11,
+          11
+        ],
+        "Resemble-AI-Arena": [
+          5,
+          5
+        ],
+        "TCM-ADD-Arena": [
+          3,
+          4
+        ],
+        "Wav2Vec2-ECAPA-Arena": [
+          9,
+          9
+        ],
+        "WavLM-ECAPA-Arena": [
+          7,
+          7
+        ],
+        "Whisper-MesoNet-Arena": [
+          2,
+          4
+        ],
+        "XLS-R+SLS-Arena": [
+          1,
+          3
+        ],
+        "XLSR-Mamba-Arena": [
+          1,
+          2
+        ]
+      },
+      "n_resolved_pointwise": 53,
+      "n_resolved_simultaneous": 52
+    },
+    "clustered": {
+      "supt_critical_value": 3.061613,
+      "pairs": {
+        "AASIST-Arena vs HuBERT-ECAPA-Arena": {
+          "delta_eer_pts": 7.277817,
+          "bootstrap_sd": 1.636798,
+          "ci95_pointwise": [
+            4.034464,
+            10.476639
+          ],
+          "ci95_simultaneous": [
+            2.266575,
+            12.289059
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.011242
+        },
+        "AASIST-Arena vs RawGAT-ST-Arena": {
+          "delta_eer_pts": -2.191106,
+          "bootstrap_sd": 1.034455,
+          "ci95_pointwise": [
+            -4.342293,
+            -0.266233
+          ],
+          "ci95_simultaneous": [
+            -5.358207,
+            0.975994
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 3.167101
+        },
+        "AASIST-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -19.597989,
+          "bootstrap_sd": 2.121828,
+          "ci95_pointwise": [
+            -23.922357,
+            -15.528342
+          ],
+          "ci95_simultaneous": [
+            -26.094206,
+            -13.101773
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.496216
+        },
+        "AASIST-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 17.277392,
+          "bootstrap_sd": 1.796083,
+          "ci95_pointwise": [
+            13.664015,
+            20.761768
+          ],
+          "ci95_simultaneous": [
+            11.77848,
+            22.776304
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.498912
+        },
+        "AASIST-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 18.925149,
+          "bootstrap_sd": 1.668495,
+          "ci95_pointwise": [
+            15.663351,
+            22.12609
+          ],
+          "ci95_simultaneous": [
+            13.816863,
+            24.033434
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.108285
+        },
+        "AASIST-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -1.36704,
+          "bootstrap_sd": 3.969122,
+          "ci95_pointwise": [
+            -10.083169,
+            5.429906
+          ],
+          "ci95_simultaneous": [
+            -13.518954,
+            10.784874
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 12.151914
+        },
+        "AASIST-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 5.125285,
+          "bootstrap_sd": 1.945285,
+          "ci95_pointwise": [
+            1.285854,
+            8.870973
+          ],
+          "ci95_simultaneous": [
+            -0.830425,
+            11.080995
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 5.95571
+        },
+        "AASIST-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 18.959205,
+          "bootstrap_sd": 1.852701,
+          "ci95_pointwise": [
+            15.276984,
+            22.486754
+          ],
+          "ci95_simultaneous": [
+            13.286951,
+            24.631459
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.672254
+        },
+        "AASIST-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 19.160074,
+          "bootstrap_sd": 1.732907,
+          "ci95_pointwise": [
+            15.689902,
+            22.418335
+          ],
+          "ci95_simultaneous": [
+            13.854583,
+            24.465566
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.305492
+        },
+        "AASIST-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 19.186626,
+          "bootstrap_sd": 1.663763,
+          "ci95_pointwise": [
+            15.90114,
+            22.350083
+          ],
+          "ci95_simultaneous": [
+            14.092827,
+            24.280425
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.093799
+        },
+        "HuBERT-ECAPA-Arena vs RawGAT-ST-Arena": {
+          "delta_eer_pts": -9.468923,
+          "bootstrap_sd": 1.677299,
+          "ci95_pointwise": [
+            -12.903841,
+            -6.28866
+          ],
+          "ci95_simultaneous": [
+            -14.604164,
+            -4.333683
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.13524
+        },
+        "HuBERT-ECAPA-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -26.875806,
+          "bootstrap_sd": 2.486257,
+          "ci95_pointwise": [
+            -31.80136,
+            -22.187145
+          ],
+          "ci95_simultaneous": [
+            -34.487762,
+            -19.263849
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 7.611957
+        },
+        "HuBERT-ECAPA-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 9.999575,
+          "bootstrap_sd": 1.628229,
+          "ci95_pointwise": [
+            6.790665,
+            13.166913
+          ],
+          "ci95_simultaneous": [
+            5.014567,
+            14.984583
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 4.985008
+        },
+        "HuBERT-ECAPA-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 11.647332,
+          "bootstrap_sd": 1.863349,
+          "ci95_pointwise": [
+            8.041659,
+            15.372121
+          ],
+          "ci95_simultaneous": [
+            5.942477,
+            17.352187
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.704855
+        },
+        "HuBERT-ECAPA-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -8.644857,
+          "bootstrap_sd": 4.547642,
+          "ci95_pointwise": [
+            -18.117177,
+            -0.589138
+          ],
+          "ci95_simultaneous": [
+            -22.567976,
+            5.278263
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 13.92312
+        },
+        "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -2.152532,
+          "bootstrap_sd": 1.008871,
+          "ci95_pointwise": [
+            -4.252325,
+            -0.276734
+          ],
+          "ci95_simultaneous": [
+            -5.241305,
+            0.936242
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 3.088773
+        },
+        "HuBERT-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 11.681388,
+          "bootstrap_sd": 2.076686,
+          "ci95_pointwise": [
+            7.544186,
+            15.712362
+          ],
+          "ci95_simultaneous": [
+            5.323378,
+            18.039398
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.35801
+        },
+        "HuBERT-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 11.882258,
+          "bootstrap_sd": 1.902881,
+          "ci95_pointwise": [
+            8.09646,
+            15.636494
+          ],
+          "ci95_simultaneous": [
+            6.056372,
+            17.708143
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.825885
+        },
+        "HuBERT-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 11.908809,
+          "bootstrap_sd": 1.888419,
+          "ci95_pointwise": [
+            8.181433,
+            15.661176
+          ],
+          "ci95_simultaneous": [
+            6.1272,
+            17.690418
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.781609
+        },
+        "RawGAT-ST-Arena vs RawNet2-Arena": {
+          "delta_eer_pts": -17.406883,
+          "bootstrap_sd": 2.569586,
+          "ci95_pointwise": [
+            -22.52518,
+            -12.491934
+          ],
+          "ci95_simultaneous": [
+            -25.27396,
+            -9.539805
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 7.867078
+        },
+        "RawGAT-ST-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 19.468498,
+          "bootstrap_sd": 2.00324,
+          "ci95_pointwise": [
+            15.439507,
+            23.38555
+          ],
+          "ci95_simultaneous": [
+            13.335354,
+            25.601643
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.133144
+        },
+        "RawGAT-ST-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 21.116255,
+          "bootstrap_sd": 2.013606,
+          "ci95_pointwise": [
+            17.107258,
+            24.982292
+          ],
+          "ci95_simultaneous": [
+            14.951371,
+            27.281139
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.164884
+        },
+        "RawGAT-ST-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": 0.824067,
+          "bootstrap_sd": 4.542561,
+          "ci95_pointwise": [
+            -8.914491,
+            8.697687
+          ],
+          "ci95_simultaneous": [
+            -13.083498,
+            14.731631
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 13.907564
+        },
+        "RawGAT-ST-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 7.316392,
+          "bootstrap_sd": 1.777993,
+          "ci95_pointwise": [
+            3.791956,
+            10.739943
+          ],
+          "ci95_simultaneous": [
+            1.872867,
+            12.759917
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.443525
+        },
+        "RawGAT-ST-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 21.150311,
+          "bootstrap_sd": 2.194706,
+          "ci95_pointwise": [
+            16.755813,
+            25.314856
+          ],
+          "ci95_simultaneous": [
+            14.430972,
+            27.86965
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.719339
+        },
+        "RawGAT-ST-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 21.351181,
+          "bootstrap_sd": 2.024579,
+          "ci95_pointwise": [
+            17.265872,
+            25.211655
+          ],
+          "ci95_simultaneous": [
+            15.152702,
+            27.549659
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.198478
+        },
+        "RawGAT-ST-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 21.377732,
+          "bootstrap_sd": 2.011016,
+          "ci95_pointwise": [
+            17.359005,
+            25.167314
+          ],
+          "ci95_simultaneous": [
+            15.22078,
+            27.534684
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.156952
+        },
+        "RawNet2-Arena vs Resemble-AI-Arena": {
+          "delta_eer_pts": 36.875381,
+          "bootstrap_sd": 1.807358,
+          "ci95_pointwise": [
+            33.307198,
+            40.372378
+          ],
+          "ci95_simultaneous": [
+            31.341951,
+            42.408811
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.53343
+        },
+        "RawNet2-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 38.523138,
+          "bootstrap_sd": 1.539446,
+          "ci95_pointwise": [
+            35.602103,
+            41.607708
+          ],
+          "ci95_simultaneous": [
+            33.809949,
+            43.236326
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 4.713189
+        },
+        "RawNet2-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": 18.230949,
+          "bootstrap_sd": 4.080181,
+          "ci95_pointwise": [
+            9.459196,
+            25.565447
+          ],
+          "ci95_simultaneous": [
+            5.739014,
+            30.722885
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 12.491935
+        },
+        "RawNet2-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 24.723274,
+          "bootstrap_sd": 2.928852,
+          "ci95_pointwise": [
+            18.978119,
+            30.503102
+          ],
+          "ci95_simultaneous": [
+            15.756264,
+            33.690285
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 8.967011
+        },
+        "RawNet2-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 38.557194,
+          "bootstrap_sd": 1.541316,
+          "ci95_pointwise": [
+            35.529683,
+            41.55739
+          ],
+          "ci95_simultaneous": [
+            33.838282,
+            43.276106
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 4.718912
+        },
+        "RawNet2-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 38.758064,
+          "bootstrap_sd": 1.539241,
+          "ci95_pointwise": [
+            35.808211,
+            41.762711
+          ],
+          "ci95_simultaneous": [
+            34.045503,
+            43.470624
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 4.712561
+        },
+        "RawNet2-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 38.784615,
+          "bootstrap_sd": 1.53637,
+          "ci95_pointwise": [
+            35.843958,
+            41.802782
+          ],
+          "ci95_simultaneous": [
+            34.080845,
+            43.488385
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 4.70377
+        },
+        "Resemble-AI-Arena vs TCM-ADD-Arena": {
+          "delta_eer_pts": 1.647757,
+          "bootstrap_sd": 0.938983,
+          "ci95_pointwise": [
+            0.112969,
+            3.724409
+          ],
+          "ci95_simultaneous": [
+            -1.227047,
+            4.52256
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 2.874804
+        },
+        "Resemble-AI-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -18.644432,
+          "bootstrap_sd": 4.745967,
+          "ci95_pointwise": [
+            -28.461219,
+            -9.942835
+          ],
+          "ci95_simultaneous": [
+            -33.174746,
+            -4.114117
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 14.530314
+        },
+        "Resemble-AI-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -12.152107,
+          "bootstrap_sd": 1.91594,
+          "ci95_pointwise": [
+            -15.858646,
+            -8.293748
+          ],
+          "ci95_simultaneous": [
+            -18.017975,
+            -6.286239
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 5.865868
+        },
+        "Resemble-AI-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 1.681813,
+          "bootstrap_sd": 0.963189,
+          "ci95_pointwise": [
+            -0.082684,
+            3.653577
+          ],
+          "ci95_simultaneous": [
+            -1.267098,
+            4.630724
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 2.948911
+        },
+        "Resemble-AI-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 1.882682,
+          "bootstrap_sd": 0.947326,
+          "ci95_pointwise": [
+            0.257144,
+            3.883179
+          ],
+          "ci95_simultaneous": [
+            -1.017663,
+            4.783027
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 2.900345
+        },
+        "Resemble-AI-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 1.909234,
+          "bootstrap_sd": 0.963296,
+          "ci95_pointwise": [
+            0.283796,
+            3.958899
+          ],
+          "ci95_simultaneous": [
+            -1.040007,
+            4.858474
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 2.949241
+        },
+        "TCM-ADD-Arena vs Wav2Vec2-ECAPA-Arena": {
+          "delta_eer_pts": -20.292188,
+          "bootstrap_sd": 4.223617,
+          "ci95_pointwise": [
+            -29.223635,
+            -12.801812
+          ],
+          "ci95_simultaneous": [
+            -33.223269,
+            -7.361108
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 12.93108
+        },
+        "TCM-ADD-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": -13.799863,
+          "bootstrap_sd": 2.251384,
+          "ci95_pointwise": [
+            -18.253894,
+            -9.391561
+          ],
+          "ci95_simultaneous": [
+            -20.692729,
+            -6.906998
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.892866
+        },
+        "TCM-ADD-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 0.034056,
+          "bootstrap_sd": 0.441421,
+          "ci95_pointwise": [
+            -0.84995,
+            0.870322
+          ],
+          "ci95_simultaneous": [
+            -1.317405,
+            1.385518
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 1.351461
+        },
+        "TCM-ADD-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 0.234926,
+          "bootstrap_sd": 0.229308,
+          "ci95_pointwise": [
+            -0.304766,
+            0.596343
+          ],
+          "ci95_simultaneous": [
+            -0.467125,
+            0.936977
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.702051
+        },
+        "TCM-ADD-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.261477,
+          "bootstrap_sd": 0.116947,
+          "ci95_pointwise": [
+            0.016134,
+            0.473851
+          ],
+          "ci95_simultaneous": [
+            -0.096569,
+            0.619524
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.358047
+        },
+        "Wav2Vec2-ECAPA-Arena vs WavLM-ECAPA-Arena": {
+          "delta_eer_pts": 6.492325,
+          "bootstrap_sd": 5.032597,
+          "ci95_pointwise": [
+            -2.371871,
+            16.726966
+          ],
+          "ci95_simultaneous": [
+            -8.915539,
+            21.900189
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 15.407864
+        },
+        "Wav2Vec2-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 20.326245,
+          "bootstrap_sd": 4.332374,
+          "ci95_pointwise": [
+            12.611553,
+            29.473334
+          ],
+          "ci95_simultaneous": [
+            7.062193,
+            33.590296
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 13.264052
+        },
+        "Wav2Vec2-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 20.527114,
+          "bootstrap_sd": 4.275396,
+          "ci95_pointwise": [
+            12.870457,
+            29.425747
+          ],
+          "ci95_simultaneous": [
+            7.437506,
+            33.616722
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 13.089608
+        },
+        "Wav2Vec2-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 20.553666,
+          "bootstrap_sd": 4.212942,
+          "ci95_pointwise": [
+            13.050582,
+            29.41534
+          ],
+          "ci95_simultaneous": [
+            7.655267,
+            33.452064
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 12.898398
+        },
+        "WavLM-ECAPA-Arena vs Whisper-MesoNet-Arena": {
+          "delta_eer_pts": 13.83392,
+          "bootstrap_sd": 2.449725,
+          "ci95_pointwise": [
+            8.919535,
+            18.513908
+          ],
+          "ci95_simultaneous": [
+            6.333811,
+            21.334028
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 7.500109
+        },
+        "WavLM-ECAPA-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 14.034789,
+          "bootstrap_sd": 2.292526,
+          "ci95_pointwise": [
+            9.472434,
+            18.478391
+          ],
+          "ci95_simultaneous": [
+            7.015961,
+            21.053617
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 7.018828
+        },
+        "WavLM-ECAPA-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 14.061341,
+          "bootstrap_sd": 2.278917,
+          "ci95_pointwise": [
+            9.573676,
+            18.496835
+          ],
+          "ci95_simultaneous": [
+            7.084179,
+            21.038502
+          ],
+          "resolved_pointwise": true,
+          "resolved_simultaneous": true,
+          "mde95_simultaneous_pts": 6.977161
+        },
+        "Whisper-MesoNet-Arena vs XLS-R+SLS-Arena": {
+          "delta_eer_pts": 0.20087,
+          "bootstrap_sd": 0.453083,
+          "ci95_pointwise": [
+            -0.74291,
+            1.059955
+          ],
+          "ci95_simultaneous": [
+            -1.186297,
+            1.588036
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 1.387166
+        },
+        "Whisper-MesoNet-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.227421,
+          "bootstrap_sd": 0.415565,
+          "ci95_pointwise": [
+            -0.585195,
+            1.061855
+          ],
+          "ci95_simultaneous": [
+            -1.044879,
+            1.499722
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 1.2723
+        },
+        "XLS-R+SLS-Arena vs XLSR-Mamba-Arena": {
+          "delta_eer_pts": 0.026551,
+          "bootstrap_sd": 0.232103,
+          "ci95_pointwise": [
+            -0.334875,
+            0.571998
+          ],
+          "ci95_simultaneous": [
+            -0.684057,
+            0.73716
+          ],
+          "resolved_pointwise": false,
+          "resolved_simultaneous": false,
+          "mde95_simultaneous_pts": 0.710608
+        }
+      },
+      "rank_ci95_simultaneous": {
+        "AASIST-Arena": [
+          7,
+          10
+        ],
+        "HuBERT-ECAPA-Arena": [
+          6,
+          8
+        ],
+        "RawGAT-ST-Arena": [
+          8,
+          10
+        ],
+        "RawNet2-Arena": [
+          11,
+          11
+        ],
+        "Resemble-AI-Arena": [
+          1,
+          5
+        ],
+        "TCM-ADD-Arena": [
+          1,
+          5
+        ],
+        "Wav2Vec2-ECAPA-Arena": [
+          6,
+          10
+        ],
+        "WavLM-ECAPA-Arena": [
+          6,
+          9
+        ],
+        "Whisper-MesoNet-Arena": [
+          1,
+          5
+        ],
+        "XLS-R+SLS-Arena": [
+          1,
+          5
+        ],
+        "XLSR-Mamba-Arena": [
+          1,
+          5
+        ]
+      },
+      "n_resolved_pointwise": 46,
+      "n_resolved_simultaneous": 38
+    }
+  },
+  "adjacent_edges": [
+    "XLSR-Mamba-Arena vs XLS-R+SLS-Arena",
+    "XLS-R+SLS-Arena vs Whisper-MesoNet-Arena",
+    "Whisper-MesoNet-Arena vs TCM-ADD-Arena",
+    "TCM-ADD-Arena vs Resemble-AI-Arena",
+    "Resemble-AI-Arena vs HuBERT-ECAPA-Arena",
+    "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena",
+    "WavLM-ECAPA-Arena vs AASIST-Arena",
+    "AASIST-Arena vs Wav2Vec2-ECAPA-Arena",
+    "Wav2Vec2-ECAPA-Arena vs RawGAT-ST-Arena",
+    "RawGAT-ST-Arena vs RawNet2-Arena"
+  ],
+  "adjacent_iid_resolved_clustered_unresolved": [
+    "AASIST-Arena vs Wav2Vec2-ECAPA-Arena",
+    "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"
+  ],
+  "width_ratio_clustered_over_iid": {
+    "AASIST-Arena vs HuBERT-ECAPA-Arena": 7.056046,
+    "AASIST-Arena vs RawGAT-ST-Arena": 5.484275,
+    "AASIST-Arena vs RawNet2-Arena": 7.299758,
+    "AASIST-Arena vs Resemble-AI-Arena": 8.006825,
+    "AASIST-Arena vs TCM-ADD-Arena": 8.106337,
+    "AASIST-Arena vs Wav2Vec2-ECAPA-Arena": 18.328048,
+    "AASIST-Arena vs WavLM-ECAPA-Arena": 7.845821,
+    "AASIST-Arena vs Whisper-MesoNet-Arena": 8.776123,
+    "AASIST-Arena vs XLS-R+SLS-Arena": 8.448507,
+    "AASIST-Arena vs XLSR-Mamba-Arena": 8.052869,
+    "HuBERT-ECAPA-Arena vs RawGAT-ST-Arena": 7.353059,
+    "HuBERT-ECAPA-Arena vs RawNet2-Arena": 8.475655,
+    "HuBERT-ECAPA-Arena vs Resemble-AI-Arena": 8.228657,
+    "HuBERT-ECAPA-Arena vs TCM-ADD-Arena": 10.198675,
+    "HuBERT-ECAPA-Arena vs Wav2Vec2-ECAPA-Arena": 23.085063,
+    "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena": 5.234987,
+    "HuBERT-ECAPA-Arena vs Whisper-MesoNet-Arena": 10.618035,
+    "HuBERT-ECAPA-Arena vs XLS-R+SLS-Arena": 10.319479,
+    "HuBERT-ECAPA-Arena vs XLSR-Mamba-Arena": 10.172863,
+    "RawGAT-ST-Arena vs RawNet2-Arena": 8.424596,
+    "RawGAT-ST-Arena vs Resemble-AI-Arena": 8.470001,
+    "RawGAT-ST-Arena vs TCM-ADD-Arena": 9.187081,
+    "RawGAT-ST-Arena vs Wav2Vec2-ECAPA-Arena": 20.006082,
+    "RawGAT-ST-Arena vs WavLM-ECAPA-Arena": 7.42591,
+    "RawGAT-ST-Arena vs Whisper-MesoNet-Arena": 9.662179,
+    "RawGAT-ST-Arena vs XLS-R+SLS-Arena": 9.332136,
+    "RawGAT-ST-Arena vs XLSR-Mamba-Arena": 9.190401,
+    "RawNet2-Arena vs Resemble-AI-Arena": 7.208614,
+    "RawNet2-Arena vs TCM-ADD-Arena": 6.669697,
+    "RawNet2-Arena vs Wav2Vec2-ECAPA-Arena": 17.820653,
+    "RawNet2-Arena vs WavLM-ECAPA-Arena": 9.744423,
+    "RawNet2-Arena vs Whisper-MesoNet-Arena": 6.738494,
+    "RawNet2-Arena vs XLS-R+SLS-Arena": 6.700976,
+    "RawNet2-Arena vs XLSR-Mamba-Arena": 6.750782,
+    "Resemble-AI-Arena vs TCM-ADD-Arena": 7.34717,
+    "Resemble-AI-Arena vs Wav2Vec2-ECAPA-Arena": 34.978862,
+    "Resemble-AI-Arena vs WavLM-ECAPA-Arena": 8.943587,
+    "Resemble-AI-Arena vs Whisper-MesoNet-Arena": 7.202167,
+    "Resemble-AI-Arena vs XLS-R+SLS-Arena": 7.603975,
+    "Resemble-AI-Arena vs XLSR-Mamba-Arena": 7.786035,
+    "TCM-ADD-Arena vs Wav2Vec2-ECAPA-Arena": 54.106622,
+    "TCM-ADD-Arena vs WavLM-ECAPA-Arena": 11.159276,
+    "TCM-ADD-Arena vs Whisper-MesoNet-Arena": 5.744902,
+    "TCM-ADD-Arena vs XLS-R+SLS-Arena": 4.979111,
+    "TCM-ADD-Arena vs XLSR-Mamba-Arena": 2.960609,
+    "Wav2Vec2-ECAPA-Arena vs WavLM-ECAPA-Arena": 23.567247,
+    "Wav2Vec2-ECAPA-Arena vs Whisper-MesoNet-Arena": 53.417513,
+    "Wav2Vec2-ECAPA-Arena vs XLS-R+SLS-Arena": 56.620262,
+    "Wav2Vec2-ECAPA-Arena vs XLSR-Mamba-Arena": 60.552526,
+    "WavLM-ECAPA-Arena vs Whisper-MesoNet-Arena": 11.463437,
+    "WavLM-ECAPA-Arena vs XLS-R+SLS-Arena": 11.254036,
+    "WavLM-ECAPA-Arena vs XLSR-Mamba-Arena": 11.210067,
+    "Whisper-MesoNet-Arena vs XLS-R+SLS-Arena": 6.082712,
+    "Whisper-MesoNet-Arena vs XLSR-Mamba-Arena": 6.044142,
+    "XLS-R+SLS-Arena vs XLSR-Mamba-Arena": 6.029276
+  },
+  "median_width_ratio": 8.448507,
+  "cross_layer_sensitivity": {
+    "XLSR-Mamba-Arena vs XLSR-Mamba": {
+      "arena_eer": 1.883935,
+      "primary_eer": 1.883935,
+      "score_pearson": 1.0,
+      "note": "implementation/provenance sensitivity; excluded from rank family"
+    },
+    "XLS-R+SLS-Arena vs XLS-R+SLS": {
+      "arena_eer": 1.910486,
+      "primary_eer": 1.916064,
+      "score_pearson": 1.0,
+      "note": "implementation/provenance sensitivity; excluded from rank family"
+    },
+    "RawNet2-Arena vs RawNet2": {
+      "arena_eer": 40.66855,
+      "primary_eer": 22.383342,
+      "score_pearson": 0.360359,
+      "note": "implementation/provenance sensitivity; excluded from rank family"
+    }
+  },
+  "reading": "confirmed"
+}

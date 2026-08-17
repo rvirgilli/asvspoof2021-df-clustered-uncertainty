@@ -147,7 +147,7 @@ def main():
 
     results["subsample_check"] = subsample_check()
 
-    out = Path(__file__).parent / "results_close.json"
+    out = Path(__file__).parent.parent / "derived" / "results_close.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 

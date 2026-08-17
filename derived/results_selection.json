@@ -1,0 +1,1011 @@
+{
+  "B": 5000,
+  "seed": 20260817,
+  "note": "certified variants after audit: two-way percentile + two-way jackknife",
+  "21df": {
+    "systems": [
+      "XLSR-Mamba",
+      "XLS-R+SLS",
+      "XLSR-Conformer",
+      "SSL-AASIST",
+      "RawNet2",
+      "LFCC-LCNN",
+      "LFCC-GMM",
+      "CQCC-GMM"
+    ],
+    "n_pairs": 28,
+    "supt_critical_value": 2.981,
+    "n_resolved": {
+      "pointwise": 18,
+      "simultaneous": 18,
+      "holm_family": 18,
+      "jackknife_pointwise": 18,
+      "certified_variants_agree_on": 28
+    },
+    "rank_sets": {
+      "XLSR-Mamba": {
+        "point_rank": 1,
+        "rank_ci95_simultaneous": [
+          1,
+          3
+        ],
+        "bootstrap_rank_stability_interval": [
+          1,
+          3
+        ],
+        "pooled_eer": 1.884
+      },
+      "XLS-R+SLS": {
+        "point_rank": 2,
+        "rank_ci95_simultaneous": [
+          1,
+          3
+        ],
+        "bootstrap_rank_stability_interval": [
+          1,
+          3
+        ],
+        "pooled_eer": 1.916
+      },
+      "XLSR-Conformer": {
+        "point_rank": 3,
+        "rank_ci95_simultaneous": [
+          1,
+          4
+        ],
+        "bootstrap_rank_stability_interval": [
+          1,
+          4
+        ],
+        "pooled_eer": 2.273
+      },
+      "SSL-AASIST": {
+        "point_rank": 4,
+        "rank_ci95_simultaneous": [
+          3,
+          4
+        ],
+        "bootstrap_rank_stability_interval": [
+          3,
+          4
+        ],
+        "pooled_eer": 2.852
+      },
+      "RawNet2": {
+        "point_rank": 5,
+        "rank_ci95_simultaneous": [
+          5,
+          8
+        ],
+        "bootstrap_rank_stability_interval": [
+          5,
+          8
+        ],
+        "pooled_eer": 22.383
+      },
+      "LFCC-LCNN": {
+        "point_rank": 6,
+        "rank_ci95_simultaneous": [
+          5,
+          8
+        ],
+        "bootstrap_rank_stability_interval": [
+          5,
+          8
+        ],
+        "pooled_eer": 23.477
+      },
+      "LFCC-GMM": {
+        "point_rank": 7,
+        "rank_ci95_simultaneous": [
+          5,
+          8
+        ],
+        "bootstrap_rank_stability_interval": [
+          5,
+          8
+        ],
+        "pooled_eer": 25.247
+      },
+      "CQCC-GMM": {
+        "point_rank": 8,
+        "rank_ci95_simultaneous": [
+          5,
+          8
+        ],
+        "bootstrap_rank_stability_interval": [
+          6,
+          8
+        ],
+        "pooled_eer": 25.563
+      }
+    },
+    "pairs": {
+      "XLSR-Mamba vs XLS-R+SLS": {
+        "delta_eer_pts": -0.032,
+        "boot_sd": 0.233,
+        "ci_pointwise": [
+          -0.584,
+          0.32
+        ],
+        "ci_simultaneous": [
+          -0.728,
+          0.663
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.861,
+        "adjacent": true,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -0.528,
+          0.463
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs XLSR-Conformer": {
+        "delta_eer_pts": -0.389,
+        "boot_sd": 0.315,
+        "ci_pointwise": [
+          -1.083,
+          0.156
+        ],
+        "ci_simultaneous": [
+          -1.328,
+          0.55
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.183,
+        "adjacent": false,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -1.047,
+          0.268
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs SSL-AASIST": {
+        "delta_eer_pts": -0.968,
+        "boot_sd": 0.287,
+        "ci_pointwise": [
+          -1.536,
+          -0.426
+        ],
+        "ci_simultaneous": [
+          -1.822,
+          -0.113
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -1.555,
+          -0.381
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs RawNet2": {
+        "delta_eer_pts": -20.499,
+        "boot_sd": 2.185,
+        "ci_pointwise": [
+          -24.761,
+          -16.219
+        ],
+        "ci_simultaneous": [
+          -27.013,
+          -13.986
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -24.644,
+          -16.355
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs LFCC-LCNN": {
+        "delta_eer_pts": -21.593,
+        "boot_sd": 2.01,
+        "ci_pointwise": [
+          -25.673,
+          -17.716
+        ],
+        "ci_simultaneous": [
+          -27.584,
+          -15.602
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -25.372,
+          -17.814
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs LFCC-GMM": {
+        "delta_eer_pts": -23.363,
+        "boot_sd": 2.066,
+        "ci_pointwise": [
+          -27.733,
+          -19.596
+        ],
+        "ci_simultaneous": [
+          -29.52,
+          -17.206
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -27.317,
+          -19.409
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs CQCC-GMM": {
+        "delta_eer_pts": -23.679,
+        "boot_sd": 1.888,
+        "ci_pointwise": [
+          -27.544,
+          -20.137
+        ],
+        "ci_simultaneous": [
+          -29.307,
+          -18.052
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -27.346,
+          -20.012
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs XLSR-Conformer": {
+        "delta_eer_pts": -0.357,
+        "boot_sd": 0.375,
+        "ci_pointwise": [
+          -1.105,
+          0.398
+        ],
+        "ci_simultaneous": [
+          -1.474,
+          0.76
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.3426,
+        "adjacent": true,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -1.091,
+          0.377
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs SSL-AASIST": {
+        "delta_eer_pts": -0.935,
+        "boot_sd": 0.284,
+        "ci_pointwise": [
+          -1.48,
+          -0.358
+        ],
+        "ci_simultaneous": [
+          -1.782,
+          -0.089
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0014,
+        "adjacent": false,
+        "p_holm_family": 0.0154,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -1.469,
+          -0.402
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs RawNet2": {
+        "delta_eer_pts": -20.467,
+        "boot_sd": 2.205,
+        "ci_pointwise": [
+          -24.731,
+          -16.149
+        ],
+        "ci_simultaneous": [
+          -27.04,
+          -13.894
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -24.641,
+          -16.293
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs LFCC-LCNN": {
+        "delta_eer_pts": -21.561,
+        "boot_sd": 2.026,
+        "ci_pointwise": [
+          -25.654,
+          -17.577
+        ],
+        "ci_simultaneous": [
+          -27.601,
+          -15.521
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -25.361,
+          -17.761
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs LFCC-GMM": {
+        "delta_eer_pts": -23.331,
+        "boot_sd": 2.085,
+        "ci_pointwise": [
+          -27.699,
+          -19.53
+        ],
+        "ci_simultaneous": [
+          -29.547,
+          -17.115
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -27.326,
+          -19.336
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs CQCC-GMM": {
+        "delta_eer_pts": -23.647,
+        "boot_sd": 1.893,
+        "ci_pointwise": [
+          -27.513,
+          -20.034
+        ],
+        "ci_simultaneous": [
+          -29.291,
+          -18.003
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -27.337,
+          -19.957
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Conformer vs SSL-AASIST": {
+        "delta_eer_pts": -0.578,
+        "boot_sd": 0.342,
+        "ci_pointwise": [
+          -1.267,
+          0.082
+        ],
+        "ci_simultaneous": [
+          -1.599,
+          0.442
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.0874,
+        "adjacent": true,
+        "p_holm_family": 0.874,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -1.188,
+          0.032
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "XLSR-Conformer vs RawNet2": {
+        "delta_eer_pts": -20.11,
+        "boot_sd": 2.099,
+        "ci_pointwise": [
+          -24.11,
+          -15.993
+        ],
+        "ci_simultaneous": [
+          -26.366,
+          -13.854
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -24.056,
+          -16.165
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Conformer vs LFCC-LCNN": {
+        "delta_eer_pts": -21.204,
+        "boot_sd": 1.914,
+        "ci_pointwise": [
+          -25.109,
+          -17.409
+        ],
+        "ci_simultaneous": [
+          -26.908,
+          -15.5
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -24.779,
+          -17.629
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Conformer vs LFCC-GMM": {
+        "delta_eer_pts": -22.974,
+        "boot_sd": 2.009,
+        "ci_pointwise": [
+          -27.252,
+          -19.351
+        ],
+        "ci_simultaneous": [
+          -28.962,
+          -16.986
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -26.825,
+          -19.123
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Conformer vs CQCC-GMM": {
+        "delta_eer_pts": -23.29,
+        "boot_sd": 1.837,
+        "ci_pointwise": [
+          -27.051,
+          -19.847
+        ],
+        "ci_simultaneous": [
+          -28.766,
+          -17.814
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -26.844,
+          -19.736
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "SSL-AASIST vs RawNet2": {
+        "delta_eer_pts": -19.532,
+        "boot_sd": 2.102,
+        "ci_pointwise": [
+          -23.646,
+          -15.444
+        ],
+        "ci_simultaneous": [
+          -25.796,
+          -13.268
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": true,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -23.481,
+          -15.582
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "SSL-AASIST vs LFCC-LCNN": {
+        "delta_eer_pts": -20.626,
+        "boot_sd": 1.924,
+        "ci_pointwise": [
+          -24.547,
+          -16.85
+        ],
+        "ci_simultaneous": [
+          -26.36,
+          -14.891
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -24.226,
+          -17.025
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "SSL-AASIST vs LFCC-GMM": {
+        "delta_eer_pts": -22.396,
+        "boot_sd": 2.039,
+        "ci_pointwise": [
+          -26.726,
+          -18.687
+        ],
+        "ci_simultaneous": [
+          -28.475,
+          -16.317
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -26.259,
+          -18.533
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "SSL-AASIST vs CQCC-GMM": {
+        "delta_eer_pts": -22.712,
+        "boot_sd": 1.84,
+        "ci_pointwise": [
+          -26.452,
+          -19.216
+        ],
+        "ci_simultaneous": [
+          -28.197,
+          -17.227
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0056,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -26.251,
+          -19.173
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "RawNet2 vs LFCC-LCNN": {
+        "delta_eer_pts": -1.094,
+        "boot_sd": 1.485,
+        "ci_pointwise": [
+          -3.927,
+          1.808
+        ],
+        "ci_simultaneous": [
+          -5.521,
+          3.333
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.441,
+        "adjacent": true,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -4.039,
+          1.852
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "RawNet2 vs LFCC-GMM": {
+        "delta_eer_pts": -2.864,
+        "boot_sd": 2.377,
+        "ci_pointwise": [
+          -7.82,
+          1.455
+        ],
+        "ci_simultaneous": [
+          -9.95,
+          4.222
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.1978,
+        "adjacent": false,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -7.287,
+          1.559
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "RawNet2 vs CQCC-GMM": {
+        "delta_eer_pts": -3.18,
+        "boot_sd": 2.043,
+        "ci_pointwise": [
+          -7.169,
+          0.735
+        ],
+        "ci_simultaneous": [
+          -9.27,
+          2.91
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.1162,
+        "adjacent": false,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -6.943,
+          0.583
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "LFCC-LCNN vs LFCC-GMM": {
+        "delta_eer_pts": -1.77,
+        "boot_sd": 1.568,
+        "ci_pointwise": [
+          -5.207,
+          0.941
+        ],
+        "ci_simultaneous": [
+          -6.443,
+          2.902
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.2154,
+        "adjacent": true,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -4.377,
+          0.837
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "LFCC-LCNN vs CQCC-GMM": {
+        "delta_eer_pts": -2.086,
+        "boot_sd": 1.362,
+        "ci_pointwise": [
+          -4.729,
+          0.544
+        ],
+        "ci_simultaneous": [
+          -6.146,
+          1.974
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.123,
+        "adjacent": false,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -4.465,
+          0.293
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "LFCC-GMM vs CQCC-GMM": {
+        "delta_eer_pts": -0.316,
+        "boot_sd": 0.996,
+        "ci_pointwise": [
+          -2.077,
+          1.916
+        ],
+        "ci_simultaneous": [
+          -3.286,
+          2.654
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.8294,
+        "adjacent": true,
+        "p_holm_family": 1.0,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -2.182,
+          1.55
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      }
+    }
+  },
+  "itw": {
+    "systems": [
+      "XLSR-Mamba",
+      "XLS-R+SLS",
+      "SSL-AASIST",
+      "AASIST"
+    ],
+    "n_pairs": 6,
+    "supt_critical_value": 2.46,
+    "n_resolved": {
+      "pointwise": 5,
+      "simultaneous": 3,
+      "holm_family": 5,
+      "jackknife_pointwise": 4,
+      "certified_variants_agree_on": 5
+    },
+    "rank_sets": {
+      "XLSR-Mamba": {
+        "point_rank": 1,
+        "rank_ci95_simultaneous": [
+          1,
+          3
+        ],
+        "bootstrap_rank_stability_interval": [
+          1,
+          2
+        ],
+        "pooled_eer": 6.709
+      },
+      "XLS-R+SLS": {
+        "point_rank": 2,
+        "rank_ci95_simultaneous": [
+          1,
+          3
+        ],
+        "bootstrap_rank_stability_interval": [
+          1,
+          2
+        ],
+        "pooled_eer": 7.464
+      },
+      "SSL-AASIST": {
+        "point_rank": 3,
+        "rank_ci95_simultaneous": [
+          1,
+          3
+        ],
+        "bootstrap_rank_stability_interval": [
+          3,
+          3
+        ],
+        "pooled_eer": 11.196
+      },
+      "AASIST": {
+        "point_rank": 4,
+        "rank_ci95_simultaneous": [
+          4,
+          4
+        ],
+        "bootstrap_rank_stability_interval": [
+          4,
+          4
+        ],
+        "pooled_eer": 43.016
+      }
+    },
+    "pairs": {
+      "XLSR-Mamba vs XLS-R+SLS": {
+        "delta_eer_pts": -0.755,
+        "boot_sd": 1.242,
+        "ci_pointwise": [
+          -2.925,
+          1.871
+        ],
+        "ci_simultaneous": [
+          -3.809,
+          2.3
+        ],
+        "resolved_pointwise": false,
+        "resolved_simultaneous": false,
+        "p_raw": 0.6094,
+        "adjacent": true,
+        "p_holm_family": 0.6094,
+        "resolved_holm_family": false,
+        "ci_jackknife": [
+          -3.435,
+          1.925
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs SSL-AASIST": {
+        "delta_eer_pts": -4.487,
+        "boot_sd": 2.057,
+        "ci_pointwise": [
+          -8.97,
+          -1.042
+        ],
+        "ci_simultaneous": [
+          -9.546,
+          0.572
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": false,
+        "p_raw": 0.0038,
+        "adjacent": false,
+        "p_holm_family": 0.0102,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -8.671,
+          -0.303
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLSR-Mamba vs AASIST": {
+        "delta_eer_pts": -36.307,
+        "boot_sd": 4.701,
+        "ci_pointwise": [
+          -46.835,
+          -28.411
+        ],
+        "ci_simultaneous": [
+          -47.87,
+          -24.744
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0012,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -45.491,
+          -27.123
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "XLS-R+SLS vs SSL-AASIST": {
+        "delta_eer_pts": -3.732,
+        "boot_sd": 1.878,
+        "ci_pointwise": [
+          -7.963,
+          -0.803
+        ],
+        "ci_simultaneous": [
+          -8.352,
+          0.888
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": false,
+        "p_raw": 0.0034,
+        "adjacent": true,
+        "p_holm_family": 0.0102,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -7.64,
+          0.175
+        ],
+        "resolved_jackknife": false,
+        "certified_agree": false
+      },
+      "XLS-R+SLS vs AASIST": {
+        "delta_eer_pts": -35.552,
+        "boot_sd": 4.391,
+        "ci_pointwise": [
+          -45.412,
+          -28.6
+        ],
+        "ci_simultaneous": [
+          -46.353,
+          -24.751
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": false,
+        "p_holm_family": 0.0012,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -44.083,
+          -27.021
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      },
+      "SSL-AASIST vs AASIST": {
+        "delta_eer_pts": -31.82,
+        "boot_sd": 3.279,
+        "ci_pointwise": [
+          -39.181,
+          -26.317
+        ],
+        "ci_simultaneous": [
+          -39.886,
+          -23.755
+        ],
+        "resolved_pointwise": true,
+        "resolved_simultaneous": true,
+        "p_raw": 0.0002,
+        "adjacent": true,
+        "p_holm_family": 0.0012,
+        "resolved_holm_family": true,
+        "ci_jackknife": [
+          -37.945,
+          -25.695
+        ],
+        "resolved_jackknife": true,
+        "certified_agree": true
+      }
+    }
+  }
+}

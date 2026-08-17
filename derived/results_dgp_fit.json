@@ -1,0 +1,54 @@
+{
+  "estimator": "population EER under the fitted bivariate Gaussian random-effects model: bona fide N(mu, sd_grp (+) sd_res), spoof N(mu, sd_spk (+) sd_att (+) sd_res); closed form, no simulation",
+  "why": "the paper cites the fitted population EERs to justify certifying coverage at organizer-era rates and not in the low-EER regime",
+  "regimes": {
+    "high_icc_organizer": {
+      "systems": [
+        "RawNet2",
+        "LFCC-LCNN"
+      ],
+      "fitted_population_eer_pct": [
+        18.16,
+        22.84
+      ],
+      "real_pooled_eer_pct": [
+        22.38,
+        23.48
+      ],
+      "ratio_fitted_over_real": [
+        0.811,
+        0.973
+      ],
+      "fitted_delta_pts": 4.679,
+      "real_delta_pts": 1.094
+    },
+    "low_eer_sota": {
+      "systems": [
+        "XLSR-Mamba",
+        "XLS-R+SLS"
+      ],
+      "fitted_population_eer_pct": [
+        0.27,
+        0.06
+      ],
+      "real_pooled_eer_pct": [
+        1.88,
+        1.92
+      ],
+      "ratio_fitted_over_real": [
+        0.146,
+        0.029
+      ],
+      "fitted_delta_pts": -0.219,
+      "real_delta_pts": 0.032
+    }
+  },
+  "summary": {
+    "organizer_era_reproduces_rate_scale": true,
+    "low_eer_ratio_fitted_over_real": [
+      0.146,
+      0.029
+    ],
+    "note": "the organizer-era fit lands within a factor of 1.3 of the real rates while the low-EER fit is out by factors of ~7 and ~30, which is why the coverage check is certified in the former regime. Neither fit reproduces the GAP: organizer-era fitted delta 4.679 against a real 1.094. Coverage is therefore assessed against the model's own population Delta-EER (Monte Carlo), never against the real one."
+  }
+}

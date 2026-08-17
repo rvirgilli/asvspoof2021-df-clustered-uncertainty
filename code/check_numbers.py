@@ -1,531 +1,525 @@
-"""Verify every asserted number in M1's main.tex against a NAMED artifact value.
+"""Bind the current M1 manuscript to its scientific artifacts.
 
-M1 shipped `55fb37d` with no checker at all: zero presence assertions, zero value
-assertions, no retired list. Every claim was unguarded and nothing fired on deletion
--- which is how compression silently dropped "on the four systems we can check" from
-the conclusion and turned it into an overclaim, and how a per-pair MDE and a pair name
-vanished from the resolution paragraph.
+The checker follows the paper's post-audit object: fixed-data procedure
+sensitivity.  It intentionally does not require retired MDE, finite-A,
+population-confidence or pairwise-floored exact-cell claims.
 
-Four layers, because each catches what the others cannot:
+Run from the repository root:
 
-1. VALUE   -- every literal names the exact JSON path it must equal. A number can
-              only pass by being right about the thing it claims, never by matching
-              some unrelated value elsewhere in the artifacts.
-2. WINDOW  -- the literal must appear within N characters of a unique anchor, so a
-              value cannot migrate elsewhere in the paper and still pass. The
-              anchor's own uniqueness is asserted.
-3. PRESENCE-- statements the paper is obliged to make. Anchored on the SECTION OR
-              CLAUSE MARKER, never on a value: a document-wide value check passes
-              when a row is deleted if that number appears anywhere else in the
-              prose, so value checks cannot detect deletion. These can.
-4. RETIRED -- formulations a correction removed must stay absent, so a withdrawn
-              claim cannot creep back in a later edit.
-
-Run: python3 check_numbers.py    (exit 1 on any failure)
+    uv run --frozen python code/check_numbers.py
 """
+
+from __future__ import annotations
+
+import hashlib
 import json
 import re
 import sys
 from pathlib import Path
 
+
 HERE = Path(__file__).resolve().parent
-EXP = HERE.parents[1] / "experiments/EXP-101-m1-campaign"
-TEX_RAW = (HERE / "main.tex").read_text()
-# Whether a number sits inside its own $...$ or shares a math block with its
-# neighbour is typesetting, not content.
-# Strip LaTeX comments first: the header comment records withdrawn formulations by
-# name, and a RETIRED check must not fire on the note that documents the retirement.
-TEX = re.sub(r"(?m)^%.*$", "", TEX_RAW)
-TEX = TEX.replace("$", "").replace("\\,", "").replace("{,}", ",")
-
-_FILES = ("selection", "organizer_test", "floor", "floor_ci", "scaling",
-          "coverage_real", "contingency", "verdict_ci", "dgp_fit", "widths",
-          "icc", "source")
-SRC = {n: json.loads((EXP / f"results_{n}.json").read_text()) for n in _FILES}
-
-SSL = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
-SEL_PAIRS = SRC["selection"]["21df"]["pairs"]
-failures = []
+ROOT = HERE.parent
+DERIVED = ROOT / "derived"
+PLANS = ROOT / "plans"
+PAPER = ROOT / "paper"
+AUDIT_DIR = ROOT / "audit"
+TEX_RAW = (PAPER / "main.tex").read_text()
+TEX = re.sub(r"(?m)^%.*$", "", TEX_RAW).replace("$", "").replace("{,}", ",")
+FAILURES: list[str] = []
 
 
-def get(path):
-    """Resolve 'selection:21df.supt_critical_value' or 'x:a.b[2]' to its value."""
-    file, rest = path.split(":", 1)
-    node = SRC[file]
-    for part in re.findall(r"[^.\[\]]+|\[\d+\]", rest):
-        if part.startswith("["):
-            node = node[int(part[1:-1])]
-        else:
-            node = node[part]
-    return node
+def load(path: Path) -> object:
+    return json.loads(path.read_text())
 
 
-def lit(x, nd=None):
-    """Render a JSON number the way the paper prints it."""
-    if nd is None:
-        return str(x)
-    s = f"{float(x):.{nd}f}"
-    return s
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def check_value(literal, path, nd=None, transform=None):
-    """The literal must be in the tex AND equal the named artifact value."""
-    want = get(path)
-    if transform:
-        want = transform(want)
-    want_s = lit(want, nd)
-    if literal != want_s:
-        failures.append(f"VALUE  {path}: paper says {literal!r}, artifact gives {want_s!r}")
-        return
+def fail(message: str) -> None:
+    FAILURES.append(message)
+
+
+def require(text: str, why: str) -> None:
+    if text not in TEX and text not in TEX_RAW:
+        fail(f"PRESENT missing {text!r} — {why}")
+
+
+def require_re(pattern: str, why: str) -> None:
+    if not re.search(pattern, TEX, re.S | re.I):
+        fail(f"PRESENT no match for {pattern!r} — {why}")
+
+
+def forbid(pattern: str, why: str) -> None:
+    if re.search(pattern, TEX, re.S | re.I):
+        fail(f"RETIRED {pattern!r} reappeared — {why}")
+
+
+def require_number(literal: str, actual: float | int, nd: int | None, label: str) -> None:
+    rendered = str(actual) if nd is None else f"{float(actual):.{nd}f}"
+    if literal.startswith(".") and rendered.startswith("0."):
+        rendered = rendered[1:]
+    if rendered != literal:
+        fail(f"VALUE {label}: expected paper literal {literal}, artifact renders {rendered}")
     if not re.search(r"(?<![\d.])" + re.escape(literal) + r"(?![\d])", TEX):
-        failures.append(f"VALUE  {path}: {literal!r} matches the artifact but is ABSENT from main.tex")
+        fail(f"VALUE {label}: {literal} absent from main.tex")
 
 
-def check_window(literal, anchor, dist=260):
-    if TEX.count(anchor) != 1:
-        failures.append(f"WINDOW anchor {anchor!r} occurs {TEX.count(anchor)} times, need exactly 1")
-        return
-    i = TEX.index(anchor)
-    seg = TEX[max(0, i - dist): i + dist + len(anchor)]
-    if not re.search(r"(?<![\d.])" + re.escape(literal) + r"(?![\d])", seg):
-        failures.append(f"WINDOW {literal!r} not within {dist} chars of {anchor!r}")
+matched = load(DERIVED / "results_matched_iid.json")
+matched_prov = load(DERIVED / "results_matched_iid.provenance.json")
+selection = load(DERIVED / "results_selection.json")
+organizer = load(DERIVED / "results_organizer_test.json")
+source = load(DERIVED / "results_source.json")
+arena = load(DERIVED / "results_arena.json")
+multiway = load(DERIVED / "results_multiway_real.json")
+coherent = load(DERIVED / "results_coherent_jackknife.json")
+coherent_prov = load(DERIVED / "provenance_coherent_jackknife.json")
+coverage = load(DERIVED / "results_coverage_interaction_recalibrated.json")
+coverage_original = load(DERIVED / "results_coverage_interaction.json")
+coverage_diag = load(DERIVED / "results_coverage_diagnostics.json")
+coverage_verified = load(DERIVED / "results_exp105_verified.json")
+incidence = load(DERIVED / "incidence_strata.json")
+composition = load(DERIVED / "results_composition.json")
+composition_verified = load(DERIVED / "verification_composition.json")
+composition_v2 = load(DERIVED / "secondary_v2_results.json")
+composition_v2_verified = load(DERIVED / "secondary_v2_verification.json")
+audit = load(AUDIT_DIR / "audit.json")
 
 
-def check_presence(marker, why):
-    if marker not in TEX:
-        failures.append(f"PRESENT missing {marker!r} -- {why}")
+# Reader-facing audit package must be the same scientific state checked below.
+for key in ("matched_perturbation", "coherent_marginal_sum", "coverage_closure",
+            "composition_sensitivity", "asv5_descriptive_replication"):
+    if key not in audit:
+        fail(f"AUDIT package missing current key {key}")
+if audit["matched_perturbation"]["artifact_sha256"] != sha256(
+        DERIVED / "results_matched_iid.json"):
+    fail("AUDIT matched-perturbation hash is stale")
+if audit["matched_perturbation"]["result"] != matched:
+    fail("AUDIT matched-perturbation payload differs from live artifact")
+if audit["coherent_marginal_sum"]["artifact_sha256"] != sha256(
+        DERIVED / "results_coherent_jackknife.json"):
+    fail("AUDIT coherent-marginal-sum hash is stale")
+if audit["coherent_marginal_sum"]["result"] != coherent:
+    fail("AUDIT coherent-marginal-sum payload differs from live artifact")
+if (audit["coverage_closure"]["status_under_preregistered_reading_rule"]
+        != coverage_verified["status_under_preregistered_reading_rule"]
+        or audit["coverage_closure"]["confirmed_estimators"]
+        != coverage_verified["confirmed_estimators"]):
+    fail("AUDIT coverage closure differs from independently verified reading")
+audit_comp = audit["composition_sensitivity"]
+if (audit_comp["pair_multiverse"] != composition["pair_multiverse"]
+        or audit_comp["primary_verification"] != composition_verified
+        or audit_comp["constructive_v2"]["verification"] != composition_v2_verified):
+    fail("AUDIT composition payload differs from live verified artifacts")
+if len(audit_comp["policy_order"]) != 12:
+    fail("AUDIT composition policy contract is incomplete")
+
+audit_asv5 = audit["asv5_descriptive_replication"]
+asv5 = audit_asv5["result"]
+if audit_asv5["independent_execution_audit"] != {
+        "verdict": "PASS",
+        "report_sha256": sha256(AUDIT_DIR / "asv5/EXECUTION-AUDIT.md"),
+        "inputs_rehashed": 698,
+        "input_divergences": 0,
+        "independent_recomputation": True,
+}:
+    fail("AUDIT ASV5 independent execution-audit record is stale")
+if asv5["scientific_role"] != (
+        "fixed-roster descriptive perturbation sensitivity; not population inference"):
+    fail("STATUS ASV5 result lost its descriptive/non-population guard")
+if any(asv5["interpretation_boundary"].values()):
+    fail("STATUS ASV5 result unexpectedly authorizes a population interpretation")
+if asv5["run_contract"]["sha256"] != audit_asv5["run_contract_sha256"]:
+    fail("HASH ASV5 result and packaged run contract differ")
+
+asv5_cmp = asv5["comparison"]
+if asv5_cmp["registered_descriptive_summaries"] != {
+        "A_iid_exclusion_absent_under_speaker_attack": True,
+        "B_median_width_ratio_at_least_2": True,
+        "n_true": 2,
+}:
+    fail("BRANCH ASV5 A=1/B=1 no longer holds")
+if asv5_cmp["iid_zero_exclusions_absent_under_primary"] != [
+        "SSL-AASIST vs XLS-R+SLS"]:
+    fail("VALUE ASV5 changed zero-exclusion pair changed")
+
+asv5_structure = {
+    "n_trials": 680774,
+    "n_target": 367,
+    "n_non_target": 370,
+    "n_attacks": 16,
+}
+if any(audit_asv5["run_contract_structure"][key] != value
+       for key, value in asv5_structure.items()):
+    fail("VALUE ASV5 run-contract structure changed")
+for literal in ("680,774", "367", "370", "16"):
+    require(literal, "ASV5 roster structure must remain visible")
+
+asv5_pair = asv5["arms"]
+iid_band = asv5_pair["trial_iid"]["pairs"]["SSL-AASIST vs XLS-R+SLS"][
+    "simultaneous_numeric_band"]
+sa_band = asv5_pair["speaker_attack"]["pairs"]["SSL-AASIST vs XLS-R+SLS"][
+    "simultaneous_numeric_band"]
+for literal, value in (("-2.657", iid_band[0]), ("-2.378", iid_band[1]),
+                       ("-6.274", sa_band[0]), ("1.238", sa_band[1])):
+    require_number(literal, value, 3, f"ASV5 band endpoint {literal}")
+ratios = list(asv5_cmp["primary_over_iid_simultaneous_width_ratio"].values())
+for literal, value in (("11.23", min(ratios)), ("35.90", max(ratios)),
+                       ("27.27", asv5_cmp["median_primary_over_iid_width_ratio"])):
+    require_number(literal, value, 2, f"ASV5 width ratio {literal}")
+focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
+    "SSL-AASIST vs XLS-R+SLS"]
+require_number("26.92", focal_ratio, 2, "ASV5 focal-pair width ratio")
+for system, literal in (("SSL-AASIST", "16.25"), ("AASIST", "35.53"),
+                        ("XLS-R+SLS", "18.76"), ("XLSR-Mamba", "14.40")):
+    require_number(literal, asv5["pooled_fixed_roster_eer_percent"][system], 2,
+                   f"ASV5 {system} EER")
+require("External family-level check", "external result scope")
+require("not pair-level replication", "ASV5 cross-generation scope")
+require("acquisition-law gate is NO-GO", "ASV5 acquisition boundary")
+require("legacy SSL-AASIST/AASIST NPZ snapshots", "legacy score provenance limit")
+require("not population confidence or significance", "ASV5 boundary must be explicit")
+forbid(r"two-generation replication|two-generation procedure|replicate across benchmark",
+       "ASV5 supports only a family-level external sensitivity check")
 
 
-def check_presence_re(pattern, why):
-    """For obligations whose wording may legitimately change but whose content may not."""
-    if not re.search(pattern, TEX, re.S):
-        failures.append(f"PRESENT no match for {pattern!r} -- {why}")
+# 1. Matched perturbation-unit diagnostic.
+if matched["status"] != "post-audit descriptive diagnostic; not population inference":
+    fail("STATUS matched diagnostic lost its descriptive/non-population guard")
+if (matched["B"], matched["seed"]) != (5000, 2026081604):
+    fail("CONTRACT matched diagnostic B/seed changed")
+if not matched["saved_clustered_labels_reproduced"]:
+    fail("GATE matched diagnostic no longer reproduces saved clustered labels")
+expected_counts = {
+    "iid": (5, 26),
+    "speaker_attack": (0, 18),
+}
+for arm, (organizer_count, all_count) in expected_counts.items():
+    row = matched[arm]
+    got = (row["n_resolved_organizer_6"], row["n_resolved_all_28"])
+    if got != (organizer_count, all_count):
+        fail(f"VALUE matched {arm} counts {got} != {(organizer_count, all_count)}")
+for literal in ("5/6", "0/6", "26/28", "18/28"):
+    require(literal, "matched all-pair result must be visible")
+require("threshold in every replicate", "matched threshold refit closes the reviewer confound")
+require("Thus threshold treatment does not explain the change", "causal attribution is bounded")
+
+# Embedded and sidecar provenance, including imported implementations.
+embedded_paths = {
+    "plan": PLANS / "MATCHED-IID-DIAGNOSTIC.md",
+    "results_selection": DERIVED / "results_selection.json",
+}
+for key, path in embedded_paths.items():
+    if matched["sha256"][key] != sha256(path):
+        fail(f"HASH matched embedded {key} does not match {path.name}")
+if matched["sha256"]["script"] != matched_prov["sha256"]["exp101_matched_iid.py"]:
+    fail("HASH matched historical script identity differs between result and sidecar")
+for name, path in {
+    "MATCHED-IID-DIAGNOSTIC.md": PLANS / "MATCHED-IID-DIAGNOSTIC.md",
+    "results_matched_iid.json": DERIVED / "results_matched_iid.json",
+}.items():
+    if sha256(path) != matched_prov["sha256"][name]:
+        fail(f"HASH matched canonical artifact mismatch: {name}")
+for name, digest in matched_prov["released_path_adapted_sha256"].items():
+    if sha256(HERE / name) != digest:
+        fail(f"HASH matched released path-adapted code mismatch: {name}")
 
 
-def check_retired(pattern, why):
-    if re.search(pattern, TEX):
-        failures.append(f"RETIRED {pattern!r} reappeared -- {why}")
+# 2. Coherent marginal-sum diagnostic.
+if coherent["status"] != "post-audit descriptive diagnostic; no population or coverage claim":
+    fail("STATUS coherent diagnostic lost its interpretation guard")
+if coherent["organizer_baseline_resolved"] != {
+    "coherent_marginal_sum": 0,
+    "product_bootstrap": 0,
+    "old_floored_exact_cell": 0,
+}:
+    fail("VALUE coherent organizer counts changed")
+if coherent["all_28_resolved_coherent_marginal_sum"] != 18:
+    fail("VALUE coherent all-28 count changed")
+if min(coherent["minimum_eigenvalues"].values()) <= 0:
+    fail("PSD coherent covariance/dominance no longer has positive minimum eigenvalues")
+for key, path in {
+    "plan": PLANS / "COHERENT-JACKKNIFE-DIAGNOSTIC.md",
+    "results_multiway_real": DERIVED / "results_multiway_real.json",
+}.items():
+    if coherent["sha256"][key] != sha256(path):
+        fail(f"HASH coherent {key} mismatch")
+if coherent["sha256"]["script"] != coherent_prov["historical_campaign_sha256"]["coherent_jackknife.py"]:
+    fail("HASH coherent historical script identity differs between result and sidecar")
+for name, digest in coherent_prov["released_path_adapted_sha256"].items():
+    if sha256(HERE / name) != digest:
+        fail(f"HASH coherent released path-adapted code mismatch: {name}")
+for name, digest in coherent_prov["canonical_artifact_sha256"].items():
+    path = PLANS / name if name.endswith(".md") else DERIVED / name
+    if sha256(path) != digest:
+        fail(f"HASH coherent canonical artifact mismatch: {name}")
+require_number("2.878", coherent["q95"], 3, "coherent q95")
+wide = coherent["pairs"]["RawNet2 vs CQCC-GMM"]["simultaneous"]
+require_number("-8.76", wide[0], 2, "coherent widest lower")
+require_number("2.40", wide[1], 2, "coherent widest upper")
+require_re(r"same .*Sigma_\+.* supplies every pair SE", "one PSD covariance must supply SEs and max-t")
+require("retains the cell overlap", "marginal-sum double counting must be disclosed")
+require("not an exact multiway estimator or coverage claim", "coherent diagnostic scope")
 
 
-# --- 1. VALUE -------------------------------------------------------------
-# Act 1: the reversal.
-check_value("12.7", "organizer_test:pairs.B04 vs B01.z_iid", 1, abs)
-check_value("5,162", "organizer_test:pairs.B04 vs B03.family_size_needed_to_lose_significance",
-            transform=lambda v: f"{v:,}")
-check_value("-9.27", "organizer_test:pairs.B04 vs B01.clustered_ci_simultaneous[0]", 2)
-check_value("2.91", "organizer_test:pairs.B04 vs B01.clustered_ci_simultaneous[1]", 2)
-check_value("3.18", "organizer_test:pairs.B04 vs B01.delta_eer_pts", 2, abs)
-
-# Act 2: what the benchmark settles.
-check_value("2.98", "selection:21df.supt_critical_value", 2)
-
-# Block counts. Bare-integer searches are near-vacuous here ("16" occurs many times),
-# so these are anchored. The within-SSL and within-baseline counts are spelled as
-# English words in the prose: without an explicit check, SWAPPING THEM passes -- and
-# that swap inverts the paper's central structural result.
-_pe = get("verdict_ci:point_estimates")
-check_window(str(_pe["cross"]), "cross-generation pairs resolve, which is")
-# Spelled-out counts: without these, swapping the two within-block results passes.
-_n_within = 28 - _pe["cross"]
-_n_unres_within = _n_within - (_pe["within_ssl"] + _pe["within_baseline"])
-for _phrase, _why in ((f"ten of twelve", "within-generation unresolved count"),
-                      ("all six among the baselines", "the within-baseline block resolves none"),
-                      ("the two that do, on gaps of", "the within-SSL block resolves exactly two")):
-    if _phrase not in TEX:
-        failures.append(f"VALUE  {_why}: expected {_phrase!r} in main.tex")
-if (_n_within, _n_unres_within) != (12, 10):
-    failures.append(f"VALUE  artifact gives {_n_unres_within} of {_n_within} within-generation "
-                    f"pairs unresolved; main.tex says ten of twelve")
-check_value("0.97", "floor_ci:pairs.XLSR-Mamba vs SSL-AASIST.gap", 2)
-check_value("0.94", "floor_ci:pairs.XLS-R+SLS vs SSL-AASIST.gap", 2)
-
-# Act 3: effective sample size and the floor.
-check_value("3.9", "scaling:summary.width_ratio_all_28[0]", 1)
-check_value("11.1", "scaling:summary.width_ratio_all_28[1]", 1)
-check_value("26", "scaling:summary.n_resolved_iid")
-check_value("0.066", "floor:summary.total_clustered_variance_within_modern[0]", 3)
-check_value("0.144", "floor:summary.total_clustered_variance_within_modern[1]", 3)
-check_value("0.949", "floor:summary.total_clustered_variance_within_baseline[0]", 3)
-check_value("5.164", "floor:summary.total_clustered_variance_within_baseline[1]", 3)
-check_value("6", "floor_ci:summary.bootstrap_count_ci95[0]")
-check_value("10", "floor_ci:summary.bootstrap_count_ci95[1]")
-check_value("99.3", "floor_ci:summary.p_at_least_6_of_10", 1, lambda v: v * 100)
-
-# Coverage.
-def nolead(v):
-    return f"{float(v):.3f}".lstrip("0")
+# 3. Historical reconstruction and primary product output.
+org_wide = organizer["pairs"]["B04 vs B01"]
+require_number("3.18", abs(org_wide["delta_eer_pts"]), 2, "widest organizer gap")
+require_number("-9.27", org_wide["clustered_ci_simultaneous"][0], 2,
+               "product widest lower")
+require_number("2.91", org_wide["clustered_ci_simultaneous"][1], 2,
+               "product widest upper")
+require("reconstruct both variants", "five positive labels are reconstructions")
+require("no cell-level agreement", "published greyscale cells are not claimed")
+require("sixth has", "the non-zero-excluding sixth reconstruction remains explicit")
 
 
-# The paper renders these twice: as percentages in Experiments and as bare
-# decimals in Limitations. Both renderings are checked against the same key.
-# Only the renderings the paper actually uses are required: the i.i.d. figure
-# appears as a percentage in Experiments and never as a bare decimal.
-for _dec, _p, _forms in ((".160", "coverage_real:iid.coverage", ("16",)),
-                         (".955", "coverage_real:twoway.coverage", ("95.5", ".955")),
-                         (".965", "coverage_real:jackknife.coverage", ("96.5", ".965"))):
-    if nolead(get(_p)) != _dec:
-        failures.append(f"VALUE  {_p}: paper says {_dec!r}, artifact gives {nolead(get(_p))!r}")
-        continue
-    for _form in _forms:
-        if not re.search(r"(?<![\d.])" + re.escape(_form) + r"(?![\d])", TEX):
-            failures.append(f"VALUE  {_p}: rendering {_form!r} absent from main.tex")
-
-# The DGP fit behind the regime choice (the 22.8 that had no home).
-check_value("18.2", "dgp_fit:regimes.high_icc_organizer.fitted_population_eer_pct[0]", 1)
-check_value("22.8", "dgp_fit:regimes.high_icc_organizer.fitted_population_eer_pct[1]", 1)
-check_value("22.4", "dgp_fit:regimes.high_icc_organizer.real_pooled_eer_pct[0]", 1)
-check_value("23.5", "dgp_fit:regimes.high_icc_organizer.real_pooled_eer_pct[1]", 1)
-check_value("0.27", "dgp_fit:regimes.low_eer_sota.fitted_population_eer_pct[0]", 2)
-check_value("0.06", "dgp_fit:regimes.low_eer_sota.fitted_population_eer_pct[1]", 2)
-
-# Derived quantities the paper states as ranges: recomputed here, not looked up,
-# so a change in the underlying pairs breaks the check rather than the claim.
-_hw = {}
-for k, v in SRC["selection"]["21df"]["pairs"].items():
-    a, b = k.split(" vs ")
-    blk = "cross" if (a in SSL) != (b in SSL) else ("ssl" if a in SSL else "base")
-    _hw.setdefault(blk, []).append((v["ci_pointwise"][1] - v["ci_pointwise"][0]) / 2)
-_all_hw = [h for v in _hw.values() for h in v]
-# The within-baseline endpoint 2.00 was dropped from the prose in a length pass; the
-# 0.45--4.64 span it sits inside is still asserted, so the claim is still guarded.
-for lo_hi, vals in (("0.45", [min(_all_hw)]), ("4.64", [max(_all_hw)])):
-    if f"{vals[0]:.2f}" != lo_hi:
-        failures.append(f"VALUE  half-width {lo_hi} != recomputed {vals[0]:.2f}")
-    elif lo_hi not in TEX:
-        failures.append(f"VALUE  half-width {lo_hi} absent from main.tex")
-
-# From the unrounded per-pair components. Reading the 3dp summary values instead
-# gives 78.2 and would flag the correct "79" as wrong.
-_tot = {b: [v["V_spk"] + v["V_att"] for v in SRC["floor"]["pairs"].values()
-            if v["block"] == b] for b in ("within-modern", "within-baseline")}
-_ratios = (min(_tot["within-baseline"]) / max(_tot["within-modern"]),
-           max(_tot["within-baseline"]) / min(_tot["within-modern"]))
-if f"{_ratios[0]:.1f}" != "6.6" or round(_ratios[1]) != 79:
-    failures.append(f"VALUE  block variance ratio 6.6--79 != recomputed "
-                    f"{_ratios[0]:.1f}--{_ratios[1]:.0f}")
-elif "6.6--79" not in TEX:
-    failures.append("VALUE  '6.6--79' absent from main.tex")
-
-# The studentized margins: the paper's primary evidence since the F4 rewrite.
-check_value("3.21", "verdict_ci:margin_by_block.cross.min", 2)
-check_value("4.28", "verdict_ci:margin_by_block.cross.max", 2)
-check_value("1.06", "verdict_ci:studentized_margin_point_estimate.XLSR-Mamba vs SSL-AASIST", 2)
-check_value("1.12", "verdict_ci:studentized_margin_point_estimate.XLS-R+SLS vs SSL-AASIST", 2)
-# "0.04--0.60" is the range over the TEN UNRESOLVED pairs, which span both
-# within-blocks -- not one block's range. Recomputed from the per-pair margins and
-# the campaign's resolved flags so it cannot drift from either.
-_marg = get("verdict_ci:studentized_margin_point_estimate")
-_unres = [v for k, v in _marg.items()
-          if not (SEL_PAIRS.get(k) or SEL_PAIRS[" vs ".join(k.split(" vs ")[::-1])])["resolved_simultaneous"]]
-if len(_unres) != 10:
-    failures.append(f"VALUE  expected 10 unresolved pairs, found {len(_unres)}")
-for _lit, _val in (("0.04", min(_unres)), ("0.60", max(_unres))):
-    if f"{_val:.2f}" != _lit:
-        failures.append(f"VALUE  unresolved-margin bound {_lit} != recomputed {_val:.2f}")
-    elif _lit not in TEX:
-        failures.append(f"VALUE  unresolved-margin bound {_lit} absent from main.tex")
+# 4. Coverage closure and its adverse reading.
+if coverage_verified["status_under_preregistered_reading_rule"] != "refuted":
+    fail("STATUS EXP-105 no longer Refuted under its frozen rule")
+if coverage_verified["confirmed_estimators"]:
+    fail("STATUS EXP-105 unexpectedly confirms an estimator")
+if (coverage_original["R"], len(coverage_original["grid"]), coverage_original["seed"]) != (
+    1000,
+    48,
+    20260824,
+):
+    fail("CONTRACT EXP-105 R/grid/seed changed")
+if any(row["product"]["B"] != 500 for row in coverage_original["grid"]):
+    fail("CONTRACT EXP-105 product B changed")
+grid = coverage["grid"]
+organizer_rows = [row for row in grid if row["spec"]["regime"] == "organizer"]
+low_rows = [row for row in grid if row["spec"]["regime"] == "low_eer"]
+checks = (
+    (".928", min(row["coverage"]["raw"]["coverage"] for row in organizer_rows)),
+    (".957", max(row["coverage"]["raw"]["coverage"] for row in organizer_rows)),
+    (".946", min(row["coverage"]["product"]["coverage"] for row in organizer_rows)),
+    (".968", max(row["coverage"]["product"]["coverage"] for row in organizer_rows)),
+    (".845", min(row["coverage"]["raw"]["coverage"] for row in low_rows)),
+    (".855", min(row["coverage"]["product"]["coverage"] for row in low_rows)),
+)
+for literal, value in checks:
+    require_number(literal, value, 3, f"coverage {literal}")
+cell26 = grid[26]
+for method, literal in (("raw", ".879"), ("floor", ".880"), ("product", ".883")):
+    require_number(literal, cell26["coverage"][method]["coverage"], 3,
+                   f"low-EER cell26 {method}")
+all_below = sum(
+    all(row["coverage"][method]["coverage"] < 0.90
+        for method in ("raw", "floor", "product"))
+    for row in low_rows
+)
+if all_below != 11:
+    fail(f"VALUE low-EER all-below count {all_below} != 11")
+require("11 of 24", "joint low-EER failure count")
+oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
+require_number(".944", oracle_min, 3, "oracle-SD minimum")
+require("reading rule is therefore Refuted", "adverse result must remain explicit")
+require("not the DGP as a model of 21DF", "coverage cannot validate acquisition")
 
 
-# The direction of the asymmetry is a claim, not a number: assert it from the artifact
-# so the paper cannot say "highest within SSL" while the data says lowest.
-_bb = get("verdict_ci:se_inflation_diagnostic.by_block")
-# The paper's claim is now the pct_inflated form: within SSL the inflation is the
-# LEAST FREQUENT of the three blocks, which is what rules out a mean-inflation
-# explanation for the within-SSL collapse. Assert that from the artifact.
-if _bb["within_ssl"]["pct_inflated"] >= min(_bb["cross"]["pct_inflated"],
-                                            _bb["within_baseline"]["pct_inflated"]):
-    failures.append("VALUE  within-SSL inflation is no longer the least frequent; the "
-                    "'cannot be a mean-inflation effect' claim in main.tex must be restated")
+# 5. Incidence and provenance composition.
+global_inc = incidence["global"]
+if (global_inc["n_observed_within_stratum_cells"],
+    global_inc["n_within_stratum_cartesian_cells"]) != (1062, 1068):
+    fail("VALUE stratified occupancy changed")
+shares = global_inc["spoof_stratum_trial_mass_shares"]
+vcc_share = 1.0 - shares["asvspoof"]
+require_number("85.77", 100 * vcc_share, 2, "VCC spoof-trial share")
+speaker_counts = sorted(row["n_speakers"] for row in incidence["spoof_strata"].values())
+if speaker_counts != [4, 4, 4, 6, 48]:
+    fail(f"VALUE source/task speaker counts changed: {speaker_counts}")
+require("4/4/4/6", "dominant sparse blocks must be visible")
 
-# Table 1, cell by cell against results_selection.json. Three things a naive
-# per-row check misses, all mutation-proven: ROW ORDER (swapping two rows passes),
-# BLOCK GROUPING (moving a baseline row above the midrule passes), and the BOLD
-# MARKERS -- which encode the resolution verdict, i.e. the one cell content carrying
-# the paper's central structural claim. Bold is therefore matched, not stripped.
-_SHORT = {"XLSR-Mamba": "XLSR-Mamba", "XLS-R+SLS": "XLS-R+SLS", "XLSR-Conformer": "XLSR-Conf",
-          "SSL-AASIST": "SSL-AAS", "RawNet2": "RawNet2", "LFCC-LCNN": "LFCC-LCNN",
-          "LFCC-GMM": "LFCC-GMM", "CQCC-GMM": "CQCC-GMM"}
-_ORDER = ["XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST",
-          "RawNet2", "LFCC-LCNN", "LFCC-GMM", "CQCC-GMM"]
-_body = TEX_RAW[TEX_RAW.index("\\label{tab:pairs}"):TEX_RAW.index("\\end{tabular}")]
-_expected, _prev_ssl = [], None
-for _i, _a in enumerate(_ORDER):
-    for _b in _ORDER[_i + 1:]:
-        if (_a in SSL) != (_b in SSL):
+loco = source["leave_one_corpus_out"]
+flips = loco["verdict_flips_vs_full_data"]
+gained = {row["pair"] for row in flips if not row["full_data"] and row["refit"]}
+lost = {row["pair"] for row in flips if row["full_data"] and not row["refit"]}
+expected_gained = {
+    "RawNet2 vs CQCC-GMM",
+    "LFCC-LCNN vs LFCC-GMM",
+    "LFCC-LCNN vs CQCC-GMM",
+}
+if gained != expected_gained or len(lost) != 2:
+    fail(f"VALUE LOCO flips changed: gained={gained}, lost={lost}")
+cross_flips = [
+    row for row in flips
+    if (row["pair"].split(" vs ")[0] in {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"})
+    != (row["pair"].split(" vs ")[1] in {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"})
+]
+if cross_flips:
+    fail("VALUE a cross-generation label now flips under source deletion")
+for pair in expected_gained:
+    require(pair.replace(" vs ", "--"), "all three gained baseline pairs must be named")
+require_re(r"(?:all |[Tt]he )16 cross-generation gaps", "stable cross-generation block must be bounded")
+require("not composition-robust", "0/6 provenance dependence belongs with the headline")
+
+
+# 6. Composition-policy sensitivity and constructive witnesses.
+if not composition_verified["passed"] or not composition_verified["independent_implementation"]:
+    fail("GATE EXP-108 primary result lacks independent verification")
+if composition_verified["result_sha256"] != sha256(DERIVED / "results_composition.json"):
+    fail("HASH EXP-108 primary result differs from independently verified file")
+
+blocks = composition["pair_blocks"]
+multiverse = composition["pair_multiverse"]
+within_pairs = [pair for pair, block in blocks.items() if block != "cross_generation"]
+cross_pairs = [pair for pair, block in blocks.items() if block == "cross_generation"]
+within_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in within_pairs)
+cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in cross_pairs)
+if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
+    fail("VALUE EXP-108 registered-policy block counts changed")
+for literal in ("6/12", "0/16"):
+    require(literal, "registered composition-policy asymmetry must be visible")
+
+if composition_v2["changes_primary_classification"]:
+    fail("STATUS post-failure constructive search now changes the frozen primary class")
+if not (composition_v2_verified["passed"]
+        and composition_v2_verified["independent_three_backend_reconstruction"]):
+    fail("GATE EXP-108 secondary v2 lacks three-backend independent verification")
+if composition_v2_verified["results_sha256"] != sha256(DERIVED / "secondary_v2_results.json"):
+    fail("HASH EXP-108 secondary v2 result differs from independently verified file")
+for key, expected in {
+    "n_accepted_witness_directions_verified": 729,
+    "n_pairs_with_verified_r_TV_upper_bound": 12,
+    "n_pairs_with_verified_r_TV_le_0.10": 5,
+}.items():
+    if composition_v2_verified[key] != expected:
+        fail(f"VALUE EXP-108 secondary v2 {key} changed")
+require("729", "accepted constructive directions must be reported")
+require("five at", "small-shift constructive witness count must be reported")
+best_tv = composition_v2_verified["best_verified_r_TV_by_pair"][
+    "XLSR-Mamba vs XLS-R+SLS"
+]
+require_number(".010218", best_tv, 6, "smallest verified constructive rTV bound")
+require("post-failure", "secondary chronology must be disclosed")
+require("not a global minimum", "constructive upper bounds cannot become safety radii")
+require("search outcome rather than proof", "absence of cross-generation witness is scoped")
+
+
+# 7. Arena and measured width layer.
+for literal, value, nd, label in (
+    ("52", arena["schemes"]["iid"]["n_resolved_simultaneous"], None, "Arena iid count"),
+    ("38", arena["schemes"]["clustered"]["n_resolved_simultaneous"], None,
+     "Arena clustered count"),
+    ("8.45", arena["median_width_ratio"], 2, "Arena median width ratio"),
+    ("40.67", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["arena_eer"],
+     2, "Arena RawNet2 EER"),
+    ("22.38", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["primary_eer"],
+     2, "primary RawNet2 EER"),
+    ("0.36", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["score_pearson"],
+     2, "cross-layer correlation"),
+):
+    require_number(literal, value, nd, label)
+require("not coverage-validated Arena confidence claims", "Arena outputs remain descriptive")
+
+matched_width_ratios = sorted(
+    (
+        matched["speaker_attack"]["pairs"][pair]["simultaneous"][1]
+        - matched["speaker_attack"]["pairs"][pair]["simultaneous"][0]
+    )
+    /
+    (
+        row["simultaneous"][1] - row["simultaneous"][0]
+    )
+    for pair, row in matched["iid"]["pairs"].items()
+)
+matched_width_median = (
+    matched_width_ratios[len(matched_width_ratios) // 2 - 1]
+    + matched_width_ratios[len(matched_width_ratios) // 2]
+) / 2.0
+for literal, value, label in (
+    ("4.13", matched_width_ratios[0], "matched simultaneous width minimum"),
+    ("11.36", matched_width_ratios[-1], "matched simultaneous width maximum"),
+    ("8.14", matched_width_median, "matched simultaneous width median"),
+):
+    require_number(literal, value, 2, label)
+
+
+# 8. Table 1: gaps, product half-widths and constructive TV bounds.
+ssl = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
+short = {
+    "XLSR-Mamba": "XLSR-Mamba",
+    "XLS-R+SLS": "XLS-R+SLS",
+    "XLSR-Conformer": "XLSR-Conf",
+    "SSL-AASIST": "SSL-AAS",
+    "RawNet2": "RawNet2",
+    "LFCC-LCNN": "LFCC-LCNN",
+    "LFCC-GMM": "LFCC-GMM",
+    "CQCC-GMM": "CQCC-GMM",
+}
+order = list(short)
+pairs = selection["21df"]["pairs"]
+expected_rows: list[list[str]] = []
+for index, a in enumerate(order):
+    for b in order[index + 1:]:
+        if (a in ssl) != (b in ssl):
             continue
-        _v = SEL_PAIRS.get(f"{_a} vs {_b}") or SEL_PAIRS[f"{_b} vs {_a}"]
-        _hw = (_v["ci_pointwise"][1] - _v["ci_pointwise"][0]) / 2
-        _gap = f"{abs(_v['delta_eer_pts']):.3f}"
-        # Bold iff the pair resolves: the caption says so, so it is a checked claim.
-        if _v["resolved_simultaneous"]:
-            _gap = r"\textbf{" + _gap + "}"
-        _expected.append((_a in SSL, _SHORT[_a], _SHORT[_b], _gap,
-                          f"{_hw:.3f}", f"{2.802 * _v['boot_sd']:.3f}"))
-if len(_expected) != 12:
-    failures.append(f"TABLE  expected 12 within-generation rows, built {len(_expected)}")
+        row = pairs.get(f"{a} vs {b}") or pairs[f"{b} vs {a}"]
+        half = (row["ci_pointwise"][1] - row["ci_pointwise"][0]) / 2.0
+        tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{a} vs {b}")
+        if tv is None:
+            tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{b} vs {a}")
+        if tv is None:
+            fail(f"TABLE no verified constructive TV upper bound for {a} vs {b}")
+            tv = float("nan")
+        expected_rows.append([
+            short[a], short[b], f"{abs(row['delta_eer_pts']):.3f}",
+            f"{half:.3f}", f"{tv:.3f}"
+        ])
+body = TEX_RAW[TEX_RAW.index("\\label{tab:pairs}"):TEX_RAW.index("\\end{tabular}")]
+printed = [line for line in body.splitlines() if "&" in line and "\\\\" in line]
+printed = [line for line in printed if not line.strip().startswith("pair")]
+printed_rows = [[cell.strip() for cell in line.replace("\\\\", "").split("&")] for line in printed]
+if printed_rows != expected_rows:
+    fail(f"TABLE printed rows differ from artifact: printed={printed_rows}, expected={expected_rows}")
+if "MDE" in body:
+    fail("RETIRED table still contains MDE after its inferential target was withdrawn")
 
-# Walk the printed rows in order and require them to match the artifact's order.
-_printed = [ln for ln in _body.split("\n") if "&" in ln and "\\\\" in ln]
-_printed = [ln for ln in _printed if not ln.strip().startswith("pair")]
-if len(_printed) != len(_expected):
-    failures.append(f"TABLE  {len(_printed)} data rows printed, {len(_expected)} expected")
-else:
-    for _k, (_row, _exp) in enumerate(zip(_printed, _expected)):
-        _cells = [c.strip() for c in _row.replace("\\\\", "").split("&")]
-        _want = [_exp[1], _exp[2], _exp[3], _exp[4], _exp[5]]
-        if _cells != _want:
-            failures.append(f"TABLE  row {_k+1} is {_cells} but the artifact gives {_want} "
-                            f"(order, values and bold are all checked)")
-# Block grouping: the six SSL rows must all precede the midrule, the six baseline rows follow.
-_mid = _body.index("\\midrule", _body.index("\\midrule") + 1) if _body.count("\\midrule") > 1 else -1
-if _mid < 0:
-    failures.append("TABLE  the block-separating \\midrule is missing")
-else:
-    _above = _body[:_mid]
-    for _is_ssl, _a, _b, *_ in _expected:
-        _in_above = f"{_a} & {_b}" in _above
-        if _in_above != _is_ssl:
-            failures.append(f"TABLE  {_a}/{_b} is on the wrong side of the block midrule")
 
-# Kish design effect: predicted from the ICCs, so both inputs and the prediction bind.
-import math as _math
-_icc = [v["speaker_icc_bona"]["icc"] for v in SRC["icc"]["21df"].values() if "speaker_icc_bona" in v]
-_n0s = {round(v["speaker_icc_bona"]["n0"], 2) for v in SRC["icc"]["21df"].values() if "speaker_icc_bona" in v}
-if len(_n0s) != 1:
-    failures.append(f"VALUE  speaker_icc_bona n0 is not unique: {_n0s}")
-_n0 = _n0s.pop()
-if f"{_n0:.1f}" != "159.2":
-    failures.append(f"VALUE  n0 159.2 != recomputed {_n0:.1f}")
-for _lit, _val in (("5.0", _math.sqrt(1 + (_n0 - 1) * min(_icc))),
-                   ("11.1", _math.sqrt(1 + (_n0 - 1) * max(_icc)))):
-    if f"{_val:.1f}" != _lit:
-        failures.append(f"VALUE  design-effect bound {_lit} != recomputed {_val:.1f}")
-    elif _lit not in TEX:
-        failures.append(f"VALUE  design-effect bound {_lit} absent from main.tex")
+# 9. Scientific scope obligations and retired formulations.
+for text, why in (
+    ("fixed-data procedure sensitivity", "identified scientific object"),
+    ("not corrected population inference", "abstract scope"),
+    ("not an exact multiway estimator or coverage claim", "coherent covariance scope"),
+    ("historical freeze has no independently verifiable public timestamp", "timestamp honesty"),
+    ("zero-straddling output is sensitivity, not evidence of equality", "non-significance scope"),
+    ("new independently sampled units", "only full repair for population inference"),
+    ("speaker and attack incidence", "report units rather than trial count"),
+):
+    require(text, why)
+require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")
 
-# Leave-one-corpus-out: the paper claims the cross-generation block is invariant to
-# provenance and that both within-SSL resolutions are not. Both halves bound here.
-_loco = SRC["source"]["leave_one_corpus_out"]
-_xflip = [f for f in _loco["verdict_flips_vs_full_data"]
-          if (f["pair"].split(" vs ")[0] in SSL) != (f["pair"].split(" vs ")[1] in SSL)]
-if _xflip:
-    failures.append(f"VALUE  {len(_xflip)} cross-generation verdict(s) flip under "
-                    f"leave-one-corpus-out; main.tex says all 16 are unchanged")
-_ssl_fell = {f["pair"] for f in _loco["verdict_flips_vs_full_data"]
-             if f["full_data"] and not f["refit"]}
-if len(_ssl_fell) != 2:
-    failures.append(f"VALUE  {len(_ssl_fell)} resolved verdict(s) fall under "
-                    f"leave-one-corpus-out; main.tex says both within-SSL resolutions do")
+for pattern, why in (
+    (r"formal inference (?:is )?restricted to the (?:four )?organi[sz]er", "incidence audit withdrew it"),
+    (r"validated (?:formal )?result is the organi[sz]er", "organizer output is composition-dependent"),
+    (r"numerically robust result is the organi[sz]er", "three LOCO labels change"),
+    (r"pairwise marginal-component adjustment.*full-family", "incoherent floor is retired"),
+    (r"positive-semidefinite floor", "a scalar pair floor is not a PSD covariance repair"),
+    (r"MDE_?\{?80", "MDE target was withdrawn"),
+    (r"finite-\$?A\$? speaker component", "secondary unidentified target removed from paper"),
+    (r"Then the practice stopped", "historical search is bounded, not a census"),
+    (r"preregistered 48-cell", "historical plan has no public timestamp"),
+):
+    forbid(pattern, why)
 
-# Permutation null on the corpus share: the analytic expectation and the tested claim.
-_pn = SRC["source"]["permutation_null"]
-if f"{100 * _pn['analytic_expected_share_under_no_effect']:.1f}" != "2.2":
-    failures.append("VALUE  permutation null expectation is no longer 2.2%")
-elif "2.2" not in TEX:
-    failures.append("VALUE  permutation null expectation 2.2 absent from main.tex")
-if _pn["n_pairs_p_below_0.05"] != len(_pn["pairs"]):
-    failures.append(f"VALUE  only {_pn['n_pairs_p_below_0.05']}/{len(_pn['pairs'])} pairs "
-                    f"exceed the permutation null at p<0.05; main.tex says every one")
 
-# --- 2. WINDOW ------------------------------------------------------------
-check_window("12.7", "survives their test most emphatically")
-check_window("5,162", "would need a family of")
-check_window("2.98", "the sup-t critical value")
-check_window("99.3", "six or more in")
-check_window("0.27", "but not low-EER ones")
-check_window(".945", "all consistent with nominal")
-check_window("3.21", "The studentized margins state it directly")
+# 10. Bibliography closure.
+bib = (PAPER / "refs.bib").read_text()
+bib_keys = set(re.findall(r"@\w+\{([^,]+),", bib))
+cited = {key.strip() for match in re.findall(r"\\cite\{([^}]*)\}", TEX) for key in match.split(",")}
+for key in sorted(bib_keys - cited):
+    fail(f"BIB {key!r} defined but uncited")
+for key in sorted(cited - bib_keys):
+    fail(f"BIB {key!r} cited but undefined")
 
-# --- 3. PRESENCE (markers, never values) ----------------------------------
-# Wording may change; the scope restriction may not. Without it, "none survives"
-# reads as the totality of the 2021 analysis, which tested every submitted pair.
-check_presence_re(r"the four organizer baselines (?:with public scores|whose scores are public)|the four systems we can check",
-                  "conclusion scope; without it 'none survives' reads as the whole 2021 analysis")
-check_presence("fall below their own detectable effect",
-               "F5/M4: a reader must be able to check gaps against their own MDE; the "
-               "per-pair figures now live in Table 1, whose rows are checked above")
-check_presence("no cell-level agreement", "H4: the withdrawal must be stated, not merely implied")
-check_presence("which we treat as inadmissible",
-               "say WHY the published count is not given, or a reader re-derives it and wonders")
-check_presence("At least six of the ten unresolved pairs",
-               "must lead with six; leading with eight lets a skimmer take the withdrawn count")
-check_presence("\\textbf{Scope.}", "pool caveat; Limitations refers back to it")
-check_presence("cannot speak for submissions whose scores were never released", "pool scope")
-check_presence("studentized", "F4: the margins are the primary evidence, not the bootstrap")
-check_presence("self-supervised systems occupy",
-               "the rank-interval statement, which is where SSL systems are named in full")
-check_presence("speaker and attack cluster counts",
-               "the two named cluster units, in a paper whose thesis is the cluster unit")
-check_presence("not established on this evaluation set", "scope of 'unresolved'")
-check_presence("loosest step of 0.05", "Holm step value; without it the arithmetic is uncheckable")
-check_presence("journal version of the 2021 overview \\cite{asvspoof21journal}",
-               "R8: the premise names three texts and this one carried no citation")
-check_presence("which is arithmetic rather than a finding",
-               "the cross-generation separation must not be dressed as a structural discovery")
-check_presence("verified by Monte Carlo", "coverage targets the model's own delta, not the real one")
-check_presence("subsampling flattens a fitted exponent", "must disclaim the fitted exponent")
-check_presence("because the field has moved",
-               "M6: observe the organizers' redesign rather than prescribe to them")
-check_presence("Poh, Martin and Bengio", "M7: the nearest antecedent must be engaged, not listed")
-check_presence("conditional on that exchangeability",
-               "the estimand must be named and the result stated as conditional on it: "
-               "93 speakers and 110 attacks are not a probability sample")
-check_presence("We release an audit package",
-               "the release sentence must point at something a reader can open")
-check_presence("adding attacks alone",
-               "the attack-budget claim holds the observed effect and speaker pool fixed")
-# The lapse claim now lives only in the abstract and S1, each naming its sources; the
-# universal form stays retired below.
-# The two procedures agreeing on all 28 is what makes the conjunction rule harmless;
-# asserted from the artifact so the claim cannot outlive the fact.
-_dis = [k for k, v in SEL_PAIRS.items()
-        if (not (v["ci_simultaneous"][0] <= 0 <= v["ci_simultaneous"][1]))
-        != (not (v["ci_jackknife"][0] <= 0 <= v["ci_jackknife"][1]))]
-if _dis:
-    failures.append(f"VALUE  bootstrap and jackknife disagree on {len(_dis)} pair(s) "
-                    f"({_dis[:3]}); main.tex says they agree on all 28")
-check_presence("they agree on all 28 pairs",
-               "the conjunction rule does no work only if both variants agree everywhere")
-check_presence("our reconstruction",
-               "five separations is our reconstruction, not the published matrix's count")
-check_presence("adds a calibration study instead",
-               "the lapse claim must name what replaced it rather than claim a census")
-check_presence("not whether two systems differ",
-               "M5: the calibration-study rebuttal must be in the paper, not the response")
-check_presence("source corpora", "M1: the source-corpus decomposition must be disclosed")
-check_presence("Permuting speaker labels",
-               "the corpus share must be a tested claim, not a description: 3 corpora is 2 df")
-check_presence("design-effect approximation",
-               "the width ratio must be placed by the ICC as well as measured; it is an\n                approximation here, not an identity -- EER is a thresholded functional on\n                two crossed factors with cluster sizes from 8 to 355")
-check_presence("anti-conservative", "M1: the direction the corpus finding cuts against us")
-check_presence("three methods with different failure modes",
-               "the convergence of margins, block counts and provenance refits is the "
-               "robustness claim; reporting only the strongest reads as one fragile result")
-check_presence("Dropping each corpus in turn",
-               "the anti-conservatism must be bounded by refits, not conceded as a direction")
-check_presence("attack interaction divided by",
-               "M3: the jackknife's upward bias on the floor, biased toward our own conclusion")
-check_presence("737", "M6: the organizers' redesign is the observation that replaces the prescription")
-check_presence("110 to 16", "M6: attacks were cut while speakers were multiplied")
-check_presence("The latter subject is our focus",
-               "Poh explicitly sets aside the case this paper is in; the quote is the defence")
-check_presence("dyadic", "Fogliato advises against two-level bootstraps for a different dependence structure")
-check_presence("the shared decision threshold",
-               "m2: without the mechanism, the per-speaker EER spread looks to contradict the floor")
-_icc = [v["speaker_icc_bona"]["icc"] for v in SRC["icc"]["21df"].values() if "speaker_icc_bona" in v]
-for _lit, _val in (("0.15", min(_icc)), ("0.77", max(_icc))):
-    if f"{_val:.2f}" != _lit:
-        failures.append(f"VALUE  bona-fide speaker ICC bound {_lit} != recomputed {_val:.2f}")
-    elif _lit not in TEX:
-        failures.append(f"VALUE  bona-fide speaker ICC bound {_lit} absent from main.tex")
 
-# --- 4. RETIRED -----------------------------------------------------------
-check_retired(r"cell for cell", "H4: cell-level agreement was withdrawn (pixel read)")
-check_retired(r"S\^\{-", "fitted speaker exponent withdrawn (finite-population flattening)")
-check_retired(r"halving a clustered interval", "halving prescription withdrawn (extrapolation)")
-check_retired(r"four to seven times the speakers", "same")
-check_retired(r"A\^\{-0\.2\}|A\^-0\.2", "attack power law withdrawn (identity, not a finding)")
-check_retired(r"two to three times the return", "denominator was the withdrawn attack exponent")
-check_retired(r"6\.6--21", "mixed a min-ratio with a median-ratio")
-check_retired(r"factor of seven", "not derivable from the endpoints it attached to")
-check_retired(r"eight of the ten unresolved", "superseded by 'at least six'")
-check_retired(r"agree to within 2\\%", "measured 2.96% on one pair")
-check_retired(r"pigeonhole correction(?! is)", "the pigeonhole variant is withdrawn")
-check_retired(r"3\.7--11\.2", "superseded by the artifact's [3.9, 11.1]")
-check_retired(r"common across blocks|one common bias",
-              "the bias is NOT common across blocks; this formulation was withdrawn")
-check_retired(r"tab:blocks", "the block-count table was replaced by the per-pair table")
-check_retired(r"collect speakers, not attack", "M6: the prescription is withdrawn in favour of observation")
-check_retired(r"attack conditions?\b", "the organizers reserve 'conditions' for the codec conditions C1-C9")
-check_retired(r"nothing replaced it", "M5: refutable -- ASVspoof 5 adds a calibration study")
-check_retired(r"(?:the published test|2021 analysis's) five separations",
-              "five is OUR reconstruction under the independent form; the paper disclaims "
-              "cell-level agreement with the published matrix, so it cannot also report its count")
-check_retired(r"beats the previous best",
-              "the historical sequence is not established by a four-system public-score pool")
-check_retired(r"[Ee]ffective sample size is set by",
-              "governed by, not set by: EER is a nonlinear two-sided functional")
-check_retired(r"certif(?:y|ied|ication)", "withdrawn twice: R=200 checks robustness, it does not certify")
-check_retired(r"no attack budget closes", "narrowed: adding attacks alone, at the observed effect, this speaker pool")
-check_retired(r"every margin (?:claimed )?since is untested", "not a census; name the audited sources")
-check_retired(r"Being an identity", "the design effect is an approximation here, not an identity")
-check_retired(r"model-free", "the design-effect approximation is not model-free")
-# Enumerating wrong phrasings is brittle -- an earlier version of this check missed
-# "largest". Assert the correct direction positively instead: the sentence must still
-# say the within-SSL mean is the lowest, whatever words it uses around it.
-check_presence_re(r"biased against resolving.{0,200}unevenly",
-                  "the bootstrap bias and its unevenness across blocks must stay disclosed "
-                  "even though the per-block figures now live only in the artifact")
-check_retired(r"(?:highest|larger|largest|greatest|heavier|most) (?:mean )?(?:inflation )?within SSL",
-              "within-SSL mean inflation is the LOWEST; the asymmetry is in the tail only")
-
-# --- 5. BIBLIOGRAPHY ------------------------------------------------------
-# Uncited entries are invisible: they do not appear in the rendered reference list,
-# so a citation lost to a compression edit leaves the claim standing with its
-# attribution silently detached and nothing fires. An external audit found nine such
-# keys in this paper, two of them collateral losses from a restructure. Every key
-# must therefore be cited or declared here.
-BIB_RETAINED = set()  # keys deliberately kept in refs.bib without a citation
-_bib = (HERE / "refs.bib").read_text()
-_keys = set(re.findall(r"@\w+\{([^,]+),", _bib))
-_cited = {k.strip() for m in re.findall(r"\\cite\{([^}]*)\}", TEX) for k in m.split(",")}
-for _k in sorted(_keys - _cited - BIB_RETAINED):
-    failures.append(f"BIB    {_k!r} is defined in refs.bib but never cited "
-                    f"(restore the citation, delete the entry, or add it to BIB_RETAINED)")
-for _k in sorted(_cited - _keys):
-    failures.append(f"BIB    {_k!r} is cited but missing from refs.bib")
-
-# --- 6. READER-FACING TEXT OUTSIDE main.tex --------------------------------
-# Withdrawn terminology survived in two places no check reached: a figure axis label
-# (rendered, and caught only by looking at the raster) and an artifact `note` field
-# (read by anyone cross-checking the JSON). A whole-file scan of the sources is
-# useless here -- it returns 21 hits of which 18 are this file matching its own
-# RETIRED list, or the comments that *record* each withdrawal. So the scan is scoped
-# to the two surfaces a reader actually sees, and skips lines documenting a fix.
-_RENDERED = re.compile(r"set_(?:xlabel|ylabel|title)\(\s*([\"'])(.*?)\1|annotate\(\s*(?:f?[\"'])(.*?)[\"']")
-_DOCUMENTING = re.compile(r"withdrawn|superseded|retired|NOT common|no longer", re.I)
-_ARTIFACT_TEXT_KEYS = ("note", "reading", "why", "estimator", "method",
-                       "measured_width_source", "point_estimate_check")
-
-def _scan(label, text, patterns):
-    for pat, why in patterns:
-        for m in re.finditer(pat, text, re.I):
-            line = text[:m.start()].count("\n")
-            ctx = text.split("\n")[line]
-            if _DOCUMENTING.search(ctx):
-                continue
-            failures.append(f"SURFACE {label}: {m.group()!r} -- {why}")
-
-_RETIRED_TERMS = [(r"attack conditions?\b", "organizers reserve 'conditions' for codecs C1-C9"),
-                  (r"collect speakers, not attack", "the prescription is withdrawn"),
-                  (r"cell for cell", "cell-level agreement was withdrawn"),
-                  (r"common across blocks", "the bias is not common across blocks")]
-
-# (a) strings that can reach a rendered figure
-_figsrc = (HERE / "figures_m1.py").read_text()
-_rendered_strings = "\n".join(g for m in _RENDERED.finditer(_figsrc) for g in m.groups() if g)
-_scan("figure label", _rendered_strings, _RETIRED_TERMS)
-
-# (b) prose written INTO released artifacts
-for _name in _FILES:
-    def _texts(node):
-        if isinstance(node, dict):
-            for k, v in node.items():
-                if k in _ARTIFACT_TEXT_KEYS and isinstance(v, str):
-                    yield v
-                else:
-                    yield from _texts(v)
-        elif isinstance(node, list):
-            for v in node:
-                yield from _texts(v)
-    _scan(f"results_{_name}.json", "\n".join(_texts(SRC[_name])), _RETIRED_TERMS)
-
-# --- report ---------------------------------------------------------------
-n = (len([l for l in open(__file__) if l.startswith("check_")]))
-if failures:
-    print(f"FAIL — {len(failures)} problem(s):\n")
-    for f in failures:
-        print("  " + f)
+if FAILURES:
+    print(f"FAIL — {len(FAILURES)} problem(s):\n")
+    for failure in FAILURES:
+        print("  " + failure)
     sys.exit(1)
-print(f"OK — all checks pass ({len(_FILES)} artifacts, "
-      f"{len(_all_hw)} pairs recomputed).")
+print("OK — scientific contract passes: matched perturbation, coherent covariance, "
+      "coverage refusal, provenance and composition sensitivity, authenticated ASV5 "
+      "family-level check, table and scope are artifact-bound.")

@@ -90,7 +90,7 @@ def main():
                 "Coverage is therefore assessed against the model's own population "
                 "Delta-EER (Monte Carlo), never against the real one.",
     }
-    out = Path(__file__).parent / "results_dgp_fit.json"
+    out = Path(__file__).parent.parent / "derived" / "results_dgp_fit.json"
     out.write_text(json.dumps(results, indent=2))
     print("\nsummary:", json.dumps(results["summary"], indent=1))
     print(f"wrote {out}")

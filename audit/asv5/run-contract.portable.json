@@ -1,0 +1,3638 @@
+{
+  "sealed_source_sha256": "27efe0aceee94e29275130ff1cc39f5518c8fce5771de2b782b033f6e4d348d6",
+  "path_policy": "absolute local paths replaced; scientific payload unchanged",
+  "payload": {
+    "constants": {
+      "B": 5000,
+      "arm_namespaces": {
+        "speaker_attack": "exp106-amendment5/role-speaker-attack",
+        "speaker_only": "exp106-amendment5/role-speaker-only",
+        "trial_iid": "exp106-amendment5/class-stratified-trial-iid"
+      },
+      "eer_rule": "position-wise first-argmin weighted EER with quicksort order",
+      "max_t_center": "bootstrap-column-mean",
+      "percentile_method": "linear",
+      "seed": 20260826,
+      "systems": [
+        "SSL-AASIST",
+        "AASIST",
+        "XLS-R+SLS",
+        "XLSR-Mamba"
+      ]
+    },
+    "environment": {
+      "numba": "0.64.0",
+      "numpy": "2.4.2",
+      "python": "3.11.15"
+    },
+    "experiment": "EXP-106-amendment5-fixed-roster-descriptive",
+    "inputs": {
+      "artifacts": {
+        "amendment5": {
+          "path": "external-local/inputs/artifacts/amendment5/path/AMENDMENT-5-fixed-roster-descriptive.md",
+          "sha256": "6fe9b97570812955366f5ca1cfcc3fa244e2a3d2f579f8d01e2ba260d9aff854",
+          "size": 6856
+        },
+        "amendment6": {
+          "path": "external-local/inputs/artifacts/amendment6/path/AMENDMENT-6-descriptive-executor.md",
+          "sha256": "67e92ccb147fa4981c7aecc5c9ec966a59d10fe29e39c892febee1aeab6e4bed",
+          "size": 6210
+        },
+        "analyzer": {
+          "path": "external-local/inputs/artifacts/analyzer/path/analyze_asv5_descriptive.py",
+          "sha256": "fe1c01f0de9a4052ea950fbb62b519b3ca9d17928d6d6c94e593ed8be6afbe8e",
+          "size": 31709
+        },
+        "analyzer_tests": {
+          "path": "external-local/inputs/artifacts/analyzer_tests/path/test_analyze_asv5_descriptive.py",
+          "sha256": "0b66a3bf8eb212d5e8d72666ef75efd1b49b53fd29cb53c5a40e05fad1a4d98c",
+          "size": 12643
+        },
+        "config": {
+          "path": "external-local/inputs/artifacts/config/path/descriptive-config-hot-merged-v2.json",
+          "sha256": "98e718e70d2395294981cd7e16fd4f3244496ad49ab8e0af0fe943bbfd59e565",
+          "size": 1815
+        },
+        "core": {
+          "path": "external-local/inputs/artifacts/core/path/asv5_descriptive_core.py",
+          "sha256": "f7556f6585926931a639d2bc93f430811a91a6d3cc8b87f496f722f78eb521cc",
+          "size": 15671
+        },
+        "core_tests": {
+          "path": "external-local/inputs/artifacts/core_tests/path/test_asv5_descriptive_core.py",
+          "sha256": "d03a27e7984c087c0585601e460afb4a3734d74330e1af4d9de4b6e03a1d6e65",
+          "size": 6692
+        },
+        "incidence": {
+          "path": "external-local/inputs/artifacts/incidence/path/incidence_asv5.json",
+          "sha256": "e5afcffa8f69e0ff5fe78fe34341174383cff2c169f55b558f3344b30d2fc771",
+          "size": 29013
+        },
+        "manifest": {
+          "path": "external-local/inputs/artifacts/manifest/path/asv5_eval.csv",
+          "sha256": "c45659c79aab45bc58a6730c6d0ebb908e83fe23cf0c31c6ac9a8aafdc5842cb",
+          "size": 65770387
+        },
+        "protocol": {
+          "path": "external-local/inputs/artifacts/protocol/path/ASVspoof5.eval.track_1.tsv",
+          "sha256": "62cc6d5e30eb7624ab348ea21713cce5d814299d723b4ce789ec9c1cf18611f2",
+          "size": 37405420
+        },
+        "sealed_reference": {
+          "path": "external-local/inputs/artifacts/sealed_reference/path/exp101_matched_iid.py",
+          "sha256": "7745e9c498e9e5b3c995b233ab026379245815d6657a3fa30fcfe9e46d6b96d3",
+          "size": 7604
+        },
+        "static_audit": {
+          "path": "external-local/inputs/artifacts/static_audit/path/STATIC-AUDIT-descriptive-executor-hot-merge-v2.md",
+          "sha256": "d6cf7d0c0fa8a1c2ae6a6a533b53ed2ab9a638fcaa047c0595cdb942f37ba781",
+          "size": 2857
+        }
+      },
+      "scores": {
+        "AASIST": {
+          "files": [
+            {
+              "path": "external-local/inputs/scores/AASIST/files/0/path/chunk_0000000.npz",
+              "sha256": "53a9fe00a0d9fe8785fd3bdce71262b395a9cdb01a6ba872b70ee6d7d3843da4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/1/path/chunk_0002000.npz",
+              "sha256": "6ec32f4824a33ae91825d59fe50c04efc318689f397d3cb081bc511dabb5fe5a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/2/path/chunk_0004000.npz",
+              "sha256": "4c7ed23999ea08428be85fc052ae0fb62211cd0e178a967210018fa3f7cfcb57",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/3/path/chunk_0006000.npz",
+              "sha256": "42709e80b45b55432a425943665aefe0dcc29b641a14c526c34ef9943d00ae44",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/4/path/chunk_0008000.npz",
+              "sha256": "abf921e3313f9910342a62d43fe12b3bad055607cd101cb7991f13a07ab00835",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/5/path/chunk_0010000.npz",
+              "sha256": "20ad51e8881b2d8ff82531c5f1b8fec67e4314d61a609ce0e4a3b7aa896efd8b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/6/path/chunk_0012000.npz",
+              "sha256": "58c24ca2d0f4840fc885b0d7adba9858679833174a87f3da322f11444c727ef3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/7/path/chunk_0014000.npz",
+              "sha256": "ad91f22000b2be50909bd79fc2bf81f6c5fbd46781ea63c9679962d9164e3401",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/8/path/chunk_0016000.npz",
+              "sha256": "1b2acfec674c59ef122928389055331bb961f64069612951de8812f61d7ad35f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/9/path/chunk_0018000.npz",
+              "sha256": "af179d6fabf4fc1af266ee68ee16609bdb59da2c20a0555eae6cf88996a0d483",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/10/path/chunk_0020000.npz",
+              "sha256": "e825d2b0b80eb79803bd8bdbb6acdcbe7efda83b9d32bc231f6c8abb62d34e38",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/11/path/chunk_0022000.npz",
+              "sha256": "4f3b254d5b02a9491b5609a54cb5e4b59f6d288932a4604992f03acc028eaf17",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/12/path/chunk_0024000.npz",
+              "sha256": "5029c361dc61378e5a2d45d65c5b288458fc8ca516bf9df52c987526f7641264",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/13/path/chunk_0026000.npz",
+              "sha256": "d4cca5df953049dc7aaabfe76ab2a361a317222978b87524a4723aaf6a693ce3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/14/path/chunk_0028000.npz",
+              "sha256": "6e765c21756bf20c3e9f2bca312c65ff52c6b9a72afb2a0947b1dc4347dd42a9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/15/path/chunk_0030000.npz",
+              "sha256": "34cde9a60e6ebf63db1f1eb3b89ba3a851a590a44370a5955eb805c99afafef2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/16/path/chunk_0032000.npz",
+              "sha256": "da06e92f4d467e4a722d51bf3af74a3116e8ba4f049f3a0b2dd5ae2f4e9d3e15",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/17/path/chunk_0034000.npz",
+              "sha256": "e5d7c14a635ec7816356bac318dd71d67f3a82736627cd77776440ffb3ce08e1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/18/path/chunk_0036000.npz",
+              "sha256": "7cf0832b25ab7e0b4ba8af77ec335096d7f2f8a080b6c20c42894badba430f8d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/19/path/chunk_0038000.npz",
+              "sha256": "84b62c6448888abee428d5d58a1cdcc00a7a5a7081842505f96774b9c93ab229",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/20/path/chunk_0040000.npz",
+              "sha256": "275679f6afa70f3017bfc7f3ec146382148af9233ef1503ba4e9e9963551ccee",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/21/path/chunk_0042000.npz",
+              "sha256": "53bf06500e27b6811bcfbb2b271087a7c46e09db971b4c7c00901f59d6ff17bb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/22/path/chunk_0044000.npz",
+              "sha256": "9071ff62c1e07277f12aa070849130975bad63a89e7e98203a2af3bdfb32d410",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/23/path/chunk_0046000.npz",
+              "sha256": "ae6656d74595bdbe4f3b6d47ce6866e753f9dbac3b82726eedfc16d85bd126bc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/24/path/chunk_0048000.npz",
+              "sha256": "de5027807105600262fe84c24b00d3da2fd97a13175c21069fcc1a634d67668d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/25/path/chunk_0050000.npz",
+              "sha256": "b77daf82af4cd1b877abd6887c0d284eb5a53bd4f179350afdd2e7cb83d6c06c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/26/path/chunk_0052000.npz",
+              "sha256": "26335a09b39ca14ae2930ed4b5ef61fdd16dcae6cb4224e90f1cbd49d273bdcc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/27/path/chunk_0054000.npz",
+              "sha256": "b5aaf90adacbba51847ec976a845de0a6bc7247b07df3a444e9dcb553810226c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/28/path/chunk_0056000.npz",
+              "sha256": "3d102a3c74f3336924e5f577b4ce827b9cfa24c724f8766d7267cbe9482bfcdc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/29/path/chunk_0058000.npz",
+              "sha256": "8a459122ca063d6b68a114d7f40ca8bce21e2f73dad9d605d76edcd3f3c7e692",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/30/path/chunk_0060000.npz",
+              "sha256": "e108fc263379355230d4a633b4edd8b34bce6169b7cfd73225aef9062d55561e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/31/path/chunk_0062000.npz",
+              "sha256": "7e727d103e187f92dbf5b0176a6a2a492b2bef518ce775fffb37458ad3753291",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/32/path/chunk_0064000.npz",
+              "sha256": "616060048e6e5961e787b91960514cf6aa7bd8dd3ed78145721dbf3a245998f0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/33/path/chunk_0066000.npz",
+              "sha256": "fdea54b1bd534995afca75e6bf7190d7ddc01c6c436b0de21e24cabc84ae095d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/34/path/chunk_0068000.npz",
+              "sha256": "f0f5b1e39d3ea1181f61b36327ee81aac997599dc04105d59bfd6d8cf906998e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/35/path/chunk_0070000.npz",
+              "sha256": "c270a996b6dc37a2f95e8c29dd3425100465ec4c1b6d5a51de081aae411a592c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/36/path/chunk_0072000.npz",
+              "sha256": "080ce0278babc35b79dbb8aacf93d2ab0b3cdfd6406dca011411314f86720559",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/37/path/chunk_0074000.npz",
+              "sha256": "9a33807e28b6f4d1abe2d4307b57511fa3cab3b4bf19a91c1e03b7cb1619996a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/38/path/chunk_0076000.npz",
+              "sha256": "a9a1aaf7464e241e0f068ffb827a91801512e1c27a7385506b4814a065bb5b5c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/39/path/chunk_0078000.npz",
+              "sha256": "b4209220fc9271922e7a90b4a53ffc13ebcde64bd59fc32fcc37a1e856d76efd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/40/path/chunk_0080000.npz",
+              "sha256": "e6729461ffd8551b39b4608862b74db520e69814682a2e466985bdebe5383ebb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/41/path/chunk_0082000.npz",
+              "sha256": "6dba7aa747298c174444f9b43419944c7651e123c59b8f5a79b7393ddc0301f4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/42/path/chunk_0084000.npz",
+              "sha256": "5f02a412460759b30cfb8e8c1928ce202f4e892654a8c82c2aa7b46180d46fe1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/43/path/chunk_0086000.npz",
+              "sha256": "067de75d0039f4a9b2ab7c52650b6b072ec5c33846ccbb21e573a772c129f392",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/44/path/chunk_0088000.npz",
+              "sha256": "3fb483eb503c97cd137b53cad628c0a2fa8c5cacf9f865739a75ff25b665e8dd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/45/path/chunk_0090000.npz",
+              "sha256": "52d0157dc3c9694994a53948602ec93a8298eabd0604705d926a4402756dda44",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/46/path/chunk_0092000.npz",
+              "sha256": "cc0e47a766bec551a5bd03427d745f1403cffc222f476abc1dbcd164d2c94726",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/47/path/chunk_0094000.npz",
+              "sha256": "1725ebda84aade3a9caba55a2600c967577cf74c9cd5a9afaa230a68b3b521e1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/48/path/chunk_0096000.npz",
+              "sha256": "3ca6340cfa5e91d0fcca59388c61da855c1d941a66e628ecaa18d8a778a4da48",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/49/path/chunk_0098000.npz",
+              "sha256": "6dc7785ba48512009f6a612faf6bab3e26662e595c37b64a8900d219f5429c3e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/50/path/chunk_0100000.npz",
+              "sha256": "458c6131e03d44d3e2db555492075a693f14a23e9d750f3795334d7a493a8ad5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/51/path/chunk_0102000.npz",
+              "sha256": "303f2e60744859607e234f6830d1f90b0bf5dfca06495c6685092ec82723d1c9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/52/path/chunk_0104000.npz",
+              "sha256": "eebb3e0985193192fa7427b09ed25a0f1c3c0653a86d18e5973ed5c7dd6cbeeb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/53/path/chunk_0106000.npz",
+              "sha256": "32034f54461e8d36b8290a73f1164a502b48624bdeaf788b524bd198a48bcd2b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/54/path/chunk_0108000.npz",
+              "sha256": "bffacc1ace095143f7e67f087ef8093fabca8314ff951222178cd594d5d9f509",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/55/path/chunk_0110000.npz",
+              "sha256": "532d3d7737b2384c07614d3ef2fc10730006fdff07efe14cf415abae9c6eb4fc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/56/path/chunk_0112000.npz",
+              "sha256": "0ea0d2c351bc6adecb16eb9d3da75966e0b5b93d3e94a4c721e94c7074ec62fc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/57/path/chunk_0114000.npz",
+              "sha256": "c5f9d73b3673d655e7cfed3ff3e094e5da80e09ca895573824cccc17c29e53f7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/58/path/chunk_0116000.npz",
+              "sha256": "0ac7da3bdcb42a1ace0e48c71a0d2192175dc410f890d5dd79468cf9de0b3f77",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/59/path/chunk_0118000.npz",
+              "sha256": "d1c7ecee47d03a38290abef17627eb8b74447ef931c93478097f42141526f62d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/60/path/chunk_0120000.npz",
+              "sha256": "14968d09711aaacc822152ec55f3d8e4d14d5cca412cd2ece92660f033a155a5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/61/path/chunk_0122000.npz",
+              "sha256": "70ebdbf8bbc1943623c13bfa688417521cc4440200f5df0ff15fe3244f3e8865",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/62/path/chunk_0124000.npz",
+              "sha256": "20da76ea434e94eb9212280e1e05574e7d1660cac0cd2cfb70182837500b6571",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/63/path/chunk_0126000.npz",
+              "sha256": "c1bc0bf9d7d1eee3b52251c8dad37a1bcfc20228b454fb21bb3796234b94b074",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/64/path/chunk_0128000.npz",
+              "sha256": "8aaf2d0bfa0f97a01ffc9311abba1ff3c5f66d66cc6ead1d62baf1f734a91bc4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/65/path/chunk_0130000.npz",
+              "sha256": "ccfb6c2f329e3aea50a126dbba1436d29f9983757f70bf43492af087cd92ccde",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/66/path/chunk_0132000.npz",
+              "sha256": "1e1f48dcc30a3874a95631e6d75dc4f82729a6d66d8bf98be381190ae4b75bd1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/67/path/chunk_0134000.npz",
+              "sha256": "fe13bf6973bf83eff272a99bc74f03feaeaaf968a9fc8f2a8fb5883427ad83ac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/68/path/chunk_0136000.npz",
+              "sha256": "daba7a20560fcaa691694ca5a1a90bb836102fb6fe62952aa24769b6fccef08b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/69/path/chunk_0138000.npz",
+              "sha256": "44a4234816963e584a68193a12125f7fcaad706ba7754fc14cba7bad86dacd52",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/70/path/chunk_0140000.npz",
+              "sha256": "4d20a32a031f924ca3330e4fd91077e0fbaaf2a229c534d86b45a13865d0b517",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/71/path/chunk_0142000.npz",
+              "sha256": "af496e5d4e65ab9b4dabf546eab8913f8d3a0e61d26b805bc97901e662c8eedf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/72/path/chunk_0144000.npz",
+              "sha256": "f2bf4bc50b3aed5d84f4bef9d41e43469a3838eff465948d972e79da90a91a3f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/73/path/chunk_0146000.npz",
+              "sha256": "c9cd74ec51ac5a2ff0d1a51d838ecf9e78d58a0e41b257dc4d315486b296e437",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/74/path/chunk_0148000.npz",
+              "sha256": "45c82c4fa3bc82ded71fe407780b2f44ff3d749e0345102caeae4d2067ca5682",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/75/path/chunk_0150000.npz",
+              "sha256": "a29faf3f89f7bfa5a8f486912450f65162c861ecc8f5eaf3d40abf15cec233d6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/76/path/chunk_0152000.npz",
+              "sha256": "21e1427416c368a742539fd6ebde1079a532791897f683fa8bc208b9defda1c1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/77/path/chunk_0154000.npz",
+              "sha256": "9817f24fd8e910337b2f210e7337a6eea58a1ad77db02146731b133b6dc46f8e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/78/path/chunk_0156000.npz",
+              "sha256": "8d59b00c93dc374d387ef5fcae878a68c2e14c10798c4f518f279857407fde65",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/79/path/chunk_0158000.npz",
+              "sha256": "0008d89e774d1df114d182c26379b6cdb1d51443fb4226398871ad8fdf25a9a5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/80/path/chunk_0160000.npz",
+              "sha256": "b55ee5ceebf9cc048bc74c4a6c3d25078164ee8c3100ec4c742e412e010ba107",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/81/path/chunk_0162000.npz",
+              "sha256": "39d3c9df7b7ea4081f8dbf703a11c087b212225fffb6af5c6106e19bebef40ec",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/82/path/chunk_0164000.npz",
+              "sha256": "29eb829199cc6162e0d4fab6a3afcd60e96aa857d266e3787d061c19d397bd05",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/83/path/chunk_0166000.npz",
+              "sha256": "0f62f4d67b5c530a2a577a1aa0112d0b3728af6c6325dfe691d9e9945b1fa616",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/84/path/chunk_0168000.npz",
+              "sha256": "b3399199e3ce4bb512df0d6d3c1a0baa10eae01f3f316da5ea5581d54a47269a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/85/path/chunk_0170000.npz",
+              "sha256": "f1ea4d41907eb640f3daaf1b98767b3f88c69f7b2b0a650ea2bfaa56757ebc42",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/86/path/chunk_0172000.npz",
+              "sha256": "6769d2eddf08347f4c4092b6ed62bc3c5dc3252d161732024e6d84fc8371887b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/87/path/chunk_0174000.npz",
+              "sha256": "6daf291233a884da871b9b449b977bc6c5e1a9d74d8ba22b1c49e010f2cec0b2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/88/path/chunk_0176000.npz",
+              "sha256": "38b5697aef252c7315a3b0a02cc4fa8a9238a7fbce567b900f9e3436d16e3060",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/89/path/chunk_0178000.npz",
+              "sha256": "ca6e77fa5c7f08ed660e498959898a8d2d94e4e57cc8bcfbb660e204b3a0aaa2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/90/path/chunk_0180000.npz",
+              "sha256": "a1d60a7c1ab62262ee5b9a5233f2de8c9cf81388b196818973221e9caeac82aa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/91/path/chunk_0182000.npz",
+              "sha256": "fce8f347dde37e00c5eb7622a4d3864565b45ba821530a94145f19dcdaf8ea72",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/92/path/chunk_0184000.npz",
+              "sha256": "81cac817fa090ee4c53e385fe89fef685fa594b2288ee46ee285d1e73f8b901c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/93/path/chunk_0186000.npz",
+              "sha256": "f829855449ddf522900f6841d52d258b20c5da66e509e9e04e0d2e9a1478f146",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/94/path/chunk_0188000.npz",
+              "sha256": "d15df668263d36b9cc3d92c57ae1798703885a867a95464b80684b6a3bc0f810",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/95/path/chunk_0190000.npz",
+              "sha256": "3122201b0dde905f49e934e5d1cccafd7f62269a209d79440c92e31250dbe33c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/96/path/chunk_0192000.npz",
+              "sha256": "d358dda73ed659eb80f23117800ced1f6d03cb696e58496d0813be8833dae32f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/97/path/chunk_0194000.npz",
+              "sha256": "990309a44b4062090087eb4f6fd66472d3954878b99e2b0a7968ae24726e01d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/98/path/chunk_0196000.npz",
+              "sha256": "e8bc092b73046bd9dea8e57f66e9584b198a7bfc8746df656d328dcd147bf4b2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/99/path/chunk_0198000.npz",
+              "sha256": "e915efb5af411288326cddbb67c10aed270d1f72f9a862d2f23e049711d9fa67",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/100/path/chunk_0200000.npz",
+              "sha256": "530c7ada26367034725ac245a298cc285e86919454a7e6584d49c3ab1c3a3f25",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/101/path/chunk_0202000.npz",
+              "sha256": "5b634c8809a60d485da56938b26532eb2bcd0897a0679091dd7057e5be6cca0f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/102/path/chunk_0204000.npz",
+              "sha256": "770b5d0d78281f0908bcac1af3f949f0c40a2dd744d471e3e74c18c9d3275319",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/103/path/chunk_0206000.npz",
+              "sha256": "13a878cb25b96a4dd10776bcd52c514e04e3d37afde52ee94b0d0c8948f0f8a8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/104/path/chunk_0208000.npz",
+              "sha256": "e698853acc22a429cff03c5eaac00943e9fdc14fb7fda59dc2cffce06e7a7127",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/105/path/chunk_0210000.npz",
+              "sha256": "d1c56419adbabac57d1f18aac08cf67b3360e919980bb663fa14ed799bbdfc5a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/106/path/chunk_0212000.npz",
+              "sha256": "6538c3fb00ac292246463067630e3c14ae9e7c62815aca4080d0485591bd1336",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/107/path/chunk_0214000.npz",
+              "sha256": "5dc7db5dc5209cce151912c3665afd04ad1f3ce40489d289ab812664205695cd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/108/path/chunk_0216000.npz",
+              "sha256": "61157a92536883ef825e405602c896c93b6aba50edcd9090e6967dc99c99dbdd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/109/path/chunk_0218000.npz",
+              "sha256": "7f70551fb97fa351998b7cdb24fa7bf76ff8879798facd56990ae8a7b4939a39",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/110/path/chunk_0220000.npz",
+              "sha256": "9fb7c365d094d1b53d8cdad121ac01929ec27756bb690bba04ad6a69dca5ef6c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/111/path/chunk_0222000.npz",
+              "sha256": "38deda58610050a5cf363d82a0f3a5fa26f48e6ce28f3aec30399d95e26947f4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/112/path/chunk_0224000.npz",
+              "sha256": "35f5d1f2430ab91d3b517112245604cdee92bc8540ffffa86fdeea2e2d8b96bf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/113/path/chunk_0226000.npz",
+              "sha256": "7426eecbfb15c073420a8c269abd4b0823ba8a4761718c3cffe91908360b15d3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/114/path/chunk_0228000.npz",
+              "sha256": "6e89db616896b3286259cf2d198b3bd1642d1531bee8239674453d3ebacdc9f8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/115/path/chunk_0230000.npz",
+              "sha256": "902fe75dbfb4b35051a43e14605791e662480ee758328ccc2cbccca2ebadc967",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/116/path/chunk_0232000.npz",
+              "sha256": "6c113fafbf13ec4f7090e92c5ba51921f73080a0760a66fc6d3c19b3a478bdd7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/117/path/chunk_0234000.npz",
+              "sha256": "463c3aa81ed1659784fd5cb095e3d69d3305d57b1ef08edf021066129084ce73",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/118/path/chunk_0236000.npz",
+              "sha256": "a58d0190b7d5e7e0de44e53a28786bb6a57c1f8b4d1e3ed4d33eacb8aade18e7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/119/path/chunk_0238000.npz",
+              "sha256": "f7bb622053f1c1c632660926585f373bdcecdf75b09d5d2b3df9b6d2bbec351c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/120/path/chunk_0240000.npz",
+              "sha256": "a6333d30403901bbc21619dae4f3a17ede26685cb8520697062c0977a8dcc180",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/121/path/chunk_0242000.npz",
+              "sha256": "325b8c60d92ccafa4177c2ed88442bc4942c6dec0a9c90d677afad6590faca5a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/122/path/chunk_0244000.npz",
+              "sha256": "35cca4bcc72e2b1a9bc1919e1c8e9d53e08efa9a247b53e748e2bcbe3739a455",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/123/path/chunk_0246000.npz",
+              "sha256": "2cece07b57ea2d74dd43ed7c7e373d76055824ed42f98ab6dee3b11853dc96de",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/124/path/chunk_0248000.npz",
+              "sha256": "16dfda51984526a9fb610339a311e92c89652d63b5b43315de01e3406106a08d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/125/path/chunk_0250000.npz",
+              "sha256": "519552f86998aa6a032948db29a785abbeb842f694f78012c2b1cf8cbf46a6cd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/126/path/chunk_0252000.npz",
+              "sha256": "3c18bb61ff631e71b1bae27ca5058a164c242b9191b299b5db3f0a71860be6e7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/127/path/chunk_0254000.npz",
+              "sha256": "096556a57a00184defa9427493ae4f2c477989c98b9112aabb824f3e8b4190e8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/128/path/chunk_0256000.npz",
+              "sha256": "5cd964613a788808a54022a831e7b9eba7e48f39ec38eb19b2370ebbac4ab41b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/129/path/chunk_0258000.npz",
+              "sha256": "fc6ffa158c7a2caddb05d780e0b764d15cfc86d49f651eef95af8bf251de71b3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/130/path/chunk_0260000.npz",
+              "sha256": "f188d516f3838ff50fa2f53b8001eef0dfa6ab16fae835d22d5e9a1274c7ca39",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/131/path/chunk_0262000.npz",
+              "sha256": "cac631749b6c2526c51e84aef812c75b7b83b3ba574f2117592fa81e939e10fd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/132/path/chunk_0264000.npz",
+              "sha256": "39ff6ca517fdaa5ba7139f82c271b712d116ec3f93d065a4327c29b4380e0c59",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/133/path/chunk_0266000.npz",
+              "sha256": "cf08c85eebc50456b08d8fc43d672d5989fd76828a2f6f76dd88bf0e62ad89a2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/134/path/chunk_0268000.npz",
+              "sha256": "54212556e30d435dc370054d20c26f5e11591d1663973ca53843e2fed075852d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/135/path/chunk_0270000.npz",
+              "sha256": "b9a77ab16fdcab7959ea43ec7e24fe09f33a5a0cff161610f5c56f4430c0d35a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/136/path/chunk_0272000.npz",
+              "sha256": "190200da3907222a001b658139da7d031dea75ea375c938e74e45e28b0152afe",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/137/path/chunk_0274000.npz",
+              "sha256": "021909b6e272375ee35285615d06886c0aec184111041d9a5da1d699901ebb9d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/138/path/chunk_0276000.npz",
+              "sha256": "0e4206added3aa9552d65eba7570b4483a8f2c25c6e5ccf417eb5141141f6820",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/139/path/chunk_0278000.npz",
+              "sha256": "975e3cad788a8ca0620334d4c22311283b740a7d6229e45f5f5b22482e062817",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/140/path/chunk_0280000.npz",
+              "sha256": "1688fef92b538fa50a0728d3e3f5ae46aab0e4c0b68ec58e0876e0b6036f9957",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/141/path/chunk_0282000.npz",
+              "sha256": "2facd59301cc53c12b6da66e7bfde74f5260d5d35b8f8740b2886c50ba7b4bcb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/142/path/chunk_0284000.npz",
+              "sha256": "64ab3fa5cd3cfb39ff86d6aab0b4930cf509ed8e0a90064cb641371bcf4ee403",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/143/path/chunk_0286000.npz",
+              "sha256": "7f95e7b71d5b546a7dcfe912846f86d8a26d8775d28294f7083b94e49f19d79c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/144/path/chunk_0288000.npz",
+              "sha256": "c67bf3a1d461846d4854e87867623204f94d47aaa7f86ef9fe297e564cddfc3d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/145/path/chunk_0290000.npz",
+              "sha256": "c316dbebf36196f30623e454a094359f4e4ccb9f7aa9b34483b12af72a5bd0b0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/146/path/chunk_0292000.npz",
+              "sha256": "63f24b659978d4aaef645c7a8914ffd9e0d8798eeb33216dcff0605130de5145",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/147/path/chunk_0294000.npz",
+              "sha256": "353d17ba19a4e3ac5d301ea5a507d5e54a0c21dd21fb25aea7b49bc138c6068f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/148/path/chunk_0296000.npz",
+              "sha256": "2012cfd0d5bc7ea20b961ad8c57b7376227a09b2d2fddee0a0a09e49a9360cdd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/149/path/chunk_0298000.npz",
+              "sha256": "6e8c8279c7eb23f31fd3fcf060ec501b94008984e35170751555ea88a80da126",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/150/path/chunk_0300000.npz",
+              "sha256": "5c886eb4addd5110dea6cef572cce3f28efc7f44f36d5e60c792d893008bd785",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/151/path/chunk_0302000.npz",
+              "sha256": "cbe818f0fbf370c632b634659381cbdf96652a01473a75a8dea4bbdf64bcbf9a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/152/path/chunk_0304000.npz",
+              "sha256": "6f17e352f3def3717a24f95767222f90d30262a7c33cbacdd04caed1c2ebddb0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/153/path/chunk_0306000.npz",
+              "sha256": "499336a4828a6880106a5d84e7a04b21ee8f1a6ed3dce51fbc69daa9939e43fd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/154/path/chunk_0308000.npz",
+              "sha256": "e915460f33b1b7e3820d32dbfb8e287c27c395401d5e3c24efa32ca6f624a976",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/155/path/chunk_0310000.npz",
+              "sha256": "01c39aebdfff039a75bdaff76e4b164d9bb03490fde769be9f9f9a2ecf2014e0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/156/path/chunk_0312000.npz",
+              "sha256": "92cc8137d5385d88d5190fcf58ebce27277d848a0c5b88dab6c0ea886cc45d7c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/157/path/chunk_0314000.npz",
+              "sha256": "445f2837588d83df12edd6ea86abf71c283e269f460d8fa9a597e3960ba61733",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/158/path/chunk_0316000.npz",
+              "sha256": "ba96f281c77ad7389dc2de85488d4cd01c83b385232546f14fc57fa407fc69d8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/159/path/chunk_0318000.npz",
+              "sha256": "c31cbdefefb9bb547edda790e91962576ee7b3a0f8573cf557fa0d10cb4e0b3f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/160/path/chunk_0320000.npz",
+              "sha256": "aee9c9a06bc0e7b5ed09eaec4df54b9fdeee27faefbea6d0a9274e07dce61a6d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/161/path/chunk_0322000.npz",
+              "sha256": "924ca76cf1dda681b17cc13f3df24340d6260bd7fbae56decb041b5b7ff27091",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/162/path/chunk_0324000.npz",
+              "sha256": "c2fa965d45b5103d9e1808b9a580ab01f239f75637be30540689a3068686e814",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/163/path/chunk_0326000.npz",
+              "sha256": "d368a3335cdfe09f0e26b29688a262030c14c8a63699f70655c59c3bc3c19558",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/164/path/chunk_0328000.npz",
+              "sha256": "e68dfb497e7b2f25871cd1855c82e495042e7cc955e17a590bf3847b11576c02",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/165/path/chunk_0330000.npz",
+              "sha256": "f4c94818e3b4ecf41ce3ab1dd73d0c8a22d693902dd94ca0df97cd44d4b74b15",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/166/path/chunk_0332000.npz",
+              "sha256": "1a5618399f52365c4d3797a322adee40ad724aa49fdc3202997ee68896b68691",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/167/path/chunk_0334000.npz",
+              "sha256": "99063a4c45d4c29301ee6163b8b400e254d10601eb9c98d495271e5f5007ed66",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/168/path/chunk_0336000.npz",
+              "sha256": "1983c6d7464c4b0f61d2407a3c25f1dcdda0ccc578d0a59e878a7c8775a2ca5c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/169/path/chunk_0338000.npz",
+              "sha256": "5292ca78fa4c226618c62c4b9feb0e7b5c4db3ba4a3358d1100d828bc379d298",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/170/path/chunk_0340000.npz",
+              "sha256": "96d037bcd0450d7099a552ba32bb2890a31a092cd518558112b65cba42959e40",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/171/path/chunk_0342000.npz",
+              "sha256": "3cc569e8d075e03e374ae408908f9ea10626e67c66b730cf9e3e30a0687f74c9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/172/path/chunk_0344000.npz",
+              "sha256": "24b4286c76a7cb7be49e77d986e72c2f145236c4629fa41cc6d0e0fb16861998",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/173/path/chunk_0346000.npz",
+              "sha256": "d30f0ea9cb707e705db24a3e8ba1e4ea2d80c8c198cb19f16ff3efa0ade4fb0e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/174/path/chunk_0348000.npz",
+              "sha256": "9d6e9f6491162402d61a03b171da253c62b11c523cbe0dbe01f24dc0a621895d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/175/path/chunk_0350000.npz",
+              "sha256": "53a52f651b18147dd867f00936528edfa62f24c1a0dacbbf12b024ff9b9bc215",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/176/path/chunk_0352000.npz",
+              "sha256": "3615a8c534c548b58f0b5dd302bebac9d560176917ec89cce696866efd2c1edb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/177/path/chunk_0354000.npz",
+              "sha256": "505a3aeb80311b74ee9d10fade1d93fb2e31ef231f5e7c90f961aac2370e332e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/178/path/chunk_0356000.npz",
+              "sha256": "1845612777f2ec63308c301c66f6f08c4ae80a41231952245db5594ce223e2fc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/179/path/chunk_0358000.npz",
+              "sha256": "ca821b690fa68c2533e3a63dcce21e2ffedfef6e24b50c721967759296b56907",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/180/path/chunk_0360000.npz",
+              "sha256": "3eaf33f4ba13e8793cb2ab34b2f1210ef3bd7b5a931c9c7c4c0a485f541e4540",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/181/path/chunk_0362000.npz",
+              "sha256": "8ec945fda8c690e4c79fe5aec4a5ba06dadeba7d3be9993a516527c788cf26cf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/182/path/chunk_0364000.npz",
+              "sha256": "422af1fea45449cadfcf7dfa506f7cd9d0c9a6520bcf0a0038f0fd911537c24f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/183/path/chunk_0366000.npz",
+              "sha256": "f6663aa770b2c0b66e6c64312fee299d2f95ceae69bf32c6ff01dab94e1b0e4c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/184/path/chunk_0368000.npz",
+              "sha256": "103541ae8c90d6ec9b2101b12405915fe4fe9185dbd25de4b786ddaa8d74f80d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/185/path/chunk_0370000.npz",
+              "sha256": "dbd1faf2179e2d4afbfaab65c3a04d0746bf4db9238b070c89f03537d638ae0e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/186/path/chunk_0372000.npz",
+              "sha256": "bb3f80cc8a2bdfcabea415af586ed5069967d75a0a31d20c9f66241bf3eabfd0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/187/path/chunk_0374000.npz",
+              "sha256": "e581899eb9b7327235f10caebcd1a371c8582d13c6698bac8536ad76d7eb379a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/188/path/chunk_0376000.npz",
+              "sha256": "5d6dad36cec05272ccce667a5d995d925de6cc5291f7151ecb540ffb299386e0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/189/path/chunk_0378000.npz",
+              "sha256": "8cec64f01c14754368d8ca99b4b9765ee29fb5d47c88cbdad860ab245272280d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/190/path/chunk_0380000.npz",
+              "sha256": "ea76bd42328715e25fd8a486f745e42d58cb874c5699a9a23466d628a3f79c60",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/191/path/chunk_0382000.npz",
+              "sha256": "3742ae5d563ba24da551330eb7747f1e3d744c3d8df22e80a6b75d7a1dd59659",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/192/path/chunk_0384000.npz",
+              "sha256": "ceba46db729bcf2bfbd165846837b800929d9e7f1017c51f0b3a8b3c46a5285f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/193/path/chunk_0386000.npz",
+              "sha256": "92d7525ee0b89ec1764f2ff0742f7ee4e0ea7cd0da970e6a4a9377017488dc95",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/194/path/chunk_0388000.npz",
+              "sha256": "79c98c4c3c576dee4fa51fa6531223fe891789c5eb40cc6753dd05e511535c87",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/195/path/chunk_0390000.npz",
+              "sha256": "be097a832571fba2f559abe75bcdb23fe7591183cbb1c59108c03b16313b1ccf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/196/path/chunk_0392000.npz",
+              "sha256": "526bff0ed5546cf5e5afb19caa9a5c11d48cfe462ee7098ff3e3fd6dd4107687",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/197/path/chunk_0394000.npz",
+              "sha256": "24a9acc65c143b548f629f9fa69cf4e66e946d0644d101b0d166807383e16010",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/198/path/chunk_0396000.npz",
+              "sha256": "8c69ce422d997779d0c9ff956b15336b16fc0799152d90160e0555763bf0fee6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/199/path/chunk_0398000.npz",
+              "sha256": "f04e1498171a28a1c72fafbc48ae62254ca3f22b7c91b24dc9d6a75cebb118a0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/200/path/chunk_0400000.npz",
+              "sha256": "59343a936a7d2300beb51a2a0e32dd082762be485ad8ccd3d77d0f1b0d2d8006",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/201/path/chunk_0402000.npz",
+              "sha256": "f2ecf9d782fe594c107542d592c16158df761863bd16119273404a1c97436b40",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/202/path/chunk_0404000.npz",
+              "sha256": "8f3854b03cc030bdcf68c19780844929e43a048aa6b87b613989ee0a7ce2dc2c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/203/path/chunk_0406000.npz",
+              "sha256": "ee410986a9414b5e22b5fef0d07529c62a0219547ffc6adf0f4b3e00d32f45be",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/204/path/chunk_0408000.npz",
+              "sha256": "8f3d5d3addd2fa250f6ff241231f9b22974d7f2626940dbb679b37b477d91ea2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/205/path/chunk_0410000.npz",
+              "sha256": "3bfd87325166617e605c5da12bf5cb8b063baa8794c59443ced4ac23608e365d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/206/path/chunk_0412000.npz",
+              "sha256": "de5a1681307ec2c9e55bef46cad424bb18b772e3b2009ee06f4dbd0c170daa3d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/207/path/chunk_0414000.npz",
+              "sha256": "f7ac10f40277b6e28c6b86e1b785e78d274d409dd36db0c3a5418a3250d71648",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/208/path/chunk_0416000.npz",
+              "sha256": "0cc381f2558a7452fb2109dff740a0c8d11514f0e7cc2b6a09bb78713d23546c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/209/path/chunk_0418000.npz",
+              "sha256": "6b4ce4dc0d3d10b837e853eb2e42918b1f5dc22dd38c43c69b8fe40c00369490",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/210/path/chunk_0420000.npz",
+              "sha256": "734c6ed8f5954057a66a78600fd034832e643a66e0ae6c7a9224764fc2ae0283",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/211/path/chunk_0422000.npz",
+              "sha256": "48f3fd733b79cd97f89588591c7de018bf39d6deb92c8fb1f4141105727cb2b9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/212/path/chunk_0424000.npz",
+              "sha256": "9ad9458ed71d4393944f71bd6ad33531c2deb1c8f352470bbd7a17f3a273b681",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/213/path/chunk_0426000.npz",
+              "sha256": "82732ef451f54a5731913ea5bd697020157de2d75ead24894e938a2fe2ace50f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/214/path/chunk_0428000.npz",
+              "sha256": "78d800146af2be6349d52c9748319fcdc53c155cb6832c50af6fb78a81971da2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/215/path/chunk_0430000.npz",
+              "sha256": "2d64dff680bc79a15355d28da487234a138ed839768a6b5c7f7742321cbf3f7c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/216/path/chunk_0432000.npz",
+              "sha256": "901f2e34a9305d02af33df3204990007e460843d0f76ae484db4d5450a0fd588",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/217/path/chunk_0434000.npz",
+              "sha256": "aed4f12dba3c2df4babb022a45f856868ed5b122c60bc91fe20e6600a0af048f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/218/path/chunk_0436000.npz",
+              "sha256": "9c48527b90dfc91cf76ed112f477653226c8123ce385f5e5d96fca26b7d42e8e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/219/path/chunk_0438000.npz",
+              "sha256": "df122b183b78cc3895546270658e8d302c805c91a0c93287a854cdd140072f72",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/220/path/chunk_0440000.npz",
+              "sha256": "26801b65046b3aacfdfaa46247e604fa2cc4b5df305693a6c5db0b06579fa0f5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/221/path/chunk_0442000.npz",
+              "sha256": "af7f33bf769e71ee1480d5080481b8c285045e2a4df9e42635272f2827fc381d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/222/path/chunk_0444000.npz",
+              "sha256": "f71b66e5b112474b251e5f2e22cacc1b332ae03982b763345df7f82893cefa6a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/223/path/chunk_0446000.npz",
+              "sha256": "6ece69610fe31e089a097e54ea666865ade7c2d4a4153370c9f9f0db31e421d6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/224/path/chunk_0448000.npz",
+              "sha256": "ead6e991caaf81267d37cecc951f75a41a1f38f201883382d5f17b0b728b030a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/225/path/chunk_0450000.npz",
+              "sha256": "747ed3ba8f995edd7ea5fbf8bc197e5cb7a3466048eb1b77225a17218560d478",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/226/path/chunk_0452000.npz",
+              "sha256": "cecac9429b21d34864e9f32e7fed414628b61a6d136058a4303913e1af11d965",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/227/path/chunk_0454000.npz",
+              "sha256": "4fa699721fac1c72a2084e9264f718985c3b78ecd7a345c285e5bf8b8b624dfc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/228/path/chunk_0456000.npz",
+              "sha256": "dbc66f35fd76253c843e518e236c99ffe7483d917fac632d83da655071a5e118",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/229/path/chunk_0458000.npz",
+              "sha256": "5d936bc5c69cdec9f1c9f4245c9627d796a7fb12f640a41e55c48ec2e6f6ea8e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/230/path/chunk_0460000.npz",
+              "sha256": "768f82b405cead4e8f758da0caf4c1d1883a27ac682a1bfea99ae49bfd21448c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/231/path/chunk_0462000.npz",
+              "sha256": "851936b6453bac83c3d8eaa8de57fd7e02de6686ffed610984c16cda7343a79e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/232/path/chunk_0464000.npz",
+              "sha256": "bee89323c72a7eb9560674ea1fb3458aedc4949c1d669ce8c82951f18ae5bf8f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/233/path/chunk_0466000.npz",
+              "sha256": "4fea72da1ca2822a5ebeb2bd7a6806fb69026070a4f9e5614af0cee25f1ac127",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/234/path/chunk_0468000.npz",
+              "sha256": "d8f77e129e04061f055a1ee7a7775ce3ce3a0413c3187ae7ad3ee4a3392cd5c5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/235/path/chunk_0470000.npz",
+              "sha256": "63fa7c77ad7d909f98ae60044fe68921b2e8ce3f4b066e4488a1930ab325c86a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/236/path/chunk_0472000.npz",
+              "sha256": "9af9ed267e8f9c959c9871b878a4d997658911d52ff35f69cc3e1da38843c808",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/237/path/chunk_0474000.npz",
+              "sha256": "df8cd073787e6bb7220b9120c14bd03cbf927ae80664516454145c0bd4dad975",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/238/path/chunk_0476000.npz",
+              "sha256": "5c424d023eb2fa2140da17caeb1728d2c8a273da4f9c99bd31f57b9659f72709",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/239/path/chunk_0478000.npz",
+              "sha256": "94168283179ac8a29aa2bdce35cb45f435b54893b5c921619eccd712b61d1149",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/240/path/chunk_0480000.npz",
+              "sha256": "7fc32a059d1e41cc83d7817142b0ff3f25165115ac600bcb3665d9dc08423199",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/241/path/chunk_0482000.npz",
+              "sha256": "ed483aad417bd5f69718dec3d9ad17b76a256f9a61786445ce67fed01c77dd20",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/242/path/chunk_0484000.npz",
+              "sha256": "f2f15782aaca835edd5b79e4ad714c27f1cccc64e253e042fce0fc5f74240b13",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/243/path/chunk_0486000.npz",
+              "sha256": "342cc4d295b0330734bdc49052c06555667a151506e9dd47ffbe486d4313b255",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/244/path/chunk_0488000.npz",
+              "sha256": "520d0c44997167e93bdd650113587b4bbe0482ec8bca628cb843b8175dc57141",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/245/path/chunk_0490000.npz",
+              "sha256": "2fb4c64e169faf725cdb190040cf33ee2b49bbebd8ada6f3ca199a89c3228d78",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/246/path/chunk_0492000.npz",
+              "sha256": "c67899f167e788cbb3b7324217d5887e64a709f58bc89f5445a49144958172de",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/247/path/chunk_0494000.npz",
+              "sha256": "f1bbdc56ceb11f1932d4f38b8d21a2917ee961173223963d866ea611a806bf82",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/248/path/chunk_0496000.npz",
+              "sha256": "35ed786a184a7fde829b0fc89a23f3969ca0b7dec006f1026d4d7c0bd95521e3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/249/path/chunk_0498000.npz",
+              "sha256": "095f7fe7f7da14fd566916b03224cccb1e845a541892f49679be99211f5f0b7d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/250/path/chunk_0500000.npz",
+              "sha256": "5e8fbf5e605045b98536342413fddfbbed041dadf02fe2701ecd0586a2e43dd8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/251/path/chunk_0502000.npz",
+              "sha256": "9e80b30be58a5664856981842a93398b84e9f2c8bcb5a3ffe0082e569d9ec2e7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/252/path/chunk_0504000.npz",
+              "sha256": "dc4bec925e9a14882a2723e9ab3e005118271962e9280dc16e596edb714378d7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/253/path/chunk_0506000.npz",
+              "sha256": "550759d0a27f437934d3a7a32dc60bdfe83b6a4af99c12a6490805b81f2536cb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/254/path/chunk_0508000.npz",
+              "sha256": "55f33abdb96d63e7520c24a8a597083296e1216192839db01f78d0172dcbfa4a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/255/path/chunk_0510000.npz",
+              "sha256": "217ade1b9ac5714c3ace2aac753cdfdfa9c8cb3180c12984ea481c87e8823fac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/256/path/chunk_0512000.npz",
+              "sha256": "97e32c3fd53632088534d8b69d6b6290960f8e9332a5b763eee28420c60fb930",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/257/path/chunk_0514000.npz",
+              "sha256": "628539c9c45ebf9927bd3161418c4397ffca0bb09bd569f6448a78d8995540c1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/258/path/chunk_0516000.npz",
+              "sha256": "6faa3f1993677e2144964038f3a9fec93a4938e5b8134e528d6c3e48c7cee7e4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/259/path/chunk_0518000.npz",
+              "sha256": "55217e39f8a2e390c1cf5fdeb0488b6714cd468f2acc0bab9d2b735a00a41e32",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/260/path/chunk_0520000.npz",
+              "sha256": "68a520ca80359ee414f228ec31f8226e6ccc1d17293671edbe2c87d4945e2aef",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/261/path/chunk_0522000.npz",
+              "sha256": "34b8efe93a30e63219de6436e9a94f5401856e093b900fd1a65f076b26638521",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/262/path/chunk_0524000.npz",
+              "sha256": "c411794832e6d94367dbe63fce912cb9d95807326253bdbbedf69b13add6e4af",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/263/path/chunk_0526000.npz",
+              "sha256": "bdac76f6767844499535321dbe71a2b6cae6c6e362129dac9a899a3f39014a57",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/264/path/chunk_0528000.npz",
+              "sha256": "e43be43ee6ed182ba9c38373651d532e4f36f7586f47f6b1ef5af5d7a169e48d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/265/path/chunk_0530000.npz",
+              "sha256": "0d00bc350433a891db9d220641f896e0a1140e9c7e46d37dfd6f57b8851e2b6c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/266/path/chunk_0532000.npz",
+              "sha256": "c5f1aba3d0e97bf9caa99825975725e75e62374cc71c643a4b77faba98075368",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/267/path/chunk_0534000.npz",
+              "sha256": "2bd5a3c6626b7bb7c927785b06705bd108e4c6c7b96078cf5d2f96a65b5eeaf7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/268/path/chunk_0536000.npz",
+              "sha256": "4b6c4e1668ff7ee451aad0944e5c6171565d4b1c6d5b82f5cd6a8b38ee03361c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/269/path/chunk_0538000.npz",
+              "sha256": "a7f62522c086263c2725058b48ceefae1e3c3e455680609286649222203b8dc7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/270/path/chunk_0540000.npz",
+              "sha256": "4accff3ecd36f0dc04597164acbb5fe575e51d21a61b28ea2209b32951ab2fb9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/271/path/chunk_0542000.npz",
+              "sha256": "66a132f7b56d2a352ddb8b6965746ea023023cb3be9549dc4b5ae3948762858f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/272/path/chunk_0544000.npz",
+              "sha256": "4e7b4fdc6e97f216d6980364c2eab414b7cbc48c86515806af48c59398e85660",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/273/path/chunk_0546000.npz",
+              "sha256": "6c6cf5c038949698ccf92eaaf20a7042c84828127cfaedac4481d3435c2475df",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/274/path/chunk_0548000.npz",
+              "sha256": "d25cbc267521987dd7d1d8ed47030589454b91fe33d6c800f60d923346d3dcfa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/275/path/chunk_0550000.npz",
+              "sha256": "1ce312dd126dff281f02d6fef540a849f074a931a98864f60f8187dce3676d7c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/276/path/chunk_0552000.npz",
+              "sha256": "8c4b7ddefb1569d9ee5cfb16908085304390f9994ae311f049488fe407cade27",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/277/path/chunk_0554000.npz",
+              "sha256": "3fab1fb716c91235571ce347e09cce20af94148ed3b6f9833170e37fbcbd70ae",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/278/path/chunk_0556000.npz",
+              "sha256": "dfb3ee363027556456d383377a97c66c68b6ac62676994d59eb35c92f400da48",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/279/path/chunk_0558000.npz",
+              "sha256": "5b7eb9f3aadcdf4b023f41672112985a210b34b4dbef33e3f7fc5811f65a4b0a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/280/path/chunk_0560000.npz",
+              "sha256": "7e552bb8636430921f1aa33982a134d475a8bfce149db1a686ea25c20ecefc8f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/281/path/chunk_0562000.npz",
+              "sha256": "800cae2f2ff12b62d0056bceea729d415cf990492f8c54ec42ee5aeadd06af97",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/282/path/chunk_0564000.npz",
+              "sha256": "647fe9c9c8f42490b3f51a8971495e9ce6bd6c641453a350f9421308f6ab3501",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/283/path/chunk_0566000.npz",
+              "sha256": "e2d60c6493a31cc2ee79d1587597384f95f7f693fee5a118bcfec3b12c33f004",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/284/path/chunk_0568000.npz",
+              "sha256": "2400e5b567eabff4843361089e709ca79bf1c01c527712cd24636eb57445c4bf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/285/path/chunk_0570000.npz",
+              "sha256": "6602f5f1156273c7498675c139236412078b72b92b52937ee489f5e473605e01",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/286/path/chunk_0572000.npz",
+              "sha256": "bb9556a44e7a343aef44a80c8dec5989f9b061b2c2a145dcc1a569750ab117c5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/287/path/chunk_0574000.npz",
+              "sha256": "c6ed7809568732678a4b84dad000d6f91dd38e7ce268c896655f0e3a9ebbd0a8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/288/path/chunk_0576000.npz",
+              "sha256": "e88037282065e439e9068a598dd79ae8bf8a2d12c48efb0e8315323d52b60048",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/289/path/chunk_0578000.npz",
+              "sha256": "40b308fa3d21c040f55a3ef97c569c201c100bb2ae748993a3d0b38d20e4ff70",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/290/path/chunk_0580000.npz",
+              "sha256": "fee82140cd1c45f739fd4fbebcef514960021abef83a593e6da9494e64994d9d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/291/path/chunk_0582000.npz",
+              "sha256": "fcc5b8437e7241bb46f5b8b132dac19881936267f84bc7f9ff088aaa47768153",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/292/path/chunk_0584000.npz",
+              "sha256": "ba821412e35fd509c80d764f9aed7c29735199e9181ee8641323fb8566b6b6b4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/293/path/chunk_0586000.npz",
+              "sha256": "ae400f12a72aed6b8054778506deb89eb3952541e1a6383ce3c7d7df69379127",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/294/path/chunk_0588000.npz",
+              "sha256": "4634bc84aeeaea4184529037479a584ee4c49d403e4ddd0c4a2ace06f31744d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/295/path/chunk_0590000.npz",
+              "sha256": "7f4efda132ccb621dee99d9c65bcd80041d1ff938fddac50384aa8b5462ce51f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/296/path/chunk_0592000.npz",
+              "sha256": "918c054faf9a9fd784261c52d4868881ed0e6dff7a825f12ede917f286c76716",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/297/path/chunk_0594000.npz",
+              "sha256": "036a7422ca3492f57fa04bd4ea5cc7c76e69f4c6f4175400b184fa4c1b9ffb43",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/298/path/chunk_0596000.npz",
+              "sha256": "3a752385c930ab149ff6adef80388f369161412df356e3d81f9e14e0595b7143",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/299/path/chunk_0598000.npz",
+              "sha256": "95832884d498f048510483b5cc5f1be39295b6eeb351dd7af807bb7b11d15a18",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/300/path/chunk_0600000.npz",
+              "sha256": "b93bc54994f105a0d5c0fa40720c5357f531f3cf3f685fe83600603db86b742d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/301/path/chunk_0602000.npz",
+              "sha256": "e143e279d7ff5db42cafa331846ed029d48ce30c355d1dc907e8044e1f42975e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/302/path/chunk_0604000.npz",
+              "sha256": "6c78c41887aeeb7d85b90fc496d177a0df65896add8ea0e64c9d7743c83751fd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/303/path/chunk_0606000.npz",
+              "sha256": "6943458755085bf4967aaa8a6d672e8853df62194077e7b431447747d28a6d2d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/304/path/chunk_0608000.npz",
+              "sha256": "2686a394443e9e8ae478702a171162d97eb7b95be7c84dccfbf05055fb32b6f4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/305/path/chunk_0610000.npz",
+              "sha256": "de188cdcd23f478112dcc7cf2c0be4763c983ce55cff38a81909571f3b3dc44b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/306/path/chunk_0612000.npz",
+              "sha256": "906fa1441d29492f58db4ffbde4cbe70ff815db53597f5373fa46ac6b0fd2a93",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/307/path/chunk_0614000.npz",
+              "sha256": "b1b847923c5b15aafc10b05cbfc149000dccecb29cbee664f0d1d014fb1e9216",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/308/path/chunk_0616000.npz",
+              "sha256": "143e091fc59523e432ef9bfb2cb13068db4b2b6e98506ff54d5baf5a2a6b59fa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/309/path/chunk_0618000.npz",
+              "sha256": "0dbdc58da58a0b7b5b3ed3c0228db2f96a0d462dfea111594799044e33408866",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/310/path/chunk_0620000.npz",
+              "sha256": "51f7d2d12ac66128bb1a470dd38837af4fb84fddccabb58f6057c08a89fcd2de",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/311/path/chunk_0622000.npz",
+              "sha256": "e2609ca1964b4dcb3a532b6be23fba3d394f5bdb405ad81caa80c7309d5e5312",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/312/path/chunk_0624000.npz",
+              "sha256": "e4c2911c4d7bcfff445d471b779fbb5f2d8fdf6cb3005baa78c38e0d895a6160",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/313/path/chunk_0626000.npz",
+              "sha256": "4de6dd4723d593cd58456de13fefd776c04dd3f5474d4a6999afc19645d2dc9c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/314/path/chunk_0628000.npz",
+              "sha256": "6c674bbec186fa1eb6575421e6f2f8a40a8f175b58318f03d640d0042c9057c4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/315/path/chunk_0630000.npz",
+              "sha256": "2556d05f8719ed12f1eb96af5901e5d2b41dfba709ed08c5f160108a1ebc0237",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/316/path/chunk_0632000.npz",
+              "sha256": "094fcb7da225c210babf61c05a70ff3de459a829f670a6192c16df3c16dd1f5e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/317/path/chunk_0634000.npz",
+              "sha256": "2e86a9c9daa8e4824c1e2181e230b55ab9e4d721d0063816e673910d415b6d44",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/318/path/chunk_0636000.npz",
+              "sha256": "6d871ab161d5448a3b8f3b7d0322e6e87f3b0baaf97e3dd4af766d073b8354d3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/319/path/chunk_0638000.npz",
+              "sha256": "6fcbb7823bdf61770cb8894c4d0841013b21cf3789333505dd9375709621c24d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/320/path/chunk_0640000.npz",
+              "sha256": "77940f288621cdb4d1f2769cc2a4b14e7f4c2fe5b990885f393c03550cbefae9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/321/path/chunk_0642000.npz",
+              "sha256": "2be88838a5cf699a05125414aabbb14aa6d662a0ce764710fe23ef6bc52b43d6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/322/path/chunk_0644000.npz",
+              "sha256": "8d81f85cafd6648677df640bd4a7d253a7f1b1679410c180f22ec68f9987d606",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/323/path/chunk_0646000.npz",
+              "sha256": "6e35c190b3e129f13d104d92a0a5d112af6c586500b22fa39b2c6f9546da48f7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/324/path/chunk_0648000.npz",
+              "sha256": "b26d5339b7c86c9abc6f95295a10678bf00e97a504949f0bfa961643aa4aee6e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/325/path/chunk_0650000.npz",
+              "sha256": "555742099a367e8d5829b934bd492c839c60956a0c3bd5ed2aafd21bfe1f6673",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/326/path/chunk_0652000.npz",
+              "sha256": "1783c284773860003cab1053cf81c2d8e609c5eb40aec971505d422f40c29d1d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/327/path/chunk_0654000.npz",
+              "sha256": "79432ba77bc33db90c22e8edbcd9970c82ea5f0090fd71d56181847c7404c8ae",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/328/path/chunk_0656000.npz",
+              "sha256": "c2ac2b9237157fe65641ba0a271f98ae3ac7150a2731bbf36cb30ef528d4b5c1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/329/path/chunk_0658000.npz",
+              "sha256": "d3389a2fa132933c5ccc975da2acfe105a7e9ab16105021e5bc7a9d289dfd3a4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/330/path/chunk_0660000.npz",
+              "sha256": "a2b8c544297c0618ef9ddaad714befbd9e462b8b266013b8e85b25d7aeec73b7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/331/path/chunk_0662000.npz",
+              "sha256": "a0ab5583fe21d736d2cb5453f1a8e42d338a1fdc06faf9996af6bdfcd01d5c00",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/332/path/chunk_0664000.npz",
+              "sha256": "3a11883431e632607fbdb3ceaddd3225810bbb4eb93e3329cab9fee774d69967",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/333/path/chunk_0666000.npz",
+              "sha256": "e783ffabbc19636aaaa53ade1c6926b240051f4f8ef114df86048256a89e1d8e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/334/path/chunk_0668000.npz",
+              "sha256": "813b9619b9ab7e2fa981cc43cd069133c9268808e67fce6a9ee370f3d88c8572",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/335/path/chunk_0670000.npz",
+              "sha256": "109cf52adbad252c0c8530d7515c5ce2310e35ebf10a62179433b900dcd61f32",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/336/path/chunk_0672000.npz",
+              "sha256": "391bf492f2b0a8df551b0558a5e0105d88c5e253f3d314e909f5e6f23196b62c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/337/path/chunk_0674000.npz",
+              "sha256": "b47ae95ce89d19335ccd5737f1d2ca5bb7a67767783e119580e85180bdf488f6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/338/path/chunk_0676000.npz",
+              "sha256": "9ea32246e5595d8b3090c6909cb69999257c5e174384eed2b63b5a1e1e379da4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/339/path/chunk_0678000.npz",
+              "sha256": "e7c0f3939e95101875dd106d4c2b9f6df1cfe808e188c71a747fc64b38a11425",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/AASIST/files/340/path/chunk_0680000.npz",
+              "sha256": "77e570729a4043ae3ed14287419143141017b51ea37dd6b242a04d34b1c6bc2e",
+              "size": 288674
+            }
+          ],
+          "kind": "npz_dir",
+          "legacy_input_ledger_not_historical_run_provenance": true,
+          "path": "external-local/inputs/scores/AASIST/path/aasist",
+          "sidecar": null
+        },
+        "SSL-AASIST": {
+          "files": [
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/0/path/chunk_0000000.npz",
+              "sha256": "9ce4e3dbc8b96510d687c0f884126d6d4b48424853bc9e53cbdf5825ec14382c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/1/path/chunk_0002000.npz",
+              "sha256": "b24443059b8db7ca3ca0d6a588ac2566e7404cc104e1ee4fcc33b84bddf4ea23",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/2/path/chunk_0004000.npz",
+              "sha256": "5c2b906d552a112905098774a791c3aed4702c9d97bf3c73759fb1585fd682fd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/3/path/chunk_0006000.npz",
+              "sha256": "be7a4065316e2c0ac6806f7421bfadaadfd63b02982b7f59d7452302a88d34f7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/4/path/chunk_0008000.npz",
+              "sha256": "8163859bd8df40be5efaeb44e47cf073fe63681cd319d392a28dd1703e47864b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/5/path/chunk_0010000.npz",
+              "sha256": "61960a4874881fd8657ee5156b09b933d34cd858222d2e4d5c8fb18ce3c4f030",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/6/path/chunk_0012000.npz",
+              "sha256": "96e37010e92dcf5dc9e6fc928a06f2c82899b1a8646f3428ed5f385f9bf0b0a5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/7/path/chunk_0014000.npz",
+              "sha256": "6912960cd0f8d1734a87bb3b7e398ff4cbfc383325e2d45792a5d6b3b13c5adc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/8/path/chunk_0016000.npz",
+              "sha256": "73d7af75221c72f222452b3ffa336e3cde196ea7b676d3665df2bce4680e9e63",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/9/path/chunk_0018000.npz",
+              "sha256": "ea5ead0ea7682ed9319ceb1079883e246463f0c91eca80f73dbea2dc74ada4e5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/10/path/chunk_0020000.npz",
+              "sha256": "94ec74ceafab304f998a0826efe13210edece20f45bfdb9b2c16f18e885105cf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/11/path/chunk_0022000.npz",
+              "sha256": "2c0ebc680318db728af1b555a575b4849931dcf381776500d2fe5b6f0ab4c237",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/12/path/chunk_0024000.npz",
+              "sha256": "24f1d5171988e54059eba1cb2121a19de0c4c6e58867f33ebfbb40ba42418a48",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/13/path/chunk_0026000.npz",
+              "sha256": "6330dc13a4446cbaa29fd58658d1b4913404360c23b887f0ba5f960eded4936b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/14/path/chunk_0028000.npz",
+              "sha256": "7c0591f3af14108e5b8084613aad58d890ea48be1412aaac22a2c7d8050b387c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/15/path/chunk_0030000.npz",
+              "sha256": "efbe13063e90d10e26019c6cc317d1f2a6b2b4142318febd35c731447bd721ef",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/16/path/chunk_0032000.npz",
+              "sha256": "f14322669bdd11bc975ae5dccf2c2c096815a475bd5b6f347fee4c3330bd9e75",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/17/path/chunk_0034000.npz",
+              "sha256": "6062583800d60ba6dd8c1e31fbf5163a38c0706001f2131d91e29ffc6e727cb8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/18/path/chunk_0036000.npz",
+              "sha256": "9ecbecbaa3827ae72a110604eb8e5bb403ccaf0b1c2c51e6c1fab8af27107717",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/19/path/chunk_0038000.npz",
+              "sha256": "8728cce9ff7b10a2f1ab2a00a6058ee47516ad5c3902fb2124c78a2acef1f4c1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/20/path/chunk_0040000.npz",
+              "sha256": "6744279216623373c2122743d8e6086f72b6d63d187373b1d4ac4cfd976d295b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/21/path/chunk_0042000.npz",
+              "sha256": "a7c052f4f4e11467147e0bc9779f1933de976c4ea9bd373b393d2e37f7ef649f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/22/path/chunk_0044000.npz",
+              "sha256": "0879eda1a0474276da43ca34cbb9cb647424b5d6061dcba600d9b754efeda9de",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/23/path/chunk_0046000.npz",
+              "sha256": "0fa2604de67ca0c2a3b46b574588e2295880ac395ce76a3d1b83510af7c69286",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/24/path/chunk_0048000.npz",
+              "sha256": "a47cb9c165710d78ea9ba57dfee62f8769e8be4e173010771c84bcec58add448",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/25/path/chunk_0050000.npz",
+              "sha256": "981e136a77518aac6e471bd92f70d40b0f99ada32d0ba0bd2b44088c83780016",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/26/path/chunk_0052000.npz",
+              "sha256": "a82c7a9f5bca656ab067af37db1d7978c3b64522b94d188bc5d3dd392e1d960f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/27/path/chunk_0054000.npz",
+              "sha256": "071502f99f894255e242a75390483bcaff8b60111a1e366fff70ebda8e9c1e24",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/28/path/chunk_0056000.npz",
+              "sha256": "449dd97ba14553c85651348bc774796ec32a8dbc215f693fe735f4e905beb56d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/29/path/chunk_0058000.npz",
+              "sha256": "03cec73ca8f1082fef1ad938b3d20ee7502d1295c608476b9518ffcccf6e4d8d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/30/path/chunk_0060000.npz",
+              "sha256": "785b26de8e09a5a93e628e87f806adb42a857def9b074fbc98b8f17df1634498",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/31/path/chunk_0062000.npz",
+              "sha256": "1b80b2de5d6a631859dbc4e6b8dc0fa23ad406f0e05483be4cabfa3762b21ecd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/32/path/chunk_0064000.npz",
+              "sha256": "97dda6af267975b94c5e81aa171dd22c333da9d90e1a50c800eb2c9c2673485c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/33/path/chunk_0066000.npz",
+              "sha256": "d324aadda1d8c4b82ee62f5a15463fe5708e4adf4946b38203249ee763147308",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/34/path/chunk_0068000.npz",
+              "sha256": "68494660da0d5d360124684db69d7cf74e3373a6073595c5e5170189528e9877",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/35/path/chunk_0070000.npz",
+              "sha256": "7a1606900cd55b97e382813a193698bbb3ff0810af836622a04af98b1ad1ea61",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/36/path/chunk_0072000.npz",
+              "sha256": "5d78df329d7945e9551f61c84673b70a852a7d8839f036492da147e0852419ec",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/37/path/chunk_0074000.npz",
+              "sha256": "1428fb9101e93937021fe9f2b83cfa2d945d709e38f04e25c2e695ecb72179b5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/38/path/chunk_0076000.npz",
+              "sha256": "9dbe06ae4a276bbdec67221170e1d5389df344ba01106dbdf2af1f878f098a74",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/39/path/chunk_0078000.npz",
+              "sha256": "d7c4669b11dbf1eda3e8f34a06ae234832c6d7e957480a358da7ad53fd8d48d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/40/path/chunk_0080000.npz",
+              "sha256": "81c1fd69e19124a91493719cff562dfeb9a48a5a4f4bc7d6bb80c926d92d66a3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/41/path/chunk_0082000.npz",
+              "sha256": "edf17ae6b030c49093abec43ddfaa106a62f0b4c0feed9c764127010c2015a37",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/42/path/chunk_0084000.npz",
+              "sha256": "b11b10f6b2b6066157c38fac33c49fe9fb9c36f9e4ed9ff015042e6843ab8d5a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/43/path/chunk_0086000.npz",
+              "sha256": "d8eb38427b7cd112810e7f0023b1e354450022b11c035bf9b13395f15a85f976",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/44/path/chunk_0088000.npz",
+              "sha256": "17129673e2a06583402eeb143ef96c6944575f046e3432638437757de98ca85b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/45/path/chunk_0090000.npz",
+              "sha256": "e94d15922c82e1b2009ca24f5d725d3be7373dabf78ca487dff8accd4b5faccb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/46/path/chunk_0092000.npz",
+              "sha256": "041d7041331901049740ef1bfc0570898135982b7689f11a448337a66f2d020d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/47/path/chunk_0094000.npz",
+              "sha256": "471d5b6baf80232ec3d6834ba5b368cc406d85171c61c83862e0584a94ffe4f5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/48/path/chunk_0096000.npz",
+              "sha256": "c8f52d45af2220207ff1242d1ddd260af9cd10c4d8593be67072ca0d0b967ffc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/49/path/chunk_0098000.npz",
+              "sha256": "993de254b5dfe12662d04224e0775e430ecab3dfeaa1860160e26ebc60c372fa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/50/path/chunk_0100000.npz",
+              "sha256": "3abd1dd8ba1e2d2dcd8e7b259148bc988086830c6b4a76bdabcc0b8e275b16ca",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/51/path/chunk_0102000.npz",
+              "sha256": "def74c14ff451e7eb48689e649d7079e8d5f6699614d36bcded05443794e6969",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/52/path/chunk_0104000.npz",
+              "sha256": "54788d61f7fc40a1b75fc7d02b195a489a032c4f24221379aa09694205b78875",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/53/path/chunk_0106000.npz",
+              "sha256": "d53f37b4460f89e57a059289db1fe8fc90eedd94ab782900d9e3e01aeefbe942",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/54/path/chunk_0108000.npz",
+              "sha256": "0e441dc6ae50a48f47b50565ae3a087f1b0641be1632a0c0095c856d9ef21e92",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/55/path/chunk_0110000.npz",
+              "sha256": "2abecf3e4d842afa7b3370219d404e246f0ddbeafeb709e721e1f25b50846ff3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/56/path/chunk_0112000.npz",
+              "sha256": "99257ace728cca24d1a119d9138cb07f82a56f4bafeaf947d5a739e6fc003561",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/57/path/chunk_0114000.npz",
+              "sha256": "7d8cc8850524b456f5217c8e95fda1de4098b97043d1a036360c5fd28110547c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/58/path/chunk_0116000.npz",
+              "sha256": "ec4cc374cc8aa782f86700a0d5d22800a270d462ab684f68cd2e1240efdffc9a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/59/path/chunk_0118000.npz",
+              "sha256": "470e68d0a67fff8386773b80bd7e3ee69890e5c228c352f9bfbb419115acf16d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/60/path/chunk_0120000.npz",
+              "sha256": "e7d09ff033f085d3aeefc278d65d7bb948bf8d242e9c09c141c41fd6919844e4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/61/path/chunk_0122000.npz",
+              "sha256": "b73994bec4455c1a821cfa6241adc8297a95ceb0d61d23905fddd0c6ab5691fb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/62/path/chunk_0124000.npz",
+              "sha256": "6b162efb45ac095051a98a38de923dd2a22f7ee47d7a21613db64427b8aa3a65",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/63/path/chunk_0126000.npz",
+              "sha256": "33ac781140b24c155a4980e20bdfcd0c0ce53d4242ae0e32419cc2a58af4b038",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/64/path/chunk_0128000.npz",
+              "sha256": "fead34549aa209fe3bf87789ce431772098b862539a79689ba8fd987821d7ee5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/65/path/chunk_0130000.npz",
+              "sha256": "7ec87d9c85cd4f4713d742d5ed41139c3bb7bbbf83f5177e32265a8ff1eb1784",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/66/path/chunk_0132000.npz",
+              "sha256": "bc595bcc58f28c28b3673552d51ba2b31001c74d08352db53eee9ffb3dea11dc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/67/path/chunk_0134000.npz",
+              "sha256": "5c436088352bb87607f8023c47d371698c0405b8e427d3e0a3ccd6cf0a4fb64f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/68/path/chunk_0136000.npz",
+              "sha256": "b49cee9c6838fc5d41b055a0b6864a5cab3e9f48bd4a0f0314e49fad4fd70c1d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/69/path/chunk_0138000.npz",
+              "sha256": "448544afe3b426d3fe93f649c7ba4d502bebff20b557f3d64a0c26269cf15c3d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/70/path/chunk_0140000.npz",
+              "sha256": "e3849ab27136819948ef44a4e68a6ab415ef4ee1d3f03579150aab55c8a0639f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/71/path/chunk_0142000.npz",
+              "sha256": "b192620cafa92e90a50a78fa7988cab542243af44466c8c35904fb3e03f88e4a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/72/path/chunk_0144000.npz",
+              "sha256": "479b451c1c962febbb1683612a47d0dc20a3d8747267cbc433bb3ee5ff6660e6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/73/path/chunk_0146000.npz",
+              "sha256": "8e5547e3b83cfc9800e4d1f11150ca3b8527b3fa9c345ea6c4ac21b35919e019",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/74/path/chunk_0148000.npz",
+              "sha256": "836ff9db5e1feaa286a9d2f1de2a49ebded74a10447ead74466a2d4af8743399",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/75/path/chunk_0150000.npz",
+              "sha256": "6be3bfe8669668da50b9f15609324993cf09b8b4a5db4f5551a9e5de39cdd7d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/76/path/chunk_0152000.npz",
+              "sha256": "ffeff7c99e1a3e78d62c88e03b0fcd48fa670d2cb18f64c25c807be031416586",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/77/path/chunk_0154000.npz",
+              "sha256": "7d6fd6d2502ec3ba4c41851b1ff01142e8d3b934bdeef63231cc49f8ad8169ac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/78/path/chunk_0156000.npz",
+              "sha256": "310f32d515598692ffcce360133f2a82952c55356c569eda2a208902ba10fa12",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/79/path/chunk_0158000.npz",
+              "sha256": "bd3f44d0e1e415ed09341f18b87ba2ed60e8ccbb66d63ffe7e75f0bb31e7e88c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/80/path/chunk_0160000.npz",
+              "sha256": "07b410750854da0e664fffa157d9c3dcc5f41fabf200ba9fa420dc5a48c44dde",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/81/path/chunk_0162000.npz",
+              "sha256": "4857eee28114b264610ddfdcc08e37de1e42b50ee8ff2ae707f0535a362dd16b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/82/path/chunk_0164000.npz",
+              "sha256": "c78ead66128184ff4f981a920fab146ea5387a4c9473d018d840da000bdea9b0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/83/path/chunk_0166000.npz",
+              "sha256": "7f19a5ca817d5cc7ddea9d507ad23e0765367fc850b5f02d7957070fee4e0686",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/84/path/chunk_0168000.npz",
+              "sha256": "d2f5673a72b6b39658517932a1e69808be452ee5504de8bc91266e7591476cac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/85/path/chunk_0170000.npz",
+              "sha256": "33d8978d08b7b6534bb45cbc3690cd24c16e5c10591f6d823da7d9079d242d90",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/86/path/chunk_0172000.npz",
+              "sha256": "dcd9ab7c120de878f13fbd5e7e0c14a494bb7de3211ca3c4491b79badd8df568",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/87/path/chunk_0174000.npz",
+              "sha256": "988be0008a231e9256eac5fd5d7376e1a2767d76806c73dbf5357eda8da687c7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/88/path/chunk_0176000.npz",
+              "sha256": "80f234f31e352464ef7693679df418102facc45b1c7f9dad138e0a1f6e22ca75",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/89/path/chunk_0178000.npz",
+              "sha256": "354da26175dbf1261592ad8815bf201c9c4de22456b8aa75749a884174de1483",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/90/path/chunk_0180000.npz",
+              "sha256": "c42d0ccc46e1dbfe3f412ba7868149f94e2ab5ab3cdf63818f1693c72eb1c1ce",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/91/path/chunk_0182000.npz",
+              "sha256": "0a3ab270b6ec327f5122c4000cb41eb9242cc13f0b00882b39770005e51a47ed",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/92/path/chunk_0184000.npz",
+              "sha256": "a8cffd3d33bbd28642f038f7df7f7c66d5d902c8e5c82979f6bf5226cde69121",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/93/path/chunk_0186000.npz",
+              "sha256": "3622efc3c4f8af169af081c680bc6b084caa4631023065ca300b184f91e91f7f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/94/path/chunk_0188000.npz",
+              "sha256": "675c23b96396fa707a1aa2203e7e5ce49377a9039cb7b56b499ecd4dd9a48d63",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/95/path/chunk_0190000.npz",
+              "sha256": "1543f0468cd06c7dc88ff9abf0274026056d637fd0ba6cd1400153b32acc45ae",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/96/path/chunk_0192000.npz",
+              "sha256": "92e85d2495b703fc4cef511b4b3dbc6774d588dc8f2675b334f0539a7acddd14",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/97/path/chunk_0194000.npz",
+              "sha256": "f9f5914f5211a719fdf11ee12687a663ed56da0f7cb57988bcbf2319d80f7348",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/98/path/chunk_0196000.npz",
+              "sha256": "2630301e3d4d704fca5abcfbdd0c23b133bfa04fc78cb92f7606b147dd2dc8ee",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/99/path/chunk_0198000.npz",
+              "sha256": "978d49e88ac74f203a8b96d3076c8fec8ea725699ba7c79e16891fb468760ffa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/100/path/chunk_0200000.npz",
+              "sha256": "725cf4c0fa739ace6227b1eca7cea7ca6eba9b9b97a5799adc9ac58f007522b7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/101/path/chunk_0202000.npz",
+              "sha256": "5f328943b75e0865fa51fd7d747c5c91d9f653bda07d7b146772ec26a00ceada",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/102/path/chunk_0204000.npz",
+              "sha256": "a8e9f6ed6b934feb5f898f5d732a577be9ea9ffda697436107a0d168af279668",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/103/path/chunk_0206000.npz",
+              "sha256": "08d88093bae332033a5cf9dc909b6f803e1d9606a4f3b6c261f2f998981972f5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/104/path/chunk_0208000.npz",
+              "sha256": "e2b0514833bf850916685fc2320b0d07f6c8bf488a486ab9aebcb7e52008cd6f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/105/path/chunk_0210000.npz",
+              "sha256": "cf6497626a7ddc3027c897baa97507b19325075ae2582c8526335d36e52ec7d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/106/path/chunk_0212000.npz",
+              "sha256": "05bf20c74489505d0f919f64b212626370273ad23848b25f82e6632bf31fb823",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/107/path/chunk_0214000.npz",
+              "sha256": "d5bdc9b220d9cebbbb7505b13e7f08fd881115b303838b6815242a93e8d64359",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/108/path/chunk_0216000.npz",
+              "sha256": "9bb2b24c07e38e003b9883d96dbf04340612ca28369f4c5e980fe4b5f69f267f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/109/path/chunk_0218000.npz",
+              "sha256": "8f92f4fa86c71cae225d3bfd48fa1a58c3a8b9d06ba73a9f8b3a247530529853",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/110/path/chunk_0220000.npz",
+              "sha256": "9cc8006178d04886acaafbf2dc01c570a987986bc3ea52fe8d110613af70f1a7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/111/path/chunk_0222000.npz",
+              "sha256": "b7b0b31ab476caf93f43c93124660e15a40b14025b07e7b46fae9c04b3f1afc3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/112/path/chunk_0224000.npz",
+              "sha256": "5290e0621aa51110f080f529eb6f7b06f9092f8adb19aea677cef3cd89269b00",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/113/path/chunk_0226000.npz",
+              "sha256": "a7cf955a072e117e611e5d90215662ad101fab57ae42a5d33601af2bef6e688e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/114/path/chunk_0228000.npz",
+              "sha256": "81d24c38a14de706383c3ccde0dd26768e7d532d556d9c0d79d3d022b2dcde00",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/115/path/chunk_0230000.npz",
+              "sha256": "7b69fda2133aa5b34ff1d8e3a47db1608641581c18426bd00c68483b4bffa5b0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/116/path/chunk_0232000.npz",
+              "sha256": "2d815ba1ff741f861d03215d332acb6caa3044fc67bf99e8580587c1447cfa79",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/117/path/chunk_0234000.npz",
+              "sha256": "9730ef43d1c5ce36719a14f0ab3e60a48ec31bab43291d435c9d633651faa54d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/118/path/chunk_0236000.npz",
+              "sha256": "0fda1a71414bbf52524280d9cfc187c5958e2a77803113850bd7840969783176",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/119/path/chunk_0238000.npz",
+              "sha256": "581a09022a51ddaf270c96e7b501ac289845bb439ea1647f42a54d1660b68733",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/120/path/chunk_0240000.npz",
+              "sha256": "2530cc7452298d1323e615640430ac2e4b1837ff5d2dd50bed9b344ee64e227b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/121/path/chunk_0242000.npz",
+              "sha256": "f4260fde89c0efeb21a1d7c0cad96e32992d1d2263e4dd3ea457d16fe31be39d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/122/path/chunk_0244000.npz",
+              "sha256": "9e86763e8b2cf93a807b4285a6b9e518d9613752e618da2199799367b83bb102",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/123/path/chunk_0246000.npz",
+              "sha256": "0efb5c0f69d48dd8037f8ecd3cbbb7a122fb5a2d01bed0d4389431977bded959",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/124/path/chunk_0248000.npz",
+              "sha256": "e41701b67af3d4b7c5ef5741726dcf585b80c36cf600cc996ef543c5032f8af2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/125/path/chunk_0250000.npz",
+              "sha256": "cb25116b77cccb8862023f32a6bb9906c836a7e3e1e341a6f0444dd8b1c71d49",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/126/path/chunk_0252000.npz",
+              "sha256": "eb3acdf4d97a95fa89dcd5b91e852fb082f3241aade1ecc1dbb33465c40921dc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/127/path/chunk_0254000.npz",
+              "sha256": "17a521b1600012ec2ff4ecf4441e724c8bfced521d09cf34f3cebbd463d1069d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/128/path/chunk_0256000.npz",
+              "sha256": "46b9e761f89f4466f4e35012dbf82310320d3d703c74f7495c711428fbfb84bd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/129/path/chunk_0258000.npz",
+              "sha256": "d869e46ee27fd2dcee9b02c4bf2aa9363a9d0d64ca001fea130f4d0025449715",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/130/path/chunk_0260000.npz",
+              "sha256": "62724fed589ffc3bbb9eafdc2d317eb76ad847ced30682b8a64254231bef5470",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/131/path/chunk_0262000.npz",
+              "sha256": "a887c8c0e1861a8ab2ac343f82fc1ea5f1a20e5d0d7849653050f5f1aba81d8d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/132/path/chunk_0264000.npz",
+              "sha256": "cfd70efbf1725d3e193ee7878ea8ed812ddc6d7871a20b423721e9f427854ce3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/133/path/chunk_0266000.npz",
+              "sha256": "71f7dcf14dd0b52b0094e5c3f5b7f0431b55b5bbac3e24bff861b6dfba2bce66",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/134/path/chunk_0268000.npz",
+              "sha256": "ce4f2e4dde1e54cb9662708320dfd872ee97df74d4e68deba5023241e303ce49",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/135/path/chunk_0270000.npz",
+              "sha256": "845d7ccd3d57dc294704e2b1878b4c643b3ca50ebec8bd0e1da85b270d4a45ef",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/136/path/chunk_0272000.npz",
+              "sha256": "9f1e6e9b4de21bd0fcf852901c16cd0b850109fcb11e384d076e4a8cb9522cad",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/137/path/chunk_0274000.npz",
+              "sha256": "33175caa46eb6b7386a6173b30bc8caa67237a899acdc7cb3b7276f8c37c3503",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/138/path/chunk_0276000.npz",
+              "sha256": "88076a52ba7155f9130b10e9ae57d463b1f76946b7f30123c90ea2300a56befd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/139/path/chunk_0278000.npz",
+              "sha256": "915c2a948401d14201f0688114e7bd4f9e5dbf8c4a73baec339732ae81f55176",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/140/path/chunk_0280000.npz",
+              "sha256": "4a0ca2296e90efa9987abc759af0a14514728ac6ba776f2e80a959ce74d5c7c6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/141/path/chunk_0282000.npz",
+              "sha256": "056cbc5f29daedd4d66463c5f67edc33d822ff2d916bf00515fe82831ada5087",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/142/path/chunk_0284000.npz",
+              "sha256": "e333b536c42ae00310a0562b6f22edf0bb4b484d9f3ec8305bb63cc9777ccb88",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/143/path/chunk_0286000.npz",
+              "sha256": "100877f02a474327fe7e7d2d797c47ec807969d39479e16bad89161e353fdf25",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/144/path/chunk_0288000.npz",
+              "sha256": "8d3d0d831f46524ffa8871284dce9cbedae0fa6f6def046ea3fad006ddb780ad",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/145/path/chunk_0290000.npz",
+              "sha256": "7b4aa54de46d93bacdfabcfaf84d9afb11ea0783577a138384459e6b4370d97f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/146/path/chunk_0292000.npz",
+              "sha256": "fe420a5e6fbb93a14a91ceb3a387f35542036dbb0043f6959c6b7b428d940b48",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/147/path/chunk_0294000.npz",
+              "sha256": "8102735027e77ec67b12cac14654ab5666bbbcc0c2cf73d6e7ad49efe36f7aca",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/148/path/chunk_0296000.npz",
+              "sha256": "ea19218aa7c4529273f90a940b09050088294b50a314f7d3ffd773a83700d26f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/149/path/chunk_0298000.npz",
+              "sha256": "4d5a6c0708c597b4fd19f0665b7c63a4f8bd0851153ecbcc7bc268468af6b17e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/150/path/chunk_0300000.npz",
+              "sha256": "365f84235c9e0a1e4f3e47be3cb41b8a9ecd606ec8bb4f85557ec473ed4cd98c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/151/path/chunk_0302000.npz",
+              "sha256": "80feb0f94eb3e2823fc36e81e58106d477be1b28e815779b4698fc3bcda17c18",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/152/path/chunk_0304000.npz",
+              "sha256": "b0746e15e6fc95608d2cbbb206471ffc74b16825f3367c160d76a1f3d1f7a630",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/153/path/chunk_0306000.npz",
+              "sha256": "a1e9a744fe7c343924f6dd3e8608662b73e06b6a7e695e162a1254705787c65b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/154/path/chunk_0308000.npz",
+              "sha256": "48638e6dab0585a0c4c94e4b787c1a681eed9374bcb7ffbb6f90f1b4767eee02",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/155/path/chunk_0310000.npz",
+              "sha256": "fef27bd078cf4ba02d2ba22c92f6fc4e550819777448394ae8e3f1d86d8b7312",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/156/path/chunk_0312000.npz",
+              "sha256": "3937106b06fb697e52438bdc65bab5476921577fdc6ed3df501235e9d4efb567",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/157/path/chunk_0314000.npz",
+              "sha256": "e14f0c57bb38980d1e76278bd2f5745207a28b5303bcb418c292205432b9b65f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/158/path/chunk_0316000.npz",
+              "sha256": "2833969df5b1f8661fcbb0d19d31756072e2a8976d884a7b6e73441f7541c977",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/159/path/chunk_0318000.npz",
+              "sha256": "cade539931bfea961f005611d67ba4e43c8fb2b441317aba4482ef3334268cc0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/160/path/chunk_0320000.npz",
+              "sha256": "eeec58924bebbdfd127d2e8a56ef071e9474d471a434a201e300f996d34f9b3d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/161/path/chunk_0322000.npz",
+              "sha256": "6856dd81b8fd7d64b05be72ad5317d54245957e96dd47be3df1072417805c5e0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/162/path/chunk_0324000.npz",
+              "sha256": "0e86d788eb4c1d37deafbd691d63fac17a0c658de198f265be4b886b04d85169",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/163/path/chunk_0326000.npz",
+              "sha256": "30dce0ac2284bd8db6f342fe0e67e6f663e891c62908dec6e6fc535de6cf221c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/164/path/chunk_0328000.npz",
+              "sha256": "0631ad4b0011ab2ae897a53bf8b8b5352e84d024a45332fd2e29be6fdad53776",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/165/path/chunk_0330000.npz",
+              "sha256": "10a63c141c044f7e38b4b94ec5832fee8f26121bc2ca9ef0957c6f86c87fd6b0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/166/path/chunk_0332000.npz",
+              "sha256": "d7ed3b08694dd3cd621e9ccb0205b3c66847845ead5beb796a9c31f308230467",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/167/path/chunk_0334000.npz",
+              "sha256": "ffc8315ebede157634cd0d38af44c433544b52d0a53b173091eda9e834559092",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/168/path/chunk_0336000.npz",
+              "sha256": "eb7edce46ec2c3105068385e1de4ac5c8b9797dad14d4b0b80a6fc91471c378e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/169/path/chunk_0338000.npz",
+              "sha256": "64b6e4c58bf1085effb78e581fe22a9d0c6129a3fc8b83cecf0e39bf42fc437b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/170/path/chunk_0340000.npz",
+              "sha256": "f2129c8c4f021a5e1d01f7876cb8ec2e40ff3a8708ee18c638eddf05295e491d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/171/path/chunk_0342000.npz",
+              "sha256": "6ec930932e6dd9ae8dca5ae9b583e80ec77fdb9f2b13c100fdcf6236c0a9dfab",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/172/path/chunk_0344000.npz",
+              "sha256": "d4d4f119e38cfbad9e81a9494528d8f763ca4072943d746046528ea8879b53d8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/173/path/chunk_0346000.npz",
+              "sha256": "64af1253e4ea17639629d1647fa01275ca19bf652a756b490841ba57ab99c0b9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/174/path/chunk_0348000.npz",
+              "sha256": "8e17e43d4412ea6b4a192297e7c2a7397cb5eef2c2d2f48cd30508886ee77e14",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/175/path/chunk_0350000.npz",
+              "sha256": "7beda81548a4ed4394c77362868512cfc5f453764d8b63a84296532addb3d884",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/176/path/chunk_0352000.npz",
+              "sha256": "4cd5fdd96efb9565c9428527ae15992df05c71a42d61a7298aea78e32709a7a2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/177/path/chunk_0354000.npz",
+              "sha256": "df0067c6e4defa042e1b38128e5fcce68d13f5713ba36c9773af79ec9bf019fd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/178/path/chunk_0356000.npz",
+              "sha256": "e926de1aa9e1a1823c8d82e218552d272b01bb58c9510fede1a4738f14bac4c7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/179/path/chunk_0358000.npz",
+              "sha256": "8d5e6b07144a6970730617daeb281a25854ba2be44fee88f9f8d001ee36f8775",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/180/path/chunk_0360000.npz",
+              "sha256": "696b18e8544441be8dffd02deabcd083b4d1970385205bd2335396d92902b950",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/181/path/chunk_0362000.npz",
+              "sha256": "67761e70f4be4d96aea547a08665643fd2ac36a1745a1be72c4a5346447ca2b2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/182/path/chunk_0364000.npz",
+              "sha256": "f64f7b7ac6448f79a513a4ffd56f1cecd859e418342343076fa054e7bf11b169",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/183/path/chunk_0366000.npz",
+              "sha256": "039cbc7a82625fa5480cf064234611f3a8f7024a970a8fe818a04ecb0156f3db",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/184/path/chunk_0368000.npz",
+              "sha256": "51362ece07af7f574c25c23751bc9015c560657555ab6f602000e79f38c269cd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/185/path/chunk_0370000.npz",
+              "sha256": "31053618921e81c8df871ed465f08a35bccd487b63115966dcfec1009f038bf5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/186/path/chunk_0372000.npz",
+              "sha256": "73cb880ef545091c7db94645d43eebb284ba2f3c624ab5f27d789b48a14ace59",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/187/path/chunk_0374000.npz",
+              "sha256": "b7ad044877267bfec902c3cb1d388f8b58f9baf63713c61eee2b4474e80a43e7",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/188/path/chunk_0376000.npz",
+              "sha256": "a46a556c303934118f19f6be95070020044c7301c374723f8dc85567dfddfb6e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/189/path/chunk_0378000.npz",
+              "sha256": "d40da99b0851c5cb1e083b734617fc7688fa9db82a8587e2bbac4dba89fa90e0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/190/path/chunk_0380000.npz",
+              "sha256": "545caa55cbc907b9430207cde0cda0629f78735d463000ecc5c82352dd319d98",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/191/path/chunk_0382000.npz",
+              "sha256": "2cf4d5277e77708e9e9b595e3804e23bfcb559dba7994b68408f9f08d3923f07",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/192/path/chunk_0384000.npz",
+              "sha256": "2fd52aaa772c3b901e449ccb983e86ded13720cedd9763c1e70aafab6b706a41",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/193/path/chunk_0386000.npz",
+              "sha256": "5b47b371c235517fcea8d5dec9f6373b4df5d9b5345b4e4d15656b48eebda080",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/194/path/chunk_0388000.npz",
+              "sha256": "8f1f88b3bdd70daf937a165c9c3694e637cea8be9e94b03df7b6281e402e07ee",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/195/path/chunk_0390000.npz",
+              "sha256": "c87872ec779c47c3bba700b2d56f19dcebce37a4ea7af28b87ff53a383c33f15",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/196/path/chunk_0392000.npz",
+              "sha256": "2848de1adba1a1276459dd9d24da2ebee29533575eabfbffcba488c6221a1c15",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/197/path/chunk_0394000.npz",
+              "sha256": "03abcbaa4902aa993aaffddcfe0117cde072e4f542af0ac2a6cf611c98ce024f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/198/path/chunk_0396000.npz",
+              "sha256": "8e524474981e4637b95f9b2e897da35b1c67a33dd4fb4b10211544054d87b8a9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/199/path/chunk_0398000.npz",
+              "sha256": "e77e21daa5ac149e7966f9a0e371ef7476b6418ea7240e43c7592f0ef89ea462",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/200/path/chunk_0400000.npz",
+              "sha256": "4e93ab12e052c46fee60945094de8055f7eb3e7f40203fcc5c560ddb2e323733",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/201/path/chunk_0402000.npz",
+              "sha256": "742a5cffb846d38a40f2deb68457daa7f53203725b7d29b4275bb6aa999b6425",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/202/path/chunk_0404000.npz",
+              "sha256": "cdb34526cf320b3c3b0edbf65090915f1b2f17eeb0ac09b2c5d0e5c16d43fff2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/203/path/chunk_0406000.npz",
+              "sha256": "cc39207b2e64aa2e5808d1b62b6a9c9087412a33dc46a10155b7dc8097ad1a75",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/204/path/chunk_0408000.npz",
+              "sha256": "c5c7be11618dba0fa8c70872e7fbcb20a2328e280a60038e269694dd6dbbd74c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/205/path/chunk_0410000.npz",
+              "sha256": "a3500763d8e84b7e07a89e145105e379858aef6fd09ae267d0872ab20ba86e2c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/206/path/chunk_0412000.npz",
+              "sha256": "889fbc30860eedd42e90b79ccd32b9e89d60bd8420d2c4d98a74fc189e4e2211",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/207/path/chunk_0414000.npz",
+              "sha256": "85382bbc11a92c1a80cc0bebd4194938781c3df7a440cf5382de8ffe534171d0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/208/path/chunk_0416000.npz",
+              "sha256": "0afdb560efd9911264c2e2ba0818f44a7bd916993c1748bccec935d1d03d2781",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/209/path/chunk_0418000.npz",
+              "sha256": "1ac70b6e32013e49ad9f9beb34d639108ae94e7b0aa31cbce87d2d26e39d44e4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/210/path/chunk_0420000.npz",
+              "sha256": "664b7da0bbe7655908cd9d28642f41e074604b78eb2f5d83c483f472ac03873b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/211/path/chunk_0422000.npz",
+              "sha256": "d66faad4469be8a47f07fb6154584d369d8b2179711468a15df017d5456ffbac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/212/path/chunk_0424000.npz",
+              "sha256": "bfd8013b326d429d62d3c9d6011cc04e3398667d9f2a6830b86cb246f7d9f922",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/213/path/chunk_0426000.npz",
+              "sha256": "1956996aa84298f8084b9ed43f2c4d26151939a53ab103db254f3f98e3df5de1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/214/path/chunk_0428000.npz",
+              "sha256": "0cdef8fa4de508d22de993509aab80193704b9726b3b8cb75b4a2ec4e18b0e49",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/215/path/chunk_0430000.npz",
+              "sha256": "292307c5179b927d6bf13c9f83f92856da77b38574569e8842b9f89f396d3ef4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/216/path/chunk_0432000.npz",
+              "sha256": "8659488751245783b9710382b09f600a7211e95a52506b9fd38e404dff0793d3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/217/path/chunk_0434000.npz",
+              "sha256": "0b310ae493e8399c2cd6f0260ac1c279e5cc45e233df06f6d8e55c067b0f720e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/218/path/chunk_0436000.npz",
+              "sha256": "3e6e164919b13aa3efe7c52d5a64a396279dd31965d5f8653f8dd261e840287d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/219/path/chunk_0438000.npz",
+              "sha256": "3a651387827ea2a4e050622da977cd71785f5ae34cc5748c8aa9f41e2f98523e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/220/path/chunk_0440000.npz",
+              "sha256": "cf318806a685154621c698a0052509de322aa7ccc75bdfd2f4d1119ec30e790d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/221/path/chunk_0442000.npz",
+              "sha256": "543bd67c12f2b2418d45fbb656394e852efab2b861cfe4d8b91d7b9d6e85cdf1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/222/path/chunk_0444000.npz",
+              "sha256": "a8d1e7d2359c7af1794906db6c75ae26f0010acb3650fffc76c2589e1b0e67f6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/223/path/chunk_0446000.npz",
+              "sha256": "971a0116cfc5f1125a270912f963826c339afca689c830149b3687d5c9b05ead",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/224/path/chunk_0448000.npz",
+              "sha256": "9b4a52a2701ef2a5fcdb42afabe99dac41e8a75250b497efd51796dd7daa1da4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/225/path/chunk_0450000.npz",
+              "sha256": "711ea712c01f25ba284319fd5616920a14e198c28317af3ff904a7a56e630ac2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/226/path/chunk_0452000.npz",
+              "sha256": "aaad3ccf875e6ed1f0ed18bb6c5e70baba1241257160b1af033e3cf3230ea17d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/227/path/chunk_0454000.npz",
+              "sha256": "82792ae248ea93d594068b71999f77aade71fa67cbee207c81d5e358cc6c0844",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/228/path/chunk_0456000.npz",
+              "sha256": "84e1cc467d808aae76c686191f40414e0455c77b4d3f780f6dd77a230e6f7195",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/229/path/chunk_0458000.npz",
+              "sha256": "b708a077c724e68790307e37adf57a5f6bca3565176e7eb7474484007b238f06",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/230/path/chunk_0460000.npz",
+              "sha256": "855f6a24c03bc5af51adbfc148a4bb2f7ab62893344026e69d56d5aa7cf07372",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/231/path/chunk_0462000.npz",
+              "sha256": "645f513c77bcda476b98763cacd87cfc033ac40cb02afb9c7a04765534a3cb21",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/232/path/chunk_0464000.npz",
+              "sha256": "fe52705fd8f550de8e5fe1c49cd4b1d6f9241c88eea9293acec9f66dbc4551c9",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/233/path/chunk_0466000.npz",
+              "sha256": "acc9bc226e90ad09dff87f6a5a85ae38096e47bcdf7049332d8ad4d25272b926",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/234/path/chunk_0468000.npz",
+              "sha256": "321f419ed8d2504697395786f1b450c4759917f60f5ab24b93f3459e4c35208a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/235/path/chunk_0470000.npz",
+              "sha256": "be41eab56317399e725a4770bebcab8dd938d61fbfecc583e3fe667d9a3dd00b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/236/path/chunk_0472000.npz",
+              "sha256": "65c40db5dbc17e02f6d672d2536d356efb115d49c4fe3dc85f8bd090702f86d1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/237/path/chunk_0474000.npz",
+              "sha256": "557c73558b928f9be85f0eea61471b91e65d102bce5e9b9353d3015006f15c44",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/238/path/chunk_0476000.npz",
+              "sha256": "6856a8e057d450891ec0bc275c2af6b825a0bd8fd14b2fe64faf5874aa2d7082",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/239/path/chunk_0478000.npz",
+              "sha256": "33cd7e826e884a2865c55665159ce18369cb4503840365f82677b3c1e7642ac0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/240/path/chunk_0480000.npz",
+              "sha256": "8c6ecadf89e870d143cccde862d9eab2f238d6d880cb811ee7bcd62426e1d05d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/241/path/chunk_0482000.npz",
+              "sha256": "23eccfe4a63c6e3e8fc5b453eee7f56ce607dda7272c1ff1e755d79906edfc01",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/242/path/chunk_0484000.npz",
+              "sha256": "76f2e58ada4216c47cef4129ea5631d2fa66b5fc71de07fe5ea07b0c1b67ba51",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/243/path/chunk_0486000.npz",
+              "sha256": "2c3b2070f50a5145fef9d22272ac7850b5968902bc8c80bab7010b7592a3b95f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/244/path/chunk_0488000.npz",
+              "sha256": "ff94de764ede121c38e6e4ec1bc76cf9202379918d87d312f36e3ad69dc00fa1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/245/path/chunk_0490000.npz",
+              "sha256": "d6546ebcd17bdf4deff0d0352294720d467de2ad34caea3c553cb035ce68df21",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/246/path/chunk_0492000.npz",
+              "sha256": "e11facaba5dcc8190fe9171e34197027978336f5dfbb70a57e66b26064a99cae",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/247/path/chunk_0494000.npz",
+              "sha256": "e6c4cf3de8b3d7698d5b6ca5de9fa764d88ab504de0e637271204b6e902e1ecf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/248/path/chunk_0496000.npz",
+              "sha256": "506fc6eeb8c90360d3ddb91acb48a48a16f5678a9cce1e661d8835da25792801",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/249/path/chunk_0498000.npz",
+              "sha256": "af29603e85f6a15604e0b269a8043441413323d544ee3c34acd0abd9097a55cf",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/250/path/chunk_0500000.npz",
+              "sha256": "d4556609ba9ddbeea3498c75f23b53b3d0bd03bd1ea114a6127dbdd583f0b488",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/251/path/chunk_0502000.npz",
+              "sha256": "40d00386c91839a1f56124f8bdfe389228d4c7bc88c97cf962c0f97a16586c4d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/252/path/chunk_0504000.npz",
+              "sha256": "adde464e165895a5276bdcb2e750aae78316a9babbb6317095ba586c2ec18169",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/253/path/chunk_0506000.npz",
+              "sha256": "e9d508dacb0800765e05e74a85bdfe917163219597432d169b714a0e977398a5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/254/path/chunk_0508000.npz",
+              "sha256": "7224e2d23edb3ab74c0fb1ee24de3ce2d28251732fb5cb45038eed283e833242",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/255/path/chunk_0510000.npz",
+              "sha256": "4199b4ee303cfe44e7f49cf1e343d5e1c1379ff14bb1e131cbe6232f21a0cdc0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/256/path/chunk_0512000.npz",
+              "sha256": "b388a7dcb2cf0880d0c3e8f5858d4c08086e000b3bf36bbccdf67bada231ceda",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/257/path/chunk_0514000.npz",
+              "sha256": "8f678b56de0eb9f9fdf1897e892dd8e7df05215ee16e2b599f69390e5775cc4b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/258/path/chunk_0516000.npz",
+              "sha256": "88aa1458fe52956c41d43676a96dd0388ba0af06b88816ad3055bb0b42969e96",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/259/path/chunk_0518000.npz",
+              "sha256": "8d155bcfef4820e8b7f74d6daec39172b3654a39dd1731322d30c71fa45e688a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/260/path/chunk_0520000.npz",
+              "sha256": "14740cf04209aeabf4cca70018dfd735a33d461d33661ce4be6d103e454956bc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/261/path/chunk_0522000.npz",
+              "sha256": "61fc25156d2384c976cd4fe154ccb0bc44ac0f1dceb3915d3d4e942f8f76fee8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/262/path/chunk_0524000.npz",
+              "sha256": "30679dc6cfd6ea5516a3d6a86bcb6a2145c7287c7265125a92f78bf1782768ee",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/263/path/chunk_0526000.npz",
+              "sha256": "eb068acb69d1946513f5916e71171885a75e10f67ee4f29ed723af57b3387515",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/264/path/chunk_0528000.npz",
+              "sha256": "0d45dd3ff5fb8bfac650605b2f47dad6cddcb9efb043a5b3cc3609142ae9e0ea",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/265/path/chunk_0530000.npz",
+              "sha256": "90c5e642a5689bb1b3a4f481816ec08f5808ea4c26da2bf0995781014eb83785",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/266/path/chunk_0532000.npz",
+              "sha256": "bae7d4378a6724f61c221b7eabae344e4095d03bb0247741826ce1354b25ab13",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/267/path/chunk_0534000.npz",
+              "sha256": "a0edc94c039216662ffa22a3cb82407aaf26830cffbca7a20357d6206d017dd2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/268/path/chunk_0536000.npz",
+              "sha256": "c7b339df5972e53570d87f534a5c9923597d21b463e1df279e56d347092a1cb8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/269/path/chunk_0538000.npz",
+              "sha256": "ae76a7bae40b6400b59263dd44c99e36c0b9b12135974df189388502b435ab66",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/270/path/chunk_0540000.npz",
+              "sha256": "088ca84301e8b12129b8f44cf0893adffdc698c322a4621333d73660892bafbe",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/271/path/chunk_0542000.npz",
+              "sha256": "7c4aedb6aa5f7aeb6614bdccc44bc0b0bf19a808f8e6211dfd93f0b0a8c2e2ab",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/272/path/chunk_0544000.npz",
+              "sha256": "385a4b487585656cb485abf28d5aa1b7602f6b810e374ec17e88d0a9084fc166",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/273/path/chunk_0546000.npz",
+              "sha256": "f38396a2f6cac6255efbf5a8f7cc75b810810aa976ea3f8f59cd452770023dba",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/274/path/chunk_0548000.npz",
+              "sha256": "3f6fd98da51d44a4f53a6f21d3799cd35f4bb02e652bb15e198e4753e67bca1c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/275/path/chunk_0550000.npz",
+              "sha256": "8e7854afe08b9941ee9691001e5c77d102fa8de0c4dae99f3ea18698316b87dd",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/276/path/chunk_0552000.npz",
+              "sha256": "964d0f748e7443ed1e9c0d5dcdda4c2b7ffd49121940fa96ea5b1bc20e28c895",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/277/path/chunk_0554000.npz",
+              "sha256": "c5d89b0f09238d860e6d6672e34744c416ea8dcfd68a07832fdb0b7aae15da90",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/278/path/chunk_0556000.npz",
+              "sha256": "308f8edcf6fac3531e4054fafb5378733b0c7a4beeacb7aecad72263151797ea",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/279/path/chunk_0558000.npz",
+              "sha256": "355f674097facb2f37e8207894972ad336f0fba69ebe4d59e601bd5b55218a75",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/280/path/chunk_0560000.npz",
+              "sha256": "981b68e705b12c0222e57f6dc93088bcea2a61d44c511190a62b014d0237c004",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/281/path/chunk_0562000.npz",
+              "sha256": "ad6ca7a7242c3183a036b091610752f055a97a57c4655b0acb8fa22f6d323562",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/282/path/chunk_0564000.npz",
+              "sha256": "a6f1886ad3330380ece382f911248c4618418dc982403a2def685120d66f3361",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/283/path/chunk_0566000.npz",
+              "sha256": "7172ee2ef7411b3ec2e413424eb185770abba698ce80000d8d1459cf98b0d8a2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/284/path/chunk_0568000.npz",
+              "sha256": "62f1b8ca3b051390da6dd5259e96e2a3d4920f3943d135a313e97ae623199d8a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/285/path/chunk_0570000.npz",
+              "sha256": "32a529ce908e0eba48ba7257b2789753f109ede126f4146355600b7e6ab30a73",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/286/path/chunk_0572000.npz",
+              "sha256": "8d2d63f33ae7ad7cff399cf98866489e4c96c495822931a0dfae9e7f33a8ca16",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/287/path/chunk_0574000.npz",
+              "sha256": "9e8434c01db664e074bfe78b7c9fbddba8ecce3fc7a6d4653ec4f597af595e1c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/288/path/chunk_0576000.npz",
+              "sha256": "bba492cd70877098428f93fdf9aebd5c052febd48ecc54eca7ef7c33668fc5cb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/289/path/chunk_0578000.npz",
+              "sha256": "6d93ef50988cc56f637118028bb2e70d5eb0d133e7c847d564884dcd60ec862b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/290/path/chunk_0580000.npz",
+              "sha256": "d60babb0d00b6b2fab2f526e4b36d436d64ed443fd6cd0f7cfac034a74acc44d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/291/path/chunk_0582000.npz",
+              "sha256": "9e6f07e10750fd7884ce37a7ed0f585dc7153ded3c9091f098626b3ffc5f07fb",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/292/path/chunk_0584000.npz",
+              "sha256": "9a628e57abd2f3ee7f992d84107fbfbac7dbe97fce424403fcd57aac00cc87b5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/293/path/chunk_0586000.npz",
+              "sha256": "fcd7e629666057318d4a803da271a7ae57cd31fed66198b438a0aafc1bfb0e4b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/294/path/chunk_0588000.npz",
+              "sha256": "08175eca21511aa3834bdb8faa1e69b246209557d3e9bce351ac895d8c7a1480",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/295/path/chunk_0590000.npz",
+              "sha256": "a4452103ece801f201d2481a9eecd91550b27d54d7bfb1fd6ec93f76faddf8d5",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/296/path/chunk_0592000.npz",
+              "sha256": "9ecdfc0439d86216463045c8e99a553125849f0feefdfbb4530b90045b93585d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/297/path/chunk_0594000.npz",
+              "sha256": "e1519f49e8abb76d4ec80ea9aa959ea71a2db14a0e8ebeaedf8f43d6fbbae192",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/298/path/chunk_0596000.npz",
+              "sha256": "bf2e8594c2123d3ed16cf196a615b60d5fdd223e252c1b66661b16c4c51ae4f2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/299/path/chunk_0598000.npz",
+              "sha256": "cda291a59faee73c92473eafe48e37b3d36aa05cf7b21c3371b721eaaa6b10a0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/300/path/chunk_0600000.npz",
+              "sha256": "6f9814c03746f2e14af32309f54c162f2549255afeaee010db0ba639383888ac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/301/path/chunk_0602000.npz",
+              "sha256": "08d78d9c2842f2cc71479ec474303b751302698428781754ea15fb8de8107d46",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/302/path/chunk_0604000.npz",
+              "sha256": "4c372922ac1b5fc8a4a82a01156e9b6f7eff25e5e320ce313834744ffe6cb36b",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/303/path/chunk_0606000.npz",
+              "sha256": "eba0aed46cb4e0bc395de3232c229d5013ad0ce95962c2d3f912da9962bb1107",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/304/path/chunk_0608000.npz",
+              "sha256": "6d3ddd97dd0768641894962e8dde41d8666a68d5dd52bb72af7e712128e35db1",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/305/path/chunk_0610000.npz",
+              "sha256": "cbff99d06dcd69c6562de7a59a910ac2cada4f17139bcfa8f6d0ca0376a1a976",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/306/path/chunk_0612000.npz",
+              "sha256": "12e15e58583e2b16eb3e65e74276495982399d6367ee72ffe9afccd6b24738c0",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/307/path/chunk_0614000.npz",
+              "sha256": "8f0be6e73396310acca820dcff3dc7ff87d86b2cbaff89a0a383c57905f78409",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/308/path/chunk_0616000.npz",
+              "sha256": "9bf6bf8b9b5c549d580abb39efb9b35d8596d971ed38140bc8f050f02fef5c31",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/309/path/chunk_0618000.npz",
+              "sha256": "07ec90fce7bc646aac67ef09d145d1eb1ecaa90d25b2b4fd6626d21b2a698bae",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/310/path/chunk_0620000.npz",
+              "sha256": "694e85c462db4dd7743d30576b08d277c1160b238e56ebb46c3c5f14feed124d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/311/path/chunk_0622000.npz",
+              "sha256": "7af657d50e1d8e74ee7902e342f9eadb83b46c175567b8aa9d7984f2f8b09838",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/312/path/chunk_0624000.npz",
+              "sha256": "3bdae5642524e1939721d7e594646486204988bbe460c4bd88f0917bdc946312",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/313/path/chunk_0626000.npz",
+              "sha256": "15736d0e76064c08b8fc6b022e71f8860f0945695a293a8748d0f68afa1582e6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/314/path/chunk_0628000.npz",
+              "sha256": "2b60f831aef72788cee11ef435b1c18c4c001499916fc894ed2ed277dc9a5dac",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/315/path/chunk_0630000.npz",
+              "sha256": "b7f0445b93bb63e4c518c6763570bbac1994ebfdc989ba9315e2e9e683775b86",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/316/path/chunk_0632000.npz",
+              "sha256": "a497b5bad4a8344b3972227ed839c9cdbb9f67fd9028e7305a73ab399bdee9ce",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/317/path/chunk_0634000.npz",
+              "sha256": "055b1da3e4027428e31d4a849a2bd14a5ec077a447d11834d4d727420cc692fa",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/318/path/chunk_0636000.npz",
+              "sha256": "0535f4d61b43d90b92023d06e281e93e202da81e86b7c58c4980ea5100ff78e4",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/319/path/chunk_0638000.npz",
+              "sha256": "58aa2b13080be82c673e8301a885ac09f043667267ce0499028b42e7c9ced057",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/320/path/chunk_0640000.npz",
+              "sha256": "5ba9013b5d98161d23853d96d1853970627b8c4e009389109bd478f1b5c6a3b2",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/321/path/chunk_0642000.npz",
+              "sha256": "bb3442385cb617b9cff640d1fe18170097e8207545327e9889d03716d5b9bb7d",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/322/path/chunk_0644000.npz",
+              "sha256": "7060a7c5cbda6cf1a69180d91bed7c78d3c434e6feedf69be424535190e89ff3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/323/path/chunk_0646000.npz",
+              "sha256": "1dc0c649cdcf2fd7b1bdbb1e9370dfc2dc8a86b694d626c2cfa24a090433e008",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/324/path/chunk_0648000.npz",
+              "sha256": "105ca287f67054fa12d1ef3b1bce04cfb4231a8c44942cfd4d42985e0584b6a6",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/325/path/chunk_0650000.npz",
+              "sha256": "9d4b1b41476c303bc8934d681726c55747ca2bfe8f9d3d8d59863b22ea7f9e95",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/326/path/chunk_0652000.npz",
+              "sha256": "8efed27121daf7285623f58e923c9262015a9ae7b98627b0f0f8d9d1702e7878",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/327/path/chunk_0654000.npz",
+              "sha256": "54fb35dd84c4cfdb1ddb3ffadc7762b0e144f0cb5de4d3105b95af11cd2083c3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/328/path/chunk_0656000.npz",
+              "sha256": "68decbb34fe1a4966ee3626ecfe156aead7fc229819767d97ba60d9da48a4ef8",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/329/path/chunk_0658000.npz",
+              "sha256": "ddce1d2499632c42e9491cf4329ca1b92d08d3fb1f611ad144c1a36b4f9a3bed",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/330/path/chunk_0660000.npz",
+              "sha256": "a545a3529c8986d8c26309799529be18bf927d46cd77e254227b4abe293f57b3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/331/path/chunk_0662000.npz",
+              "sha256": "ff0104bf9695849f5ab6064a57a2d64e8f24004a3fc99158f9cd7fe434f5d34f",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/332/path/chunk_0664000.npz",
+              "sha256": "db5d11faebb40514d4ccf5dd8a53948c1de7bb4569a4d276127a0c9c3318ddef",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/333/path/chunk_0666000.npz",
+              "sha256": "8afc17daa0de91877f00b45a17b39fab3aa79ae0370db59f67b297c0646c27bc",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/334/path/chunk_0668000.npz",
+              "sha256": "4130d046c790d06f26fbf3a22b3899084271de7708ec6b58193a1645256dfc6e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/335/path/chunk_0670000.npz",
+              "sha256": "323e0c461c6e586de00bca61744297d0475b4588631ce2cd0eb68810eb9f682a",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/336/path/chunk_0672000.npz",
+              "sha256": "de75bd4dffb0997fdfddb2836ddd23cdd006fa2ac6902a5a63be9b953577b18e",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/337/path/chunk_0674000.npz",
+              "sha256": "a28cb82ae7fc15a25357e46ed112760c640055c5960c95f32b233741df331dc3",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/338/path/chunk_0676000.npz",
+              "sha256": "60cc1846676803356fb0277594cac969ac6537cc82b4a9fb0a892bcf55c4122c",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/339/path/chunk_0678000.npz",
+              "sha256": "f22d62434a98daf522de131405240a5b06e383b30a74af1e77d850306473a221",
+              "size": 744746
+            },
+            {
+              "path": "external-local/inputs/scores/SSL-AASIST/files/340/path/chunk_0680000.npz",
+              "sha256": "f2824a505c81e0c2a2f1a7c777ee1bf094543f961c45a7548d2b5aced2f64a60",
+              "size": 288674
+            }
+          ],
+          "kind": "npz_dir",
+          "legacy_input_ledger_not_historical_run_provenance": true,
+          "path": "external-local/inputs/scores/SSL-AASIST/path/ssl",
+          "sidecar": null
+        },
+        "XLS-R+SLS": {
+          "files": [
+            {
+              "path": "external-local/inputs/scores/XLS-R+SLS/files/0/path/sls.tsv",
+              "sha256": "d5504b8506995d86aa95523691ed5574c2d1a9452802b9c675019dc343a9f64a",
+              "size": 22313365
+            }
+          ],
+          "kind": "delimited",
+          "legacy_input_ledger_not_historical_run_provenance": false,
+          "path": "external-local/inputs/scores/XLS-R+SLS/path/sls.tsv",
+          "sidecar": {
+            "path": "external-local/inputs/scores/XLS-R+SLS/sidecar/path/sls.tsv.run.json",
+            "sha256": "681606374a4ee1fee748f1f85726b2a5ba2e314e77ff2e7dd121c5f09425ac70",
+            "size": 929
+          }
+        },
+        "XLSR-Mamba": {
+          "files": [
+            {
+              "path": "external-local/inputs/scores/XLSR-Mamba/files/0/path/xlsr_mamba.merged.tsv",
+              "sha256": "f49f1e90e9ae9e70383cbe6e73f26db577f234aded6c0083294ebf60a6085f51",
+              "size": 21978776
+            }
+          ],
+          "kind": "delimited",
+          "legacy_input_ledger_not_historical_run_provenance": false,
+          "path": "external-local/inputs/scores/XLSR-Mamba/path/xlsr_mamba.merged.tsv",
+          "sidecar": {
+            "path": "external-local/inputs/scores/XLSR-Mamba/sidecar/path/xlsr_mamba.merged.tsv.run.json",
+            "sha256": "9b47673f0226cac0ef4946b132b5c42d4f03598ca63c0123514c8750bd22d390",
+            "size": 2276
+          }
+        }
+      }
+    },
+    "schema_version": 1,
+    "scientific_role": "fixed-roster descriptive perturbation sensitivity; not population inference",
+    "score_sidecars_validated": {
+      "AASIST": null,
+      "SSL-AASIST": null,
+      "XLS-R+SLS": {
+        "batch_size": 8,
+        "checkpoint": "external-local/score_sidecars_validated/XLS-R+SLS/checkpoint/asvdf_sls_best.pth",
+        "device": "cuda",
+        "frontend_checkpoint": "external-local/score_sidecars_validated/XLS-R+SLS/frontend_checkpoint/xlsr2_300m.pt",
+        "manifest": "external-local/score_sidecars_validated/XLS-R+SLS/manifest/asv5_eval.csv",
+        "manifest_sha256": "c45659c79aab45bc58a6730c6d0ebb908e83fe23cf0c31c6ac9a8aafdc5842cb",
+        "mode": null,
+        "model": "sls",
+        "normalize": null,
+        "num_samples": null,
+        "python": "3.10.20 (main, Jul 18 2026, 17:02:35) [Clang 22.1.3 ]",
+        "reference_registry_sha256": "0fdd01d5d9af855bf80619f365e7ef005fdb6f0940b9535ac4b6776a1796151e",
+        "repo": "external-local/score_sidecars_validated/XLS-R+SLS/repo/sls",
+        "schema_version": 1,
+        "score_contract": "higher_is_bonafide",
+        "torch": "2.13.0+cu130",
+        "uv_lock_sha256": "a16d41ce518eb71a2608c487b491985bed4482fe7e3682bfbc74486610dea2c5"
+      },
+      "XLSR-Mamba": {
+        "batch_size": 8,
+        "checkpoint": "external-local/score_sidecars_validated/XLSR-Mamba/checkpoint/model.safetensors",
+        "composite_provenance": {
+          "amendment_sha256": "230683366f41ca2f6f6c64c6f2da8a7d4a03bd5fd9d128f32a882d018f53369a",
+          "merge_code_sha256": "f015e19066722f0ab5ab76b3e1466b1ea410935463468ac12568bf502286c665",
+          "merged_rows": 680774,
+          "method": "exact_disjoint_prefix_tail_union_in_full_manifest_order",
+          "prefix": {
+            "path": "external-local/score_sidecars_validated/XLSR-Mamba/composite_provenance/prefix/path/xlsr_mamba.tsv",
+            "sha256": "9a0e8d590a4381947a805a47a39e6888eaf8214e8af9d8c8f92d78906d69a654"
+          },
+          "prefix_rows": 353840,
+          "prefix_sidecar_sha256": "6705aa0e05a652cfc36b39c1270cbe604f0e7ba176f776ea2d73b95eb35016fa",
+          "runner_sha256": "4a1bbc77d36a7ca164c5927a7320680508ddbc1a6c04f6d84fb1c77cbe6c7a00",
+          "tail": {
+            "path": "external-local/score_sidecars_validated/XLSR-Mamba/composite_provenance/tail/path/xlsr_mamba.hot-tail.tsv",
+            "sha256": "36dc51d6cd78961fb86e96507cebba33173612224490f2bcabb295af3cc4c7a1"
+          },
+          "tail_manifest_sha256": "90d5acab5a0403e2810fca14984b2e4e033d05faaa22f770d8c1b108aa1ec557",
+          "tail_receipt_sha256": "5e5b65479888495dd3c9d62e6b1c6712464359826d75949986ac93b57186da76",
+          "tail_rows": 326934,
+          "tail_sidecar_sha256": "399784be5a5ef80cd7ac4d27fe14a235ce9114d4bfc61ee3bb8eaf34415c3e7f",
+          "tests_sha256": "f553666d75b41e84053ae77f398a89ea5be430511b1642938e66398d9b79f8b2"
+        },
+        "device": "cuda",
+        "frontend_checkpoint": "external-local/score_sidecars_validated/XLSR-Mamba/frontend_checkpoint/xlsr2_300m.pt",
+        "manifest": "external-local/score_sidecars_validated/XLSR-Mamba/manifest/asv5_eval.csv",
+        "manifest_sha256": "c45659c79aab45bc58a6730c6d0ebb908e83fe23cf0c31c6ac9a8aafdc5842cb",
+        "mode": null,
+        "model": "xlsr_mamba",
+        "normalize": null,
+        "num_samples": 66800,
+        "python": "3.10.20 (main, Jul 18 2026, 17:02:35) [Clang 22.1.3 ]",
+        "reference_registry_sha256": "0fdd01d5d9af855bf80619f365e7ef005fdb6f0940b9535ac4b6776a1796151e",
+        "repo": "external-local/score_sidecars_validated/XLSR-Mamba/repo/xlsr-mamba",
+        "schema_version": 1,
+        "score_contract": "higher_is_bonafide",
+        "torch": "2.2.1+cu118",
+        "uv_lock_sha256": "bf04d958d1a7818ae2c0c3beab8a347e909c87d89ef05aa8958df3f22ae22b36"
+      }
+    },
+    "structure": {
+      "attack_set_sha256": "82624ab46a1dd77563bbdef722998133fbd96218de0bff3282bc0fe0cca816a9",
+      "codec_set_sha256": "dd790b56bc39e76e93156d1e3f336433532e373679f91ddd92aa30bcef5fe54b",
+      "n_attacks": 16,
+      "n_bonafide": 138688,
+      "n_codecs": 12,
+      "n_non_target": 370,
+      "n_spoof": 542086,
+      "n_target": 367,
+      "n_trials": 680774,
+      "non_target_speaker_set_sha256": "98863210aacb09551ea38035b3447a4568c105bb5b304c2624ebe085a0e08dcb",
+      "ordered_trial_join_sha256": "efe4bcee349b7121c52d4108a74f21ad4265b8e95cfe6673ef32978e87d1d16c",
+      "source_recordings_crossing_speakers": 0,
+      "speaker_attack_cells": 5872,
+      "target_speaker_set_sha256": "74076619a23f4fbf78cf55e6b346336f87ed7484739bd1e026d9915a7d74cfba"
+    }
+  }
+}

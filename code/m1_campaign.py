@@ -21,12 +21,12 @@ from pathlib import Path
 import numpy as np
 
 DATA = Path(os.environ.get("M1_DATA_ROOT",
-                           Path.home() / "data/corpora/anti-spoofing"))
+                           Path(__file__).resolve().parent.parent / "inputs/anti-spoofing"))
 KEY = DATA / "DF-keys-full/keys/DF/CM/trial_metadata.txt"
 OFF = DATA / "official-scores"
 EXP001 = Path(os.environ.get(
     "M1_EXP001_SCORES",
-    Path.home() / "projects/academic/icassp2027/experiments/EXP-001-scoring-campaign/scores"))
+    Path(__file__).resolve().parent.parent / "inputs/exp001-scores"))
 ITW_META = DATA / "release_in_the_wild/meta.csv"
 
 DF_SCORES = {
@@ -35,7 +35,7 @@ DF_SCORES = {
     "XLSR-Conformer": OFF / "xlsr-conformer-rosello/Scores_Best_DF_Fixed_size_train.txt",
     "SSL-AASIST": Path(os.environ.get(
         "M1_SSL_AASIST_SCORES",
-        Path.home() / "projects/academic/SSL_Anti-spoofing/Scores/DF/Scores_DF.txt")),
+        DATA / "author-scores/ssl-aasist/Scores_DF.txt")),
     "RawNet2": DATA / "DF-keys-full/keys/DF/CM/RawNet2/score.txt",
     "LFCC-LCNN": DATA / "DF-keys-full/keys/DF/CM/LFCC-LCNN/score.txt",
     "LFCC-GMM": DATA / "DF-keys-full/keys/DF/CM/LFCC-GMM/score.txt",
@@ -244,7 +244,7 @@ def main():
     results["itw"]["variance_components"] = {
         m: variance_components(sc_i[m], labels_i, spk_i, None) for m in sc_i}
 
-    out = Path(__file__).parent / "results_pairs.json"
+    out = Path(__file__).parent.parent / "derived" / "results_pairs.json"
     out.write_text(json.dumps(results, indent=2))
     print(f"wrote {out}")
 
