@@ -43,10 +43,12 @@ outputs. The two operations are intentionally distinct in the top-level README.
 | `secondary_v2_results.json` | post-failure constructive witness search |
 | `secondary_v2_verification.json` | three-backend reconstruction of constructive witnesses |
 
-Every released script reads and writes derived results under `derived/`; the
-clean-clone checker rejects the former internal-tree convention of placing JSON
-beside source files under `code/`. Long bootstrap campaigns checkpoint only in
-the documented external run roots.
+Canonical files under `derived/` are read-only release artifacts. The matched
+diagnostic and coherent covariance scripts read their canonical dependencies from
+`derived/` and write new outputs under ignored `regenerated/` paths by default.
+EXP-108 intentionally runs in a disposable clone and writes its mutually dependent
+contract, result and verification files beside its code before comparison with
+`derived/`. Long bootstrap campaigns checkpoint only in documented external run roots.
 
 The committed Arena B=5000 JSON records both the original internal-layout
 generation-script hash and the released path-adapted analyzer hash. The numeric

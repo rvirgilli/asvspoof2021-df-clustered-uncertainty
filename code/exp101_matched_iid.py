@@ -8,6 +8,7 @@ fixed-data perturbation comparison, not population inference; see
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -23,7 +24,8 @@ SEED = 2026081604
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PLAN = ROOT / "plans/MATCHED-IID-DIAGNOSTIC.md"
-OUT = ROOT / "derived/results_matched_iid.json"
+DEFAULT_OUT = ROOT / "regenerated/results_matched_iid.json"
+CANONICAL_SELECTION = ROOT / "derived/results_selection.json"
 BASELINES = ("RawNet2", "LFCC-LCNN", "LFCC-GMM", "CQCC-GMM")
 
 
@@ -103,8 +105,15 @@ def summarize(
 
 
 def main() -> None:
-    if OUT.exists():
-        raise FileExistsError(f"refusing to overwrite existing diagnostic: {OUT}")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    args = parser.parse_args()
+    out = args.out.resolve()
+    if out == (ROOT / "derived/results_matched_iid.json").resolve():
+        raise ValueError("canonical derived artifact is read-only; choose a regeneration path")
+    if out.exists():
+        raise FileExistsError(f"refusing to overwrite existing diagnostic: {out}")
+    out.parent.mkdir(parents=True, exist_ok=True)
     scores, labels, spk_idx, att_idx = load_21df()
     names = sorted(scores, key=lambda name: plain_eer(scores[name], labels))
     if len(names) != 8 or len(labels) != 533_928:
@@ -129,7 +138,7 @@ def main() -> None:
     iid_summary = summarize(iid, point, names)
     clustered_summary = summarize(clustered, point, names)
 
-    previous = json.loads((HERE / "results_selection.json").read_text())["21df"]
+    previous = json.loads(CANONICAL_SELECTION.read_text())["21df"]
     previous_labels = {
         key: bool(value["resolved_simultaneous"])
         for key, value in previous["pairs"].items()
@@ -170,10 +179,10 @@ def main() -> None:
             "script": sha256(Path(__file__)),
             "protocol_key": sha256(KEY),
             "score_files": {name: sha256(DF_SCORES[name]) for name in names},
-            "results_selection": sha256(HERE / "results_selection.json"),
+            "results_selection": sha256(CANONICAL_SELECTION),
         },
     }
-    OUT.write_text(json.dumps(payload, indent=2) + "\n")
+    out.write_text(json.dumps(payload, indent=2) + "\n")
     print(
         "matched diagnostic:",
         f"iid organizer={iid_summary['n_resolved_organizer_6']}/6",
@@ -181,7 +190,7 @@ def main() -> None:
         f"iid all={iid_summary['n_resolved_all_28']}/28",
         f"clustered all={clustered_summary['n_resolved_all_28']}/28",
     )
-    print(f"wrote {OUT}")
+    print(f"wrote {out}")
 
 
 if __name__ == "__main__":

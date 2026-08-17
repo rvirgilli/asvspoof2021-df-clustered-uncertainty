@@ -6,6 +6,7 @@ combining a PSD-projected joint covariance with pair-specific variance floors.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -26,7 +27,8 @@ from analyze_multiway import (
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PLAN = ROOT / "plans/COHERENT-JACKKNIFE-DIAGNOSTIC.md"
-OUT = ROOT / "derived/results_coherent_jackknife.json"
+DEFAULT_OUT = ROOT / "regenerated/results_coherent_jackknife.json"
+CANONICAL_MULTIWAY = ROOT / "derived/results_multiway_real.json"
 SEED = 2026081605
 GAUSSIAN_DRAWS = 200_000
 BASELINES = {"RawNet2", "LFCC-LCNN", "LFCC-GMM", "CQCC-GMM"}
@@ -37,8 +39,15 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
-    if OUT.exists():
-        raise FileExistsError(f"refusing to overwrite existing diagnostic: {OUT}")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    args = parser.parse_args()
+    out = args.out.resolve()
+    if out == (ROOT / "derived/results_coherent_jackknife.json").resolve():
+        raise ValueError("canonical derived artifact is read-only; choose a regeneration path")
+    if out.exists():
+        raise FileExistsError(f"refusing to overwrite existing diagnostic: {out}")
+    out.parent.mkdir(parents=True, exist_ok=True)
     (
         _utts,
         labels,
@@ -101,7 +110,7 @@ def main() -> None:
         [point[names.index(a)] - point[names.index(b)] for a, b in pairs]
     )
 
-    old = json.loads((ROOT / "derived/results_multiway_real.json").read_text())
+    old = json.loads(CANONICAL_MULTIWAY.read_text())
     product = {
         key: bool(value["product_bootstrap_resolved_simultaneous"])
         for key, value in old["pairs"].items()
@@ -162,17 +171,17 @@ def main() -> None:
         "sha256": {
             "plan": sha256(PLAN),
             "script": sha256(Path(__file__)),
-            "results_multiway_real": sha256(HERE / "results_multiway_real.json"),
+            "results_multiway_real": sha256(CANONICAL_MULTIWAY),
         },
     }
-    OUT.write_text(json.dumps(payload, indent=2) + "\n")
+    out.write_text(json.dumps(payload, indent=2) + "\n")
     print(
         "coherent marginal-sum diagnostic:",
         payload["organizer_baseline_resolved"],
         f"all={payload['all_28_resolved_coherent_marginal_sum']}/28",
         f"q={q:.6f}",
     )
-    print(f"wrote {OUT}")
+    print(f"wrote {out}")
 
 
 if __name__ == "__main__":

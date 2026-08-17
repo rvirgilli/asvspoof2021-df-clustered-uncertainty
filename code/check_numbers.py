@@ -178,7 +178,7 @@ for system, literal in (("SSL-AASIST", "16.25"), ("AASIST", "35.53"),
 require("External family-level check", "external result scope")
 require("not pair-level replication", "ASV5 cross-generation scope")
 require("acquisition-law gate is NO-GO", "ASV5 acquisition boundary")
-require("legacy SSL-AASIST/AASIST NPZ snapshots", "legacy score provenance limit")
+require("legacy NPZ snapshots", "legacy score provenance limit")
 require("not population confidence or significance", "ASV5 boundary must be explicit")
 forbid(r"two-generation replication|two-generation procedure|replicate across benchmark",
        "ASV5 supports only a family-level external sensitivity check")
@@ -352,7 +352,7 @@ if cross_flips:
     fail("VALUE a cross-generation label now flips under source deletion")
 for pair in expected_gained:
     require(pair.replace(" vs ", "--"), "all three gained baseline pairs must be named")
-require_re(r"(?:all |[Tt]he )16 cross-generation gaps", "stable cross-generation block must be bounded")
+require_re(r"16 (?:gaps|selected cross-block verdicts)", "stable selected cross-block must be bounded")
 require("not composition-robust", "0/6 provenance dependence belongs with the headline")
 
 
@@ -393,6 +393,24 @@ best_tv = composition_v2_verified["best_verified_r_TV_by_pair"][
     "XLSR-Mamba vs XLS-R+SLS"
 ]
 require_number(".010218", best_tv, 6, "smallest verified constructive rTV bound")
+smallest_witness = composition_v2["pairs"]["XLSR-Mamba vs XLS-R+SLS"][
+    "objectives"
+]["r_TV"]["best_overall"]["witness"]
+require_number("1.073", smallest_witness["odds_factor"], 3,
+               "smallest-witness odds factor")
+require_number(".000699", smallest_witness["deltas"]["count_canonical"], 6,
+               "smallest-witness post-crossing margin")
+modern = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
+other_modern_odds = []
+for pair, result in composition_v2["pairs"].items():
+    if set(pair.split(" vs ")) <= modern and pair != "XLSR-Mamba vs XLS-R+SLS":
+        witness = result["objectives"]["r_TV"]["best_overall"].get("witness")
+        if witness and witness.get("accepted"):
+            other_modern_odds.append(float(witness["odds_factor"]))
+if sum(value > 3000 for value in other_modern_odds) != 4:
+    fail("VALUE expected four other modern witnesses above odds 3,000")
+require("Four other modern witnesses need odds above 3,000",
+        "constructive witnesses must disclose practical extremity")
 require("post-failure", "secondary chronology must be disclosed")
 require("not a global minimum", "constructive upper bounds cannot become safety radii")
 require("search outcome rather than proof", "absence of cross-generation witness is scoped")
@@ -483,10 +501,10 @@ for text, why in (
     ("fixed-data procedure sensitivity", "identified scientific object"),
     ("not corrected population inference", "abstract scope"),
     ("not an exact multiway estimator or coverage claim", "coherent covariance scope"),
-    ("historical freeze has no independently verifiable public timestamp", "timestamp honesty"),
-    ("zero-straddling output is sensitivity, not evidence of equality", "non-significance scope"),
-    ("new independently sampled units", "only full repair for population inference"),
-    ("speaker and attack incidence", "report units rather than trial count"),
+    ("internal freeze has no independently verifiable public timestamp", "timestamp honesty"),
+    ("not corrected population inference", "non-significance and population scope"),
+    ("future target with a defensible sampling law and replication", "only full repair for population inference"),
+    ("speaker/attack incidence", "report units rather than trial count"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")

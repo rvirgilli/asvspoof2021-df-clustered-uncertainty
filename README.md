@@ -1,7 +1,7 @@
 # Sampling-unit sensitivity in ASVspoof system comparisons
 
-This repository accompanies **“Five Significant Differences Disappear When
-ASVspoof Trials Are Not Treated as Independent.”** It contains the exact
+This repository accompanies **“Sampling-Unit and Composition Sensitivity of an
+Audio Deepfake Leaderboard.”** It contains the exact
 submitted manuscript, code, plans, deviations, and derived artifacts for a
 re-analysis of pairwise system comparisons on the ASVspoof 2021 DeepFake (DF)
 evaluation set.
@@ -22,8 +22,9 @@ construction uses one PSD marginal-sum covariance for every pair SE and the join
 value and separately gives 18/28 and 0/6. It is a coherent sensitivity covariance, not
 an exact multiway variance estimator or coverage claim. The completed 48-cell EXP-105 audit
 **refutes** extension of those intervals to low-EER regimes. A later source/task incidence
-audit also rejects the global exchangeability law required for full-21DF population
-inference: 85.77% of spoof trials lie in four blocks containing only 4/4/4/6 speakers.
+audit also shows why the proposed global exchangeability law is not defensible for
+full-21DF population inference: 85.77% of spoof trials lie in four blocks containing
+only 4/4/4/6 speakers, and corpus labels are associated with delete-speaker influences.
 Consequently every full-21DF interval and verdict in this repository is a descriptive
 procedure-sensitivity output, including the organiser block. The organiser-like simulation
 cells validate implementation behavior under their imposed DGP, not that DGP as a model of
@@ -37,6 +38,7 @@ number and the boundaries placed on its interpretation.
 
 | Path | Contents |
 |---|---|
+| `CLAIM-SCOPE.md` | central claim, express exclusions, and completion gates |
 | `ANALYSIS-PLAN.md` | the analysis plan, frozen before the campaign ran |
 | `DEVIATIONS.md` | every material difference between that plan and the reported analysis |
 | `plans/` | frozen preregistrations for the Arena, multiway-correctness and ASV5 additions |
@@ -74,9 +76,11 @@ uv run python code/check_tie_safety.py
 
 The builder reads the public score files plus the committed campaign outputs in `derived/`
 and writes only to ignored `audit-regenerated/`; it never overwrites the canonical artifact.
-The individual scripts in `code/` regenerate those derived outputs when their documented
-inputs are available. This distinction is explicit: the fast clean-clone check validates the
-paper-to-artifact contract, while a full campaign reproduction recomputes the artifacts.
+The generating-script map in `derived/README.md` distinguishes runnable public
+regeneration paths from historical byte identities. Public regenerations write either to
+ignored `regenerated/` paths or, for EXP-108, to a disposable clone; canonical artifacts
+are never overwritten. The fast clean-clone check validates the paper-to-artifact contract,
+while documented full reproductions recompute scientific outputs from the listed inputs.
 
 For example, the separate Arena layer can be input-checked without running its 10,000 total
 bootstrap replicates, or regenerated with the frozen draw count:

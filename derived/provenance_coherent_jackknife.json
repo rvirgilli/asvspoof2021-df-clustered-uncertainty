@@ -1,13 +1,13 @@
 {
   "schema": "coherent-jackknife-provenance-v1",
   "sealed_after_successful_run": "2026-08-16",
-  "note": "The canonical result preserves the exact internal campaign hashes. The public scripts alter repository-local paths only; their released bytes are sealed separately instead of being represented as the historical emitter.",
+  "note": "The canonical result preserves the exact internal campaign hashes. The released script is sealed separately and uses repository-local inputs plus a read-only canonical/output-to-regenerated safety boundary; it is not represented as the historical emitter.",
   "historical_campaign_sha256": {
     "coherent_jackknife.py": "21f61173e12e7dd4d806d78416d82e4bf4866e6f626a9edbf35f9105c6d5d1fa",
     "analyze_multiway.py": "e89d3836588b561035ad5bee36fbf0b989ae841b85aae550328921cb14f0ddd4"
   },
   "released_path_adapted_sha256": {
-    "coherent_jackknife.py": "758bc75497bee03bdff70c3c4affc312420d46868be9cbcee3539fc9ee14ba95",
+    "coherent_jackknife.py": "b6ad03f91a19fd5ff69328ac1b7599ed8436aaee9a2379353a45ebd033686984",
     "analyze_multiway.py": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
   },
   "canonical_artifact_sha256": {

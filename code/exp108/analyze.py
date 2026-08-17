@@ -277,7 +277,6 @@ def write_preoutput_contract(metadata: Path, contract_path: Path) -> dict[str, o
         "analyze.py",
         "test_exp108.py",
         "verify_results.py",
-        "render_report.py",
     )
     for name in code_names:
         if not (HERE / name).is_file():
