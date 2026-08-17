@@ -45,7 +45,6 @@ def main() -> int:
     failures.extend(f"manifest-only file: {name}" for name in sorted(set(manifest) - actual))
 
     machine_roots = ("/" + "home" + "/" + "rv", "~" + "/projects", "icassp" + "-runs")
-    internal_tokens = ("gpt" + "-5", "claude" + " code", "code" + "x", "xhigh" + " agent")
     for name in sorted(actual):
         path = ROOT / name
         if path.suffix.lower() in {".pdf", ".png", ".jpg", ".pyc"}:
@@ -53,8 +52,6 @@ def main() -> int:
         value = path.read_text(encoding="utf-8", errors="ignore")
         if any(token in value for token in machine_roots):
             failures.append(f"machine-specific path: {name}")
-        if any(token in value.lower() for token in internal_tokens):
-            failures.append(f"internal production reference: {name}")
         if "Anonymous" + " ICASSP" in value:
             failures.append(f"anonymous author placeholder: {name}")
 

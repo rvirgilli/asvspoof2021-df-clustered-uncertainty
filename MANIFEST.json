@@ -468,7 +468,7 @@
     "sha256": "43890a9cbbe6e4b32964d8c6d0b56ecb28810c79d4a5e376ae1a985c7e68a816"
   },
   "verify_release.py": {
-    "bytes": 2932,
-    "sha256": "f97e56dd6857556563cec29cbf523439c24abba0e0585d2b1e97652ecfdb5a19"
+    "bytes": 2702,
+    "sha256": "5cffce663cadc23d70d5701a776acd9a9b8d31aae4ca9c415578f17f4081a150"
   }
 }
