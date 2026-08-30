@@ -86,4 +86,6 @@ EXP-111, EXP-112 and EXP-114 are distributed inside the path-sanitized composite
 `audit/audit.json`, not duplicated here. Their result, receipt, closure/comparison,
 independent-verification and original-source hash relationships are checked by
 `code/check_numbers.py`. SpoofCeleb's license excludes its manifest, score tables and
-audio from this repository; only aggregate and provenance envelopes are public.
+audio from this repository. EXP-115's exact nonlicensed freeze, analysis code, bootstrap
+arrays, receipt and independent recomputation are mirrored under `exp115/`; its licensed
+manifest and score tables remain hash-bound but are not redistributed.

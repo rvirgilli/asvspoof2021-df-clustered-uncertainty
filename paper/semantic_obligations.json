@@ -45,7 +45,7 @@
     {
       "id": "coverage_dgp_boundary",
       "section": "Method/Coverage",
-      "match": "Passing organizer-like cells validates implementation behavior under that DGP, not the DGP as a model of 21DF."
+      "match": "This diagnoses procedure behavior under the imposed DGP, not adequacy of that DGP for 21DF."
     },
     {
       "id": "composition_witness_boundary",
@@ -55,22 +55,32 @@
     {
       "id": "exp111_post_failure",
       "section": "Experiments/Sampling-unit sensitivity",
-      "match": "a transparently post-failure composition-fixed control"
+      "match": "A disclosed post-failure control also gives 18/28 and 0/6 while restoring each class-by-source/task mass exactly"
     },
     {
       "id": "exp111_conditioning_and_mass",
       "section": "Experiments/Sampling-unit sensitivity",
-      "match": "the latter conditions only zero-support stratum draws and exactly restores each class-by-source/task mass."
+      "match": "it shows that movement in that mass is not necessary for the contrast, but is a constructive robustness control rather than a prospective causal decomposition."
     },
     {
       "id": "exp114_registered_single_source",
       "section": "Experiments/SpoofCeleb",
-      "match": "under a rule registered before access."
+      "match": "under a rule frozen before access."
     },
     {
-      "id": "exp114_composition_by_construction",
+      "id": "exp114_source_composition_boundary",
       "section": "Experiments/SpoofCeleb",
-      "match": "Every base product has one bona-fide and nine spoof renditions under one source label, so composition is fixed by construction; the three changed decisions isolate sampling-unit sensitivity from source-mixture movement."
+      "match": "Source composition is therefore fixed by design, although product draws still vary speaker and spoof-attack multiplicities; between-source movement is not necessary for the contrast."
+    },
+    {
+      "id": "exp115_post_result_status",
+      "section": "Experiments/SpoofCeleb",
+      "match": "A disclosed post-result decomposition gives 5/6 speaker-only and 3/6 attack-only exclusions"
+    },
+    {
+      "id": "exp115_procedure_boundary",
+      "section": "Experiments/SpoofCeleb",
+      "match": "under these procedures attack-level perturbation alone is sufficient for all three changes, while speaker-only is sufficient for one."
     },
     {
       "id": "exp114_original_seal_gap",
@@ -80,7 +90,7 @@
     {
       "id": "exp114_post_result_rerun",
       "section": "Experiments/SpoofCeleb",
-      "match": "A disclosed post-result rerun from clean, hash-bound commits reproduced three score files byte-for-byte; XLSR-Mamba moved by at most $1.43\\times10^{-6}$, with all EERs, decisions and the registered endpoint unchanged."
+      "match": "A disclosed post-result rerun from clean, hash-bound commits reproduced three score files byte-for-byte; XLSR-Mamba differed by at most $1.44\\times10^{-6}$, with all EERs, decisions and the registered endpoint unchanged."
     },
     {
       "id": "composition_search_no_proof",
@@ -90,22 +100,17 @@
     {
       "id": "arena_descriptive_boundary",
       "section": "Experiments/Independent re-score layer",
-      "match": "These are provenance and sensitivity measurements, not coverage-validated Arena confidence claims."
+      "match": "These are descriptive sensitivity outputs, not formal Arena confidence bands."
     },
     {
       "id": "asv5_family_not_pair",
       "section": "Experiments/External family-level check",
-      "match": "This is not pair-level replication: on 21DF that pair excludes zero under both arms, and the 5/6-to-0/6 organizer family has no ASV5 analogue."
-    },
-    {
-      "id": "asv5_acquisition_boundary",
-      "section": "Experiments/External family-level check",
-      "match": "The acquisition-law gate is NO-GO; these are fixed-roster procedure outputs, not population confidence or significance."
+      "match": "This is an external fixed-family sensitivity check, not pair-level replication or population inference."
     },
     {
       "id": "exp112_dgp_boundary",
       "section": "Experiments/Measured width inflation",
-      "match": "This calibrates procedures under the imposed DGP, not the DGP as a model of 21DF or its unidentified superpopulation."
+      "match": "This calibrates procedures under the imposed DGP, not that DGP as a model of 21DF."
     },
     {
       "id": "historical_provenance_limits",
@@ -130,7 +135,7 @@
     {
       "id": "conclusion_population_boundary",
       "section": "Conclusion",
-      "match": "These are fixed-score sensitivities, not population inference; that needs new independently sampled units."
+      "match": "Population confidence requires independently sampled units and a defensible acquisition law."
     }
   ]
 }

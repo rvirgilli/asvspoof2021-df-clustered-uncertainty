@@ -35,8 +35,13 @@ A post-failure EXP-111 control restores class-by-source/task mass and retains th
 organizer endpoint, addressing the narrow composition-confounding objection without being
 relabeled prospective. A separately frozen, pre-access SpoofCeleb experiment supplies the
 prospective single-source check: 6/6 trial-i.i.d. versus 3/6 product/source exclusions on
-91,130 trials. Its later scorer-provenance rerun reproduced three score files byte-for-byte;
-XLSR-Mamba differed by at most 1.43e-6, with every EER, decision and endpoint unchanged.
+91,130 trials. A disclosed post-result factor decomposition gives 5/6 speaker-only and 3/6
+attack-only exclusions; the attack-only verdict vector exactly matches the joint-product
+vector. Thus attack-level perturbation alone is sufficient for all three changed decisions
+under the declared fixed-data procedure, while speaker-only perturbation is sufficient for
+one. This is a mechanism diagnostic, not prospective confirmation or causal variance
+decomposition. The later scorer-provenance rerun reproduced three score files byte-for-byte;
+XLSR-Mamba differed by at most 1.44e-6, with every EER, decision and endpoint unchanged.
 A witnessed EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
 conditional on its fitted Gaussian DGP.
 
@@ -55,6 +60,7 @@ number and the boundaries placed on its interpretation.
 | `audit/PUBLIC-PACKAGING.json` | binds the path-sanitized public audit to the internal composite and sanitizer |
 | `audit/README.md` | what each key answers, the estimand, and the scope statements |
 | `derived/` | committed machine-readable campaign outputs used by the clean-clone checker |
+| `exp115/` | exact nonlicensed EXP-115 freeze, code, arrays, receipt and independent recomputation |
 | `paper/` | the exact paper and figure source checked against those outputs |
 | `code/` | the estimator, analysis scripts, audit builder, and checkers |
 | `data/README.md` | source, sha256, byte and line counts for all nine input files |
@@ -72,7 +78,8 @@ uv run --frozen python verify_release.py
 
 That command authenticates the release and checks `paper/main.tex` against named paths in `derived/`,
 including the matched perturbation diagnostic, coherent covariance result, incidence audit
-and separate Arena/SpoofCeleb checks. It also verifies the exact historical result identities and
+and separate Arena/SpoofCeleb checks. It also verifies the exact EXP-115 delivery and
+historical result identities and
 the hashes of the public path-adapted scripts. It does not pretend to regenerate an experiment.
 
 To re-derive the raw-score core of the audit package from the third-party score files, obtain the inputs described
@@ -87,9 +94,9 @@ uv run python code/check_tie_safety.py
 The builder reads the public score files plus the committed campaign outputs in `derived/`
 and writes only `audit-regenerated/audit-core.json`; it never overwrites the canonical
 artifact. The comparator requires exact equality for all 16 core blocks. The canonical
-`audit/audit.json` is deliberately composite: it adds eight later closures (matched
-perturbation, coherent covariance, two coverage layers, composition, EXP-111, SpoofCeleb,
-and ASV5), each bound to its own
+`audit/audit.json` is deliberately composite: it adds nine later closures (matched
+perturbation, coherent covariance, two coverage layers, composition, EXP-111, EXP-114,
+EXP-115 and ASV5), each bound to its own
 committed result and verifier by `code/check_numbers.py`. No single raw-score command is
 claimed to rerun those later campaigns.
 The generating-script map in `derived/README.md` distinguishes runnable public

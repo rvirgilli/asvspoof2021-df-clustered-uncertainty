@@ -10,8 +10,9 @@ uv run --frozen python verify_release.py
 ```
 
 The gate authenticates every release file, runs the scientific contract checker and
-the 26-case caveat-deletion mutation suite, and independently verifies the portable
-ASVspoof 5 bundle. It does not access
+the 27-case caveat-deletion mutation suite, verifies the exact nonlicensed EXP-115
+delivery and failure-injection tests, and independently verifies the portable ASVspoof 5
+bundle. It does not access
 third-party score files or rerun any scoring model.
 
 Individual commands are:
@@ -19,6 +20,8 @@ Individual commands are:
 ```bash
 uv run --frozen python code/check_numbers.py
 uv run --frozen python -m unittest -v paper/test_semantic_guards.py
+uv run --frozen python exp115/verify_receipt.py
+uv run --frozen python -m unittest -v exp115/test_analyze.py exp115/test_verify_receipt.py
 uv run --frozen python audit/verify_asv5_package.py
 ```
 
@@ -40,7 +43,7 @@ uv run --frozen python code/compare_audit_core.py
 
 The builder writes `audit-regenerated/audit-core.json`. The comparator requires
 all 16 reconstructed blocks to equal the corresponding blocks in the canonical
-composite package. The eight later closures embedded in `audit/audit.json` are
+composite package. The nine later closures embedded in `audit/audit.json` are
 verified from their hash-bound public envelopes at Level 1 and regenerated through
 their documented campaigns; Level 2 does not claim to rerun them.
 
@@ -63,6 +66,7 @@ per-trial scores. The ASVspoof 5 extension consumes fixed score shards whose
 698 logical identities and hashes are recorded in `audit/asv5/input-manifest.json`.
 Those score files are not redistributed.
 SpoofCeleb is also license-gated. Its public layer contains aggregate results,
-comparisons and hash-bound receipts only. `audit/PUBLIC-PACKAGING.json` binds the
+comparisons, hash-bound receipts, EXP-115 bootstrap arrays and nonlicensed analysis code;
+it contains no audio, manifest or score table. `audit/PUBLIC-PACKAGING.json` binds the
 path-sanitized composite to the exact internal audit-package hash and to
 `code/make_public_audit.py`.

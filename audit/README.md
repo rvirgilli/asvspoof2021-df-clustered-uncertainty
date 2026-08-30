@@ -24,7 +24,7 @@ sha256 of each so you can confirm you have the same bytes we did. Point the code
 
 With those set, `make_audit_package.py` regenerates the 16-block raw-score core as
 `audit-regenerated/audit-core.json`; `compare_audit_core.py` requires exact equality with
-the corresponding blocks in this canonical composite. The eight post-audit closures are
+the corresponding blocks in this canonical composite. The nine post-audit closures are
 not silently transcribed or attributed to that builder: `check_numbers.py` independently
 binds each to its own committed result and verifier, as well as binding the paper source.
 
@@ -72,9 +72,10 @@ under that imposed DGP; they do not establish the DGP as a model of 21DF.
 | `composition_fixed_sampling_control` | post-failure EXP-111 control, clean archival closure and independent portable verification |
 | `coverage_witnessed_replacement` | EXP-112 witnessed trace/aggregates, receipt, addendum and independent provenance verification |
 | `spoofceleb_sampling_unit_confirmation` | EXP-114 prospective single-source 6/6-to-3/6 endpoint and post-result provenance rerun; no licensed inputs |
+| `spoofceleb_factor_decomposition` | EXP-115 post-result speaker-only/attack-only diagnostic, receipt and independent exact recomputation; no licensed inputs |
 | `asv5_descriptive_replication` | portable fixed-roster result, run contract and independent execution audit |
 
-The eight post-audit closures are embedded in the canonical composite but generated and
+The nine post-audit closures are embedded in the canonical composite but generated and
 verified from artifacts outside the raw-score core. `code/check_numbers.py` binds them to
 the paper and verifies their internal result/receipt/hash relationships. The public audit is
 a deterministic path-sanitized copy; `audit/PUBLIC-PACKAGING.json` binds it to the internal
@@ -125,8 +126,17 @@ frozen before repository access and detector outcomes. Its complete single-sourc
 gives 6/6 trial-i.i.d. versus 3/6 product/source exclusions. A later audit found that the
 original seal omitted the actual scoring entrypoint. The disclosed post-result rerun binds
 clean source identities: three score files are byte-identical and XLSR-Mamba differs by at
-most $1.43\times10^{-6}$, while all EERs, decisions and the registered endpoint remain
+most $1.44\times10^{-6}$ (the exact maximum rounded upward), while all EERs, decisions and the registered endpoint remain
 unchanged. This authenticates the first result; it is not a second prospective trial.
+
+**The factor decomposition is explicitly post-result.** EXP-115 was frozen only after the
+EXP-114 joint endpoint was known. Speaker-only resampling gives 5/6 exclusions and
+attack-only resampling gives 3/6; the complete attack-only verdict vector equals the joint
+product vector. Under these declared fixed-data procedures, attack-level perturbation alone
+is sufficient for all three changed decisions and speaker-only perturbation for one. This
+localizes a mechanism but is neither prospective confirmation nor a causal variance
+decomposition or population law. The exact nonlicensed delivery is mirrored under
+`exp115/`, where the receipt verifier and mutation tests run without SpoofCeleb access.
 
 ## Known limits
 

@@ -1,0 +1,8 @@
+[project]
+name = "exp115-m1-spoofceleb-factor-decomposition"
+version = "0.0.0"
+requires-python = "==3.11.15"
+dependencies = ["numpy==2.4.6"]
+
+[tool.uv]
+package = false

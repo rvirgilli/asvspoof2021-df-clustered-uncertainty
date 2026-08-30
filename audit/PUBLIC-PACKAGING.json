@@ -5,13 +5,13 @@
     "sha256": "e428ea99df5feab2f935bf02c2adb67817def06882eb102736809f389bd05cbe"
   },
   "public": {
-    "bytes": 724273,
-    "sha256": "d32a16c70776219ab321c85e0248b4dc5c2d0f27dddff2937d587f4ff974c5f7"
+    "bytes": 740198,
+    "sha256": "33741f645b0d6cdb492e31add6ca4feffa4ea540a0d65a7ceaa0d918e3b49d02"
   },
   "schema": "m1-public-audit-packaging-v1",
   "source": {
-    "bytes": 711345,
-    "sha256": "ffbb7e3faa8662647f5ebd617bf160a8ccfe7de8a1d8d63e0f139b8635f57a58"
+    "bytes": 727270,
+    "sha256": "b0e31fc871b7e160afcdd0e51f5a85c76463881add2697906d3476101e6106b5"
   },
   "transformation": "replace absolute local path strings; preserve all other JSON values"
 }

@@ -1,0 +1,25 @@
+{
+  "attack_array_exact": true,
+  "attack_max_t_critical_value": 2.351227660389506,
+  "attack_only_excluding_zero": 3,
+  "completed_utc": "2026-08-30T18:03:29.792146+00:00",
+  "evidence_status": "post-result standalone recomputation",
+  "implementation_sha256": "4efd2e35efe3ef8ec39fb631a1ee4da7f5eb0c173f45564123c57cb8a70d4e5a",
+  "inputs": {
+    "attack_array": "8b9a28fa2d5cf50db9c6aa6a3050c3f85a7a261f30837c303f433f38058b85d7",
+    "manifest": "008371adaeb300401357a58035d3c4ac9e1c440abe804ceab8ccd1bdc84b2544",
+    "result": "d85156dd70c1e312069c664987f0c4fc7eab2f279af471f6fe6eddd2a121673c",
+    "scores": {
+      "aasist": "6e75ff20e525713a800e47d756d289604e145f868eed174809c4983fcedac2ad",
+      "sls": "4e83b949a51de18866dd2021559cfe4dcab5df6ff028080e28c7b2c82b8d28c9",
+      "ssl_aasist": "f0237f3712c435157d2cbd5f84f403acf6bea23e2c5553210f8fe276a82743b5",
+      "xlsr_mamba": "5d4c6ca9cc4be52746f7cc1ae2b1007e5dc5e1ca01ddd1221b9560236f1ff835"
+    },
+    "speaker_array": "1ef95b61935f48c2ec7b499c375979509d757231ab8d80338cec78f0d1cd9d70"
+  },
+  "schema_version": 1,
+  "speaker_array_exact": true,
+  "speaker_max_t_critical_value": 2.4970260593914175,
+  "speaker_only_excluding_zero": 5,
+  "status": "exact_reproduction"
+}

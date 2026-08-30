@@ -1,0 +1,18 @@
+{
+  "bindings": {
+    "ATTACK-ONLY-BOOTSTRAP.npy": "8b9a28fa2d5cf50db9c6aa6a3050c3f85a7a261f30837c303f433f38058b85d7",
+    "EXP-114-PROVENANCE-RERUN-RESULTS.json": "ff999f5b35ecc77c92299037a07a1700dbed1f88c5ff874a5cbfc3222a6836ae",
+    "FREEZE.sha256": "833403a35f579d0ff75e3fcdeeda329766fe3a1c834750e7a7b55286ab5dacee",
+    "RESULTS.json": "d85156dd70c1e312069c664987f0c4fc7eab2f279af471f6fe6eddd2a121673c",
+    "SPEAKER-ONLY-BOOTSTRAP.npy": "1ef95b61935f48c2ec7b499c375979509d757231ab8d80338cec78f0d1cd9d70",
+    "manifest": "008371adaeb300401357a58035d3c4ac9e1c440abe804ceab8ccd1bdc84b2544",
+    "score:aasist": "6e75ff20e525713a800e47d756d289604e145f868eed174809c4983fcedac2ad",
+    "score:sls": "4e83b949a51de18866dd2021559cfe4dcab5df6ff028080e28c7b2c82b8d28c9",
+    "score:ssl_aasist": "f0237f3712c435157d2cbd5f84f403acf6bea23e2c5553210f8fe276a82743b5",
+    "score:xlsr_mamba": "5d4c6ca9cc4be52746f7cc1ae2b1007e5dc5e1ca01ddd1221b9560236f1ff835"
+  },
+  "evidence_status": "post-result mechanism diagnostic",
+  "git_head": "49b9057b7edba43c3914897d31fdb7917737c379",
+  "schema_version": 1,
+  "status": "complete"
+}

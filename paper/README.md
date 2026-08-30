@@ -15,4 +15,4 @@ The first command regenerates both PDFs in `paper/figs/` exclusively from the
 committed derived JSON files. The second compiles the exact checked source.
 `verify_release.py` confirms that the PDF has five pages and page 5 contains references
 only. `semantic_obligations.json` and `test_semantic_guards.py` make removal of any of
-26 load-bearing caveats fail the production checker.
+27 load-bearing caveats fail the production checker.

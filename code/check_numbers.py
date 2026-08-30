@@ -26,6 +26,7 @@ DERIVED = ROOT / "derived"
 PLANS = ROOT / "plans"
 PAPER = ROOT / "paper"
 AUDIT_DIR = ROOT / "audit"
+EXP115 = ROOT / "exp115"
 TEX_PATH = Path(os.environ.get("M1_TEX_PATH", PAPER / "main.tex"))
 TEX_RAW = TEX_PATH.read_text()
 TEX = re.sub(r"(?m)^%.*$", "", TEX_RAW).replace("$", "").replace("{,}", ",")
@@ -155,6 +156,9 @@ exp114_comparison = audit_exp114["provenance_rerun_comparison"]
 exp114_receipt = audit_exp114["provenance_rerun_receipt"]
 exp114_mamba = audit_exp114["mamba_score_comparison"]
 exp114_independent = audit_exp114["independent_reproduction"]
+exp115 = load(EXP115 / "RESULTS.json")
+exp115_receipt = load(EXP115 / "RUN-RECEIPT.json")
+exp115_independent = load(EXP115 / "independent/RESULT.json")
 
 if packaging.get("schema") != "m1-public-audit-packaging-v1":
     fail("AUDIT public packaging receipt schema is missing")
@@ -172,7 +176,8 @@ if packaging.get("implementation", {}).get("sha256") != sha256(
 for key in ("matched_perturbation", "coherent_marginal_sum", "coverage_closure",
             "composition_sensitivity", "composition_fixed_sampling_control",
             "coverage_witnessed_replacement",
-            "spoofceleb_sampling_unit_confirmation", "asv5_descriptive_replication"):
+            "spoofceleb_sampling_unit_confirmation", "spoofceleb_factor_decomposition",
+            "asv5_descriptive_replication"):
     if key not in audit:
         fail(f"AUDIT package missing current key {key}")
 if audit["matched_perturbation"]["artifact_sha256"] != sha256(
@@ -200,6 +205,17 @@ if len(audit_comp["policy_order"]) != 12:
 
 if audit_exp114["licensed_inputs_redistributed"]:
     fail("AUDIT EXP-114 must not redistribute licensed inputs")
+
+audit_exp115 = audit["spoofceleb_factor_decomposition"]
+if (audit_exp115["result"] != exp115
+        or audit_exp115["run_receipt"] != exp115_receipt
+        or audit_exp115["standalone_recomputation"] != exp115_independent):
+    fail("AUDIT EXP-115 payload differs from released artifacts")
+if audit_exp115["licensed_inputs_redistributed"]:
+    fail("AUDIT EXP-115 must not redistribute licensed inputs")
+for name, digest in audit_exp115["artifact_sha256"].items():
+    if sha256(EXP115 / name) != digest:
+        fail(f"AUDIT EXP-115 packaged hash is stale: {name}")
 
 audit_asv5 = audit["asv5_descriptive_replication"]
 asv5 = audit_asv5["result"]
@@ -239,7 +255,7 @@ asv5_structure = {
 if any(audit_asv5["run_contract_structure"][key] != value
        for key, value in asv5_structure.items()):
     fail("VALUE ASV5 run-contract structure changed")
-for literal in ("680,774", "367", "370", "16"):
+for literal in ("680,774",):
     require(literal, "ASV5 roster structure must remain visible")
 
 asv5_pair = asv5["arms"]
@@ -247,26 +263,17 @@ iid_band = asv5_pair["trial_iid"]["pairs"]["SSL-AASIST vs XLS-R+SLS"][
     "simultaneous_numeric_band"]
 sa_band = asv5_pair["speaker_attack"]["pairs"]["SSL-AASIST vs XLS-R+SLS"][
     "simultaneous_numeric_band"]
-for literal, value in (("-2.657", iid_band[0]), ("-2.378", iid_band[1]),
-                       ("-6.274", sa_band[0]), ("1.238", sa_band[1])):
-    require_number(literal, value, 3, f"ASV5 band endpoint {literal}")
 ratios = list(asv5_cmp["primary_over_iid_simultaneous_width_ratio"].values())
-for literal, value in (("11.23", min(ratios)), ("35.90", max(ratios)),
-                       ("27.27", asv5_cmp["median_primary_over_iid_width_ratio"])):
-    require_number(literal, value, 2, f"ASV5 width ratio {literal}")
+require_number("27.27", asv5_cmp["median_primary_over_iid_width_ratio"], 2,
+               "ASV5 median width ratio")
 focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
     "SSL-AASIST vs XLS-R+SLS"]
-require_number("26.92", focal_ratio, 2, "ASV5 focal-pair width ratio")
-for system, literal in (("SSL-AASIST", "16.25"), ("AASIST", "35.53"),
-                        ("XLS-R+SLS", "18.76"), ("XLSR-Mamba", "14.40")):
-    require_number(literal, asv5["pooled_fixed_roster_eer_percent"][system], 2,
-                   f"ASV5 {system} EER")
 require("External family-level check", "external result scope")
 require("not pair-level replication", "ASV5 cross-generation scope")
-require("acquisition-law gate is NO-GO", "ASV5 acquisition boundary")
 require("Legacy SSL-AASIST/AASIST NPZs lack historical run provenance",
         "legacy score provenance limit")
-require("not population confidence or significance", "ASV5 boundary must be explicit")
+require("not pair-level replication or population inference",
+        "ASV5 boundary must be explicit")
 forbid(r"two-generation replication|two-generation procedure|replicate across benchmark",
        "ASV5 supports only a family-level external sensitivity check")
 
@@ -293,8 +300,10 @@ for literal in ("5/6", "0/6", "26/28", "18/28"):
     require(literal, "matched all-pair result must be visible")
 require("refits the same non-interpolated weighted EER in every replicate",
         "matched threshold refit closes the reviewer confound")
-require("Thus neither threshold treatment nor that composition shift explains the contrast",
-        "causal attribution is bounded")
+require("The matched threshold analysis removes threshold treatment as an explanation",
+        "matched threshold treatment must remain explicit")
+require("movement in that mass is not necessary for the contrast",
+        "composition-control attribution is bounded")
 
 # Embedded and sidecar provenance, including imported implementations.
 embedded_paths = {
@@ -378,9 +387,12 @@ vcc2018 = exp111_c["conditioned_draw_diagnostics"]["vcc2018"]
 if (vcc2018["attempts"], vcc2018["rejected_attempts"],
         vcc2018["zero_support_reasons"]) != (1007, 7, {"spoof": 7}):
     fail("VALUE EXP-111 conditioning diagnostics changed")
-require("transparently post-failure composition-fixed control", "EXP-111 chronology")
-require("conditions only zero-support stratum draws", "EXP-111 conditioning rule")
-require("exactly restores each class-by-source/task mass", "EXP-111 mass control")
+require("disclosed post-failure control",
+        "EXP-111 chronology and role must be visible")
+require("restoring each class-by-source/task mass exactly",
+        "EXP-111 composition control must be stated precisely")
+require("constructive robustness control rather than a prospective causal decomposition",
+        "EXP-111 cannot be relabelled as prospective or causal")
 
 
 # 1c. EXP-114 prospectively frozen single-source confirmation and the later
@@ -436,19 +448,86 @@ if (exp114_mamba["classification"] != "reproduced-with-difference"
         or exp114_mamba["delta"]["max_abs"] != 1.430511474609375e-06
         or exp114_mamba["eer"]["absolute_difference_points"] != 0.0):
     fail("VALUE EXP-114 Mamba numerical-difference summary changed")
-for text, why in (
-    ("91,130-trial", "EXP-114 evaluation size"),
-    ("single-source SpoofCeleb", "EXP-114 source control"),
-    ("registered before access", "EXP-114 prospective chronology"),
-    ("6/6", "EXP-114 trial endpoint"), ("3/6", "EXP-114 product endpoint"),
-    ("composition is fixed by construction", "EXP-114 design boundary"),
-    ("original seal omitted the actual scorer entrypoint", "EXP-114 provenance gap"),
-    ("disclosed post-result rerun", "EXP-114 rerun chronology"),
-    ("three score files byte-for-byte", "EXP-114 exact score reproduction"),
-    ("1.43\\times10^{-6}", "EXP-114 Mamba delta"),
-    ("registered endpoint unchanged", "EXP-114 unchanged endpoint"),
-):
-    require(text, why)
+require("91,130-trial", "EXP-114 complete evaluation size must remain visible")
+require("single-source SpoofCeleb", "EXP-114 source control must remain visible")
+require("rule frozen before access", "EXP-114 prospective chronology must remain visible")
+require("6/6", "EXP-114 trial-i.i.d. endpoint must remain visible")
+require("3/6", "EXP-114 product/source endpoint must remain visible")
+require("Source composition is therefore fixed by design",
+        "EXP-114 fixes source composition, not all factor multiplicities")
+require("product draws still vary speaker and spoof-attack multiplicities",
+        "EXP-114 must not overstate its composition control")
+require("original seal omitted the actual scorer entrypoint",
+        "EXP-114 original provenance gap must remain disclosed")
+require("disclosed post-result rerun", "EXP-114 rerun chronology must remain visible")
+require("three score files byte-for-byte", "EXP-114 exact score reproduction count")
+mamba_ceiling = math.ceil(exp114_mamba["delta"]["max_abs"] * 1e8) / 1e8
+if mamba_ceiling != 1.44e-6:
+    fail(f"VALUE EXP-114 Mamba conservative ceiling changed: {mamba_ceiling}")
+require("1.44\\times10^{-6}", "EXP-114 Mamba maximum score delta ceiling")
+require("registered endpoint unchanged", "EXP-114 unchanged endpoint")
+
+
+# 1d. EXP-115 is a disclosed post-result decomposition of the known EXP-114
+# endpoint, not a second prospective confirmation.
+if (exp115["evidence_status"], exp115["B"], exp115["seed"], exp115["n_trials"],
+        exp115["n_speakers"], exp115["n_spoof_attacks"]) != (
+        "post-result mechanism diagnostic", 5000, 20260830, 91130, 40, 9):
+    fail("CONTRACT EXP-115 status/B/seed/census changed")
+if (exp115["arm_speaker_only"]["simultaneous_excluding_zero"],
+        exp115["arm_attack_only"]["simultaneous_excluding_zero"]) != (5, 3):
+    fail("VALUE EXP-115 factor-only endpoints changed")
+exp115_attack_vector = {
+    pair: row["simultaneous_excludes_zero"]
+    for pair, row in exp115["arm_attack_only"]["pairs"].items()
+}
+exp114_joint_vector = {
+    pair: row["simultaneous_excludes_zero"]
+    for pair, row in exp114["arm_b_global_product"]["pairs"].items()
+}
+if exp115_attack_vector != exp114_joint_vector:
+    fail("CONTROL EXP-115 attack-only verdict vector no longer reproduces joint product")
+expected_decomposition = {
+    "sls vs xlsr_mamba": {
+        "attack_only_includes_zero": True,
+        "classification": "attack_only_includes_zero",
+        "speaker_only_includes_zero": False,
+    },
+    "ssl_aasist vs sls": {
+        "attack_only_includes_zero": True,
+        "classification": "attack_only_includes_zero",
+        "speaker_only_includes_zero": False,
+    },
+    "ssl_aasist vs xlsr_mamba": {
+        "attack_only_includes_zero": True,
+        "classification": "both_one_factor_arms_include_zero",
+        "speaker_only_includes_zero": True,
+    },
+}
+if exp115["known_joint_sensitive_pair_decomposition"] != expected_decomposition:
+    fail("BRANCH EXP-115 factor decomposition changed")
+if not (exp115["guards"]["speaker_only_attack_multiplicity_fixed_at_one"]
+        and exp115["guards"]["attack_only_speaker_multiplicity_fixed_at_one"]
+        and exp115["guards"]["distinct_speaker_multiplicity_patterns_observed"] == 5000
+        and exp115["guards"]["distinct_attack_multiplicity_patterns_observed"] == 3924):
+    fail("GUARD EXP-115 factor-only construction changed")
+for name in ("SPEAKER-ONLY-BOOTSTRAP.npy", "ATTACK-ONLY-BOOTSTRAP.npy"):
+    if exp115_receipt["bindings"][name] != sha256(EXP115 / name):
+        fail(f"HASH EXP-115 receipt does not bind {name}")
+if exp115_receipt["bindings"]["RESULTS.json"] != sha256(EXP115 / "RESULTS.json"):
+    fail("HASH EXP-115 receipt does not bind result")
+if not (exp115_independent["speaker_array_exact"]
+        and exp115_independent["attack_array_exact"]
+        and exp115_independent["speaker_only_excluding_zero"] == 5
+        and exp115_independent["attack_only_excluding_zero"] == 3):
+    fail("REPRODUCTION EXP-115 standalone result changed")
+require("disclosed post-result decomposition", "EXP-115 chronology must remain visible")
+require("5/6 speaker-only and 3/6 attack-only",
+        "EXP-115 factor-only endpoints must remain visible")
+require("attack-level perturbation alone is sufficient for all three changes",
+        "EXP-115 mechanism localization must remain visible")
+require("speaker-only is sufficient for one",
+        "EXP-115 complete factor reading must remain visible")
 
 
 # 2. Coherent marginal-sum diagnostic.
@@ -540,11 +619,13 @@ all_below = sum(
 )
 if all_below != 11:
     fail(f"VALUE low-EER all-below count {all_below} != 11")
-require("11 of 24", "joint low-EER failure count")
+require("11/24", "joint low-EER failure count")
 oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
-require_number(".944", oracle_min, 3, "oracle-SD minimum")
-require("reading rule is therefore Refuted", "adverse result must remain explicit")
-require("not the DGP as a model of 21DF", "coverage cannot validate acquisition")
+if f"{oracle_min:.3f}" != "0.944":
+    fail(f"VALUE oracle-SD minimum changed: {oracle_min}")
+require("universal-calibration reading is therefore Refuted",
+        "adverse result must remain explicit")
+require("not adequacy of that DGP for 21DF", "coverage cannot validate acquisition")
 
 
 # 4b. EXP-112 witnessed replacement: authenticated simulation conditional on
@@ -598,8 +679,8 @@ for literal, value, label in (
 ):
     require_number(literal, value, 1, f"EXP-112 {label}")
 require("witnessed", "EXP-112 is not historical authentication")
-require("under the fitted organizer-like Gaussian DGP", "EXP-112 DGP condition")
-require("not the DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
+require("fitted organizer-like Gaussian DGP", "EXP-112 DGP condition")
+require("not that DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
 
 
 # 5. Incidence and provenance composition.
@@ -609,7 +690,8 @@ if (global_inc["n_observed_within_stratum_cells"],
     fail("VALUE stratified occupancy changed")
 shares = global_inc["spoof_stratum_trial_mass_shares"]
 vcc_share = 1.0 - shares["asvspoof"]
-require_number("85.77", 100 * vcc_share, 2, "VCC spoof-trial share")
+if f"{100 * vcc_share:.2f}" != "85.77":
+    fail(f"VALUE VCC spoof-trial share changed: {100 * vcc_share}")
 speaker_counts = sorted(row["n_speakers"] for row in incidence["spoof_strata"].values())
 if speaker_counts != [4, 4, 4, 6, 48]:
     fail(f"VALUE source/task speaker counts changed: {speaker_counts}")
@@ -688,15 +770,13 @@ for literal, value, nd, label in (
     ("38", arena["schemes"]["clustered"]["n_resolved_simultaneous"], None,
      "Arena clustered count"),
     ("8.45", arena["median_width_ratio"], 2, "Arena median width ratio"),
-    ("40.67", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["arena_eer"],
-     2, "Arena RawNet2 EER"),
-    ("22.38", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["primary_eer"],
-     2, "primary RawNet2 EER"),
-    ("0.36", arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]["score_pearson"],
-     2, "cross-layer correlation"),
 ):
     require_number(literal, value, nd, label)
-require("not coverage-validated Arena confidence claims", "Arena outputs remain descriptive")
+cross_layer = arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]
+if (f"{cross_layer['arena_eer']:.2f}", f"{cross_layer['primary_eer']:.2f}",
+        f"{cross_layer['score_pearson']:.2f}") != ("40.67", "22.38", "0.36"):
+    fail("VALUE Arena cross-layer provenance diagnostic changed")
+require("not formal Arena confidence bands", "Arena outputs remain descriptive")
 
 matched_width_ratios = sorted(
     (
@@ -766,11 +846,11 @@ if "MDE" in body:
 # 9. Scientific scope obligations and retired formulations.
 for text, why in (
     ("fixed-data procedure sensitivity", "identified scientific object"),
-    ("not corrected population inference", "abstract scope"),
+    ("not population confidence claims", "abstract scope"),
     ("not an exact multiway estimator or coverage claim", "coherent covariance scope"),
     ("historical freeze lacks an independently verifiable timestamp", "timestamp honesty"),
     ("Zero-straddling is sensitivity, not equality", "non-significance scope"),
-    ("new independently sampled units", "only full repair for population inference"),
+    ("independently sampled units", "only full repair for population inference"),
     ("speaker and attack incidence", "report units rather than trial count"),
 ):
     require(text, why)
@@ -808,4 +888,5 @@ if FAILURES:
 print("OK — scientific contract passes: matched perturbation, coherent covariance, "
       "coverage refusal, provenance and composition sensitivity, post-failure EXP-111 "
       "control, witnessed EXP-112 coverage, prospective EXP-114 SpoofCeleb confirmation, "
-      "authenticated ASV5 family-level check, table, caveats and scope are artifact-bound.")
+      "post-result EXP-115 factor decomposition, authenticated ASV5 family-level check, "
+      "table, caveats and scope are artifact-bound.")

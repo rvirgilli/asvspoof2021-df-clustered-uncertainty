@@ -1,0 +1,324 @@
+{
+  "B": 5000,
+  "arm_attack_only": {
+    "max_t_critical_value": 2.351227660389506,
+    "pairs": {
+      "aasist vs sls": {
+        "bootstrap_sd": 5.318442999310271,
+        "delta_eer_points": 33.416852603701905,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          23.30833851517763,
+          44.2344117682841
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          20.91198231351867,
+          45.92172289388514
+        ],
+        "unique_bootstrap_delta_values": 3924
+      },
+      "aasist vs ssl_aasist": {
+        "bootstrap_sd": 8.497827247075366,
+        "delta_eer_points": 31.209993050196598,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          15.975956204192403,
+          49.03052111147498
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          11.22966657366139,
+          51.190319526731805
+        ],
+        "unique_bootstrap_delta_values": 3924
+      },
+      "aasist vs xlsr_mamba": {
+        "bootstrap_sd": 10.003751056702622,
+        "delta_eer_points": 30.35407293607465,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          10.358828047837655,
+          49.65135276830953
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          6.832976743904698,
+          53.87516912824461
+        ],
+        "unique_bootstrap_delta_values": 3924
+      },
+      "sls vs xlsr_mamba": {
+        "bootstrap_sd": 5.354501829751489,
+        "delta_eer_points": -3.0627796676272605,
+        "pointwise_excludes_zero": false,
+        "pointwise_percentile": [
+          -14.366762378518208,
+          6.453357230811811
+        ],
+        "simultaneous_excludes_zero": false,
+        "simultaneous_max_t": [
+          -15.652432477345183,
+          9.526873142090661
+        ],
+        "unique_bootstrap_delta_values": 3924
+      },
+      "ssl_aasist vs sls": {
+        "bootstrap_sd": 3.9548192572693446,
+        "delta_eer_points": 2.206859553505311,
+        "pointwise_excludes_zero": false,
+        "pointwise_percentile": [
+          -6.120682297571156,
+          9.328828169766693
+        ],
+        "simultaneous_excludes_zero": false,
+        "simultaneous_max_t": [
+          -7.0918208760274535,
+          11.505539983038075
+        ],
+        "unique_bootstrap_delta_values": 3924
+      },
+      "ssl_aasist vs xlsr_mamba": {
+        "bootstrap_sd": 5.900941344333761,
+        "delta_eer_points": -0.8559201141219497,
+        "pointwise_excludes_zero": false,
+        "pointwise_percentile": [
+          -12.740651328384608,
+          9.995488740134384
+        ],
+        "simultaneous_excludes_zero": false,
+        "simultaneous_max_t": [
+          -14.730376625255525,
+          13.018536397011625
+        ],
+        "unique_bootstrap_delta_values": 3924
+      }
+    },
+    "pointwise_excluding_zero": 3,
+    "simultaneous_excluding_zero": 3,
+    "unique_bootstrap_eer_values": {
+      "aasist": 3921,
+      "sls": 3923,
+      "ssl_aasist": 3924,
+      "xlsr_mamba": 3924
+    }
+  },
+  "arm_speaker_only": {
+    "max_t_critical_value": 2.4970260593914175,
+    "pairs": {
+      "aasist vs sls": {
+        "bootstrap_sd": 1.032660846865101,
+        "delta_eer_points": 33.416852603701905,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          31.610505332140022,
+          35.67386241708085
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          30.83827155856654,
+          35.99543364883727
+        ],
+        "unique_bootstrap_delta_values": 5000
+      },
+      "aasist vs ssl_aasist": {
+        "bootstrap_sd": 0.7806517296569626,
+        "delta_eer_points": 31.209993050196598,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          29.887256343372183,
+          32.90613033958994
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          29.260685337934177,
+          33.15930076245902
+        ],
+        "unique_bootstrap_delta_values": 5000
+      },
+      "aasist vs xlsr_mamba": {
+        "bootstrap_sd": 1.01668453551358,
+        "delta_eer_points": 30.35407293607465,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          28.659018383552134,
+          32.586581144761425
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          27.81538515671698,
+          32.89276071543232
+        ],
+        "unique_bootstrap_delta_values": 5000
+      },
+      "sls vs xlsr_mamba": {
+        "bootstrap_sd": 0.6127703286498343,
+        "delta_eer_points": -3.0627796676272605,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          -4.11935407236948,
+          -1.7526063629850517
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          -4.59288314668774,
+          -1.532676188566781
+        ],
+        "unique_bootstrap_delta_values": 5000
+      },
+      "ssl_aasist vs sls": {
+        "bootstrap_sd": 0.6214637823445941,
+        "delta_eer_points": 2.206859553505311,
+        "pointwise_excludes_zero": true,
+        "pointwise_percentile": [
+          0.8606554376731119,
+          3.351918072532032
+        ],
+        "simultaneous_excludes_zero": true,
+        "simultaneous_max_t": [
+          0.6550482940229037,
+          3.7586708129877184
+        ],
+        "unique_bootstrap_delta_values": 5000
+      },
+      "ssl_aasist vs xlsr_mamba": {
+        "bootstrap_sd": 0.4463414699462896,
+        "delta_eer_points": -0.8559201141219497,
+        "pointwise_excludes_zero": false,
+        "pointwise_percentile": [
+          -1.6627190781451708,
+          0.07007168519623728
+        ],
+        "simultaneous_excludes_zero": false,
+        "simultaneous_max_t": [
+          -1.970446395964906,
+          0.25860616772100653
+        ],
+        "unique_bootstrap_delta_values": 5000
+      }
+    },
+    "pointwise_excluding_zero": 5,
+    "simultaneous_excluding_zero": 5,
+    "unique_bootstrap_eer_values": {
+      "aasist": 5000,
+      "sls": 5000,
+      "ssl_aasist": 5000,
+      "xlsr_mamba": 5000
+    }
+  },
+  "evidence_status": "post-result mechanism diagnostic",
+  "guards": {
+    "attack_factor_support": 9,
+    "attack_only_speaker_multiplicity_fixed_at_one": true,
+    "complete_crossed_grid": true,
+    "distinct_attack_multiplicity_patterns_observed": 3924,
+    "distinct_speaker_multiplicity_patterns_observed": 5000,
+    "single_official_source": "TITW-VoxCeleb1",
+    "speaker_only_attack_multiplicity_fixed_at_one": true
+  },
+  "known_joint_sensitive_pair_decomposition": {
+    "sls vs xlsr_mamba": {
+      "attack_only_includes_zero": true,
+      "classification": "attack_only_includes_zero",
+      "speaker_only_includes_zero": false
+    },
+    "ssl_aasist vs sls": {
+      "attack_only_includes_zero": true,
+      "classification": "attack_only_includes_zero",
+      "speaker_only_includes_zero": false
+    },
+    "ssl_aasist vs xlsr_mamba": {
+      "attack_only_includes_zero": true,
+      "classification": "both_one_factor_arms_include_zero",
+      "speaker_only_includes_zero": true
+    }
+  },
+  "n_speakers": 40,
+  "n_spoof_attacks": 9,
+  "n_trials": 91130,
+  "point_eer_percent": {
+    "aasist": 57.93006327957486,
+    "sls": 24.51321067587295,
+    "ssl_aasist": 26.720070229378262,
+    "xlsr_mamba": 27.575990343500212
+  },
+  "provenance": {
+    "bootstrap_arrays": {
+      "ATTACK-ONLY-BOOTSTRAP.npy": {
+        "dtype": "float64",
+        "sha256": "8b9a28fa2d5cf50db9c6aa6a3050c3f85a7a261f30837c303f433f38058b85d7",
+        "shape": [
+          5000,
+          4
+        ]
+      },
+      "SPEAKER-ONLY-BOOTSTRAP.npy": {
+        "dtype": "float64",
+        "sha256": "1ef95b61935f48c2ec7b499c375979509d757231ab8d80338cec78f0d1cd9d70",
+        "shape": [
+          5000,
+          4
+        ]
+      }
+    },
+    "completed_utc": "2026-08-30T17:55:43.192496+00:00",
+    "experiment_git_status_before_run": "",
+    "frozen_files": {
+      "DATA.md": "1a2455ebedef49bf0067cc6e9b89b2b06c32a6b0f7f9f32e7bcabef0efd7c1a2",
+      "PREREG.md": "5f6fd3cecf62233cfb4d15fb9e64fd0097083d1cbd17bed197d33dbe8459702f",
+      "analyze.py": "bcff2ae2974833813b354cb1835d483159bb6f717d5f476ec6fc35d2bc4cd06d",
+      "pyproject.toml": "8ef388db0b48d4fc06b2027061798985c80e74049cbb6116261e5f8a4bfdecb9",
+      "test_analyze.py": "cd93b6374f8ab795b2f19578f0cfbd02a3c0edc4a31ac53eaa12e1eb4457f46b",
+      "uv.lock": "b0c031c240620bb4622e318dbb773fc90fb3a59d119c2a8d51b4118a297a05cb"
+    },
+    "git_head": "49b9057b7edba43c3914897d31fdb7917737c379",
+    "inputs": {
+      "joint_result": {
+        "bytes": 36679,
+        "registered_reading": {
+          "n_sampling_unit_sensitive_pairs": 3,
+          "sampling_unit_sensitive_pairs": [
+            "ssl_aasist vs sls",
+            "ssl_aasist vs xlsr_mamba",
+            "sls vs xlsr_mamba"
+          ],
+          "status": "confirmed_prospectively_on_spoofceleb"
+        },
+        "sha256": "ff999f5b35ecc77c92299037a07a1700dbed1f88c5ff874a5cbfc3222a6836ae"
+      },
+      "manifest": {
+        "bytes": 25817189,
+        "sha256": "008371adaeb300401357a58035d3c4ac9e1c440abe804ceab8ccd1bdc84b2544"
+      },
+      "scores": {
+        "aasist": {
+          "bytes": 6604092,
+          "sha256": "6e75ff20e525713a800e47d756d289604e145f868eed174809c4983fcedac2ad"
+        },
+        "sls": {
+          "bytes": 6628478,
+          "sha256": "4e83b949a51de18866dd2021559cfe4dcab5df6ff028080e28c7b2c82b8d28c9"
+        },
+        "ssl_aasist": {
+          "bytes": 6567753,
+          "sha256": "f0237f3712c435157d2cbd5f84f403acf6bea23e2c5553210f8fe276a82743b5"
+        },
+        "xlsr_mamba": {
+          "bytes": 6579571,
+          "sha256": "5d4c6ca9cc4be52746f7cc1ae2b1007e5dc5e1ca01ddd1221b9560236f1ff835"
+        }
+      }
+    },
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "started_utc": "2026-08-30T17:55:09.813572+00:00"
+  },
+  "schema_version": 1,
+  "seed": 20260830,
+  "systems": [
+    "aasist",
+    "ssl_aasist",
+    "sls",
+    "xlsr_mamba"
+  ]
+}

@@ -59,6 +59,9 @@ def main() -> int:
     for command in (
         [sys.executable, "code/check_numbers.py"],
         [sys.executable, "-m", "unittest", "-v", "paper/test_semantic_guards.py"],
+        [sys.executable, "exp115/verify_receipt.py"],
+        [sys.executable, "-m", "unittest", "-v",
+         "exp115/test_analyze.py", "exp115/test_verify_receipt.py"],
         [sys.executable, "audit/verify_asv5_package.py"],
     ):
         result = subprocess.run(command, cwd=ROOT, check=False)
