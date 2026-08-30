@@ -35,7 +35,9 @@ A post-failure EXP-111 control restores class-by-source/task mass and retains th
 organizer endpoint, addressing the narrow composition-confounding objection without being
 relabeled prospective. A separately frozen, pre-access SpoofCeleb experiment supplies the
 prospective single-source check: 6/6 trial-i.i.d. versus 3/6 product/source exclusions on
-91,130 trials. A disclosed post-result factor decomposition gives 5/6 speaker-only and 3/6
+91,130 trials. Its four point EERs are 57.93%, 24.51%, 26.72% and 27.58%, so this is a
+weakly transferred off-domain fixed family rather than a claim about high-performing
+in-domain SpoofCeleb systems. A disclosed post-result factor decomposition gives 5/6 speaker-only and 3/6
 attack-only exclusions; the attack-only verdict vector exactly matches the joint-product
 vector. Thus attack-level perturbation alone is sufficient for all three changed decisions
 under the declared fixed-data procedure, while speaker-only perturbation is sufficient for

@@ -73,6 +73,11 @@
       "match": "Source composition is therefore fixed by design, although product draws still vary speaker and spoof-attack multiplicities; between-source movement is not necessary for the contrast."
     },
     {
+      "id": "exp114_off_domain_performance_boundary",
+      "section": "Experiments/SpoofCeleb",
+      "match": "this check concerns a weakly transferred off-domain family, not high-performing in-domain SpoofCeleb systems."
+    },
+    {
       "id": "exp115_post_result_status",
       "section": "Experiments/SpoofCeleb",
       "match": "A disclosed post-result decomposition gives 5/6 speaker-only and 3/6 attack-only exclusions"
@@ -131,6 +136,11 @@
       "id": "zero_straddling_boundary",
       "section": "Discussion",
       "match": "Zero-straddling is sensitivity, not equality."
+    },
+    {
+      "id": "conclusion_registered_robustness_scope",
+      "section": "Conclusion",
+      "match": "Across the registered policies, corpus deletions and searched directions, the robust conclusion is coarse generation separation, not within-generation ranking."
     },
     {
       "id": "conclusion_population_boundary",

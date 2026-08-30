@@ -31,6 +31,8 @@ attacks or systems.
 - A pre-access frozen, single-source SpoofCeleb experiment gives 6/6
   trial-i.i.d. versus 3/6 product/source exclusions. A disclosed post-result
   scorer-provenance rerun leaves every EER, decision and endpoint unchanged.
+  The point EERs are 57.93%, 24.51%, 26.72% and 27.58%; the result is therefore
+  bounded to this weakly transferred off-domain family.
 - A disclosed post-result SpoofCeleb factor decomposition gives 5/6 speaker-only
   and 3/6 attack-only exclusions. Attack-only reproduces the joint-product verdict
   vector, so attack-level perturbation alone is sufficient for all three changed

@@ -1,6 +1,7 @@
 """M1 figures. Own file: paper/figures.py is shared with another line.
 
-Fig 1 (forest): the six baseline pairs, reconstructed trial-i.i.d. interval against ours.
+Fig 1 (forest): the six baseline pairs, matched simultaneous trial-i.i.d. and
+                speaker-attack procedure bands.
 Fig 2 (finite-A component): measured clustered-CI width vs number of attacks,
                 with each pair's delete-speaker component at the observed A=110.
 Palette: Okabe-Ito subset, CVD-validated; every series directly labelled.
@@ -36,16 +37,19 @@ def short(m):
 
 
 def fig_forest():
-    """The six baseline pairs: the reconstructed trial-i.i.d. verdict against ours."""
+    """The six baseline pairs under matched all-pair simultaneous procedures."""
     org = json.load(open(EXP / "results_organizer_test.json"))["pairs"]
+    matched = json.load(open(EXP / "results_matched_iid.json"))
+    iid = matched["iid"]["pairs"]
+    speaker_attack = matched["speaker_attack"]["pairs"]
     fig, ax = plt.subplots(figsize=(COL, 1.20))
     order = sorted(org, key=lambda k: abs(org[k]["delta_eer_pts"]))
     for i, k in enumerate(order):
         v = org[k]
-        d = v["delta_eer_pts"]
-        se = abs(d / v["z_iid"]) if v["z_iid"] else 0.0
-        lo_i, hi_i = d - 1.96 * se, d + 1.96 * se
-        lo_c, hi_c = v["clustered_ci_simultaneous"]
+        pair = v["systems"]
+        d = iid[pair]["delta_eer_pts"]
+        lo_i, hi_i = iid[pair]["simultaneous"]
+        lo_c, hi_c = speaker_attack[pair]["simultaneous"]
         y = i + 1
         ax.plot([lo_c, hi_c], [y, y], color=BLUE, lw=3.4, solid_capstyle="round",
                 alpha=0.5, zorder=1)
@@ -62,8 +66,8 @@ def fig_forest():
     ax.set_yticks([])
     ax.set_xlim(-12.5, 11.5)
     ax.set_xlabel("$\\Delta$EER (points), system A $-$ system B")
-    ax.annotate("trial-i.i.d. (reconstructed)", (-11.8, len(order) + 0.55), color=VERM, fontsize=6)
-    ax.annotate("clustered (this work)", (0.6, len(order) + 0.55), color=BLUE, fontsize=6)
+    ax.annotate("trial-i.i.d. simultaneous", (-11.8, len(order) + 0.55), color=VERM, fontsize=6)
+    ax.annotate("speaker-attack simultaneous", (0.6, len(order) + 0.55), color=BLUE, fontsize=6)
     fig.tight_layout(pad=0.4)
     fig.savefig(HERE / "figs/forest.pdf", bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)

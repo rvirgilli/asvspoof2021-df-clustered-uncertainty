@@ -10,7 +10,7 @@ uv run --frozen python verify_release.py
 ```
 
 The gate authenticates every release file, runs the scientific contract checker and
-the 27-case caveat-deletion mutation suite, verifies the exact nonlicensed EXP-115
+the 29-case caveat-deletion mutation suite, verifies the exact nonlicensed EXP-115
 delivery and failure-injection tests, and independently verifies the portable ASVspoof 5
 bundle. It does not access
 third-party score files or rerun any scoring model.

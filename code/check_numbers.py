@@ -63,6 +63,9 @@ def check_generated_figures() -> None:
     import shutil
     import subprocess
     generator = PAPER / "figures_m1.py"
+    source = generator.read_text()
+    if "results_matched_iid.json" not in source or "1.96 * se" in source:
+        fail("FIGURE forest source does not use the matched simultaneous trial-i.i.d. artifact")
     figures = sorted((PAPER / "figs").glob("*.pdf"))
     if not figures:
         fail("FIGURE no generated figures found")
@@ -75,8 +78,13 @@ def check_generated_figures() -> None:
             rendered = subprocess.run(
                 ["pdftotext", str(figure), "-"], capture_output=True, text=True
             ).stdout
-            if "published i.i.d. interval" in rendered:
-                fail(f"FIGURE {figure.name} still calls a reconstructed interval published")
+            for phrase in ("published i.i.d. interval", "trial-i.i.d. (reconstructed)",
+                           "clustered (this work)"):
+                if phrase in rendered:
+                    fail(f"FIGURE {figure.name} still renders retired label {phrase!r}")
+            if figure.name == "forest.pdf" and not all(phrase in rendered for phrase in (
+                    "trial-i.i.d. simultaneous", "speaker-attack simultaneous")):
+                fail("FIGURE forest.pdf does not identify both matched simultaneous arms")
 
 
 def require(text: str, why: str) -> None:
@@ -409,6 +417,10 @@ exp114_counts = tuple(exp114[name]["simultaneous_excluding_zero"] for name in (
     "arm_c_single_source_composition_preserving"))
 if exp114_counts != (6, 3, 3):
     fail(f"VALUE EXP-114 simultaneous counts {exp114_counts} != (6, 3, 3)")
+for system, literal in (("aasist", "57.93"), ("sls", "24.51"),
+                        ("ssl_aasist", "26.72"), ("xlsr_mamba", "27.58")):
+    require_number(literal, exp114["point_eer_percent"][system], 2,
+                   f"EXP-114 {system} point EER")
 if not (exp114["guards"]["complete_crossed_grid"]
         and exp114["guards"]["b_c_bootstrap_arrays_identical"]
         and exp114["guards"]["b_c_summaries_identical"]
@@ -457,6 +469,8 @@ require("Source composition is therefore fixed by design",
         "EXP-114 fixes source composition, not all factor multiplicities")
 require("product draws still vary speaker and spoof-attack multiplicities",
         "EXP-114 must not overstate its composition control")
+require("this check concerns a weakly transferred off-domain family, not high-performing in-domain SpoofCeleb systems",
+        "EXP-114 external-validity boundary must remain visible")
 require("original seal omitted the actual scorer entrypoint",
         "EXP-114 original provenance gap must remain disclosed")
 require("disclosed post-result rerun", "EXP-114 rerun chronology must remain visible")
@@ -852,6 +866,8 @@ for text, why in (
     ("Zero-straddling is sensitivity, not equality", "non-significance scope"),
     ("independently sampled units", "only full repair for population inference"),
     ("speaker and attack incidence", "report units rather than trial count"),
+    ("Across the registered policies, corpus deletions and searched directions",
+     "conclusion must remain bounded to tested robustness families"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")
