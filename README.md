@@ -1,7 +1,7 @@
-# Sampling-unit sensitivity in ASVspoof system comparisons
+# Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
 
-This repository accompanies **“Sampling-Unit and Composition Sensitivity of an
-Audio Deepfake Leaderboard.”** It contains the exact
+This repository accompanies **“Sensitivity of an Audio-Deepfake Leaderboard to the
+Resampling Unit and to Source, Speaker, and Attack Weighting.”** It contains the exact
 submitted manuscript, code, plans, deviations, and derived artifacts for a
 re-analysis of pairwise system comparisons on the ASVspoof 2021 DeepFake (DF)
 evaluation set.
@@ -12,39 +12,36 @@ The DF evaluation set contains 533,928 trials: 14,869 bona fide trials from 93 s
 and 519,059 spoof trials spanning 110 attack conditions. The significance test published
 with the challenge treats trials as independent observations.
 
-This repository contains the estimator, the analysis scripts and a derived audit artifact
-for a paired two-way bootstrap that resamples **speakers and attack conditions** rather
-than trials, applied to all 28 pairwise comparisons among eight high-provenance author or
-organiser releases. A matched post-audit diagnostic recomputes the identical EER threshold
-and all-pair max-$t$ rule in both arms: trial-i.i.d. perturbation gives 26/28 and 5/6
-organiser zero-exclusions, against 18/28 and 0/6 with speaker×attack weights. A second
-construction uses one PSD marginal-sum covariance for every pair SE and the joint critical
-value and separately gives 18/28 and 0/6. It is a coherent sensitivity covariance, not
-an exact multiway variance estimator or coverage claim. The completed 48-cell EXP-105 audit
-**refutes** extension of those intervals to low-EER regimes. A later source/task incidence
-audit also shows why the proposed global exchangeability law is not defensible for
+This repository contains the estimator, analysis scripts, and machine-readable results
+for trial and speaker×attack product-weight (PW) bootstraps applied to all 28 comparisons
+among four author-released systems and four organizer baselines. Both arms refit the same
+weighted EER and use an all-pair max-$t$ rule. Trial resampling separates 26/28 pairs and
+5/6 organizer-baseline pairs; PW resampling separates 18/28 and 0/6. A separate
+variance-inflating Gaussian sensitivity construction also gives 18/28 and 0/6; it is not
+an exact multiway estimator or a coverage guarantee. A 48-cell simulation shows that the
+three candidate intervals all fall below .90 coverage in the same 11/24 low-EER cells.
+A source/stratum incidence analysis also shows why the proposed global exchangeability law is not defensible for
 full-21DF population inference: 85.77% of spoof trials lie in four blocks containing
 only 4/4/4/6 speakers, and corpus labels are associated with delete-speaker influences.
-Consequently every full-21DF interval and verdict in this repository is a descriptive
-procedure-sensitivity output, including the organiser block. The organiser-like simulation
-cells validate implementation behavior under their imposed DGP, not that DGP as a model of
+Consequently every full-21DF interval and separation indicator in this repository is a
+fixed-score sensitivity output, including the organizer block. The organizer-like simulation
+cells evaluate procedure behavior under their imposed DGP, not that DGP as a model of
 the benchmark. A separate eleven-system Speech DF Arena re-score layer is included for
 provenance and descriptive sensitivity and is never mixed into the primary ranking.
 
-A post-failure EXP-111 control restores class-by-source/task mass and retains the 0/6
-organizer endpoint, addressing the narrow composition-confounding objection without being
-relabeled prospective. A separately frozen, pre-access SpoofCeleb experiment supplies the
-prospective single-source check: 6/6 trial-i.i.d. versus 3/6 product/source exclusions on
+A composition-preserving arm designed after an earlier arm failed exactly restores three
+bona-fide source masses and five spoof-stratum masses while retaining the 0/6 organizer
+endpoint. It is a robustness check, not prospective evidence. A SpoofCeleb analysis fixed
+while official access was pending supplies the single-source check: 6/6 trial-bootstrap
+versus 3/6 PW-bootstrap separations on
 91,130 trials. Its four point EERs are 57.93%, 24.51%, 26.72% and 27.58%, so this is a
-weakly transferred off-domain fixed family rather than a claim about high-performing
-in-domain SpoofCeleb systems. A disclosed post-result factor decomposition gives 5/6 speaker-only and 3/6
-attack-only exclusions; the attack-only verdict vector exactly matches the joint-product
-vector. Thus attack-level perturbation alone is sufficient for all three changed decisions
-under the declared fixed-data procedure, while speaker-only perturbation is sufficient for
-one. This is a mechanism diagnostic, not prospective confirmation or causal variance
-decomposition. The later scorer-provenance rerun reproduced three score files byte-for-byte;
-XLSR-Mamba differed by at most 1.44e-6, with every EER, decision and endpoint unchanged.
-A witnessed EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
+off-domain sensitivity check rather than a comparison of competitive in-domain SpoofCeleb
+systems. A post-result factor decomposition gives 5/6 speaker-only and 3/6 attack-only
+separations; attack-only matches the joint PW indicator vector. This localizes the observed
+contrast under the declared fixed-score procedures without identifying a causal variance
+component. The clean-source re-scoring reproduced three score files byte-for-byte;
+XLSR-Mamba differed by at most 1.44e-6, with every EER and separation indicator unchanged.
+An additional trace-retaining EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
 conditional on its fitted Gaussian DGP.
 
 The committed release is the artifact a reader needs to check every reported
@@ -63,7 +60,7 @@ number and the boundaries placed on its interpretation.
 | `audit/README.md` | what each key answers, the estimand, and the scope statements |
 | `derived/` | committed machine-readable campaign outputs used by the clean-clone checker |
 | `exp115/` | exact nonlicensed EXP-115 freeze, code, arrays, receipt and independent recomputation |
-| `paper/` | the exact paper and figure source checked against those outputs |
+| `paper/` | the exact paper, complete 28-pair supplement, and figure source checked against those outputs |
 | `code/` | the estimator, analysis scripts, audit builder, and checkers |
 | `data/README.md` | source, sha256, byte and line counts for all nine input files |
 | `REPRODUCE.md` | reproduction levels, exact commands, and the raw-data boundary |
@@ -78,7 +75,7 @@ uv sync --frozen
 uv run --frozen python verify_release.py
 ```
 
-That command authenticates the release and checks `paper/main.tex` against named paths in `derived/`,
+That command authenticates the release and checks `paper/main.tex` and `paper/SUPPLEMENT.md` against named paths in `derived/`,
 including the matched perturbation diagnostic, coherent covariance result, incidence audit
 and separate Arena/SpoofCeleb checks. It also verifies the exact EXP-115 delivery and
 historical result identities and

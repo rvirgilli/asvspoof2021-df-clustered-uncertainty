@@ -28,8 +28,13 @@ PAPER = ROOT / "paper"
 AUDIT_DIR = ROOT / "audit"
 EXP115 = ROOT / "exp115"
 TEX_PATH = Path(os.environ.get("M1_TEX_PATH", PAPER / "main.tex"))
+SUPPLEMENT_PATH = Path(os.environ.get(
+    "M1_SUPPLEMENT_PATH", PAPER / "SUPPLEMENT.md"))
 TEX_RAW = TEX_PATH.read_text()
 TEX = re.sub(r"(?m)^%.*$", "", TEX_RAW).replace("$", "").replace("{,}", ",")
+SUPPLEMENT_RAW = SUPPLEMENT_PATH.read_text()
+REPORT_RAW = TEX_RAW + "\n" + SUPPLEMENT_RAW
+REPORT = TEX + "\n" + SUPPLEMENT_RAW.replace("`", "")
 FAILURES: list[str] = []
 
 
@@ -88,12 +93,12 @@ def check_generated_figures() -> None:
 
 
 def require(text: str, why: str) -> None:
-    if text not in TEX and text not in TEX_RAW:
+    if text not in REPORT and text not in REPORT_RAW:
         fail(f"PRESENT missing {text!r} — {why}")
 
 
 def require_re(pattern: str, why: str) -> None:
-    if not re.search(pattern, TEX, re.S | re.I):
+    if not re.search(pattern, REPORT, re.S | re.I):
         fail(f"PRESENT no match for {pattern!r} — {why}")
 
 
@@ -108,8 +113,8 @@ def require_number(literal: str, actual: float | int, nd: int | None, label: str
         rendered = rendered[1:]
     if rendered != literal:
         fail(f"VALUE {label}: expected paper literal {literal}, artifact renders {rendered}")
-    if not re.search(r"(?<![\d.])" + re.escape(literal) + r"(?![\d])", TEX):
-        fail(f"VALUE {label}: {literal} absent from main.tex")
+    if not re.search(r"(?<![\d.])" + re.escape(literal) + r"(?![\d])", REPORT):
+        fail(f"VALUE {label}: {literal} absent from paper or supplement")
 
 
 obligation_doc = load(PAPER / "semantic_obligations.json")
@@ -276,11 +281,11 @@ require_number("27.27", asv5_cmp["median_primary_over_iid_width_ratio"], 2,
                "ASV5 median width ratio")
 focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
     "SSL-AASIST vs XLS-R+SLS"]
-require("External family-level check", "external result scope")
-require("not pair-level replication", "ASV5 external-family scope")
-require("Legacy SSL-AASIST/AASIST NPZs lack historical run provenance",
+require("ASVspoof 5 check", "external result scope")
+require("not a system-performance replication", "ASV5 external-check scope")
+require("legacy SSL-AASIST/AASIST files lack their originating run logs",
         "legacy score provenance limit")
-require("not pair-level replication or population inference",
+require("not a system-performance replication or population claim",
         "ASV5 boundary must be explicit")
 forbid(r"two-generation replication|two-generation procedure|replicate across benchmark",
        "ASV5 supports only a family-level external sensitivity check")
@@ -306,11 +311,9 @@ for arm, (organizer_count, all_count) in expected_counts.items():
         fail(f"VALUE matched {arm} counts {got} != {(organizer_count, all_count)}")
 for literal in ("5/6", "0/6", "26/28", "18/28"):
     require(literal, "matched all-pair result must be visible")
-require("refits the same non-interpolated weighted EER in every replicate",
+require("matched all-28-pair bootstrap refits the same weighted EER in every replicate",
         "matched threshold refit closes the reviewer confound")
-require("The matched threshold analysis removes threshold treatment as an explanation",
-        "matched threshold treatment must remain explicit")
-require("movement in that mass is not necessary for the contrast",
+require("neither threshold handling nor movement of these eight class-specific masses is necessary",
         "composition-control attribution is bounded")
 
 # Embedded and sidecar provenance, including imported implementations.
@@ -395,11 +398,11 @@ vcc2018 = exp111_c["conditioned_draw_diagnostics"]["vcc2018"]
 if (vcc2018["attempts"], vcc2018["rejected_attempts"],
         vcc2018["zero_support_reasons"]) != (1007, 7, {"spoof": 7}):
     fail("VALUE EXP-111 conditioning diagnostics changed")
-require("disclosed post-failure control",
+require("designed after an earlier arm failed",
         "EXP-111 chronology and role must be visible")
-require("restoring each class-by-source/task mass exactly",
+require("exactly restores each of the three bona-fide source masses and five spoof-stratum masses",
         "EXP-111 composition control must be stated precisely")
-require("constructive robustness control rather than a prospective causal decomposition",
+require("a robustness check, not prospective evidence",
         "EXP-111 cannot be relabelled as prospective or causal")
 
 
@@ -460,27 +463,28 @@ if (exp114_mamba["classification"] != "reproduced-with-difference"
         or exp114_mamba["delta"]["max_abs"] != 1.430511474609375e-06
         or exp114_mamba["eer"]["absolute_difference_points"] != 0.0):
     fail("VALUE EXP-114 Mamba numerical-difference summary changed")
-require("91,130-trial", "EXP-114 complete evaluation size must remain visible")
-require("single-source SpoofCeleb", "EXP-114 source control must remain visible")
-require("Before inspecting SpoofCeleb scores, we fixed",
+require("91,130 evaluation trials", "EXP-114 complete evaluation size must remain visible")
+require("single-source SpoofCeleb", "EXP-114 source/composition control must remain visible")
+require("while official access was pending, fixed",
         "EXP-114 prospective chronology must remain visible in field-facing language")
 require("6/6", "EXP-114 trial-i.i.d. endpoint must remain visible")
 require("3/6", "EXP-114 product/source endpoint must remain visible")
-require("Source composition is therefore fixed by design",
+require("one source label, so between-source mass cannot move",
         "EXP-114 fixes source composition, not all factor multiplicities")
-require("product draws still vary speaker and spoof-attack multiplicities",
+require("speaker and spoof-attack multiplicities",
         "EXP-114 must not overstate its composition control")
-require("this check concerns a weakly transferred off-domain family, not high-performing in-domain SpoofCeleb systems",
+require("off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems",
         "EXP-114 external-validity boundary must remain visible")
-require("archived specification omitted the scoring executable",
+require("archived plan did not bind the scoring executable",
         "EXP-114 original provenance gap must remain disclosed in field-facing language")
-require("disclosed post-result rerun", "EXP-114 rerun chronology must remain visible")
-require("three score files byte-for-byte", "EXP-114 exact score reproduction count")
+require("clean-source re-scoring is reproducibility evidence only",
+        "EXP-114 rerun chronology must remain visible")
+require("three score files were byte-identical", "EXP-114 exact score reproduction count")
 mamba_ceiling = math.ceil(exp114_mamba["delta"]["max_abs"] * 1e8) / 1e8
 if mamba_ceiling != 1.44e-6:
     fail(f"VALUE EXP-114 Mamba conservative ceiling changed: {mamba_ceiling}")
 require("1.44\\times10^{-6}", "EXP-114 Mamba maximum score delta ceiling")
-require("prespecified 6/6-to-3/6 result unchanged",
+require("every EER and separation indicator was unchanged",
         "EXP-114 post-result rerun did not change the scientific result")
 
 
@@ -537,13 +541,11 @@ if not (exp115_independent["speaker_array_exact"]
         and exp115_independent["speaker_only_excluding_zero"] == 5
         and exp115_independent["attack_only_excluding_zero"] == 3):
     fail("REPRODUCTION EXP-115 standalone result changed")
-require("disclosed post-result decomposition", "EXP-115 chronology must remain visible")
-require("5/6 speaker-only and 3/6 attack-only",
+require("After observing this result", "EXP-115 chronology must remain visible")
+require("speaker-only and attack-only bootstraps separated 5/6 and 3/6",
         "EXP-115 factor-only endpoints must remain visible")
-require("attack-level perturbation alone is sufficient for all three changes",
+require("attack-only matched the PW indicator vector",
         "EXP-115 mechanism localization must remain visible")
-require("speaker-only is sufficient for one",
-        "EXP-115 complete factor reading must remain visible")
 
 
 # 2. Coherent marginal-sum diagnostic.
@@ -578,19 +580,18 @@ require_number("2.878", coherent["q95"], 3, "coherent q95")
 wide = coherent["pairs"]["RawNet2 vs CQCC-GMM"]["simultaneous"]
 require_number("-8.76", wide[0], 2, "coherent widest lower")
 require_number("2.40", wide[1], 2, "coherent widest upper")
-require_re(r"same .*Sigma_\+.* supplies every pair SE", "one PSD covariance must supply SEs and max-t")
-require("deliberately double-counts speaker$\\times$attack cell variation",
+require("draws 200,000 vectors", "one PSD covariance must supply SEs and max-t")
+require("deliberately variance-inflating sensitivity analysis",
         "marginal-sum overlap must be disclosed in field-facing language")
-require("not an exact multiway estimator or coverage claim", "coherent diagnostic scope")
+require("not an exact multiway estimator or a coverage guarantee", "coherent diagnostic scope")
 
 
 # 3. Historical reconstruction and primary product output.
 org_wide = organizer["pairs"]["B04 vs B01"]
-require_number("3.18", abs(org_wide["delta_eer_pts"]), 2, "widest organizer gap")
-require_number("-9.27", org_wide["clustered_ci_simultaneous"][0], 2,
-               "product widest lower")
-require_number("2.91", org_wide["clustered_ci_simultaneous"][1], 2,
-               "product widest upper")
+require_number("3.180", abs(org_wide["delta_eer_pts"]), 3, "widest organizer gap")
+matched_wide = matched["speaker_attack"]["pairs"]["RawNet2 vs CQCC-GMM"]["simultaneous"]
+require_number("-9.284", matched_wide[0], 3, "PW widest lower")
+require_number("2.925", matched_wide[1], 3, "PW widest upper")
 check_generated_figures()
 require("reconstructions of its adaptation to EER rather than exact finite-sample tests",
         "finite-sample limitation of the reconstruction")
@@ -642,9 +643,10 @@ require("11/24", "joint low-EER failure count")
 oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
 if f"{oracle_min:.3f}" != "0.944":
     fail(f"VALUE oracle-SD minimum changed: {oracle_min}")
-require("prespecified universal-coverage criterion is therefore rejected",
-        "adverse coverage result must remain explicit without score-calibration ambiguity")
-require("not adequacy of that DGP for 21DF", "coverage cannot validate acquisition")
+require("all three are below .90 in the same 11/24 low-EER cells",
+        "adverse coverage result must remain explicit")
+require("does not establish that either model describes 21DF",
+        "coverage cannot validate acquisition")
 
 
 # 4b. EXP-112 witnessed replacement: authenticated simulation conditional on
@@ -683,23 +685,24 @@ if not (exp112_addendum["historical_unwitnessed_aggregate"][
     fail("GATE EXP-112 provenance repair/verification did not pass")
 if exp112_verification["aggregate_maximum_absolute_difference"] > 1e-12:
     fail("VALUE EXP-112 trace aggregates exceed independent tolerance")
-for literal, value, label in (
-    ("18.5", 100 * exp112["arms"]["iid"]["coverage"], "coverage"),
-    ("13.7", 100 * exp112["arms"]["iid"]["wilson95"][0], "Wilson lower"),
-    ("24.5", 100 * exp112["arms"]["iid"]["wilson95"][1], "Wilson upper"),
-):
-    require_number(literal, value, 1, f"EXP-112 {label}")
-clustered112 = [exp112["arms"][arm] for arm in ("twoway", "jackknife", "wild")]
-for literal, value, label in (
-    ("97.5", 100 * min(row["coverage"] for row in clustered112), "clustered minimum"),
-    ("98.0", 100 * max(row["coverage"] for row in clustered112), "clustered maximum"),
-    ("94.3", 100 * min(row["wilson95"][0] for row in clustered112), "Wilson lower"),
-    ("99.2", 100 * max(row["wilson95"][1] for row in clustered112), "Wilson upper"),
-):
-    require_number(literal, value, 1, f"EXP-112 {label}")
-require("witnessed", "EXP-112 is not historical authentication")
-require("fitted organizer-like Gaussian DGP", "EXP-112 DGP condition")
-require("does not validate that DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
+require_number("18.5", 100 * exp112["arms"]["iid"]["coverage"], 1,
+               "EXP-112 trial-i.i.d. coverage")
+require_number("13.73", 100 * exp112["arms"]["iid"]["wilson95"][0], 2,
+               "EXP-112 trial-i.i.d. Wilson lower")
+require_number("24.46", 100 * exp112["arms"]["iid"]["wilson95"][1], 2,
+               "EXP-112 trial-i.i.d. Wilson upper")
+clustered = [exp112["arms"][arm] for arm in ("twoway", "jackknife", "wild")]
+require_number("97.5", 100 * min(row["coverage"] for row in clustered), 1,
+               "EXP-112 clustered coverage minimum")
+require_number("98.0", 100 * max(row["coverage"] for row in clustered), 1,
+               "EXP-112 clustered coverage maximum")
+require_number("94.28", 100 * min(row["wilson95"][0] for row in clustered), 2,
+               "EXP-112 clustered Wilson lower")
+require_number("99.22", 100 * max(row["wilson95"][1] for row in clustered), 2,
+               "EXP-112 clustered Wilson upper")
+require("additional trace-retaining", "EXP-112 run must be identified separately")
+require("organizer-regime run", "EXP-112 result must remain conditional on its imposed DGP")
+require("The fitted DGP has not been shown", "EXP-112 DGP-adequacy boundary")
 
 
 # 5. Incidence and provenance composition.
@@ -734,11 +737,11 @@ cross_flips = [
 ]
 if cross_flips:
     fail("VALUE a between-cohort label now flips under source deletion")
-for pair in expected_gained:
-    require(pair.replace(" vs ", "--"), "all three gained baseline pairs must be named")
-require_re(r"(?:all |[Tt]he )16 between-cohort gaps",
-           "stable selected cross-block must be bounded")
-require("not composition-robust", "0/6 provenance dependence belongs with the headline")
+require("separate three within-baseline pairs in at least one deletion",
+        "all three gained baseline pairs must remain counted")
+require_re(r"all 16 cross-cohort", "stable cross-cohort block must be bounded")
+require("every within-cohort result is conditional on them",
+        "source dependence belongs with the headline")
 
 
 # 6. Composition-policy sensitivity and constructive witnesses.
@@ -772,15 +775,15 @@ for key, expected in {
 }.items():
     if composition_v2_verified[key] != expected:
         fail(f"VALUE EXP-108 secondary v2 {key} changed")
-require("729", "accepted constructive directions must be reported")
-require("five at", "small-shift constructive witness count must be reported")
+require("all 729 accepted direction endpoints", "accepted constructive directions must be reported")
+require("five at distance at most 0.10", "small-shift constructive witness count must be reported")
 best_tv = composition_v2_verified["best_verified_r_TV_by_pair"][
     "XLSR-Mamba vs XLS-R+SLS"
 ]
 require_number(".010218", best_tv, 6, "smallest verified constructive rTV bound")
-require("outcome-informed search", "secondary search chronology must be disclosed")
-require("not a global minimum", "constructive upper bounds cannot become safety radii")
-require("search outcome rather than proof", "absence of between-cohort witness is scoped")
+require("explicitly post-result", "secondary search chronology must be disclosed")
+require("not a minimum", "constructive upper bounds cannot become safety radii")
+require("not an absence result", "absence of cross-cohort witness is scoped")
 
 
 # 7. Arena and measured width layer.
@@ -795,7 +798,7 @@ cross_layer = arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]
 if (f"{cross_layer['arena_eer']:.2f}", f"{cross_layer['primary_eer']:.2f}",
         f"{cross_layer['score_pearson']:.2f}") != ("40.67", "22.38", "0.36"):
     fail("VALUE Arena cross-layer provenance diagnostic changed")
-require("not formal Arena confidence bands", "Arena outputs remain descriptive")
+require("not population confidence intervals", "Arena outputs remain descriptive")
 
 matched_width_ratios = sorted(
     (
@@ -820,60 +823,48 @@ for literal, value, label in (
     require_number(literal, value, 2, label)
 
 
-# 8. Table 1: absolute gaps, product max-t simultaneous half-widths and
-# constructive TV bounds.
-ssl = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
-short = {
-    "XLSR-Mamba": "XLSR-Mamba",
-    "XLS-R+SLS": "XLS-R+SLS",
-    "XLSR-Conformer": "XLSR-Conf",
-    "SSL-AASIST": "SSL-AAS",
-    "RawNet2": "RawNet2",
-    "LFCC-LCNN": "LFCC-LCNN",
-    "LFCC-GMM": "LFCC-GMM",
-    "CQCC-GMM": "CQCC-GMM",
-}
-order = list(short)
-pairs = matched["speaker_attack"]["pairs"]
-expected_rows: list[list[str]] = []
-for index, a in enumerate(order):
-    for b in order[index + 1:]:
-        if (a in ssl) != (b in ssl):
-            continue
-        row = pairs.get(f"{a} vs {b}") or pairs[f"{b} vs {a}"]
-        half = (row["simultaneous"][1] - row["simultaneous"][0]) / 2.0
-        tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{a} vs {b}")
-        if tv is None:
-            tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{b} vs {a}")
-        if tv is None:
-            fail(f"TABLE no verified constructive TV upper bound for {a} vs {b}")
-            tv = float("nan")
-        tv_up = math.ceil(tv * 1000 - 1e-9) / 1000
-        expected_rows.append([
-            short[a], short[b], f"{abs(row['delta_eer_pts']):.3f}",
-            f"{half:.3f}", f"{tv_up:.3f}"
-        ])
-body = TEX_RAW[TEX_RAW.index("\\label{tab:pairs}"):TEX_RAW.index("\\end{tabular}")]
+# 8. Field-standard main EER table and complete supplementary 28-pair table.
+order = list(selection["21df"]["rank_sets"])
+expected_eer_rows = [
+    [name, "author" if index < 4 else "organizer",
+     f"{selection['21df']['rank_sets'][name]['pooled_eer']:.3f}", str(index + 1)]
+    for index, name in enumerate(order)
+]
+body = TEX_RAW[TEX_RAW.index("\\label{tab:eers}"):TEX_RAW.index("\\end{tabular}")]
 printed = [line for line in body.splitlines() if "&" in line and "\\\\" in line]
-printed = [line for line in printed if not line.strip().startswith("pair")]
-printed_rows = [[cell.strip() for cell in line.replace("\\\\", "").split("&")] for line in printed]
-if printed_rows != expected_rows:
-    fail(f"TABLE printed rows differ from artifact: printed={printed_rows}, expected={expected_rows}")
+printed = [line for line in printed if not line.strip().startswith("System")]
+printed_rows = [[cell.strip() for cell in line.replace("\\\\", "").split("&")]
+                for line in printed]
+if printed_rows != expected_eer_rows:
+    fail(f"TABLE main EER rows differ from artifact: {printed_rows} != {expected_eer_rows}")
+
+for pair, iid_row in matched["iid"]["pairs"].items():
+    a, b = pair.split(" vs ")
+    pw_row = matched["speaker_attack"]["pairs"][pair]
+    expected = (
+        f"| {a} | {b} | {iid_row['delta_eer_pts']:.6f} | "
+        f"[{iid_row['simultaneous'][0]:.6f}, {iid_row['simultaneous'][1]:.6f}] | "
+        f"{'yes' if iid_row['resolved_simultaneous'] else 'no'} | "
+        f"[{pw_row['simultaneous'][0]:.6f}, {pw_row['simultaneous'][1]:.6f}] | "
+        f"{'yes' if pw_row['resolved_simultaneous'] else 'no'} |"
+    )
+    if SUPPLEMENT_RAW.count(expected) != 1:
+        fail(f"TABLE supplement row missing or duplicated for {pair}: {expected}")
 if "MDE" in body:
-    fail("RETIRED table still contains MDE after its inferential target was withdrawn")
+    fail("RETIRED main table still contains MDE")
 
 
 # 9. Scientific scope obligations and retired formulations.
 for text, why in (
-    ("fixed-data procedure sensitivity", "identified scientific object"),
-    ("not population confidence claims", "abstract scope"),
-    ("not an exact multiway estimator or coverage claim", "Gaussian Sigma-plus scope"),
-    ("historical freeze lacks an independently verifiable timestamp", "timestamp honesty"),
-    ("Zero-straddling is sensitivity, not equality", "non-significance scope"),
+    ("fixed-score sensitivity bands", "identified scientific object"),
+    ("not population confidence intervals", "abstract scope"),
+    ("not an exact multiway estimator or a coverage guarantee", "Gaussian scope"),
+    ("while official access was pending", "timing claim is anchored to access state"),
+    ("it does not establish equality", "non-significance scope"),
     ("independently sampled units", "only full repair for population inference"),
-    ("speaker and attack incidence", "report units rather than trial count"),
-    ("Across the registered policies, corpus deletions and searched directions",
-     "conclusion must remain bounded to tested robustness families"),
+    ("trial-to-speaker/attack membership", "report units rather than trial count"),
+    ("Across these rules, source deletions and searched directions",
+     "conclusion must remain bounded to tested robustness checks"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")
@@ -917,8 +908,6 @@ if FAILURES:
     for failure in FAILURES:
         print("  " + failure)
     sys.exit(1)
-print("OK — scientific contract passes: matched perturbation, coherent covariance, "
-      "coverage refusal, provenance and composition sensitivity, post-failure EXP-111 "
-      "control, witnessed EXP-112 coverage, prospective EXP-114 SpoofCeleb confirmation, "
-      "post-result EXP-115 factor decomposition, authenticated ASV5 family-level check, "
-      "table, caveats and scope are artifact-bound.")
+print("OK — scientific contract passes: matched trial/PW results, complete system and "
+      "pair tables, coverage boundaries, source weighting, SpoofCeleb/ASV5 checks, "
+      "and all caveats are artifact-bound.")
