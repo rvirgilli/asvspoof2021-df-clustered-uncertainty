@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
+import os
 import re
 import sys
 from pathlib import Path
@@ -24,7 +26,8 @@ DERIVED = ROOT / "derived"
 PLANS = ROOT / "plans"
 PAPER = ROOT / "paper"
 AUDIT_DIR = ROOT / "audit"
-TEX_RAW = (PAPER / "main.tex").read_text()
+TEX_PATH = Path(os.environ.get("M1_TEX_PATH", PAPER / "main.tex"))
+TEX_RAW = TEX_PATH.read_text()
 TEX = re.sub(r"(?m)^%.*$", "", TEX_RAW).replace("$", "").replace("{,}", ",")
 FAILURES: list[str] = []
 
@@ -37,8 +40,42 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def scientific_view(value: object) -> object:
+    """Remove path-layout provenance while preserving scientific payload values."""
+    if isinstance(value, dict):
+        return {
+            key: scientific_view(item) for key, item in value.items()
+            if key not in {"path", "input_provenance", "provenance"}
+            and not key.endswith("sha256")
+        }
+    if isinstance(value, list):
+        return [scientific_view(item) for item in value]
+    return value
+
+
 def fail(message: str) -> None:
     FAILURES.append(message)
+
+
+def check_generated_figures() -> None:
+    """Reject stale figures and a retired reader-facing label."""
+    import shutil
+    import subprocess
+    generator = PAPER / "figures_m1.py"
+    figures = sorted((PAPER / "figs").glob("*.pdf"))
+    if not figures:
+        fail("FIGURE no generated figures found")
+        return
+    for figure in figures:
+        if figure.stat().st_mtime < generator.stat().st_mtime:
+            fail(f"FIGURE {figure.name} is older than figures_m1.py")
+    if shutil.which("pdftotext"):
+        for figure in figures:
+            rendered = subprocess.run(
+                ["pdftotext", str(figure), "-"], capture_output=True, text=True
+            ).stdout
+            if "published i.i.d. interval" in rendered:
+                fail(f"FIGURE {figure.name} still calls a reconstructed interval published")
 
 
 def require(text: str, why: str) -> None:
@@ -66,6 +103,20 @@ def require_number(literal: str, actual: float | int, nd: int | None, label: str
         fail(f"VALUE {label}: {literal} absent from main.tex")
 
 
+obligation_doc = load(PAPER / "semantic_obligations.json")
+if obligation_doc.get("schema") != "m1-semantic-obligations-v1":
+    fail("OBLIGATION manifest schema is missing or unsupported")
+obligation_ids: set[str] = set()
+for obligation in obligation_doc.get("obligations", []):
+    obligation_id = obligation["id"]
+    if obligation_id in obligation_ids:
+        fail(f"OBLIGATION duplicate id {obligation_id}")
+    obligation_ids.add(obligation_id)
+    count = TEX_RAW.count(obligation["match"])
+    if count != 1:
+        fail(f"OBLIGATION {obligation_id} expected exactly one occurrence, found {count}")
+
+
 matched = load(DERIVED / "results_matched_iid.json")
 matched_prov = load(DERIVED / "results_matched_iid.provenance.json")
 selection = load(DERIVED / "results_selection.json")
@@ -85,11 +136,43 @@ composition_verified = load(DERIVED / "verification_composition.json")
 composition_v2 = load(DERIVED / "secondary_v2_results.json")
 composition_v2_verified = load(DERIVED / "secondary_v2_verification.json")
 audit = load(AUDIT_DIR / "audit.json")
+packaging = load(AUDIT_DIR / "PUBLIC-PACKAGING.json")
+audit_exp111 = audit["composition_fixed_sampling_control"]
+exp111 = audit_exp111["result"]
+exp111_receipt = audit_exp111["run_receipt"]
+exp111_closure = audit_exp111["archival_closure"]
+exp111_verification = audit_exp111["portable_verification"]
+exp111_independent = audit_exp111["independent_reproduction"]
+audit_exp112 = audit["coverage_witnessed_replacement"]
+exp112 = audit_exp112["result"]
+exp112_receipt = audit_exp112["run_receipt"]
+exp112_closure = audit_exp112["closure"]
+exp112_addendum = audit_exp112["provenance_addendum"]
+exp112_verification = audit_exp112["independent_verification"]
+audit_exp114 = audit["spoofceleb_sampling_unit_confirmation"]
+exp114 = audit_exp114["provenance_rerun_result"]
+exp114_comparison = audit_exp114["provenance_rerun_comparison"]
+exp114_receipt = audit_exp114["provenance_rerun_receipt"]
+exp114_mamba = audit_exp114["mamba_score_comparison"]
+exp114_independent = audit_exp114["independent_reproduction"]
+
+if packaging.get("schema") != "m1-public-audit-packaging-v1":
+    fail("AUDIT public packaging receipt schema is missing")
+if packaging.get("public") != {
+        "bytes": (AUDIT_DIR / "audit.json").stat().st_size,
+        "sha256": sha256(AUDIT_DIR / "audit.json"),
+}:
+    fail("AUDIT public packaging receipt does not bind audit.json")
+if packaging.get("implementation", {}).get("sha256") != sha256(
+        HERE / "make_public_audit.py"):
+    fail("AUDIT public packaging receipt does not bind sanitizer implementation")
 
 
 # Reader-facing audit package must be the same scientific state checked below.
 for key in ("matched_perturbation", "coherent_marginal_sum", "coverage_closure",
-            "composition_sensitivity", "asv5_descriptive_replication"):
+            "composition_sensitivity", "composition_fixed_sampling_control",
+            "coverage_witnessed_replacement",
+            "spoofceleb_sampling_unit_confirmation", "asv5_descriptive_replication"):
     if key not in audit:
         fail(f"AUDIT package missing current key {key}")
 if audit["matched_perturbation"]["artifact_sha256"] != sha256(
@@ -97,10 +180,7 @@ if audit["matched_perturbation"]["artifact_sha256"] != sha256(
     fail("AUDIT matched-perturbation hash is stale")
 if audit["matched_perturbation"]["result"] != matched:
     fail("AUDIT matched-perturbation payload differs from live artifact")
-if audit["coherent_marginal_sum"]["artifact_sha256"] != sha256(
-        DERIVED / "results_coherent_jackknife.json"):
-    fail("AUDIT coherent-marginal-sum hash is stale")
-if audit["coherent_marginal_sum"]["result"] != coherent:
+if scientific_view(audit["coherent_marginal_sum"]["result"]) != scientific_view(coherent):
     fail("AUDIT coherent-marginal-sum payload differs from live artifact")
 if (audit["coverage_closure"]["status_under_preregistered_reading_rule"]
         != coverage_verified["status_under_preregistered_reading_rule"]
@@ -108,12 +188,18 @@ if (audit["coverage_closure"]["status_under_preregistered_reading_rule"]
         != coverage_verified["confirmed_estimators"]):
     fail("AUDIT coverage closure differs from independently verified reading")
 audit_comp = audit["composition_sensitivity"]
-if (audit_comp["pair_multiverse"] != composition["pair_multiverse"]
-        or audit_comp["primary_verification"] != composition_verified
-        or audit_comp["constructive_v2"]["verification"] != composition_v2_verified):
+if (scientific_view(audit_comp["pair_multiverse"])
+        != scientific_view(composition["pair_multiverse"])
+        or scientific_view(audit_comp["primary_verification"])
+        != scientific_view(composition_verified)
+        or scientific_view(audit_comp["constructive_v2"]["verification"])
+        != scientific_view(composition_v2_verified)):
     fail("AUDIT composition payload differs from live verified artifacts")
 if len(audit_comp["policy_order"]) != 12:
     fail("AUDIT composition policy contract is incomplete")
+
+if audit_exp114["licensed_inputs_redistributed"]:
+    fail("AUDIT EXP-114 must not redistribute licensed inputs")
 
 audit_asv5 = audit["asv5_descriptive_replication"]
 asv5 = audit_asv5["result"]
@@ -178,7 +264,8 @@ for system, literal in (("SSL-AASIST", "16.25"), ("AASIST", "35.53"),
 require("External family-level check", "external result scope")
 require("not pair-level replication", "ASV5 cross-generation scope")
 require("acquisition-law gate is NO-GO", "ASV5 acquisition boundary")
-require("legacy NPZ snapshots", "legacy score provenance limit")
+require("Legacy SSL-AASIST/AASIST NPZs lack historical run provenance",
+        "legacy score provenance limit")
 require("not population confidence or significance", "ASV5 boundary must be explicit")
 forbid(r"two-generation replication|two-generation procedure|replicate across benchmark",
        "ASV5 supports only a family-level external sensitivity check")
@@ -189,8 +276,10 @@ if matched["status"] != "post-audit descriptive diagnostic; not population infer
     fail("STATUS matched diagnostic lost its descriptive/non-population guard")
 if (matched["B"], matched["seed"]) != (5000, 2026081604):
     fail("CONTRACT matched diagnostic B/seed changed")
-if not matched["saved_clustered_labels_reproduced"]:
-    fail("GATE matched diagnostic no longer reproduces saved clustered labels")
+saved_clustered = selection["21df"]["pairs"]
+for pair, row in matched["speaker_attack"]["pairs"].items():
+    if row["resolved_simultaneous"] != saved_clustered[pair]["resolved_simultaneous"]:
+        fail(f"GATE matched diagnostic differs from saved clustered label for {pair}")
 expected_counts = {
     "iid": (5, 26),
     "speaker_attack": (0, 18),
@@ -202,8 +291,10 @@ for arm, (organizer_count, all_count) in expected_counts.items():
         fail(f"VALUE matched {arm} counts {got} != {(organizer_count, all_count)}")
 for literal in ("5/6", "0/6", "26/28", "18/28"):
     require(literal, "matched all-pair result must be visible")
-require("threshold in every replicate", "matched threshold refit closes the reviewer confound")
-require("Thus threshold treatment does not explain the change", "causal attribution is bounded")
+require("refits the same non-interpolated weighted EER in every replicate",
+        "matched threshold refit closes the reviewer confound")
+require("Thus neither threshold treatment nor that composition shift explains the contrast",
+        "causal attribution is bounded")
 
 # Embedded and sidecar provenance, including imported implementations.
 embedded_paths = {
@@ -224,6 +315,140 @@ for name, path in {
 for name, digest in matched_prov["released_path_adapted_sha256"].items():
     if sha256(HERE / name) != digest:
         fail(f"HASH matched released path-adapted code mismatch: {name}")
+
+
+# 1b. EXP-111 post-failure composition-fixed control, carried in the
+# path-sanitized composite package and bound to its original artifact hashes.
+if exp111["schema"] != "exp111-post-failure-composition-fixed-v2":
+    fail("STATUS EXP-111 result is not the amended v2 schema")
+if exp111["status"] != "post-failure robustness control; outcome known before Amendment 1":
+    fail("STATUS EXP-111 lost its outcome-known/post-failure disclosure")
+if (exp111["B"], exp111["seed"], exp111["family"]) != (
+        1000, 20260824, "all 28 pairs, one 95% max-t critical value per arm"):
+    fail("CONTRACT EXP-111 B/seed/family changed")
+exp111_hashes = audit_exp111["artifact_sha256"]
+if (exp111_receipt["result"]["sha256"] != exp111_hashes["results_v2.json"]
+        or exp111_closure["archival_result"]["sha256"] != exp111_hashes["results_v2.json"]):
+    fail("HASH EXP-111 receipt/closure does not bind the packaged result")
+if exp111_closure["archival_run_receipt"]["sha256"] != exp111_hashes["RUN-RECEIPT-v2.json"]:
+    fail("HASH EXP-111 closure does not bind the packaged receipt")
+if exp111_closure["producer_commit"] != exp111_receipt["producer_git_head"]:
+    fail("PROVENANCE EXP-111 closure and receipt name different producer commits")
+if not (exp111_receipt["assertions_passed"] and exp111["assertions"]["passed"]
+        and exp111_closure["producer_tree_clean_at_start"]
+        and exp111_verification["checks"]["passed"]
+        and exp111_verification["checks"]["receipt_input_hashes_match_canonical_files"]
+        and exp111_closure["independent_closure"]["exact_reproduction"]
+        and exp111_independent["comparison_to_author"]["exact_reproduction"]):
+    fail("GATE EXP-111 archival/independent verification did not pass")
+if exp111_closure["portable_verification"]["output_sha256"] != exp111_hashes[
+        "independent/archival-verification.json"]:
+    fail("HASH EXP-111 closure does not bind portable verification")
+if exp111_closure["independent_closure"]["output_sha256"] != exp111_hashes[
+        "independent/results-v2-clean-producer.json"]:
+    fail("HASH EXP-111 closure does not bind independent result")
+
+exp111_expected = {
+    "A_trial_iid": (5, 26), "B_global_product": (0, 18),
+    "C_conditioned_class_stratum_fixed": (0, 18),
+    "CONTROL_total_only_normalisation": (0, 16),
+}
+for arm_name, expected in exp111_expected.items():
+    arm = exp111["arms"][arm_name]
+    pair_rows = arm["pairs"]
+    organizer_rows = {
+        pair: row for pair, row in pair_rows.items()
+        if all(model in {"RawNet2", "LFCC-LCNN", "LFCC-GMM", "CQCC-GMM"}
+               for model in pair.split(" vs "))
+    }
+    recomputed = (
+        sum(row["simultaneous_excludes_zero"] for row in organizer_rows.values()),
+        sum(row["simultaneous_excludes_zero"] for row in pair_rows.values()),
+    )
+    stored = (arm["excluding_zero_simultaneous_organizer_6"],
+              arm["excluding_zero_simultaneous_all"])
+    if len(pair_rows) != 28 or arm["n_all_pairs"] != 28 or recomputed != stored or stored != expected:
+        fail(f"VALUE EXP-111 {arm_name}: recomputed={recomputed}, stored={stored}")
+exp111_c = exp111["arms"]["C_conditioned_class_stratum_fixed"]
+if exp111_c["tv"]["max_class"]["maximum"] > 1e-10:
+    fail("CONTROL EXP-111 composition-fixed arm exceeds class-TV tolerance")
+if exp111["arms"]["CONTROL_total_only_normalisation"]["tv"]["bona"]["median"] <= 0.02:
+    fail("CONTROL EXP-111 negative control no longer detects composition movement")
+vcc2018 = exp111_c["conditioned_draw_diagnostics"]["vcc2018"]
+if (vcc2018["attempts"], vcc2018["rejected_attempts"],
+        vcc2018["zero_support_reasons"]) != (1007, 7, {"spoof": 7}):
+    fail("VALUE EXP-111 conditioning diagnostics changed")
+require("transparently post-failure composition-fixed control", "EXP-111 chronology")
+require("conditions only zero-support stratum draws", "EXP-111 conditioning rule")
+require("exactly restores each class-by-source/task mass", "EXP-111 mass control")
+
+
+# 1c. EXP-114 prospectively frozen single-source confirmation and the later
+# scorer-provenance reproduction.
+if exp114["evidence_status"] != (
+        "prospective confirmation attempt frozen before SpoofCeleb access, scoring, "
+        "and detector outcomes"):
+    fail("STATUS EXP-114 lost its pre-access prospective chronology")
+if (exp114["n_trials"], exp114["n_speakers"], exp114["n_spoof_attacks"],
+        exp114["B"], exp114["seed"]) != (91130, 40, 9, 5000, 20260829):
+    fail("CONTRACT EXP-114 trial/cluster/B/seed structure changed")
+exp114_counts = tuple(exp114[name]["simultaneous_excluding_zero"] for name in (
+    "arm_a_trial_iid", "arm_b_global_product",
+    "arm_c_single_source_composition_preserving"))
+if exp114_counts != (6, 3, 3):
+    fail(f"VALUE EXP-114 simultaneous counts {exp114_counts} != (6, 3, 3)")
+if not (exp114["guards"]["complete_crossed_grid"]
+        and exp114["guards"]["b_c_bootstrap_arrays_identical"]
+        and exp114["guards"]["b_c_summaries_identical"]
+        and exp114["guards"]["b_c_max_abs_eer_difference"] == 0.0
+        and exp114["guards"]["single_official_source"] == "TITW-VoxCeleb1"):
+    fail("CONTROL EXP-114 single-source arm does not reproduce global arm")
+if exp114["guards"]["source_tv"] != {
+        "value": 0.0, "status": "zero_by_single-source_design",
+        "scientific_evidence": False}:
+    fail("CONTROL EXP-114 source-TV zero lost its by-construction boundary")
+if exp114["registered_reading"]["n_sampling_unit_sensitive_pairs"] != 3:
+    fail("BRANCH EXP-114 registered reading changed")
+exp114_hashes = audit_exp114["artifact_sha256"]
+if exp114_receipt["rerun_result"]["sha256"] != exp114_hashes[
+        "PROVENANCE-RERUN-RESULTS.json"]:
+    fail("HASH EXP-114 receipt does not bind rerun result")
+if exp114_receipt["result_comparison"]["artifact"]["sha256"] != exp114_hashes[
+        "PROVENANCE-RERUN-COMPARISON.json"]:
+    fail("HASH EXP-114 receipt does not bind result comparison")
+if exp114_receipt["xlsr_mamba_comparison"]["artifact"]["sha256"] != exp114_hashes[
+        "independent/MAMBA-SCORE-COMPARISON.json"]:
+    fail("HASH EXP-114 receipt does not bind Mamba comparison")
+if exp114_receipt["independent_result"]["sha256"] != exp114_hashes[
+        "independent/PROVENANCE-RERUN-RESULTS.json"]:
+    fail("HASH EXP-114 receipt does not bind independent result")
+if sorted(exp114_receipt["exact_score_reproductions"]) != ["aasist", "sls", "ssl_aasist"]:
+    fail("VALUE EXP-114 exact score-reproduction set changed")
+if not (exp114_receipt["scientific_payload_reproduced_with_difference"]
+        and not exp114_receipt["scientific_payload_exactly_identical"]
+        and exp114_comparison["registered_endpoint_identical"]
+        and exp114_comparison["all_discrete_outputs_identical"]
+        and exp114_independent["comparison_to_author"]["exact_endpoint_reproduction"]
+        and exp114_receipt["independent_endpoint_reproduction_exact"]):
+    fail("GATE EXP-114 endpoint/result reproduction did not pass")
+if (exp114_mamba["classification"] != "reproduced-with-difference"
+        or exp114_mamba["rows"] != 91130
+        or exp114_mamba["delta"]["max_abs"] != 1.430511474609375e-06
+        or exp114_mamba["eer"]["absolute_difference_points"] != 0.0):
+    fail("VALUE EXP-114 Mamba numerical-difference summary changed")
+for text, why in (
+    ("91,130-trial", "EXP-114 evaluation size"),
+    ("single-source SpoofCeleb", "EXP-114 source control"),
+    ("registered before access", "EXP-114 prospective chronology"),
+    ("6/6", "EXP-114 trial endpoint"), ("3/6", "EXP-114 product endpoint"),
+    ("composition is fixed by construction", "EXP-114 design boundary"),
+    ("original seal omitted the actual scorer entrypoint", "EXP-114 provenance gap"),
+    ("disclosed post-result rerun", "EXP-114 rerun chronology"),
+    ("three score files byte-for-byte", "EXP-114 exact score reproduction"),
+    ("1.43\\times10^{-6}", "EXP-114 Mamba delta"),
+    ("registered endpoint unchanged", "EXP-114 unchanged endpoint"),
+):
+    require(text, why)
 
 
 # 2. Coherent marginal-sum diagnostic.
@@ -270,7 +495,10 @@ require_number("-9.27", org_wide["clustered_ci_simultaneous"][0], 2,
                "product widest lower")
 require_number("2.91", org_wide["clustered_ci_simultaneous"][1], 2,
                "product widest upper")
-require("reconstruct both variants", "five positive labels are reconstructions")
+check_generated_figures()
+require("reconstructions of its adaptation to EER rather than exact finite-sample tests",
+        "finite-sample limitation of the reconstruction")
+require("Both published-test reconstructions", "five positive labels are reconstructions")
 require("no cell-level agreement", "published greyscale cells are not claimed")
 require("sixth has", "the non-zero-excluding sixth reconstruction remains explicit")
 
@@ -319,6 +547,61 @@ require("reading rule is therefore Refuted", "adverse result must remain explici
 require("not the DGP as a model of 21DF", "coverage cannot validate acquisition")
 
 
+# 4b. EXP-112 witnessed replacement: authenticated simulation conditional on
+# its fitted organizer-like Gaussian DGP, not an adequacy claim for 21DF.
+if (exp112["schema"], exp112["status"]) != (
+        "exp112-coverage-reseal-v2", "witnessed_new_run_not_historical_authentication"):
+    fail("STATUS EXP-112 is not the witnessed replacement")
+if (exp112["R"], exp112["B"], exp112["seed"], exp112["target_delta_points"]) != (
+        200, 300, 20260829, 0.5):
+    fail("CONTRACT EXP-112 R/B/seed/target changed")
+exp112_expected = {
+    "iid": (0.185, 37), "twoway": (0.98, 196),
+    "jackknife": (0.975, 195), "wild": (0.975, 195),
+}
+for arm, expected in exp112_expected.items():
+    got = (exp112["arms"][arm]["coverage"], exp112["arms"][arm]["covered"])
+    if got != expected:
+        fail(f"VALUE EXP-112 {arm}: {got} != {expected}")
+exp112_hashes = audit_exp112["artifact_sha256"]
+if exp112_receipt["result"]["sha256"] != exp112_hashes["results-v2.json"]:
+    fail("HASH EXP-112 receipt does not bind result")
+if (exp112_receipt["trace"]["sha256"] != exp112_hashes["trace-v2.jsonl"]
+        or exp112_receipt["trace"]["rows"] != 200):
+    fail("HASH EXP-112 receipt does not bind complete trace")
+if (exp112_closure["result"]["sha256"] != exp112_hashes["results-v2.json"]
+        or exp112_closure["receipt"]["sha256"] != exp112_hashes["RUN-RECEIPT-v2.json"]
+        or exp112_closure["trace"]["sha256"] != exp112_hashes["trace-v2.jsonl"]):
+    fail("HASH EXP-112 closure differs from packaged artifacts")
+if exp112_addendum["original_receipt"]["sha256"] != exp112_hashes["RUN-RECEIPT-v2.json"]:
+    fail("HASH EXP-112 addendum does not bind receipt")
+if not (exp112_addendum["historical_unwitnessed_aggregate"][
+            "producer_commit_blob_matches"]
+        and exp112_addendum["correction"]["future_producer_binds_input"]
+        and exp112_verification["checks"]["passed"]
+        and not exp112_verification["hardcoded_receipt_flag_used_as_evidence"]):
+    fail("GATE EXP-112 provenance repair/verification did not pass")
+if exp112_verification["aggregate_maximum_absolute_difference"] > 1e-12:
+    fail("VALUE EXP-112 trace aggregates exceed independent tolerance")
+for literal, value, label in (
+    ("18.5", 100 * exp112["arms"]["iid"]["coverage"], "coverage"),
+    ("13.7", 100 * exp112["arms"]["iid"]["wilson95"][0], "Wilson lower"),
+    ("24.5", 100 * exp112["arms"]["iid"]["wilson95"][1], "Wilson upper"),
+):
+    require_number(literal, value, 1, f"EXP-112 {label}")
+clustered112 = [exp112["arms"][arm] for arm in ("twoway", "jackknife", "wild")]
+for literal, value, label in (
+    ("97.5", 100 * min(row["coverage"] for row in clustered112), "clustered minimum"),
+    ("98.0", 100 * max(row["coverage"] for row in clustered112), "clustered maximum"),
+    ("94.3", 100 * min(row["wilson95"][0] for row in clustered112), "Wilson lower"),
+    ("99.2", 100 * max(row["wilson95"][1] for row in clustered112), "Wilson upper"),
+):
+    require_number(literal, value, 1, f"EXP-112 {label}")
+require("witnessed", "EXP-112 is not historical authentication")
+require("under the fitted organizer-like Gaussian DGP", "EXP-112 DGP condition")
+require("not the DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
+
+
 # 5. Incidence and provenance composition.
 global_inc = incidence["global"]
 if (global_inc["n_observed_within_stratum_cells"],
@@ -352,7 +635,8 @@ if cross_flips:
     fail("VALUE a cross-generation label now flips under source deletion")
 for pair in expected_gained:
     require(pair.replace(" vs ", "--"), "all three gained baseline pairs must be named")
-require_re(r"16 (?:gaps|selected cross-block verdicts)", "stable selected cross-block must be bounded")
+require_re(r"(?:all |[Tt]he )16 cross-generation gaps",
+           "stable selected cross-block must be bounded")
 require("not composition-robust", "0/6 provenance dependence belongs with the headline")
 
 
@@ -393,24 +677,6 @@ best_tv = composition_v2_verified["best_verified_r_TV_by_pair"][
     "XLSR-Mamba vs XLS-R+SLS"
 ]
 require_number(".010218", best_tv, 6, "smallest verified constructive rTV bound")
-smallest_witness = composition_v2["pairs"]["XLSR-Mamba vs XLS-R+SLS"][
-    "objectives"
-]["r_TV"]["best_overall"]["witness"]
-require_number("1.073", smallest_witness["odds_factor"], 3,
-               "smallest-witness odds factor")
-require_number(".000699", smallest_witness["deltas"]["count_canonical"], 6,
-               "smallest-witness post-crossing margin")
-modern = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
-other_modern_odds = []
-for pair, result in composition_v2["pairs"].items():
-    if set(pair.split(" vs ")) <= modern and pair != "XLSR-Mamba vs XLS-R+SLS":
-        witness = result["objectives"]["r_TV"]["best_overall"].get("witness")
-        if witness and witness.get("accepted"):
-            other_modern_odds.append(float(witness["odds_factor"]))
-if sum(value > 3000 for value in other_modern_odds) != 4:
-    fail("VALUE expected four other modern witnesses above odds 3,000")
-require("Four other modern witnesses need odds above 3,000",
-        "constructive witnesses must disclose practical extremity")
 require("post-failure", "secondary chronology must be disclosed")
 require("not a global minimum", "constructive upper bounds cannot become safety radii")
 require("search outcome rather than proof", "absence of cross-generation witness is scoped")
@@ -482,9 +748,10 @@ for index, a in enumerate(order):
         if tv is None:
             fail(f"TABLE no verified constructive TV upper bound for {a} vs {b}")
             tv = float("nan")
+        tv_up = math.ceil(tv * 1000 - 1e-9) / 1000
         expected_rows.append([
             short[a], short[b], f"{abs(row['delta_eer_pts']):.3f}",
-            f"{half:.3f}", f"{tv:.3f}"
+            f"{half:.3f}", f"{tv_up:.3f}"
         ])
 body = TEX_RAW[TEX_RAW.index("\\label{tab:pairs}"):TEX_RAW.index("\\end{tabular}")]
 printed = [line for line in body.splitlines() if "&" in line and "\\\\" in line]
@@ -501,10 +768,10 @@ for text, why in (
     ("fixed-data procedure sensitivity", "identified scientific object"),
     ("not corrected population inference", "abstract scope"),
     ("not an exact multiway estimator or coverage claim", "coherent covariance scope"),
-    ("internal freeze has no independently verifiable public timestamp", "timestamp honesty"),
-    ("not corrected population inference", "non-significance and population scope"),
-    ("future target with a defensible sampling law and replication", "only full repair for population inference"),
-    ("speaker/attack incidence", "report units rather than trial count"),
+    ("historical freeze lacks an independently verifiable timestamp", "timestamp honesty"),
+    ("Zero-straddling is sensitivity, not equality", "non-significance scope"),
+    ("new independently sampled units", "only full repair for population inference"),
+    ("speaker and attack incidence", "report units rather than trial count"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")
@@ -539,5 +806,6 @@ if FAILURES:
         print("  " + failure)
     sys.exit(1)
 print("OK — scientific contract passes: matched perturbation, coherent covariance, "
-      "coverage refusal, provenance and composition sensitivity, authenticated ASV5 "
-      "family-level check, table and scope are artifact-bound.")
+      "coverage refusal, provenance and composition sensitivity, post-failure EXP-111 "
+      "control, witnessed EXP-112 coverage, prospective EXP-114 SpoofCeleb confirmation, "
+      "authenticated ASV5 family-level check, table, caveats and scope are artifact-bound.")

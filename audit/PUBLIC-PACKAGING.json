@@ -1,0 +1,17 @@
+{
+  "implementation": {
+    "bytes": 2229,
+    "name": "make_public_audit.py",
+    "sha256": "e428ea99df5feab2f935bf02c2adb67817def06882eb102736809f389bd05cbe"
+  },
+  "public": {
+    "bytes": 724273,
+    "sha256": "d32a16c70776219ab321c85e0248b4dc5c2d0f27dddff2937d587f4ff974c5f7"
+  },
+  "schema": "m1-public-audit-packaging-v1",
+  "source": {
+    "bytes": 711345,
+    "sha256": "ffbb7e3faa8662647f5ebd617bf160a8ccfe7de8a1d8d63e0f139b8635f57a58"
+  },
+  "transformation": "replace absolute local path strings; preserve all other JSON values"
+}

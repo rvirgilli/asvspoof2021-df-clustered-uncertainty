@@ -25,6 +25,12 @@ attacks or systems.
 - A matched diagnostic gives 5/6 organizer zero-exclusions under trial-i.i.d.
   perturbation and 0/6 under speaker-by-attack product perturbation. Both arms
   refit the same EER rule and use the same all-28-pair multiplicity procedure.
+- A transparently post-failure EXP-111 arm fixes class-by-source/task composition
+  and retains 0/6 organizer and 18/28 overall product-perturbation endpoints.
+  It answers that confound but is not prospective confirmation.
+- A pre-access frozen, single-source SpoofCeleb experiment gives 6/6
+  trial-i.i.d. versus 3/6 product/source exclusions. A disclosed post-result
+  scorer-provenance rerun leaves every EER, decision and endpoint unchanged.
 - A single coherent marginal-sum covariance also gives 0/6 for the organizer
   family. It is a sensitivity construction, not a proved variance estimator.
 - Twelve internally frozen score-blind composition policies reverse 6/12
@@ -36,6 +42,9 @@ attacks or systems.
   witness is practically plausible.
 - The low-EER stress grid refutes universal calibration of the candidate
   intervals. The adverse result limits rather than validates population use.
+- A witnessed EXP-112 trace gives 18.5% trial-i.i.d. and 97.5--98.0%
+  clustered-candidate coverage under its fitted organizer-like Gaussian DGP.
+  This authenticates the simulation, not the DGP's adequacy for 21DF.
 - A fixed four-system ASVspoof 5 check reproduces the registered family-level
   direction and magnitude criteria. It is not a pair-level or independently
   sampled replication.
@@ -55,6 +64,9 @@ The paper and artifact do not claim that:
 - the internal analysis freezes have an independently verifiable public
   timestamp;
 - the ASVspoof 5 check is an independent-team replication; or
+- the EXP-111 post-failure arm is a preregistered confirmation;
+- the EXP-114 provenance rerun is a second prospective trial;
+- the fitted Gaussian DGP has been validated as a population model of 21DF; or
 - released score files regenerate detector inference or training from audio.
 
 ## Completion gates for this release

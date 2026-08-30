@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -57,11 +58,32 @@ def main() -> int:
 
     for command in (
         [sys.executable, "code/check_numbers.py"],
+        [sys.executable, "-m", "unittest", "-v", "paper/test_semantic_guards.py"],
         [sys.executable, "audit/verify_asv5_package.py"],
     ):
         result = subprocess.run(command, cwd=ROOT, check=False)
         if result.returncode:
             failures.append(f"command failed: {' '.join(command)}")
+
+    if not shutil.which("pdfinfo") or not shutil.which("pdftotext"):
+        failures.append("pdfinfo/pdftotext unavailable for the page-compliance gate")
+    else:
+        info = subprocess.run(
+            ["pdfinfo", "paper/main.pdf"], cwd=ROOT, capture_output=True, text=True
+        )
+        if info.returncode or "Pages:           5" not in info.stdout:
+            failures.append("paper/main.pdf is not exactly five pages")
+        page5 = subprocess.run(
+            ["pdftotext", "-f", "5", "-l", "5", "-layout", "paper/main.pdf", "-"],
+            cwd=ROOT, capture_output=True, text=True,
+        )
+        if page5.returncode:
+            failures.append("could not extract page 5")
+        elif any(heading in page5.stdout.upper() for heading in (
+                "DISCUSSION", "CONCLUSION", "EXPERIMENTS", "METHOD")):
+            failures.append("page 5 contains technical-section content")
+        elif not any(f"[{index}]" in page5.stdout for index in range(1, 31)):
+            failures.append("page 5 does not contain reference entries")
 
     if failures:
         print("FAILED — release repository")

@@ -24,7 +24,7 @@ sha256 of each so you can confirm you have the same bytes we did. Point the code
 
 With those set, `make_audit_package.py` regenerates the 16-block raw-score core as
 `audit-regenerated/audit-core.json`; `compare_audit_core.py` requires exact equality with
-the corresponding blocks in this canonical composite. The five post-audit closures are
+the corresponding blocks in this canonical composite. The eight post-audit closures are
 not silently transcribed or attributed to that builder: `check_numbers.py` independently
 binds each to its own committed result and verifier, as well as binding the paper source.
 
@@ -69,12 +69,16 @@ under that imposed DGP; they do not establish the DGP as a model of 21DF.
 | `coherent_marginal_sum` | the separately generated PSD marginal-sum sensitivity construction |
 | `coverage_closure` | recalibrated EXP-105 grid, diagnostics, Refuted verdict and content hashes |
 | `composition_sensitivity` | registered policy multiverse, independent verification and constructive witnesses |
+| `composition_fixed_sampling_control` | post-failure EXP-111 control, clean archival closure and independent portable verification |
+| `coverage_witnessed_replacement` | EXP-112 witnessed trace/aggregates, receipt, addendum and independent provenance verification |
+| `spoofceleb_sampling_unit_confirmation` | EXP-114 prospective single-source 6/6-to-3/6 endpoint and post-result provenance rerun; no licensed inputs |
 | `asv5_descriptive_replication` | portable fixed-roster result, run contract and independent execution audit |
 
-The five post-audit closures are embedded in the canonical composite but generated and
+The eight post-audit closures are embedded in the canonical composite but generated and
 verified from artifacts outside the raw-score core. `code/check_numbers.py` binds them to
-the paper and verifies their plans, canonical result hashes, historical emitter identities
-and released path-adapted code hashes.
+the paper and verifies their internal result/receipt/hash relationships. The public audit is
+a deterministic path-sanitized copy; `audit/PUBLIC-PACKAGING.json` binds it to the internal
+composite and to the sanitizer implementation.
 
 ## Three scope statements the paper depends on
 
@@ -104,6 +108,26 @@ back-of-the-envelope approximation rather than an identity: the exact expression
 equal-size exchangeable clusters and a linear statistic, where the EER is a thresholded
 functional over two crossed factors.
 
+**The composition-fixed control is explicitly post-failure.** EXP-111's amended
+conditioned arm was designed after the provisional endpoints were known. It restores every
+class-by-source/task mass and reproduces the global arm's 0/6 organizer and 18/28 overall
+endpoints. That addresses the specific composition confound, but is neither preregistered
+confirmation nor population inference.
+
+**The witnessed coverage replacement authenticates a simulation, not the real-data
+DGP.** EXP-112 records all 200 replicates and independently reconstructs every aggregate.
+It gives 18.5% trial-i.i.d. coverage and 97.5--98.0% clustered-candidate coverage under the
+fitted organizer-like Gaussian DGP on the real incidence. No adequacy study establishes
+that DGP as a model of 21DF.
+
+**The SpoofCeleb endpoint is prospective; the provenance repair is not.** EXP-114 was
+frozen before repository access and detector outcomes. Its complete single-source grid
+gives 6/6 trial-i.i.d. versus 3/6 product/source exclusions. A later audit found that the
+original seal omitted the actual scoring entrypoint. The disclosed post-result rerun binds
+clean source identities: three score files are byte-identical and XLSR-Mamba differs by at
+most $1.43\times10^{-6}$, while all EERs, decisions and the registered endpoint remain
+unchanged. This authenticates the first result; it is not a second prospective trial.
+
 ## Known limits
 
 Provenance for the four modern score files is by hash of the released files, not by
@@ -113,3 +137,5 @@ calibrated value and absent speaker×attack cells remain unidentified. The corpu
 decomposition rests on three source corpora, i.e. two degrees of freedom; the permutation
 null (with finite-sample +1 p-values) and leave-one-corpus-out refits, each with its own
 28-pair max-t band, are reported for exactly that reason.
+SpoofCeleb is license-gated, so its audio, manifest and score files are not redistributed;
+the public package carries only path-sanitized aggregates, receipts, hashes and comparisons.

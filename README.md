@@ -31,6 +31,15 @@ cells validate implementation behavior under their imposed DGP, not that DGP as 
 the benchmark. A separate eleven-system Speech DF Arena re-score layer is included for
 provenance and descriptive sensitivity and is never mixed into the primary ranking.
 
+A post-failure EXP-111 control restores class-by-source/task mass and retains the 0/6
+organizer endpoint, addressing the narrow composition-confounding objection without being
+relabeled prospective. A separately frozen, pre-access SpoofCeleb experiment supplies the
+prospective single-source check: 6/6 trial-i.i.d. versus 3/6 product/source exclusions on
+91,130 trials. Its later scorer-provenance rerun reproduced three score files byte-for-byte;
+XLSR-Mamba differed by at most 1.43e-6, with every EER, decision and endpoint unchanged.
+A witnessed EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
+conditional on its fitted Gaussian DGP.
+
 The committed release is the artifact a reader needs to check every reported
 number and the boundaries placed on its interpretation.
 
@@ -43,6 +52,7 @@ number and the boundaries placed on its interpretation.
 | `DEVIATIONS.md` | every material difference between that plan and the reported analysis |
 | `plans/` | frozen preregistrations for the Arena, multiway-correctness and ASV5 additions |
 | `audit/audit.json` | the primary audit package, derived rather than transcribed |
+| `audit/PUBLIC-PACKAGING.json` | binds the path-sanitized public audit to the internal composite and sanitizer |
 | `audit/README.md` | what each key answers, the estimand, and the scope statements |
 | `derived/` | committed machine-readable campaign outputs used by the clean-clone checker |
 | `paper/` | the exact paper and figure source checked against those outputs |
@@ -62,7 +72,7 @@ uv run --frozen python verify_release.py
 
 That command authenticates the release and checks `paper/main.tex` against named paths in `derived/`,
 including the matched perturbation diagnostic, coherent covariance result, incidence audit
-and separate Arena replication. It also verifies the exact historical result identities and
+and separate Arena/SpoofCeleb checks. It also verifies the exact historical result identities and
 the hashes of the public path-adapted scripts. It does not pretend to regenerate an experiment.
 
 To re-derive the raw-score core of the audit package from the third-party score files, obtain the inputs described
@@ -77,8 +87,9 @@ uv run python code/check_tie_safety.py
 The builder reads the public score files plus the committed campaign outputs in `derived/`
 and writes only `audit-regenerated/audit-core.json`; it never overwrites the canonical
 artifact. The comparator requires exact equality for all 16 core blocks. The canonical
-`audit/audit.json` is deliberately composite: it adds five later closures (matched
-perturbation, coherent covariance, coverage, composition, and ASV5), each bound to its own
+`audit/audit.json` is deliberately composite: it adds eight later closures (matched
+perturbation, coherent covariance, two coverage layers, composition, EXP-111, SpoofCeleb,
+and ASV5), each bound to its own
 committed result and verifier by `code/check_numbers.py`. No single raw-score command is
 claimed to rerun those later campaigns.
 The generating-script map in `derived/README.md` distinguishes runnable public
@@ -158,6 +169,10 @@ These are stated in full in [`audit/README.md`](audit/README.md). In summary:
   finite-attack component containing speaker×attack interaction; it is not an
   attack-count asymptote. The exact observed-cell correction does not identify the
   interaction distribution in structurally absent speaker--attack cells.
+- EXP-112 verifies computation under a fitted organizer-like Gaussian random-effects DGP;
+  no adequacy audit establishes that DGP as a model of 21DF.
+- SpoofCeleb is license-gated. Its audio, manifest and score tables are not redistributed;
+  the release contains path-sanitized aggregate results, receipts, hashes and comparisons.
 
 ## License
 

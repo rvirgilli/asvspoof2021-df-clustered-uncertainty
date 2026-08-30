@@ -1,6 +1,6 @@
 """M1 figures. Own file: paper/figures.py is shared with another line.
 
-Fig 1 (forest): the six baseline pairs, published i.i.d. interval against ours.
+Fig 1 (forest): the six baseline pairs, reconstructed trial-i.i.d. interval against ours.
 Fig 2 (finite-A component): measured clustered-CI width vs number of attacks,
                 with each pair's delete-speaker component at the observed A=110.
 Palette: Okabe-Ito subset, CVD-validated; every series directly labelled.
@@ -36,7 +36,7 @@ def short(m):
 
 
 def fig_forest():
-    """The six baseline pairs: the published i.i.d. verdict against ours."""
+    """The six baseline pairs: the reconstructed trial-i.i.d. verdict against ours."""
     org = json.load(open(EXP / "results_organizer_test.json"))["pairs"]
     fig, ax = plt.subplots(figsize=(COL, 1.20))
     order = sorted(org, key=lambda k: abs(org[k]["delta_eer_pts"]))
@@ -62,7 +62,7 @@ def fig_forest():
     ax.set_yticks([])
     ax.set_xlim(-12.5, 11.5)
     ax.set_xlabel("$\\Delta$EER (points), system A $-$ system B")
-    ax.annotate("published i.i.d. interval", (-11.8, len(order) + 0.55), color=VERM, fontsize=6)
+    ax.annotate("trial-i.i.d. (reconstructed)", (-11.8, len(order) + 0.55), color=VERM, fontsize=6)
     ax.annotate("clustered (this work)", (0.6, len(order) + 0.55), color=BLUE, fontsize=6)
     fig.tight_layout(pad=0.4)
     fig.savefig(HERE / "figs/forest.pdf", bbox_inches="tight", pad_inches=0.02)

@@ -81,3 +81,9 @@ paired-permutation diagnostic; fields marked superseded there are not paper inpu
 The ASVspoof 5 fixed-family result is packaged separately under `audit/asv5/`.
 Its standard-library verifier rehashes the 698-record input manifest and binds
 the portable run contract and result to `audit/audit.json`.
+
+EXP-111, EXP-112 and EXP-114 are distributed inside the path-sanitized composite
+`audit/audit.json`, not duplicated here. Their result, receipt, closure/comparison,
+independent-verification and original-source hash relationships are checked by
+`code/check_numbers.py`. SpoofCeleb's license excludes its manifest, score tables and
+audio from this repository; only aggregate and provenance envelopes are public.

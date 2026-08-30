@@ -1,0 +1,136 @@
+{
+  "schema": "m1-semantic-obligations-v1",
+  "purpose": "Load-bearing scientific qualifications whose removal must fail check_numbers.py.",
+  "obligations": [
+    {
+      "id": "scope_no_transfer",
+      "section": "Introduction/Scope",
+      "match": "No full-21DF ``resolved'' label transfers to new speakers or attacks: four source/task blocks have only 4--6 speakers each."
+    },
+    {
+      "id": "scope_fixed_score_outputs",
+      "section": "Introduction/Scope",
+      "match": "Bands and composition radii are descriptive procedure outputs on fixed scores, not population confidence or safety claims."
+    },
+    {
+      "id": "related_no_cell_or_population",
+      "section": "Related work",
+      "match": "We claim neither cell-level agreement with the published greyscale figure nor population confidence."
+    },
+    {
+      "id": "deterministic_benchmark",
+      "section": "Method/Identified object",
+      "match": "Two deterministic systems on a frozen trial list have \\emph{no} sampling uncertainty; an interval exists only after declaring what was sampled."
+    },
+    {
+      "id": "no_replacement_population_claim",
+      "section": "Method/Identified object",
+      "match": "We therefore do not replace the organizers' population claim with another unidentified one."
+    },
+    {
+      "id": "coherent_covariance_boundary",
+      "section": "Method/Clustered bootstrap",
+      "match": "It deliberately retains the cell overlap and is a coherent marginal-sum sensitivity covariance, not an exact multiway estimator or coverage claim."
+    },
+    {
+      "id": "bands_not_population_sets",
+      "section": "Method/Multiplicity",
+      "match": "Because the required sampling law is not identified for full 21DF, neither is called a population confidence set."
+    },
+    {
+      "id": "historical_reconstruction_boundary",
+      "section": "Method/Reconstruction",
+      "match": "Because the cited derivation assumes thresholds fixed outside the test set, these are reconstructions of its adaptation to EER rather than exact finite-sample tests."
+    },
+    {
+      "id": "coverage_dgp_boundary",
+      "section": "Method/Coverage",
+      "match": "Passing organizer-like cells validates implementation behavior under that DGP, not the DGP as a model of 21DF."
+    },
+    {
+      "id": "composition_witness_boundary",
+      "section": "Method/Composition",
+      "match": "Search failure is not stability; a reported bound is not a global minimum."
+    },
+    {
+      "id": "exp111_post_failure",
+      "section": "Experiments/Sampling-unit sensitivity",
+      "match": "a transparently post-failure composition-fixed control"
+    },
+    {
+      "id": "exp111_conditioning_and_mass",
+      "section": "Experiments/Sampling-unit sensitivity",
+      "match": "the latter conditions only zero-support stratum draws and exactly restores each class-by-source/task mass."
+    },
+    {
+      "id": "exp114_registered_single_source",
+      "section": "Experiments/SpoofCeleb",
+      "match": "under a rule registered before access."
+    },
+    {
+      "id": "exp114_composition_by_construction",
+      "section": "Experiments/SpoofCeleb",
+      "match": "Every base product has one bona-fide and nine spoof renditions under one source label, so composition is fixed by construction; the three changed decisions isolate sampling-unit sensitivity from source-mixture movement."
+    },
+    {
+      "id": "exp114_original_seal_gap",
+      "section": "Experiments/SpoofCeleb",
+      "match": "Gate~2 later found that the original seal omitted the actual scorer entrypoint."
+    },
+    {
+      "id": "exp114_post_result_rerun",
+      "section": "Experiments/SpoofCeleb",
+      "match": "A disclosed post-result rerun from clean, hash-bound commits reproduced three score files byte-for-byte; XLSR-Mamba moved by at most $1.43\\times10^{-6}$, with all EERs, decisions and the registered endpoint unchanged."
+    },
+    {
+      "id": "composition_search_no_proof",
+      "section": "Experiments/Composition robustness",
+      "match": "No cross-generation witness was found, which is a search outcome rather than proof of global stability."
+    },
+    {
+      "id": "arena_descriptive_boundary",
+      "section": "Experiments/Independent re-score layer",
+      "match": "These are provenance and sensitivity measurements, not coverage-validated Arena confidence claims."
+    },
+    {
+      "id": "asv5_family_not_pair",
+      "section": "Experiments/External family-level check",
+      "match": "This is not pair-level replication: on 21DF that pair excludes zero under both arms, and the 5/6-to-0/6 organizer family has no ASV5 analogue."
+    },
+    {
+      "id": "asv5_acquisition_boundary",
+      "section": "Experiments/External family-level check",
+      "match": "The acquisition-law gate is NO-GO; these are fixed-roster procedure outputs, not population confidence or significance."
+    },
+    {
+      "id": "exp112_dgp_boundary",
+      "section": "Experiments/Measured width inflation",
+      "match": "This calibrates procedures under the imposed DGP, not the DGP as a model of 21DF or its unidentified superpopulation."
+    },
+    {
+      "id": "historical_provenance_limits",
+      "section": "Discussion",
+      "match": "Legacy SSL-AASIST/AASIST NPZs lack historical run provenance, and the historical freeze lacks an independently verifiable timestamp."
+    },
+    {
+      "id": "report_units_and_requirements",
+      "section": "Discussion",
+      "match": "Report speaker and attack incidence plus composition, not trial counts: bands require a sampling law and coverage; radii require a policy family and witness."
+    },
+    {
+      "id": "withdrawn_claims",
+      "section": "Discussion",
+      "match": "We withdraw full-21DF population labels, modern rank-confidence claims and formal Arena bands."
+    },
+    {
+      "id": "zero_straddling_boundary",
+      "section": "Discussion",
+      "match": "Zero-straddling is sensitivity, not equality."
+    },
+    {
+      "id": "conclusion_population_boundary",
+      "section": "Conclusion",
+      "match": "These are fixed-score sensitivities, not population inference; that needs new independently sampled units."
+    }
+  ]
+}
