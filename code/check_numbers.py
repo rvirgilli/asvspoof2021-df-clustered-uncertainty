@@ -277,7 +277,7 @@ require_number("27.27", asv5_cmp["median_primary_over_iid_width_ratio"], 2,
 focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
     "SSL-AASIST vs XLS-R+SLS"]
 require("External family-level check", "external result scope")
-require("not pair-level replication", "ASV5 cross-generation scope")
+require("not pair-level replication", "ASV5 external-family scope")
 require("Legacy SSL-AASIST/AASIST NPZs lack historical run provenance",
         "legacy score provenance limit")
 require("not pair-level replication or population inference",
@@ -462,7 +462,8 @@ if (exp114_mamba["classification"] != "reproduced-with-difference"
     fail("VALUE EXP-114 Mamba numerical-difference summary changed")
 require("91,130-trial", "EXP-114 complete evaluation size must remain visible")
 require("single-source SpoofCeleb", "EXP-114 source control must remain visible")
-require("rule frozen before access", "EXP-114 prospective chronology must remain visible")
+require("Before inspecting SpoofCeleb scores, we fixed",
+        "EXP-114 prospective chronology must remain visible in field-facing language")
 require("6/6", "EXP-114 trial-i.i.d. endpoint must remain visible")
 require("3/6", "EXP-114 product/source endpoint must remain visible")
 require("Source composition is therefore fixed by design",
@@ -471,15 +472,16 @@ require("product draws still vary speaker and spoof-attack multiplicities",
         "EXP-114 must not overstate its composition control")
 require("this check concerns a weakly transferred off-domain family, not high-performing in-domain SpoofCeleb systems",
         "EXP-114 external-validity boundary must remain visible")
-require("original seal omitted the actual scorer entrypoint",
-        "EXP-114 original provenance gap must remain disclosed")
+require("archived specification omitted the scoring executable",
+        "EXP-114 original provenance gap must remain disclosed in field-facing language")
 require("disclosed post-result rerun", "EXP-114 rerun chronology must remain visible")
 require("three score files byte-for-byte", "EXP-114 exact score reproduction count")
 mamba_ceiling = math.ceil(exp114_mamba["delta"]["max_abs"] * 1e8) / 1e8
 if mamba_ceiling != 1.44e-6:
     fail(f"VALUE EXP-114 Mamba conservative ceiling changed: {mamba_ceiling}")
 require("1.44\\times10^{-6}", "EXP-114 Mamba maximum score delta ceiling")
-require("registered endpoint unchanged", "EXP-114 unchanged endpoint")
+require("prespecified 6/6-to-3/6 result unchanged",
+        "EXP-114 post-result rerun did not change the scientific result")
 
 
 # 1d. EXP-115 is a disclosed post-result decomposition of the known EXP-114
@@ -577,7 +579,8 @@ wide = coherent["pairs"]["RawNet2 vs CQCC-GMM"]["simultaneous"]
 require_number("-8.76", wide[0], 2, "coherent widest lower")
 require_number("2.40", wide[1], 2, "coherent widest upper")
 require_re(r"same .*Sigma_\+.* supplies every pair SE", "one PSD covariance must supply SEs and max-t")
-require("retains the cell overlap", "marginal-sum double counting must be disclosed")
+require("deliberately double-counts speaker$\\times$attack cell variation",
+        "marginal-sum overlap must be disclosed in field-facing language")
 require("not an exact multiway estimator or coverage claim", "coherent diagnostic scope")
 
 
@@ -591,8 +594,9 @@ require_number("2.91", org_wide["clustered_ci_simultaneous"][1], 2,
 check_generated_figures()
 require("reconstructions of its adaptation to EER rather than exact finite-sample tests",
         "finite-sample limitation of the reconstruction")
-require("Both published-test reconstructions", "five positive labels are reconstructions")
-require("no cell-level agreement", "published greyscale cells are not claimed")
+require("Both reconstructions of Fig.~4(c)",
+        "five positive labels are explicitly tied to the published figure")
+require("no cell-level agreement", "published matrix cells are not claimed")
 require("sixth has", "the non-zero-excluding sixth reconstruction remains explicit")
 
 
@@ -624,8 +628,9 @@ for literal, value in checks:
     require_number(literal, value, 3, f"coverage {literal}")
 cell26 = grid[26]
 for method, literal in (("raw", ".879"), ("floor", ".880"), ("product", ".883")):
-    require_number(literal, cell26["coverage"][method]["coverage"], 3,
-                   f"low-EER cell26 {method}")
+    rendered = f"{cell26['coverage'][method]['coverage']:.3f}".removeprefix("0")
+    if rendered != literal:
+        fail(f"VALUE low-EER cell26 {method}: {rendered} != {literal}")
 all_below = sum(
     all(row["coverage"][method]["coverage"] < 0.90
         for method in ("raw", "floor", "product"))
@@ -637,8 +642,8 @@ require("11/24", "joint low-EER failure count")
 oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
 if f"{oracle_min:.3f}" != "0.944":
     fail(f"VALUE oracle-SD minimum changed: {oracle_min}")
-require("universal-calibration reading is therefore Refuted",
-        "adverse result must remain explicit")
+require("prespecified universal-coverage criterion is therefore rejected",
+        "adverse coverage result must remain explicit without score-calibration ambiguity")
 require("not adequacy of that DGP for 21DF", "coverage cannot validate acquisition")
 
 
@@ -694,7 +699,7 @@ for literal, value, label in (
     require_number(literal, value, 1, f"EXP-112 {label}")
 require("witnessed", "EXP-112 is not historical authentication")
 require("fitted organizer-like Gaussian DGP", "EXP-112 DGP condition")
-require("not that DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
+require("does not validate that DGP as a model of 21DF", "EXP-112 DGP-adequacy boundary")
 
 
 # 5. Incidence and provenance composition.
@@ -728,10 +733,10 @@ cross_flips = [
     != (row["pair"].split(" vs ")[1] in {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"})
 ]
 if cross_flips:
-    fail("VALUE a cross-generation label now flips under source deletion")
+    fail("VALUE a between-cohort label now flips under source deletion")
 for pair in expected_gained:
     require(pair.replace(" vs ", "--"), "all three gained baseline pairs must be named")
-require_re(r"(?:all |[Tt]he )16 cross-generation gaps",
+require_re(r"(?:all |[Tt]he )16 between-cohort gaps",
            "stable selected cross-block must be bounded")
 require("not composition-robust", "0/6 provenance dependence belongs with the headline")
 
@@ -773,9 +778,9 @@ best_tv = composition_v2_verified["best_verified_r_TV_by_pair"][
     "XLSR-Mamba vs XLS-R+SLS"
 ]
 require_number(".010218", best_tv, 6, "smallest verified constructive rTV bound")
-require("post-failure", "secondary chronology must be disclosed")
+require("outcome-informed search", "secondary search chronology must be disclosed")
 require("not a global minimum", "constructive upper bounds cannot become safety radii")
-require("search outcome rather than proof", "absence of cross-generation witness is scoped")
+require("search outcome rather than proof", "absence of between-cohort witness is scoped")
 
 
 # 7. Arena and measured width layer.
@@ -815,7 +820,8 @@ for literal, value, label in (
     require_number(literal, value, 2, label)
 
 
-# 8. Table 1: gaps, product half-widths and constructive TV bounds.
+# 8. Table 1: absolute gaps, product max-t simultaneous half-widths and
+# constructive TV bounds.
 ssl = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
 short = {
     "XLSR-Mamba": "XLSR-Mamba",
@@ -828,14 +834,14 @@ short = {
     "CQCC-GMM": "CQCC-GMM",
 }
 order = list(short)
-pairs = selection["21df"]["pairs"]
+pairs = matched["speaker_attack"]["pairs"]
 expected_rows: list[list[str]] = []
 for index, a in enumerate(order):
     for b in order[index + 1:]:
         if (a in ssl) != (b in ssl):
             continue
         row = pairs.get(f"{a} vs {b}") or pairs[f"{b} vs {a}"]
-        half = (row["ci_pointwise"][1] - row["ci_pointwise"][0]) / 2.0
+        half = (row["simultaneous"][1] - row["simultaneous"][0]) / 2.0
         tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{a} vs {b}")
         if tv is None:
             tv = composition_v2_verified["best_verified_r_TV_by_pair"].get(f"{b} vs {a}")
@@ -861,7 +867,7 @@ if "MDE" in body:
 for text, why in (
     ("fixed-data procedure sensitivity", "identified scientific object"),
     ("not population confidence claims", "abstract scope"),
-    ("not an exact multiway estimator or coverage claim", "coherent covariance scope"),
+    ("not an exact multiway estimator or coverage claim", "Gaussian Sigma-plus scope"),
     ("historical freeze lacks an independently verifiable timestamp", "timestamp honesty"),
     ("Zero-straddling is sensitivity, not equality", "non-significance scope"),
     ("independently sampled units", "only full repair for population inference"),
@@ -882,6 +888,16 @@ for pattern, why in (
     (r"finite-\$?A\$? speaker component", "secondary unidentified target removed from paper"),
     (r"Then the practice stopped", "historical search is bounded, not a census"),
     (r"preregistered 48-cell", "historical plan has no public timestamp"),
+    (r"within-generation|cross-generation|coarse generation separation",
+     "detector cohorts must not be confused with spoof generators"),
+    (r"universal calibration|calibrates procedures",
+     "coverage evaluation must not be confused with score calibration"),
+    (r"Gate~?2|original seal|scorer entrypoint|registered endpoint",
+     "internal workflow vocabulary must not carry a scientific claim"),
+    (r"paired-decision|Local composition fragility|coherent marginal-sum sensitivity covariance",
+     "private procedure labels must not be presented as field terminology"),
+    (r"pointwise percentile half-width",
+     "Table 1 must report the simultaneous quantity used for decisions"),
 ):
     forbid(pattern, why)
 

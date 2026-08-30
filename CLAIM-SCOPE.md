@@ -46,7 +46,7 @@ attacks or systems.
   composition change sufficient to cross each within-block sign boundary.
   Those bounds are existence results, not minima or evidence that every
   witness is practically plausible.
-- The low-EER stress grid refutes universal calibration of the candidate
+- The low-EER stress grid rejects the prespecified universal-coverage criterion for the candidate
   intervals. The adverse result limits rather than validates population use.
 - A witnessed EXP-112 trace gives 18.5% trial-i.i.d. and 97.5--98.0%
   clustered-candidate coverage under its fitted organizer-like Gaussian DGP.

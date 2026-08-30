@@ -15,7 +15,7 @@
     {
       "id": "related_no_cell_or_population",
       "section": "Related work",
-      "match": "We claim neither cell-level agreement with the published greyscale figure nor population confidence."
+      "match": "We claim neither cell-level agreement with Fig.~4(c) of the ASVspoof 2021 report nor population confidence."
     },
     {
       "id": "deterministic_benchmark",
@@ -30,7 +30,12 @@
     {
       "id": "coherent_covariance_boundary",
       "section": "Method/Clustered bootstrap",
-      "match": "It deliberately retains the cell overlap and is a coherent marginal-sum sensitivity covariance, not an exact multiway estimator or coverage claim."
+      "match": "This is a conservative sensitivity construction, not an exact multiway estimator or coverage claim."
+    },
+    {
+      "id": "delta_eer_definition",
+      "section": "Method/Identified object",
+      "match": "For ordered pair $(A,B)$, $\\Delta\\mathrm{EER}_{A,B}=100(\\mathrm{EER}_A-\\mathrm{EER}_B)$ percentage points (negative favors $A$); every replicate refits the threshold."
     },
     {
       "id": "bands_not_population_sets",
@@ -46,6 +51,16 @@
       "id": "coverage_dgp_boundary",
       "section": "Method/Coverage",
       "match": "This diagnoses procedure behavior under the imposed DGP, not adequacy of that DGP for 21DF."
+    },
+    {
+      "id": "abstract_coverage_dgp_boundary",
+      "section": "Abstract",
+      "match": "Under an imposed low-EER random-effects DGP, all three candidate intervals fall below .90 coverage together in 11/24 cells, rejecting the prespecified universal-coverage criterion under that DGP."
+    },
+    {
+      "id": "composition_radius_definition",
+      "section": "Method/Composition",
+      "match": "If $w_c^0$ and $w_c$ are the empirical and alternative trial-mass vectors for class $c$, $r_{TV}=\\max_c\\frac12\\sum_i|w_{c,i}-w_{c,i}^0|$."
     },
     {
       "id": "composition_witness_boundary",
@@ -65,7 +80,7 @@
     {
       "id": "exp114_registered_single_source",
       "section": "Experiments/SpoofCeleb",
-      "match": "under a rule frozen before access."
+      "match": "Before inspecting SpoofCeleb scores, we fixed the detector roster, score processing, perturbations, seed and six-pair max-$t$ endpoint."
     },
     {
       "id": "exp114_source_composition_boundary",
@@ -90,17 +105,17 @@
     {
       "id": "exp114_original_seal_gap",
       "section": "Experiments/SpoofCeleb",
-      "match": "Gate~2 later found that the original seal omitted the actual scorer entrypoint."
+      "match": "A later reproducibility audit found that the archived specification omitted the scoring executable."
     },
     {
       "id": "exp114_post_result_rerun",
       "section": "Experiments/SpoofCeleb",
-      "match": "A disclosed post-result rerun from clean, hash-bound commits reproduced three score files byte-for-byte; XLSR-Mamba differed by at most $1.44\\times10^{-6}$, with all EERs, decisions and the registered endpoint unchanged."
+      "match": "A disclosed post-result rerun from clean, identified source revisions reproduced three score files byte-for-byte; XLSR-Mamba differed by at most $1.44\\times10^{-6}$, with all EERs, decisions and the prespecified 6/6-to-3/6 result unchanged."
     },
     {
       "id": "composition_search_no_proof",
       "section": "Experiments/Composition robustness",
-      "match": "No cross-generation witness was found, which is a search outcome rather than proof of global stability."
+      "match": "No between-cohort witness was found, which is a search outcome rather than proof of global stability."
     },
     {
       "id": "arena_descriptive_boundary",
@@ -113,9 +128,14 @@
       "match": "This is an external fixed-family sensitivity check, not pair-level replication or population inference."
     },
     {
+      "id": "asv5_track_metric_and_roles",
+      "section": "Experiments/External family-level check",
+      "match": "On the ASVspoof~5 Track~1 evaluation set \\cite{asvspoof5eval}, EER bands for SSL-AASIST, AASIST, XLS-R+SLS and XLSR-Mamba over all 680,774 trials"
+    },
+    {
       "id": "exp112_dgp_boundary",
       "section": "Experiments/Measured width inflation",
-      "match": "This calibrates procedures under the imposed DGP, not that DGP as a model of 21DF."
+      "match": "This evaluates repeated-sampling coverage under the imposed DGP; it does not validate that DGP as a model of 21DF."
     },
     {
       "id": "historical_provenance_limits",
@@ -140,7 +160,7 @@
     {
       "id": "conclusion_registered_robustness_scope",
       "section": "Conclusion",
-      "match": "Across the registered policies, corpus deletions and searched directions, the robust conclusion is coarse generation separation, not within-generation ranking."
+      "match": "Across the registered policies, corpus deletions and searched directions, the stable conclusion is separation between the four SSL detectors and four organizer baselines, not within-cohort ranking."
     },
     {
       "id": "conclusion_population_boundary",

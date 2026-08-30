@@ -8,12 +8,15 @@ From the repository root:
 
 ```bash
 uv run --frozen python paper/figures_m1.py
-cd paper && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+cd paper && SOURCE_DATE_EPOCH=1788120000 FORCE_SOURCE_DATE=1 \
+  latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
 The first command regenerates both PDFs in `paper/figs/` exclusively from the
-committed derived JSON files. The second compiles the exact checked source.
+committed derived JSON files. The second compiles the exact checked source with the
+release timestamp fixed at 2026-08-30 20:00:00 UTC, making the canonical PDF bytes
+independent of rebuild time and checkout path.
 `verify_release.py` confirms that the PDF has five pages and page 5 contains references
 only. `semantic_obligations.json` and `test_semantic_guards.py` make removal of any of
-29 load-bearing caveats fail the production checker. Fig. 1 uses matched all-28-pair
+33 load-bearing caveats fail the production checker. Fig. 1 uses matched all-28-pair
 simultaneous bands for both the trial-i.i.d. and speaker--attack arms.
