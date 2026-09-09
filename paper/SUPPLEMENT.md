@@ -68,7 +68,10 @@ A negative value favors `A`. Every resample refits both thresholds. A pair is **
 under procedure h** exactly when its simultaneous band excludes zero; this event is
 `I[p,h]=1`.
 
-The trial bootstrap resamples trials independently within class. The speaker×attack
+The trial bootstrap resamples trials independently within class (21DF, Arena and
+ASVspoof 5). For SpoofCeleb only, the archived plan's arm A samples the 91,130 trial indices
+from the pooled list with replacement, so the replicate bona-fide count varies
+(Binomial(91,130, 0.1), SD 90.6) instead of staying at 9,113; see S8. The speaker×attack
 product-weight bootstrap independently samples 93 speaker multiplicities and 110 attack
 multiplicities. A spoof trial's weight is their product; a bona-fide trial has no attack and
 receives only its speaker multiplicity. Both use `B=5000`, seed `2026081604`, shared system
@@ -180,14 +183,13 @@ Under at least one of the 12 endpoints, six of the 12 within-cohort pairs revers
 point ordering (five within-baseline, one within-SSL) and none of the 16 cross-cohort pairs
 does. One of the eleven paths from `B0×S0` reverses before distance 0.10.
 
-**Bands under each rule (EXP-116, post-result verification).** After the 2026-09-08
-exact-PDF audit noted that the manuscript asserted separation stability under the rules
-without having computed bands, both perturbation laws were rerun with each rule's weight
+**Bands under each rule (EXP-116, computed after the point results).** After inspecting the
+weighting rules' point results, we recomputed both perturbation laws with each rule's weight
 vector as the base weight of every trial (`B=5000` per cell, seeds `20260909+100k+l`, same
-threshold refitting and max-t construction as S2). The plan was written after the rules and
-their point orderings were known and is disclosed as such. Registered reading: the strong
-sentence is allowed only if all 16 cross-cohort pairs are separated in all 24 cells.
-Result: 384/384. The cross-cohort band endpoint closest to zero is -12.79 points
+threshold refitting and max-t construction as S2). The plan, frozen before computation and
+after the point orderings were known, fixed one reading: all 16 cross-cohort pairs separated
+in all 24 rule×law cells, or the manuscript reports point-order stability only.
+Result: 384/384 cross-cohort indicators. The cross-cohort band endpoint closest to zero is -12.79 points
 (SSL-AASIST vs RawNet2, rule B0×S1, PW law). The `B0×S0` cells reproduce the manuscript's
 26/28 and 18/28.
 
@@ -331,7 +333,11 @@ post-result clean-source rerun is therefore reproducibility evidence, not a seco
 confirmation. It reproduced AASIST, SLS and SSL-AASIST scores byte-for-byte. XLSR-Mamba had
 25,866 changed float32 scores, maximum absolute difference
 `1.430511474609375e-6`, unchanged order at the EER threshold, and unchanged EERs and all six
-separation indicators. The detector point EERs are 57.93%, 24.51%, 26.72% and 27.58%.
+separation indicators. The detector point EERs are 57.93%, 24.51%, 26.72% and 27.58%. The trial arm of this
+check is the pooled (unstratified) trial bootstrap fixed by the archived plan, not the
+class-stratified law of S2. A class-stratified recomputation on the same manifest and score
+tables (EXP-118, B=5000, seed 20260909) also separates 6/6 with the same indicators; band
+endpoints move by at most 0.02 points (`exp118/RESULTS.json`).
 
 ### ASVspoof 5
 
@@ -357,6 +363,7 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 - Weight rules and paths: `derived/results_composition.json`.
 - Constructive search: `derived/secondary_v2_results.json`, independently verified result SHA-256
   `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`.
+- SpoofCeleb class-stratified trial arm: `exp118/RESULTS.json`.
 - Bands under each weighting rule: `exp116/RESULTS.json`, SHA-256
   `d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd`.
 - Coverage grid: `derived/results_coverage_interaction_recalibrated.json` and

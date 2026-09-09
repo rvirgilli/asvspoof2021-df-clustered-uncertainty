@@ -28,6 +28,7 @@ PAPER = ROOT / "paper"
 AUDIT_DIR = ROOT / "audit"
 EXP115 = ROOT / "exp115"
 EXP116 = ROOT / "exp116"
+EXP118 = ROOT / "exp118"
 TEX_PATH = Path(os.environ.get("M1_TEX_PATH", PAPER / "main.tex"))
 SUPPLEMENT_PATH = Path(os.environ.get(
     "M1_SUPPLEMENT_PATH", PAPER / "SUPPLEMENT.md"))
@@ -284,7 +285,7 @@ focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
     "SSL-AASIST vs XLS-R+SLS"]
 require("ASVspoof 5 check", "external result scope")
 require("not a system-performance replication", "ASV5 external-check scope")
-require("legacy SSL-AASIST/AASIST files lack their originating run logs",
+require("ASVspoof~5 SSL-AASIST and AASIST score files lack their originating run logs",
         "legacy score provenance limit")
 require("not a system-performance replication or population claim",
         "ASV5 boundary must be explicit")
@@ -787,7 +788,7 @@ within_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair 
 cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in cross_pairs)
 if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
     fail("VALUE EXP-108 registered-policy block counts changed")
-for literal in ("six of the twelve within-cohort pairs reverse their point ordering and none of the sixteen between-cohort pairs does",
+for literal in ("six of the twelve pairs within the SSL and baseline cohorts reverse their point ordering",
                 "six of the 12 within-cohort pairs reverse their point ordering and none of the 16 cross-cohort pairs does"):
     require(literal, "registered composition-policy asymmetry must be visible with its pair denominator")
 
@@ -934,6 +935,11 @@ if _rel < 0 or "github.com/rvirgilli/" not in TEX[_rel:_rel + 400] or ", tag " n
     fail("PRESENT the supplement sentence does not carry a repository URL and tag within 400 chars; "
          "a promise of an artifact is not an artifact")
 
+exp118 = load(EXP118 / "RESULTS.json")
+if exp118["registered_reading"] != "exception_declared_and_numerically_immaterial" or exp118["stratified"]["separated"] != 6:
+    fail("VALUE EXP-118 class-stratified SpoofCeleb count is not 6/6")
+require("(a class-stratified recomputation also separates 6/6)", "SpoofCeleb class-stratified count must be printed next to the pooled one")
+
 # 9. Scientific scope obligations and retired formulations.
 for text, why in (
     ("fixed-score sensitivity bands", "identified scientific object"),
@@ -946,8 +952,12 @@ for text, why in (
     ("trial-to-speaker/attack membership", "report units rather than trial count"),
     ("remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules",
      "conclusion must remain bounded to tested robustness checks"),
-    ("remain separated under both bootstraps, each leave-one-source-out jackknife refit and every weighting rule",
+    ("remain separated under both bootstraps, all twelve rules and the declared source-deletion analysis",
      "abstract must remain bounded to tested robustness checks"),
+    ("using unstratified trial resampling on a different four-detector roster", "SpoofCeleb trial law and roster must be visible in the abstract"),
+    ("for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement",
+     "the SpoofCeleb trial-law exception must be declared in the method section"),
+    ("The ASVspoof~5 SSL-AASIST and AASIST score files lack their originating run logs", "provenance limitation must name its dataset"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")

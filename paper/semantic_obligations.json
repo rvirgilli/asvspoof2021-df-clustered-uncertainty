@@ -150,7 +150,7 @@
   {
    "id": "historical_provenance_limits",
    "section": "Discussion",
-   "match": "The legacy SSL-AASIST/AASIST files lack their originating run logs."
+   "match": "The ASVspoof~5 SSL-AASIST and AASIST score files lack their originating run logs."
   },
   {
    "id": "report_units",
@@ -185,7 +185,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen pairs between the four SSL detectors and the four organizer baselines remain separated under both bootstraps, each leave-one-source-out jackknife refit and every weighting rule, whereas within-cohort separation changes with the resampling procedure and with source deletion, and within-cohort point ordering reverses under some weighting rules."
+   "match": "All sixteen pairs between the four SSL detectors and the four organizer baselines remain separated under both bootstraps, all twelve rules and the declared source-deletion analysis, whereas within-cohort separation changes with the resampling procedure and with source deletion."
   },
   {
    "id": "release_locator",
@@ -226,6 +226,11 @@
    "id": "interaction_share_definition",
    "section": "Experiments/Coverage",
    "match": "(0, .25, .50, .75: the fraction of the fitted spoof speaker-plus-attack variance moved into a speaker$\\times$attack interaction, total held fixed)"
+  },
+  {
+   "id": "spoofceleb_trial_law_exception",
+   "section": "Method/Bootstraps",
+   "match": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates"
   }
  ]
 }
