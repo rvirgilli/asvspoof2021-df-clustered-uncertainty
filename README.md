@@ -1,7 +1,7 @@
 # Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
 
 This repository accompanies **“Sensitivity of an Audio-Deepfake Leaderboard to the
-Resampling Unit and to Source, Speaker, and Attack Weighting.”** It contains the exact
+Resampling Unit and to Source, Speaker, and Attack Weighting.”** The tag `icassp2027-submission` marks the exact
 submitted manuscript, code, plans, deviations, and derived artifacts for a
 re-analysis of pairwise system comparisons on the ASVspoof 2021 DeepFake (DF)
 evaluation set.
@@ -29,9 +29,12 @@ cells evaluate procedure behavior under their imposed DGP, not that DGP as a mod
 the benchmark. A separate eleven-system Speech DF Arena re-score layer is included for
 provenance and descriptive sensitivity and is never mixed into the primary ranking.
 
-A composition-preserving arm designed after an earlier arm failed exactly restores three
-bona-fide source masses and five spoof-stratum masses while retaining the 0/6 organizer
-endpoint. It is a robustness check, not prospective evidence. A SpoofCeleb analysis fixed
+A constrained PW arm designed after the main result resamples within each source or spoof
+stratum, redraws only on zero support (7 of 1,007 VCC2018 attempts) and rescales each
+source and stratum mass to its observed value; it retains the 0/6 organizer endpoint. It is
+a robustness check, not prospective evidence. A post-audit verification run (`exp116/`)
+recomputes both bootstraps with each of the 12 registered weighting rules as base weights:
+all 16 SSL-versus-baseline pairs stay separated in all 24 rule×law cells. A SpoofCeleb analysis fixed
 while official access was pending supplies the single-source check: 6/6 trial-bootstrap
 versus 3/6 PW-bootstrap separations on
 91,130 trials. Its four point EERs are 57.93%, 24.51%, 26.72% and 27.58%, so this is a
@@ -39,7 +42,7 @@ off-domain sensitivity check rather than a comparison of competitive in-domain S
 systems. A post-result factor decomposition gives 5/6 speaker-only and 3/6 attack-only
 separations; attack-only matches the joint PW indicator vector. This localizes the observed
 contrast under the declared fixed-score procedures without identifying a causal variance
-component. The clean-source re-scoring reproduced three score files byte-for-byte;
+component. A later re-scoring from freshly cloned, commit-pinned detector repositories reproduced three score files byte-for-byte;
 XLSR-Mamba differed by at most 1.44e-6, with every EER and separation indicator unchanged.
 An additional trace-retaining EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
 conditional on its fitted Gaussian DGP.
@@ -54,7 +57,8 @@ number and the boundaries placed on its interpretation.
 | `CLAIM-SCOPE.md` | central claim, express exclusions, and completion gates |
 | `ANALYSIS-PLAN.md` | the analysis plan, frozen before the campaign ran |
 | `DEVIATIONS.md` | every material difference between that plan and the reported analysis |
-| `plans/` | frozen preregistrations for the Arena, multiway-correctness and ASV5 additions |
+| `plans/` | frozen preregistrations for the Arena, multiway-correctness, ASV5 and SpoofCeleb additions, with the ASV5 amendment fixing the two reported criteria |
+| `exp116/` | post-result verification of cross-cohort separation under every registered weighting rule |
 | `audit/audit.json` | the primary audit package, derived rather than transcribed |
 | `audit/PUBLIC-PACKAGING.json` | binds the path-sanitized public audit to the internal composite and sanitizer |
 | `audit/README.md` | what each key answers, the estimand, and the scope statements |
@@ -150,9 +154,9 @@ repository therefore does **not** claim a full-21DF population estimand.
 The identified object is computational: how paired ΔEER procedure outputs on the fixed
 released scores change when trial-level weighting is replaced by specified speaker×attack
 reweighting. With threshold estimation and multiplicity matched, trial-i.i.d. weighting
-resolves five of six organiser pairs whereas product weighting resolves zero; a coherent
-marginal-sum covariance also resolves zero. That 0/6 label is itself composition-dependent:
-three organiser pairs become resolved in at least
+separates five of six organizer pairs whereas product weighting separates none; a coherent
+marginal-sum covariance also separates none. That 0/6 result is itself composition-dependent:
+three organizer pairs become separated in at least
 one leave-one-corpus-out refit. It is a sensitivity measurement, not corrected significance
 inference.
 

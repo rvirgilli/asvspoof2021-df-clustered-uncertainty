@@ -1,6 +1,6 @@
 # Supplementary methods and complete numerical results
 
-Version: `m1-field-native-r2-20260830`
+Version: repository tag `icassp2027-submission`
 
 This document supplies the operational definitions and complete numerical tables cited by
 the ICASSP 2027 manuscript. The paper's inferential object is fixed-score procedure
@@ -28,7 +28,19 @@ An **observed cell** is one speaker×attack combination with at least one spoof 
 | VCC2020/Task2 | 151,200 | 6 | 28 | 168 |
 
 Thus there are 93 distinct speakers, 110 distinct spoof attacks and 1,062 observed spoof
-speaker×attack cells. “Leave one source out” always means deleting ASVspoof, VCC2018 or
+speaker×attack cells. The **attack family** used by weighting rule S3 is the attack-type
+field of the official `trial_metadata.txt` (ninth column), taken verbatim. Its values over
+the 519,059 spoof eval trials are:
+
+| Attack-type field value | Spoof trials |
+|---|---:|
+| traditional_vocoder | 232,594 |
+| neural_vocoder_autoregressive | 136,085 |
+| neural_vocoder_nonautoregressive | 115,540 |
+| unknown | 29,043 |
+| waveform_concatenation | 5,797 |
+
+`unknown` is treated as a family of its own; no attack is dropped or relabelled. “Leave one source out” always means deleting ASVspoof, VCC2018 or
 VCC2020 as one of these three named top-level sources; it does not mean deleting one of the
 five spoof strata.
 
@@ -59,13 +71,26 @@ under procedure h** exactly when its simultaneous band excludes zero; this event
 The trial bootstrap resamples trials independently within class. The speaker×attack
 product-weight bootstrap independently samples 93 speaker multiplicities and 110 attack
 multiplicities. A spoof trial's weight is their product; a bona-fide trial has no attack and
-receives only its speaker multiplicity. Both use `B=5000`, seed `20260817`, shared system
+receives only its speaker multiplicity. Both use `B=5000`, seed `2026081604`, shared system
 weights and all 28 contrasts. For procedure `h`, with bootstrap scale `s[p,h]`, its max-t
 critical value is the empirical 0.95 quantile of
 
 `max_p |Delta[p,h,b] - mean_b Delta[p,h,b]| / s[p,h]`.
 
 The reported band is `Delta_hat[p] +/- q[.95,h] s[p,h]`.
+
+**Source-deletion construction.** Leave-one-source-out refits use a third construction: with
+delete-one speaker, attack and observed-cell jackknife variances `V_s`, `V_a` and `V_sa` of each
+contrast, the interval is `Delta_hat +/- q * sqrt(max(V_s+V_a-V_sa, V_s, V_a, 0))`, where `q` is
+the 0.95 quantile of the Gaussian max-t statistic over all 28 contrasts under the jackknife
+system covariance, recomputed for each remaining subset from 200,000 draws (seed components
+`20260822/900/k`). On the full data this construction separates 18/28 pairs (16 cross-cohort,
+2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap. Deleting ASVspoof,
+VCC2018 or VCC2020 gives `q` = 2.874, 2.827 and 2.888 respectively, and the flips against the
+full data are: XLSR-Mamba vs
+SSL-AASIST ceases to separate without VCC2018; XLS-R+SLS vs SSL-AASIST ceases without VCC2020;
+RawNet2 vs CQCC-GMM, LFCC-LCNN vs LFCC-GMM and LFCC-LCNN vs CQCC-GMM become separated in at
+least one deletion. Result file: `derived/results_source.json`, key `leave_one_corpus_out`.
 
 The secondary additive marginal-jackknife Gaussian sensitivity analysis uses
 `Sigma_plus = Sigma_speaker + Sigma_attack`. It projects the symmetric matrix to positive
@@ -151,8 +176,35 @@ already have unit class mass. Its distance is
 
 `max_c 0.5 * sum_i |w_c(i)-w0_c(i)|`.
 
-The 12 endpoints reverse 6/12 within-cohort pair orderings and 0/16 cross-cohort pair
-orderings. One of the eleven paths from `B0×S0` reverses before distance 0.10.
+Under at least one of the 12 endpoints, six of the 12 within-cohort pairs reverse their
+point ordering (five within-baseline, one within-SSL) and none of the 16 cross-cohort pairs
+does. One of the eleven paths from `B0×S0` reverses before distance 0.10.
+
+**Bands under each rule (EXP-116, post-result verification).** After the 2026-09-08
+exact-PDF audit noted that the manuscript asserted separation stability under the rules
+without having computed bands, both perturbation laws were rerun with each rule's weight
+vector as the base weight of every trial (`B=5000` per cell, seeds `20260909+100k+l`, same
+threshold refitting and max-t construction as S2). The plan was written after the rules and
+their point orderings were known and is disclosed as such. Registered reading: the strong
+sentence is allowed only if all 16 cross-cohort pairs are separated in all 24 cells.
+Result: 384/384. The cross-cohort band endpoint closest to zero is -12.79 points
+(SSL-AASIST vs RawNet2, rule B0×S1, PW law). The `B0×S0` cells reproduce the manuscript's
+26/28 and 18/28.
+
+| Rule | Trial q.95 | Trial cross | Trial within-SSL | Trial within-baseline | PW q.95 | PW cross | PW within-SSL | PW within-baseline |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| B0xS0 | 2.938 | 16/16 | 5/6 | 5/6 | 2.957 | 16/16 | 2/6 | 0/6 |
+| B0xS1 | 2.904 | 16/16 | 6/6 | 5/6 | 2.976 | 16/16 | 2/6 | 0/6 |
+| B0xS2 | 2.957 | 16/16 | 5/6 | 5/6 | 2.965 | 16/16 | 2/6 | 0/6 |
+| B0xS3 | 2.919 | 16/16 | 5/6 | 3/6 | 2.955 | 16/16 | 2/6 | 0/6 |
+| B1xS0 | 2.975 | 16/16 | 5/6 | 3/6 | 2.969 | 16/16 | 2/6 | 0/6 |
+| B1xS1 | 2.944 | 16/16 | 6/6 | 3/6 | 2.988 | 16/16 | 2/6 | 0/6 |
+| B1xS2 | 2.917 | 16/16 | 6/6 | 3/6 | 2.962 | 16/16 | 2/6 | 0/6 |
+| B1xS3 | 3.005 | 16/16 | 5/6 | 6/6 | 2.965 | 16/16 | 2/6 | 0/6 |
+| B2xS0 | 2.986 | 16/16 | 5/6 | 3/6 | 3.004 | 16/16 | 2/6 | 0/6 |
+| B2xS1 | 2.932 | 16/16 | 6/6 | 3/6 | 2.965 | 16/16 | 2/6 | 0/6 |
+| B2xS2 | 2.924 | 16/16 | 5/6 | 3/6 | 2.996 | 16/16 | 2/6 | 0/6 |
+| B2xS3 | 2.985 | 16/16 | 5/6 | 6/6 | 2.979 | 16/16 | 2/6 | 0/6 |
 
 The later constructive search is explicitly post-result. It searches interior masses on
 the 3-group bona-fide and 5-group spoof simplexes. Its two frozen search backends are:
@@ -183,9 +235,12 @@ is not an absence result.
 
 ## S6. Composition-preserving PW control
 
-The constrained PW arm resamples speakers and attacks within each of the five spoof strata,
-redrawing only when a class loses all support, and then restores each class-specific source
-or stratum mass exactly. It uses 1,000 draws and seed `20260824`. Its endpoints reproduce
+The constrained PW arm resamples speakers and attacks within each bona-fide source and each
+of the five spoof strata, redraws a replicate only when a class loses all support in a
+stratum (7 rejected attempts out of 1,007 for VCC2018, all for lost spoof support; no
+rejections elsewhere), and then rescales each class-specific source or stratum mass exactly
+to its observed value. It uses 1,000 retained draws and seed `20260824`; the primary arms
+use 5,000 draws and seed `2026081604`. Its endpoints reproduce
 the unconstrained PW arm: 0/6 organizer-baseline and 18/28 all-pair separations. The maximum
 measured classwise stratum-mass displacement was `5.44e-13`. A total-only normalization
 control used the same diagnostic, moved bona-fide source mass by median `0.0534447`, and
@@ -259,9 +314,14 @@ Wilson intervals; it is not pooled with the 48-cell grid:
 
 ### SpoofCeleb
 
-The prospective design and analyzer were committed as `c2efa63` on 29 August 2026 while
-official repository access was pending and no SpoofCeleb audio, scores or metrics were
-present locally. The first access event was the later successful authenticated download.
+The prospective design and analyzer were committed as `c2efa63` (2026-08-29 15:38:58 -03)
+in the authors' working repository while official repository access was pending and no
+SpoofCeleb audio, scores or metrics were present locally. The plan is released here as
+`plans/EXP-114-spoofceleb.PREREG.md`, SHA-256
+`3300801277eb74c1f17110163d9a1b415ec7d0e993cb105f90e457f5f6aba994`, with its freeze
+manifest (SHA-256 `9a2f34ab152e9e96be090bff1a4e328122eb63b3c20d3c1be8cd5e0082ccac73`).
+The commit timestamp is the authors' own record; it is not an independently attested
+timestamp, and the paper claims no more than that. The first access event was the later successful authenticated download.
 The acquired release revision was `9b66238412b72117515aaf0ec41b77f7845b89fe`; all 27
 archive parts matched their official LFS hashes. Acquisition and manifest construction were
 committed as `938510f` before scoring.
@@ -276,7 +336,15 @@ separation indicators. The detector point EERs are 57.93%, 24.51%, 26.72% and 27
 ### ASVspoof 5
 
 The four-detector Track 1 check uses EER only to transfer the paper's DeltaEER resampling
-contrast; it is not comparative benchmark reporting. ASVspoof 5's primary Track 1 metric is
+contrast; it is not comparative benchmark reporting. Its resampling law draws 367 target-speaker
+multiplicities, 370 bona-fide-only speaker multiplicities and 16 attack multiplicities as three
+independent multinomial samples; a target count applies to that speaker's bona-fide and spoof
+rows, a bona-fide-only count to its bona-fide rows, and spoof weights multiply target-speaker
+and attack counts. The two criteria were frozen in `plans/EXP-106-asv5.AMENDMENT-5.md`
+(2026-08-16 15:10 -03, SHA-256
+`6fe9b97570812955366f5ca1cfcc3fa244e2a3d2f579f8d01e2ba260d9aff854`) before scoring completed.
+Trial resampling separates 6/6 pairs and the role-stratified law 5/6 (SSL-AASIST vs XLS-R+SLS
+is the pair that ceases to separate). ASVspoof 5's primary Track 1 metric is
 minDCF. Its two declared criteria were: at least one trial-bootstrap separation disappears
 under role-stratified speaker×attack resampling, and the median simultaneous-band width
 ratio is at least 2. Both passed; the observed median ratio was 27.2676.
@@ -285,15 +353,21 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 
 - Complete 21DF bands: `derived/results_matched_iid.json`.
 - Point EERs: `derived/results_selection.json`.
+- Source deletions: `derived/results_source.json`.
 - Weight rules and paths: `derived/results_composition.json`.
 - Constructive search: `derived/secondary_v2_results.json`, independently verified result SHA-256
   `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`.
+- Bands under each weighting rule: `exp116/RESULTS.json`, SHA-256
+  `d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd`.
 - Coverage grid: `derived/results_coverage_interaction_recalibrated.json` and
   `derived/results_exp105_verified.json`.
 - The composition-preserving arm, trace-retaining coverage run, and SpoofCeleb provenance
   package are embedded under `composition_fixed_sampling_control`,
   `coverage_witnessed_replacement`, and `spoofceleb_sampling_unit_confirmation` in
   `audit/audit.json`; that file binds their original member hashes.
+- SpoofCeleb analysis plan: `plans/EXP-114-spoofceleb.PREREG.md` with
+  `plans/EXP-114-spoofceleb.FREEZE.sha256`; ASVspoof 5 criteria:
+  `plans/EXP-106-asv5.AMENDMENT-5.md`.
 
 The public release excludes upstream-licensed score/audio inputs. Its manifest binds every
 released code, aggregate, paper and provenance member; the data README gives upstream

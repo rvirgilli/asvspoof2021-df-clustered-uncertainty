@@ -24,8 +24,8 @@
     "sha256": "b57e84526f015e70c9d01d17c4851b0036ebdb1be72ff22773ec936fc91e96ee"
   },
   "README.md": {
-    "bytes": 11319,
-    "sha256": "c38165bd70a546328564cf485f751e34b38beaa6e2a93fb6805f5a605270bc27"
+    "bytes": 11857,
+    "sha256": "ee7bc16c3d5810651f65146f6147fbfba1907aaf686f06468217e0a01d1b41df"
   },
   "REPRODUCE.md": {
     "bytes": 2934,
@@ -116,8 +116,8 @@
     "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
   },
   "code/check_numbers.py": {
-    "bytes": 46982,
-    "sha256": "cb26aa5197c318ee1113b4395dbd96d28cdc5f11671373134ae4bb1aa3780e75"
+    "bytes": 53302,
+    "sha256": "6040a83832298a2ec355089ccef9d3455298e3ce97f894e43e3eb1e6c97b47bd"
   },
   "code/check_tie_safety.py": {
     "bytes": 2793,
@@ -467,17 +467,45 @@
     "bytes": 7133,
     "sha256": "ab1fa39ac2df5f8ad7820b34e017baf0668993f22e0abc01da504fd33f9cb252"
   },
+  "exp116/FREEZE.sha256": {
+    "bytes": 243,
+    "sha256": "70382c78b7808201912be55bdfedbcd93161904c893095dc1d244b852e706978"
+  },
+  "exp116/PREREG.md": {
+    "bytes": 5043,
+    "sha256": "f0585c4179e0cc8d3b05637c8037f30975c8d85affff47c3a5c09f6ae99af6bc"
+  },
+  "exp116/README.md": {
+    "bytes": 814,
+    "sha256": "eda3ab496f844143b7806d2a3d37a4ca51542459f2e89a6f51d3db3b1dbfd9be"
+  },
+  "exp116/REPORT.md": {
+    "bytes": 4526,
+    "sha256": "e34c88d84add45f7b08cd78ea0ce79a104b6b48783561a784bfbc83ad6921983"
+  },
+  "exp116/RESULTS.json": {
+    "bytes": 172500,
+    "sha256": "d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd"
+  },
+  "exp116/pyproject.toml": {
+    "bytes": 165,
+    "sha256": "b2d7e3ce0eb99e9d3317fd34e2a83eb5990362225be173f019cea85436b5e45c"
+  },
+  "exp116/run_policy_bands.py": {
+    "bytes": 8555,
+    "sha256": "de208b67445d86c5a156a59fa1697a4b3c3f7d5d2f9b05bc3344be3a85078949"
+  },
   "paper/IEEEbib.bst": {
     "bytes": 18044,
     "sha256": "af540b7da9d67446efa3229ecc14fdfdf82f81a2a4cf841e3b12293c2f4e3522"
   },
   "paper/README.md": {
     "bytes": 1102,
-    "sha256": "b70541ac9f380c091ca7c515256dfb1b6307eb0d93a2f8db007be8744c8c14ce"
+    "sha256": "f9189d6722336cc03255749b54dae1415e86b86fb3c1657b44121f7828243fd5"
   },
   "paper/SUPPLEMENT.md": {
-    "bytes": 17062,
-    "sha256": "d41e4259ed258c6bccb3318f64c85738e6c8eb2efd06da9b055923acbef620d4"
+    "bytes": 22213,
+    "sha256": "876356f48b06942ccc47da6b4eefecca95bac31f4492e3ce783c4a9941a8a393"
   },
   "paper/figs/floor.pdf": {
     "bytes": 18555,
@@ -492,20 +520,20 @@
     "sha256": "b6208ecff70dac689b5ec916dcc7c344b3bc326b873daaf3a81c7b422b05e324"
   },
   "paper/main.pdf": {
-    "bytes": 196506,
-    "sha256": "8d38fabb2c520c9f3f2c4cc4bdbbf5e4de63d43f7d40f77d701cf2d3d1d202a7"
+    "bytes": 202347,
+    "sha256": "413eceed4108f93be5269002af72c0666f2be58741a99482bdab975c66baf9bb"
   },
   "paper/main.tex": {
-    "bytes": 19819,
-    "sha256": "3118af042f2bce5e196551ec42fb471274452a227301fcbbfcba5079ac3322c0"
+    "bytes": 23417,
+    "sha256": "d4ea6a84799758568a2727d06ba0c2f2b7cd8baabaad2ccdc105b8124541e42a"
   },
   "paper/refs.bib": {
-    "bytes": 7385,
-    "sha256": "c7a4a64d9f7e840eaf99e1a4b2b74b1fa069d1fbb109ff7b54a721e54c939e61"
+    "bytes": 8406,
+    "sha256": "b962f464bbf24dea8402cdf09a2d5324df35502e302bb51800c9d1918aef71be"
   },
   "paper/semantic_obligations.json": {
-    "bytes": 7946,
-    "sha256": "b4e45d6f27c7fbbe45c8e9aac350b098c5b3c6f965e21ab7514adae4c753f09c"
+    "bytes": 10816,
+    "sha256": "d97524745b59452d467400b280c8a7d176e91a3095197178d4d5e3f014afd45c"
   },
   "paper/spconf.sty": {
     "bytes": 8798,
@@ -535,6 +563,10 @@
     "bytes": 6973,
     "sha256": "a712848f0e50e51ac6172ce154ce5e421c07b575cda342df6befe6a9da2636d8"
   },
+  "plans/EXP-106-asv5.AMENDMENT-5.md": {
+    "bytes": 6856,
+    "sha256": "6fe9b97570812955366f5ca1cfcc3fa244e2a3d2f579f8d01e2ba260d9aff854"
+  },
   "plans/EXP-106-asv5.PREREG.md": {
     "bytes": 3812,
     "sha256": "c4a6057f191e3b85be8fa34708ec08fea377725655ed06165b98a4e2ad2f5eaa"
@@ -554,6 +586,14 @@
   "plans/EXP-108-secondary-v2.PREREG.md": {
     "bytes": 7496,
     "sha256": "a1e1c6bade8a8ec3cf14ae0491473a091feb865e7beaba6bec0a461bff12485e"
+  },
+  "plans/EXP-114-spoofceleb.FREEZE.sha256": {
+    "bytes": 392,
+    "sha256": "9a2f34ab152e9e96be090bff1a4e328122eb63b3c20d3c1be8cd5e0082ccac73"
+  },
+  "plans/EXP-114-spoofceleb.PREREG.md": {
+    "bytes": 7788,
+    "sha256": "3300801277eb74c1f17110163d9a1b415ec7d0e993cb105f90e457f5f6aba994"
   },
   "plans/MATCHED-IID-DIAGNOSTIC.md": {
     "bytes": 2546,

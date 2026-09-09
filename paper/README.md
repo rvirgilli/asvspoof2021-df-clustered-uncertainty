@@ -18,5 +18,5 @@ release timestamp fixed at 2026-08-30 20:00:00 UTC, making the canonical PDF byt
 independent of rebuild time and checkout path.
 `verify_release.py` confirms that the PDF has five pages and page 5 contains references
 only. `semantic_obligations.json` and `test_semantic_guards.py` make removal of any of
-33 load-bearing caveats fail the production checker. Fig. 1 uses matched all-28-pair
+40 load-bearing caveats fail the production checker. Fig. 1 uses matched all-28-pair
 simultaneous bands for both the trial-i.i.d. and speaker--attack arms.

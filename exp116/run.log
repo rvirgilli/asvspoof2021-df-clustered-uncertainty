@@ -1,0 +1,36 @@
+estimator gate passed: max deviation 0.000e+00 points over 12 rules x 28 pairs
+{
+ "cross_cohort_indicators": {
+  "separated": 384,
+  "total": 384
+ },
+ "registered_reading": "all_cross_cohort_pairs_separated_under_all_rules_and_laws",
+ "cross_cohort_failures": [],
+ "wall_seconds_total": 2347.6
+}
+B0xS0  trial q95=2.938 cross 16/16 within_ssl 5/6 within_baseline 5/6 [1154.4s]
+B0xS0  pw    q95=2.957 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1178.7s]
+B0xS1  trial q95=2.904 cross 16/16 within_ssl 6/6 within_baseline 5/6 [1150.9s]
+B0xS1  pw    q95=2.976 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1181.1s]
+B0xS2  trial q95=2.957 cross 16/16 within_ssl 5/6 within_baseline 5/6 [1172.6s]
+B0xS2  pw    q95=2.965 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1163.6s]
+B0xS3  trial q95=2.919 cross 16/16 within_ssl 5/6 within_baseline 3/6 [1163.6s]
+B0xS3  pw    q95=2.955 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1165.4s]
+B1xS0  trial q95=2.975 cross 16/16 within_ssl 5/6 within_baseline 3/6 [1150.9s]
+B1xS0  pw    q95=2.969 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1176.7s]
+B1xS1  trial q95=2.944 cross 16/16 within_ssl 6/6 within_baseline 3/6 [1149.1s]
+B1xS1  pw    q95=2.988 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1183.2s]
+B1xS2  trial q95=2.917 cross 16/16 within_ssl 6/6 within_baseline 3/6 [1164.5s]
+B1xS2  pw    q95=2.962 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1171.2s]
+B1xS3  trial q95=3.005 cross 16/16 within_ssl 5/6 within_baseline 6/6 [1130.2s]
+B1xS3  pw    q95=2.965 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1166.1s]
+B2xS0  trial q95=2.986 cross 16/16 within_ssl 5/6 within_baseline 3/6 [1147.3s]
+B2xS0  pw    q95=3.004 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1166.9s]
+B2xS1  trial q95=2.932 cross 16/16 within_ssl 6/6 within_baseline 3/6 [1151.4s]
+B2xS1  pw    q95=2.965 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1148.2s]
+B2xS2  trial q95=2.924 cross 16/16 within_ssl 5/6 within_baseline 3/6 [1150.9s]
+B2xS2  pw    q95=2.996 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1151.9s]
+B2xS3  trial q95=2.985 cross 16/16 within_ssl 5/6 within_baseline 6/6 [1133.3s]
+B2xS3  pw    q95=2.979 cross 16/16 within_ssl 2/6 within_baseline 0/6 [1150.9s]
+wrote exp116/RESULTS.json sha256=d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd
+exit=0

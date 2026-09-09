@@ -1,0 +1,7423 @@
+{
+ "experiment": "EXP-116-m1-policy-bands",
+ "prereg_sha256": "f0585c4179e0cc8d3b05637c8037f30975c8d85affff47c3a5c09f6ae99af6bc",
+ "script_sha256": "6fe56d44a06739a7d1ad11a84ac19036023019320e9931af3534703fcefd7e39",
+ "producer_git_head": "23b49e0fb6befa4f7983bfdf61e510cbfc7ab09e",
+ "working_tree_dirty_paths": [
+  "docs/process-review-20260829.md",
+  "docs/review-kit/",
+  "experiments/EXP-001-scoring-campaign/code/protocol.py",
+  "experiments/EXP-002-a2-calibration/a2_calibration.py",
+  "experiments/EXP-002-a2-calibration/results.json",
+  "experiments/EXP-002-a2-calibration/run.log",
+  "experiments/EXP-010-a2-matched-baseline/a2_matched.py",
+  "experiments/EXP-010-a2-matched-baseline/results.json",
+  "experiments/EXP-010-a2-matched-baseline/run.log",
+  "experiments/EXP-102-a2-campaign/PREREG.md",
+  "experiments/EXP-102-a2-campaign/REPORT.md",
+  "experiments/EXP-102-a2-campaign/a2_parametric.py",
+  "experiments/EXP-102-a2-campaign/a2_sls_complete.py",
+  "experiments/EXP-102-a2-campaign/audit_package/LICENSE",
+  "experiments/EXP-102-a2-campaign/audit_package/README.md",
+  "experiments/EXP-102-a2-campaign/audit_package/claim_map.json",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-001-scoring-campaign/",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-002-a2-calibration/a2_calibration.py",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-010-a2-matched-baseline/",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-102-a2-campaign/PREREG.md",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-102-a2-campaign/REPORT.md",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-102-a2-campaign/scores/",
+  "experiments/EXP-102-a2-campaign/audit_package/experiments/EXP-102-a2-campaign/sls_score.py",
+  "experiments/EXP-102-a2-campaign/audit_package/manifest.json",
+  "experiments/EXP-102-a2-campaign/audit_package/paper/A2/AUTHORS-DOUBTS.md",
+  "experiments/EXP-102-a2-campaign/audit_package/paper/A2/READING-MAP.md",
+  "experiments/EXP-102-a2-campaign/audit_package/paper/A2/main.pdf",
+  "experiments/EXP-102-a2-campaign/audit_package/verify_manifest.py",
+  "experiments/EXP-102-a2-campaign/c_methods.py",
+  "experiments/EXP-102-a2-campaign/cmethods.log",
+  "experiments/EXP-102-a2-campaign/count_bootstrap.log",
+  "experiments/EXP-102-a2-campaign/dissociation.log",
+  "experiments/EXP-102-a2-campaign/drift.log",
+  "experiments/EXP-102-a2-campaign/drift_corrected_summary.out.txt",
+  "experiments/EXP-102-a2-campaign/drift_map.py",
+  "experiments/EXP-102-a2-campaign/make_audit_package.py",
+  "experiments/EXP-102-a2-campaign/n_sweep.py",
+  "experiments/EXP-102-a2-campaign/parametric.log",
+  "experiments/EXP-102-a2-campaign/price_w1.log",
+  "experiments/EXP-102-a2-campaign/results_count_bootstrap.json",
+  "experiments/EXP-102-a2-campaign/results_dissociation.json",
+  "experiments/EXP-102-a2-campaign/results_drift.json",
+  "experiments/EXP-102-a2-campaign/results_nsweep.json",
+  "experiments/EXP-102-a2-campaign/results_parametric.json",
+  "experiments/EXP-102-a2-campaign/results_price_w1.json",
+  "experiments/EXP-102-a2-campaign/results_sls_complete.json",
+  "experiments/EXP-102-a2-campaign/results_sls_official.json",
+  "experiments/EXP-102-a2-campaign/results_table1_eer_spread.json",
+  "experiments/EXP-102-a2-campaign/sls.log",
+  "experiments/EXP-102-a2-campaign/sls_official.log",
+  "experiments/EXP-102-a2-campaign/sls_official.py",
+  "experiments/EXP-102-a2-campaign/speaker_clustering_audit.py",
+  "experiments/EXP-102-a2-campaign/table1_eer_spread.py",
+  "experiments/EXP-102-a2-campaign/verify_audit_package.py",
+  "experiments/EXP-102-a2-campaign/wcp_weight_check.out.txt",
+  "experiments/EXP-110-a2-channel-training/analyze_arm.py",
+  "experiments/EXP-110-a2-channel-training/arm2_trainset.json",
+  "experiments/EXP-110-a2-channel-training/build_arm2_trainset.py",
+  "experiments/EXP-110-a2-channel-training/pick_tied.py",
+  "experiments/EXP-110-a2-channel-training/results_arm1.json",
+  "experiments/EXP-110-a2-channel-training/run_arm2.sh",
+  "experiments/EXP-110-a2-channel-training/score_epochs_arm.py",
+  "experiments/EXP-116-m1-policy-bands/",
+  "experiments/EXP-205-f2-crossmic-crossover/make_audit_package.py",
+  "experiments/EXP-205-f2-crossmic-crossover/presence_detection_sensitivity.json",
+  "experiments/EXP-205-f2-crossmic-crossover/presence_detection_sensitivity.py",
+  "experiments/EXP-205-f2-crossmic-crossover/test_presence_detection_sensitivity.py",
+  "paper/A2/check_numbers.py",
+  "paper/A2/main.tex",
+  "paper/A2/refs.bib",
+  "paper/F2/check_numbers.py",
+  "paper/F2/fig_exp205_speakers.pdf",
+  "paper/F2/main.tex",
+  "paper/F2/make_exp205_figure.py",
+  "paper/F2/mutation_test.py",
+  "paper/F2/refs.bib"
+ ],
+ "input_sha256": {
+  "trial_metadata": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800",
+  "exp108_contract": "a81ca57d6c7e94027192196d1a53c205e4657dd000e9514ed7931cb2a0c670a3",
+  "exp108_results": "16b17bafb51066f1d10abcb4e1ca085692fa7770442d49c60de9c654547542c9",
+  "scores/XLSR-Mamba": "0698327cafdadec1f7d4f16a5c7769ead2c0aba1d805098c175307d53136397d",
+  "scores/XLS-R+SLS": "b0c20e37bd67899f736b03497e35e67665a1a9f238bee4dfb573e6495045149b",
+  "scores/XLSR-Conformer": "fd00e8ddb2838a9a0760609c029cb344474d85fe9b7a040969b89544502630fc",
+  "scores/SSL-AASIST": "b58885aef1322f48098d0d7379f4e8a9fc5a831ac869e01cd4b567169a0122ce",
+  "scores/RawNet2": "a9ac140df41ec0638b287605283e8a4163f12b6da48eb2706a0e21efcc262797",
+  "scores/LFCC-LCNN": "ae95b18160ab0132e0c9ee4c9745d379c50629ebf6d0b4ddfee86bf0b3b993d0",
+  "scores/LFCC-GMM": "488c214482d5f4fb9500c7c6b90e3cdec714741b42f0d3d8440371676f97aafc",
+  "scores/CQCC-GMM": "97e05bdbbbe671303b7f5bee9b55663d1903c424ae16cffa56a7f5abc267a04d"
+ },
+ "estimator_gate_max_abs_deviation_points": 0.0,
+ "B": 5000,
+ "base_seed": 20260909,
+ "laws": [
+  "trial",
+  "pw"
+ ],
+ "rules": [
+  "B0xS0",
+  "B0xS1",
+  "B0xS2",
+  "B0xS3",
+  "B1xS0",
+  "B1xS1",
+  "B1xS2",
+  "B1xS3",
+  "B2xS0",
+  "B2xS1",
+  "B2xS2",
+  "B2xS3"
+ ],
+ "cross_cohort_indicators": {
+  "separated": 384,
+  "total": 384
+ },
+ "cross_cohort_failures": [],
+ "registered_reading": "all_cross_cohort_pairs_separated_under_all_rules_and_laws",
+ "cells": [
+  {
+   "rule": "B0xS0",
+   "law": "trial",
+   "seed": 20260909,
+   "B": 5000,
+   "q95": 2.9384928142400684,
+   "wall_seconds": 1154.4,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 5,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.032129682536580884,
+     "band": [
+      -0.1436814453599664,
+      0.07942208028680466
+     ],
+     "sd": 0.03796223774405732,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.38923423020880277,
+     "band": [
+      -0.5644439021543588,
+      -0.21402455826324673
+     ],
+     "sd": 0.059625693517602656,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -0.9676036550128715,
+     "band": [
+      -1.1721778927801196,
+      -0.7630294172456233
+     ],
+     "sd": 0.0696187640057761,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.499406929029522,
+     "band": [
+      -21.072684029348814,
+      -19.92612982871023
+     ],
+     "sd": 0.1950922246742153,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.593129894898176,
+     "band": [
+      -22.12878783381824,
+      -21.057471955978112
+     ],
+     "sd": 0.18229002852218748,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.36325769673944,
+     "band": [
+      -23.98284475757625,
+      -22.743670635902628
+     ],
+     "sd": 0.21085199114126252,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.679282827495086,
+     "band": [
+      -24.363319754995274,
+      -22.9952458999949
+     ],
+     "sd": 0.23278495839272226,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3571045476722219,
+     "band": [
+      -0.533361625035228,
+      -0.18084747030921575
+     ],
+     "sd": 0.059982136593581724,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9354739724762906,
+     "band": [
+      -1.135623612306008,
+      -0.7353243326465733
+     ],
+     "sd": 0.06811302680741065,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.46727724649294,
+     "band": [
+      -21.041816257498372,
+      -19.89273823548751
+     ],
+     "sd": 0.19552166614843852,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.561000212361595,
+     "band": [
+      -22.09844220057876,
+      -21.02355822414443
+     ],
+     "sd": 0.1828971592554853,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.331128014202857,
+     "band": [
+      -23.952881586850832,
+      -22.709374441554882
+     ],
+     "sd": 0.2115892778893079,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.647153144958505,
+     "band": [
+      -24.33383587376137,
+      -22.96047041615564
+     ],
+     "sd": 0.23368535239397895,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5783694248040687,
+     "band": [
+      -0.8268025823236038,
+      -0.32993626728453357
+     ],
+     "sd": 0.08454441553017142,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -20.11017269882072,
+     "band": [
+      -20.67372535322216,
+      -19.546620044419278
+     ],
+     "sd": 0.1917828934855443,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -21.203895664689373,
+     "band": [
+      -21.736439186711557,
+      -20.67135214266719
+     ],
+     "sd": 0.18123015970685927,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.974023466530635,
+     "band": [
+      -23.587262304339614,
+      -22.360784628721657
+     ],
+     "sd": 0.20869162409967254,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.290048597286283,
+     "band": [
+      -23.96716193938271,
+      -22.612935255189857
+     ],
+     "sd": 0.2304287894852436,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.53180327401665,
+     "band": [
+      -20.118135051250235,
+      -18.945471496783064
+     ],
+     "sd": 0.19953486848502525,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.625526239885303,
+     "band": [
+      -21.172467281606888,
+      -20.07858519816372
+     ],
+     "sd": 0.1861297870360904,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -22.395654041726566,
+     "band": [
+      -23.029278122054862,
+      -21.76202996139827
+     ],
+     "sd": 0.21562893645944178,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.711679172482214,
+     "band": [
+      -23.410079110841043,
+      -22.013279234123384
+     ],
+     "sd": 0.2376728420006171,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -1.093722965868654,
+     "band": [
+      -1.7211546916228,
+      -0.46629124011450807
+     ],
+     "sd": 0.21352161309144047,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.8638507677099163,
+     "band": [
+      -3.6505882941211683,
+      -2.0771132412986644
+     ],
+     "sd": 0.2677350519962773,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -3.179875898465564,
+     "band": [
+      -4.002190506660153,
+      -2.3575612902709757
+     ],
+     "sd": 0.2798423069845925,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.7701278018412623,
+     "band": [
+      -2.4399412552876876,
+      -1.100314348394837
+     ],
+     "sd": 0.22794456062661755,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.08615293259691,
+     "band": [
+      -2.7747732574761734,
+      -1.3975326077176469
+     ],
+     "sd": 0.23434473671066275,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.31602513075564787,
+     "band": [
+      -0.9170056015630416,
+      0.28495534005174583
+     ],
+     "sd": 0.20451997292456028,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS0",
+   "law": "pw",
+   "seed": 20260910,
+   "B": 5000,
+   "q95": 2.957303875557908,
+   "wall_seconds": 1178.7,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.032129682536580884,
+     "band": [
+      -0.7019889798207065,
+      0.6377296147475447
+     ],
+     "sd": 0.22651013405166345,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.38923423020880277,
+     "band": [
+      -1.3188200606869827,
+      0.5403516002693772
+     ],
+     "sd": 0.3143355805134532,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -0.9676036550128715,
+     "band": [
+      -1.8188909498431212,
+      -0.11631636018262193
+     ],
+     "sd": 0.2878592564890379,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.499406929029522,
+     "band": [
+      -27.003962271447538,
+      -13.994851586611507
+     ],
+     "sd": 2.1994883231913063,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.593129894898176,
+     "band": [
+      -27.396902024582886,
+      -15.789357765213467
+     ],
+     "sd": 1.9625213958067818,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.36325769673944,
+     "band": [
+      -29.352419256904106,
+      -17.37409613657477
+     ],
+     "sd": 2.02521006030697,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.679282827495086,
+     "band": [
+      -29.190837398630347,
+      -18.167728256359826
+     ],
+     "sd": 1.8637092443181826,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3571045476722219,
+     "band": [
+      -1.472254237942144,
+      0.7580451425977002
+     ],
+     "sd": 0.37708322755961093,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9354739724762906,
+     "band": [
+      -1.7731116201486348,
+      -0.09783632480394655
+     ],
+     "sd": 0.28324368509959774,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.46727724649294,
+     "band": [
+      -27.026207583602016,
+      -13.908346909383866
+     ],
+     "sd": 2.2178750013884536,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.561000212361595,
+     "band": [
+      -27.407276488068035,
+      -15.714723936655155
+     ],
+     "sd": 1.9768939959217127,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.331128014202857,
+     "band": [
+      -29.36538378187696,
+      -17.296872246528753
+     ],
+     "sd": 2.0404584789365674,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.647153144958505,
+     "band": [
+      -29.166205701626037,
+      -18.128100588290973
+     ],
+     "sd": 1.8662446569263496,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5783694248040687,
+     "band": [
+      -1.6102644660253258,
+      0.45352561641718836
+     ],
+     "sd": 0.3489310144114242,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -20.11017269882072,
+     "band": [
+      -26.36938486017008,
+      -13.850960537471359
+     ],
+     "sd": 2.1165265474007247,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -21.203895664689373,
+     "band": [
+      -26.726278234144672,
+      -15.681513095234076
+     ],
+     "sd": 1.8673706868941484,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.974023466530635,
+     "band": [
+      -28.790511619633293,
+      -17.157535313427978
+     ],
+     "sd": 1.9668212662134188,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.290048597286283,
+     "band": [
+      -28.650703830999333,
+      -17.929393363573233
+     ],
+     "sd": 1.8126832612701125,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.53180327401665,
+     "band": [
+      -25.784776853787918,
+      -13.27882969424538
+     ],
+     "sd": 2.1144169969992075,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.625526239885303,
+     "band": [
+      -26.16095392873375,
+      -15.090098551036856
+     ],
+     "sd": 1.8717818397354127,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -22.395654041726566,
+     "band": [
+      -28.293894558460067,
+      -16.497413524993064
+     ],
+     "sd": 1.9944654877986712,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.711679172482214,
+     "band": [
+      -28.070036059718213,
+      -17.353322285246215
+     ],
+     "sd": 1.8119060849724555,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -1.093722965868654,
+     "band": [
+      -5.453745522778516,
+      3.266299591041208
+     ],
+     "sd": 1.4743234853020728,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.8638507677099163,
+     "band": [
+      -9.916822204557903,
+      4.189120669138071
+     ],
+     "sd": 2.3849329435303344,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -3.179875898465564,
+     "band": [
+      -9.27566001244178,
+      2.915908215510652
+     ],
+     "sd": 2.061264033215464,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.7701278018412623,
+     "band": [
+      -6.475330237803555,
+      2.9350746341210305
+     ],
+     "sd": 1.591044625089343,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.08615293259691,
+     "band": [
+      -6.171830184331492,
+      1.999524319137672
+     ],
+     "sd": 1.381554761924424,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.31602513075564787,
+     "band": [
+      -3.3359885877386146,
+      2.703938326227319
+     ],
+     "sd": 1.0211880767285837,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS1",
+   "law": "trial",
+   "seed": 20261009,
+   "B": 5000,
+   "q95": 2.9037110099173544,
+   "wall_seconds": 1150.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 6,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 5,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.12868121984583825,
+     "band": [
+      -0.24915333690652092,
+      -0.00820910278515559
+     ],
+     "sd": 0.041489017553476004,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.3565366853323657,
+     "band": [
+      -0.5282804650950271,
+      -0.18479290556970426
+     ],
+     "sd": 0.059146305943011054,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.0622692969056695,
+     "band": [
+      -1.2536129049921547,
+      -0.8709256888191842
+     ],
+     "sd": 0.06589622983587864,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.28381893914885,
+     "band": [
+      -20.86953149130135,
+      -19.698106386996354
+     ],
+     "sd": 0.20171172342979343,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.165958112333136,
+     "band": [
+      -21.72690242916423,
+      -20.605013795502042
+     ],
+     "sd": 0.19318186793218767,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.758861127734978,
+     "band": [
+      -23.408846708099837,
+      -22.10887554737012
+     ],
+     "sd": 0.22384651163455804,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.242232579546723,
+     "band": [
+      -23.870840050923412,
+      -22.613625108170034
+     ],
+     "sd": 0.21648417119669935,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.22785546548652746,
+     "band": [
+      -0.40287631304213156,
+      -0.05283461793092334
+     ],
+     "sd": 0.060274885123842124,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9335880770598313,
+     "band": [
+      -1.1200994674491955,
+      -0.747076686670467
+     ],
+     "sd": 0.06423207741829405,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.155137719303013,
+     "band": [
+      -20.740228416629208,
+      -19.57004702197682
+     ],
+     "sd": 0.20149756478102337,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.0372768924873,
+     "band": [
+      -21.600232224144378,
+      -20.47432156083022
+     ],
+     "sd": 0.19387443507096835,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.63017990788914,
+     "band": [
+      -23.282275174699752,
+      -21.978084641078528
+     ],
+     "sd": 0.22457305998546057,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.113551359700885,
+     "band": [
+      -23.744412148594712,
+      -22.48269057080706
+     ],
+     "sd": 0.21726018420537718,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7057326115733038,
+     "band": [
+      -0.93997616098668,
+      -0.4714890621599276
+     ],
+     "sd": 0.08067040714910652,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -19.927282253816486,
+     "band": [
+      -20.503258038826647,
+      -19.351306468806325
+     ],
+     "sd": 0.19835850848895373,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -20.80942142700077,
+     "band": [
+      -21.364124142329015,
+      -20.254718711672528
+     ],
+     "sd": 0.1910323422109523,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.402324442402612,
+     "band": [
+      -23.04598175119668,
+      -21.758667133608544
+     ],
+     "sd": 0.2216671378782929,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -22.885695894214358,
+     "band": [
+      -23.51051765754643,
+      -22.260874130882286
+     ],
+     "sd": 0.2151804229821944,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.221549642243183,
+     "band": [
+      -19.81510218192722,
+      -18.627997102559146
+     ],
+     "sd": 0.2044117123421765,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.103688815427468,
+     "band": [
+      -20.67121669034968,
+      -19.536160940505255
+     ],
+     "sd": 0.19544915901888174,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.696591830829306,
+     "band": [
+      -22.357419365644954,
+      -21.035764296013657
+     ],
+     "sd": 0.2275803385938387,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.179963282641054,
+     "band": [
+      -22.816773920278663,
+      -21.543152645003445
+     ],
+     "sd": 0.21930923410168593,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.8821391731842851,
+     "band": [
+      -1.5196141897243818,
+      -0.2446641566441884
+     ],
+     "sd": 0.21953803748474288,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.4750421885861265,
+     "band": [
+      -3.2916871645068273,
+      -1.6583972126654256
+     ],
+     "sd": 0.28124182232030875,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -2.958413640397872,
+     "band": [
+      -3.753800680395715,
+      -2.1630266004000287
+     ],
+     "sd": 0.2739208679105023,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.5929030154018413,
+     "band": [
+      -2.2988538010194213,
+      -0.8869522297842615
+     ],
+     "sd": 0.2431201945394947,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.0762744672135867,
+     "band": [
+      -2.729767775638114,
+      -1.4227811587890593
+     ],
+     "sd": 0.22505452718696248,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.48337145181174535,
+     "band": [
+      -1.0693242600954385,
+      0.10258135647194777
+     ],
+     "sd": 0.20179446449127544,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS1",
+   "law": "pw",
+   "seed": 20261010,
+   "B": 5000,
+   "q95": 2.9759993882362377,
+   "wall_seconds": 1181.1,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.12868121984583825,
+     "band": [
+      -0.9372516257781658,
+      0.6798891860864893
+     ],
+     "sd": 0.27169710085576887,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.3565366853323657,
+     "band": [
+      -1.3525905708054315,
+      0.6395172001407001
+     ],
+     "sd": 0.33469559483457734,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.0622692969056695,
+     "band": [
+      -1.9250125050611016,
+      -0.19952608875023758
+     ],
+     "sd": 0.2899003311511926,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.28381893914885,
+     "band": [
+      -26.922625276893825,
+      -13.645012601403877
+     ],
+     "sd": 2.230782158083555,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.165958112333136,
+     "band": [
+      -27.254601104336416,
+      -15.077315120329857
+     ],
+     "sd": 2.0459154044422667,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.758861127734978,
+     "band": [
+      -28.86849923132944,
+      -16.649223024140515
+     ],
+     "sd": 2.052970214894908,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.242232579546723,
+     "band": [
+      -28.91045873529798,
+      -17.574006423795467
+     ],
+     "sd": 1.9046462771992025,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.22785546548652746,
+     "band": [
+      -1.4549634454603468,
+      0.9992525144872919
+     ],
+     "sd": 0.41233475545204323,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9335880770598313,
+     "band": [
+      -1.8336502715202423,
+      -0.033525882599420354
+     ],
+     "sd": 0.30244031568630253,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.155137719303013,
+     "band": [
+      -26.802719367213438,
+      -13.507556071392589
+     ],
+     "sd": 2.2337308516216443,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.0372768924873,
+     "band": [
+      -27.06896589859845,
+      -15.005587886376148
+     ],
+     "sd": 2.02677763643154,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.63017990788914,
+     "band": [
+      -28.699712781151703,
+      -16.560647034626577
+     ],
+     "sd": 2.0394939922550672,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.113551359700885,
+     "band": [
+      -28.678326758521184,
+      -17.548775960880587
+     ],
+     "sd": 1.8698845909771276,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7057326115733038,
+     "band": [
+      -1.7897937742714225,
+      0.3783285511248149
+     ],
+     "sd": 0.36426793869087476,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -19.927282253816486,
+     "band": [
+      -26.287741053385375,
+      -13.566823454247595
+     ],
+     "sd": 2.137251380061101,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -20.80942142700077,
+     "band": [
+      -26.592669406089918,
+      -15.026173447911626
+     ],
+     "sd": 1.9432960913734116,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.402324442402612,
+     "band": [
+      -28.3010006080318,
+      -16.503648276773426
+     ],
+     "sd": 1.9820824523506064,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -22.885695894214358,
+     "band": [
+      -28.37834363218547,
+      -17.393048156243246
+     ],
+     "sd": 1.8456481408171248,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.221549642243183,
+     "band": [
+      -25.651780107551282,
+      -12.791319176935083
+     ],
+     "sd": 2.1606961650348504,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.103688815427468,
+     "band": [
+      -25.93090522495249,
+      -14.276472405902448
+     ],
+     "sd": 1.9580704325946086,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.696591830829306,
+     "band": [
+      -27.679327533457,
+      -15.713856128201613
+     ],
+     "sd": 2.0103282703204566,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.179963282641054,
+     "band": [
+      -27.6927253989323,
+      -16.66720116634981
+     ],
+     "sd": 1.852407005889356,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.8821391731842851,
+     "band": [
+      -5.487175257546691,
+      3.722896911178121
+     ],
+     "sd": 1.5473914754705769,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.4750421885861265,
+     "band": [
+      -9.685019933661888,
+      4.734935556489634
+     ],
+     "sd": 2.4227080736561715,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -2.958413640397872,
+     "band": [
+      -9.138488654008164,
+      3.22166137321242
+     ],
+     "sd": 2.0766385362978816,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.5929030154018413,
+     "band": [
+      -6.264175830518143,
+      3.0783697997144603
+     ],
+     "sd": 1.56964844602498,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.0762744672135867,
+     "band": [
+      -6.09654545266553,
+      1.9439965182383565
+     ],
+     "sd": 1.3508977862507578,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.48337145181174535,
+     "band": [
+      -3.5087369459102127,
+      2.541994042286722
+     ],
+     "sd": 1.0165880766163353,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS2",
+   "law": "trial",
+   "seed": 20261109,
+   "B": 5000,
+   "q95": 2.9568224746434617,
+   "wall_seconds": 1172.6,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 5,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.10086030821839986,
+     "band": [
+      -0.2254829166437556,
+      0.023762300206955883
+     ],
+     "sd": 0.04214747739983373,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.369858387078722,
+     "band": [
+      -0.543707594696631,
+      -0.19600917946081292
+     ],
+     "sd": 0.058795957183351726,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.0425776493091383,
+     "band": [
+      -1.2365746212876765,
+      -0.8485806773306003
+     ],
+     "sd": 0.06560994907275607,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.32416285376742,
+     "band": [
+      -20.935172494163673,
+      -19.713153213371164
+     ],
+     "sd": 0.20664400573116226,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.198468701680262,
+     "band": [
+      -21.775741123964345,
+      -20.62119627939618
+     ],
+     "sd": 0.19523404845388653,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.758532525332253,
+     "band": [
+      -23.40551019592844,
+      -22.111554854736067
+     ],
+     "sd": 0.21880842564760275,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.338560601772155,
+     "band": [
+      -23.976266915886324,
+      -22.700854287657986
+     ],
+     "sd": 0.21567284461035027,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2689980788603221,
+     "band": [
+      -0.4486516405974442,
+      -0.08934451712320002
+     ],
+     "sd": 0.060758994927074546,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9417173410907385,
+     "band": [
+      -1.1281894664238037,
+      -0.7552452157576732
+     ],
+     "sd": 0.0630650392210477,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.223302545549018,
+     "band": [
+      -20.836919246168062,
+      -19.609685844929974
+     ],
+     "sd": 0.2075257158254101,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.09760839346186,
+     "band": [
+      -21.67362332579294,
+      -20.521593461130784
+     ],
+     "sd": 0.19480876422942311,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.657672217113852,
+     "band": [
+      -23.306708784139207,
+      -22.008635650088497
+     ],
+     "sd": 0.21950474625759134,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.237700293553754,
+     "band": [
+      -23.87718313926674,
+      -22.598217447840767
+     ],
+     "sd": 0.21627366918269175,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.6727192622304163,
+     "band": [
+      -0.9102873270067693,
+      -0.4351511974540634
+     ],
+     "sd": 0.08034573154582074,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -19.954304466688697,
+     "band": [
+      -20.557133697890883,
+      -19.35147523548651
+     ],
+     "sd": 0.2038773840404046,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -20.82861031460154,
+     "band": [
+      -21.397567911080856,
+      -20.259652718122226
+     ],
+     "sd": 0.19242196694541824,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.38867413825353,
+     "band": [
+      -23.031248538753804,
+      -21.74609973775326
+     ],
+     "sd": 0.21731923577108106,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -22.968702214693433,
+     "band": [
+      -23.602848888915528,
+      -22.33455554047134
+     ],
+     "sd": 0.21446897122173722,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.28158520445828,
+     "band": [
+      -19.90240521468219,
+      -18.660765194234372
+     ],
+     "sd": 0.20996188156300005,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.155891052371125,
+     "band": [
+      -20.740398779320877,
+      -19.571383325421372
+     ],
+     "sd": 0.197681034949598,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.715954876023115,
+     "band": [
+      -22.375734114400124,
+      -21.056175637646106
+     ],
+     "sd": 0.22313792729696005,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.295982952463017,
+     "band": [
+      -22.943398968830266,
+      -21.64856693609577
+     ],
+     "sd": 0.21895667457861673,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.8743058479128436,
+     "band": [
+      -1.5359101408218554,
+      -0.2127015550038317
+     ],
+     "sd": 0.223755162368613,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.434369671564834,
+     "band": [
+      -3.272169032782643,
+      -1.5965703103470252
+     ],
+     "sd": 0.28334449173139215,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -3.014397748004736,
+     "band": [
+      -3.8270365020499115,
+      -2.2017589939595608
+     ],
+     "sd": 0.2748351519288167,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.5600638236519906,
+     "band": [
+      -2.26113231056759,
+      -0.8589953367363913
+     ],
+     "sd": 0.2371019880049225,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.1400919000918925,
+     "band": [
+      -2.8054480921462077,
+      -1.4747357080375774
+     ],
+     "sd": 0.22502405800826605,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.580028076439902,
+     "band": [
+      -1.1710397901100134,
+      0.010983637230209342
+     ],
+     "sd": 0.1998806890634773,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS2",
+   "law": "pw",
+   "seed": 20261110,
+   "B": 5000,
+   "q95": 2.9646890168670113,
+   "wall_seconds": 1163.6,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.10086030821839986,
+     "band": [
+      -0.8405198209440924,
+      0.6387992045072927
+     ],
+     "sd": 0.24948974699118395,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.369858387078722,
+     "band": [
+      -1.338115905925746,
+      0.598399131768302
+     ],
+     "sd": 0.3265966559522144,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.0425776493091383,
+     "band": [
+      -1.9065604629651134,
+      -0.17859483565316325
+     ],
+     "sd": 0.29142443228969916,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.32416285376742,
+     "band": [
+      -27.009659766687392,
+      -13.638665940847448
+     ],
+     "sd": 2.2550415490070495,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -21.198468701680262,
+     "band": [
+      -27.23197491404062,
+      -15.164962489319905
+     ],
+     "sd": 2.0351227997384953,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.758532525332253,
+     "band": [
+      -28.71404722042226,
+      -16.803017830242247
+     ],
+     "sd": 2.0088159875141325,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -23.338560601772155,
+     "band": [
+      -28.830358935305835,
+      -17.846762268238475
+     ],
+     "sd": 1.852402832907324,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2689980788603221,
+     "band": [
+      -1.4301945741154989,
+      0.8921984163948546
+     ],
+     "sd": 0.39167564916548725,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -0.9417173410907385,
+     "band": [
+      -1.8547920681010803,
+      -0.02864261408039659
+     ],
+     "sd": 0.30798330678718205,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.223302545549018,
+     "band": [
+      -26.90521351858234,
+      -13.541391572515696
+     ],
+     "sd": 2.25383199891048,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -21.09760839346186,
+     "band": [
+      -27.086968063769916,
+      -15.108248723153805
+     ],
+     "sd": 2.020232016320356,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.657672217113852,
+     "band": [
+      -28.60788959793601,
+      -16.707454836291696
+     ],
+     "sd": 2.007029184838468,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.237700293553754,
+     "band": [
+      -28.65033920396831,
+      -17.825061383139197
+     ],
+     "sd": 1.82570208194533,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.6727192622304163,
+     "band": [
+      -1.7129597540555772,
+      0.36752122959474454
+     ],
+     "sd": 0.3508767651200239,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -19.954304466688697,
+     "band": [
+      -26.381255033301905,
+      -13.52735390007549
+     ],
+     "sd": 2.1678329598984396,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -20.82861031460154,
+     "band": [
+      -26.556331346409422,
+      -15.10088928279366
+     ],
+     "sd": 1.931980386212904,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.38867413825353,
+     "band": [
+      -28.150163057270035,
+      -16.627185219237028
+     ],
+     "sd": 1.9433704129632667,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -22.968702214693433,
+     "band": [
+      -28.297870514406704,
+      -17.639533914980163
+     ],
+     "sd": 1.7975471522962523,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.28158520445828,
+     "band": [
+      -25.751359688357294,
+      -12.811810720559269
+     ],
+     "sd": 2.1822776173455334,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -20.155891052371125,
+     "band": [
+      -25.921436009942127,
+      -14.390346094800123
+     ],
+     "sd": 1.9447385289887322,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.715954876023115,
+     "band": [
+      -27.545918528879834,
+      -15.885991223166396
+     ],
+     "sd": 1.966467180769482,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.295982952463017,
+     "band": [
+      -27.63628502622702,
+      -16.955680878699013
+     ],
+     "sd": 1.8013026133201202,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.8743058479128436,
+     "band": [
+      -5.4760841594164855,
+      3.7274724635907983
+     ],
+     "sd": 1.5521959589429903,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -2.434369671564834,
+     "band": [
+      -9.645296685629956,
+      4.776557342500288
+     ],
+     "sd": 2.432270964354096,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -3.014397748004736,
+     "band": [
+      -9.248393710968939,
+      3.2195982149594666
+     ],
+     "sd": 2.102748695562036,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -1.5600638236519906,
+     "band": [
+      -6.220730032992437,
+      3.1006023856884557
+     ],
+     "sd": 1.5720590533524792,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -2.1400919000918925,
+     "band": [
+      -6.221723468943008,
+      1.9415396687592228
+     ],
+     "sd": 1.3767486389396935,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.580028076439902,
+     "band": [
+      -3.5582613665640794,
+      2.3982052136842755
+     ],
+     "sd": 1.0045685308577421,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS3",
+   "law": "trial",
+   "seed": 20261209,
+   "B": 5000,
+   "q95": 2.918622711603135,
+   "wall_seconds": 1163.6,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.09410123026179917,
+     "band": [
+      -0.03814107196979816,
+      0.2263435324933965
+     ],
+     "sd": 0.0453098311425664,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.5711781623421899,
+     "band": [
+      -0.7443212532088266,
+      -0.3980350714755531
+     ],
+     "sd": 0.059323560451406576,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -0.9752521601221449,
+     "band": [
+      -1.179126525009442,
+      -0.7713777952348476
+     ],
+     "sd": 0.06985293579632071,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.72168077279918,
+     "band": [
+      -21.27662075084225,
+      -20.16674079475611
+     ],
+     "sd": 0.1901376206787117,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -20.43855445135183,
+     "band": [
+      -21.069504407116195,
+      -19.807604495587466
+     ],
+     "sd": 0.21618071882192552,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -21.25904116952615,
+     "band": [
+      -21.86753825484994,
+      -20.65054408420236
+     ],
+     "sd": 0.2084877510562358,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -21.756717315652867,
+     "band": [
+      -22.416244378211434,
+      -21.0971902530943
+     ],
+     "sd": 0.22597201753299043,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.665279392603989,
+     "band": [
+      -0.8531834155219225,
+      -0.47737536968605565
+     ],
+     "sd": 0.06438105965903414,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.069353390383944,
+     "band": [
+      -1.273273916152407,
+      -0.8654328646154812
+     ],
+     "sd": 0.06986875177725654,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.815782003060978,
+     "band": [
+      -21.377575662912033,
+      -20.253988343209922
+     ],
+     "sd": 0.1924858795957479,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -20.53265568161363,
+     "band": [
+      -21.16572468389403,
+      -19.89958667933323
+     ],
+     "sd": 0.21690676213941637,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.35314239978795,
+     "band": [
+      -21.965946725615325,
+      -20.740338073960572
+     ],
+     "sd": 0.20996352950696226,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -21.850818545914667,
+     "band": [
+      -22.514516984411266,
+      -21.187120107418068
+     ],
+     "sd": 0.2274012450660488,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.404073997779955,
+     "band": [
+      -0.6514577344463673,
+      -0.15669026111354267
+     ],
+     "sd": 0.08476043706606048,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -20.15050261045699,
+     "band": [
+      -20.696315400257653,
+      -19.604689820656326
+     ],
+     "sd": 0.18701039624983223,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -19.86737628900964,
+     "band": [
+      -20.485413420321294,
+      -19.24933915769799
+     ],
+     "sd": 0.21175643184527246,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.68786300718396,
+     "band": [
+      -21.29536953096761,
+      -20.080356483400312
+     ],
+     "sd": 0.2081483575689567,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.18553915331068,
+     "band": [
+      -21.84059888022825,
+      -20.530479426393107
+     ],
+     "sd": 0.22444138610768244,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.746428612677036,
+     "band": [
+      -20.319989928413225,
+      -19.172867296940847
+     ],
+     "sd": 0.19651780048718442,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -19.463302291229688,
+     "band": [
+      -20.104328891462366,
+      -18.82227569099701
+     ],
+     "sd": 0.21963325293270838,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -20.283789009404007,
+     "band": [
+      -20.90588450127305,
+      -19.661693517534964
+     ],
+     "sd": 0.21314693721660963,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -20.781465155530725,
+     "band": [
+      -21.454400514787235,
+      -20.108529796274215
+     ],
+     "sd": 0.23056606685791195,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.28312632144734806,
+     "band": [
+      -0.39138497473657163,
+      0.9576376176312678
+     ],
+     "sd": 0.23110602596984023,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -0.5373603967269709,
+     "band": [
+      -1.3249768762795433,
+      0.2502560828256015
+     ],
+     "sd": 0.26985895656240955,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -1.035036542853689,
+     "band": [
+      -1.8507460767720025,
+      -0.2193270089353755
+     ],
+     "sd": 0.27948440566689836,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -0.820486718174319,
+     "band": [
+      -1.5389614134152139,
+      -0.10201202293342404
+     ],
+     "sd": 0.24616908940801485,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -1.318162864301037,
+     "band": [
+      -2.0423356609708065,
+      -0.5939900676312675
+     ],
+     "sd": 0.24812141486831554,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.49767614612671807,
+     "band": [
+      -1.0896691226517379,
+      0.09431683039830163
+     ],
+     "sd": 0.20283299179833045,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B0xS3",
+   "law": "pw",
+   "seed": 20261210,
+   "B": 5000,
+   "q95": 2.9553199697729142,
+   "wall_seconds": 1165.4,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.09410123026179917,
+     "band": [
+      -0.46396902867462164,
+      0.65217148919822
+     ],
+     "sd": 0.18883581630563773,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.5711781623421899,
+     "band": [
+      -1.549604348430433,
+      0.40724802374605307
+     ],
+     "sd": 0.33107284358228894,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -0.9752521601221449,
+     "band": [
+      -1.8746988041516004,
+      -0.07580551609268948
+     ],
+     "sd": 0.304348311935431,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -20.72168077279918,
+     "band": [
+      -27.56573659956779,
+      -13.877624946030569
+     ],
+     "sd": 2.3158425810977428,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -20.43855445135183,
+     "band": [
+      -26.2953561668128,
+      -14.58175273589086
+     ],
+     "sd": 1.9817826074213567,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -21.25904116952615,
+     "band": [
+      -26.854422825402537,
+      -15.663659513649762
+     ],
+     "sd": 1.8933251604246208,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -21.756717315652867,
+     "band": [
+      -26.88375637375906,
+      -16.629678257546676
+     ],
+     "sd": 1.7348507473118557,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.665279392603989,
+     "band": [
+      -1.7782400159617031,
+      0.447681230753725
+     ],
+     "sd": 0.3765956426854293,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.069353390383944,
+     "band": [
+      -1.9078271713165775,
+      -0.2308796094513107
+     ],
+     "sd": 0.2837167513191681,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -20.815782003060978,
+     "band": [
+      -27.737002773283184,
+      -13.894561232838772
+     ],
+     "sd": 2.3419531018680293,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -20.53265568161363,
+     "band": [
+      -26.388584896092645,
+      -14.676726467134616
+     ],
+     "sd": 1.9814873767895196,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.35314239978795,
+     "band": [
+      -26.99543864801402,
+      -15.710846151561878
+     ],
+     "sd": 1.909199784096347,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -21.850818545914667,
+     "band": [
+      -26.985679967988208,
+      -16.715957123841125
+     ],
+     "sd": 1.7374976227931427,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.404073997779955,
+     "band": [
+      -1.3990035092487683,
+      0.5908555136888582
+     ],
+     "sd": 0.33665712059776165,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -20.15050261045699,
+     "band": [
+      -26.776751218347457,
+      -13.524254002566522
+     ],
+     "sd": 2.2421425347048376,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -19.86737628900964,
+     "band": [
+      -25.38229930445536,
+      -14.352453273563924
+     ],
+     "sd": 1.8661001420666754,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.68786300718396,
+     "band": [
+      -26.07160794444391,
+      -15.30411806992401
+     ],
+     "sd": 1.821713043705936,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.18553915331068,
+     "band": [
+      -26.169729905251167,
+      -16.20134840137019
+     ],
+     "sd": 1.6865147608106448,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -19.746428612677036,
+     "band": [
+      -26.46401927701469,
+      -13.028837948339383
+     ],
+     "sd": 2.27305020540765,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -19.463302291229688,
+     "band": [
+      -25.014345357162505,
+      -13.91225922529687
+     ],
+     "sd": 1.8783221859930648,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -20.283789009404007,
+     "band": [
+      -25.706553108104032,
+      -14.861024910703982
+     ],
+     "sd": 1.834916068027892,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -20.781465155530725,
+     "band": [
+      -25.69610533364121,
+      -15.86682497742024
+     ],
+     "sd": 1.662980735885639,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.28312632144734806,
+     "band": [
+      -5.501095019356251,
+      6.067347662250947
+     ],
+     "sd": 1.957223380197325,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": -0.5373603967269709,
+     "band": [
+      -8.81503146800224,
+      7.740310674548299
+     ],
+     "sd": 2.800939037376492,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": -1.035036542853689,
+     "band": [
+      -8.69340257903631,
+      6.623329493328932
+     ],
+     "sd": 2.591383036189847,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": -0.820486718174319,
+     "band": [
+      -5.714055312429124,
+      4.073081876080486
+     ],
+     "sd": 1.6558506842935266,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": -1.318162864301037,
+     "band": [
+      -5.859580113189575,
+      3.2232543845875012
+     ],
+     "sd": 1.5366922347963219,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -0.49767614612671807,
+     "band": [
+      -3.3883036641328355,
+      2.3929513718793993
+     ],
+     "sd": 0.978109831616044,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS0",
+   "law": "trial",
+   "seed": 20261309,
+   "B": 5000,
+   "q95": 2.9752894305210087,
+   "wall_seconds": 1150.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.12729992611047836,
+     "band": [
+      -0.2946079411621561,
+      0.04000808894119939
+     ],
+     "sd": 0.05623251752767465,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.49782049706095677,
+     "band": [
+      -0.7121608098218806,
+      -0.28348018430003297
+     ],
+     "sd": 0.07204015534158983,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2669534507988,
+     "band": [
+      -1.5255378535719297,
+      -1.0083690480256704
+     ],
+     "sd": 0.0869106716545047,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.92527210020965,
+     "band": [
+      -25.59822751242563,
+      -24.25231668799367
+     ],
+     "sd": 0.22618149525645892,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -25.02742594191919,
+     "band": [
+      -25.751688097136853,
+      -24.30316378670153
+     ],
+     "sd": 0.24342578163591827,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.79019894361139,
+     "band": [
+      -24.525643813100647,
+      -23.054754074122133
+     ],
+     "sd": 0.24718431153115486,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.896699224540917,
+     "band": [
+      -25.542726195078615,
+      -24.25067225400322
+     ],
+     "sd": 0.2171307987420138,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3705205709504784,
+     "band": [
+      -0.6017529522911048,
+      -0.139288189609852
+     ],
+     "sd": 0.07771760924117384,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1396535246883217,
+     "band": [
+      -1.4045335009729576,
+      -0.8747735484036859
+     ],
+     "sd": 0.08902662496208046,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.797972174099172,
+     "band": [
+      -25.482510802345935,
+      -24.11343354585241
+     ],
+     "sd": 0.23007463449594265,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.900126015808713,
+     "band": [
+      -25.624952358508544,
+      -24.17529967310888
+     ],
+     "sd": 0.24361540603896958,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.662899017500912,
+     "band": [
+      -24.400674290840247,
+      -22.925123744161578
+     ],
+     "sd": 0.24796756435562642,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.76939929843044,
+     "band": [
+      -25.424438719540003,
+      -24.114359877320876
+     ],
+     "sd": 0.22015989919839768,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7691329537378433,
+     "band": [
+      -1.0809023438294498,
+      -0.4573635636462367
+     ],
+     "sd": 0.10478623924564275,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.427451603148693,
+     "band": [
+      -25.090062361123188,
+      -23.7648408451742
+     ],
+     "sd": 0.22270463880835414,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.529605444858234,
+     "band": [
+      -25.243098040544965,
+      -23.816112849171503
+     ],
+     "sd": 0.23980611377421138,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -23.292378446550433,
+     "band": [
+      -24.01813856406715,
+      -22.566618329033716
+     ],
+     "sd": 0.24392924939394167,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -24.39887872747996,
+     "band": [
+      -25.035675583486515,
+      -23.762081871473406
+     ],
+     "sd": 0.21402854104685984,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.65831864941085,
+     "band": [
+      -24.36591437860401,
+      -22.950722920217693
+     ],
+     "sd": 0.2378241665951973,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.760472491120392,
+     "band": [
+      -24.508827764308624,
+      -23.01211721793216
+     ],
+     "sd": 0.2515235208754754,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -22.523245492812592,
+     "band": [
+      -23.2730340513291,
+      -21.773456934296085
+     ],
+     "sd": 0.252005250590094,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.62974577374212,
+     "band": [
+      -24.295356590078942,
+      -22.964134957405296
+     ],
+     "sd": 0.2237129636898108,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.10215384170954067,
+     "band": [
+      -0.9493189339731548,
+      0.7450112505540735
+     ],
+     "sd": 0.2847336745034803,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.13507315659826,
+     "band": [
+      0.19144340244949776,
+      2.078702910747022
+     ],
+     "sd": 0.3171556166834906,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.028572875668732678,
+     "band": [
+      -0.8405117693781463,
+      0.8976575207156117
+     ],
+     "sd": 0.29210087466841567,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.2372269983078006,
+     "band": [
+      0.40081226937033787,
+      2.0736417272452634
+     ],
+     "sd": 0.2811204585198948,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.13072671737827335,
+     "band": [
+      -0.6500987624505726,
+      0.9115521972071193
+     ],
+     "sd": 0.26243681432099,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.1065002809295272,
+     "band": [
+      -1.7786363563755665,
+      -0.43436420548348786
+     ],
+     "sd": 0.22590611472993413,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS0",
+   "law": "pw",
+   "seed": 20261310,
+   "B": 5000,
+   "q95": 2.969391688563086,
+   "wall_seconds": 1176.7,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.12729992611047836,
+     "band": [
+      -0.9347831128871794,
+      0.6801832606662227
+     ],
+     "sd": 0.2719355583457732,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.49782049706095677,
+     "band": [
+      -1.5898019321526018,
+      0.5941609380306883
+     ],
+     "sd": 0.36774583807771893,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2669534507988,
+     "band": [
+      -2.250277842695101,
+      -0.283629058902499
+     ],
+     "sd": 0.3311534802510814,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.92527210020965,
+     "band": [
+      -31.638310560841717,
+      -18.212233639577583
+     ],
+     "sd": 2.2607453528236157,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -25.02742594191919,
+     "band": [
+      -31.39071326869025,
+      -18.664138615148133
+     ],
+     "sd": 2.1429599036327556,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.79019894361139,
+     "band": [
+      -30.41018322216975,
+      -17.17021466505303
+     ],
+     "sd": 2.2294075598230787,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.896699224540917,
+     "band": [
+      -31.320276464725172,
+      -18.473121984356663
+     ],
+     "sd": 2.1632636963743503,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3705205709504784,
+     "band": [
+      -1.6546648565823974,
+      0.9136237146814405
+     ],
+     "sd": 0.4324603893039545,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1396535246883217,
+     "band": [
+      -2.078318044972702,
+      -0.20098900440394152
+     ],
+     "sd": 0.3161134059544054,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.797972174099172,
+     "band": [
+      -31.5649533210169,
+      -18.030991027181443
+     ],
+     "sd": 2.278911594243847,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.900126015808713,
+     "band": [
+      -31.28562658088659,
+      -18.514625450730836
+     ],
+     "sd": 2.15044064064444,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.662899017500912,
+     "band": [
+      -30.308884958353637,
+      -17.016913076648187
+     ],
+     "sd": 2.2381641217796946,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.76939929843044,
+     "band": [
+      -31.19275219242435,
+      -18.346046404436528
+     ],
+     "sd": 2.163188143461877,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7691329537378433,
+     "band": [
+      -1.9854745961487008,
+      0.4472086886730142
+     ],
+     "sd": 0.409626539703644,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.427451603148693,
+     "band": [
+      -30.862422158844822,
+      -17.992481047452564
+     ],
+     "sd": 2.16710061541597,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.529605444858234,
+     "band": [
+      -30.55266051437906,
+      -18.506550375337408
+     ],
+     "sd": 2.028380119981892,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -23.292378446550433,
+     "band": [
+      -29.682418392300615,
+      -16.90233850080025
+     ],
+     "sd": 2.1519693647564484,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -24.39887872747996,
+     "band": [
+      -30.651673586692098,
+      -18.146083868267823
+     ],
+     "sd": 2.1057494312035057,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.65831864941085,
+     "band": [
+      -30.233019415680218,
+      -17.083617883141486
+     ],
+     "sd": 2.214157462483813,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.760472491120392,
+     "band": [
+      -29.892110102450193,
+      -17.628834879790592
+     ],
+     "sd": 2.0649473880277993,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -22.523245492812592,
+     "band": [
+      -28.973146132514195,
+      -16.07334485311099
+     ],
+     "sd": 2.1721286095546275,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.62974577374212,
+     "band": [
+      -29.890535485513475,
+      -17.368956061970763
+     ],
+     "sd": 2.108441852210142,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": -0.10215384170954067,
+     "band": [
+      -5.860945472759184,
+      5.6566377893401025
+     ],
+     "sd": 1.9393843032666302,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.13507315659826,
+     "band": [
+      -5.993855804247071,
+      8.26400211744359
+     ],
+     "sd": 2.400804511005781,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.028572875668732678,
+     "band": [
+      -6.497366533734138,
+      6.5545122850716036
+     ],
+     "sd": 2.1977361338142725,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.2372269983078006,
+     "band": [
+      -2.9457384564595017,
+      5.420192453075103
+     ],
+     "sd": 1.4086944039341187,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.13072671737827335,
+     "band": [
+      -4.191526044248817,
+      4.452979479005363
+     ],
+     "sd": 1.4556020946225066,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.1065002809295272,
+     "band": [
+      -4.138502267945686,
+      1.9255017060866315
+     ],
+     "sd": 1.0210852272181614,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS1",
+   "law": "trial",
+   "seed": 20261409,
+   "B": 5000,
+   "q95": 2.944304478867005,
+   "wall_seconds": 1149.1,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 6,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.205806106351202,
+     "band": [
+      -0.3703069641465046,
+      -0.0413052485558994
+     ],
+     "sd": 0.055870871703664296,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4805866576509068,
+     "band": [
+      -0.6801686368244704,
+      -0.2810046784773433
+     ],
+     "sd": 0.06778578119419378,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3981253056586853,
+     "band": [
+      -1.6110340723375718,
+      -1.1852165389797988
+     ],
+     "sd": 0.07231207512913736,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.63252941645645,
+     "band": [
+      -25.334653166448607,
+      -23.930405666464292
+     ],
+     "sd": 0.23846845835127062,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.520024959990955,
+     "band": [
+      -25.24048994501206,
+      -23.79955997496985
+     ],
+     "sd": 0.24469785315761478,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.119285400441697,
+     "band": [
+      -23.743122987125695,
+      -22.4954478137577
+     ],
+     "sd": 0.21187944085322857,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.351003207271958,
+     "band": [
+      -25.015006324562375,
+      -23.68700008998154
+     ],
+     "sd": 0.2255212129235807,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2747805512997048,
+     "band": [
+      -0.4952329527275223,
+      -0.054328149871887305
+     ],
+     "sd": 0.07487418608032331,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1923191993074833,
+     "band": [
+      -1.4169385420755334,
+      -0.9676998565394332
+     ],
+     "sd": 0.07628944098012773,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.426723310105245,
+     "band": [
+      -25.136186581308703,
+      -23.717260038901788
+     ],
+     "sd": 0.24096124442824765,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.314218853639755,
+     "band": [
+      -25.03702022021577,
+      -23.59141748706374
+     ],
+     "sd": 0.24549137895349524,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.913479294090497,
+     "band": [
+      -23.543848450340054,
+      -22.28311013784094
+     ],
+     "sd": 0.21409781521377502,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.145197100920754,
+     "band": [
+      -24.813931204477623,
+      -23.476462997363885
+     ],
+     "sd": 0.22712803935760145,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.9175386480077785,
+     "band": [
+      -1.1741347866629566,
+      -0.6609425093526005
+     ],
+     "sd": 0.0871500011282524,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.15194275880554,
+     "band": [
+      -24.84009462236534,
+      -23.46379089524574
+     ],
+     "sd": 0.23372306379964047,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.039438302340052,
+     "band": [
+      -24.74377928557878,
+      -23.335097319101326
+     ],
+     "sd": 0.23922151676030615,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.638698742790794,
+     "band": [
+      -23.249532281033016,
+      -22.027865204548572
+     ],
+     "sd": 0.20746276162215235,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.870416549621048,
+     "band": [
+      -24.521161849200094,
+      -23.219671250042
+     ],
+     "sd": 0.221018343805753,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.23440411079776,
+     "band": [
+      -23.95677070119978,
+      -22.512037520395744
+     ],
+     "sd": 0.2453437121014029,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.12189965433227,
+     "band": [
+      -23.85422472828279,
+      -22.38957458038175
+     ],
+     "sd": 0.2487259993682187,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.721160094783013,
+     "band": [
+      -22.346652422363082,
+      -21.095667767202944
+     ],
+     "sd": 0.21244145504297976,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.95287790161327,
+     "band": [
+      -23.61580991796865,
+      -22.28994588525789
+     ],
+     "sd": 0.22515742550189022,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.11250445646549068,
+     "band": [
+      -0.7520499324364012,
+      0.9770588453673825
+     ],
+     "sd": 0.2936362034250548,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.513244016014749,
+     "band": [
+      0.6217094711562012,
+      2.4047785608732966
+     ],
+     "sd": 0.30279971085110674,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.28152620918449145,
+     "band": [
+      -0.6286295079437262,
+      1.1916819263127092
+     ],
+     "sd": 0.30912418320215773,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.4007395595492582,
+     "band": [
+      0.6286838795668147,
+      2.172795239531702
+     ],
+     "sd": 0.2622200541839129,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.16902175271900077,
+     "band": [
+      -0.6158354747771926,
+      0.9538789802151941
+     ],
+     "sd": 0.26656795624554885,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.2317178068302574,
+     "band": [
+      -1.855715395561102,
+      -0.6077202180994128
+     ],
+     "sd": 0.21193378375424154,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS1",
+   "law": "pw",
+   "seed": 20261410,
+   "B": 5000,
+   "q95": 2.9875444426225615,
+   "wall_seconds": 1183.2,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.205806106351202,
+     "band": [
+      -1.1382513714627538,
+      0.7266391587603499
+     ],
+     "sd": 0.3121109268898513,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4805866576509068,
+     "band": [
+      -1.6425446455128832,
+      0.6813713302110695
+     ],
+     "sd": 0.3889341263964504,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3981253056586853,
+     "band": [
+      -2.3853673652557625,
+      -0.4108832460616081
+     ],
+     "sd": 0.3304526772932103,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.63252941645645,
+     "band": [
+      -31.536959040386805,
+      -17.728099792526095
+     ],
+     "sd": 2.3110717703229966,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.520024959990955,
+     "band": [
+      -31.110999785081194,
+      -17.929050134900717
+     ],
+     "sd": 2.2061512227428057,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.119285400441697,
+     "band": [
+      -29.518258106872054,
+      -16.72031269401134
+     ],
+     "sd": 2.141883687197347,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.351003207271958,
+     "band": [
+      -30.56714498451771,
+      -18.134861430026206
+     ],
+     "sd": 2.0806859602024947,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2747805512997048,
+     "band": [
+      -1.7147639349111892,
+      1.1652028323117796
+     ],
+     "sd": 0.4819956359703293,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1923191993074833,
+     "band": [
+      -2.2142986308375723,
+      -0.17033976777739435
+     ],
+     "sd": 0.34208007651694144,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.426723310105245,
+     "band": [
+      -31.35791427339978,
+      -17.495532346810712
+     ],
+     "sd": 2.3200294075659382,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.314218853639755,
+     "band": [
+      -30.880490581136176,
+      -17.747947126143334
+     ],
+     "sd": 2.197882526471251,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.913479294090497,
+     "band": [
+      -29.302945319553068,
+      -16.524013268627925
+     ],
+     "sd": 2.1387015819097552,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.145197100920754,
+     "band": [
+      -30.277935408732027,
+      -18.01245879310948
+     ],
+     "sd": 2.0527688961934776,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.9175386480077785,
+     "band": [
+      -2.2186830473009667,
+      0.38360575128540964
+     ],
+     "sd": 0.43552302711554053,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.15194275880554,
+     "band": [
+      -30.75927383390744,
+      -17.54461168370364
+     ],
+     "sd": 2.2116260366998173,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.039438302340052,
+     "band": [
+      -30.297271321989577,
+      -17.781605282690528
+     ],
+     "sd": 2.094640980187796,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.638698742790794,
+     "band": [
+      -28.771322651210998,
+      -16.50607483437059
+     ],
+     "sd": 2.052730604079915,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.870416549621048,
+     "band": [
+      -29.928881184019854,
+      -17.81195191522224
+     ],
+     "sd": 2.02790778539197,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.23440411079776,
+     "band": [
+      -30.059153350341024,
+      -16.4096548712545
+     ],
+     "sd": 2.2844009087115977,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.12189965433227,
+     "band": [
+      -29.52750588575612,
+      -16.71629342290842
+     ],
+     "sd": 2.144104080942409,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.721160094783013,
+     "band": [
+      -27.970864580692954,
+      -15.471455608873072
+     ],
+     "sd": 2.091920172549384,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.95287790161327,
+     "band": [
+      -29.045959007596124,
+      -16.859796795630416
+     ],
+     "sd": 2.039494716481659,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.11250445646549068,
+     "band": [
+      -5.6771646222523335,
+      5.902173535183315
+     ],
+     "sd": 1.937935716074392,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.513244016014749,
+     "band": [
+      -5.605142892870949,
+      8.631630924900445
+     ],
+     "sd": 2.382688206183454,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.28152620918449145,
+     "band": [
+      -6.198921319821479,
+      6.761973738190462
+     ],
+     "sd": 2.169155188639546,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.4007395595492582,
+     "band": [
+      -2.777189635209858,
+      5.578668754308374
+     ],
+     "sd": 1.3984492197517226,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.16902175271900077,
+     "band": [
+      -4.126484848705073,
+      4.4645283541430745
+     ],
+     "sd": 1.4378050884000713,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.2317178068302574,
+     "band": [
+      -4.375283120636322,
+      1.911847506975807
+     ],
+     "sd": 1.0522237825009702,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS2",
+   "law": "trial",
+   "seed": 20261509,
+   "B": 5000,
+   "q95": 2.9168137915594747,
+   "wall_seconds": 1164.5,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 6,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.18839619636687788,
+     "band": [
+      -0.35359864868417396,
+      -0.0231937440495818
+     ],
+     "sd": 0.056637983814856616,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.5124513561294499,
+     "band": [
+      -0.7119621899424762,
+      -0.31294052231642366
+     ],
+     "sd": 0.0684002641479413,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3929880103196663,
+     "band": [
+      -1.5989210938717577,
+      -1.187054926767575
+     ],
+     "sd": 0.07060206727903236,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.706877266490828,
+     "band": [
+      -25.41192719957354,
+      -24.001827333408116
+     ],
+     "sd": 0.24171921262953094,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.551657284185815,
+     "band": [
+      -25.260696888435774,
+      -23.842617679935856
+     ],
+     "sd": 0.24308703089026135,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.104047677696798,
+     "band": [
+      -23.723843803492446,
+      -22.48425155190115
+     ],
+     "sd": 0.21249081020844787,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.46453585249529,
+     "band": [
+      -25.152398021100986,
+      -23.77667368388959
+     ],
+     "sd": 0.2358265620507542,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.32405515976257204,
+     "band": [
+      -0.5481338710322006,
+      -0.09997644849294354
+     ],
+     "sd": 0.07682311154659784,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.2045918139527885,
+     "band": [
+      -1.4267250038659935,
+      -0.9824586240395833
+     ],
+     "sd": 0.07615610929844159,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.51848107012395,
+     "band": [
+      -25.23390413001234,
+      -23.80305801023556
+     ],
+     "sd": 0.24527553385774717,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.363261087818938,
+     "band": [
+      -25.07310263778446,
+      -23.653419537853416
+     ],
+     "sd": 0.24336196983832992,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.91565148132992,
+     "band": [
+      -23.545682465111856,
+      -22.285620497547985
+     ],
+     "sd": 0.2159997273754963,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.27613965612841,
+     "band": [
+      -24.973276476345504,
+      -23.579002835911318
+     ],
+     "sd": 0.2390062822091808,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.8805366541902164,
+     "band": [
+      -1.1404625474678984,
+      -0.6206107609125344
+     ],
+     "sd": 0.08911295401504278,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.194425910361378,
+     "band": [
+      -24.891384962593055,
+      -23.4974668581297
+     ],
+     "sd": 0.23894533625989434,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.039205928056365,
+     "band": [
+      -24.73279390488181,
+      -23.34561795123092
+     ],
+     "sd": 0.237789597276492,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.591596321567348,
+     "band": [
+      -23.20013699829382,
+      -21.983055644840874
+     ],
+     "sd": 0.20863199374860256,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.95208449636584,
+     "band": [
+      -24.625764722339053,
+      -23.278404270392624
+     ],
+     "sd": 0.23096442697942365,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.313889256171162,
+     "band": [
+      -24.035353317576376,
+      -22.592425194765948
+     ],
+     "sd": 0.24734662990587578,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.15866927386615,
+     "band": [
+      -23.873190070274266,
+      -22.444148477458032
+     ],
+     "sd": 0.24496620198236843,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.711059667377132,
+     "band": [
+      -22.341001135557292,
+      -21.081118199196972
+     ],
+     "sd": 0.21596903786009697,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.071547842175622,
+     "band": [
+      -23.765330426971914,
+      -22.37776525737933
+     ],
+     "sd": 0.2378563166438411,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.1552199823050131,
+     "band": [
+      -0.7095497533514795,
+      1.0199897179615056
+     ],
+     "sd": 0.29647752563393615,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.6028295887940303,
+     "band": [
+      0.7021385290458979,
+      2.5035206485421626
+     ],
+     "sd": 0.3087927869631259,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.24234141399553977,
+     "band": [
+      -0.6825990197960838,
+      1.1672818477871634
+     ],
+     "sd": 0.3171064386997101,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.4476096064890172,
+     "band": [
+      0.67136116828214,
+      2.2238580446958944
+     ],
+     "sd": 0.2661288973787579,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.08712143169052666,
+     "band": [
+      -0.7102414618401743,
+      0.8844843252212277
+     ],
+     "sd": 0.2733677740547129,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.3604881747984905,
+     "band": [
+      -1.9965373839443914,
+      -0.7244389656525897
+     ],
+     "sd": 0.21806301485081672,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS2",
+   "law": "pw",
+   "seed": 20261510,
+   "B": 5000,
+   "q95": 2.961650690349916,
+   "wall_seconds": 1171.2,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.18839619636687788,
+     "band": [
+      -1.0730397431344039,
+      0.696247350400648
+     ],
+     "sd": 0.2986994886500292,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.5124513561294499,
+     "band": [
+      -1.6303262907506877,
+      0.6054235784917879
+     ],
+     "sd": 0.3774499600049599,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3929880103196663,
+     "band": [
+      -2.4041243991188903,
+      -0.3818516215204426
+     ],
+     "sd": 0.3414097388641599,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.706877266490828,
+     "band": [
+      -31.449106310886172,
+      -17.964648222095484
+     ],
+     "sd": 2.2765105508100136,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.551657284185815,
+     "band": [
+      -31.047327652610488,
+      -18.055986915761142
+     ],
+     "sd": 2.1932601267225125,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.104047677696798,
+     "band": [
+      -29.50315113210135,
+      -16.704944223292244
+     ],
+     "sd": 2.1606543524038972,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.46453585249529,
+     "band": [
+      -30.70960567242947,
+      -18.219466032561108
+     ],
+     "sd": 2.108644966228725,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.32405515976257204,
+     "band": [
+      -1.6913431072272178,
+      1.0432327877020737
+     ],
+     "sd": 0.4616641496310634,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.2045918139527885,
+     "band": [
+      -2.2384493400040664,
+      -0.17073428790151057
+     ],
+     "sd": 0.3490815204574746,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.51848107012395,
+     "band": [
+      -31.266399658263445,
+      -17.770562481984456
+     ],
+     "sd": 2.278431622651028,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.363261087818938,
+     "band": [
+      -30.824410008194768,
+      -17.902112167443107
+     ],
+     "sd": 2.1816039755898595,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.91565148132992,
+     "band": [
+      -29.298533681657773,
+      -16.532769281002068
+     ],
+     "sd": 2.155177253389636,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.27613965612841,
+     "band": [
+      -30.41312462428518,
+      -18.13915468797164
+     ],
+     "sd": 2.072150165498313,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.8805366541902164,
+     "band": [
+      -2.1358560798581987,
+      0.37478277147776584
+     ],
+     "sd": 0.4238580294962697,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.194425910361378,
+     "band": [
+      -30.68016330796336,
+      -17.708688512759394
+     ],
+     "sd": 2.1899062636707174,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.039205928056365,
+     "band": [
+      -30.21777113297896,
+      -17.86064072313377
+     ],
+     "sd": 2.08618971341033,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.591596321567348,
+     "band": [
+      -28.74601452243386,
+      -16.437178120700835
+     ],
+     "sd": 2.078036488543278,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.95208449636584,
+     "band": [
+      -30.03969516974861,
+      -17.864473822983065
+     ],
+     "sd": 2.0554789574673062,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.313889256171162,
+     "band": [
+      -29.9466302903958,
+      -16.681148221946525
+     ],
+     "sd": 2.239541974290353,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.15866927386615,
+     "band": [
+      -29.413666423034922,
+      -16.903672124697376
+     ],
+     "sd": 2.1119969244008825,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.711059667377132,
+     "band": [
+      -27.903080043380193,
+      -15.519039291374071
+     ],
+     "sd": 2.090732845766994,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.071547842175622,
+     "band": [
+      -29.127004904897433,
+      -17.016090779453812
+     ],
+     "sd": 2.0446223055448725,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.1552199823050131,
+     "band": [
+      -5.631805824519965,
+      5.942245789129991
+     ],
+     "sd": 1.9539866148567464,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.6028295887940303,
+     "band": [
+      -5.623258159334462,
+      8.828917336922522
+     ],
+     "sd": 2.439885220655356,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.24234141399553977,
+     "band": [
+      -6.387039969328193,
+      6.871722797319273
+     ],
+     "sd": 2.2384075897014304,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.4476096064890172,
+     "band": [
+      -2.7985074740692983,
+      5.693726687047333
+     ],
+     "sd": 1.4336994887322925,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.08712143169052666,
+     "band": [
+      -4.217504472838317,
+      4.39174733621937
+     ],
+     "sd": 1.4534549663654819,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.3604881747984905,
+     "band": [
+      -4.407233207024499,
+      1.6862568574275172
+     ],
+     "sd": 1.0287320655853704,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS3",
+   "law": "trial",
+   "seed": 20261609,
+   "B": 5000,
+   "q95": 3.0054969923250896,
+   "wall_seconds": 1130.2,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 6,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.05126351085052816,
+     "band": [
+      -0.09962566050141791,
+      0.20215268220247423
+     ],
+     "sd": 0.05020439938461437,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.7284367696719145,
+     "band": [
+      -0.9608937548210219,
+      -0.49597978452280705
+     ],
+     "sd": 0.0773439420311234,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2494793605368413,
+     "band": [
+      -1.5091022504177933,
+      -0.9898564706558892
+     ],
+     "sd": 0.08638268164763808,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -25.0784863761194,
+     "band": [
+      -25.750142517666248,
+      -24.406830234572553
+     ],
+     "sd": 0.2234758987488613,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -23.63709106176059,
+     "band": [
+      -24.33242942253109,
+      -22.94175270099009
+     ],
+     "sd": 0.2313555337257468,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -21.53348606145954,
+     "band": [
+      -22.21786206382987,
+      -20.849110059089213
+     ],
+     "sd": 0.22770809756854415,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -22.664199297141533,
+     "band": [
+      -23.363721162741527,
+      -21.96467743154154
+     ],
+     "sd": 0.23274748482075003,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.7797002805224427,
+     "band": [
+      -0.9965830761915785,
+      -0.5628174848533068
+     ],
+     "sd": 0.07216204049545649,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.3007428713873694,
+     "band": [
+      -1.5640057748053444,
+      -1.0374799679693945
+     ],
+     "sd": 0.08759380032329082,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -25.12974988696993,
+     "band": [
+      -25.801575343385032,
+      -24.457924430554826
+     ],
+     "sd": 0.22353223381380574,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -23.688354572611118,
+     "band": [
+      -24.379486265399255,
+      -22.99722287982298
+     ],
+     "sd": 0.22995587570143214,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.58474957231007,
+     "band": [
+      -22.265828618351335,
+      -20.903670526268805
+     ],
+     "sd": 0.22661112214734738,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -22.71546280799206,
+     "band": [
+      -23.414961819455804,
+      -22.015963796528318
+     ],
+     "sd": 0.2327398807085816,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5210425908649268,
+     "band": [
+      -0.833094330570386,
+      -0.20899085115946764
+     ],
+     "sd": 0.10382700115898372,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.350049606447485,
+     "band": [
+      -25.00900845944732,
+      -23.69109075344765
+     ],
+     "sd": 0.21925121025992347,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -22.908654292088677,
+     "band": [
+      -23.597579085842238,
+      -22.219729498335116
+     ],
+     "sd": 0.2292215881475898,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.805049291787626,
+     "band": [
+      -21.484175219156025,
+      -20.125923364419226
+     ],
+     "sd": 0.22596127332771623,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.93576252746962,
+     "band": [
+      -22.628727886992156,
+      -21.242797167947085
+     ],
+     "sd": 0.23056598003328824,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.829007015582558,
+     "band": [
+      -24.534197292979133,
+      -23.123816738185983
+     ],
+     "sd": 0.2346334996166574,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.387611701223747,
+     "band": [
+      -23.103719763409053,
+      -21.67150363903844
+     ],
+     "sd": 0.23826610507812065,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -20.2840067009227,
+     "band": [
+      -20.98718050504148,
+      -19.58083289680392
+     ],
+     "sd": 0.23396257122014105,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -21.41471993660469,
+     "band": [
+      -22.129663037232607,
+      -20.699776835976774
+     ],
+     "sd": 0.23787849478925258,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 1.441395314358811,
+     "band": [
+      0.6141456467521633,
+      2.2686449819654584
+     ],
+     "sd": 0.27524554831335135,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 3.545000314659859,
+     "band": [
+      2.638102572696172,
+      4.451898056623546
+     ],
+     "sd": 0.30174634820116714,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 2.4142870789778677,
+     "band": [
+      1.5045264883625236,
+      3.3240476695932117
+     ],
+     "sd": 0.3026988857212404,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 2.103605000301048,
+     "band": [
+      1.3125739085320411,
+      2.894636092070055
+     ],
+     "sd": 0.26319477071146746,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.9728917646190567,
+     "band": [
+      0.18805754731037905,
+      1.7577259819277344
+     ],
+     "sd": 0.2611329238767663,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.1307132356819913,
+     "band": [
+      -1.79421136094882,
+      -0.46721511041516284
+     ],
+     "sd": 0.22076153360364476,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B1xS3",
+   "law": "pw",
+   "seed": 20261610,
+   "B": 5000,
+   "q95": 2.965078522662183,
+   "wall_seconds": 1166.1,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.05126351085052816,
+     "band": [
+      -0.5986325059732125,
+      0.7011595276742688
+     ],
+     "sd": 0.219183408417877,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.7284367696719145,
+     "band": [
+      -1.9064091062962467,
+      0.4495355669524177
+     ],
+     "sd": 0.3972820037044735,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2494793605368413,
+     "band": [
+      -2.3201967149506633,
+      -0.1787620061230195
+     ],
+     "sd": 0.3611092745876027,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -25.0784863761194,
+     "band": [
+      -32.1684415841053,
+      -17.988531168133502
+     ],
+     "sd": 2.391152596397418,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -23.63709106176059,
+     "band": [
+      -30.21173153770789,
+      -17.062450585813288
+     ],
+     "sd": 2.2173579639450116,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -21.53348606145954,
+     "band": [
+      -27.53687976414311,
+      -15.530092358775974
+     ],
+     "sd": 2.0246997362125323,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -22.664199297141533,
+     "band": [
+      -28.503353030870137,
+      -16.825045563412928
+     ],
+     "sd": 1.9693082962558262,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.7797002805224427,
+     "band": [
+      -2.0903004907590286,
+      0.5308999297141432
+     ],
+     "sd": 0.44201197378741564,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.3007428713873694,
+     "band": [
+      -2.284752076724445,
+      -0.31673366605029374
+     ],
+     "sd": 0.3318661539032657,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -25.12974988696993,
+     "band": [
+      -32.28963096929192,
+      -17.96986880464794
+     ],
+     "sd": 2.4147357405879153,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -23.688354572611118,
+     "band": [
+      -30.271150423356737,
+      -17.1055587218655
+     ],
+     "sd": 2.2201084390963395,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.58474957231007,
+     "band": [
+      -27.645874207555252,
+      -15.523624937064888
+     ],
+     "sd": 2.0441700241392686,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -22.71546280799206,
+     "band": [
+      -28.57388364148594,
+      -16.857041974498184
+     ],
+     "sd": 1.9758063028408164,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5210425908649268,
+     "band": [
+      -1.7369902414288312,
+      0.6949050596989776
+     ],
+     "sd": 0.41008952756912864,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.350049606447485,
+     "band": [
+      -31.20379257751036,
+      -17.49630663538461
+     ],
+     "sd": 2.31148784717825,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -22.908654292088677,
+     "band": [
+      -29.059222171127825,
+      -16.75808641304953
+     ],
+     "sd": 2.074335580670183,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.805049291787626,
+     "band": [
+      -26.55905519867097,
+      -15.051043384904283
+     ],
+     "sd": 1.9405914085935008,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.93576252746962,
+     "band": [
+      -27.6431959702065,
+      -16.228329084732742
+     ],
+     "sd": 1.9248844167582053,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.829007015582558,
+     "band": [
+      -30.87775819868735,
+      -16.780255832477767
+     ],
+     "sd": 2.3772561600750124,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.387611701223747,
+     "band": [
+      -28.642119015534192,
+      -16.133104386913303
+     ],
+     "sd": 2.1093901110905025,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -20.2840067009227,
+     "band": [
+      -26.044850566490005,
+      -14.523162835355395
+     ],
+     "sd": 1.942897573044695,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -21.41471993660469,
+     "band": [
+      -27.024896119125813,
+      -15.804543754083568
+     ],
+     "sd": 1.8920835113277372,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 1.441395314358811,
+     "band": [
+      -5.91527721681506,
+      8.798067845532682
+     ],
+     "sd": 2.4811054664983083,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 3.545000314659859,
+     "band": [
+      -5.165703238648909,
+      12.255703867968627
+     ],
+     "sd": 2.937764881008244,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 2.4142870789778677,
+     "band": [
+      -6.0312875653931854,
+      10.85986172334892
+     ],
+     "sd": 2.848347718221044,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 2.103605000301048,
+     "band": [
+      -2.5857022478089906,
+      6.792912248411087
+     ],
+     "sd": 1.5815119944613691,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.9728917646190567,
+     "band": [
+      -3.88866588713664,
+      5.834449416374754
+     ],
+     "sd": 1.6396050271851716,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.1307132356819913,
+     "band": [
+      -4.1925640579070365,
+      1.9311375865430538
+     ],
+     "sd": 1.032637347990358,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS0",
+   "law": "trial",
+   "seed": 20261709,
+   "B": 5000,
+   "q95": 2.986151939516306,
+   "wall_seconds": 1147.3,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1042448170259278,
+     "band": [
+      -0.27554888043242,
+      0.06705924638056435
+     ],
+     "sd": 0.05736615780985338,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4747653879764595,
+     "band": [
+      -0.6892370771579369,
+      -0.2602936987949821
+     ],
+     "sd": 0.07182209530042108,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2438983417142837,
+     "band": [
+      -1.5068446114378686,
+      -0.9809520719906988
+     ],
+     "sd": 0.08805522125112518,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.971196742691276,
+     "band": [
+      -25.682951741318274,
+      -24.25944174406428
+     ],
+     "sd": 0.2383519034005641,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.86448716825541,
+     "band": [
+      -25.631874603260613,
+      -24.097099733250204
+     ],
+     "sd": 0.2569820459736906,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.21300462742795,
+     "band": [
+      -23.93491832732339,
+      -22.491090927532507
+     ],
+     "sd": 0.24175384056726104,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.722271670809544,
+     "band": [
+      -25.411299884376763,
+      -24.033243457242325
+     ],
+     "sd": 0.23074117711466033,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3705205709505317,
+     "band": [
+      -0.6002904819011424,
+      -0.140750659999921
+     ],
+     "sd": 0.07694515068373534,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.139653524688356,
+     "band": [
+      -1.4028905722168106,
+      -0.8764164771599012
+     ],
+     "sd": 0.08815259667299233,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.866951925665347,
+     "band": [
+      -25.586060577268064,
+      -24.14784327406263
+     ],
+     "sd": 0.24081448840114913,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.76024235122948,
+     "band": [
+      -25.527513874468475,
+      -23.992970827990483
+     ],
+     "sd": 0.2569432295408513,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.10875981040202,
+     "band": [
+      -23.84006829949501,
+      -22.37745132130903
+     ],
+     "sd": 0.24489995951493537,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.618026853783615,
+     "band": [
+      -25.322074434808574,
+      -23.913979272758656
+     ],
+     "sd": 0.23577085000537482,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7691329537378242,
+     "band": [
+      -1.077893605871572,
+      -0.4603723016040765
+     ],
+     "sd": 0.10339750233330741,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.496431354714815,
+     "band": [
+      -25.196263858025073,
+      -23.796598851404557
+     ],
+     "sd": 0.2343593083959474,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.389721780278947,
+     "band": [
+      -25.14647320996846,
+      -23.632970350589435
+     ],
+     "sd": 0.2534202696370796,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.738239239451488,
+     "band": [
+      -23.45342027588403,
+      -22.023058203018945
+     ],
+     "sd": 0.2394992120020482,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -24.247506282833083,
+     "band": [
+      -24.9332405326339,
+      -23.561772033032266
+     ],
+     "sd": 0.2296380973541125,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.72729840097699,
+     "band": [
+      -24.463239904904697,
+      -22.991356897049286
+     ],
+     "sd": 0.2464514595486095,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.620588826541123,
+     "band": [
+      -24.398627921527506,
+      -22.84254973155474
+     ],
+     "sd": 0.2605490647312501,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.969106285713664,
+     "band": [
+      -22.708287743671026,
+      -21.229924827756303
+     ],
+     "sd": 0.247536452574846,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.47837332909526,
+     "band": [
+      -24.187919343460177,
+      -22.76882731473034
+     ],
+     "sd": 0.2376121606457333,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.10670957443586815,
+     "band": [
+      -0.77365486477968,
+      0.9870740136514163
+     ],
+     "sd": 0.29481568823257825,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.758192115263327,
+     "band": [
+      0.8129959408781428,
+      2.7033882896485113
+     ],
+     "sd": 0.3165264840938691,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.2489250718817324,
+     "band": [
+      -0.674992008378307,
+      1.1728421521417718
+     ],
+     "sd": 0.3094005593063341,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.651482540827459,
+     "band": [
+      0.819041769096696,
+      2.483923312558222
+     ],
+     "sd": 0.27876705157393994,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.14221549744586426,
+     "band": [
+      -0.6900796307290425,
+      0.9745106256207711
+     ],
+     "sd": 0.2787182785848871,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.5092670433815947,
+     "band": [
+      -2.189690770088261,
+      -0.8288433166749286
+     ],
+     "sd": 0.22785971393568152,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS0",
+   "law": "pw",
+   "seed": 20261710,
+   "B": 5000,
+   "q95": 3.0035663413871934,
+   "wall_seconds": 1166.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1042448170259278,
+     "band": [
+      -0.9268202355086507,
+      0.7183306014567951
+     ],
+     "sd": 0.2738662393262862,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4747653879764595,
+     "band": [
+      -1.6109707743521369,
+      0.6614399983992179
+     ],
+     "sd": 0.3782854304629484,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2438983417142837,
+     "band": [
+      -2.259253321202701,
+      -0.22854336222586658
+     ],
+     "sd": 0.3380497928404261,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.971196742691276,
+     "band": [
+      -31.576708452926844,
+      -18.36568503245571
+     ],
+     "sd": 2.1992228435962633,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.86448716825541,
+     "band": [
+      -31.38796062030851,
+      -18.341013716202305
+     ],
+     "sd": 2.1719092274286984,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -23.21300462742795,
+     "band": [
+      -29.85067595835951,
+      -16.57533329649639
+     ],
+     "sd": 2.209929988716667,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.722271670809544,
+     "band": [
+      -31.14025845301054,
+      -18.30428488860855
+     ],
+     "sd": 2.1367887546765014,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3705205709505317,
+     "band": [
+      -1.7043107882669555,
+      0.9632696463658921
+     ],
+     "sd": 0.44406883874601366,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.139653524688356,
+     "band": [
+      -2.0898032590821316,
+      -0.18950379029458042
+     ],
+     "sd": 0.3163405187031594,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.866951925665347,
+     "band": [
+      -31.514531046744445,
+      -18.21937280458625
+     ],
+     "sd": 2.2132286640317456,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.76024235122948,
+     "band": [
+      -31.298601902922947,
+      -18.22188279953601
+     ],
+     "sd": 2.1768653688780297,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -23.10875981040202,
+     "band": [
+      -29.778562509266024,
+      -16.438957111538016
+     ],
+     "sd": 2.220627727431372,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.618026853783615,
+     "band": [
+      -31.038520863664324,
+      -18.197532843902906
+     ],
+     "sd": 2.1376235049016477,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.7691329537378242,
+     "band": [
+      -2.040545053927369,
+      0.5022791464517204
+     ],
+     "sd": 0.4233008216500204,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.496431354714815,
+     "band": [
+      -30.82100051404996,
+      -18.17186219537967
+     ],
+     "sd": 2.1056865207825406,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -24.389721780278947,
+     "band": [
+      -30.561359510146595,
+      -18.2180840504113
+     ],
+     "sd": 2.0547699063032128,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.738239239451488,
+     "band": [
+      -29.114560690239323,
+      -16.361917788663654
+     ],
+     "sd": 2.122916801578932,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -24.247506282833083,
+     "band": [
+      -30.50218588042616,
+      -17.992826685240004
+     ],
+     "sd": 2.0824176617668324,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.72729840097699,
+     "band": [
+      -30.227494546876425,
+      -17.227102255077558
+     ],
+     "sd": 2.1641593382942648,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.620588826541123,
+     "band": [
+      -29.93225336786349,
+      -17.308924285218758
+     ],
+     "sd": 2.1013900889591577,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.969106285713664,
+     "band": [
+      -28.42774035754425,
+      -15.51047221388308
+     ],
+     "sd": 2.150321763443278,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -23.47837332909526,
+     "band": [
+      -29.75224182999888,
+      -17.204504828191638
+     ],
+     "sd": 2.0888063681010762,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.10670957443586815,
+     "band": [
+      -5.698033097707983,
+      5.911452246579719
+     ],
+     "sd": 1.9326167669940453,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 1.758192115263327,
+     "band": [
+      -5.1389109720614945,
+      8.65529520258815
+     ],
+     "sd": 2.296304560444436,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.2489250718817324,
+     "band": [
+      -6.233976542615622,
+      6.731826686379087
+     ],
+     "sd": 2.1584013394900525,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.651482540827459,
+     "band": [
+      -2.3856313800179967,
+      5.6885964616729146
+     ],
+     "sd": 1.344106792387652,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.14221549744586426,
+     "band": [
+      -4.262212980724662,
+      4.546643975616391
+     ],
+     "sd": 1.4663995988636451,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.5092670433815947,
+     "band": [
+      -4.569536261996686,
+      1.5510021752334966
+     ],
+     "sd": 1.0188785166641965,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS1",
+   "law": "trial",
+   "seed": 20261809,
+   "B": 5000,
+   "q95": 2.932118565278868,
+   "wall_seconds": 1151.4,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 6,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1902427891752403,
+     "band": [
+      -0.3626819075700908,
+      -0.017803670780389774
+     ],
+     "sd": 0.05881041798132408,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.46502334047499216,
+     "band": [
+      -0.6674012067493494,
+      -0.2626454742006349
+     ],
+     "sd": 0.06902103778163877,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3825619884827587,
+     "band": [
+      -1.6021514963974117,
+      -1.1629724805681056
+     ],
+     "sd": 0.07489107381773567,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.665891672872974,
+     "band": [
+      -25.38079948540797,
+      -23.950983860337978
+     ],
+     "sd": 0.24381954433926625,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.35736039744861,
+     "band": [
+      -25.09569854067709,
+      -23.619022254220127
+     ],
+     "sd": 0.2518104663200278,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.595668390267214,
+     "band": [
+      -23.334395118243588,
+      -21.85694166229084
+     ],
+     "sd": 0.25194299327596076,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.181306566494456,
+     "band": [
+      -24.904740310425616,
+      -23.457872822563296
+     ],
+     "sd": 0.24672731604301876,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2747805512997519,
+     "band": [
+      -0.5031607383006467,
+      -0.04640036429885705
+     ],
+     "sd": 0.07788913780816842,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1923191993075184,
+     "band": [
+      -1.4210065692384952,
+      -0.9636318293765417
+     ],
+     "sd": 0.07799390264739403,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.47564888369773,
+     "band": [
+      -25.19256778516188,
+      -23.75872998223358
+     ],
+     "sd": 0.24450542687927349,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.167117608273372,
+     "band": [
+      -24.907979727896656,
+      -23.42625548865009
+     ],
+     "sd": 0.252671269298696,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.405425601091977,
+     "band": [
+      -23.152654803906888,
+      -21.658196398277067
+     ],
+     "sd": 0.25484276511302806,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.991063777319212,
+     "band": [
+      -24.72766920627626,
+      -23.254458348362164
+     ],
+     "sd": 0.25121952354849253,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.9175386480077665,
+     "band": [
+      -1.1781142152005866,
+      -0.6569630808149465
+     ],
+     "sd": 0.08886938280002236,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.20086833239798,
+     "band": [
+      -24.89988614990252,
+      -23.50185051489344
+     ],
+     "sd": 0.2384002563136658,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -23.89233705697362,
+     "band": [
+      -24.613201592723353,
+      -23.171472521223887
+     ],
+     "sd": 0.24585108674866116,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.130645049792225,
+     "band": [
+      -22.861366661409633,
+      -21.399923438174817
+     ],
+     "sd": 0.24921284571175328,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.716283226019463,
+     "band": [
+      -24.431918728143057,
+      -23.00064772389587
+     ],
+     "sd": 0.24406772311253025,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.283329684390214,
+     "band": [
+      -24.01058491283049,
+      -22.55607445594994
+     ],
+     "sd": 0.24803063459035296,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.974798408965853,
+     "band": [
+      -23.716843061616206,
+      -22.2327537563155
+     ],
+     "sd": 0.2530745725760854,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.213106401784458,
+     "band": [
+      -21.95610221676525,
+      -20.470110586803667
+     ],
+     "sd": 0.25339896680137347,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.798744578011696,
+     "band": [
+      -23.530149992871298,
+      -22.067339163152095
+     ],
+     "sd": 0.24944605703215844,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.308531275424361,
+     "band": [
+      -0.5341524877750247,
+      1.1512150386237465
+     ],
+     "sd": 0.28739757429257967,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 2.070223282605756,
+     "band": [
+      1.1385243838299606,
+      3.0019221813815515
+     ],
+     "sd": 0.3177562155257468,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.4845851063785176,
+     "band": [
+      -0.44281199900027646,
+      1.4119822117573118
+     ],
+     "sd": 0.31628908747439793,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.761692007181395,
+     "band": [
+      0.9410060028807333,
+      2.582378011482057
+     ],
+     "sd": 0.27989523139307565,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.1760538309541566,
+     "band": [
+      -0.6453801148963481,
+      0.9974877768046613
+     ],
+     "sd": 0.2801503171043766,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.5856381762272385,
+     "band": [
+      -2.2821089643666155,
+      -0.8891673880878616
+     ],
+     "sd": 0.23753159111188157,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS1",
+   "law": "pw",
+   "seed": 20261810,
+   "B": 5000,
+   "q95": 2.9654846994005433,
+   "wall_seconds": 1148.2,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1902427891752403,
+     "band": [
+      -1.1419461413788352,
+      0.7614605630283545
+     ],
+     "sd": 0.3209267450936356,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.46502334047499216,
+     "band": [
+      -1.6349212604891683,
+      0.704874579539184
+     ],
+     "sd": 0.3945047904818611,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3825619884827587,
+     "band": [
+      -2.3977367094975097,
+      -0.36738726746800765
+     ],
+     "sd": 0.34233011595708557,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.665891672872974,
+     "band": [
+      -31.346815178902588,
+      -17.98496816684336
+     ],
+     "sd": 2.2528942763994464,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.35736039744861,
+     "band": [
+      -30.870276866841486,
+      -17.844443928055732
+     ],
+     "sd": 2.19624011909737,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.595668390267214,
+     "band": [
+      -28.959067955284304,
+      -16.232268825250124
+     ],
+     "sd": 2.1458210748156668,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.181306566494456,
+     "band": [
+      -30.45412968838101,
+      -17.908483444607903
+     ],
+     "sd": 2.115277520452076,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.2747805512997519,
+     "band": [
+      -1.7032344968212054,
+      1.1536733942217017
+     ],
+     "sd": 0.48169324421407667,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.1923191993075184,
+     "band": [
+      -2.2453365943184576,
+      -0.13930180429657946
+     ],
+     "sd": 0.3550911576862294,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.47564888369773,
+     "band": [
+      -31.141568514014004,
+      -17.809729253381455
+     ],
+     "sd": 2.2478347744177385,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.167117608273372,
+     "band": [
+      -30.62029251766269,
+      -17.713942698884054
+     ],
+     "sd": 2.176094488261495,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.405425601091977,
+     "band": [
+      -28.742835447332215,
+      -16.06801575485174
+     ],
+     "sd": 2.137057003707121,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -23.991063777319212,
+     "band": [
+      -30.151865780619154,
+      -17.83026177401927
+     ],
+     "sd": 2.0775025426856244,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.9175386480077665,
+     "band": [
+      -2.2062532459911206,
+      0.37117594997558756
+     ],
+     "sd": 0.4345713192328596,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.20086833239798,
+     "band": [
+      -30.587065989203037,
+      -17.814670675592925
+     ],
+     "sd": 2.153508887803734,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -23.89233705697362,
+     "band": [
+      -30.07847359927504,
+      -17.7062005146722
+     ],
+     "sd": 2.086045678654796,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.130645049792225,
+     "band": [
+      -28.243956572292582,
+      -16.017333527291868
+     ],
+     "sd": 2.0614881350546614,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.716283226019463,
+     "band": [
+      -29.81934832643681,
+      -17.613218125602117
+     ],
+     "sd": 2.0580329082969295,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.283329684390214,
+     "band": [
+      -29.881566328560474,
+      -16.685093040219954
+     ],
+     "sd": 2.2250111914265007,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.974798408965853,
+     "band": [
+      -29.264364417825593,
+      -16.685232400106113
+     ],
+     "sd": 2.120923439642478,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.213106401784458,
+     "band": [
+      -27.36518421160215,
+      -15.061028591966766
+     ],
+     "sd": 2.074560631205179,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.798744578011696,
+     "band": [
+      -28.899294325175703,
+      -16.69819483084769
+     ],
+     "sd": 2.057184698473474,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.308531275424361,
+     "band": [
+      -5.517975914365658,
+      6.13503846521438
+     ],
+     "sd": 1.9647739848287922,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 2.070223282605756,
+     "band": [
+      -4.992234676765132,
+      9.132681241976645
+     ],
+     "sd": 2.3815526550511374,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.4845851063785176,
+     "band": [
+      -5.995599848318534,
+      6.964770061075569
+     ],
+     "sd": 2.1852026267432727,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.761692007181395,
+     "band": [
+      -2.2710351628982544,
+      5.7944191772610445
+     ],
+     "sd": 1.3598880381661869,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.1760538309541566,
+     "band": [
+      -4.082183151081073,
+      4.434290812989386
+     ],
+     "sd": 1.4359328789981647,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.5856381762272385,
+     "band": [
+      -4.648681392804395,
+      1.4774050403499177
+     ],
+     "sd": 1.0328980005178694,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS2",
+   "law": "trial",
+   "seed": 20261909,
+   "B": 5000,
+   "q95": 2.9242663275790903,
+   "wall_seconds": 1150.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 3,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1506493414234611,
+     "band": [
+      -0.3253265662636617,
+      0.024027883416739504
+     ],
+     "sd": 0.059733692240272265,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4747045011860842,
+     "band": [
+      -0.6777140531437875,
+      -0.2716949492283809
+     ],
+     "sd": 0.0694223881194052,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3552411553762869,
+     "band": [
+      -1.5719326799118578,
+      -1.138549630840716
+     ],
+     "sd": 0.0741011591495372,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.715608119904328,
+     "band": [
+      -25.44052765425718,
+      -23.990688585551474
+     ],
+     "sd": 0.24789791802342126,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.378618522078046,
+     "band": [
+      -25.098386509008396,
+      -23.658850535147696
+     ],
+     "sd": 0.24613626335677255,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.582562639402184,
+     "band": [
+      -23.296667036857997,
+      -21.86845824194637
+     ],
+     "sd": 0.24419950765804463,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.260607513164942,
+     "band": [
+      -24.992365135460357,
+      -23.528849890869527
+     ],
+     "sd": 0.2502363124022342,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3240551597626231,
+     "band": [
+      -0.5503769977656074,
+      -0.09773332175963875
+     ],
+     "sd": 0.07739440004780591,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.2045918139528258,
+     "band": [
+      -1.4278033235849836,
+      -0.9813803043206679
+     ],
+     "sd": 0.07633077313342654,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.564958778480865,
+     "band": [
+      -25.291873694120735,
+      -23.838043862840994
+     ],
+     "sd": 0.24858027081331546,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.227969180654583,
+     "band": [
+      -24.946437549143603,
+      -23.509500812165562
+     ],
+     "sd": 0.2456918378853063,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.431913297978724,
+     "band": [
+      -23.152459943897888,
+      -21.71136665205956
+     ],
+     "sd": 0.24640253834734793,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.109958171741482,
+     "band": [
+      -24.851966647871254,
+      -23.36794969561171
+     ],
+     "sd": 0.2537417570799919,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.8805366541902027,
+     "band": [
+      -1.1405464911185828,
+      -0.6205268172618227
+     ],
+     "sd": 0.08891455421696631,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.240903618718242,
+     "band": [
+      -24.94574057043315,
+      -23.536066667003336
+     ],
+     "sd": 0.24103035522705574,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -23.90391402089196,
+     "band": [
+      -24.608377466935632,
+      -23.19945057484829
+     ],
+     "sd": 0.24090262894312847,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.1078581382161,
+     "band": [
+      -22.811576632314605,
+      -21.404139644117592
+     ],
+     "sd": 0.24064788061937303,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.785903011978856,
+     "band": [
+      -24.51008177635521,
+      -23.061724247602502
+     ],
+     "sd": 0.247644599791251,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.36036696452804,
+     "band": [
+      -24.092581166844443,
+      -22.628152762211638
+     ],
+     "sd": 0.25039244729893717,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.02337736670176,
+     "band": [
+      -23.740938104723213,
+      -22.305816628680304
+     ],
+     "sd": 0.24538145901898764,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.227321484025897,
+     "band": [
+      -21.94058819786874,
+      -20.514054770183055
+     ],
+     "sd": 0.24391304824596213,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.905366357788655,
+     "band": [
+      -23.64243154739396,
+      -22.168301168183348
+     ],
+     "sd": 0.2520513205838879,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.3369895978262818,
+     "band": [
+      -0.5072511506585698,
+      1.1812303463111333
+     ],
+     "sd": 0.2887017302503266,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 2.133045480502144,
+     "band": [
+      1.1858054079415952,
+      3.0802855530626925
+     ],
+     "sd": 0.32392400911880675,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.4550006067393859,
+     "band": [
+      -0.4867234704229133,
+      1.3967246839016851
+     ],
+     "sd": 0.3220377255931827,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.7960558826758621,
+     "band": [
+      0.9986019817003888,
+      2.5935097836513354
+     ],
+     "sd": 0.27270221369872993,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.11801100891310412,
+     "band": [
+      -0.708363285925126,
+      0.9443853037513342
+     ],
+     "sd": 0.2825920084790498,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.678044873762758,
+     "band": [
+      -2.3524433105552918,
+      -1.0036464369702243
+     ],
+     "sd": 0.23062141448342274,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS2",
+   "law": "pw",
+   "seed": 20261910,
+   "B": 5000,
+   "q95": 2.995989945356335,
+   "wall_seconds": 1151.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": -0.1506493414234611,
+     "band": [
+      -1.0669504551989184,
+      0.7656517723519962
+     ],
+     "sd": 0.3058425196638886,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.4747045011860842,
+     "band": [
+      -1.6468208555403587,
+      0.6974118531681903
+     ],
+     "sd": 0.3912284005395306,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.3552411553762869,
+     "band": [
+      -2.3805339274668933,
+      -0.32994838328568066
+     ],
+     "sd": 0.34222169993586565,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -24.715608119904328,
+     "band": [
+      -31.5467940862006,
+      -17.884422153608057
+     ],
+     "sd": 2.2801097770319076,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -24.378618522078046,
+     "band": [
+      -30.98904653956277,
+      -17.76819050459332
+     ],
+     "sd": 2.20642530116986,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -22.582562639402184,
+     "band": [
+      -29.14435025056125,
+      -16.02077502824312
+     ],
+     "sd": 2.190190131088248,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -24.260607513164942,
+     "band": [
+      -30.762295843635776,
+      -17.758919182694108
+     ],
+     "sd": 2.1701302237506486,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.3240551597626231,
+     "band": [
+      -1.7223163605156038,
+      1.0742060409903575
+     ],
+     "sd": 0.46671091233808376,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.2045918139528258,
+     "band": [
+      -2.2470648026801676,
+      -0.16211882522548393
+     ],
+     "sd": 0.34795610390586706,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -24.564958778480865,
+     "band": [
+      -31.36117146046376,
+      -17.76874609649797
+     ],
+     "sd": 2.268436411983542,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -24.227969180654583,
+     "band": [
+      -30.761912275713474,
+      -17.69402608559569
+     ],
+     "sd": 2.1808962026679173,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -22.431913297978724,
+     "band": [
+      -28.96304046902612,
+      -15.900786126931328
+     ],
+     "sd": 2.179956304983728,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -24.109958171741482,
+     "band": [
+      -30.48628052059631,
+      -17.733635822886654
+     ],
+     "sd": 2.128285630176387,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.8805366541902027,
+     "band": [
+      -2.160563298181185,
+      0.39948998980077954
+     ],
+     "sd": 0.42724664212407404,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.240903618718242,
+     "band": [
+      -30.771489060617853,
+      -17.71031817681863
+     ],
+     "sd": 2.1797754869043393,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -23.90391402089196,
+     "band": [
+      -30.151068109633755,
+      -17.656759932150166
+     ],
+     "sd": 2.0851719140194827,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -22.1078581382161,
+     "band": [
+      -28.38728631525721,
+      -15.828429961174987
+     ],
+     "sd": 2.095944342795267,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -23.785903011978856,
+     "band": [
+      -30.10267747715232,
+      -17.469128546805393
+     ],
+     "sd": 2.108409767851261,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.36036696452804,
+     "band": [
+      -30.075815344255016,
+      -16.644918584801065
+     ],
+     "sd": 2.241478944258693,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -23.02337736670176,
+     "band": [
+      -29.40072044747022,
+      -16.646034285933297
+     ],
+     "sd": 2.1286263295553076,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -21.227321484025897,
+     "band": [
+      -27.582593073198794,
+      -14.872049894852998
+     ],
+     "sd": 2.1212593183175787,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -22.905366357788655,
+     "band": [
+      -29.2322595054688,
+      -16.57847321010851
+     ],
+     "sd": 2.1117871765513025,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 0.3369895978262818,
+     "band": [
+      -5.529279355000158,
+      6.203258550652722
+     ],
+     "sd": 1.9580402670973323,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 2.133045480502144,
+     "band": [
+      -4.950997070471027,
+      9.217088031475315
+     ],
+     "sd": 2.3645081192455786,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 0.4550006067393859,
+     "band": [
+      -6.1189118293783205,
+      7.028913042857092
+     ],
+     "sd": 2.194237148995446,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 1.7960558826758621,
+     "band": [
+      -2.2918226190047015,
+      5.883934384356426
+     ],
+     "sd": 1.3644500069222905,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 0.11801100891310412,
+     "band": [
+      -4.246703261489917,
+      4.482725279316125
+     ],
+     "sd": 1.456852108989269,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.678044873762758,
+     "band": [
+      -4.869612951720265,
+      1.5135232041947497
+     ],
+     "sd": 1.0652799696154893,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS3",
+   "law": "trial",
+   "seed": 20262009,
+   "B": 5000,
+   "q95": 2.9848821639342042,
+   "wall_seconds": 1133.3,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 5,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 6,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.08639664758709298,
+     "band": [
+      -0.06353847491963915,
+      0.2363317700938251
+     ],
+     "sd": 0.050231504720143164,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.6933036329354327,
+     "band": [
+      -0.9206436153014483,
+      -0.46596365056941713
+     ],
+     "sd": 0.07616380476017573,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2143462238003222,
+     "band": [
+      -1.4767136445935578,
+      -0.9519788030070867
+     ],
+     "sd": 0.08789875324506072,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -25.106010219884645,
+     "band": [
+      -25.78455335685636,
+      -24.42746708291293
+     ],
+     "sd": 0.22732660778721245,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -23.455046666493384,
+     "band": [
+      -24.134837936863736,
+      -22.775255396123033
+     ],
+     "sd": 0.2277447594361168,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -20.975851630428885,
+     "band": [
+      -21.674510950852575,
+      -20.277192310005194
+     ],
+     "sd": 0.2340659637641536,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -22.43858123856815,
+     "band": [
+      -23.201248363839948,
+      -21.675914113296354
+     ],
+     "sd": 0.2555099609917492,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.7797002805225257,
+     "band": [
+      -0.9960805377985749,
+      -0.5633200232464766
+     ],
+     "sd": 0.07249206011900002,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.3007428713874152,
+     "band": [
+      -1.5638026023476483,
+      -1.037683140427182
+     ],
+     "sd": 0.08813069210528199,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -25.19240686747174,
+     "band": [
+      -25.866891565175788,
+      -24.51792216976769
+     ],
+     "sd": 0.22596694296804268,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -23.541443314080475,
+     "band": [
+      -24.21523664142201,
+      -22.86764998673894
+     ],
+     "sd": 0.22573531896262447,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.06224827801598,
+     "band": [
+      -21.756746908899917,
+      -20.36774964713204
+     ],
+     "sd": 0.23267204289517418,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -22.52497788615524,
+     "band": [
+      -23.286269363570373,
+      -21.76368640874011
+     ],
+     "sd": 0.25504908924502223,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5210425908648895,
+     "band": [
+      -0.8317741325913599,
+      -0.21031104913841908
+     ],
+     "sd": 0.10410177844907376,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.412706586949213,
+     "band": [
+      -25.076540267640574,
+      -23.74887290625785
+     ],
+     "sd": 0.22239862220101872,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -22.761743033557952,
+     "band": [
+      -23.42627817704911,
+      -22.097207890066795
+     ],
+     "sd": 0.2226336273909293,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.282547997493452,
+     "band": [
+      -20.97109749270462,
+      -19.593998502282286
+     ],
+     "sd": 0.23067895394022178,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.74527760563272,
+     "band": [
+      -22.496369953828136,
+      -20.9941852574373
+     ],
+     "sd": 0.2516321606496675,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.891663996084322,
+     "band": [
+      -24.597631191820376,
+      -23.185696800348268
+     ],
+     "sd": 0.23651425984788532,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.24070044269306,
+     "band": [
+      -22.94192291203008,
+      -21.539477973356043
+     ],
+     "sd": 0.23492467401553144,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -19.76150540662856,
+     "band": [
+      -20.47608825631405,
+      -19.046922556943073
+     ],
+     "sd": 0.23940069002376912,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -21.224235014767828,
+     "band": [
+      -22.00518612606448,
+      -20.443283903471176
+     ],
+     "sd": 0.26163549125414254,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 1.6509635533912608,
+     "band": [
+      0.8565854326229714,
+      2.4453416741595504
+     ],
+     "sd": 0.2661338294578653,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 4.13015858945576,
+     "band": [
+      3.2242306926692366,
+      5.036086486242285
+     ],
+     "sd": 0.3035054139599507,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 2.667428981316494,
+     "band": [
+      1.7142292090141584,
+      3.6206287536188295
+     ],
+     "sd": 0.3193425133560304,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 2.4791950360644996,
+     "band": [
+      1.6994359694706325,
+      3.258954102658367
+     ],
+     "sd": 0.26123613052989364,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 1.0164654279252332,
+     "band": [
+      0.1904124799230067,
+      1.8425183759274597
+     ],
+     "sd": 0.27674558077477096,
+     "separated": true,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.4627296081392664,
+     "band": [
+      -2.147850393604025,
+      -0.7776088226745081
+     ],
+     "sd": 0.2295302621131748,
+     "separated": true,
+     "block": "within_baseline"
+    }
+   }
+  },
+  {
+   "rule": "B2xS3",
+   "law": "pw",
+   "seed": 20262010,
+   "B": 5000,
+   "q95": 2.9794450715642213,
+   "wall_seconds": 1150.9,
+   "counts": {
+    "cross": {
+     "separated": 16,
+     "total": 16
+    },
+    "within_ssl": {
+     "separated": 2,
+     "total": 6
+    },
+    "within_baseline": {
+     "separated": 0,
+     "total": 6
+    }
+   },
+   "pairs": {
+    "XLSR-Mamba vs XLS-R+SLS": {
+     "delta_hat": 0.08639664758709298,
+     "band": [
+      -0.5940883231025788,
+      0.7668816182767647
+     ],
+     "sd": 0.2283931921364183,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs XLSR-Conformer": {
+     "delta_hat": -0.6933036329354327,
+     "band": [
+      -1.865412328011455,
+      0.4788050621405895
+     ],
+     "sd": 0.3933983231517204,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs SSL-AASIST": {
+     "delta_hat": -1.2143462238003222,
+     "band": [
+      -2.2811666027396953,
+      -0.14752584486094933
+     ],
+     "sd": 0.35806009284114365,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLSR-Mamba vs RawNet2": {
+     "delta_hat": -25.106010219884645,
+     "band": [
+      -32.090196584120584,
+      -18.121823855648707
+     ],
+     "sd": 2.3441232163978816,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-LCNN": {
+     "delta_hat": -23.455046666493384,
+     "band": [
+      -30.062925992933543,
+      -16.847167340053225
+     ],
+     "sd": 2.217822167458517,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs LFCC-GMM": {
+     "delta_hat": -20.975851630428885,
+     "band": [
+      -26.96860016803746,
+      -14.983103092820306
+     ],
+     "sd": 2.01136399351788,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Mamba vs CQCC-GMM": {
+     "delta_hat": -22.43858123856815,
+     "band": [
+      -28.24275034771207,
+      -16.63441212942423
+     ],
+     "sd": 1.9480705197551127,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+     "delta_hat": -0.7797002805225257,
+     "band": [
+      -2.0803246754752274,
+      0.5209241144301759
+     ],
+     "sd": 0.4365324292653827,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs SSL-AASIST": {
+     "delta_hat": -1.3007428713874152,
+     "band": [
+      -2.267045913348798,
+      -0.3344398294260327
+     ],
+     "sd": 0.3243231604380843,
+     "separated": true,
+     "block": "within_ssl"
+    },
+    "XLS-R+SLS vs RawNet2": {
+     "delta_hat": -25.19240686747174,
+     "band": [
+      -32.218292271186264,
+      -18.166521463757213
+     ],
+     "sd": 2.3581187888877264,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-LCNN": {
+     "delta_hat": -23.541443314080475,
+     "band": [
+      -30.14704221034116,
+      -16.93584441781979
+     ],
+     "sd": 2.217056779903218,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs LFCC-GMM": {
+     "delta_hat": -21.06224827801598,
+     "band": [
+      -27.113493787035246,
+      -15.011002768996711
+     ],
+     "sd": 2.03099750580142,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLS-R+SLS vs CQCC-GMM": {
+     "delta_hat": -22.52497788615524,
+     "band": [
+      -28.351707370375916,
+      -16.698248401934567
+     ],
+     "sd": 1.9556425254591507,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+     "delta_hat": -0.5210425908648895,
+     "band": [
+      -1.7078184167014048,
+      0.6657332349716258
+     ],
+     "sd": 0.39832109581850855,
+     "separated": false,
+     "block": "within_ssl"
+    },
+    "XLSR-Conformer vs RawNet2": {
+     "delta_hat": -24.412706586949213,
+     "band": [
+      -31.12486888344995,
+      -17.700544290448477
+     ],
+     "sd": 2.252822970479137,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-LCNN": {
+     "delta_hat": -22.761743033557952,
+     "band": [
+      -28.922716799555115,
+      -16.60076926756079
+     ],
+     "sd": 2.067825926645671,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs LFCC-GMM": {
+     "delta_hat": -20.282547997493452,
+     "band": [
+      -25.98450197982652,
+      -14.580594015160386
+     ],
+     "sd": 1.9137637531070564,
+     "separated": true,
+     "block": "cross"
+    },
+    "XLSR-Conformer vs CQCC-GMM": {
+     "delta_hat": -21.74527760563272,
+     "band": [
+      -27.38247206213317,
+      -16.108083149132266
+     ],
+     "sd": 1.89202832107957,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs RawNet2": {
+     "delta_hat": -23.891663996084322,
+     "band": [
+      -30.826009175381632,
+      -16.957318816787012
+     ],
+     "sd": 2.3273948714405224,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-LCNN": {
+     "delta_hat": -22.24070044269306,
+     "band": [
+      -28.515794175954014,
+      -15.965606709432107
+     ],
+     "sd": 2.106128350259031,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs LFCC-GMM": {
+     "delta_hat": -19.76150540662856,
+     "band": [
+      -25.47953285577437,
+      -14.043477957482754
+     ],
+     "sd": 1.9191585385206713,
+     "separated": true,
+     "block": "cross"
+    },
+    "SSL-AASIST vs CQCC-GMM": {
+     "delta_hat": -21.224235014767828,
+     "band": [
+      -26.79150419067086,
+      -15.656965838864796
+     ],
+     "sd": 1.8685590914351684,
+     "separated": true,
+     "block": "cross"
+    },
+    "RawNet2 vs LFCC-LCNN": {
+     "delta_hat": 1.6509635533912608,
+     "band": [
+      -5.642899664352646,
+      8.944826771135167
+     ],
+     "sd": 2.448060978655531,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs LFCC-GMM": {
+     "delta_hat": 4.13015858945576,
+     "band": [
+      -4.386463280586305,
+      12.646780459497826
+     ],
+     "sd": 2.8584590974086335,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "RawNet2 vs CQCC-GMM": {
+     "delta_hat": 2.667428981316494,
+     "band": [
+      -5.650392350970209,
+      10.985250313603197
+     ],
+     "sd": 2.791735082372172,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs LFCC-GMM": {
+     "delta_hat": 2.4791950360644996,
+     "band": [
+      -2.080157857973772,
+      7.038547930102771
+     ],
+     "sd": 1.5302691556735402,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-LCNN vs CQCC-GMM": {
+     "delta_hat": 1.0164654279252332,
+     "band": [
+      -3.89495783711168,
+      5.927888692962147
+     ],
+     "sd": 1.648435580139222,
+     "separated": false,
+     "block": "within_baseline"
+    },
+    "LFCC-GMM vs CQCC-GMM": {
+     "delta_hat": -1.4627296081392664,
+     "band": [
+      -4.508563390330581,
+      1.5831041740520484
+     ],
+     "sd": 1.0222822401596547,
+     "separated": false,
+     "block": "within_baseline"
+    }
+   }
+  }
+ ],
+ "wall_seconds_total": 2347.6
+}

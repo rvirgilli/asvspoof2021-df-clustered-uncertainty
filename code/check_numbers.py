@@ -27,6 +27,7 @@ PLANS = ROOT / "plans"
 PAPER = ROOT / "paper"
 AUDIT_DIR = ROOT / "audit"
 EXP115 = ROOT / "exp115"
+EXP116 = ROOT / "exp116"
 TEX_PATH = Path(os.environ.get("M1_TEX_PATH", PAPER / "main.tex"))
 SUPPLEMENT_PATH = Path(os.environ.get(
     "M1_SUPPLEMENT_PATH", PAPER / "SUPPLEMENT.md"))
@@ -296,6 +297,8 @@ if matched["status"] != "post-audit descriptive diagnostic; not population infer
     fail("STATUS matched diagnostic lost its descriptive/non-population guard")
 if (matched["B"], matched["seed"]) != (5000, 2026081604):
     fail("CONTRACT matched diagnostic B/seed changed")
+require(f"5,000 replicates and seed {matched['seed']}", "printed seed must be the matched-run seed, not the campaign seed")
+forbid(r"seed 20260817", "the campaign selection seed is not the seed of the printed bands")
 saved_clustered = selection["21df"]["pairs"]
 for pair, row in matched["speaker_attack"]["pairs"].items():
     if row["resolved_simultaneous"] != saved_clustered[pair]["resolved_simultaneous"]:
@@ -398,10 +401,11 @@ vcc2018 = exp111_c["conditioned_draw_diagnostics"]["vcc2018"]
 if (vcc2018["attempts"], vcc2018["rejected_attempts"],
         vcc2018["zero_support_reasons"]) != (1007, 7, {"spoof": 7}):
     fail("VALUE EXP-111 conditioning diagnostics changed")
-require("designed after an earlier arm failed",
+require("designed after the main result and is a robustness check",
         "EXP-111 chronology and role must be visible")
-require("exactly restores each of the three bona-fide source masses and five spoof-stratum masses",
-        "EXP-111 composition control must be stated precisely")
+require("(1,000 draws, seed 20260824)", "EXP-111 draw count and seed differ from the primary arms and must be stated")
+require("redraws a replicate only when a class loses all support in a stratum (7 of 1,007 attempts, all VCC2018 spoof), and then rescales each source and stratum mass to its observed value",
+        "EXP-111 composition control must state its zero-support rule and rejection count")
 require("a robustness check, not prospective evidence",
         "EXP-111 cannot be relabelled as prospective or causal")
 
@@ -465,7 +469,7 @@ if (exp114_mamba["classification"] != "reproduced-with-difference"
     fail("VALUE EXP-114 Mamba numerical-difference summary changed")
 require("91,130 evaluation trials", "EXP-114 complete evaluation size must remain visible")
 require("single-source SpoofCeleb", "EXP-114 source/composition control must remain visible")
-require("while official access was pending, fixed",
+require("while official access was pending and released with its hash in the repository of Sec.~\\ref{sec:disc}, fixed",
         "EXP-114 prospective chronology must remain visible in field-facing language")
 require("6/6", "EXP-114 trial-i.i.d. endpoint must remain visible")
 require("3/6", "EXP-114 product/source endpoint must remain visible")
@@ -475,9 +479,9 @@ require("speaker and spoof-attack multiplicities",
         "EXP-114 must not overstate its composition control")
 require("off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems",
         "EXP-114 external-validity boundary must remain visible")
-require("archived plan did not bind the scoring executable",
+require("archived plan did not bind the scoring code",
         "EXP-114 original provenance gap must remain disclosed in field-facing language")
-require("clean-source re-scoring is reproducibility evidence only",
+require("re-scoring from freshly cloned, commit-pinned detector repositories is reproducibility evidence only",
         "EXP-114 rerun chronology must remain visible")
 require("three score files were byte-identical", "EXP-114 exact score reproduction count")
 mamba_ceiling = math.ceil(exp114_mamba["delta"]["max_abs"] * 1e8) / 1e8
@@ -643,7 +647,7 @@ require("11/24", "joint low-EER failure count")
 oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
 if f"{oracle_min:.3f}" != "0.944":
     fail(f"VALUE oracle-SD minimum changed: {oracle_min}")
-require("all three are below .90 in the same 11/24 low-EER cells",
+require("all three are below .90 in the same 11/24 cells",
         "adverse coverage result must remain explicit")
 require("does not establish that either model describes 21DF",
         "coverage cannot validate acquisition")
@@ -740,8 +744,33 @@ if cross_flips:
 require("separate three within-baseline pairs in at least one deletion",
         "all three gained baseline pairs must remain counted")
 require_re(r"all 16 cross-cohort", "stable cross-cohort block must be bounded")
-require("every within-cohort result is conditional on them",
+require("some within-cohort separation decisions change with them",
         "source dependence belongs with the headline")
+# The source-deletion analysis is a third construction; the paper must declare it and its
+# full-data reference, and both are bound here to the artifacts that produced them.
+if any(row["q_draws"] != 200000 for row in loco["by_corpus"].values()):
+    fail("CONTRACT LOCO Gaussian max-t draw count changed")
+require("200,000 draws", "LOCO critical-value draw count must be printed")
+require("Source deletion uses a third construction", "LOCO construction must be declared in the paper")
+_modern = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
+def _block(name):
+    a, b = name.split(" vs ")
+    return "cross" if (a in _modern) != (b in _modern) else ("ssl" if a in _modern else "base")
+_full = {"cross": 0, "ssl": 0, "base": 0}
+for name, row in multiway["pairs"].items():
+    if row["explicit_cell_jackknife"]["resolved_simultaneous_own_q"]:
+        _full[_block(name)] += 1
+if _full != {"cross": 16, "ssl": 2, "base": 0}:
+    fail(f"VALUE full-data exact-cell jackknife block counts changed: {_full}")
+require("separates 18/28 pairs (16 cross-cohort, 2 within-SSL, 0 within-baseline)",
+        "LOCO full-data reference counts must be printed")
+for corpus, expected in (("asvspoof", (16, 2, 1)), ("vcc2018", (16, 1, 3)), ("vcc2020", (16, 1, 0))):
+    _c = {"cross": 0, "ssl": 0, "base": 0}
+    for name, row in loco["by_corpus"][corpus]["pairs"].items():
+        if row["resolved"]:
+            _c[_block(name)] += 1
+    if (_c["cross"], _c["ssl"], _c["base"]) != expected:
+        fail(f"VALUE LOCO block counts changed for {corpus}: {_c}")
 
 
 # 6. Composition-policy sensitivity and constructive witnesses.
@@ -758,8 +787,9 @@ within_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair 
 cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in cross_pairs)
 if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
     fail("VALUE EXP-108 registered-policy block counts changed")
-for literal in ("6/12", "0/16"):
-    require(literal, "registered composition-policy asymmetry must be visible")
+for literal in ("six of the twelve within-cohort pairs reverse their point ordering and none of the sixteen between-cohort pairs does",
+                "six of the 12 within-cohort pairs reverse their point ordering and none of the 16 cross-cohort pairs does"):
+    require(literal, "registered composition-policy asymmetry must be visible with its pair denominator")
 
 if composition_v2["changes_primary_classification"]:
     fail("STATUS post-failure constructive search now changes the frozen primary class")
@@ -854,6 +884,56 @@ if "MDE" in body:
     fail("RETIRED main table still contains MDE")
 
 
+# 6b. EXP-116 policy-band verification (post-result), witness masses, ASV5 counts,
+#     Arena ratio definition, release locator.
+exp116 = load(EXP116 / "RESULTS.json")
+if exp116["registered_reading"] != "all_cross_cohort_pairs_separated_under_all_rules_and_laws":
+    fail("STATUS EXP-116 registered reading is not the all-separated branch")
+if exp116["cross_cohort_indicators"] != {"separated": 384, "total": 384}:
+    fail(f"VALUE EXP-116 cross-cohort indicators changed: {exp116['cross_cohort_indicators']}")
+if len(exp116["cells"]) != 24 or exp116["B"] != 5000:
+    fail("CONTRACT EXP-116 cell count or draw count changed")
+if exp116["estimator_gate_max_abs_deviation_points"] > 1e-9:
+    fail("GATE EXP-116 estimator did not reproduce EXP-108 contrasts")
+closest = max(p["band"][1] for c in exp116["cells"] for p in c["pairs"].values()
+              if p["block"] == "cross")
+require_number("-12.79", closest, 2, "EXP-116 closest cross-cohort band endpoint")
+b0s0 = {c["law"]: c["counts"] for c in exp116["cells"] if c["rule"] == "B0xS0"}
+if (b0s0["trial"]["cross"]["separated"] + b0s0["trial"]["within_ssl"]["separated"]
+        + b0s0["trial"]["within_baseline"]["separated"]) != 26 or (
+        b0s0["pw"]["cross"]["separated"] + b0s0["pw"]["within_ssl"]["separated"]
+        + b0s0["pw"]["within_baseline"]["separated"]) != 18:
+    fail("VALUE EXP-116 empirical-weight cell does not reproduce 26/28 and 18/28")
+require("separates all 16 cross-cohort pairs in all 24 rule",
+        "EXP-116 result must be reported with its full cell denominator")
+require("computed after the primary results, 5,000 draws per rule and bootstrap", "EXP-116 post-result status must be disclosed")
+
+witness = composition_v2["pairs"]["XLSR-Mamba vs XLS-R+SLS"]["objectives"]["r_TV"]["best_overall"]["witness"]
+q_bona = ",".join(f"{v:.3f}".lstrip("0") for v in witness["q_bona"])
+q_spoof = ",".join(f"{v:.3f}".lstrip("0") for v in witness["q_spoof"])
+require(f"bona-fide masses ({q_bona})", "witness bona-fide masses must match the verified artifact")
+require(f"spoof-stratum masses ({q_spoof})", "witness spoof masses must match the verified artifact")
+require("in the order above and rounded", "witness masses are rounded and ordered as the strata list")
+
+asv5_trial_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["trial_iid"]["pairs"].values())
+asv5_sa_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["speaker_attack"]["pairs"].values())
+if (asv5_trial_sep, asv5_sa_sep) != (6, 5):
+    fail(f"VALUE ASV5 separated counts changed: trial {asv5_trial_sep}, speaker-attack {asv5_sa_sep}")
+require("from 6/6 under trial resampling to 5/6", "ASV5 before/after separated counts must be visible")
+require("the 367 target speakers, the 370 bona-fide-only speakers and the 16 attacks as three independent multinomial draws",
+        "ASV5 resampling law must be stated, not labelled")
+
+require("median ratio of PW to trial bootstrap standard deviations over the 55 pairs",
+        "Arena ratio is a bootstrap-SD ratio, not a band-width ratio")
+
+# Release locator: the sentence naming SUPPLEMENT.md must carry a repository URL and a tag
+# in the manuscript itself (never satisfied by the supplement). Mutation-tested through
+# the release_locator obligation.
+_rel = TEX.find("SUPPLEMENT.md")
+if _rel < 0 or "github.com/rvirgilli/" not in TEX[_rel:_rel + 400] or ", tag " not in TEX[_rel:_rel + 400]:
+    fail("PRESENT the supplement sentence does not carry a repository URL and tag within 400 chars; "
+         "a promise of an artifact is not an artifact")
+
 # 9. Scientific scope obligations and retired formulations.
 for text, why in (
     ("fixed-score sensitivity bands", "identified scientific object"),
@@ -861,10 +941,13 @@ for text, why in (
     ("not an exact multiway estimator or a coverage guarantee", "Gaussian scope"),
     ("while official access was pending", "timing claim is anchored to access state"),
     ("it does not establish equality", "non-significance scope"),
-    ("independently sampled units", "only full repair for population inference"),
+    ("a defensible acquisition model and an inferential procedure valid under its dependence structure",
+     "only full repair for population inference"),
     ("trial-to-speaker/attack membership", "report units rather than trial count"),
-    ("Across these rules, source deletions and searched directions",
+    ("remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules",
      "conclusion must remain bounded to tested robustness checks"),
+    ("remain separated under both bootstraps, each leave-one-source-out jackknife refit and every weighting rule",
+     "abstract must remain bounded to tested robustness checks"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")
