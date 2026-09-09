@@ -789,7 +789,7 @@ cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair i
 if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
     fail("VALUE EXP-108 registered-policy block counts changed")
 for literal in ("Six of the twelve comparisons within either detector group, four self-supervised (SSL) detectors and four organizer baselines, reverse EER ordering",
-                "six of the 12 within-cohort pairs reverse their point ordering and none of the 16 cross-cohort pairs does"):
+                "six of the 12 within-cohort pairs reverse their point ordering (five within-baseline; the SSL one is XLSR-Mamba versus XLS-R+SLS, gap 0.032 points) and none of the 16 cross-cohort pairs does"):
     require(literal, "registered composition-policy asymmetry must be visible with its pair denominator")
 
 if composition_v2["changes_primary_classification"]:
@@ -856,18 +856,41 @@ for literal, value, label in (
 
 # 8. Field-standard main EER table and complete supplementary 28-pair table.
 order = list(selection["21df"]["rank_sets"])
-expected_eer_rows = [
-    [name, "author" if index < 4 else "organizer",
-     f"{selection['21df']['rank_sets'][name]['pooled_eer']:.3f}", str(index + 1)]
-    for index, name in enumerate(order)
+eer = {name: f"{selection['21df']['rank_sets'][name]['pooled_eer']:.3f}" for name in order}
+expected_eer_rows = [[order[i], eer[order[i]], order[i + 4], eer[order[i + 4]]] for i in range(4)]
+_modern = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
+def _blk(pair):
+    a, b = pair.split(" vs ")
+    return "cross" if (a in _modern) != (b in _modern) else ("ssl" if a in _modern else "base")
+def _count(rows, key):
+    out = {"ssl": 0, "base": 0, "cross": 0}
+    for pair, row in rows.items():
+        out[_blk(pair)] += int(row[key])
+    return out
+_t = _count(matched["iid"]["pairs"], "resolved_simultaneous")
+_p = _count(matched["speaker_attack"]["pairs"], "resolved_simultaneous")
+_r = _count({p: {"x": v["registered_policy_sign_change"]} for p, v in composition["pair_multiverse"].items()}, "x")
+expected_group_rows = [
+    ["Pair group", "Trial", "PW", "Reversed"],
+    ["Within SSL", f"{_t['ssl']}/6", f"{_p['ssl']}/6", f"{_r['ssl']}/6"],
+    ["Within baselines", f"{_t['base']}/6", f"{_p['base']}/6", f"{_r['base']}/6"],
+    ["SSL vs.\\ baselines", f"{_t['cross']}/16", f"{_p['cross']}/16", f"{_r['cross']}/16"],
 ]
 body = TEX_RAW[TEX_RAW.index("\\label{tab:eers}"):TEX_RAW.index("\\end{tabular}")]
 printed = [line for line in body.splitlines() if "&" in line and "\\\\" in line]
-printed = [line for line in printed if not line.strip().startswith("System")]
 printed_rows = [[cell.strip() for cell in line.replace("\\\\", "").split("&")]
                 for line in printed]
-if printed_rows != expected_eer_rows:
-    fail(f"TABLE main EER rows differ from artifact: {printed_rows} != {expected_eer_rows}")
+if printed_rows != expected_eer_rows + expected_group_rows:
+    fail(f"TABLE main table rows differ from artifacts: {printed_rows} != {expected_eer_rows + expected_group_rows}")
+if _r != {"ssl": 1, "base": 5, "cross": 0}:
+    fail(f"VALUE weighting-rule reversal split changed: {_r}")
+_ar = arena["schemes"]
+_k = "HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"
+require_number("-2.153", _ar["iid"]["pairs"][_k]["delta_eer_pts"], 3, "Arena example gap")
+for _v, _lit in ((_ar["iid"]["pairs"][_k]["ci95_simultaneous"][0], "-2.761"), (_ar["iid"]["pairs"][_k]["ci95_simultaneous"][1], "-1.544"),
+                 (_ar["clustered"]["pairs"][_k]["ci95_simultaneous"][0], "-5.241"), (_ar["clustered"]["pairs"][_k]["ci95_simultaneous"][1], "0.936")):
+    require_number(_lit, _v, 3, "Arena example band endpoint")
+require("For HuBERT-ECAPA versus WavLM-ECAPA", "Arena example pair must be printed")
 
 for pair, iid_row in matched["iid"]["pairs"].items():
     a, b = pair.split(" vs ")

@@ -30,7 +30,7 @@
   {
    "id": "tie_boundary",
    "section": "Method/EER",
-   "match": "A distinct-score-boundary recomputation changes no displayed value by 0.001 point."
+   "match": "Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point."
   },
   {
    "id": "delta_eer_definition",
@@ -145,7 +145,7 @@
   {
    "id": "coverage_dgp_boundary",
    "section": "Experiments/Coverage",
-   "match": "This simulation evaluates procedures under those imposed models; it does not establish that either model describes 21DF."
+   "match": "This simulation evaluates pointwise candidate intervals under those imposed models, not the all-pair bands above; it does not establish that either model describes 21DF."
   },
   {
    "id": "historical_provenance_limits",
@@ -155,7 +155,7 @@
   {
    "id": "report_units",
    "section": "Discussion",
-   "match": "Benchmark reports should publish trial-to-speaker/attack membership and source weights, not only trial counts."
+   "match": "Benchmark reports should publish trial-to-speaker/attack membership and source weights, not only trial counts, and report separation under a declared perturbation law and weighting next to the point EER."
   },
   {
    "id": "zero_boundary",
