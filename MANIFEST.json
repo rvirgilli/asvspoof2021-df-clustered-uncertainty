@@ -520,12 +520,12 @@
     "sha256": "b6208ecff70dac689b5ec916dcc7c344b3bc326b873daaf3a81c7b422b05e324"
   },
   "paper/main.pdf": {
-    "bytes": 202347,
-    "sha256": "413eceed4108f93be5269002af72c0666f2be58741a99482bdab975c66baf9bb"
+    "bytes": 202299,
+    "sha256": "c0e31dcb2acde64b0a3b0695bc3ac9ebbeb9d60f70cf5bf9098b0e11f83b58e9"
   },
   "paper/main.tex": {
-    "bytes": 23417,
-    "sha256": "d4ea6a84799758568a2727d06ba0c2f2b7cd8baabaad2ccdc105b8124541e42a"
+    "bytes": 23423,
+    "sha256": "1eba9c41707bc6f390dc34b11b65cf777d57fd9ba2b6ac19f73a98f67e88fc6b"
   },
   "paper/refs.bib": {
     "bytes": 8406,
