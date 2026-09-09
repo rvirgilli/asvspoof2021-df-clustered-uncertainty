@@ -358,11 +358,13 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 ### Artifact paths and content bindings
 
 - Complete 21DF bands: `derived/results_matched_iid.json`.
-- Point EERs: `derived/results_selection.json`.
+- Point EERs: `derived/point_eers.json` (two-column extract). The legacy member `derived/results_selection.json` remains in the tree for provenance only; its rank and "certified" fields belong to a withdrawn earlier analysis, are outside the submitted claims and carry no certification or confidence-coverage meaning. Current procedure bands are in S4 and `results_matched_iid.json`.
 - Source deletions: `derived/results_source.json`.
 - Weight rules and paths: `derived/results_composition.json`.
-- Constructive search: `derived/secondary_v2_results.json`, independently verified result SHA-256
-  `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`.
+- Constructive search: `derived/secondary_v2_results.json`; SHA-256 of the public file
+  `6ed59cb2dba15b73f05189b95c3ecc0753fd6c5b4669c887224344ab57b6d627` (bound by `MANIFEST.json` and `derived/secondary_v2_verification.json`).
+  The archived original's digest `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616` is
+  recorded separately in `audit/audit.json`.
 - SpoofCeleb class-stratified trial arm: `exp118/RESULTS.json`.
 - Bands under each weighting rule: `exp116/RESULTS.json`, SHA-256
   `d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd`.

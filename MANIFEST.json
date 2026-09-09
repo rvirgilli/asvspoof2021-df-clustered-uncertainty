@@ -116,8 +116,8 @@
     "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
   },
   "code/check_numbers.py": {
-    "bytes": 54169,
-    "sha256": "833f421d27118eb366736d0490c0cedf0c1c5cea7391845c3ccf07fa6d36fc19"
+    "bytes": 54578,
+    "sha256": "7996eaeeb9accabd8ad02a8f180e193978040909f813435afb35ac06caea6b41"
   },
   "code/check_tie_safety.py": {
     "bytes": 2793,
@@ -274,6 +274,10 @@
   "derived/incidence_strata.json": {
     "bytes": 52418,
     "sha256": "71a1c7f01bd415db0735ca042f2acd110f4b8deb59ea687c93b7cb94a62427f1"
+  },
+  "derived/point_eers.json": {
+    "bytes": 403,
+    "sha256": "f973c4d82a94618dababa5a38292e3cd61f51f21d915e998f08385690bb2a38c"
   },
   "derived/provenance_coherent_jackknife.json": {
     "bytes": 1183,
@@ -532,8 +536,8 @@
     "sha256": "f9189d6722336cc03255749b54dae1415e86b86fb3c1657b44121f7828243fd5"
   },
   "paper/SUPPLEMENT.md": {
-    "bytes": 22835,
-    "sha256": "4fe2d1dc7f90bc291e38f449c8611d115cf0029515ed91cd2e8ebae0c34c8d42"
+    "bytes": 23380,
+    "sha256": "a93af58563b23f3bad3f5dcd42b5d5259e261be407fcbc855d4cd292ae253739"
   },
   "paper/figs/floor.pdf": {
     "bytes": 18555,
@@ -548,20 +552,20 @@
     "sha256": "b6208ecff70dac689b5ec916dcc7c344b3bc326b873daaf3a81c7b422b05e324"
   },
   "paper/main.pdf": {
-    "bytes": 202918,
-    "sha256": "7894b58634d80271703ce6c4887165d45eb7e889cbb5d67d745e3afd0edfa424"
+    "bytes": 203222,
+    "sha256": "9e0b7f318162ec3d023dd72b71beef6e2e3086034bd2f33eebfc73e6ebfee309"
   },
   "paper/main.tex": {
-    "bytes": 23522,
-    "sha256": "949da1388fad4eea3a4116b360af1fc5c8e50a55bf17b4d16dca59e165e780bd"
+    "bytes": 23776,
+    "sha256": "de4d9c886b4ceab335ca417428f583e97f3c3a7a1304a68192427df6c7c78ae0"
   },
   "paper/refs.bib": {
-    "bytes": 9054,
-    "sha256": "8d2131c5b268dba03d58e075ac5ca09fd06bb83a8e382e9e7311ba9c95ea9ca1"
+    "bytes": 9355,
+    "sha256": "a3c8c47ce30efe1bb2cb5841933dbd498d439e1d1cc9b0dd9ee9ad9a3dcad147"
   },
   "paper/semantic_obligations.json": {
-    "bytes": 11003,
-    "sha256": "7c1115d6efcfc9b1793f7210dc3f9a3e3c480de274580feee6ff763f62bc7b7e"
+    "bytes": 11108,
+    "sha256": "e4f16ae670d7f934df12fc8e7a0818443069f1be084a7992796bbf25e96024f5"
   },
   "paper/spconf.sty": {
     "bytes": 8798,

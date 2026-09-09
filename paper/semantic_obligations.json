@@ -165,7 +165,7 @@
   {
    "id": "no_population_or_arena_claim",
    "section": "Discussion",
-   "match": "We make no population, rank-confidence or formal Arena-inference claim."
+   "match": "Neither the primary-score analysis nor the Arena-score analysis supplies population confidence intervals or confidence sets for ranks."
   },
   {
    "id": "conclusion_tested_scope",
@@ -185,7 +185,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen pairs between the four SSL detectors and the four organizer baselines remain separated under both bootstraps, all twelve rules and the declared source-deletion analysis, whereas within-cohort separation changes with the resampling procedure and with source deletion."
+   "match": "All sixteen comparisons between the self-supervised detectors and the organizer baselines remain separated under both resampling methods with all twelve weighting rules, and under separate leave-one-source-out jackknife refits, whereas within-group separation changes with the resampling method and with source deletion."
   },
   {
    "id": "release_locator",

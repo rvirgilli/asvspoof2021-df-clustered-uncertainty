@@ -1,0 +1,13 @@
+{
+ "note": "Fixed-score point EERs (%) of the eight primary systems on the 533,928 21DF evaluation trials, extracted from derived/results_selection.json; no population or rank-coverage guarantee.",
+ "eer_percent": {
+  "XLSR-Mamba": 1.884,
+  "XLS-R+SLS": 1.916,
+  "XLSR-Conformer": 2.273,
+  "SSL-AASIST": 2.852,
+  "RawNet2": 22.383,
+  "LFCC-LCNN": 23.477,
+  "LFCC-GMM": 25.247,
+  "CQCC-GMM": 25.563
+ }
+}

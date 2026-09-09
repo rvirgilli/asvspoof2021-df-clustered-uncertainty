@@ -788,7 +788,7 @@ within_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair 
 cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in cross_pairs)
 if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
     fail("VALUE EXP-108 registered-policy block counts changed")
-for literal in ("six of the twelve pairs within the SSL and baseline cohorts reverse their point ordering",
+for literal in ("Six of the twelve comparisons within either detector group, four self-supervised (SSL) detectors and four organizer baselines, reverse EER ordering",
                 "six of the 12 within-cohort pairs reverse their point ordering and none of the 16 cross-cohort pairs does"):
     require(literal, "registered composition-policy asymmetry must be visible with its pair denominator")
 
@@ -952,8 +952,10 @@ for text, why in (
     ("trial-to-speaker/attack membership", "report units rather than trial count"),
     ("remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules",
      "conclusion must remain bounded to tested robustness checks"),
-    ("remain separated under both bootstraps, all twelve rules and the declared source-deletion analysis",
+    ("remain separated under both resampling methods with all twelve weighting rules, and under separate leave-one-source-out jackknife refits",
      "abstract must remain bounded to tested robustness checks"),
+    ("distinct from the nested-observation designs studied in", "crossed versus nested design must be stated in field terms"),
+    ("Neither the primary-score analysis nor the Arena-score analysis supplies population confidence intervals or confidence sets for ranks", "no population or rank-confidence claim"),
     ("using unstratified trial resampling on a different four-detector roster", "SpoofCeleb trial law and roster must be visible in the abstract"),
     ("for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement",
      "the SpoofCeleb trial-law exception must be declared in the method section"),
