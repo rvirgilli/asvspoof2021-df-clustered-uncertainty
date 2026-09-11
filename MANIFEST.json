@@ -536,8 +536,8 @@
     "sha256": "f9189d6722336cc03255749b54dae1415e86b86fb3c1657b44121f7828243fd5"
   },
   "paper/SUPPLEMENT.md": {
-    "bytes": 23380,
-    "sha256": "a93af58563b23f3bad3f5dcd42b5d5259e261be407fcbc855d4cd292ae253739"
+    "bytes": 23009,
+    "sha256": "e46b8b86b232d44307cf39fbbb474a1dbefc33f7607d0052b669255b98447d5b"
   },
   "paper/figs/floor.pdf": {
     "bytes": 18555,
@@ -552,12 +552,12 @@
     "sha256": "b6208ecff70dac689b5ec916dcc7c344b3bc326b873daaf3a81c7b422b05e324"
   },
   "paper/main.pdf": {
-    "bytes": 194668,
-    "sha256": "5fc51bbed6b234b0ce6558d62be99bc332b692ca168b4d9dea19a4a5f32f09d4"
+    "bytes": 194816,
+    "sha256": "8d321df0bbdd2bb0ade66f29b05eca721a1dcade3d4f219b80c3db42b114702e"
   },
   "paper/main.tex": {
-    "bytes": 23716,
-    "sha256": "dfbb5a0d1e85e343156682ae3b916a48b1264edbf7dd9c36315551e7cc7dfeeb"
+    "bytes": 23780,
+    "sha256": "bafbb3ce633b76d7c7cb01b5e31f086bc1f3b0dab2902d4441f47339057e0f93"
   },
   "paper/refs.bib": {
     "bytes": 8890,

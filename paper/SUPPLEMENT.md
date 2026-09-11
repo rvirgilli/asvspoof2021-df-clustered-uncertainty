@@ -337,7 +337,7 @@ separation indicators. The detector point EERs are 57.93%, 24.51%, 26.72% and 27
 check is the pooled (unstratified) trial bootstrap fixed by the archived plan, not the
 class-stratified law of S2. A class-stratified recomputation on the same manifest and score
 tables (EXP-118, B=5000, seed 20260909) also separates 6/6 with the same indicators; band
-endpoints move by at most 0.02 points (`exp118/RESULTS.json`).
+endpoints move by at most 0.02 points (`experiments/EXP-118-m1-spoofceleb-trial-law/RESULTS.json`).
 
 ### ASVspoof 5
 
@@ -357,26 +357,20 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 
 ### Artifact paths and content bindings
 
-- Complete 21DF bands: `derived/results_matched_iid.json`.
-- Point EERs: `derived/point_eers.json` (two-column extract). The legacy member `derived/results_selection.json` remains in the tree for provenance only; its rank and "certified" fields belong to a withdrawn earlier analysis, are outside the submitted claims and carry no certification or confidence-coverage meaning. Current procedure bands are in S4 and `results_matched_iid.json`.
-- Source deletions: `derived/results_source.json`.
-- Weight rules and paths: `derived/results_composition.json`.
-- Constructive search: `derived/secondary_v2_results.json`; SHA-256 of the public file
-  `6ed59cb2dba15b73f05189b95c3ecc0753fd6c5b4669c887224344ab57b6d627` (bound by `MANIFEST.json` and `derived/secondary_v2_verification.json`).
-  The archived original's digest `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616` is
-  recorded separately in `audit/audit.json`.
-- SpoofCeleb class-stratified trial arm: `exp118/RESULTS.json`.
-- Bands under each weighting rule: `exp116/RESULTS.json`, SHA-256
+- Complete 21DF bands: `experiments/EXP-101-m1-campaign/results_matched_iid.json`.
+- Point EERs: `experiments/EXP-101-m1-campaign/results_selection.json`. For this submission this file supplies point EERs only; its rank and "certified" fields belong to a withdrawn earlier analysis, are outside the submitted claims and carry no asserted confidence-coverage guarantee. Current procedure bands are in S4 and `results_matched_iid.json`.
+- Source deletions: `experiments/EXP-101-m1-campaign/results_source.json`.
+- Weight rules and paths: `experiments/EXP-108-m1-composition-robustness/results.json`.
+- Constructive search: `secondary_v2_results.json`, independently verified result SHA-256
+  `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`.
+- Composition-preserving arm: `experiments/EXP-111-m1-composition-preserving/results_v2.json`.
+- Bands under each weighting rule: `experiments/EXP-116-m1-policy-bands/RESULTS.json`, SHA-256
   `d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd`.
-- Coverage grid: `derived/results_coverage_interaction_recalibrated.json` and
-  `derived/results_exp105_verified.json`.
-- The composition-preserving arm, trace-retaining coverage run, and SpoofCeleb provenance
-  package are embedded under `composition_fixed_sampling_control`,
-  `coverage_witnessed_replacement`, and `spoofceleb_sampling_unit_confirmation` in
-  `audit/audit.json`; that file binds their original member hashes.
-- SpoofCeleb analysis plan: `plans/EXP-114-spoofceleb.PREREG.md` with
-  `plans/EXP-114-spoofceleb.FREEZE.sha256`; ASVspoof 5 criteria:
-  `plans/EXP-106-asv5.AMENDMENT-5.md`.
+- Coverage grid: `results_coverage_interaction_recalibrated.json` and
+  `results_exp105_verified.json`.
+- Trace-retaining coverage run: `experiments/EXP-112-m1-coverage-reseal/results-v2.json`.
+- SpoofCeleb: `experiments/EXP-114-m1-spoofceleb-confirmation/RESULTS.json` and
+  `PROVENANCE-RERUN-RESULTS.json`.
 
 The public release excludes upstream-licensed score/audio inputs. Its manifest binds every
 released code, aggregate, paper and provenance member; the data README gives upstream
