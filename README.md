@@ -1,10 +1,14 @@
 # Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
 
-This repository accompanies **“Sensitivity of an Audio-Deepfake Leaderboard to the
-Resampling Unit and to Source, Speaker, and Attack Weighting.”** The tag `icassp2027-submission` marks the exact
-submitted manuscript, code, plans, deviations, and derived artifacts for a
-re-analysis of pairwise system comparisons on the ASVspoof 2021 DeepFake (DF)
-evaluation set.
+This repository accompanies the M1 manuscript in `paper/main.tex` and
+`paper/main.pdf`. The prepared 14 September 2026 package repairs public artifact
+locators in S8 and retains the moved S2 example. Its exact payload and narrow
+approval scope are in `paper/RELEASE-RECEIPT-FINAL.json`; publication of the cited
+`icassp2027-submission` tag is pending the author's instruction. See
+`paper/UPLOAD-CHECKLIST.md` for the observed mismatch and the required tag step.
+The historical release, exact-PDF and deterministic-build claims do not attest
+this replacement package. After publication, resolve the tag to its commit and
+verify its files against the retained receipt as the checklist specifies.
 
 ## What this is
 

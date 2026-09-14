@@ -1,22 +1,27 @@
-# Paper source used by the checker
+# Final M1 package — prepared 14 September 2026
 
-`main.tex`, `refs.bib`, and `figures_m1.py` are the exact source files against
-which `code/check_numbers.py` is run. They are versioned here because a checker
-cannot substantiate a paper that is absent from the artifact repository.
+`RELEASE-RECEIPT-FINAL.json` binds the intended source, supplied built PDF,
+repaired supplement, figure, generator, guards and obligation manifest.
+`UPLOAD-CHECKLIST.md` records publication status and verification instructions.
+The current package has no inherited exact-PDF audit, deterministic-build or
+whole-release PASS from September 9 or the September 13 sentence extension.
 
-From the repository root:
+The forest figure displays the six within-SSL pairs from the full 28-pair
+simultaneous family. `figures_m1.py` reads the committed `derived/` aggregates;
+its only change from the bound author-workspace generator is that input path.
+It also retains the unused `floor.pdf` generator and its two derived inputs.
+The guard checks all 46 obligations; its mutation suite deletes each in turn.
 
-```bash
-uv run --frozen python paper/figures_m1.py
-cd paper && SOURCE_DATE_EPOCH=1788120000 FORCE_SOURCE_DATE=1 \
-  latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+From the repository root, verify the prepared bytes before regenerating anything:
+
+```sh
+uv run --frozen python code/check_numbers.py
+uv run --frozen python -m unittest -v paper/test_semantic_guards.py
+uv run --frozen python verify_release.py
 ```
 
-The first command regenerates both PDFs in `paper/figs/` exclusively from the
-committed derived JSON files. The second compiles the exact checked source with the
-release timestamp fixed at 2026-08-30 20:00:00 UTC, making the canonical PDF bytes
-independent of rebuild time and checkout path.
-`verify_release.py` confirms that the PDF has five pages and page 5 contains references
-only. `semantic_obligations.json` and `test_semantic_guards.py` make removal of any of
-40 load-bearing caveats fail the production checker. Fig. 1 uses matched all-28-pair
-simultaneous bands for both the trial-i.i.d. and speaker--attack arms.
+For an optional rebuild, `uv run --frozen python paper/figures_m1.py` regenerates
+both figures. Compile in `paper/` with `latexmk -pdf -interaction=nonstopmode
+-halt-on-error main.tex`. Such a rebuild can change PDF bytes. It does not replace
+the supplied receipt-bound upload PDF without a new binding and explicit scope
+confirmation. No manuscript or figure rebuild was performed for this receipt.

@@ -21,10 +21,10 @@ from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent
+ROOT = Path(os.environ.get("M1_RELEASE_ROOT", HERE.parent))
 DERIVED = ROOT / "derived"
 PLANS = ROOT / "plans"
-PAPER = ROOT / "paper"
+PAPER = Path(os.environ.get("M1_PAPER_ROOT", ROOT / "paper"))
 AUDIT_DIR = ROOT / "audit"
 EXP115 = ROOT / "exp115"
 EXP116 = ROOT / "exp116"
@@ -183,7 +183,7 @@ if packaging.get("public") != {
 }:
     fail("AUDIT public packaging receipt does not bind audit.json")
 if packaging.get("implementation", {}).get("sha256") != sha256(
-        HERE / "make_public_audit.py"):
+        ROOT / "code/make_public_audit.py"):
     fail("AUDIT public packaging receipt does not bind sanitizer implementation")
 
 
@@ -337,7 +337,7 @@ for name, path in {
     if sha256(path) != matched_prov["sha256"][name]:
         fail(f"HASH matched canonical artifact mismatch: {name}")
 for name, digest in matched_prov["released_path_adapted_sha256"].items():
-    if sha256(HERE / name) != digest:
+    if sha256(ROOT / "code" / name) != digest:
         fail(f"HASH matched released path-adapted code mismatch: {name}")
 
 
@@ -575,7 +575,7 @@ for key, path in {
 if coherent["sha256"]["script"] != coherent_prov["historical_campaign_sha256"]["coherent_jackknife.py"]:
     fail("HASH coherent historical script identity differs between result and sidecar")
 for name, digest in coherent_prov["released_path_adapted_sha256"].items():
-    if sha256(HERE / name) != digest:
+    if sha256(ROOT / "code" / name) != digest:
         fail(f"HASH coherent released path-adapted code mismatch: {name}")
 for name, digest in coherent_prov["canonical_artifact_sha256"].items():
     path = PLANS / name if name.endswith(".md") else DERIVED / name
@@ -788,7 +788,7 @@ within_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair 
 cross_changes = sum(multiverse[pair]["registered_policy_sign_change"] for pair in cross_pairs)
 if (len(within_pairs), within_changes, len(cross_pairs), cross_changes) != (12, 6, 16, 0):
     fail("VALUE EXP-108 registered-policy block counts changed")
-for literal in ("Six of the twelve comparisons within either detector group, four self-supervised (SSL) detectors and four organizer baselines, reverse EER ordering",
+for literal in ("Alternative weights reverse five of six organizer-baseline orderings and one of six within-SSL orderings; the latter pair is already unseparated under trial resampling.",
                 "six of the 12 within-cohort pairs reverse their point ordering (five within-baseline; the SSL one is XLSR-Mamba versus XLS-R+SLS, gap 0.032 points) and none of the 16 cross-cohort pairs does"):
     require(literal, "registered composition-policy asymmetry must be visible with its pair denominator")
 
@@ -854,10 +854,15 @@ for literal, value, label in (
     require_number(literal, value, 2, label)
 
 
-# 8. Field-standard main EER table and complete supplementary 28-pair table.
+# 8. Selected paired bands in the main table; complete point and pair tables in S3/S4.
 order = list(selection["21df"]["rank_sets"])
 eer = {name: f"{selection['21df']['rank_sets'][name]['pooled_eer']:.3f}" for name in order}
-expected_eer_rows = [[order[i], eer[order[i]], order[i + 4], eer[order[i + 4]]] for i in range(4)]
+# Point results remain required at their existing precision in supplement S3.
+for i, name in enumerate(order):
+    release = "model author" if i < 4 else "ASVspoof organizer"
+    row = f"| {name} | {release} | {eer[name]} | {i + 1} |"
+    if SUPPLEMENT_RAW.count(row) != 1:
+        fail(f"TABLE supplement point row missing or duplicated: {row}")
 _modern = {"XLSR-Mamba", "XLS-R+SLS", "XLSR-Conformer", "SSL-AASIST"}
 def _blk(pair):
     a, b = pair.split(" vs ")
@@ -877,11 +882,26 @@ expected_group_rows = [
     ["SSL vs.\\ baselines", f"{_t['cross']}/16", f"{_p['cross']}/16", f"{_r['cross']}/16"],
 ]
 body = TEX_RAW[TEX_RAW.index("\\label{tab:eers}"):TEX_RAW.index("\\end{tabular}")]
-printed = [line for line in body.splitlines() if "&" in line and "\\\\" in line]
-printed_rows = [[cell.strip() for cell in line.replace("\\\\", "").split("&")]
-                for line in printed]
-if printed_rows != expected_eer_rows + expected_group_rows:
-    fail(f"TABLE main table rows differ from artifacts: {printed_rows} != {expected_eer_rows + expected_group_rows}")
+# Bind every display row, including pair identity, direction and both band arms.
+examples = [
+    ("XLSR-Mamba $-$ XLSR-Conformer", matched["iid"]["pairs"]["XLSR-Mamba vs XLSR-Conformer"],
+     matched["speaker_attack"]["pairs"]["XLSR-Mamba vs XLSR-Conformer"], "simultaneous"),
+    ("Arena HuBERT-ECAPA $-$ WavLM-ECAPA", arena["schemes"]["iid"]["pairs"]["HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"],
+     arena["schemes"]["clustered"]["pairs"]["HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"], "ci95_simultaneous"),
+]
+expected_band_lines = []
+for label, trial, pw, band_key in examples:
+    expected_band_lines.append(
+        r"\multicolumn{4}{@{}l@{}}{" + label + f": ${trial['delta_eer_pts']:.3f}$" + r"} \\")
+    expected_band_lines.append(
+        r"\multicolumn{2}{@{}l}{Trial $[" + f"{trial[band_key][0]:.3f},{trial[band_key][1]:.3f}"
+        + r"]$} & \multicolumn{2}{l@{}}{PW $[" + f"{pw[band_key][0]:.3f},{pw[band_key][1]:.3f}" + r"]$} \\")
+expected_lines = expected_band_lines + [" & ".join(row) + r" \\" for row in expected_group_rows]
+printed_lines = [line.strip() for line in body.splitlines() if line.rstrip().endswith(r"\\")]
+if printed_lines != expected_lines:
+    fail(f"TABLE main table rows differ from artifacts: {printed_lines} != {expected_lines}")
+require("primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials",
+        "main paired-band display must distinguish its multiplicity families")
 if _r != {"ssl": 1, "base": 5, "cross": 0}:
     fail(f"VALUE weighting-rule reversal split changed: {_r}")
 _ar = arena["schemes"]
@@ -906,6 +926,7 @@ for pair, iid_row in matched["iid"]["pairs"].items():
         fail(f"TABLE supplement row missing or duplicated for {pair}: {expected}")
 if "MDE" in body:
     fail("RETIRED main table still contains MDE")
+
 
 
 # 6b. EXP-116 policy-band verification (post-result), witness masses, ASV5 counts,
@@ -938,6 +959,32 @@ q_spoof = ",".join(f"{v:.3f}".lstrip("0") for v in witness["q_spoof"])
 require(f"bona-fide masses ({q_bona})", "witness bona-fide masses must match the verified artifact")
 require(f"spoof-stratum masses ({q_spoof})", "witness spoof masses must match the verified artifact")
 require("in the order above and rounded", "witness masses are rounded and ordered as the strata list")
+
+# S5 checks supplement, rather than replace, the original obligations above.
+for key in ("q_bona", "q_spoof"):
+    masses = ", ".join(f"{v:.10f}" for v in witness[key])
+    if SUPPLEMENT_RAW.count(f"`{key}=({masses})`") != 1:
+        fail(f"VALUE S5 {key} masses differ from the verified witness")
+# Bind the values and provenance together in the manuscript itself. S5 or an
+# unrelated occurrence cannot satisfy deletion of this witness's main-text data.
+expected_witness = (
+    "An exploratory post-result search found a witness reversing XLSR-Mamba minus XLS-R+SLS "
+    "under the original EER sweep at maximum classwise total variation "
+    + f"{best_tv:.6f}".lstrip("0")
+    + f", with bona-fide masses ({q_bona}) and spoof-stratum masses ({q_spoof}), "
+    "in the order above and rounded (greater precision in S5)."
+)
+if TEX.count(expected_witness) != 1:
+    fail("PRESENT manuscript witness must retain its artifact-bound masses, pair, sweep, distance, rounding, order and S5 provenance together")
+witness_position = TEX.find(expected_witness)
+for ordered_list in (
+    "three sources (ASVspoof, VCC2018, VCC2020)",
+    "five spoof strata (ASVspoof, VCC2018 HUB, VCC2018 SPO, VCC2020 Task~1, VCC2020 Task~2)",
+):
+    if TEX.count(ordered_list) != 1 or (witness_position >= 0 and TEX.find(ordered_list) > witness_position):
+        fail(f"PRESENT witness source/stratum order must be stated above its masses: {ordered_list}")
+if TEX_RAW.count("The reversing sign also holds at distinct-score boundaries (supplement, Sec.~S5).") != 1:
+    fail("SCOPE approved distinct-score safeguard must occur exactly once")
 
 asv5_trial_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["trial_iid"]["pairs"].values())
 asv5_sa_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["speaker_attack"]["pairs"].values())

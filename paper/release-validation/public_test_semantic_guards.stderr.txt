@@ -1,0 +1,6 @@
+test_every_registered_deletion_fails_its_named_guard (release-prep.paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.960s
+
+OK

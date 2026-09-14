@@ -17,9 +17,10 @@ from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
-CHECKER = HERE.parent / "code/check_numbers.py"
-OBLIGATIONS = json.loads((HERE / "semantic_obligations.json").read_text())["obligations"]
-SOURCE = (HERE / "main.tex").read_text()
+CHECKER = Path(os.environ.get("M1_CHECKER_PATH", HERE.parent / "code/check_numbers.py"))
+PAPER = Path(os.environ.get("M1_PAPER_ROOT", HERE))
+OBLIGATIONS = json.loads((PAPER / "semantic_obligations.json").read_text())["obligations"]
+SOURCE = (PAPER / "main.tex").read_text()
 
 
 class SemanticGuardMutationTests(unittest.TestCase):

@@ -105,6 +105,8 @@ organizer-baseline pairs. For RawNet2 minus CQCC-GMM its band is `[-8.76,2.40]`.
 overlap is not subtracted, this is a deliberately variance-inflating sensitivity analysis,
 not an exact multiway estimator or a coverage guarantee.
 
+For RawNet2 minus CQCC-GMM, the point gap is **−3.180** percentage points and the matched simultaneous PW band is **[-9.284, 2.925]**. These values are rounded from `results_matched_iid.json`, `iid.pairs["RawNet2 vs CQCC-GMM"].delta_eer_pts` and `speaker_attack.pairs["RawNet2 vs CQCC-GMM"].simultaneous`; they are a fixed-score procedure-sensitivity example, not a population confidence interval.
+
 ## S3. Complete 21DF point results
 
 | System | Score-file release | EER (%) | Point rank |
@@ -337,7 +339,7 @@ separation indicators. The detector point EERs are 57.93%, 24.51%, 26.72% and 27
 check is the pooled (unstratified) trial bootstrap fixed by the archived plan, not the
 class-stratified law of S2. A class-stratified recomputation on the same manifest and score
 tables (EXP-118, B=5000, seed 20260909) also separates 6/6 with the same indicators; band
-endpoints move by at most 0.02 points (`experiments/EXP-118-m1-spoofceleb-trial-law/RESULTS.json`).
+endpoints move by at most 0.02 points (`exp118/RESULTS.json`).
 
 ### ASVspoof 5
 
@@ -357,20 +359,83 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 
 ### Artifact paths and content bindings
 
-- Complete 21DF bands: `experiments/EXP-101-m1-campaign/results_matched_iid.json`.
-- Point EERs: `experiments/EXP-101-m1-campaign/results_selection.json`. For this submission this file supplies point EERs only; its rank and "certified" fields belong to a withdrawn earlier analysis, are outside the submitted claims and carry no asserted confidence-coverage guarantee. Current procedure bands are in S4 and `results_matched_iid.json`.
-- Source deletions: `experiments/EXP-101-m1-campaign/results_source.json`.
-- Weight rules and paths: `experiments/EXP-108-m1-composition-robustness/results.json`.
-- Constructive search: `secondary_v2_results.json`, independently verified result SHA-256
-  `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`.
-- Composition-preserving arm: `experiments/EXP-111-m1-composition-preserving/results_v2.json`.
-- Bands under each weighting rule: `experiments/EXP-116-m1-policy-bands/RESULTS.json`, SHA-256
+All paths below are relative to the root of the public repository
+[`rvirgilli/asvspoof2021-df-clustered-uncertainty`](https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty),
+not to `paper/`. For the publication status of the cited `icassp2027-submission` tag,
+see `paper/UPLOAD-CHECKLIST.md` in the prepared package: the tag update remains pending.
+The artifact files below are already present in the existing tagged release; this repaired
+supplement and the added S2 example have not yet been published there.
+
+- Complete 21DF bands: `derived/results_matched_iid.json`. The bare filename in S2
+  identifies this same public file; use its stated pair and field selectors.
+- Point EERs: `derived/point_eers.json` (two-column extract). The legacy member
+  `derived/results_selection.json` remains in the tree for provenance only; its rank and
+  "certified" fields belong to a withdrawn earlier analysis, are outside the submitted
+  claims and carry no certification or confidence-coverage meaning. Current procedure
+  bands are in S4 and `derived/results_matched_iid.json`.
+- Source deletions: `derived/results_source.json`, key `leave_one_corpus_out`.
+- Weight rules and paths: `derived/results_composition.json`.
+- Constructive search: `derived/secondary_v2_results.json`, SHA-256 of the **public file**
+  `6ed59cb2dba15b73f05189b95c3ecc0753fd6c5b4669c887224344ab57b6d627`.
+  This is the file bound by `MANIFEST.json` and the `results_sha256` field of
+  `derived/secondary_v2_verification.json` (verification-file SHA-256
+  `6e8dc6f42dd5afa45816b8d39ae8307b5e4beaa11b91017c0249047fff0ec369`).
+  The verifier is `code/exp108/verify_secondary_v2.py` (SHA-256
+  `73bb29895dd831df8075f691f5fad8f520bd31ab86368f7cb5ad9de31f449307`). The S5 witness is at
+  `pairs["XLSR-Mamba vs XLS-R+SLS"].objectives.r_TV.best_overall.witness` in the public result.
+  The **archived original** is the authors' working-repository file
+  `experiments/EXP-108-m1-composition-robustness/secondary_v2_results.json`, SHA-256
+  `b12a8784c3fcb0bc02596d375aa16a93fed3661ec5c4d3badac4ea3b8b029616`, recorded separately at
+  `audit/audit.json` → `composition_sensitivity.artifact_sha256["secondary_v2_results.json"]`.
+  That original is recoverable in the author archive and was hashed for this repair, but
+  is not a separately downloadable member of the public release: the public result adapts
+  `preoutput_contract` for the release layout. The selected witness is identical in both
+  files. The original digest cannot authenticate the different public bytes.
+- Composition-preserving arm: `audit/audit.json` →
+  `composition_fixed_sampling_control.result`. The same object contains `run_receipt`,
+  `archival_closure`, `portable_verification`, `independent_reproduction`, and
+  `artifact_sha256` for the original members, including `results_v2.json` named in S6.
+- Bands under each weighting rule: `exp116/RESULTS.json`, SHA-256
   `d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd`.
-- Coverage grid: `results_coverage_interaction_recalibrated.json` and
-  `results_exp105_verified.json`.
-- Trace-retaining coverage run: `experiments/EXP-112-m1-coverage-reseal/results-v2.json`.
-- SpoofCeleb: `experiments/EXP-114-m1-spoofceleb-confirmation/RESULTS.json` and
-  `PROVENANCE-RERUN-RESULTS.json`.
+- SpoofCeleb class-stratified trial arm: `exp118/RESULTS.json`, SHA-256
+  `8e55047790c3472cbf96c3309f0d62302f3348639ebe6728f1ff2bc24e86541a`.
+- Coverage grid: `derived/results_coverage_interaction_recalibrated.json` and
+  `derived/results_exp105_verified.json`.
+- Trace-retaining coverage run: `audit/audit.json` → `coverage_witnessed_replacement.result`.
+  That object also contains `run_receipt`, `closure`, `provenance_addendum`,
+  `independent_verification`, and `artifact_sha256` for the original members, including
+  `results-v2.json` and `trace-v2.jsonl`.
+- SpoofCeleb provenance package: `audit/audit.json` →
+  `spoofceleb_sampling_unit_confirmation.provenance_rerun_result`, with sibling
+  `provenance_rerun_comparison`, `provenance_rerun_receipt`, `mamba_score_comparison`,
+  `independent_reproduction`, and `artifact_sha256`. The original `RESULTS.json` is bound at
+  `spoofceleb_sampling_unit_confirmation.artifact_sha256["RESULTS.json"]`; it is not a
+  standalone public file or a sibling `result` payload. Use the released rerun result and
+  comparison records to inspect the reproducibility evidence and original/rerun differences.
+- SpoofCeleb analysis plan: `plans/EXP-114-spoofceleb.PREREG.md` with
+  `plans/EXP-114-spoofceleb.FREEZE.sha256`; ASVspoof 5 criteria:
+  `plans/EXP-106-asv5.AMENDMENT-5.md`. Their SHA-256 values in the unchanged prose above
+  were recomputed from the released files for this repair.
+
+The three embedded packages replace the former public-facing `experiments/EXP-111-…`,
+`experiments/EXP-112-…`, and `experiments/EXP-114-…` locators. Those paths do not exist in
+the public tree. Their original standalone byte serializations cannot be recovered from
+that tree: the release distributes embedded records and original-member hashes instead.
+Re-serializing a selected JSON object does not reproduce or verify the original file hash.
+The original files remain available in the author archive and their `artifact_sha256`
+bindings were checked for this repair; independent public verification uses the container
+`audit/audit.json`, SHA-256
+`33741f645b0d6cdb492e31add6ca4feffa4ea540a0d65a7ceaa0d918e3b49d02`, and the selectors above.
+
+From the repository root, compare `sha256sum PATH` with the matching entry in
+`MANIFEST.json` (also compare the byte count); use the explicitly printed public digest
+for the constructive result. `artifact_sha256` inside an audit package refers to its
+original members, not to the containing JSON file. These checks authenticate bytes against
+the records; they do not supply independent timing attestation or rerun the experiments.
+The final candidate bindings and fresh guard results are in
+`paper/RELEASE-RECEIPT-FINAL.json` in the prepared package. The existing tagged manifest
+binds its existing files only; a replacement manifest and tag must be produced for this
+repaired supplement before the public release can be represented as matching the paper.
 
 The public release excludes upstream-licensed score/audio inputs. Its manifest binds every
 released code, aggregate, paper and provenance member; the data README gives upstream
