@@ -95,6 +95,14 @@ SSL-AASIST ceases to separate without VCC2018; XLS-R+SLS vs SSL-AASIST ceases wi
 RawNet2 vs CQCC-GMM, LFCC-LCNN vs LFCC-GMM and LFCC-LCNN vs CQCC-GMM become separated in at
 least one deletion. Result file: `derived/results_source.json`, key `leave_one_corpus_out`.
 
+For Gaussian calibration, form `Sigma_raw = Sigma_s + Sigma_a - Sigma_sa` from the
+delete-one system-EER covariances and obtain `Sigma_PSD` by symmetrizing and replacing
+negative eigenvalues with zero. Draw `Z ~ N(0, Sigma_PSD)` and standardize each pair
+contrast using its variance under `Sigma_PSD` (implemented as
+`sqrt(max(contrast variance,1e-18))` for the zero-scale guard). The final interval radius
+uses the separate marginal floor printed above. Implementation: `code/exp101_source.py`,
+functions `jack_cov`, `nearest_psd` and the leave-one-corpus-out block in `main`.
+
 The secondary additive marginal-jackknife Gaussian sensitivity analysis uses
 `Sigma_plus = Sigma_speaker + Sigma_attack`. It projects the symmetric matrix to positive
 semidefinite form by clipping negative eigenvalues at zero, draws 200,000 vectors
@@ -108,6 +116,8 @@ not an exact multiway estimator or a coverage guarantee.
 For RawNet2 minus CQCC-GMM, the point gap is **−3.180** percentage points and the matched simultaneous PW band is **[-9.284, 2.925]**. These values are rounded from `results_matched_iid.json`, `iid.pairs["RawNet2 vs CQCC-GMM"].delta_eer_pts` and `speaker_attack.pairs["RawNet2 vs CQCC-GMM"].simultaneous`; they are a fixed-score procedure-sensitivity example, not a population confidence interval.
 
 ## S3. Complete 21DF point results
+
+Here `SLS` abbreviates `XLS-R+SLS`; `XLSR+SLS` is a spelling alias for the same detector name.
 
 | System | Score-file release | EER (%) | Point rank |
 |---|---|---:|---:|
@@ -359,12 +369,11 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676.
 
 ### Artifact paths and content bindings
 
-All paths below are relative to the root of the public repository
-[`rvirgilli/asvspoof2021-df-clustered-uncertainty`](https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty),
-not to `paper/`. For the publication status of the cited `icassp2027-submission` tag,
-see `paper/UPLOAD-CHECKLIST.md` in the prepared package: the tag update remains pending.
-The artifact files below are already present in the existing tagged release; this repaired
-supplement and the added S2 example have not yet been published there.
+The public supplement and referenced files were published on 14 September 2026 at tag
+`icassp2027-submission`, commit `89a17476a8937a6c548eaf0a997dfc4019419660`, in
+[`rvirgilli/asvspoof2021-df-clustered-uncertainty`](https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/tree/89a17476a8937a6c548eaf0a997dfc4019419660).
+Paths below are relative to the root of that release, not to `paper/`.
+`MANIFEST.json` supplies byte counts and SHA-256 digests for the released files.
 
 - Complete 21DF bands: `derived/results_matched_iid.json`. The bare filename in S2
   identifies this same public file; use its stated pair and field selectors.
@@ -432,10 +441,6 @@ From the repository root, compare `sha256sum PATH` with the matching entry in
 for the constructive result. `artifact_sha256` inside an audit package refers to its
 original members, not to the containing JSON file. These checks authenticate bytes against
 the records; they do not supply independent timing attestation or rerun the experiments.
-The final candidate bindings and fresh guard results are in
-`paper/RELEASE-RECEIPT-FINAL.json` in the prepared package. The existing tagged manifest
-binds its existing files only; a replacement manifest and tag must be produced for this
-repaired supplement before the public release can be represented as matching the paper.
 
 The public release excludes upstream-licensed score/audio inputs. Its manifest binds every
 released code, aggregate, paper and provenance member; the data README gives upstream

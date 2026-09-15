@@ -185,7 +185,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen comparisons between the self-supervised detectors and the organizer baselines remain separated under both resampling methods with all twelve weighting rules, and under separate leave-one-source-out jackknife refits, whereas within-group separation changes with the resampling method and with source deletion."
+   "match": "All 16 SSL-versus-baseline pairs remain separated in the resampling, reweighting and separate source-deletion checks, while some within-group comparisons change."
   },
   {
    "id": "release_locator",

@@ -27,7 +27,7 @@ rafaello.virgilli@discente.ufg.br}
 \maketitle
 
 \begin{abstract}\small
-We examine whether pairwise equal-error-rate (EER) comparisons on fixed detector scores remain separated from zero when resampling individual trials or jointly resampling speakers and attacks. Separation uses procedure-sensitivity bands adjusted over all system pairs. On ASVspoof~2021~DF, 26 of 28 pairs among eight systems are separated under trial resampling, compared with 18 under speaker-and-attack resampling; separation changes from 5/6 to 0/6 among organizer baselines and from 5/6 to 2/6 among self-supervised (SSL) detectors. An analogous SpoofCeleb comparison, using unstratified trial resampling on a different four-detector roster, falls from 6/6 to 3/6, so between-source mixture changes are not necessary. Alternative weights reverse five of six organizer-baseline orderings and one of six within-SSL orderings; the latter pair is already unseparated under trial resampling. All sixteen comparisons between the self-supervised detectors and the organizer baselines remain separated under both resampling methods with all twelve weighting rules, and under separate leave-one-source-out jackknife refits, whereas within-group separation changes with the resampling method and with source deletion. These are fixed-score sensitivity bands, not population confidence intervals.
+On fixed audio-deepfake detector scores, we compare pairwise differences in equal error rate (EER) under trial resampling and joint speaker-and-attack resampling. A pair is separated when its band, adjusted across all system pairs, excludes zero. These are fixed-score sensitivity bands, not population confidence intervals. On ASVspoof~2021~DF, 26 of 28 pairs among eight systems are separated under trial resampling, compared with 18 under speaker-and-attack resampling; separation changes from 5/6 to 0/6 among organizer baselines and from 5/6 to 2/6 among self-supervised (SSL) detectors. An analogous SpoofCeleb comparison, using unstratified trial resampling on a different four-detector roster, falls from 6/6 to 3/6, so between-source mixture changes are not necessary. Alternative weights reverse five of six organizer-baseline orderings and one of six within-SSL orderings; the latter pair is already unseparated under trial resampling. All 16 SSL-versus-baseline pairs remain separated in the resampling, reweighting and separate source-deletion checks, while some within-group comparisons change.
 \end{abstract}
 
 \begin{keywords}
@@ -74,7 +74,7 @@ Within each class, every named hierarchy level receives equal conditional mass a
 \label{sec:exp}
 
 \sloppypar
-\textbf{Setup.} The primary set contains four author-released self-supervised systems (XLSR-Mamba \cite{xiao25}, XLS-R+SLS \cite{zhang24sls}, XLSR-Conformer \cite{rosello23}, SSL-AASIST \cite{tak22}) and four organizer-released baselines (RawNet2, LFCC-LCNN, LFCC-GMM, CQCC-GMM). We use all 533,928 evaluation-phase trials for which every score is available. Fig.~\ref{fig:forest} shows all within-SSL pairs; Table~\ref{tab:eers} gives selected bands and group counts. The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.
+\textbf{Setup.} The primary set contains four author-released self-supervised systems (XLSR-Mamba \cite{xiao25}, XLS-R+SLS (abbreviated SLS below) \cite{zhang24sls}, XLSR-Conformer \cite{rosello23}, SSL-AASIST \cite{tak22}) and four organizer-released baselines (RawNet2, LFCC-LCNN, LFCC-GMM, CQCC-GMM). We use all 533,928 evaluation-phase trials for which every score is available. Fig.~\ref{fig:forest} shows all within-SSL pairs; Table~\ref{tab:eers} gives point EERs, selected bands and group counts. The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.
 \par\endsloppypar
 
 
@@ -101,12 +101,19 @@ This is a found upper bound, not a minimum, and is too small to imply practical 
 \textbf{Alternative released scores on 21DF.} On the eleven complete Speech DF Arena score files for the same 533,928 trials, trial and PW bootstraps separate 52/55 and 38/55 pairs; the median ratio of PW to trial bootstrap standard deviations over the 55 pairs is 8.45. For HuBERT-ECAPA versus WavLM-ECAPA ($-2.153$ points), the bands are $[-2.761,-1.544]$ and $[-5.241,0.936]$. These are descriptive results for that separate score collection, not population confidence intervals.
 
 \begin{table}[tb]
-\caption{Top: selected paired EER differences and simultaneous bands (points); primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials. Bottom: primary pairs whose bands exclude zero, or whose ordering reverses under at least one of the 12 weighting rules.}
+\caption{Top: primary 21DF point EER (\%); $n=533,928$, empirical class-normalized trial weights. Middle: selected paired EER differences and simultaneous bands (points); primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials. Bottom: primary pairs whose bands exclude zero, or whose ordering reverses under at least one of the 12 weighting rules.}
 \label{tab:eers}
 \centering\small
 \vspace{2pt}
 \begin{tabular}{@{}lccc@{}}
 \toprule
+SSL detector & EER & Organizer baseline & EER \\
+\midrule
+XLSR-Mamba & 1.884 & RawNet2 & 22.383 \\
+XLS-R+SLS & 1.916 & LFCC-LCNN & 23.477 \\
+XLSR-Conformer & 2.273 & LFCC-GMM & 25.247 \\
+SSL-AASIST & 2.852 & CQCC-GMM & 25.563 \\
+\midrule
 \multicolumn{4}{@{}l@{}}{XLSR-Mamba $-$ XLSR-Conformer: $-0.389$} \\
 \multicolumn{2}{@{}l}{Trial $[-0.570,-0.208]$} & \multicolumn{2}{l@{}}{PW $[-1.348,0.570]$} \\
 \multicolumn{4}{@{}l@{}}{Arena HuBERT-ECAPA $-$ WavLM-ECAPA: $-2.153$} \\
@@ -121,7 +128,7 @@ SSL vs.\ baselines & 16/16 & 16/16 & 0/16 \\
 \end{tabular}
 \end{table}
 
-\textbf{Source deletions.} The bona-fide sources ASVspoof, VCC2018 and VCC2020 contain 67, 12 and 14 speakers. Source deletion uses a third construction: with delete-one speaker, attack and observed-cell jackknife variances $V_s$, $V_a$ and $V_{sa}$ of each contrast, the interval is $\hat\Delta\pm q\sqrt{\max(V_s+V_a-V_{sa},V_s,V_a,0)}$, where $q$ is a Gaussian max-$t$ critical value recomputed over all 28 contrasts for each remaining subset (200,000 draws). On the full data this construction separates 18/28 pairs (16 cross-cohort, 2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap. Leave-one-source-out refits preserve separation for all 16 cross-cohort pairs, remove both separated within-SSL pairs and separate three within-baseline pairs in at least one deletion. Thus cross-cohort separation survives these source changes, while some within-cohort separation decisions change with them.
+\textbf{Source deletions.} The bona-fide sources ASVspoof, VCC2018 and VCC2020 contain 67, 12 and 14 speakers. Source deletion uses a third construction: with delete-one speaker, attack and observed-cell jackknife variances $V_s$, $V_a$ and $V_{sa}$ of each contrast, the interval is $\hat\Delta\pm q\sqrt{\max(V_s+V_a-V_{sa},V_s,V_a,0)}$, where $q$ is a Gaussian max-$t$ critical value recomputed over all 28 contrasts for each remaining subset (200,000 draws). Supplement, Sec.~S2, specifies its covariance projection and Gaussian standardization. On the full data this construction separates 18/28 pairs (16 cross-cohort, 2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap. Leave-one-source-out refits preserve separation for all 16 cross-cohort pairs, remove both separated within-SSL pairs and separate three within-baseline pairs in at least one deletion. Thus cross-cohort separation survives these source changes, while some within-cohort separation decisions change with them.
 
 \textbf{ASVspoof 5 check.} For SSL-AASIST, AASIST, XLS-R+SLS and XLSR-Mamba on all 680,774 Track~1 trials \cite{asvspoof5eval}, resampling the 367 target speakers, the 370 bona-fide-only speakers and the 16 attacks as three independent multinomial draws changes the separated count from 6/6 under trial resampling to 5/6 and gives a median simultaneous-band width ratio of $27.27\times$; both criteria (at least one lost separation, median ratio at least 2) were fixed in the released plan before scoring completed. This check is intentionally EER-only because it transfers the paper's $\Delta$EER comparison; ASVspoof~5's primary Track~1 metric is minDCF. It is not a system-performance replication or population claim.
 

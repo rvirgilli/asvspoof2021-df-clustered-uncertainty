@@ -1,14 +1,14 @@
 # Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
 
 This repository accompanies the M1 manuscript in `paper/main.tex` and
-`paper/main.pdf`. The prepared 14 September 2026 package repairs public artifact
-locators in S8 and retains the moved S2 example. Its exact payload and narrow
-approval scope are in `paper/RELEASE-RECEIPT-FINAL.json`; publication of the cited
-`icassp2027-submission` tag is pending the author's instruction. See
-`paper/UPLOAD-CHECKLIST.md` for the observed mismatch and the required tag step.
-The historical release, exact-PDF and deterministic-build claims do not attest
-this replacement package. After publication, resolve the tag to its commit and
-verify its files against the retained receipt as the checklist specifies.
+`paper/main.pdf`. The 15 September 2026 republication includes the PDF identified
+by the passing protocol audit, the eight primary point EERs, the revised abstract,
+and the supplement's source-deletion calibration, detector aliases and corrected
+release history. `paper/RELEASE-RECEIPT-FINAL.json` binds the current payload and
+records changes from `paper/RELEASE-RECEIPT-20260914.json`.
+The cited release tag is `icassp2027-submission`; `paper/UPLOAD-CHECKLIST.md` gives
+reader verification commands. The manifest binds the successor receipt, and the
+Git commit binds the manifest.
 
 ## What this is
 

@@ -854,7 +854,7 @@ for literal, value, label in (
     require_number(literal, value, 2, label)
 
 
-# 8. Selected paired bands in the main table; complete point and pair tables in S3/S4.
+# 8. Primary point EERs and selected paired bands in the main table; complete S3/S4 tables.
 order = list(selection["21df"]["rank_sets"])
 eer = {name: f"{selection['21df']['rank_sets'][name]['pooled_eer']:.3f}" for name in order}
 # Point results remain required at their existing precision in supplement S3.
@@ -896,10 +896,17 @@ for label, trial, pw, band_key in examples:
     expected_band_lines.append(
         r"\multicolumn{2}{@{}l}{Trial $[" + f"{trial[band_key][0]:.3f},{trial[band_key][1]:.3f}"
         + r"]$} & \multicolumn{2}{l@{}}{PW $[" + f"{pw[band_key][0]:.3f},{pw[band_key][1]:.3f}" + r"]$} \\")
-expected_lines = expected_band_lines + [" & ".join(row) + r" \\" for row in expected_group_rows]
+# Finding 2 adds the primary point EERs alongside every existing paired-band row.
+expected_point_rows = [["SSL detector", "EER", "Organizer baseline", "EER"]]
+for ssl, baseline in zip(order[:4], order[4:]):
+    expected_point_rows.append([ssl, eer[ssl], baseline, eer[baseline]])
+expected_point_lines = [" & ".join(row) + r" \\" for row in expected_point_rows]
+expected_lines = expected_point_lines + expected_band_lines + [" & ".join(row) + r" \\" for row in expected_group_rows]
 printed_lines = [line.strip() for line in body.splitlines() if line.rstrip().endswith(r"\\")]
 if printed_lines != expected_lines:
     fail(f"TABLE main table rows differ from artifacts: {printed_lines} != {expected_lines}")
+if r"primary 21DF point EER (\%); $n=533,928$, empirical class-normalized trial weights" not in TEX_RAW:
+    fail("TABLE primary point EERs must name their units, sample size and weighting")
 require("primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials",
         "main paired-band display must distinguish its multiplicity families")
 if _r != {"ssl": 1, "base": 5, "cross": 0}:
@@ -1022,7 +1029,7 @@ for text, why in (
     ("trial-to-speaker/attack membership", "report units rather than trial count"),
     ("remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules",
      "conclusion must remain bounded to tested robustness checks"),
-    ("remain separated under both resampling methods with all twelve weighting rules, and under separate leave-one-source-out jackknife refits",
+    ("All 16 SSL-versus-baseline pairs remain separated in the resampling, reweighting and separate source-deletion checks, while some within-group comparisons change.",
      "abstract must remain bounded to tested robustness checks"),
     ("distinct from the nested-observation designs studied in", "crossed versus nested design must be stated in field terms"),
     ("Neither the primary-score analysis nor the Arena-score analysis supplies population confidence intervals or confidence sets for ranks", "no population or rank-confidence claim"),
