@@ -65,7 +65,7 @@ def main():
     print(f'PASS — successor receipt: {len(members)} payload bindings, 0 mismatches; '
           f'{len(changes)} changed, {unchanged} unchanged, {len(added)} added, '
           f'{len(set(previous)-set(members))} removed.')
-    print(f'PASS — {len(dispositions)} release members have baseline or finding-linked dispositions; PDF matches the audit binding.')
+    print(f'PASS — {len(dispositions)} release members have baseline or finding-linked dispositions; PDF matches the supplied-revision binding.')
     return 0
 
 if __name__ == '__main__':

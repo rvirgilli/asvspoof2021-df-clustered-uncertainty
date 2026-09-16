@@ -3,6 +3,10 @@
     "bytes": 151,
     "sha256": "c68e2d45b8e351821f498a3164eb030bb0ddbf9e4bf47a21e39a1884f21c62e6"
   },
+  "ABLATION-RESULTS.json": {
+    "bytes": 58447,
+    "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
+  },
   "ANALYSIS-PLAN.md": {
     "bytes": 9165,
     "sha256": "93c8306563461db62ed73b995753c2c5a23508c402d1f8c8062d718a4ea3801a"
@@ -24,8 +28,8 @@
     "sha256": "b57e84526f015e70c9d01d17c4851b0036ebdb1be72ff22773ec936fc91e96ee"
   },
   "README.md": {
-    "bytes": 12141,
-    "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
+    "bytes": 12594,
+    "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
   },
   "REPRODUCE.md": {
     "bytes": 2934,
@@ -116,8 +120,8 @@
     "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
   },
   "code/check_numbers.py": {
-    "bytes": 59951,
-    "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
+    "bytes": 65972,
+    "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
   },
   "code/check_tie_safety.py": {
     "bytes": 2793,
@@ -268,8 +272,8 @@
     "sha256": "734a193d40e0554c5ca9bd548810971e2e56cd1331f7a9f02f6277d2a1e9c147"
   },
   "code/verify_release_receipt.py": {
-    "bytes": 3410,
-    "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
+    "bytes": 3422,
+    "sha256": "58db1333cafe07bbd313d9a364b04e4338a79bd94ddc6a5b659c5c867578dfab"
   },
   "data/README.md": {
     "bytes": 4941,
@@ -535,29 +539,37 @@
     "bytes": 5546,
     "sha256": "ec153137a4bf163e200be10ac8a56813e649d6d10adb0630b461b4daa4245234"
   },
+  "paper/ABLATION-RESULTS.json": {
+    "bytes": 58447,
+    "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
+  },
   "paper/IEEEbib.bst": {
     "bytes": 17903,
     "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
   },
   "paper/README.md": {
-    "bytes": 2056,
-    "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
+    "bytes": 2206,
+    "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
   },
   "paper/RELEASE-RECEIPT-20260914.json": {
     "bytes": 87715,
     "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
   },
-  "paper/RELEASE-RECEIPT-FINAL.json": {
+  "paper/RELEASE-RECEIPT-20260915-1757.json": {
     "bytes": 90045,
     "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
   },
+  "paper/RELEASE-RECEIPT-FINAL.json": {
+    "bytes": 102689,
+    "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
+  },
   "paper/SUPPLEMENT.md": {
-    "bytes": 28283,
-    "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
+    "bytes": 45191,
+    "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
   },
   "paper/UPLOAD-CHECKLIST.md": {
-    "bytes": 2384,
-    "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
+    "bytes": 1988,
+    "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
   },
   "paper/figs/floor.pdf": {
     "bytes": 18556,
@@ -572,16 +584,16 @@
     "sha256": "b3d3b92e5ada46cf86b971365c6d928d8315348803d91c98a1c5dc5b1eacb13c"
   },
   "paper/main.pdf": {
-    "bytes": 165106,
-    "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
+    "bytes": 165879,
+    "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
   },
   "paper/main.tex": {
-    "bytes": 25745,
-    "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
+    "bytes": 25732,
+    "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
   },
   "paper/refs.bib": {
-    "bytes": 8890,
-    "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
+    "bytes": 9127,
+    "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
   },
   "paper/release-validation/check_numbers.stderr.txt": {
     "bytes": 0,
@@ -616,8 +628,8 @@
     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "paper/semantic_obligations.json": {
-    "bytes": 11176,
-    "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
+    "bytes": 13028,
+    "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
   },
   "paper/spconf.sty": {
     "bytes": 8798,

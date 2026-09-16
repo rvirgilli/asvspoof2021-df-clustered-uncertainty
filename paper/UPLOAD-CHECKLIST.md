@@ -1,46 +1,34 @@
-# M1 release verification — 15 September 2026
+# M1 republication 2 — reader verification
 
-The republication payload includes the supplied PDF identified by the passing
-15 September protocol audit, SHA-256 `bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108`.
-The author authorized republication at `icassp2027-submission` on the new branch
-`m1-republished-20260915-1757`. The historical 14 September commit is `89a17476a8937a6c548eaf0a997dfc4019419660`.
+The supplied repaired PDF has SHA-256 `59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b`.
+The publication branch is `m1-republished-2-20260915-2245`; the tag is `icassp2027-submission`.
+The earlier tag commit was `e7768ffbcb0dfd504b08ebf23483bfd67b9a4397`.
 
-## Verify the fetched artifact
-
-Fetch into a fresh ref so an existing local tag cannot mask the remote value.
-These commands operate in a reader's checkout:
+Fetch a fresh verification ref so a stale local tag cannot mask the remote state:
 
 ```sh
-git fetch --no-tags https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty.git refs/tags/icassp2027-submission:refs/verification/m1-20260915
-git rev-parse refs/verification/m1-20260915
-git rev-parse 'refs/verification/m1-20260915^{}'
-git switch --detach 'refs/verification/m1-20260915^{}'
+git fetch --no-tags https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty.git refs/tags/icassp2027-submission:refs/verification/m1-republication-2
+git rev-parse refs/verification/m1-republication-2
+git rev-parse 'refs/verification/m1-republication-2^{}'
+git switch --detach 'refs/verification/m1-republication-2^{}'
 uv sync --frozen
 uv run --frozen python code/verify_release_receipt.py
 uv run --frozen python code/check_numbers.py
 uv run --frozen python -m unittest -v paper/test_semantic_guards.py
 uv run --frozen python verify_release.py
-sha256sum paper/main.pdf paper/SUPPLEMENT.md
+sha256sum ABLATION-RESULTS.json paper/ABLATION-RESULTS.json paper/SUPPLEMENT.md paper/main.pdf
 ```
 
-The successor receipt binds every payload file except itself and the manifest
-to avoid circular digests. `MANIFEST.json` binds all other release files,
-including the receipt. The Git commit binds every tracked file, including the
-manifest. The release verifier checks membership, digests, sizes, scientific
-guards, provenance packages and five-page compliance.
+Both JSON paths must be reachable and identical. Supplement S4a names the eight
+lost separations, the four attack-only overlaps, and the two SSL pairs retained
+by speaker-only and joint resampling. It also identifies the extra SSL pair
+retained by attack-only. All 28 four-arm indicator rows and bands, the one-factor
+laws, position-wise EER, per-replicate threshold refit, B=5000 and seed rule
+`SeedSequence(2026081604).spawn(4)` must be present.
 
-Check S2 for the source-deletion inclusion–exclusion covariance, eigenvalue
-clipping, projected contrast standardization, 200,000 draws and 0.95 quantile.
-S3 lists the eight point EERs and S4 all 28 paired bands. The main table includes
-the same eight primary EERs. S8 records the earlier release as a historical event.
-
-## Record interpretation
-
-`RELEASE-RECEIPT-20260914.json` preserves the predecessor receipt. Its workflow
-statements and `release-validation/` outputs describe their original measurement
-date. The successor receipt supplies current bindings. The external auditor's
-`REPUBLICATION-RECEIPT.md` records fresh verification exits, the actual tag object
-and commit, the leased push and HTTPS read-back.
-
-The passing audit authorizes submission of the supplied manuscript as is.
-Republication preserves its bytes and adds no experiments.
+The successor receipt binds every payload member except itself and the manifest;
+the manifest binds the receipt; the Git commit binds all tracked files. The
+predecessor receipts and `release-validation/` remain historical. The external
+`REPUBLICATION-2-RECEIPT.md` records fresh exits, computed digests for every member,
+the actual tag object and commit, the leased push and HTTPS retrieval results.
+Publishing this evidence does not relabel the supplied audit as a new PASS.

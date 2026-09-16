@@ -1,14 +1,21 @@
 # Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
 
 This repository accompanies the M1 manuscript in `paper/main.tex` and
-`paper/main.pdf`. The 15 September 2026 republication includes the PDF identified
-by the passing protocol audit, the eight primary point EERs, the revised abstract,
-and the supplement's source-deletion calibration, detector aliases and corrected
-release history. `paper/RELEASE-RECEIPT-FINAL.json` binds the current payload and
-records changes from `paper/RELEASE-RECEIPT-20260914.json`.
-The cited release tag is `icassp2027-submission`; `paper/UPLOAD-CHECKLIST.md` gives
-reader verification commands. The manifest binds the successor receipt, and the
-Git commit binds the manifest.
+`paper/main.pdf`. Republication 2 publishes the primary-21DF one-factor ablation
+promised by the supplied revision: [ABLATION-RESULTS.json](ABLATION-RESULTS.json)
+and [supplement S4a](paper/SUPPLEMENT.md#s4a-primary-21df-factor-ablation).
+The supplement-relative [JSON copy](paper/ABLATION-RESULTS.json) has identical bytes.
+S4a identifies all eight joint losses, the four reproduced by attack-only, all
+28 pair indicators and bands under each arm, and the estimator and seed rules.
+The PDF is the supplied repaired PDF without rebuilding. The earlier audit's F1
+availability blocker motivates this publication; this is not a new scientific
+audit verdict. F2–F6 wording repairs are carried in the supplied revision.
+
+The cited release tag is `icassp2027-submission`.
+`paper/RELEASE-RECEIPT-FINAL.json` binds the payload and records changes from
+`paper/RELEASE-RECEIPT-20260915-1757.json`. The manifest binds the successor
+receipt, and the Git commit binds the manifest.
+`paper/UPLOAD-CHECKLIST.md` gives reader verification commands.
 
 ## What this is
 

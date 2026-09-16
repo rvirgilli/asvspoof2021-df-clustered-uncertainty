@@ -1,1983 +1,1599 @@
 {
-  "ablation_path_note": "These are descriptive locators for external inputs and historical recovery, not claims that the input files are shipped. Only these 11 string fields differ in JSON content from the supplied record.",
-  "ablation_public_path_substitutions": [
-    {
-      "field": "inputs.paths.protocol_key",
-      "published_value": "external-inputs/protocol_key/trial_metadata.txt",
-      "supplied_value_sha256": "ba4f88f19f48d6f58ebfe369b014c0d3facde92ddd82c49faedd9d4ac9ec282b"
-    },
-    {
-      "field": "inputs.paths.XLSR-Mamba",
-      "published_value": "external-inputs/XLSR-Mamba/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
-      "supplied_value_sha256": "540b45d3344010aed87d613ae742c29ba42c944c729ad04b83d796a480ce7ffc"
-    },
-    {
-      "field": "inputs.paths.XLS-R+SLS",
-      "published_value": "external-inputs/XLS-R+SLS/scores_DF.txt",
-      "supplied_value_sha256": "6b3cc41bb6953dcc44e342f7c3ddcc399354c743a40e32833fbdd4ef64ad3a1a"
-    },
-    {
-      "field": "inputs.paths.XLSR-Conformer",
-      "published_value": "external-inputs/XLSR-Conformer/Scores_Best_DF_Fixed_size_train.txt",
-      "supplied_value_sha256": "6d7b710cea46fd6311a4bdc78516a9e276b7613b3b54761499e085e7c8ebe4a1"
-    },
-    {
-      "field": "inputs.paths.SSL-AASIST",
-      "published_value": "external-inputs/SSL-AASIST/Scores_DF.txt",
-      "supplied_value_sha256": "35e6da9b7c7be4d151be5bb9618cd89dfc28cdbe7f8e27e9ce725aa2d5ffc0bf"
-    },
-    {
-      "field": "inputs.paths.RawNet2",
-      "published_value": "external-inputs/RawNet2/score.txt",
-      "supplied_value_sha256": "1e8496e66e4f6258c3a981e70171540ad0099c0bea306a5daaa54ad41cad465a"
-    },
-    {
-      "field": "inputs.paths.LFCC-LCNN",
-      "published_value": "external-inputs/LFCC-LCNN/score.txt",
-      "supplied_value_sha256": "9667eb1c72060960857cbc366acf303a9a8ed44de77e47223159081986a82580"
-    },
-    {
-      "field": "inputs.paths.LFCC-GMM",
-      "published_value": "external-inputs/LFCC-GMM/score.txt",
-      "supplied_value_sha256": "57e188dc52f63b597c3bcda15bd1257b1f16e5235dc3a0ca9066b31a06f48671"
-    },
-    {
-      "field": "inputs.paths.CQCC-GMM",
-      "published_value": "external-inputs/CQCC-GMM/score.txt",
-      "supplied_value_sha256": "51f2c08610276d9f7dcfda2712bdbe087b9564aa14471f344ad57adf1b2b2537"
-    },
-    {
-      "field": "input_recovery.temporary_root",
-      "published_value": "historical-input-recovery",
-      "supplied_value_sha256": "079396be3afdb7303837b709529f32ff698170cf68c575f6e72e2a26e1ad8f07"
-    },
-    {
-      "field": "input_recovery.readme",
-      "published_value": "historical-input-recovery/README.md",
-      "supplied_value_sha256": "4295da65a74cb7e6da20e4ec38e0cc0ea38914f1cbdf244d537e08b36a0269cb"
-    }
-  ],
   "added_members": {
-    "ABLATION-RESULTS.json": {
-      "bytes": 58447,
+    "code/verify_release_receipt.py": {
       "findings": [
-        "F1",
-        "F4"
+        "4"
       ],
-      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408",
-      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
+      "why": "Add verification of successor bindings and the historical change ledger; retain the original historical receipt verifier."
     },
-    "paper/ABLATION-RESULTS.json": {
-      "bytes": 58447,
+    "paper/RELEASE-RECEIPT-20260914.json": {
       "findings": [
-        "F1",
-        "F4"
+        "4"
       ],
-      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408",
-      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
-    },
-    "paper/RELEASE-RECEIPT-20260915-1757.json": {
-      "bytes": 90045,
-      "findings": [
-        "F1"
-      ],
-      "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71",
-      "why": "Preserve the current remote predecessor receipt byte for byte before binding the added evidence and repaired revision."
+      "why": "Preserve the supplied predecessor receipt byte for byte under an explicitly historical filename."
     }
   },
   "audit": {
+    "authorized_next_step": "submit this manuscript as is at this gate",
     "binding": {
-      "bytes": 80333,
-      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
+      "bytes": 79768,
+      "sha256": "5e3e62a02602c8af41daaafac107a50ac143c211ee863e71f96a916d11e2fae8"
     },
-    "blocker": "F1: missing primary-21DF evidence and supplement S4a at the published tag",
-    "file": "AUDIT-FAIL-REPAIRED.md",
-    "identified_pdf_sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b",
-    "pdf_binding_basis": "Computed from the supplied repaired main.pdf in this republication session; not an assertion that the old audit approved this PDF.",
-    "scope": "F2\u2013F6 repairs are supplied by the author. Current work verifies and publishes the evidence; it does not perform a new scientific audit.",
-    "verdict": "FAIL in the supplied historical protocol audit; not relabelled"
+    "file": "AUDIT-PASS-20260915.md",
+    "identified_pdf_sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108",
+    "verdict": "PASS"
   },
-  "binding_limits": [
-    "All digests were computed from file or fetched baseline Git object bytes in this session.",
-    "Payload receipt excludes itself and MANIFEST.json to avoid circularity. Manifest binds receipt; commit binds manifest. External final receipt lists computed digests for all tracked members.",
-    "Retained historical receipts and experiment verification claims describe their original runs; they are not new computations.",
-    "Supplied source/checker/figure differences are not grounds for assembly assertions. Public adapters and unchanged members are deliberately retained where no audit finding requires a change."
-  ],
+  "binding_limits": "The manifest binds this receipt and the Git commit binds the manifest. Audit and findings source records are external inputs bound by digest. No rebuilding, new experiment, historical timing authentication or population-validity finding is asserted.",
   "changes_from_predecessor": {
     "README.md": {
       "current": {
-        "bytes": 12594,
-        "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
-      },
-      "findings": [
-        "F1"
-      ],
-      "previous": {
         "bytes": 12141,
         "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
       },
-      "why": "Expose working root and supplement-relative ablation evidence links and the successor receipt; replace the previous revision\u2019s audit-status introduction."
+      "findings": [
+        "4"
+      ],
+      "previous": {
+        "bytes": 12182,
+        "sha256": "03f0f9d39b0c11547a9851c840daf0d10dd4ed7a9a859dd5ba863b19a467e988"
+      },
+      "why": "Replace stale pending-publication introduction with current payload and verification instructions."
     },
     "code/check_numbers.py": {
       "current": {
-        "bytes": 65972,
-        "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
-      },
-      "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F6"
-      ],
-      "previous": {
         "bytes": 59951,
         "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
       },
-      "why": "Retain the public repository adapters and historical checks; port the supplied four-arm and complete S4a table checks, attachment locator and repaired abstract matches."
-    },
-    "code/verify_release_receipt.py": {
-      "current": {
-        "bytes": 3422,
-        "sha256": "58db1333cafe07bbd313d9a364b04e4338a79bd94ddc6a5b659c5c867578dfab"
-      },
       "findings": [
-        "F1"
+        "1",
+        "2"
       ],
       "previous": {
-        "bytes": 3410,
-        "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
+        "bytes": 59346,
+        "sha256": "30d586510c9c4e8832f42c2c448724e99243a19ad8c276652e98dff07cb32e1a"
       },
-      "why": "Clarify the verification verdict: digest equality binds the supplied revision and does not turn the availability-failure audit into a new scientific PASS. All verification logic remains unchanged."
+      "why": "Apply the findings document checker diff to the existing public adapter: revised abstract match and eight primary point EER checks. Retain public paths and artifact adapters."
     },
     "paper/README.md": {
       "current": {
-        "bytes": 2206,
-        "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
-      },
-      "findings": [
-        "F1",
-        "F4"
-      ],
-      "previous": {
         "bytes": 2056,
         "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
       },
-      "why": "Identify the now-reachable evidence, actual supplied-PDF digest, current verification commands and historical status of the prior audit and receipts."
+      "findings": [
+        "4"
+      ],
+      "previous": {
+        "bytes": 1469,
+        "sha256": "f1fea046f52ae0c169bbff677e015608b3ecfdd3c3c2b6ef97af7dc80c454502"
+      },
+      "why": "Describe the current audited PDF and successor receipt; distinguish retained historical records."
     },
     "paper/SUPPLEMENT.md": {
       "current": {
-        "bytes": 45191,
-        "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
-      },
-      "findings": [
-        "F1",
-        "F2",
-        "F4",
-        "F6"
-      ],
-      "previous": {
         "bytes": 28283,
         "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
       },
-      "why": "Publish the supplied S4a with every pair indicator, contrast, band, loss identity, estimator, resampling law and seed rule; clarify the earlier-release locator with its immutable commit. S4a is preserved verbatim."
+      "findings": [
+        "3",
+        "4",
+        "5"
+      ],
+      "previous": {
+        "bytes": 27973,
+        "sha256": "e124f004bee09ae763c6ce0d835e92121b02854a3f997ce7edbabfce1370a1eb"
+      },
+      "why": "Use the supplied supplement: Gaussian covariance projection/standardization, historical release status and detector aliases; point EERs and S2 example retained."
     },
     "paper/UPLOAD-CHECKLIST.md": {
       "current": {
-        "bytes": 1988,
-        "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
-      },
-      "findings": [
-        "F1",
-        "F4"
-      ],
-      "previous": {
         "bytes": 2384,
         "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
       },
-      "why": "Replace the old revision\u2019s PDF and audit-status instructions with the new artifact locations and S4a/seed/PDF read-back requirements."
+      "findings": [
+        "4"
+      ],
+      "previous": {
+        "bytes": 13132,
+        "sha256": "b54955d830ec74f6a1f2a5a5629969abc6c993dbd0ad1fa329b761b9f170b394"
+      },
+      "why": "Replace stale preparation status with reader verification commands and the current PDF binding."
     },
     "paper/main.pdf": {
       "current": {
-        "bytes": 165879,
-        "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
-      },
-      "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F5",
-        "F6"
-      ],
-      "previous": {
         "bytes": 165106,
         "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
       },
-      "why": "Publish the supplied repaired PDF byte for byte, including the primary-21DF one-factor claims and attachment locators; no rebuild."
+      "findings": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "previous": {
+        "bytes": 164567,
+        "sha256": "61c63024d763d8f0819b8be646957e3902f88abcb38b8b6df0456e460f41c92b"
+      },
+      "why": "Use the supplied built PDF whose computed digest is identified by the passing audit; no rebuild."
     },
     "paper/main.tex": {
       "current": {
-        "bytes": 25732,
-        "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
-      },
-      "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F5",
-        "F6"
-      ],
-      "previous": {
         "bytes": 25745,
         "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
       },
-      "why": "Publish the supplied manuscript source with the ablation and all five wording repairs."
-    },
-    "paper/refs.bib": {
-      "current": {
-        "bytes": 9127,
-        "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
-      },
       "findings": [
-        "F4"
+        "1",
+        "2",
+        "3",
+        "5"
       ],
       "previous": {
-        "bytes": 8890,
-        "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
+        "bytes": 25473,
+        "sha256": "19e2d49e86995088704ac01ecfbaf92fbe214187c4b01f8cb9fe3061955a8587"
       },
-      "why": "Publish the supplied bibliography, adding the Owen\u2013Eckles reference cited by the supplied resampling-method specification."
+      "why": "Use the supplied revised manuscript source: abstract, eight point EERs, S2 reference and SLS naming."
     },
     "paper/semantic_obligations.json": {
       "current": {
-        "bytes": 13028,
-        "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
-      },
-      "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F6"
-      ],
-      "previous": {
         "bytes": 11176,
         "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
       },
-      "why": "Publish the supplied 51 obligations, including the five primary-ablation guards and repaired match texts."
+      "findings": [
+        "1"
+      ],
+      "previous": {
+        "bytes": 11335,
+        "sha256": "41f35785789d352ac03ec18ff780c610a2ff535a71a16ad122924903f2265b3f"
+      },
+      "why": "Update the abstract_tested_scope match to the revised sentence while retaining all 46 obligation IDs."
     }
   },
   "counts": {
-    "added_members": 3,
-    "changed_previous_bindings": 10,
-    "payload_members": 176,
-    "previous_payload_members": 173,
+    "added_members": 2,
+    "changed_previous_bindings": 8,
+    "payload_members": 173,
+    "previous_payload_members": 171,
     "removed_members": 0,
     "unchanged_previous_bindings": 163
   },
-  "date": "2026-09-16",
+  "date": "2026-09-15",
   "digest_algorithm": "SHA-256",
   "findings_record": {
     "binding": {
-      "bytes": 80333,
-      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
+      "bytes": 25756,
+      "sha256": "5165f89d19c5af3677fff35fba74012e8e91b136d18ee2bcaf4e3e057ca6218e"
     },
-    "file": "AUDIT-FAIL-REPAIRED.md",
+    "file": "FINDINGS-APPLIED-20260915.md",
     "findings": {
-      "F1": "Make primary-21DF ablation evidence and S4a reachable",
-      "F2": "State indicator comparison without factor attribution",
-      "F3": "Clarify the abstract roster and scope",
-      "F4": "Specify estimator, laws and deterministic seed streams",
-      "F5": "Keep reconstructed p-values labelled by variant",
-      "F6": "Name resampling arms by configuration and disclose exploratory timing"
-    },
-    "repair_record": {
-      "binding": {
-        "bytes": 26818,
-        "sha256": "bd41fca1fdf962d26dd97cb0ec16ed5abd9a8556de567dd6d03199dc64cfb287"
-      },
-      "file": "FIX-NOTE.md"
+      "1": "Shorten and clarify the abstract",
+      "2": "Display eight primary point EERs in Table 1",
+      "3": "Specify source-deletion Gaussian calibration in S2",
+      "4": "Correct release status and bind the republished artifact",
+      "5": "Declare the SLS detector aliases"
     }
   },
-  "issuer": "M1 republication executor",
-  "measured_at_utc": "2026-09-16T01:50:25.472567+00:00",
+  "issuer": "M1 auditor of record",
+  "measured_at_utc": "2026-09-15T21:16:05.595526+00:00",
   "member_disposition": {
     ".gitignore": {
       "baseline": {
         "bytes": 151,
         "sha256": "c68e2d45b8e351821f498a3164eb030bb0ddbf9e4bf47a21e39a1884f21c62e6"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
-    },
-    "ABLATION-RESULTS.json": {
-      "baseline": null,
-      "findings": [
-        "F1",
-        "F4"
-      ],
-      "status": "added",
-      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "ANALYSIS-PLAN.md": {
       "baseline": {
         "bytes": 9165,
         "sha256": "93c8306563461db62ed73b995753c2c5a23508c402d1f8c8062d718a4ea3801a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "CITATION.cff": {
       "baseline": {
         "bytes": 599,
         "sha256": "67505341d6c0c83925626999f487d6d8c45dad4aec4712e35c5888d08e4fd815"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "CLAIM-SCOPE.md": {
       "baseline": {
         "bytes": 5383,
         "sha256": "2d8d8634974f202ad6e309dec47f8f6aee7d80b05e0ad8b1f313b363959da44a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "DEVIATIONS.md": {
       "baseline": {
         "bytes": 6077,
         "sha256": "fdd946e8d7aef8525e1a8d3dc8f58e8b391069e310d9691f7b1629c7f4592579"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "LICENSE": {
       "baseline": {
         "bytes": 1072,
         "sha256": "b57e84526f015e70c9d01d17c4851b0036ebdb1be72ff22773ec936fc91e96ee"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "MANIFEST.json": {
-      "baseline": {
-        "bytes": 24540,
-        "sha256": "46989f4cc2d10af14e75460218befcbf7a912980bf34e72470864f17767d4e68"
-      },
       "findings": [
-        "F1"
+        "4"
       ],
       "status": "changed",
-      "why": "Regenerate the manifest to bind the added evidence, repaired manuscript and successor receipt."
+      "why": "Rebuild the manifest over the current payload plus successor receipt; the Git commit binds the manifest."
     },
     "README.md": {
-      "baseline": {
-        "bytes": 12141,
-        "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
-      },
       "findings": [
-        "F1"
+        "4"
       ],
       "status": "changed",
-      "why": "Expose working root and supplement-relative ablation evidence links and the successor receipt; replace the previous revision\u2019s audit-status introduction."
+      "why": "Replace stale pending-publication introduction with current payload and verification instructions."
     },
     "REPRODUCE.md": {
       "baseline": {
         "bytes": 2934,
         "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/PUBLIC-PACKAGING.json": {
       "baseline": {
         "bytes": 543,
         "sha256": "964d0e0ddfbbd91987677006650e68ee019b5adc5cbf715f686279def97eb3bd"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/README.md": {
       "baseline": {
         "bytes": 10328,
         "sha256": "b25f3d21a3b4373a07339f9217807f76ab040e64b3758c8e9f522677fe8a3b83"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/EXECUTION-AUDIT.md": {
       "baseline": {
         "bytes": 2356,
         "sha256": "9364d34bc65bc3d06789d388a0804532d9a09bec50780996a16dfa332ab681ed"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/EXP-101-m1-campaign/exp101_matched_iid.py": {
       "baseline": {
         "bytes": 7604,
         "sha256": "7745e9c498e9e5b3c995b233ab026379245815d6657a3fa30fcfe9e46d6b96d3"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/README.md": {
       "baseline": {
         "bytes": 662,
         "sha256": "1cff9b1a3bd7f819a5ad151e112c4b4abd53f240cdaa315990a94aeffd6b1897"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/input-manifest.json": {
       "baseline": {
         "bytes": 148692,
         "sha256": "07c2b7f2747748e0301694da65f15aca15e6ecc0552b4918803070665baed05f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/result.portable.json": {
       "baseline": {
         "bytes": 11500,
         "sha256": "706fef3899d3248e147d62f941cdb6377b11f6220358f0976da0afa9eb9ebe13"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/run-contract.portable.json": {
       "baseline": {
         "bytes": 178161,
         "sha256": "e3d01c7f1c8a86c17581dd463554648f008a4b71009134d580c728292f979933"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/AMENDMENT-5-fixed-roster-descriptive.md": {
       "baseline": {
         "bytes": 6856,
         "sha256": "6fe9b97570812955366f5ca1cfcc3fa244e2a3d2f579f8d01e2ba260d9aff854"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/AMENDMENT-6-descriptive-executor.md": {
       "baseline": {
         "bytes": 6210,
         "sha256": "67e92ccb147fa4981c7aecc5c9ec966a59d10fe29e39c892febee1aeab6e4bed"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/STATIC-AUDIT-descriptive-executor.md": {
       "baseline": {
         "bytes": 2857,
         "sha256": "d6cf7d0c0fa8a1c2ae6a6a533b53ed2ab9a638fcaa047c0595cdb942f37ba781"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/analyze_asv5_descriptive.py": {
       "baseline": {
         "bytes": 31709,
         "sha256": "fe1c01f0de9a4052ea950fbb62b519b3ca9d17928d6d6c94e593ed8be6afbe8e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/asv5_descriptive_core.py": {
       "baseline": {
         "bytes": 15671,
         "sha256": "f7556f6585926931a639d2bc93f430811a91a6d3cc8b87f496f722f78eb521cc"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/test_analyze_asv5_descriptive.py": {
       "baseline": {
         "bytes": 12643,
         "sha256": "0b66a3bf8eb212d5e8d72666ef75efd1b49b53fd29cb53c5a40e05fad1a4d98c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/asv5/source/test_asv5_descriptive_core.py": {
       "baseline": {
         "bytes": 6692,
         "sha256": "d03a27e7984c087c0585601e460afb4a3734d74330e1af4d9de4b6e03a1d6e65"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/audit.json": {
       "baseline": {
         "bytes": 740198,
         "sha256": "33741f645b0d6cdb492e31add6ca4feffa4ea540a0d65a7ceaa0d918e3b49d02"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "audit/verify_asv5_package.py": {
       "baseline": {
         "bytes": 3820,
         "sha256": "b652a4fbb57815dde31bc1ae4c5a7369a2eec92a5143971ff02472ac76e1e3da"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "build_manifest.py": {
       "baseline": {
         "bytes": 1012,
         "sha256": "b9e3ef46fb9e574b259ff69a5c31674b6a03404746390b7624a5271a7cdd1995"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/aggregate_verified.py": {
       "baseline": {
         "bytes": 9636,
         "sha256": "5f83fef6484545de9222697cc7f34f95e2e8d8f3aca821a339d2363a7298a14f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/analyze_arena.py": {
       "baseline": {
         "bytes": 13644,
         "sha256": "aa5f7db3b69afda6a306ff9fc4ae6f84e0af1200c1fe5c0b606494063853fe99"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/analyze_multiway.py": {
       "baseline": {
         "bytes": 17104,
         "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/check_numbers.py": {
-      "baseline": {
-        "bytes": 59951,
-        "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
-      },
       "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F6"
+        "1",
+        "2"
       ],
       "status": "changed",
-      "why": "Retain the public repository adapters and historical checks; port the supplied four-arm and complete S4a table checks, attachment locator and repaired abstract matches."
+      "why": "Apply the findings document checker diff to the existing public adapter: revised abstract match and eight primary point EER checks. Retain public paths and artifact adapters."
     },
     "code/check_tie_safety.py": {
       "baseline": {
         "bytes": 2793,
         "sha256": "b7aa0c3887045b5b2cfb6d75b38230814e101b99a5afd35cd9d3c2201e1ed2c7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/coherent_jackknife.py": {
       "baseline": {
         "bytes": 7345,
         "sha256": "b6ad03f91a19fd5ff69328ac1b7599ed8436aaee9a2379353a45ebd033686984"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/compare_audit_core.py": {
       "baseline": {
         "bytes": 2255,
         "sha256": "f0b0e700777fcbf246e5f869b04615484ae4558ff56cb90250abc4c735c6afc5"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/coverage_interaction.py": {
       "baseline": {
         "bytes": 25280,
         "sha256": "e70d36f72cda37a02c3ad422a9728e3daf1efa49414374b96e0005a406214578"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/diagnose_low_eer.py": {
       "baseline": {
         "bytes": 9438,
         "sha256": "566b82de342def189f45665b31d58a5ba6c8db8c0ab44467534d59fc6256fb86"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_close.py": {
       "baseline": {
         "bytes": 6534,
         "sha256": "983dae1aa7b5e12cee5e66b5ac8591034c26389bff5afaff61b5048f57f13275"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_coverage_real.py": {
       "baseline": {
         "bytes": 8964,
         "sha256": "8fd9394f253d747fb9d1666e177c8cfc8eacc08b522c7a031e00362c33b2e33e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_dgp_fit.py": {
       "baseline": {
         "bytes": 4623,
         "sha256": "bdc562a16e301d4cc1bbd793d2a83d102041b0bcb1814350cfcac1c17132d71c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_floor.py": {
       "baseline": {
         "bytes": 7076,
         "sha256": "54add5595f0b1e548960283d44541d4dc645c3a5c19dda6cde9d9a6905e2fca2"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_floor_ci.py": {
       "baseline": {
         "bytes": 6330,
         "sha256": "b7df2520a1c43d89b02f1493849671a768f31e030c5cac6fa3572f3d1e757fda"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_icc.py": {
       "baseline": {
         "bytes": 5974,
         "sha256": "87cca4e40c46dbdd76eea13c3f80c2a98b07e363fb242e66fb536af8350bff53"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_matched_iid.py": {
       "baseline": {
         "bytes": 8090,
         "sha256": "574d09ed95c6945327a1d1331f8330109a3ff0548786ee2a2995473e743b2343"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_organizer_test.py": {
       "baseline": {
         "bytes": 11803,
         "sha256": "9d1c0961f84a3cd6ef45338bb822b68ad9a0162310812513405c97bf844b24a1"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_scaling.py": {
       "baseline": {
         "bytes": 6653,
         "sha256": "461f37ef4e22dcabf9d4a6d02118bffb3557584e802c4ea298e29080fa65b379"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_selection.py": {
       "baseline": {
         "bytes": 11455,
         "sha256": "527e42261b25fc9d8a1af50b99dcf9541833b7ebe385973c9f7eb03ea75c8c6a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_source.py": {
       "baseline": {
         "bytes": 14779,
         "sha256": "985f2031e6dcb74205f75b4fd172f7746320f48e319fe97b1ad87883108b029a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_verdict_ci.py": {
       "baseline": {
         "bytes": 10891,
         "sha256": "9378b31786bd8a601b9e1e00121c739167e4b3a739c5d70eb9794a2c98560257"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp101_widths.py": {
       "baseline": {
         "bytes": 5219,
         "sha256": "3d46b4afe8d58171b6aa04aa2977d2e33f618e508c719b7dcc2cdbfd3746da8b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/FREEZE.sha256": {
       "baseline": {
         "bytes": 76,
         "sha256": "c6c44068cd4871330b6d2b157084d643f610e818c886bd9f1c0faa994bd468b6"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/PREREG.md": {
       "baseline": {
         "bytes": 14381,
         "sha256": "a5fd0cac2d52c2baab97fc157a1d1422d5d2f25cad707df3552583dfab9b40fe"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/README.md": {
       "baseline": {
         "bytes": 993,
         "sha256": "dddbe5892f1c9a40b04141895da3ebfa1862d1a446b3fef55d2c34f6d84d8aa0"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/SECONDARY-V2-PREREG.md": {
       "baseline": {
         "bytes": 7496,
         "sha256": "a1e1c6bade8a8ec3cf14ae0491473a091feb865e7beaba6bec0a461bff12485e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/analyze.py": {
       "baseline": {
         "bytes": 26220,
         "sha256": "90b51b4de13521a35c6daec06ba83a64743b77b3ae9970a93778893f43a47090"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/build_contract.py": {
       "baseline": {
         "bytes": 8404,
         "sha256": "dc3f02385ea81922b8ed3d565f9990d3bb392e095a5e6dc15dbb5d4f9929c59e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/search_witnesses_v2.py": {
       "baseline": {
         "bytes": 19904,
         "sha256": "31abc879059abea1abff1db11c98b945a61d7586212afa38dc67cd368e4420f3"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/test_exp108.py": {
       "baseline": {
         "bytes": 7024,
         "sha256": "2f9fe722c0459919535fd2dcef1aa701cd3731c9f0f4c7fe42de1504230bc702"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/test_secondary_v2.py": {
       "baseline": {
         "bytes": 2683,
         "sha256": "ce04d09088f5328b49df243f9685fcc8f81ac8c89955bbecc1421d9a1ca3aec0"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/verify_results.py": {
       "baseline": {
         "bytes": 16066,
         "sha256": "32ff603916ba938d1f39c9e5f41db1f75dda856f62bf807de87094195bd4f4eb"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/exp108/verify_secondary_v2.py": {
       "baseline": {
         "bytes": 13254,
         "sha256": "73bb29895dd831df8075f691f5fad8f520bd31ab86368f7cb5ad9de31f449307"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/m1_campaign.py": {
       "baseline": {
         "bytes": 10943,
         "sha256": "9fbb8439f960ce52b714a0604f01edf24e3ac999eab7be6422fcf4729a0555db"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/m1_contingency.py": {
       "baseline": {
         "bytes": 7645,
         "sha256": "fdaa3fe64ef3ee1ee03e37212a34767e870f71fd4ef585ab4f6c9423874b6f9c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/make_audit_package.py": {
       "baseline": {
         "bytes": 18279,
         "sha256": "269f16859f0d8b6577ba4fedb44cc6d9e61c9835022389d55e36547ba2dfc836"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/make_public_audit.py": {
       "baseline": {
         "bytes": 2229,
         "sha256": "e428ea99df5feab2f935bf02c2adb67817def06882eb102736809f389bd05cbe"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/power_curves.py": {
       "baseline": {
         "bytes": 11693,
         "sha256": "11a9e3531154c946a34c78dc32e338f86e21ce46f6c8c26ddfb794a14a4815c7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/recalibrate_truth.py": {
       "baseline": {
         "bytes": 12556,
         "sha256": "2ab923a08b8219932ac1c6721da46f4f70df2e43101bc0e03d8d8165eea31e12"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/verify_crosspath_gate.py": {
       "baseline": {
         "bytes": 6679,
         "sha256": "a26b5658c117ecdf11f2ab0878ff9a8693ad69cb1e31d7e50c7e5ee331b58bda"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/verify_final_receipt.py": {
       "baseline": {
         "bytes": 3669,
         "sha256": "734a193d40e0554c5ca9bd548810971e2e56cd1331f7a9f02f6277d2a1e9c147"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "code/verify_release_receipt.py": {
-      "baseline": {
-        "bytes": 3410,
-        "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
-      },
       "findings": [
-        "F1"
+        "4"
       ],
-      "status": "changed",
-      "why": "Clarify the verification verdict: digest equality binds the supplied revision and does not turn the availability-failure audit into a new scientific PASS. All verification logic remains unchanged."
+      "status": "added",
+      "why": "Add verification of successor bindings and the historical change ledger; retain the original historical receipt verifier."
     },
     "data/README.md": {
       "baseline": {
         "bytes": 4941,
         "sha256": "855dfb951da7ec997fa3934087b7007623d3ea13782d084dcec42efaa29f5db3"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/README.md": {
       "baseline": {
         "bytes": 5825,
         "sha256": "5c6d830856540b32c77cf5e318eff6fbeae3b9228d388549aab41104fbf836f5"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/incidence_strata.json": {
       "baseline": {
         "bytes": 52418,
         "sha256": "71a1c7f01bd415db0735ca042f2acd110f4b8deb59ea687c93b7cb94a62427f1"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/point_eers.json": {
       "baseline": {
         "bytes": 403,
         "sha256": "f973c4d82a94618dababa5a38292e3cd61f51f21d915e998f08385690bb2a38c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/provenance_coherent_jackknife.json": {
       "baseline": {
         "bytes": 1183,
         "sha256": "78e887bb2d728b4644438390cfd3f3074f46418ecf4aad88c9172d5c3dd0d743"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/provenance_exp105.json": {
       "baseline": {
         "bytes": 2285,
         "sha256": "5a888e4d2ab2feabb69d2df49ed8332acae82a9a58fc3e858d17e3dcbcb76087"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_arena.json": {
       "baseline": {
         "bytes": 59599,
         "sha256": "205dc3c24b22619268a0990830f54058a4938276950f2d01ba706e041b32f7b8"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_coherent_jackknife.json": {
       "baseline": {
         "bytes": 20069,
         "sha256": "0c234b5a1f791da3923799a003a3877b027e098fee226ce10c4d65bcfdc8a3e0"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_composition.json": {
       "baseline": {
         "bytes": 238977,
         "sha256": "ba05285c82627876950c697cdb80a3cc6a02549301e68e8adbed4309451a0496"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_contingency.json": {
       "baseline": {
         "bytes": 2462,
         "sha256": "521f5ba3a264939bbe4e63affd02172823ab85b8b2969e9b04ebff39004e999d"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_coverage_diagnostics.json": {
       "baseline": {
         "bytes": 128792,
         "sha256": "ddf290ba12f37b646db646a9129540b65a57881121fb8b3fdd23e7405d07609c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_coverage_interaction.json": {
       "baseline": {
         "bytes": 144377,
         "sha256": "ec261bee657b19551bf64d87415fa72043eddb5c17814f879041541d5f6bf751"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_coverage_interaction_recalibrated.json": {
       "baseline": {
         "bytes": 98781,
         "sha256": "0396185094f6b07657e7655bd7bec73173751ea4a461ffcb00c45bcb2a41e160"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_coverage_real.json": {
       "baseline": {
         "bytes": 540,
         "sha256": "a1d3e86755ae28a2a8a32718200fd15b056fdfaaecef2447920ec1306ced500d"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_crosspath_gate.json": {
       "baseline": {
         "bytes": 2098,
         "sha256": "4b82b8ef74675745813cd579b288777be22857b330a7f7924854877fbe970a60"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_dgp_fit.json": {
       "baseline": {
         "bytes": 1665,
         "sha256": "31ab6f2d4ab1505e68052a690ad0b05a4aa3afda1ac43174a62d9aa03b72f888"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_exp105_verified.json": {
       "baseline": {
         "bytes": 17246,
         "sha256": "18f78620409787c9003b84efa3f2bd91152911b43d2bf203e4a08b023eece4f4"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_floor.json": {
       "baseline": {
         "bytes": 4916,
         "sha256": "d92372f10e555bc76a0e93fd25b4b32b0444e4af7174f521e351fb7affb87ff4"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_floor_ci.json": {
       "baseline": {
         "bytes": 4908,
         "sha256": "b96ea601d913326131813d395d773d584415a3980e062ffdbb4c044796c085b7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_icc.json": {
       "baseline": {
         "bytes": 8021,
         "sha256": "82c7c1d68166c91c8aac404be7f4dfdeb38a0f58f936b055d7122fb99fc744dc"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_matched_iid.json": {
       "baseline": {
         "bytes": 23029,
         "sha256": "7c716a09631b2c6a5d92626ac18e0544d1f2d1ff147d101c19a5bfdbb3dbbe74"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_matched_iid.provenance.json": {
       "baseline": {
         "bytes": 1210,
         "sha256": "cd835ccffe9a407507c68af42219d3dd51de4dcb91ea554a8c0935b3f4d8bbb6"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_multiway_real.json": {
       "baseline": {
         "bytes": 44557,
         "sha256": "7e09821a26edc79b373bc73c7ec7eda9d4f481c5fe30ec8250dd2a76119d5701"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_organizer_test.json": {
       "baseline": {
         "bytes": 8146,
         "sha256": "a74deca442f0d8f9ac1e133817dcfa3c72750520b182282c1a6e5aad770cef6f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_pairs.json": {
       "baseline": {
         "bytes": 9228,
         "sha256": "d37d75dcc33b80c75063c0cda3c4f2e4798f3c8fb45b82398095c20503736b4f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_scaling.json": {
       "baseline": {
         "bytes": 6963,
         "sha256": "6ebf0224925a69b4222068256e26e640e74236af9b6b576bdf5fd34fa105bbae"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_selection.json": {
       "baseline": {
         "bytes": 23877,
         "sha256": "fec86edc41b3397d2594243aa9a1612adbf2578368abbaf6833536df803970d7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_source.json": {
       "baseline": {
         "bytes": 41939,
         "sha256": "3806521b73fa29c551551cb9b5b4ec6516b027aad74be673a5695a2a1782ad7c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_verdict_ci.json": {
       "baseline": {
         "bytes": 4337,
         "sha256": "215177cc0372d912a5a75fa4a3ca91a71bcf78862d01028f9598935705194a64"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/results_widths.json": {
       "baseline": {
         "bytes": 3381,
         "sha256": "155810967e228c10be29de2b46af31d1dc19ff409b152c18882be38ae7b43e8e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/secondary_v2_results.json": {
       "baseline": {
         "bytes": 1547463,
         "sha256": "6ed59cb2dba15b73f05189b95c3ecc0753fd6c5b4669c887224344ab57b6d627"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/secondary_v2_verification.json": {
       "baseline": {
         "bytes": 1640,
         "sha256": "6e8dc6f42dd5afa45816b8d39ae8307b5e4beaa11b91017c0249047fff0ec369"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "derived/verification_composition.json": {
       "baseline": {
         "bytes": 452,
         "sha256": "3bbadce760bafb6eff0328e41f662475526bd3aed583c5243931c1e4c209442b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/AMENDMENT-1-post-run-receipt-verifier.md": {
       "baseline": {
         "bytes": 1079,
         "sha256": "8dce2fb305de251f04175a849f5e58d12bad1f24e3d0222398be2fd92f1b5e8b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/ATTACK-ONLY-BOOTSTRAP.npy": {
       "baseline": {
         "bytes": 160128,
         "sha256": "8b9a28fa2d5cf50db9c6aa6a3050c3f85a7a261f30837c303f433f38058b85d7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/CLOSURE.sha256": {
       "baseline": {
         "bytes": 1052,
         "sha256": "4911679c55a2dfc1e69125923c3bde467973bfead79c8c30439513139071d12b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/DATA.md": {
       "baseline": {
         "bytes": 670,
         "sha256": "1a2455ebedef49bf0067cc6e9b89b2b06c32a6b0f7f9f32e7bcabef0efd7c1a2"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/FREEZE.sha256": {
       "baseline": {
         "bytes": 464,
         "sha256": "833403a35f579d0ff75e3fcdeeda329766fe3a1c834750e7a7b55286ab5dacee"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/PREREG.md": {
       "baseline": {
         "bytes": 5613,
         "sha256": "5f6fd3cecf62233cfb4d15fb9e64fd0097083d1cbd17bed197d33dbe8459702f"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/REPORT.md": {
       "baseline": {
         "bytes": 4304,
         "sha256": "562ba3996d6f19ef536c74bba31de092a1598522b6c4ed5333dcaf4ea7bbfcac"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/RESULTS.json": {
       "baseline": {
         "bytes": 10139,
         "sha256": "d85156dd70c1e312069c664987f0c4fc7eab2f279af471f6fe6eddd2a121673c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/RUN-RECEIPT.json": {
       "baseline": {
         "bytes": 1119,
         "sha256": "9b175358121b41981ac7b95365e53c6b20ca3b98d15dcbcc7d1b194fb0e3b2ed"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/SPEAKER-ONLY-BOOTSTRAP.npy": {
       "baseline": {
         "bytes": 160128,
         "sha256": "1ef95b61935f48c2ec7b499c375979509d757231ab8d80338cec78f0d1cd9d70"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/analyze.py": {
       "baseline": {
         "bytes": 20260,
         "sha256": "bcff2ae2974833813b354cb1835d483159bb6f717d5f476ec6fc35d2bc4cd06d"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/independent/README.md": {
       "baseline": {
         "bytes": 645,
         "sha256": "ec80249ac7bf50e75bdcb3a502108a82f3d4128017edb5aa5a0b47d818c6e3fd"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/independent/RESULT.json": {
       "baseline": {
         "bytes": 1233,
         "sha256": "8a451028c25308c0d30d71d9fc4038770c242e6457760c92ebcc82b13a7f22cb"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/independent/recompute.py": {
       "baseline": {
         "bytes": 10192,
         "sha256": "4efd2e35efe3ef8ec39fb631a1ee4da7f5eb0c173f45564123c57cb8a70d4e5a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/pyproject.toml": {
       "baseline": {
         "bytes": 168,
         "sha256": "8ef388db0b48d4fc06b2027061798985c80e74049cbb6116261e5f8a4bfdecb9"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/test_analyze.py": {
       "baseline": {
         "bytes": 6439,
         "sha256": "cd93b6374f8ab795b2f19578f0cfbd02a3c0edc4a31ac53eaa12e1eb4457f46b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/test_verify_receipt.py": {
       "baseline": {
         "bytes": 2666,
         "sha256": "87c53e46214cfcb65bb649ca4c33c3454fdf862619d25d0c432b536c17deae61"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/uv.lock": {
       "baseline": {
         "bytes": 6407,
         "sha256": "b0c031c240620bb4622e318dbb773fc90fb3a59d119c2a8d51b4118a297a05cb"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp115/verify_receipt.py": {
       "baseline": {
         "bytes": 7133,
         "sha256": "ab1fa39ac2df5f8ad7820b34e017baf0668993f22e0abc01da504fd33f9cb252"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/FREEZE.sha256": {
       "baseline": {
         "bytes": 243,
         "sha256": "70382c78b7808201912be55bdfedbcd93161904c893095dc1d244b852e706978"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/PREREG.md": {
       "baseline": {
         "bytes": 5043,
         "sha256": "f0585c4179e0cc8d3b05637c8037f30975c8d85affff47c3a5c09f6ae99af6bc"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/README.md": {
       "baseline": {
         "bytes": 814,
         "sha256": "eda3ab496f844143b7806d2a3d37a4ca51542459f2e89a6f51d3db3b1dbfd9be"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/REPORT.md": {
       "baseline": {
         "bytes": 4526,
         "sha256": "e34c88d84add45f7b08cd78ea0ce79a104b6b48783561a784bfbc83ad6921983"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/RESULTS.json": {
       "baseline": {
         "bytes": 172500,
         "sha256": "d0bbafbc3a505dcf99a9d0ff683d6651279fba098df58a3549b9b3ec0ba18cdd"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/pyproject.toml": {
       "baseline": {
         "bytes": 165,
         "sha256": "b2d7e3ce0eb99e9d3317fd34e2a83eb5990362225be173f019cea85436b5e45c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp116/run_policy_bands.py": {
       "baseline": {
         "bytes": 8555,
         "sha256": "de208b67445d86c5a156a59fa1697a4b3c3f7d5d2f9b05bc3344be3a85078949"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/DATA.md": {
       "baseline": {
         "bytes": 497,
         "sha256": "e868463d1a5177485a520c69e83bd998846fea3ffb59e773e62078005b19110e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/FREEZE.sha256": {
       "baseline": {
         "bytes": 241,
         "sha256": "5447812a7c831690a9f8052822ce740380d52721864c98b1daa524463b7b6954"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/PREREG.md": {
       "baseline": {
         "bytes": 2970,
         "sha256": "2681628be356bafe245b7290fa91599be00864cf720fc775753ffccc95400b31"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/REPORT.md": {
       "baseline": {
         "bytes": 1830,
         "sha256": "e69d027923a03b9af5c8af7c4d5582c3f4f6afbad9ba774b4be8d7c7deedbde6"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/RESULTS.json": {
       "baseline": {
         "bytes": 3204,
         "sha256": "8e55047790c3472cbf96c3309f0d62302f3348639ebe6728f1ff2bc24e86541a"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/pyproject.toml": {
       "baseline": {
         "bytes": 173,
         "sha256": "7dbd5d3b702be12b6860e5f06f92376a09fc0430941973a203168840717b5fb6"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "exp118/run_trial_laws.py": {
       "baseline": {
         "bytes": 5546,
         "sha256": "ec153137a4bf163e200be10ac8a56813e649d6d10adb0630b461b4daa4245234"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
-    },
-    "paper/ABLATION-RESULTS.json": {
-      "baseline": null,
-      "findings": [
-        "F1",
-        "F4"
-      ],
-      "status": "added",
-      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/IEEEbib.bst": {
       "baseline": {
         "bytes": 17903,
         "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/README.md": {
-      "baseline": {
-        "bytes": 2056,
-        "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
-      },
       "findings": [
-        "F1",
-        "F4"
+        "4"
       ],
       "status": "changed",
-      "why": "Identify the now-reachable evidence, actual supplied-PDF digest, current verification commands and historical status of the prior audit and receipts."
+      "why": "Describe the current audited PDF and successor receipt; distinguish retained historical records."
     },
     "paper/RELEASE-RECEIPT-20260914.json": {
-      "baseline": {
-        "bytes": 87715,
-        "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
-    },
-    "paper/RELEASE-RECEIPT-20260915-1757.json": {
-      "baseline": null,
       "findings": [
-        "F1"
+        "4"
       ],
       "status": "added",
-      "why": "Preserve the current remote predecessor receipt byte for byte before binding the added evidence and repaired revision."
+      "why": "Preserve the supplied predecessor receipt byte for byte under an explicitly historical filename."
     },
     "paper/RELEASE-RECEIPT-FINAL.json": {
-      "baseline": {
-        "bytes": 90045,
-        "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
-      },
       "findings": [
-        "F1"
+        "4"
       ],
       "status": "changed",
-      "why": "Compute a successor receipt over the complete assembled payload and disclose all changed bindings and finding-linked reasons."
+      "why": "Replace stale current bindings with freshly computed successor bindings and reasons for every changed member."
     },
     "paper/SUPPLEMENT.md": {
-      "baseline": {
-        "bytes": 28283,
-        "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
-      },
       "findings": [
-        "F1",
-        "F2",
-        "F4",
-        "F6"
+        "3",
+        "4",
+        "5"
       ],
       "status": "changed",
-      "why": "Publish the supplied S4a with every pair indicator, contrast, band, loss identity, estimator, resampling law and seed rule; clarify the earlier-release locator with its immutable commit. S4a is preserved verbatim."
+      "why": "Use the supplied supplement: Gaussian covariance projection/standardization, historical release status and detector aliases; point EERs and S2 example retained."
     },
     "paper/UPLOAD-CHECKLIST.md": {
-      "baseline": {
-        "bytes": 2384,
-        "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
-      },
       "findings": [
-        "F1",
-        "F4"
+        "4"
       ],
       "status": "changed",
-      "why": "Replace the old revision\u2019s PDF and audit-status instructions with the new artifact locations and S4a/seed/PDF read-back requirements."
+      "why": "Replace stale preparation status with reader verification commands and the current PDF binding."
     },
     "paper/figs/floor.pdf": {
       "baseline": {
         "bytes": 18556,
         "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/figs/forest.pdf": {
       "baseline": {
         "bytes": 18953,
         "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/figures_m1.py": {
       "baseline": {
         "bytes": 6967,
         "sha256": "b3d3b92e5ada46cf86b971365c6d928d8315348803d91c98a1c5dc5b1eacb13c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/main.pdf": {
-      "baseline": {
-        "bytes": 165106,
-        "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
-      },
       "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F5",
-        "F6"
+        "1",
+        "2",
+        "3",
+        "5"
       ],
       "status": "changed",
-      "why": "Publish the supplied repaired PDF byte for byte, including the primary-21DF one-factor claims and attachment locators; no rebuild."
+      "why": "Use the supplied built PDF whose computed digest is identified by the passing audit; no rebuild."
     },
     "paper/main.tex": {
-      "baseline": {
-        "bytes": 25745,
-        "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
-      },
       "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F5",
-        "F6"
+        "1",
+        "2",
+        "3",
+        "5"
       ],
       "status": "changed",
-      "why": "Publish the supplied manuscript source with the ablation and all five wording repairs."
+      "why": "Use the supplied revised manuscript source: abstract, eight point EERs, S2 reference and SLS naming."
     },
     "paper/refs.bib": {
       "baseline": {
         "bytes": 8890,
         "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
       },
-      "findings": [
-        "F4"
-      ],
-      "status": "changed",
-      "why": "Publish the supplied bibliography, adding the Owen\u2013Eckles reference cited by the supplied resampling-method specification."
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/check_numbers.stderr.txt": {
       "baseline": {
         "bytes": 0,
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/check_numbers.stdout.txt": {
       "baseline": {
         "bytes": 193,
         "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/public_check_numbers.stderr.txt": {
       "baseline": {
         "bytes": 0,
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/public_check_numbers.stdout.txt": {
       "baseline": {
         "bytes": 193,
         "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/public_test_semantic_guards.stderr.txt": {
       "baseline": {
         "bytes": 279,
         "sha256": "a4d5409735f6d870179c9e26fea0853141bd6baeecb9203bafd87efa0d7bf7ce"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/public_test_semantic_guards.stdout.txt": {
       "baseline": {
         "bytes": 0,
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/test_semantic_guards.stderr.txt": {
       "baseline": {
         "bytes": 260,
         "sha256": "d583808806c7d0f3063bf99bb848fef14d32c8377041bb4f9dc37cdf6e3cd660"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/release-validation/test_semantic_guards.stdout.txt": {
       "baseline": {
         "bytes": 0,
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/semantic_obligations.json": {
-      "baseline": {
-        "bytes": 11176,
-        "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
-      },
       "findings": [
-        "F1",
-        "F2",
-        "F3",
-        "F4",
-        "F6"
+        "1"
       ],
       "status": "changed",
-      "why": "Publish the supplied 51 obligations, including the five primary-ablation guards and repaired match texts."
+      "why": "Update the abstract_tested_scope match to the revised sentence while retaining all 46 obligation IDs."
     },
     "paper/spconf.sty": {
       "baseline": {
         "bytes": 8798,
         "sha256": "dc5d632639040cb183f2ab62780f314845aa021be73048c8a9ec9c2072d64a86"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "paper/test_semantic_guards.py": {
       "baseline": {
         "bytes": 2041,
         "sha256": "3059b05a3facfd2418b0dec7e1f29be2365e03a1541a65b465e86de85a817344"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/COHERENT-JACKKNIFE-DIAGNOSTIC.md": {
       "baseline": {
         "bytes": 2065,
         "sha256": "81f0bb1bb04165d01468bdd066be1b6e061fe1868f38aeec5075b8b1b3e12a9c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-104-arena.PREREG.md": {
       "baseline": {
         "bytes": 4790,
         "sha256": "eeb704ec14e7250c1560b04548962b262eea4fa31d0c2a5a56e10cd0250bfd2c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-104-arena.REPORT.md": {
       "baseline": {
         "bytes": 2398,
         "sha256": "c5168d07870916e5d3c8e90599945403b427c7587162ddcd2dfd784145a5dba1"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-105-multiway.PREREG.md": {
       "baseline": {
         "bytes": 9815,
         "sha256": "bac2f1f16491e76f90da6661b1866510ac5cc66c2984ac2243b2e65218896362"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-105-multiway.REPORT.md": {
       "baseline": {
         "bytes": 6973,
         "sha256": "a712848f0e50e51ac6172ce154ce5e421c07b575cda342df6befe6a9da2636d8"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-106-asv5.AMENDMENT-5.md": {
       "baseline": {
         "bytes": 6856,
         "sha256": "6fe9b97570812955366f5ca1cfcc3fa244e2a3d2f579f8d01e2ba260d9aff854"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-106-asv5.PREREG.md": {
       "baseline": {
         "bytes": 3812,
         "sha256": "c4a6057f191e3b85be8fa34708ec08fea377725655ed06165b98a4e2ad2f5eaa"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-107-low-eer-v1-stopped.PREREG.md": {
       "baseline": {
         "bytes": 12356,
         "sha256": "e11d1a28dadbc09639a21bfe201c523b4f6c520b215554bc85ad7f0549edb9cd"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-107-low-eer-v2.PREREG.md": {
       "baseline": {
         "bytes": 471,
         "sha256": "1203070bc31041c1b162d90b8ab9cf06662485feaebf14a08d912b1fe678547e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-108-composition.PREREG.md": {
       "baseline": {
         "bytes": 14381,
         "sha256": "a5fd0cac2d52c2baab97fc157a1d1422d5d2f25cad707df3552583dfab9b40fe"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-108-secondary-v2.PREREG.md": {
       "baseline": {
         "bytes": 7496,
         "sha256": "a1e1c6bade8a8ec3cf14ae0491473a091feb865e7beaba6bec0a461bff12485e"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-114-spoofceleb.FREEZE.sha256": {
       "baseline": {
         "bytes": 392,
         "sha256": "9a2f34ab152e9e96be090bff1a4e328122eb63b3c20d3c1be8cd5e0082ccac73"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/EXP-114-spoofceleb.PREREG.md": {
       "baseline": {
         "bytes": 7788,
         "sha256": "3300801277eb74c1f17110163d9a1b415ec7d0e993cb105f90e457f5f6aba994"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "plans/MATCHED-IID-DIAGNOSTIC.md": {
       "baseline": {
         "bytes": 2546,
         "sha256": "c408b5872d3289ec58402d03da87ba5025361c17356b5d364eba4cda51a408e7"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "pyproject.toml": {
       "baseline": {
         "bytes": 238,
         "sha256": "109e9463ee8a0eeb0da4a98d523d30e37cf4667c7011085bc99856c4d7b7876c"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "uv.lock": {
       "baseline": {
         "bytes": 77662,
         "sha256": "43890a9cbbe6e4b32964d8c6d0b56ecb28810c79d4a5e376ae1a985c7e68a816"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     },
     "verify_release.py": {
       "baseline": {
         "bytes": 4030,
         "sha256": "737789da6b8465d9086b4c2a538b2b7d47a0e8e16ea2340381385d9f581f25ad"
       },
-      "findings": [],
       "status": "unchanged",
-      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
+      "why": "Deliberately retain the remote baseline; none of findings 1\u20135 requires changing this member."
     }
   },
   "predecessor": {
     "binding": {
-      "bytes": 90045,
-      "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
+      "bytes": 87715,
+      "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
     },
-    "commit": "e7768ffbcb0dfd504b08ebf23483bfd67b9a4397",
-    "path": "paper/RELEASE-RECEIPT-20260915-1757.json",
+    "commit": "89a17476a8937a6c548eaf0a997dfc4019419660",
+    "path": "paper/RELEASE-RECEIPT-20260914.json",
     "remote_receipt_path": "paper/RELEASE-RECEIPT-FINAL.json"
   },
   "publication": {
-    "new_branch": "m1-republished-2-20260915-2245",
-    "observed_commit": "e7768ffbcb0dfd504b08ebf23483bfd67b9a4397",
-    "observed_tag_object": "c3b39cfd44953f95471b781d153bf4c05905870d",
+    "baseline_commit": "89a17476a8937a6c548eaf0a997dfc4019419660",
+    "branch": "m1-republished-20260915-1757",
+    "evidence": "The external REPUBLICATION-RECEIPT.md records the actual commit, tag, fresh verification and HTTPS read-back. This content receipt makes no pending-publication statement.",
+    "preflight_tag_object": "244e4b6fe234cb91a009b31a659d6fe334153856",
     "repository": "https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty",
-    "status_at_measurement": "assembled before verification and publication; final results are in external REPUBLICATION-2-RECEIPT.md",
     "tag": "icassp2027-submission"
   },
-  "purpose": "Publish the missing primary-21DF ablation evidence and supplied repaired revision; bind all payload bytes and account for each change against the observed remote baseline.",
+  "purpose": "Bind the republication of the passing manuscript and document every change from the fetched 14 September baseline.",
   "release_members": {
     ".gitignore": {
       "bytes": 151,
       "sha256": "c68e2d45b8e351821f498a3164eb030bb0ddbf9e4bf47a21e39a1884f21c62e6"
-    },
-    "ABLATION-RESULTS.json": {
-      "bytes": 58447,
-      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
     },
     "ANALYSIS-PLAN.md": {
       "bytes": 9165,
@@ -2000,8 +1616,8 @@
       "sha256": "b57e84526f015e70c9d01d17c4851b0036ebdb1be72ff22773ec936fc91e96ee"
     },
     "README.md": {
-      "bytes": 12594,
-      "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
+      "bytes": 12141,
+      "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
     },
     "REPRODUCE.md": {
       "bytes": 2934,
@@ -2092,8 +1708,8 @@
       "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
     },
     "code/check_numbers.py": {
-      "bytes": 65972,
-      "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
+      "bytes": 59951,
+      "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
     },
     "code/check_tie_safety.py": {
       "bytes": 2793,
@@ -2244,8 +1860,8 @@
       "sha256": "734a193d40e0554c5ca9bd548810971e2e56cd1331f7a9f02f6277d2a1e9c147"
     },
     "code/verify_release_receipt.py": {
-      "bytes": 3422,
-      "sha256": "58db1333cafe07bbd313d9a364b04e4338a79bd94ddc6a5b659c5c867578dfab"
+      "bytes": 3410,
+      "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
     },
     "data/README.md": {
       "bytes": 4941,
@@ -2511,33 +2127,25 @@
       "bytes": 5546,
       "sha256": "ec153137a4bf163e200be10ac8a56813e649d6d10adb0630b461b4daa4245234"
     },
-    "paper/ABLATION-RESULTS.json": {
-      "bytes": 58447,
-      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
-    },
     "paper/IEEEbib.bst": {
       "bytes": 17903,
       "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
     },
     "paper/README.md": {
-      "bytes": 2206,
-      "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
+      "bytes": 2056,
+      "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
     },
     "paper/RELEASE-RECEIPT-20260914.json": {
       "bytes": 87715,
       "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
     },
-    "paper/RELEASE-RECEIPT-20260915-1757.json": {
-      "bytes": 90045,
-      "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
-    },
     "paper/SUPPLEMENT.md": {
-      "bytes": 45191,
-      "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
+      "bytes": 28283,
+      "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
     },
     "paper/UPLOAD-CHECKLIST.md": {
-      "bytes": 1988,
-      "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
+      "bytes": 2384,
+      "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
     },
     "paper/figs/floor.pdf": {
       "bytes": 18556,
@@ -2552,16 +2160,16 @@
       "sha256": "b3d3b92e5ada46cf86b971365c6d928d8315348803d91c98a1c5dc5b1eacb13c"
     },
     "paper/main.pdf": {
-      "bytes": 165879,
-      "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
+      "bytes": 165106,
+      "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
     },
     "paper/main.tex": {
-      "bytes": 25732,
-      "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
+      "bytes": 25745,
+      "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
     },
     "paper/refs.bib": {
-      "bytes": 9127,
-      "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
+      "bytes": 8890,
+      "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
     },
     "paper/release-validation/check_numbers.stderr.txt": {
       "bytes": 0,
@@ -2596,8 +2204,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "paper/semantic_obligations.json": {
-      "bytes": 13028,
-      "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
+      "bytes": 11176,
+      "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
     },
     "paper/spconf.sty": {
       "bytes": 8798,
@@ -2678,29 +2286,17 @@
   },
   "schema": "m1-republication-receipt-v1",
   "supplied_inputs": {
-    "ABLATION-RESULTS.json": {
-      "bytes": 58760,
-      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-    },
-    "AUDIT-FAIL-REPAIRED.md": {
-      "bytes": 80333,
-      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
-    },
-    "FIX-NOTE.md": {
-      "bytes": 26818,
-      "sha256": "bd41fca1fdf962d26dd97cb0ec16ed5abd9a8556de567dd6d03199dc64cfb287"
-    },
-    "RELEASE-RECEIPT-FINAL.json": {
-      "bytes": 87715,
-      "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
-    },
     "SUPPLEMENT.md": {
-      "bytes": 44809,
-      "sha256": "9385ac1fba231cce4dc6e5366d43030eab0e25878d55c4bd23501656923830b5"
+      "bytes": 28283,
+      "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
+    },
+    "UPLOAD-CHECKLIST.md": {
+      "bytes": 13132,
+      "sha256": "b54955d830ec74f6a1f2a5a5629969abc6c993dbd0ad1fa329b761b9f170b394"
     },
     "check_numbers.py": {
-      "bytes": 67898,
-      "sha256": "b7163f7c2b3b45aaacca1c04bc7028c727d3806eef5252f34c91005c073600be"
+      "bytes": 61878,
+      "sha256": "4347c8726cd647b3eeeac28b3c7e561cf4b3372bdd98e88b52c1d31c05535cdf"
     },
     "figs/floor.pdf": {
       "bytes": 18556,
@@ -2715,20 +2311,16 @@
       "sha256": "0b893ad27b0208f97e33fb13c30540e38264f5a2493ce26a325ac829fac27aa8"
     },
     "main.pdf": {
-      "bytes": 165879,
-      "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
+      "bytes": 165106,
+      "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
     },
     "main.tex": {
-      "bytes": 25732,
-      "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
-    },
-    "refs.bib": {
-      "bytes": 9127,
-      "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
+      "bytes": 25745,
+      "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
     },
     "semantic_obligations.json": {
-      "bytes": 13028,
-      "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
+      "bytes": 11176,
+      "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
     },
     "test_semantic_guards.py": {
       "bytes": 1909,

@@ -185,7 +185,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All 16 SSL-versus-baseline pairs remain separated in the resampling, reweighting and separate source-deletion checks, while some within-group comparisons change."
+   "match": "All 16 SSL-versus-baseline pairs remain separated under resampling, group reweighting and source omission with jackknife-based bands, while some within-group comparisons change."
   },
   {
    "id": "release_locator",
@@ -231,6 +231,31 @@
    "id": "spoofceleb_trial_law_exception",
    "section": "Method/Bootstraps",
    "match": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates"
+  },
+  {
+   "id": "primary_ablation_abstract_exploratory",
+   "section": "Abstract",
+   "match": "The one-factor analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect."
+  },
+  {
+   "id": "primary_ablation_method_status",
+   "section": "Experiments/Primary ablation",
+   "match": "The exploratory one-factor analyses were performed after the primary comparison. Both use the EER estimator of Sec.~\\ref{sec:eer}, refit thresholds in every replicate with $B{=}5000$, and retain the 28-pair construction of Sec.~\\ref{sec:family}; the deterministic seed derivation is in the attached supplement, Sec.~S4a."
+  },
+  {
+   "id": "primary_ablation_interpretation",
+   "section": "Experiments/Primary ablation",
+   "match": "Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect. This does not establish a causal attribution to speaker identity."
+  },
+  {
+   "id": "primary_ablation_table_status",
+   "section": "Table 1",
+   "match": "Speaker-only and attack-only are exploratory analyses performed after the primary comparison. All four arms retain 16/16 cross-cohort separations; complete pair bands are in the attached supplement, Sec.~S4a."
+  },
+  {
+   "id": "primary_ablation_conclusion_exploratory",
+   "section": "Conclusion",
+   "match": "The speaker-only and attack-only analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect."
   }
  ]
 }

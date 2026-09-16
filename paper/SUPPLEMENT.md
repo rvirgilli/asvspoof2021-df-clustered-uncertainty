@@ -1,10 +1,19 @@
 # Supplementary methods and complete numerical results
 
-Version: repository tag `icassp2027-submission`
+Base version: commit `e7768ffbcb0dfd504b08ebf23483bfd67b9a4397`, formerly served by `icassp2027-submission`.
+
+Republication 2: this release publishes the supplied supplement and its S4a evidence. References below to the earlier tagged supplement or base release mean the immutable commit above. The current tag includes S4a and both root and paper copies of `ABLATION-RESULTS.json`; the relative link below resolves to the paper copy.
 
 This document supplies the operational definitions and complete numerical tables cited by
 the ICASSP 2027 manuscript. The paper's inferential object is fixed-score procedure
 sensitivity. None of the bands below is claimed to be a population confidence interval.
+
+Submission attachment: [Sec. S4a](#s4a-primary-21df-factor-ablation) contains the complete
+primary-21DF factor-ablation evidence, including all pair bands and separation indicators,
+transcribed from the accompanying [ABLATION-RESULTS.json](ABLATION-RESULTS.json). The
+exploratory one-factor analyses were performed after the primary comparison and are absent
+from the base release above. Cite this attached supplement for S4a; the earlier tagged
+`paper/SUPPLEMENT.md` does not contain it.
 
 ## S1. Data map and terminology
 
@@ -81,6 +90,23 @@ critical value is the empirical 0.95 quantile of
 `max_p |Delta[p,h,b] - mean_b Delta[p,h,b]| / s[p,h]`.
 
 The reported band is `Delta_hat[p] +/- q[.95,h] s[p,h]`.
+
+**Practical reading.** Separation supports an ordering under the declared perturbation law on the fixed
+scores. Request trial bands to perturb individual
+observations, speaker-only or attack-only bands to probe the corresponding observed
+groups, and joint PW bands to vary both. When source masses are to remain fixed, use the
+composition-preserving control in S6; named fixed weighting rules in S5 address specific
+alternative evaluation compositions. If a pair separates only under trial resampling,
+report its gap and both bands and withhold a winner claim intended to survive group
+reweighting. A band containing zero neither establishes equality nor estimates reversal
+probability. None of these laws selects a future deployment population or validates
+population coverage. The primary one-factor bands in S4a are exploratory analyses performed after the primary
+comparison.
+
+Product reweighting and its conservatism for crossed-array means are studied by Art B.
+Owen and Dean Eckles, “Bootstrapping data arrays of arbitrary order,” *Annals of Applied
+Statistics*, 6(3), 895–927, 2012, [doi:10.1214/12-AOAS547](https://doi.org/10.1214/12-AOAS547).
+Those results do not establish coverage for these EER bands.
 
 **Source-deletion construction.** Leave-one-source-out refits use a third construction: with
 delete-one speaker, attack and observed-cell jackknife variances `V_s`, `V_a` and `V_sa` of each
@@ -166,6 +192,217 @@ indicators. These rows are the numerical support for every `26/28`, `18/28`, `5/
 | LFCC-LCNN | LFCC-GMM | -1.770128 | [-2.426145, -1.114111] | yes | [-6.490406, 2.950150] | no |
 | LFCC-LCNN | CQCC-GMM | -2.086153 | [-2.765372, -1.406934] | yes | [-6.173476, 2.001170] | no |
 | LFCC-GMM | CQCC-GMM | -0.316025 | [-0.928617, 0.296567] | no | [-3.369889, 2.737839] | no |
+
+The 16 cross-cohort gaps span 19.5–23.7 points. Over all primary pairs, PW simultaneous
+bands are 4.13–11.36 times wider than matched trial bands (median 8.14). The two within-SSL
+pairs separated by PW have gaps 0.968 and 0.935 points; each ceases to separate under one
+source deletion in the separate jackknife construction of S2.
+
+### S4a. Primary-21DF factor ablation
+
+**Evidence and scope.** This post-hoc exploratory analysis was performed after the primary
+trial-versus-joint comparison. It was not preregistered. This section is part of the
+submission's attached `SUPPLEMENT.md`, not the earlier tagged supplement. All numerical
+entries below are transcribed from the accompanying
+[ABLATION-RESULTS.json](ABLATION-RESULTS.json); no ablation is recomputed here. The trial
+and joint summaries in that record are unchanged copies of the primary results. The
+one-factor summaries were computed after the base release and are supplied in this
+attachment so that their pair identities and bands can be read without accessing that
+release or the JSON.
+
+**Fixed roster and estimator.** All arms use the same 533,928 evaluation trials
+(14,869 bona fide, 519,059 spoof), 93 speakers and 110 spoof attacks. The four
+self-supervised (SSL) detectors are XLSR-Mamba, XLS-R+SLS, XLSR-Conformer and SSL-AASIST;
+the four organizer baselines are RawNet2, LFCC-LCNN, LFCC-GMM and CQCC-GMM. All nine
+score-file/protocol hashes match the primary matched comparison, as recorded in
+`inputs.sha256` and `inputs.all_inputs_match_published_hashes`.
+
+The EER estimator is unchanged in every arm. Larger scores mean bona fide. Sort trial
+positions in ascending score order; at each position FRR is cumulative bona-fide weight
+divided by total bona-fide weight, and FAR is one minus cumulative spoof weight divided
+by total spoof weight. Select the first position minimizing `|FRR-FAR|` and take their
+mean, without interpolation. This is the position-wise sweep, not a distinct-score-boundary
+sweep. Each replicate refits every system's threshold using that replicate's weights.
+For each ordered pair `(A,B)`, `Delta = 100 * (EER(A) - EER(B))` in percentage points;
+negative favors A. Original estimates use empirical trial weights normalized within
+class and are the same in all arms.
+
+**Four resampling laws.** Each arm uses `B=5000` replicates. All eight systems share a
+replicate's trial weights, preserving their pairing.
+
+- **Trial:** independently sample trials with replacement within each class, retaining
+  the original class counts; weights are the trial multiplicities.
+- **Speaker-only:** draw 93 speakers with replacement uniformly from the 93 observed
+  speakers. Each trial receives its speaker's multiplicity, shared across bona-fide and
+  spoof trials; attack weights are fixed at one.
+- **Attack-only:** draw 110 attacks with replacement uniformly from the 110 observed spoof
+  attacks. Spoof trials receive their attack's multiplicity; speaker weights and all
+  bona-fide trial weights stay one.
+- **Speaker × attack:** independently draw the speaker and attack multiplicities just
+  defined. Each spoof trial receives their product, and each bona-fide trial receives
+  only its speaker's multiplicity.
+
+Thus the speaker and attack counts are multinomial draws with equal probabilities over
+their respective observed levels. The one-factor implementations use
+`exp101_selection.load_21df`, `clustered_eer_replicates` and the unchanged
+`m1_campaign.weighted_eer`: speaker-only sets `att_idx=None`; attack-only uses one
+degenerate speaker cluster to fix speaker weights at one. These are implementation
+identifiers for the estimator and laws defined above.
+
+**Seed streams.** The complete campaign-derived rule is
+`children = np.random.SeedSequence(2026081604).spawn(4)`, followed by
+`np.random.default_rng(children[k])` for the arm's child. Trial retains spawn key `(0,)`,
+joint speaker × attack retains `(1,)`, speaker-only appends `(2,)`, and attack-only
+appends `(3,)`. Appending children leaves the original two streams unchanged. Workers
+receive saved states of these sequential streams at block boundaries, with no per-worker
+seeds. The recorded NumPy version is `2.4.6`. The artifact reports exact agreement across
+block partitions, exact summary reconstruction from saved replicates, and agreement of
+the first three replicates of each new arm with direct factor weights and the unchanged
+weighted EER function. These are the existing verification records, not new runs.
+
+**Full-family construction.** For arm `h` and pair `p`, let `Delta[p,h,b]` be the
+replicate contrast, `mean_b Delta[p,h,b]` its bootstrap mean, and `s[p,h]` its sample
+standard deviation across the 5000 replicates (`ddof=1`). For every replicate form
+
+`T[h,b] = max over all 28 pairs p of |Delta[p,h,b] - mean_b Delta[p,h,b]| / s[p,h]`.
+
+The arm's `q[.95,h]` is the empirical 95th percentile of those maxima; report
+`Delta_hat[p] +/- q[.95,h] * s[p,h]`, centered on the original contrast. This is
+`exp101_matched_iid.summarize` in the record. Each arm has its own standard deviations
+and critical value. All 28 pairs enter every maximum, including cross-cohort pairs;
+subgroup counts use these same bands without separate subgroup corrections. Separation
+means the band excludes zero. These are fixed-score sensitivity bands, not population
+confidence intervals or a variance decomposition.
+
+| Arm | q.95 |
+|---|---:|
+| Trial | 2.940238 |
+| Speaker-only | 2.890609 |
+| Attack-only | 2.887804 |
+| Speaker × attack | 2.996669 |
+
+The speaker-only and attack-only analyses are exploratory and were performed after the
+primary trial-versus-joint comparison. Arm names describe what is resampled.
+
+| Arm | All /28 | Organizer /6 | Within-SSL /6 | Cross-cohort /16 |
+|---|---:|---:|---:|---:|
+| Trial | 26 | 5 | 5 | 16 |
+| Speaker-only | 18 | 0 | 2 | 16 |
+| Attack-only | 22 | 3 | 3 | 16 |
+| Speaker × attack | 18 | 0 | 2 | 16 |
+
+**Pair identities and interpretation.** Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect.
+There is no causal attribution to speaker identity. Speaker-only and joint resampling
+have the same indicator for every named pair in the complete table below; equal counts
+alone would not establish that result.
+
+Every row in the following inventory is separated by trial resampling and loses separation
+under joint speaker × attack resampling. “Yes” means the one-factor arm also loses that
+separation; “no” means it retains it.
+
+| Pair | Speaker-only | Attack-only |
+|---|:---:|:---:|
+| XLSR-Mamba vs XLSR-Conformer | yes | yes |
+| XLS-R+SLS vs XLSR-Conformer | yes | yes |
+| XLSR-Conformer vs SSL-AASIST | yes | no |
+| RawNet2 vs LFCC-LCNN | yes | yes |
+| RawNet2 vs LFCC-GMM | yes | no |
+| RawNet2 vs CQCC-GMM | yes | no |
+| LFCC-LCNN vs LFCC-GMM | yes | yes |
+| LFCC-LCNN vs CQCC-GMM | yes | no |
+
+Attack-only therefore reproduces the losses of XLSR-Mamba vs XLSR-Conformer,
+XLS-R+SLS vs XLSR-Conformer, RawNet2 vs LFCC-LCNN, and LFCC-LCNN vs LFCC-GMM.
+The two SSL pairs separated under **both speaker-only and joint** resampling are
+**XLSR-Mamba vs SSL-AASIST** and **XLS-R+SLS vs SSL-AASIST**. Both also remain separated
+under trial and attack-only resampling. Attack-only additionally separates
+XLSR-Conformer vs SSL-AASIST; trial additionally separates that pair, XLSR-Mamba vs
+XLSR-Conformer, and XLS-R+SLS vs XLSR-Conformer. XLSR-Mamba vs XLS-R+SLS and LFCC-GMM vs
+CQCC-GMM remain unseparated under every arm. All 16 named cross-cohort pairs below
+remain separated under every arm.
+
+**Complete separation indicators.** Here “yes” means separated, not loss of separation.
+The order is the artifact's pair order; no pair was selected by its result.
+
+| Pair | Trial | Speaker-only | Attack-only | Speaker × attack |
+|---|:---:|:---:|:---:|:---:|
+| XLSR-Mamba vs XLS-R+SLS | no | no | no | no |
+| XLSR-Mamba vs XLSR-Conformer | yes | no | no | no |
+| XLSR-Mamba vs SSL-AASIST | yes | yes | yes | yes |
+| XLSR-Mamba vs RawNet2 | yes | yes | yes | yes |
+| XLSR-Mamba vs LFCC-LCNN | yes | yes | yes | yes |
+| XLSR-Mamba vs LFCC-GMM | yes | yes | yes | yes |
+| XLSR-Mamba vs CQCC-GMM | yes | yes | yes | yes |
+| XLS-R+SLS vs XLSR-Conformer | yes | no | no | no |
+| XLS-R+SLS vs SSL-AASIST | yes | yes | yes | yes |
+| XLS-R+SLS vs RawNet2 | yes | yes | yes | yes |
+| XLS-R+SLS vs LFCC-LCNN | yes | yes | yes | yes |
+| XLS-R+SLS vs LFCC-GMM | yes | yes | yes | yes |
+| XLS-R+SLS vs CQCC-GMM | yes | yes | yes | yes |
+| XLSR-Conformer vs SSL-AASIST | yes | no | yes | no |
+| XLSR-Conformer vs RawNet2 | yes | yes | yes | yes |
+| XLSR-Conformer vs LFCC-LCNN | yes | yes | yes | yes |
+| XLSR-Conformer vs LFCC-GMM | yes | yes | yes | yes |
+| XLSR-Conformer vs CQCC-GMM | yes | yes | yes | yes |
+| SSL-AASIST vs RawNet2 | yes | yes | yes | yes |
+| SSL-AASIST vs LFCC-LCNN | yes | yes | yes | yes |
+| SSL-AASIST vs LFCC-GMM | yes | yes | yes | yes |
+| SSL-AASIST vs CQCC-GMM | yes | yes | yes | yes |
+| RawNet2 vs LFCC-LCNN | yes | no | no | no |
+| RawNet2 vs LFCC-GMM | yes | no | yes | no |
+| RawNet2 vs CQCC-GMM | yes | no | yes | no |
+| LFCC-LCNN vs LFCC-GMM | yes | no | no | no |
+| LFCC-LCNN vs CQCC-GMM | yes | no | yes | no |
+| LFCC-GMM vs CQCC-GMM | no | no | no | no |
+
+**Complete simultaneous bands (EER percentage points).** Pair direction is A minus B
+as named by “A vs B”; each interval below is copied at the six-decimal precision stored
+in `simultaneous`. The common point contrasts are copied from `delta_eer_pts`. These are
+the full-family bands defined above, not the artifact's pointwise percentile intervals.
+
+| Pair | Delta | Trial band | Speaker-only band | Attack-only band | Speaker × attack band |
+|---|---:|---|---|---|---|
+| XLSR-Mamba vs XLS-R+SLS | -0.032130 | [-0.144037, 0.079778] | [-0.457634, 0.393375] | [-0.536119, 0.471860] | [-0.725307, 0.661048] |
+| XLSR-Mamba vs XLSR-Conformer | -0.389234 | [-0.570024, -0.208445] | [-1.172086, 0.393618] | [-0.814703, 0.036235] | [-1.348081, 0.569612] |
+| XLSR-Mamba vs SSL-AASIST | -0.967604 | [-1.174902, -0.760306] | [-1.760857, -0.174350] | [-1.214382, -0.720825] | [-1.827816, -0.107392] |
+| XLSR-Mamba vs RawNet2 | -20.499407 | [-21.070188, -19.928626] | [-26.386349, -14.612465] | [-22.660816, -18.337997] | [-26.949685, -14.049129] |
+| XLSR-Mamba vs LFCC-LCNN | -21.593130 | [-22.123222, -21.063038] | [-26.722574, -16.463686] | [-23.871153, -19.315107] | [-27.444664, -15.741595] |
+| XLSR-Mamba vs LFCC-GMM | -23.363258 | [-23.980830, -22.745685] | [-28.468195, -18.258321] | [-25.977707, -20.748808] | [-29.462125, -17.264390] |
+| XLSR-Mamba vs CQCC-GMM | -23.679283 | [-24.364178, -22.994387] | [-28.395216, -18.963350] | [-26.155690, -21.202876] | [-29.246867, -18.111699] |
+| XLS-R+SLS vs XLSR-Conformer | -0.357105 | [-0.537688, -0.176521] | [-1.191055, 0.476845] | [-1.000877, 0.286668] | [-1.492950, 0.778741] |
+| XLS-R+SLS vs SSL-AASIST | -0.935474 | [-1.140571, -0.730377] | [-1.595547, -0.275401] | [-1.387343, -0.483605] | [-1.783624, -0.087324] |
+| XLS-R+SLS vs RawNet2 | -20.467277 | [-21.038884, -19.895670] | [-26.440245, -14.494310] | [-22.534966, -18.399589] | [-26.958382, -13.976173] |
+| XLS-R+SLS vs LFCC-LCNN | -21.561000 | [-22.089936, -21.032065] | [-26.777669, -16.344331] | [-23.711405, -19.410595] | [-27.439585, -15.682415] |
+| XLS-R+SLS vs LFCC-GMM | -23.331128 | [-23.947902, -22.714355] | [-28.507968, -18.154288] | [-25.901004, -20.761252] | [-29.468602, -17.193654] |
+| XLS-R+SLS vs CQCC-GMM | -23.647153 | [-24.330222, -22.964084] | [-28.457437, -18.836870] | [-25.966950, -21.327356] | [-29.216117, -18.078189] |
+| XLSR-Conformer vs SSL-AASIST | -0.578369 | [-0.834918, -0.321820] | [-1.428012, 0.271273] | [-1.075139, -0.081600] | [-1.636891, 0.480152] |
+| XLSR-Conformer vs RawNet2 | -20.110173 | [-20.672859, -19.547486] | [-25.778284, -14.442062] | [-22.165021, -18.055325] | [-26.306745, -13.913601] |
+| XLSR-Conformer vs LFCC-LCNN | -21.203896 | [-21.726182, -20.681609] | [-26.064402, -16.343390] | [-23.393428, -19.014363] | [-26.757261, -15.650530] |
+| XLSR-Conformer vs LFCC-GMM | -22.974023 | [-23.587262, -22.360785] | [-27.903658, -18.044389] | [-25.549988, -20.398059] | [-28.898893, -17.049154] |
+| XLSR-Conformer vs CQCC-GMM | -23.290049 | [-23.964374, -22.615723] | [-27.826501, -18.753596] | [-25.759126, -20.820971] | [-28.708961, -17.871136] |
+| SSL-AASIST vs RawNet2 | -19.531803 | [-20.118497, -18.945109] | [-25.133666, -13.929940] | [-21.730757, -17.332849] | [-25.738877, -13.324730] |
+| SSL-AASIST vs LFCC-LCNN | -20.625526 | [-21.171401, -20.079651] | [-25.457669, -15.793384] | [-22.907562, -18.343491] | [-26.214636, -15.036417] |
+| SSL-AASIST vs LFCC-GMM | -22.395654 | [-23.028473, -21.762835] | [-27.400672, -17.390636] | [-25.009160, -19.782148] | [-28.398920, -16.392388] |
+| SSL-AASIST vs CQCC-GMM | -22.711679 | [-23.406084, -22.017274] | [-27.270137, -18.153221] | [-25.162891, -20.260467] | [-28.122807, -17.300552] |
+| RawNet2 vs LFCC-LCNN | -1.093723 | [-1.721589, -0.465857] | [-4.910691, 2.723245] | [-2.894162, 0.706716] | [-5.527954, 3.340508] |
+| RawNet2 vs LFCC-GMM | -2.863851 | [-3.654035, -2.073667] | [-9.005362, 3.277660] | [-5.579829, -0.147872] | [-9.948626, 4.220925] |
+| RawNet2 vs CQCC-GMM | -3.179876 | [-4.003326, -2.356426] | [-8.450051, 2.090299] | [-5.647123, -0.712628] | [-9.284290, 2.924538] |
+| LFCC-LCNN vs LFCC-GMM | -1.770128 | [-2.426145, -1.114111] | [-5.651004, 2.110748] | [-3.851880, 0.311624] | [-6.490406, 2.950150] |
+| LFCC-LCNN vs CQCC-GMM | -2.086153 | [-2.765372, -1.406934] | [-5.280776, 1.108471] | [-4.168667, -0.003639] | [-6.173476, 2.001170] |
+| LFCC-GMM vs CQCC-GMM | -0.316025 | [-0.928617, 0.296567] | [-2.626158, 1.994108] | [-1.817707, 1.185656] | [-3.369889, 2.737839] |
+
+**Machine-readable selectors.** In the attached `ABLATION-RESULTS.json`, use
+`arms.<arm>.summary.pairs["A vs B"].simultaneous`, `.delta_eer_pts` and
+`.resolved_simultaneous`, where `<arm>` is `trial`, `speaker_only`, `attack_only` or
+`speaker_attack`. Critical values are at `arms.<arm>.summary.supt_critical_value`;
+counts at `arms.<arm>.counts`; the loss inventory at `lost_separations`; and the
+procedure, input and verification records at `method`, `seed_rule`, `inputs.sha256`
+and `verification`. The two one-factor replicate matrices and execution identifiers
+are described in the existing [ABLATION-NOTE.md](ABLATION-NOTE.md); reading them is not
+required to check the tables above. The result is limited to this fixed primary-21DF
+roster. In the separate exploratory SpoofCeleb comparison, speaker-only separates 5/6
+and attack-only 3/6, with attack-only matching the joint indicator vector. Neither roster
+establishes a universal dominant factor.
 
 ## S5. Fixed alternative weighting rules
 
