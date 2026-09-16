@@ -430,6 +430,13 @@ for system, literal in (("aasist", "57.93"), ("sls", "24.51"),
                         ("ssl_aasist", "26.72"), ("xlsr_mamba", "27.58")):
     require_number(literal, exp114["point_eer_percent"][system], 2,
                    f"EXP-114 {system} point EER")
+# S2: the main-text headline now identifies the surviving pairs, not just their count.
+spoofceleb_survivors = {
+    pair for pair, row in exp114["arm_b_global_product"]["pairs"].items()
+    if row["simultaneous_excludes_zero"]
+}
+if spoofceleb_survivors != {"aasist vs sls", "aasist vs ssl_aasist", "aasist vs xlsr_mamba"}:
+    fail("VALUE SpoofCeleb joint survivors are not exactly the three AASIST comparisons")
 if not (exp114["guards"]["complete_crossed_grid"]
         and exp114["guards"]["b_c_bootstrap_arrays_identical"]
         and exp114["guards"]["b_c_summaries_identical"]
@@ -645,12 +652,19 @@ all_below = sum(
 )
 if all_below != 11:
     fail(f"VALUE low-EER all-below count {all_below} != 11")
+# S3: distinguish each method's failure total from their common intersection.
+low_eer_failures = {
+    method: sum(row["coverage"][method]["coverage"] < 0.90 for row in low_rows)
+    for method in ("raw", "floor", "product")
+}
+if len(low_rows) != 24 or low_eer_failures != {"raw": 16, "floor": 16, "product": 11}:
+    fail(f"VALUE low-EER individual failure counts changed: {low_eer_failures}")
 require("11/24", "joint low-EER failure count")
 oracle_min = coverage_diag["low_eer_minimum_coverage"]["oracle_sd_normal"]
 if f"{oracle_min:.3f}" != "0.944":
     fail(f"VALUE oracle-SD minimum changed: {oracle_min}")
-require("all three are below .90 in the same 11/24 cells",
-        "adverse coverage result must remain explicit")
+require("Coverage fell below .90 in 16/24 low-EER cells for each jackknife interval and 11/24 for PW percentile; all three failed in the same 11 cells",
+        "individual and common adverse coverage counts must remain explicit")
 require("does not establish that either model describes 21DF",
         "coverage cannot validate acquisition")
 
@@ -1093,19 +1107,31 @@ diag = load(ROOT / "evidence/diagnostics.json")
 influence = load(ROOT / "evidence/influence.json")
 for name, digest in {
     "ABLATION-RESULTS.json": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3",
-    "diagnostics.json": "89253c3536f8dd3578756097ea3c5b1da02588ee6989009e9888e2bd0b728d4c",
-    "influence.json": "cbb9f6cc10db319cac15f8788ed598e6ca99fa2d643e214c7f5ff91621b75099",
+    "diagnostics.json": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff",
+    "influence.json": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759",
 }.items():
     if sha256(ROOT / "evidence" / name) != digest:
         fail(f"HASH supplied post-review evidence changed: {name}")
 if (diag["inputs_sha256"] != ablation["inputs"]["sha256"]
         or influence["inputs_sha256"] != diag["inputs_sha256"]
         or diag["saved_ablation_sha256"] != ablation["replicates"]["sha256"]
-        or diag["protected_files_before_and_after"]["ABLATION-RESULTS.json"] != sha256(ROOT / "evidence/ABLATION-RESULTS.json")):
+        or diag["protected_files_before_and_after"]["evidence/ABLATION-RESULTS.json"] != sha256(ROOT / "evidence/ABLATION-RESULTS.json")):
     fail("HASH new diagnostics do not share primary inputs/ablation")
+# Forced-by-an-edit: only portable producers ship, so both the evidence and
+# executable must bind to the same portable digest; no historical alternative.
+diagnostic_driver_bindings = {
+    "strategy_diagnostics.py": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a",
+    "strategy_influence.py": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c",
+}
 for file, result in (("strategy_diagnostics.py", diag), ("strategy_influence.py", influence)):
-    if sha256(ROOT / "code" / file) != result["driver_sha256"]:
+    portable_digest = diagnostic_driver_bindings[file]
+    if (result["driver_sha256"] != portable_digest
+            or sha256(ROOT / "code" / file) != portable_digest):
         fail(f"HASH diagnostic driver changed: {file}")
+for name, digest in (("ABLATION-REPLICATES.npz", diag["saved_ablation_sha256"]),
+                     ("replicates.npz", diag["replicates_sha256"])):
+    if sha256(ROOT / "evidence" / name) != digest:
+        fail(f"HASH diagnostic replicate archive changed: {name}")
 if diag["primary_validation_max_error"] != 0:
     fail("GATE diagnostic implementation no longer reproduces campaign estimator")
 for arm in ("trial", "speaker_only", "attack_only", "speaker_attack"):
@@ -1266,6 +1292,10 @@ for pattern, why in (
 
 # 10. Bibliography closure.
 bib = (PAPER / "refs.bib").read_text()
+# S5: retain the withdrawal status of the newly cited neighboring proposal.
+snap_entry = re.search(r"@article\{jung26snap,.*?\n[^\S\n]*[^\n]*note=\{Withdrawn\}\}", bib, re.S)
+if not snap_entry:
+    fail("BIB SNAP must be identified as withdrawn")
 bib_keys = set(re.findall(r"@\w+\{([^,]+),", bib))
 cited = {key.strip() for match in re.findall(r"\\cite\{([^}]*)\}", TEX) for key in match.split(",")}
 for key in sorted(bib_keys - cited):

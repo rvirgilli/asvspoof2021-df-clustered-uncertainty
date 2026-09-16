@@ -1,356 +1,307 @@
 {
+  "ablation_path_note": "These are descriptive locators for external inputs and historical recovery, not claims that the input files are shipped. Only these 11 string fields differ in JSON content from the supplied record.",
+  "ablation_public_path_substitutions": [
+    {
+      "field": "inputs.paths.protocol_key",
+      "published_value": "external-inputs/protocol_key/trial_metadata.txt",
+      "supplied_value_sha256": "ba4f88f19f48d6f58ebfe369b014c0d3facde92ddd82c49faedd9d4ac9ec282b"
+    },
+    {
+      "field": "inputs.paths.XLSR-Mamba",
+      "published_value": "external-inputs/XLSR-Mamba/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
+      "supplied_value_sha256": "540b45d3344010aed87d613ae742c29ba42c944c729ad04b83d796a480ce7ffc"
+    },
+    {
+      "field": "inputs.paths.XLS-R+SLS",
+      "published_value": "external-inputs/XLS-R+SLS/scores_DF.txt",
+      "supplied_value_sha256": "6b3cc41bb6953dcc44e342f7c3ddcc399354c743a40e32833fbdd4ef64ad3a1a"
+    },
+    {
+      "field": "inputs.paths.XLSR-Conformer",
+      "published_value": "external-inputs/XLSR-Conformer/Scores_Best_DF_Fixed_size_train.txt",
+      "supplied_value_sha256": "6d7b710cea46fd6311a4bdc78516a9e276b7613b3b54761499e085e7c8ebe4a1"
+    },
+    {
+      "field": "inputs.paths.SSL-AASIST",
+      "published_value": "external-inputs/SSL-AASIST/Scores_DF.txt",
+      "supplied_value_sha256": "35e6da9b7c7be4d151be5bb9618cd89dfc28cdbe7f8e27e9ce725aa2d5ffc0bf"
+    },
+    {
+      "field": "inputs.paths.RawNet2",
+      "published_value": "external-inputs/RawNet2/score.txt",
+      "supplied_value_sha256": "1e8496e66e4f6258c3a981e70171540ad0099c0bea306a5daaa54ad41cad465a"
+    },
+    {
+      "field": "inputs.paths.LFCC-LCNN",
+      "published_value": "external-inputs/LFCC-LCNN/score.txt",
+      "supplied_value_sha256": "9667eb1c72060960857cbc366acf303a9a8ed44de77e47223159081986a82580"
+    },
+    {
+      "field": "inputs.paths.LFCC-GMM",
+      "published_value": "external-inputs/LFCC-GMM/score.txt",
+      "supplied_value_sha256": "57e188dc52f63b597c3bcda15bd1257b1f16e5235dc3a0ca9066b31a06f48671"
+    },
+    {
+      "field": "inputs.paths.CQCC-GMM",
+      "published_value": "external-inputs/CQCC-GMM/score.txt",
+      "supplied_value_sha256": "51f2c08610276d9f7dcfda2712bdbe087b9564aa14471f344ad57adf1b2b2537"
+    },
+    {
+      "field": "input_recovery.temporary_root",
+      "published_value": "historical-input-recovery",
+      "supplied_value_sha256": "079396be3afdb7303837b709529f32ff698170cf68c575f6e72e2a26e1ad8f07"
+    },
+    {
+      "field": "input_recovery.readme",
+      "published_value": "historical-input-recovery/README.md",
+      "supplied_value_sha256": "4295da65a74cb7e6da20e4ec38e0cc0ea38914f1cbdf244d537e08b36a0269cb"
+    }
+  ],
   "added_members": {
-    "PORTABILITY-NOTE.md": {
-      "bytes": 2530,
-      "sha256": "f5a96d75ceb46122b6f08990926a9e489fc91ce96015c2c530480a47d8c473c9"
+    "ABLATION-RESULTS.json": {
+      "bytes": 58447,
+      "findings": [
+        "F1",
+        "F4"
+      ],
+      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408",
+      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
     },
-    "REPRODUCE-DIAGNOSTICS.md": {
-      "bytes": 2893,
-      "sha256": "4e4db38bd38b8a655ae8f2d80f0979970db3d8a61974c61b8b7343dadb798515"
+    "paper/ABLATION-RESULTS.json": {
+      "bytes": 58447,
+      "findings": [
+        "F1",
+        "F4"
+      ],
+      "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408",
+      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
     },
-    "REPUBLICATION-3-NOTE.md": {
-      "bytes": 2014,
-      "sha256": "e6ed32ea3f3230cce47e114d87d44a54cdfaef99e8f19f340322d0bcf02ca32d"
-    },
-    "SUPPLEMENT.md": {
-      "bytes": 56541,
-      "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-    },
-    "code/strategy_diagnostics.py": {
-      "bytes": 13745,
-      "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
-    },
-    "code/strategy_influence.py": {
-      "bytes": 3748,
-      "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
-    },
-    "evidence/ABLATION-REPLICATES.npz": {
-      "bytes": 604405,
-      "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
-    },
-    "evidence/ABLATION-RESULTS.json": {
-      "bytes": 58760,
-      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-    },
-    "evidence/diagnostics.json": {
-      "bytes": 460390,
-      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-    },
-    "evidence/influence.json": {
-      "bytes": 76657,
-      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-    },
-    "evidence/replicates.npz": {
-      "bytes": 5220806,
-      "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
-    },
-    "paper/RELEASE-RECEIPT-20260915-2245.json": {
-      "bytes": 102689,
-      "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
-    },
-    "paper/SUBMISSION-VERSION.md": {
-      "bytes": 425,
-      "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
-    },
-    "paper/evidence/ABLATION-RESULTS.json": {
-      "bytes": 58760,
-      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-    },
-    "paper/evidence/diagnostics.json": {
-      "bytes": 460390,
-      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-    },
-    "paper/evidence/influence.json": {
-      "bytes": 76657,
-      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-    },
-    "paper/revision-validation/anonymous-release-audit.txt": {
-      "bytes": 2511,
-      "sha256": "462074d0ad8d0e08af1b445589db5561ef20a5540201278b0c21ce0d6a6e0e38"
-    },
-    "paper/revision-validation/final-numbers.txt": {
-      "bytes": 193,
-      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-    },
-    "paper/revision-validation/final-public-numbers.txt": {
-      "bytes": 193,
-      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-    },
-    "paper/revision-validation/final-public-semantic.txt": {
-      "bytes": 266,
-      "sha256": "540584a67b4952f40e63992ba25c641473a18e8a7a72dd4ffb9269e7a9018b4a"
-    },
-    "paper/revision-validation/final-semantic.txt": {
-      "bytes": 98,
-      "sha256": "6b75eb7141abf732ce63888ffd50b91e41dd50c021ecf687295da16951e84869"
-    },
-    "paper/revision-validation/pdf-profile.json": {
-      "bytes": 771,
-      "sha256": "78deb546d43e2999ef9e58ed09e61e2bb89a699b30a50a1b772537c38245b8e2"
-    },
-    "paper/revision-validation/pdffonts.txt": {
-      "bytes": 1410,
-      "sha256": "be3fde6a75a6ac78275893eb4fe8f97b1e4817b8a19e9365606d3a072465e037"
-    },
-    "paper/revision-validation/public-readback.json": {
-      "bytes": 1976,
-      "sha256": "66dd42259408f7bed9b1e53a6c42ad97e925d7bb1fcdd1ab8ac075ea49904c83"
+    "paper/RELEASE-RECEIPT-20260915-1757.json": {
+      "bytes": 90045,
+      "findings": [
+        "F1"
+      ],
+      "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71",
+      "why": "Preserve the current remote predecessor receipt byte for byte before binding the added evidence and repaired revision."
     }
   },
   "audit": {
-    "identified_pdf_sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5",
-    "pdf_role": "inherited predecessor PDF; revised submission build deferred"
+    "binding": {
+      "bytes": 80333,
+      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
+    },
+    "blocker": "F1: missing primary-21DF evidence and supplement S4a at the published tag",
+    "file": "AUDIT-FAIL-REPAIRED.md",
+    "identified_pdf_sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b",
+    "pdf_binding_basis": "Computed from the supplied repaired main.pdf in this republication session; not an assertion that the old audit approved this PDF.",
+    "scope": "F2\u2013F6 repairs are supplied by the author. Current work verifies and publishes the evidence; it does not perform a new scientific audit.",
+    "verdict": "FAIL in the supplied historical protocol audit; not relabelled"
   },
+  "binding_limits": [
+    "All digests were computed from file or fetched baseline Git object bytes in this session.",
+    "Payload receipt excludes itself and MANIFEST.json to avoid circularity. Manifest binds receipt; commit binds manifest. External final receipt lists computed digests for all tracked members.",
+    "Retained historical receipts and experiment verification claims describe their original runs; they are not new computations.",
+    "Supplied source/checker/figure differences are not grounds for assembly assertions. Public adapters and unchanged members are deliberately retained where no audit finding requires a change."
+  ],
   "changes_from_predecessor": {
     "README.md": {
       "current": {
-        "bytes": 12404,
-        "sha256": "fca027906870d887efbab94727e32dd46180136c9e3971f4cfe768f7a7972e1f"
-      },
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "previous": {
         "bytes": 12594,
         "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
       },
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "REPRODUCE.md": {
-      "current": {
-        "bytes": 3147,
-        "sha256": "c3fa8b50bf00a56a23bc9e74d0657fac8e28730ec53e509ae93ad71c65dd953b"
-      },
       "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1"
       ],
       "previous": {
-        "bytes": 2934,
-        "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
+        "bytes": 12141,
+        "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
       },
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "why": "Expose working root and supplement-relative ablation evidence links and the successor receipt; replace the previous revision\u2019s audit-status introduction."
     },
     "code/check_numbers.py": {
       "current": {
-        "bytes": 74728,
-        "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
-      },
-      "findings": [
-        "S1",
-        "S2",
-        "S3",
-        "S5"
-      ],
-      "previous": {
         "bytes": 65972,
         "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
       },
-      "why": "Retain public path adapters and apply only merged scientific and exact producer/archive bindings; submission retires only the withdrawal-specific check."
+      "findings": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F6"
+      ],
+      "previous": {
+        "bytes": 59951,
+        "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
+      },
+      "why": "Retain the public repository adapters and historical checks; port the supplied four-arm and complete S4a table checks, attachment locator and repaired abstract matches."
+    },
+    "code/verify_release_receipt.py": {
+      "current": {
+        "bytes": 3422,
+        "sha256": "58db1333cafe07bbd313d9a364b04e4338a79bd94ddc6a5b659c5c867578dfab"
+      },
+      "findings": [
+        "F1"
+      ],
+      "previous": {
+        "bytes": 3410,
+        "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
+      },
+      "why": "Clarify the verification verdict: digest equality binds the supplied revision and does not turn the availability-failure audit into a new scientific PASS. All verification logic remains unchanged."
     },
     "paper/README.md": {
       "current": {
-        "bytes": 1057,
-        "sha256": "c7fbdf76bb20f901cb5e2d3286ff1329403adead7483c5cedd3e38c588581e95"
-      },
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "previous": {
         "bytes": 2206,
         "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
       },
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "findings": [
+        "F1",
+        "F4"
+      ],
+      "previous": {
+        "bytes": 2056,
+        "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
+      },
+      "why": "Identify the now-reachable evidence, actual supplied-PDF digest, current verification commands and historical status of the prior audit and receipts."
     },
     "paper/SUPPLEMENT.md": {
       "current": {
-        "bytes": 56541,
-        "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-      },
-      "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
-      ],
-      "previous": {
         "bytes": 45191,
         "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
       },
-      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+      "findings": [
+        "F1",
+        "F2",
+        "F4",
+        "F6"
+      ],
+      "previous": {
+        "bytes": 28283,
+        "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
+      },
+      "why": "Publish the supplied S4a with every pair indicator, contrast, band, loss identity, estimator, resampling law and seed rule; clarify the earlier-release locator with its immutable commit. S4a is preserved verbatim."
     },
     "paper/UPLOAD-CHECKLIST.md": {
       "current": {
-        "bytes": 349,
-        "sha256": "dde6a473b4af421dfa93e0bef93faa2e8f5895a31753415e862120bbfaf14efa"
-      },
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "previous": {
         "bytes": 1988,
         "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
       },
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "paper/figs/floor.pdf": {
-      "current": {
-        "bytes": 18556,
-        "sha256": "9b4e6db52f2efae780d58e0e15545d9f7c6060eb3cd775158f3346d253d99cf4"
-      },
       "findings": [
-        "history"
+        "F1",
+        "F4"
       ],
       "previous": {
-        "bytes": 18556,
-        "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
+        "bytes": 2384,
+        "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
       },
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/figs/forest.pdf": {
-      "current": {
-        "bytes": 18953,
-        "sha256": "6921bd0a6184bf47e862bf0444748e11f630e3401f7dd6c3f1893ad638b24454"
-      },
-      "findings": [
-        "history"
-      ],
-      "previous": {
-        "bytes": 18953,
-        "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
-      },
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "why": "Replace the old revision\u2019s PDF and audit-status instructions with the new artifact locations and S4a/seed/PDF read-back requirements."
     },
     "paper/main.pdf": {
       "current": {
-        "bytes": 179951,
-        "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
-      },
-      "findings": [
-        "history"
-      ],
-      "previous": {
         "bytes": 165879,
         "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
       },
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "findings": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6"
+      ],
+      "previous": {
+        "bytes": 165106,
+        "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
+      },
+      "why": "Publish the supplied repaired PDF byte for byte, including the primary-21DF one-factor claims and attachment locators; no rebuild."
     },
     "paper/main.tex": {
       "current": {
-        "bytes": 21691,
-        "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
-      },
-      "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
-      ],
-      "previous": {
         "bytes": 25732,
         "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
       },
-      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+      "findings": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6"
+      ],
+      "previous": {
+        "bytes": 25745,
+        "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
+      },
+      "why": "Publish the supplied manuscript source with the ablation and all five wording repairs."
     },
     "paper/refs.bib": {
       "current": {
-        "bytes": 9290,
-        "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
-      },
-      "findings": [
-        "S5",
-        "L1-L4"
-      ],
-      "previous": {
         "bytes": 9127,
         "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
       },
-      "why": "Carry the supplied bibliography repair; submission removes the withdrawn SNAP entry."
+      "findings": [
+        "F4"
+      ],
+      "previous": {
+        "bytes": 8890,
+        "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
+      },
+      "why": "Publish the supplied bibliography, adding the Owen\u2013Eckles reference cited by the supplied resampling-method specification."
     },
     "paper/semantic_obligations.json": {
       "current": {
-        "bytes": 25416,
-        "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
-      },
-      "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
-      ],
-      "previous": {
         "bytes": 13028,
         "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
       },
-      "why": "Carry the merged semantic obligations; submission updates the immutable locator and retires the sole SNAP-sentence obligation."
-    },
-    "paper/test_semantic_guards.py": {
-      "current": {
-        "bytes": 2271,
-        "sha256": "841964bcc96720545b22a6f02d649220755e0382afa2397e6e48682d77045f7d"
-      },
       "findings": [
-        "history"
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F6"
       ],
       "previous": {
-        "bytes": 2041,
-        "sha256": "3059b05a3facfd2418b0dec7e1f29be2365e03a1541a65b465e86de85a817344"
+        "bytes": 11176,
+        "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
       },
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "verify_release.py": {
-      "current": {
-        "bytes": 4355,
-        "sha256": "bb5101ea446be714aadee8439ae452fd6e36030fc3c6b5e0752bb9c7e508e629"
-      },
-      "findings": [
-        "history"
-      ],
-      "previous": {
-        "bytes": 4030,
-        "sha256": "737789da6b8465d9086b4c2a538b2b7d47a0e8e16ea2340381385d9f581f25ad"
-      },
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "why": "Publish the supplied 51 obligations, including the five primary-ablation guards and repaired match texts."
     }
   },
-  "circularity": "Payload excludes this receipt and MANIFEST.json; manifest binds receipt; Git binds manifest. External final receipt binds every tracked member including both.",
   "counts": {
-    "added_members": 24,
-    "changed_previous_bindings": 14,
-    "payload_members": 200,
-    "previous_payload_members": 176,
+    "added_members": 3,
+    "changed_previous_bindings": 10,
+    "payload_members": 176,
+    "previous_payload_members": 173,
     "removed_members": 0,
-    "unchanged_previous_bindings": 162
+    "unchanged_previous_bindings": 163
   },
+  "date": "2026-09-16",
+  "digest_algorithm": "SHA-256",
   "findings_record": {
+    "binding": {
+      "bytes": 80333,
+      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
+    },
+    "file": "AUDIT-FAIL-REPAIRED.md",
     "findings": {
-      "L1-L4": "Apply supplied abstract, terminology, chronology and adjacency repairs.",
-      "S1": "Portable producers, regenerated evidence, distinct archives and runnable commands.",
-      "S2": "Name all three SpoofCeleb joint survivors and retain numerical bindings.",
-      "S3": "Separate each low-EER failure total and retain their intersection.",
-      "S4": "State the composition control draw count and its post-result role.",
-      "S5": "Retire the claim-free withdrawn-reference sentence at submission; retain the related-work scope.",
-      "S6": "Qualify the demonstrated paired cancellation scope.",
-      "S7": "Bind this assembled revision and PDF with computed member digests and a successor receipt.",
-      "history": "Retain prior public artifacts and records with their original scope."
+      "F1": "Make primary-21DF ablation evidence and S4a reachable",
+      "F2": "State indicator comparison without factor attribution",
+      "F3": "Clarify the abstract roster and scope",
+      "F4": "Specify estimator, laws and deterministic seed streams",
+      "F5": "Keep reconstructed p-values labelled by variant",
+      "F6": "Name resampling arms by configuration and disclose exploratory timing"
+    },
+    "repair_record": {
+      "binding": {
+        "bytes": 26818,
+        "sha256": "bd41fca1fdf962d26dd97cb0ec16ed5abd9a8556de567dd6d03199dc64cfb287"
+      },
+      "file": "FIX-NOTE.md"
     }
   },
+  "issuer": "M1 republication executor",
+  "measured_at_utc": "2026-09-16T01:50:25.472567+00:00",
   "member_disposition": {
     ".gitignore": {
       "baseline": {
@@ -359,16 +310,16 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "ABLATION-RESULTS.json": {
-      "baseline": {
-        "bytes": 58447,
-        "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "baseline": null,
+      "findings": [
+        "F1",
+        "F4"
+      ],
+      "status": "added",
+      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
     },
     "ANALYSIS-PLAN.md": {
       "baseline": {
@@ -377,7 +328,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "CITATION.cff": {
       "baseline": {
@@ -386,7 +337,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "CLAIM-SCOPE.md": {
       "baseline": {
@@ -395,7 +346,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "DEVIATIONS.md": {
       "baseline": {
@@ -404,7 +355,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "LICENSE": {
       "baseline": {
@@ -413,74 +364,38 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "MANIFEST.json": {
+      "baseline": {
+        "bytes": 24540,
+        "sha256": "46989f4cc2d10af14e75460218befcbf7a912980bf34e72470864f17767d4e68"
+      },
       "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1"
       ],
       "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "PORTABILITY-NOTE.md": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "why": "Regenerate the manifest to bind the added evidence, repaired manuscript and successor receipt."
     },
     "README.md": {
+      "baseline": {
+        "bytes": 12141,
+        "sha256": "81d8fabc322c0445557cef0d53cf611d46c6529663268765f0a8d3919c5fc860"
+      },
       "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1"
       ],
       "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "REPRODUCE-DIAGNOSTICS.md": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "why": "Expose working root and supplement-relative ablation evidence links and the successor receipt; replace the previous revision\u2019s audit-status introduction."
     },
     "REPRODUCE.md": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "REPUBLICATION-3-NOTE.md": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "SUPPLEMENT.md": {
-      "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+      "baseline": {
+        "bytes": 2934,
+        "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
+      },
+      "findings": [],
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/PUBLIC-PACKAGING.json": {
       "baseline": {
@@ -489,7 +404,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/README.md": {
       "baseline": {
@@ -498,7 +413,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/EXECUTION-AUDIT.md": {
       "baseline": {
@@ -507,7 +422,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/EXP-101-m1-campaign/exp101_matched_iid.py": {
       "baseline": {
@@ -516,7 +431,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/README.md": {
       "baseline": {
@@ -525,7 +440,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/input-manifest.json": {
       "baseline": {
@@ -534,7 +449,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/result.portable.json": {
       "baseline": {
@@ -543,7 +458,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/run-contract.portable.json": {
       "baseline": {
@@ -552,7 +467,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/AMENDMENT-5-fixed-roster-descriptive.md": {
       "baseline": {
@@ -561,7 +476,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/AMENDMENT-6-descriptive-executor.md": {
       "baseline": {
@@ -570,7 +485,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/STATIC-AUDIT-descriptive-executor.md": {
       "baseline": {
@@ -579,7 +494,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/analyze_asv5_descriptive.py": {
       "baseline": {
@@ -588,7 +503,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/asv5_descriptive_core.py": {
       "baseline": {
@@ -597,7 +512,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/test_analyze_asv5_descriptive.py": {
       "baseline": {
@@ -606,7 +521,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/asv5/source/test_asv5_descriptive_core.py": {
       "baseline": {
@@ -615,7 +530,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/audit.json": {
       "baseline": {
@@ -624,7 +539,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "audit/verify_asv5_package.py": {
       "baseline": {
@@ -633,7 +548,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "build_manifest.py": {
       "baseline": {
@@ -642,7 +557,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/aggregate_verified.py": {
       "baseline": {
@@ -651,7 +566,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/analyze_arena.py": {
       "baseline": {
@@ -660,7 +575,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/analyze_multiway.py": {
       "baseline": {
@@ -669,17 +584,22 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/check_numbers.py": {
+      "baseline": {
+        "bytes": 59951,
+        "sha256": "ba897eafd987313ff1e134c68b30b19c2d35a4a8297957d2074e6a1bc9210c70"
+      },
       "findings": [
-        "S1",
-        "S2",
-        "S3",
-        "S5"
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F6"
       ],
       "status": "changed",
-      "why": "Retain public path adapters and apply only merged scientific and exact producer/archive bindings; submission retires only the withdrawal-specific check."
+      "why": "Retain the public repository adapters and historical checks; port the supplied four-arm and complete S4a table checks, attachment locator and repaired abstract matches."
     },
     "code/check_tie_safety.py": {
       "baseline": {
@@ -688,7 +608,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/coherent_jackknife.py": {
       "baseline": {
@@ -697,7 +617,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/compare_audit_core.py": {
       "baseline": {
@@ -706,7 +626,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/coverage_interaction.py": {
       "baseline": {
@@ -715,7 +635,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/diagnose_low_eer.py": {
       "baseline": {
@@ -724,7 +644,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_close.py": {
       "baseline": {
@@ -733,7 +653,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_coverage_real.py": {
       "baseline": {
@@ -742,7 +662,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_dgp_fit.py": {
       "baseline": {
@@ -751,7 +671,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_floor.py": {
       "baseline": {
@@ -760,7 +680,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_floor_ci.py": {
       "baseline": {
@@ -769,7 +689,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_icc.py": {
       "baseline": {
@@ -778,7 +698,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_matched_iid.py": {
       "baseline": {
@@ -787,7 +707,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_organizer_test.py": {
       "baseline": {
@@ -796,7 +716,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_scaling.py": {
       "baseline": {
@@ -805,7 +725,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_selection.py": {
       "baseline": {
@@ -814,7 +734,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_source.py": {
       "baseline": {
@@ -823,7 +743,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_verdict_ci.py": {
       "baseline": {
@@ -832,7 +752,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp101_widths.py": {
       "baseline": {
@@ -841,7 +761,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/FREEZE.sha256": {
       "baseline": {
@@ -850,7 +770,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/PREREG.md": {
       "baseline": {
@@ -859,7 +779,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/README.md": {
       "baseline": {
@@ -868,7 +788,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/SECONDARY-V2-PREREG.md": {
       "baseline": {
@@ -877,7 +797,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/analyze.py": {
       "baseline": {
@@ -886,7 +806,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/build_contract.py": {
       "baseline": {
@@ -895,7 +815,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/search_witnesses_v2.py": {
       "baseline": {
@@ -904,7 +824,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/test_exp108.py": {
       "baseline": {
@@ -913,7 +833,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/test_secondary_v2.py": {
       "baseline": {
@@ -922,7 +842,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/verify_results.py": {
       "baseline": {
@@ -931,7 +851,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/exp108/verify_secondary_v2.py": {
       "baseline": {
@@ -940,7 +860,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/m1_campaign.py": {
       "baseline": {
@@ -949,7 +869,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/m1_contingency.py": {
       "baseline": {
@@ -958,7 +878,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/make_audit_package.py": {
       "baseline": {
@@ -967,7 +887,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/make_public_audit.py": {
       "baseline": {
@@ -976,7 +896,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/power_curves.py": {
       "baseline": {
@@ -985,7 +905,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/recalibrate_truth.py": {
       "baseline": {
@@ -994,21 +914,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
-    },
-    "code/strategy_diagnostics.py": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-    },
-    "code/strategy_influence.py": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/verify_crosspath_gate.py": {
       "baseline": {
@@ -1017,7 +923,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/verify_final_receipt.py": {
       "baseline": {
@@ -1026,16 +932,18 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "code/verify_release_receipt.py": {
       "baseline": {
-        "bytes": 3422,
-        "sha256": "58db1333cafe07bbd313d9a364b04e4338a79bd94ddc6a5b659c5c867578dfab"
+        "bytes": 3410,
+        "sha256": "31ab3077eb3e5a29937155208c38706a531a7feeb8731f7710b018d669140b4c"
       },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "F1"
+      ],
+      "status": "changed",
+      "why": "Clarify the verification verdict: digest equality binds the supplied revision and does not turn the availability-failure audit into a new scientific PASS. All verification logic remains unchanged."
     },
     "data/README.md": {
       "baseline": {
@@ -1044,7 +952,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/README.md": {
       "baseline": {
@@ -1053,7 +961,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/incidence_strata.json": {
       "baseline": {
@@ -1062,7 +970,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/point_eers.json": {
       "baseline": {
@@ -1071,7 +979,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/provenance_coherent_jackknife.json": {
       "baseline": {
@@ -1080,7 +988,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/provenance_exp105.json": {
       "baseline": {
@@ -1089,7 +997,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_arena.json": {
       "baseline": {
@@ -1098,7 +1006,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_coherent_jackknife.json": {
       "baseline": {
@@ -1107,7 +1015,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_composition.json": {
       "baseline": {
@@ -1116,7 +1024,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_contingency.json": {
       "baseline": {
@@ -1125,7 +1033,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_coverage_diagnostics.json": {
       "baseline": {
@@ -1134,7 +1042,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_coverage_interaction.json": {
       "baseline": {
@@ -1143,7 +1051,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_coverage_interaction_recalibrated.json": {
       "baseline": {
@@ -1152,7 +1060,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_coverage_real.json": {
       "baseline": {
@@ -1161,7 +1069,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_crosspath_gate.json": {
       "baseline": {
@@ -1170,7 +1078,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_dgp_fit.json": {
       "baseline": {
@@ -1179,7 +1087,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_exp105_verified.json": {
       "baseline": {
@@ -1188,7 +1096,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_floor.json": {
       "baseline": {
@@ -1197,7 +1105,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_floor_ci.json": {
       "baseline": {
@@ -1206,7 +1114,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_icc.json": {
       "baseline": {
@@ -1215,7 +1123,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_matched_iid.json": {
       "baseline": {
@@ -1224,7 +1132,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_matched_iid.provenance.json": {
       "baseline": {
@@ -1233,7 +1141,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_multiway_real.json": {
       "baseline": {
@@ -1242,7 +1150,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_organizer_test.json": {
       "baseline": {
@@ -1251,7 +1159,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_pairs.json": {
       "baseline": {
@@ -1260,7 +1168,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_scaling.json": {
       "baseline": {
@@ -1269,7 +1177,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_selection.json": {
       "baseline": {
@@ -1278,7 +1186,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_source.json": {
       "baseline": {
@@ -1287,7 +1195,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_verdict_ci.json": {
       "baseline": {
@@ -1296,7 +1204,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/results_widths.json": {
       "baseline": {
@@ -1305,7 +1213,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/secondary_v2_results.json": {
       "baseline": {
@@ -1314,7 +1222,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/secondary_v2_verification.json": {
       "baseline": {
@@ -1323,7 +1231,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "derived/verification_composition.json": {
       "baseline": {
@@ -1332,42 +1240,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
-    },
-    "evidence/ABLATION-REPLICATES.npz": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-    },
-    "evidence/ABLATION-RESULTS.json": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "evidence/diagnostics.json": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-    },
-    "evidence/influence.json": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-    },
-    "evidence/replicates.npz": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/AMENDMENT-1-post-run-receipt-verifier.md": {
       "baseline": {
@@ -1376,7 +1249,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/ATTACK-ONLY-BOOTSTRAP.npy": {
       "baseline": {
@@ -1385,7 +1258,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/CLOSURE.sha256": {
       "baseline": {
@@ -1394,7 +1267,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/DATA.md": {
       "baseline": {
@@ -1403,7 +1276,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/FREEZE.sha256": {
       "baseline": {
@@ -1412,7 +1285,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/PREREG.md": {
       "baseline": {
@@ -1421,7 +1294,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/REPORT.md": {
       "baseline": {
@@ -1430,7 +1303,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/RESULTS.json": {
       "baseline": {
@@ -1439,7 +1312,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/RUN-RECEIPT.json": {
       "baseline": {
@@ -1448,7 +1321,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/SPEAKER-ONLY-BOOTSTRAP.npy": {
       "baseline": {
@@ -1457,7 +1330,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/analyze.py": {
       "baseline": {
@@ -1466,7 +1339,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/independent/README.md": {
       "baseline": {
@@ -1475,7 +1348,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/independent/RESULT.json": {
       "baseline": {
@@ -1484,7 +1357,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/independent/recompute.py": {
       "baseline": {
@@ -1493,7 +1366,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/pyproject.toml": {
       "baseline": {
@@ -1502,7 +1375,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/test_analyze.py": {
       "baseline": {
@@ -1511,7 +1384,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/test_verify_receipt.py": {
       "baseline": {
@@ -1520,7 +1393,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/uv.lock": {
       "baseline": {
@@ -1529,7 +1402,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp115/verify_receipt.py": {
       "baseline": {
@@ -1538,7 +1411,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/FREEZE.sha256": {
       "baseline": {
@@ -1547,7 +1420,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/PREREG.md": {
       "baseline": {
@@ -1556,7 +1429,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/README.md": {
       "baseline": {
@@ -1565,7 +1438,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/REPORT.md": {
       "baseline": {
@@ -1574,7 +1447,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/RESULTS.json": {
       "baseline": {
@@ -1583,7 +1456,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/pyproject.toml": {
       "baseline": {
@@ -1592,7 +1465,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp116/run_policy_bands.py": {
       "baseline": {
@@ -1601,7 +1474,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/DATA.md": {
       "baseline": {
@@ -1610,7 +1483,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/FREEZE.sha256": {
       "baseline": {
@@ -1619,7 +1492,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/PREREG.md": {
       "baseline": {
@@ -1628,7 +1501,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/REPORT.md": {
       "baseline": {
@@ -1637,7 +1510,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/RESULTS.json": {
       "baseline": {
@@ -1646,7 +1519,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/pyproject.toml": {
       "baseline": {
@@ -1655,7 +1528,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "exp118/run_trial_laws.py": {
       "baseline": {
@@ -1664,16 +1537,16 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/ABLATION-RESULTS.json": {
-      "baseline": {
-        "bytes": 58447,
-        "sha256": "121ca1f44211908b9ef754cd50a57d587566938b084c3698df08c967dfb37408"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "baseline": null,
+      "findings": [
+        "F1",
+        "F4"
+      ],
+      "status": "added",
+      "why": "Make the promised primary-21DF evidence reachable at both root and supplement-relative paths. Only local path strings are replaced by descriptive external-input locators; all scientific values, input hashes and historical verification records are retained."
     },
     "paper/IEEEbib.bst": {
       "baseline": {
@@ -1682,16 +1555,19 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/README.md": {
+      "baseline": {
+        "bytes": 2056,
+        "sha256": "818e46eb40d182b21b7eeea5231f44ee84451e1f424443a8822f40165590793c"
+      },
       "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1",
+        "F4"
       ],
       "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "why": "Identify the now-reachable evidence, actual supplied-PDF digest, current verification commands and historical status of the prior audit and receipts."
     },
     "paper/RELEASE-RECEIPT-20260914.json": {
       "baseline": {
@@ -1700,100 +1576,70 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/RELEASE-RECEIPT-20260915-1757.json": {
+      "baseline": null,
+      "findings": [
+        "F1"
+      ],
+      "status": "added",
+      "why": "Preserve the current remote predecessor receipt byte for byte before binding the added evidence and repaired revision."
+    },
+    "paper/RELEASE-RECEIPT-FINAL.json": {
       "baseline": {
         "bytes": 90045,
         "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
       },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
-    },
-    "paper/RELEASE-RECEIPT-20260915-2245.json": {
       "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "paper/RELEASE-RECEIPT-FINAL.json": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1"
       ],
       "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "paper/SUBMISSION-VERSION.md": {
-      "findings": [
-        "S1",
-        "S5",
-        "S7"
-      ],
-      "status": "added",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+      "why": "Compute a successor receipt over the complete assembled payload and disclose all changed bindings and finding-linked reasons."
     },
     "paper/SUPPLEMENT.md": {
+      "baseline": {
+        "bytes": 28283,
+        "sha256": "f0dd736c5367f4b48ec6604e69b334f2f78628b0adb5122bcb7a893ee4c3b92b"
+      },
       "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
+        "F1",
+        "F2",
+        "F4",
+        "F6"
       ],
       "status": "changed",
-      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+      "why": "Publish the supplied S4a with every pair indicator, contrast, band, loss identity, estimator, resampling law and seed rule; clarify the earlier-release locator with its immutable commit. S4a is preserved verbatim."
     },
     "paper/UPLOAD-CHECKLIST.md": {
+      "baseline": {
+        "bytes": 2384,
+        "sha256": "5494cd79fd6a0d8b183a6787f30f6d2312b84d9ebfc43cfe8e234bce51b89473"
+      },
       "findings": [
-        "S1",
-        "S5",
-        "S7"
+        "F1",
+        "F4"
       ],
       "status": "changed",
-      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-    },
-    "paper/evidence/ABLATION-RESULTS.json": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/evidence/diagnostics.json": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-    },
-    "paper/evidence/influence.json": {
-      "findings": [
-        "S1"
-      ],
-      "status": "added",
-      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
+      "why": "Replace the old revision\u2019s PDF and audit-status instructions with the new artifact locations and S4a/seed/PDF read-back requirements."
     },
     "paper/figs/floor.pdf": {
-      "findings": [
-        "history"
-      ],
-      "status": "changed",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "baseline": {
+        "bytes": 18556,
+        "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
+      },
+      "findings": [],
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/figs/forest.pdf": {
-      "findings": [
-        "history"
-      ],
-      "status": "changed",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "baseline": {
+        "bytes": 18953,
+        "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
+      },
+      "findings": [],
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/figures_m1.py": {
       "baseline": {
@@ -1802,35 +1648,50 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/main.pdf": {
+      "baseline": {
+        "bytes": 165106,
+        "sha256": "bd7fa4243879b7eeaaaf96a99cae4c2adb7f823425672c88204cb95b8e271108"
+      },
       "findings": [
-        "history"
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6"
       ],
       "status": "changed",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "why": "Publish the supplied repaired PDF byte for byte, including the primary-21DF one-factor claims and attachment locators; no rebuild."
     },
     "paper/main.tex": {
+      "baseline": {
+        "bytes": 25745,
+        "sha256": "ce28986746a00895e4319bd78b14230f3e1fc138929e6e7624bfe9d89d0b028b"
+      },
       "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6"
       ],
       "status": "changed",
-      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+      "why": "Publish the supplied manuscript source with the ablation and all five wording repairs."
     },
     "paper/refs.bib": {
+      "baseline": {
+        "bytes": 8890,
+        "sha256": "5f7e5b1ddb651d691411b221e9576524f312f7ab7da610f1ff4d81204306e5c5"
+      },
       "findings": [
-        "S5",
-        "L1-L4"
+        "F4"
       ],
       "status": "changed",
-      "why": "Carry the supplied bibliography repair; submission removes the withdrawn SNAP entry."
+      "why": "Publish the supplied bibliography, adding the Owen\u2013Eckles reference cited by the supplied resampling-method specification."
     },
     "paper/release-validation/check_numbers.stderr.txt": {
       "baseline": {
@@ -1839,7 +1700,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/check_numbers.stdout.txt": {
       "baseline": {
@@ -1848,7 +1709,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/public_check_numbers.stderr.txt": {
       "baseline": {
@@ -1857,7 +1718,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/public_check_numbers.stdout.txt": {
       "baseline": {
@@ -1866,7 +1727,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/public_test_semantic_guards.stderr.txt": {
       "baseline": {
@@ -1875,7 +1736,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/public_test_semantic_guards.stdout.txt": {
       "baseline": {
@@ -1884,7 +1745,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/test_semantic_guards.stderr.txt": {
       "baseline": {
@@ -1893,7 +1754,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/release-validation/test_semantic_guards.stdout.txt": {
       "baseline": {
@@ -1902,76 +1763,22 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
-    },
-    "paper/revision-validation/anonymous-release-audit.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/final-numbers.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/final-public-numbers.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/final-public-semantic.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/final-semantic.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/pdf-profile.json": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/pdffonts.txt": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
-    },
-    "paper/revision-validation/public-readback.json": {
-      "findings": [
-        "history"
-      ],
-      "status": "added",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/semantic_obligations.json": {
+      "baseline": {
+        "bytes": 11176,
+        "sha256": "50ded48353e8a2ee10ae51a224aa8cb5bec80b70596bf556950d5bdf81f439fb"
+      },
       "findings": [
-        "S2",
-        "S3",
-        "S4",
-        "S5",
-        "S6",
-        "L1-L4",
-        "S7"
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F6"
       ],
       "status": "changed",
-      "why": "Carry the merged semantic obligations; submission updates the immutable locator and retires the sole SNAP-sentence obligation."
+      "why": "Publish the supplied 51 obligations, including the five primary-ablation guards and repaired match texts."
     },
     "paper/spconf.sty": {
       "baseline": {
@@ -1980,14 +1787,16 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "paper/test_semantic_guards.py": {
-      "findings": [
-        "history"
-      ],
-      "status": "changed",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "baseline": {
+        "bytes": 2041,
+        "sha256": "3059b05a3facfd2418b0dec7e1f29be2365e03a1541a65b465e86de85a817344"
+      },
+      "findings": [],
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/COHERENT-JACKKNIFE-DIAGNOSTIC.md": {
       "baseline": {
@@ -1996,7 +1805,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-104-arena.PREREG.md": {
       "baseline": {
@@ -2005,7 +1814,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-104-arena.REPORT.md": {
       "baseline": {
@@ -2014,7 +1823,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-105-multiway.PREREG.md": {
       "baseline": {
@@ -2023,7 +1832,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-105-multiway.REPORT.md": {
       "baseline": {
@@ -2032,7 +1841,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-106-asv5.AMENDMENT-5.md": {
       "baseline": {
@@ -2041,7 +1850,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-106-asv5.PREREG.md": {
       "baseline": {
@@ -2050,7 +1859,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-107-low-eer-v1-stopped.PREREG.md": {
       "baseline": {
@@ -2059,7 +1868,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-107-low-eer-v2.PREREG.md": {
       "baseline": {
@@ -2068,7 +1877,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-108-composition.PREREG.md": {
       "baseline": {
@@ -2077,7 +1886,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-108-secondary-v2.PREREG.md": {
       "baseline": {
@@ -2086,7 +1895,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-114-spoofceleb.FREEZE.sha256": {
       "baseline": {
@@ -2095,7 +1904,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/EXP-114-spoofceleb.PREREG.md": {
       "baseline": {
@@ -2104,7 +1913,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "plans/MATCHED-IID-DIAGNOSTIC.md": {
       "baseline": {
@@ -2113,7 +1922,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "pyproject.toml": {
       "baseline": {
@@ -2122,7 +1931,7 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "uv.lock": {
       "baseline": {
@@ -2131,285 +1940,36 @@
       },
       "findings": [],
       "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     },
     "verify_release.py": {
-      "findings": [
-        "history"
-      ],
-      "status": "changed",
-      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+      "baseline": {
+        "bytes": 4030,
+        "sha256": "737789da6b8465d9086b4c2a538b2b7d47a0e8e16ea2340381385d9f581f25ad"
+      },
+      "findings": [],
+      "status": "unchanged",
+      "why": "Deliberately retain the remote baseline bytes; no finding requires changing this member."
     }
   },
-  "observed_public_base": {
-    "changes": {
-      "PORTABILITY-NOTE.md": {
-        "current": {
-          "bytes": 2530,
-          "sha256": "f5a96d75ceb46122b6f08990926a9e489fc91ce96015c2c530480a47d8c473c9"
-        },
-        "previous": null,
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "README.md": {
-        "current": {
-          "bytes": 12404,
-          "sha256": "fca027906870d887efbab94727e32dd46180136c9e3971f4cfe768f7a7972e1f"
-        },
-        "previous": {
-          "bytes": 12689,
-          "sha256": "5435a383ca4240a7b1b317f2b0c2aa54eb74c7c5631569e18f7090b26f1861a1"
-        },
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "REPRODUCE-DIAGNOSTICS.md": {
-        "current": {
-          "bytes": 2893,
-          "sha256": "4e4db38bd38b8a655ae8f2d80f0979970db3d8a61974c61b8b7343dadb798515"
-        },
-        "previous": null,
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "REPRODUCE.md": {
-        "current": {
-          "bytes": 3147,
-          "sha256": "c3fa8b50bf00a56a23bc9e74d0657fac8e28730ec53e509ae93ad71c65dd953b"
-        },
-        "previous": {
-          "bytes": 2934,
-          "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
-        },
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "REPUBLICATION-3-NOTE.md": {
-        "current": {
-          "bytes": 2014,
-          "sha256": "e6ed32ea3f3230cce47e114d87d44a54cdfaef99e8f19f340322d0bcf02ca32d"
-        },
-        "previous": null,
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "SUPPLEMENT.md": {
-        "current": {
-          "bytes": 56541,
-          "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-        },
-        "previous": {
-          "bytes": 56376,
-          "sha256": "3cdcd93656b08bca14fbfba9265320bdd2320c22948f9f70374a0f4c41261a2a"
-        },
-        "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
-      },
-      "code/check_numbers.py": {
-        "current": {
-          "bytes": 74728,
-          "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
-        },
-        "previous": {
-          "bytes": 72789,
-          "sha256": "cdb6ed47e9076a31c25bcdc8662a2da641d351fdca642aca3c2aed24a07d44c7"
-        },
-        "why": "Retain public path adapters and apply only merged scientific and exact producer/archive bindings; submission retires only the withdrawal-specific check."
-      },
-      "code/strategy_diagnostics.py": {
-        "current": {
-          "bytes": 13745,
-          "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
-        },
-        "previous": {
-          "bytes": 12703,
-          "sha256": "9a9b1e193645bdf97f8aa3572f81a75992a8bfb44a4a557eb2a307f9a5bebbd6"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "code/strategy_influence.py": {
-        "current": {
-          "bytes": 3748,
-          "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
-        },
-        "previous": {
-          "bytes": 3595,
-          "sha256": "1f2ae9f0369baf169ebcaff4185a2feac463f57301d03132fb06afb433723fb6"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "evidence/ABLATION-REPLICATES.npz": {
-        "current": {
-          "bytes": 604405,
-          "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
-        },
-        "previous": null,
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "evidence/diagnostics.json": {
-        "current": {
-          "bytes": 460390,
-          "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-        },
-        "previous": {
-          "bytes": 459307,
-          "sha256": "89253c3536f8dd3578756097ea3c5b1da02588ee6989009e9888e2bd0b728d4c"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "evidence/influence.json": {
-        "current": {
-          "bytes": 76657,
-          "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-        },
-        "previous": {
-          "bytes": 76657,
-          "sha256": "cbb9f6cc10db319cac15f8788ed598e6ca99fa2d643e214c7f5ff91621b75099"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "evidence/replicates.npz": {
-        "current": {
-          "bytes": 5220806,
-          "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
-        },
-        "previous": null,
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "paper/IEEEbib.bst": {
-        "current": {
-          "bytes": 17903,
-          "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
-        },
-        "previous": {
-          "bytes": 17903,
-          "sha256": "578d54f871ec505bb8ce236a11eb243ede47389240bc9ac385b9e61f8ad8470c"
-        },
-        "why": "Bind the actual PDF, supplied figures or bibliography style supporting five-page and nine-point compliance; artifact PDF is explicitly inherited."
-      },
-      "paper/README.md": {
-        "current": {
-          "bytes": 1057,
-          "sha256": "c7fbdf76bb20f901cb5e2d3286ff1329403adead7483c5cedd3e38c588581e95"
-        },
-        "previous": {
-          "bytes": 1152,
-          "sha256": "a48504e5e8c947c21a589bfa9afb75da8d30cd0cc144a59be72e22fab5b04f14"
-        },
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "paper/RELEASE-RECEIPT-20260915-2245.json": {
-        "current": {
-          "bytes": 102689,
-          "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
-        },
-        "previous": null,
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "paper/SUBMISSION-VERSION.md": {
-        "current": {
-          "bytes": 425,
-          "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
-        },
-        "previous": {
-          "bytes": 713,
-          "sha256": "848bc75712d4705a9fd74f494b864f5689a248113b99175726e54effc86d89ab"
-        },
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "paper/SUPPLEMENT.md": {
-        "current": {
-          "bytes": 56541,
-          "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-        },
-        "previous": {
-          "bytes": 56376,
-          "sha256": "3cdcd93656b08bca14fbfba9265320bdd2320c22948f9f70374a0f4c41261a2a"
-        },
-        "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
-      },
-      "paper/UPLOAD-CHECKLIST.md": {
-        "current": {
-          "bytes": 349,
-          "sha256": "dde6a473b4af421dfa93e0bef93faa2e8f5895a31753415e862120bbfaf14efa"
-        },
-        "previous": {
-          "bytes": 352,
-          "sha256": "82bf5b4b8c4d6f47ae0043417e4ddc954ad29aa95b67059f222519c40da2ac56"
-        },
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
-      "paper/evidence/diagnostics.json": {
-        "current": {
-          "bytes": 460390,
-          "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-        },
-        "previous": {
-          "bytes": 459307,
-          "sha256": "89253c3536f8dd3578756097ea3c5b1da02588ee6989009e9888e2bd0b728d4c"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "paper/evidence/influence.json": {
-        "current": {
-          "bytes": 76657,
-          "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-        },
-        "previous": {
-          "bytes": 76657,
-          "sha256": "cbb9f6cc10db319cac15f8788ed598e6ca99fa2d643e214c7f5ff91621b75099"
-        },
-        "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
-      },
-      "paper/main.tex": {
-        "current": {
-          "bytes": 21691,
-          "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
-        },
-        "previous": {
-          "bytes": 21090,
-          "sha256": "c779a173a8c67d0fda1a9813b4ee38a0ea44be5c7a56a1aba474e114b088c846"
-        },
-        "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
-      },
-      "paper/refs.bib": {
-        "current": {
-          "bytes": 9290,
-          "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
-        },
-        "previous": {
-          "bytes": 9661,
-          "sha256": "2e2617f6f4589abb45a51932e67067efffb31fa251b93ed59203b35198059684"
-        },
-        "why": "Carry the supplied bibliography repair; submission removes the withdrawn SNAP entry."
-      },
-      "paper/semantic_obligations.json": {
-        "current": {
-          "bytes": 25416,
-          "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
-        },
-        "previous": {
-          "bytes": 20510,
-          "sha256": "d0e0f2bad58d9243c5095345600d9d0b47acd5ce8fd3a57c73f596934e285626"
-        },
-        "why": "Carry the merged semantic obligations; submission updates the immutable locator and retires the sole SNAP-sentence obligation."
-      }
-    },
-    "commit": "886824e172a70cec4089e99173d5b0eddba460fe"
-  },
-  "phase": "artifact",
   "predecessor": {
     "binding": {
-      "bytes": 102689,
-      "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
+      "bytes": 90045,
+      "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
     },
-    "commit": "a171aad9bd949fdc92c67344c51153f1c69217dd",
-    "path": "paper/RELEASE-RECEIPT-20260915-2245.json"
+    "commit": "e7768ffbcb0dfd504b08ebf23483bfd67b9a4397",
+    "path": "paper/RELEASE-RECEIPT-20260915-1757.json",
+    "remote_receipt_path": "paper/RELEASE-RECEIPT-FINAL.json"
   },
   "publication": {
-    "artifact_commit": null,
-    "new_branch": "m1-republished-3-20260916-0235",
-    "push_attempted": false,
-    "remote": "git@github.com:rvirgilli/asvspoof2021-df-clustered-uncertainty.git",
-    "status": "local-preparation; not published",
-    "tags_moved": false
+    "new_branch": "m1-republished-2-20260915-2245",
+    "observed_commit": "e7768ffbcb0dfd504b08ebf23483bfd67b9a4397",
+    "observed_tag_object": "c3b39cfd44953f95471b781d153bf4c05905870d",
+    "repository": "https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty",
+    "status_at_measurement": "assembled before verification and publication; final results are in external REPUBLICATION-2-RECEIPT.md",
+    "tag": "icassp2027-submission"
   },
-  "purpose": "Bind the audited and repaired local republication before any approved future push.",
+  "purpose": "Publish the missing primary-21DF ablation evidence and supplied repaired revision; bind all payload bytes and account for each change against the observed remote baseline.",
   "release_members": {
     ".gitignore": {
       "bytes": 151,
@@ -2439,29 +1999,13 @@
       "bytes": 1072,
       "sha256": "b57e84526f015e70c9d01d17c4851b0036ebdb1be72ff22773ec936fc91e96ee"
     },
-    "PORTABILITY-NOTE.md": {
-      "bytes": 2530,
-      "sha256": "f5a96d75ceb46122b6f08990926a9e489fc91ce96015c2c530480a47d8c473c9"
-    },
     "README.md": {
-      "bytes": 12404,
-      "sha256": "fca027906870d887efbab94727e32dd46180136c9e3971f4cfe768f7a7972e1f"
-    },
-    "REPRODUCE-DIAGNOSTICS.md": {
-      "bytes": 2893,
-      "sha256": "4e4db38bd38b8a655ae8f2d80f0979970db3d8a61974c61b8b7343dadb798515"
+      "bytes": 12594,
+      "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
     },
     "REPRODUCE.md": {
-      "bytes": 3147,
-      "sha256": "c3fa8b50bf00a56a23bc9e74d0657fac8e28730ec53e509ae93ad71c65dd953b"
-    },
-    "REPUBLICATION-3-NOTE.md": {
-      "bytes": 2014,
-      "sha256": "e6ed32ea3f3230cce47e114d87d44a54cdfaef99e8f19f340322d0bcf02ca32d"
-    },
-    "SUPPLEMENT.md": {
-      "bytes": 56541,
-      "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
+      "bytes": 2934,
+      "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
     },
     "audit/PUBLIC-PACKAGING.json": {
       "bytes": 543,
@@ -2548,8 +2092,8 @@
       "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
     },
     "code/check_numbers.py": {
-      "bytes": 74728,
-      "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
+      "bytes": 65972,
+      "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
     },
     "code/check_tie_safety.py": {
       "bytes": 2793,
@@ -2690,14 +2234,6 @@
     "code/recalibrate_truth.py": {
       "bytes": 12556,
       "sha256": "2ab923a08b8219932ac1c6721da46f4f70df2e43101bc0e03d8d8165eea31e12"
-    },
-    "code/strategy_diagnostics.py": {
-      "bytes": 13745,
-      "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
-    },
-    "code/strategy_influence.py": {
-      "bytes": 3748,
-      "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
     },
     "code/verify_crosspath_gate.py": {
       "bytes": 6679,
@@ -2843,26 +2379,6 @@
       "bytes": 452,
       "sha256": "3bbadce760bafb6eff0328e41f662475526bd3aed583c5243931c1e4c209442b"
     },
-    "evidence/ABLATION-REPLICATES.npz": {
-      "bytes": 604405,
-      "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
-    },
-    "evidence/ABLATION-RESULTS.json": {
-      "bytes": 58760,
-      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-    },
-    "evidence/diagnostics.json": {
-      "bytes": 460390,
-      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-    },
-    "evidence/influence.json": {
-      "bytes": 76657,
-      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-    },
-    "evidence/replicates.npz": {
-      "bytes": 5220806,
-      "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
-    },
     "exp115/AMENDMENT-1-post-run-receipt-verifier.md": {
       "bytes": 1079,
       "sha256": "8dce2fb305de251f04175a849f5e58d12bad1f24e3d0222398be2fd92f1b5e8b"
@@ -3004,8 +2520,8 @@
       "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
     },
     "paper/README.md": {
-      "bytes": 1057,
-      "sha256": "c7fbdf76bb20f901cb5e2d3286ff1329403adead7483c5cedd3e38c588581e95"
+      "bytes": 2206,
+      "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
     },
     "paper/RELEASE-RECEIPT-20260914.json": {
       "bytes": 87715,
@@ -3015,57 +2531,37 @@
       "bytes": 90045,
       "sha256": "3c5cb2866d5ac9d53d7f197d75da9bdb18317975b3ebd3ae403d00877778ce71"
     },
-    "paper/RELEASE-RECEIPT-20260915-2245.json": {
-      "bytes": 102689,
-      "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
-    },
-    "paper/SUBMISSION-VERSION.md": {
-      "bytes": 425,
-      "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
-    },
     "paper/SUPPLEMENT.md": {
-      "bytes": 56541,
-      "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
+      "bytes": 45191,
+      "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
     },
     "paper/UPLOAD-CHECKLIST.md": {
-      "bytes": 349,
-      "sha256": "dde6a473b4af421dfa93e0bef93faa2e8f5895a31753415e862120bbfaf14efa"
-    },
-    "paper/evidence/ABLATION-RESULTS.json": {
-      "bytes": 58760,
-      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-    },
-    "paper/evidence/diagnostics.json": {
-      "bytes": 460390,
-      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-    },
-    "paper/evidence/influence.json": {
-      "bytes": 76657,
-      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
+      "bytes": 1988,
+      "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
     },
     "paper/figs/floor.pdf": {
       "bytes": 18556,
-      "sha256": "9b4e6db52f2efae780d58e0e15545d9f7c6060eb3cd775158f3346d253d99cf4"
+      "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
     },
     "paper/figs/forest.pdf": {
       "bytes": 18953,
-      "sha256": "6921bd0a6184bf47e862bf0444748e11f630e3401f7dd6c3f1893ad638b24454"
+      "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
     },
     "paper/figures_m1.py": {
       "bytes": 6967,
       "sha256": "b3d3b92e5ada46cf86b971365c6d928d8315348803d91c98a1c5dc5b1eacb13c"
     },
     "paper/main.pdf": {
-      "bytes": 179951,
-      "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
+      "bytes": 165879,
+      "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
     },
     "paper/main.tex": {
-      "bytes": 21691,
-      "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
+      "bytes": 25732,
+      "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
     },
     "paper/refs.bib": {
-      "bytes": 9290,
-      "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
+      "bytes": 9127,
+      "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
     },
     "paper/release-validation/check_numbers.stderr.txt": {
       "bytes": 0,
@@ -3099,49 +2595,17 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
-    "paper/revision-validation/anonymous-release-audit.txt": {
-      "bytes": 2511,
-      "sha256": "462074d0ad8d0e08af1b445589db5561ef20a5540201278b0c21ce0d6a6e0e38"
-    },
-    "paper/revision-validation/final-numbers.txt": {
-      "bytes": 193,
-      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-    },
-    "paper/revision-validation/final-public-numbers.txt": {
-      "bytes": 193,
-      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-    },
-    "paper/revision-validation/final-public-semantic.txt": {
-      "bytes": 266,
-      "sha256": "540584a67b4952f40e63992ba25c641473a18e8a7a72dd4ffb9269e7a9018b4a"
-    },
-    "paper/revision-validation/final-semantic.txt": {
-      "bytes": 98,
-      "sha256": "6b75eb7141abf732ce63888ffd50b91e41dd50c021ecf687295da16951e84869"
-    },
-    "paper/revision-validation/pdf-profile.json": {
-      "bytes": 771,
-      "sha256": "78deb546d43e2999ef9e58ed09e61e2bb89a699b30a50a1b772537c38245b8e2"
-    },
-    "paper/revision-validation/pdffonts.txt": {
-      "bytes": 1410,
-      "sha256": "be3fde6a75a6ac78275893eb4fe8f97b1e4817b8a19e9365606d3a072465e037"
-    },
-    "paper/revision-validation/public-readback.json": {
-      "bytes": 1976,
-      "sha256": "66dd42259408f7bed9b1e53a6c42ad97e925d7bb1fcdd1ab8ac075ea49904c83"
-    },
     "paper/semantic_obligations.json": {
-      "bytes": 25416,
-      "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
+      "bytes": 13028,
+      "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
     },
     "paper/spconf.sty": {
       "bytes": 8798,
       "sha256": "dc5d632639040cb183f2ab62780f314845aa021be73048c8a9ec9c2072d64a86"
     },
     "paper/test_semantic_guards.py": {
-      "bytes": 2271,
-      "sha256": "841964bcc96720545b22a6f02d649220755e0382afa2397e6e48682d77045f7d"
+      "bytes": 2041,
+      "sha256": "3059b05a3facfd2418b0dec7e1f29be2365e03a1541a65b465e86de85a817344"
     },
     "plans/COHERENT-JACKKNIFE-DIAGNOSTIC.md": {
       "bytes": 2065,
@@ -3208,399 +2672,67 @@
       "sha256": "43890a9cbbe6e4b32964d8c6d0b56ecb28810c79d4a5e376ae1a985c7e68a816"
     },
     "verify_release.py": {
-      "bytes": 4355,
-      "sha256": "bb5101ea446be714aadee8439ae452fd6e36030fc3c6b5e0752bb9c7e508e629"
+      "bytes": 4030,
+      "sha256": "737789da6b8465d9086b4c2a538b2b7d47a0e8e16ea2340381385d9f581f25ad"
     }
   },
   "schema": "m1-republication-receipt-v1",
-  "source_delivery_members": {
-    ".textfix-baseline/SUPPLEMENT.md": {
-      "bytes": 56376,
-      "sha256": "3cdcd93656b08bca14fbfba9265320bdd2320c22948f9f70374a0f4c41261a2a"
-    },
-    ".textfix-baseline/check_numbers.py": {
-      "bytes": 74715,
-      "sha256": "bb6fd652b4f85332cf181c83ded4ade4e1872e59631804e2395b935338567259"
-    },
-    ".textfix-baseline/main.aux": {
-      "bytes": 4978,
-      "sha256": "804177286a3f8a81784be6f962e62bfeb59eb6e146c753a750f37cec3f962950"
-    },
-    ".textfix-baseline/main.bbl": {
-      "bytes": 8538,
-      "sha256": "0f860831bc3dd13d77c858c8f229d5648e3414497036c8f2b1b677b59cd7d3e6"
-    },
-    ".textfix-baseline/main.blg": {
-      "bytes": 901,
-      "sha256": "33e379f7d153d21bc212d3071a4970ef71e28d8c96656f42c451997f7b6ba843"
-    },
-    ".textfix-baseline/main.log": {
-      "bytes": 10910,
-      "sha256": "5fab19e3eb8c8bb7adf10db0fb7569d243ba3b525a66f3ba34e5260c6e63d574"
-    },
-    ".textfix-baseline/main.pdf": {
-      "bytes": 180827,
-      "sha256": "dba64febd903a4d1d122c4fedf014f70bcea2826e6bd98e1d918946434c7a18b"
-    },
-    ".textfix-baseline/main.tex": {
-      "bytes": 21090,
-      "sha256": "c779a173a8c67d0fda1a9813b4ee38a0ea44be5c7a56a1aba474e114b088c846"
-    },
-    ".textfix-baseline/protected.sha256": {
-      "bytes": 3993,
-      "sha256": "26920f4b6bd9a5cf83a5ea68edc18e62bd9c0490434d8ae7b818a0522e6ae6f2"
-    },
-    ".textfix-baseline/refs.bib": {
-      "bytes": 9661,
-      "sha256": "2e2617f6f4589abb45a51932e67067efffb31fa251b93ed59203b35198059684"
-    },
-    ".textfix-baseline/semantic_obligations.json": {
-      "bytes": 20510,
-      "sha256": "d0e0f2bad58d9243c5095345600d9d0b47acd5ce8fd3a57c73f596934e285626"
-    },
-    ".textfix-baseline/test_semantic_guards.py": {
-      "bytes": 2139,
-      "sha256": "3423fe7e7e8c33a497ee086ce98743aab6c1766232e5781886cd4fdd1fe72469"
-    },
-    "AUDIT-REVISE.md": {
-      "bytes": 87020,
-      "sha256": "d88b134b18c4a45df2a463cbe9b9a7aaadc871216dc5f57d96c214ec7aef2567"
-    },
-    "IEEEbib.bst": {
-      "bytes": 17903,
-      "sha256": "7e6ca0c8b72158d504a12bb091f817c07032a021ba41ca783cca4c2dd80d570b"
-    },
-    "PORTABILITY-NOTE.md": {
-      "bytes": 9824,
-      "sha256": "e6fd425f524a3b5de630bd3acaf4e760b2c105fe9520a2edad0c6300f5bc2d54"
-    },
-    "REPRODUCE-DIAGNOSTICS.md": {
-      "bytes": 3234,
-      "sha256": "52e8c6d624096c6cdcb7cfdfd85329a8bdd5ef5e332fe1cfc6120ed08e97bd94"
-    },
-    "SUPPLEMENT.md": {
-      "bytes": 56541,
-      "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-    },
-    "TEXTFIX-NOTE.md": {
-      "bytes": 17939,
-      "sha256": "fceb969b68441a4690920050bd6a397c3df9e0ec60e5da02b62a42b5b3aba873"
-    },
-    "check_numbers.py": {
-      "bytes": 76654,
-      "sha256": "e20120200f414fb9f8b000b4047f71508ce3b6fe3455410a377f43754058cd98"
-    },
-    "evidence/ABLATION-REPLICATES.npz": {
-      "bytes": 604405,
-      "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
-    },
-    "evidence/ABLATION-RESULTS.json": {
+  "supplied_inputs": {
+    "ABLATION-RESULTS.json": {
       "bytes": 58760,
       "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
     },
-    "evidence/diagnostics.json": {
-      "bytes": 460390,
-      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
+    "AUDIT-FAIL-REPAIRED.md": {
+      "bytes": 80333,
+      "sha256": "91002fb68b9e8606137e3a046278c61812468e8b761e65590b267f2ab8199011"
     },
-    "evidence/influence.json": {
-      "bytes": 76657,
-      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
+    "FIX-NOTE.md": {
+      "bytes": 26818,
+      "sha256": "bd41fca1fdf962d26dd97cb0ec16ed5abd9a8556de567dd6d03199dc64cfb287"
     },
-    "evidence/replicates.npz": {
-      "bytes": 5220806,
-      "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
+    "RELEASE-RECEIPT-FINAL.json": {
+      "bytes": 87715,
+      "sha256": "dd9229d5161e3a4bf707125325c4971430e0bf3609bd63b91a041ed8a341a809"
     },
-    "exp/check_tie_safety.py": {
-      "bytes": 2793,
-      "sha256": "b7aa0c3887045b5b2cfb6d75b38230814e101b99a5afd35cd9d3c2201e1ed2c7"
+    "SUPPLEMENT.md": {
+      "bytes": 44809,
+      "sha256": "9385ac1fba231cce4dc6e5366d43030eab0e25878d55c4bd23501656923830b5"
     },
-    "exp/exp101_close.py": {
-      "bytes": 6515,
-      "sha256": "e40b25ea07033b7d3553dbee03a863170914dbd15f02908957452d1f7f72404a"
-    },
-    "exp/exp101_coverage_real.py": {
-      "bytes": 8945,
-      "sha256": "d7ba389e3272f01ba9b5539d3e277d93d2c69e2983b8c8f7344170c919acd99d"
-    },
-    "exp/exp101_dgp_fit.py": {
-      "bytes": 4604,
-      "sha256": "62876b4ce8e558c4d2996ef30487ee6da096edb8567599a2fb6d9e62afd4a4d4"
-    },
-    "exp/exp101_floor.py": {
-      "bytes": 7049,
-      "sha256": "71825f9bdcf4bedc52f73a0dceb2dbcc3528ffa271e5bf2628070f04f37ac038"
-    },
-    "exp/exp101_floor_ci.py": {
-      "bytes": 6303,
-      "sha256": "d403fb13b6ca5bc7b57195f4e6b666161600906f0c238413e22e249d8c138353"
-    },
-    "exp/exp101_icc.py": {
-      "bytes": 5955,
-      "sha256": "8c15bf3c9b830617675803b85b358979651d40164ee61d424efe01bd9e7fd90a"
-    },
-    "exp/exp101_matched_iid.py": {
-      "bytes": 7604,
-      "sha256": "7745e9c498e9e5b3c995b233ab026379245815d6657a3fa30fcfe9e46d6b96d3"
-    },
-    "exp/exp101_organizer_test.py": {
-      "bytes": 11790,
-      "sha256": "46faed06f01c83af76ff426e838abf19c8a9242ce8848840a8878b0eb469c96a"
-    },
-    "exp/exp101_scaling.py": {
-      "bytes": 6626,
-      "sha256": "0c5771eaa9b61d2b74bb165b566126412bb7d183ba54afd84ccbe73a2a4ea840"
-    },
-    "exp/exp101_selection.py": {
-      "bytes": 11436,
-      "sha256": "e97bd6a84d59c21e3175359e3f611e0c1657a7a8f2747a516f297b86714de7d2"
-    },
-    "exp/exp101_source.py": {
-      "bytes": 14809,
-      "sha256": "d94d136ae5a81909715fffe18ace38dd4e74325a40b5422f2306419d9b0b7435"
-    },
-    "exp/exp101_verdict_ci.py": {
-      "bytes": 10864,
-      "sha256": "5fbc58a55792410837e770ab6a0fa103f19233469da7f278e0dea32c0534a85f"
-    },
-    "exp/exp101_widths.py": {
-      "bytes": 5200,
-      "sha256": "f453e859d27ccbb669ce0d313311e7577142555e21bc9aa70151e320ebc81c31"
-    },
-    "exp/m1_campaign.py": {
-      "bytes": 10956,
-      "sha256": "66756f430c8a0e28e76b3b0c296d6f593c030b7620894f8bf57630a5d52be65a"
-    },
-    "exp/m1_contingency.py": {
-      "bytes": 7626,
-      "sha256": "b3ac95c4793de852f7912e856958ba9e38246f0f57b22c74926ca53cf203d915"
-    },
-    "exp/make_audit_package.py": {
-      "bytes": 37604,
-      "sha256": "1f0066d5887f6256dc485417f2fb2b37cb06cca40424c4013ea342a4d5685013"
-    },
-    "exp/make_public_audit.py": {
-      "bytes": 2229,
-      "sha256": "e428ea99df5feab2f935bf02c2adb67817def06882eb102736809f389bd05cbe"
-    },
-    "exp/power_curves.py": {
-      "bytes": 11653,
-      "sha256": "563b505030fb40a9ed893f4d30011d07942c5e8f930d682a38e12ed8f2ae670f"
-    },
-    "exp/results_close.json": {
-      "bytes": 1504,
-      "sha256": "52c90bc53afc19b266c7648f92348f378c87aa7aa036d718a8977d35a99d42d1"
-    },
-    "exp/results_contingency.json": {
-      "bytes": 2462,
-      "sha256": "521f5ba3a264939bbe4e63affd02172823ab85b8b2969e9b04ebff39004e999d"
-    },
-    "exp/results_contingency_pass1.json": {
-      "bytes": 2740,
-      "sha256": "68d1aab2f1727f10ae5e7a664f1600f43172f848886198d6bca40499842bae28"
-    },
-    "exp/results_coverage_real.json": {
-      "bytes": 540,
-      "sha256": "a1d3e86755ae28a2a8a32718200fd15b056fdfaaecef2447920ec1306ced500d"
-    },
-    "exp/results_dgp_fit.json": {
-      "bytes": 1665,
-      "sha256": "31ab6f2d4ab1505e68052a690ad0b05a4aa3afda1ac43174a62d9aa03b72f888"
-    },
-    "exp/results_floor.json": {
-      "bytes": 4916,
-      "sha256": "d92372f10e555bc76a0e93fd25b4b32b0444e4af7174f521e351fb7affb87ff4"
-    },
-    "exp/results_floor_ci.json": {
-      "bytes": 4908,
-      "sha256": "b96ea601d913326131813d395d773d584415a3980e062ffdbb4c044796c085b7"
-    },
-    "exp/results_icc.json": {
-      "bytes": 8021,
-      "sha256": "82c7c1d68166c91c8aac404be7f4dfdeb38a0f58f936b055d7122fb99fc744dc"
-    },
-    "exp/results_matched_iid.json": {
-      "bytes": 23029,
-      "sha256": "7c716a09631b2c6a5d92626ac18e0544d1f2d1ff147d101c19a5bfdbb3dbbe74"
-    },
-    "exp/results_matched_iid.provenance.json": {
-      "bytes": 768,
-      "sha256": "6dc612f7ab2b6a22ecb75edebab56d25f7c28ccba5aa0918bf8b99c8939a6549"
-    },
-    "exp/results_organizer_test.json": {
-      "bytes": 8146,
-      "sha256": "a74deca442f0d8f9ac1e133817dcfa3c72750520b182282c1a6e5aad770cef6f"
-    },
-    "exp/results_pairs.json": {
-      "bytes": 9228,
-      "sha256": "d37d75dcc33b80c75063c0cda3c4f2e4798f3c8fb45b82398095c20503736b4f"
-    },
-    "exp/results_power.json": {
-      "bytes": 7657,
-      "sha256": "c2b02b840f1e73d79e04f83cb68c2b89e0ca354e354c4c574a498ca48d34c2a1"
-    },
-    "exp/results_scaling.json": {
-      "bytes": 6963,
-      "sha256": "6ebf0224925a69b4222068256e26e640e74236af9b6b576bdf5fd34fa105bbae"
-    },
-    "exp/results_selection.json": {
-      "bytes": 23877,
-      "sha256": "fec86edc41b3397d2594243aa9a1612adbf2578368abbaf6833536df803970d7"
-    },
-    "exp/results_source.json": {
-      "bytes": 41939,
-      "sha256": "3806521b73fa29c551551cb9b5b4ec6516b027aad74be673a5695a2a1782ad7c"
-    },
-    "exp/results_verdict_ci.json": {
-      "bytes": 4337,
-      "sha256": "215177cc0372d912a5a75fa4a3ca91a71bcf78862d01028f9598935705194a64"
-    },
-    "exp/results_widths.json": {
-      "bytes": 3381,
-      "sha256": "155810967e228c10be29de2b46af31d1dc19ff409b152c18882be38ae7b43e8e"
-    },
-    "exp/strategy_diagnostics.py": {
-      "bytes": 13745,
-      "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
-    },
-    "exp/strategy_influence.py": {
-      "bytes": 3748,
-      "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
+    "check_numbers.py": {
+      "bytes": 67898,
+      "sha256": "b7163f7c2b3b45aaacca1c04bc7028c727d3806eef5252f34c91005c073600be"
     },
     "figs/floor.pdf": {
       "bytes": 18556,
-      "sha256": "9b4e6db52f2efae780d58e0e15545d9f7c6060eb3cd775158f3346d253d99cf4"
+      "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
     },
     "figs/forest.pdf": {
       "bytes": 18953,
-      "sha256": "6921bd0a6184bf47e862bf0444748e11f630e3401f7dd6c3f1893ad638b24454"
+      "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
     },
     "figures_m1.py": {
       "bytes": 6956,
       "sha256": "0b893ad27b0208f97e33fb13c30540e38264f5a2493ce26a325ac829fac27aa8"
     },
-    "main.aux": {
-      "bytes": 5025,
-      "sha256": "b01a7c55872124981f5737773b3b5edb236c84dc6ca71d7b6fde57110818de18"
-    },
-    "main.bbl": {
-      "bytes": 8229,
-      "sha256": "9327d3980e0ebcff6efec4cb85ba8a19b8d823584771ebe830cb09bd48d36e15"
-    },
-    "main.blg": {
-      "bytes": 901,
-      "sha256": "828a29d67b21f079412a5fca62edd8ac5e0827bc072859240d28e02580c21694"
-    },
-    "main.log": {
-      "bytes": 10262,
-      "sha256": "9dfbf79cc72875a87eb2955d020c2750c31d142e8b8ed04ecde495a28cf82cdd"
-    },
     "main.pdf": {
-      "bytes": 180649,
-      "sha256": "1205dd4bcf02a3b92eb4c3350167798cf54aedaca3682e5d99361f9acf930c64"
+      "bytes": 165879,
+      "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
     },
     "main.tex": {
-      "bytes": 21691,
-      "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
-    },
-    "main.txt": {
-      "bytes": 25652,
-      "sha256": "3911eb82e111b300d8e1a0dbf5ce3aa557c83684c722203a90cc2ca3710c0497"
+      "bytes": 25732,
+      "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
     },
     "refs.bib": {
-      "bytes": 9290,
-      "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
+      "bytes": 9127,
+      "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
     },
     "semantic_obligations.json": {
-      "bytes": 25416,
-      "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
-    },
-    "spconf.sty": {
-      "bytes": 8798,
-      "sha256": "dc5d632639040cb183f2ab62780f314845aa021be73048c8a9ec9c2072d64a86"
+      "bytes": 13028,
+      "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
     },
     "test_semantic_guards.py": {
-      "bytes": 2139,
-      "sha256": "3423fe7e7e8c33a497ee086ce98743aab6c1766232e5781886cd4fdd1fe72469"
-    },
-    "validation/binding-rejections.json": {
-      "bytes": 1878,
-      "sha256": "e6edd70ab4bc7bd49ba0dbe19f2a1af565f14f1fd481f6222106ae635039cd07"
-    },
-    "validation/binding-rejections.log": {
-      "bytes": 595,
-      "sha256": "fff44f0e33c9e88a542644e9f78f120d407d4871f94b1647544ec3f4ba0b4e09"
-    },
-    "validation/build-bibtex.log": {
-      "bytes": 147,
-      "sha256": "864123d9a1be112db718ecef2849d26ad7a4eb533633b2fba1352710f8e56461"
-    },
-    "validation/build-pass-1.log": {
-      "bytes": 4074,
-      "sha256": "d42c790881778419d7c243b88590c25a5a8a1f3d075d7f63c70e256f9f9e2da1"
-    },
-    "validation/build-pass-2.log": {
-      "bytes": 4074,
-      "sha256": "d42c790881778419d7c243b88590c25a5a8a1f3d075d7f63c70e256f9f9e2da1"
-    },
-    "validation/build-pass-3.log": {
-      "bytes": 4074,
-      "sha256": "d42c790881778419d7c243b88590c25a5a8a1f3d075d7f63c70e256f9f9e2da1"
-    },
-    "validation/check_binding_rejections.py": {
-      "bytes": 2597,
-      "sha256": "e862ef0d32ba2051fb684ca1299f9457ce8566e1cd299c6c3ca8c902dedfea96"
-    },
-    "validation/checker-from-baseline.patch": {
-      "bytes": 5095,
-      "sha256": "fd8700b0f9f824326f70c1720dc9d5a32b192a3c558582270aff3a51123cdca2"
-    },
-    "validation/checker-from-portable.patch": {
-      "bytes": 5372,
-      "sha256": "922c0a9314e37a282e96945ff6b367433a3bd8aa640c7555c6ef6fa092d3918a"
-    },
-    "validation/checker-from-textfix.patch": {
-      "bytes": 2553,
-      "sha256": "96836a088c1e338f8d990c8f0ebf21a85cf935588fa53c4ef6d84ace38aac3e3"
-    },
-    "validation/merge-integrity.json": {
-      "bytes": 12362,
-      "sha256": "816355cde4de5f70cd03bf2ba856a30cf2fc4b8f16e441b4de93b76fbff3851a"
-    },
-    "validation/merge-integrity.log": {
-      "bytes": 339,
-      "sha256": "9a9773df23590e17af62059a15401e647d7496478d8fcb83f8b7218471c8a7bd"
-    },
-    "validation/numbers.log": {
-      "bytes": 193,
-      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-    },
-    "validation/page-5.png": {
-      "bytes": 229472,
-      "sha256": "7f32f1f67362078966a44c2606316fb1e20a440e3f2a45162caac3395f1d8dff"
-    },
-    "validation/page-5.txt": {
-      "bytes": 7796,
-      "sha256": "b9d70a9f89612a8445fcf61595550b15abfa95df1a391615f492e84b7b9a71ae"
-    },
-    "validation/pdf-profile.json": {
-      "bytes": 2594,
-      "sha256": "ea12920272159cf5bc2ac1932a5207cb36218b0bc04104fb75b9e1c5d938a652"
-    },
-    "validation/pdffonts.txt": {
-      "bytes": 1410,
-      "sha256": "be3fde6a75a6ac78275893eb4fe8f97b1e4817b8a19e9365606d3a072465e037"
-    },
-    "validation/pdfinfo.txt": {
-      "bytes": 457,
-      "sha256": "0a1e07020677e54ae06aba9d3105c681e54d1b684912a30bef9072cf27bbedbd"
-    },
-    "validation/semantic.log": {
-      "bytes": 98,
-      "sha256": "d79ffdb0ae59d987478f2ab452950d3dfb40182ce225aee1a9f07ed30387fa0c"
-    },
-    "validation/verify_merge.py": {
-      "bytes": 7618,
-      "sha256": "2fc5f74732f5657a0588dfae65be249c5fd7aa80a7a2361e57305e15ef235184"
+      "bytes": 1909,
+      "sha256": "f5e772c2fdb4e794e0bfc9b25544030ed4f1340e90b6300e22097b2d4cc9872b"
     }
   }
 }

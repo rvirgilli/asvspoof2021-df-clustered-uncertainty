@@ -7,10 +7,10 @@ import strategy_diagnostics as diag
 
 def main():
     start=time.perf_counter(); cpu=time.process_time()
-    source=json.loads((diag.ROOT/'ABLATION-RESULTS.json').read_text())
-    paths=source['inputs']['paths']
-    for key,path in paths.items():
-        assert diag.sha(path)==source['inputs']['sha256'][key]
+    diag.OUT.mkdir(parents=True, exist_ok=True)
+    assert not (diag.OUT/'influence.json').exists(), 'refuse overwrite completed run'
+    source=diag.OLD
+    paths=diag.input_paths()
     diag.selection.KEY=Path(paths['protocol_key'])
     diag.selection.DF_SCORES={n:Path(paths[n]) for n in diag.NAMES}
     scores,lab,sp,at=diag.selection.load_21df()
@@ -46,7 +46,10 @@ def main():
                     item['speaker_label']=name;item['bona_fide_source']=meta[name]
             pairs[diag.KEYS[idx]]=record
         output[factor]={'group_count':len(groups),'pairs':pairs}
-    floor=json.loads((diag.ROOT/'exp/results_floor.json').read_text())['pairs']
+    floor_path=diag.ROOT/'derived/results_floor.json'
+    manifest=json.loads((diag.ROOT/'MANIFEST.json').read_text())
+    assert diag.sha(floor_path)==manifest['derived/results_floor.json']['sha256']
+    floor=json.loads(floor_path.read_text())['pairs']
     max_error=max(abs(output[fac]['pairs'][key]['jackknife_variance']-val['V_spk' if fac=='speaker' else 'V_att']) for key,val in floor.items() for fac in ['speaker','attack'])
     assert max_error<0.000051
     payload={'status':'exploratory descriptive paired influence concentration, no population effective sample size or causal decomposition',

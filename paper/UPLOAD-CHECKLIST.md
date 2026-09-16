@@ -1,6 +1,6 @@
-# Current version
+# Current local release
 
-Use the immutable commit for `m1-impact-20260916-v1` and the current MANIFEST.json.
-Read `../README.md` and `README.md` for the current checks. The older receipts apply only
-to their explicitly named prior versions. Evidence and supplement are included at root;
-paper/ contains the submission source, built PDF and companion copies.
+The successor payload receipt is RELEASE-RECEIPT-FINAL.json. MANIFEST.json binds
+it and every other payload member. Refer to ../REPUBLICATION-3-NOTE.md and the
+external REPUBLICATION-3-RECEIPT.md for the two local commits and exact future push.
+Existing tags retain their prior targets. This run performs no upload or push.

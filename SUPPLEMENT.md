@@ -5,7 +5,7 @@ Artifact version: `m1-impact-20260916-v1` (a new version; prior tags are unchang
 This document supplies the methods and complete numerical tables cited by the manuscript
 *When Resampling Changes Paired Audio-Deepfake Detector Comparisons*. All paths below
 are relative to the release root unless stated otherwise. The paper's Method defines the
-fixed-score, exploratory post-review scope of the added diagnostics. Read S4a for the
+fixed-score scope and design chronology of the added diagnostics. Read S4a for the
 four-arm comparison, S4b for Monte Carlo stability, S4c for mean/sign and pairing,
 S4d for weighted ties, and S4e for delete-one-group influence.
 
@@ -225,8 +225,7 @@ source deletion in the separate jackknife construction of S2.
 
 **Evidence.** All entries below are transcribed from
 [evidence/ABLATION-RESULTS.json](evidence/ABLATION-RESULTS.json). The trial and joint
-summaries are unchanged copies of the primary results. The one-factor summaries were
-computed after that comparison; the common exploratory scope is stated in Method.
+summaries are unchanged copies of the primary results. The Method states the one-factor diagnostics' design chronology and exploratory scope.
 
 **Fixed roster and estimator.** All arms use the same 533,928 evaluation trials
 (14,869 bona fide, 519,059 spoof), 93 speakers and 110 spoof attacks. The four
@@ -707,7 +706,7 @@ speaker×attack PW percentile interval.
 
 Organizer-regime coverage ranges are `.928-.957` for the two jackknife versions and
 `.946-.968` for PW percentile. Low-EER minima in that same order are `.845`, `.845`, and
-`.855`; all three are below `.90` in the same 11/24 cells. The fitted DGP has not been shown
+`.855`. Coverage fell below .90 in 16/24 low-EER cells for each jackknife interval and 11/24 for PW percentile; all three failed in the same 11 cells. The fitted DGP has not been shown
 adequate for 21DF. This simulation evaluates pointwise candidate intervals under those imposed
 models, not the all-pair bands in the paper; it does not establish that either model describes 21DF.
 
@@ -744,7 +743,7 @@ committed as `938510f` before scoring.
 The archived plan did not bind the scoring code or full runtime surface. A later re-scoring from freshly cloned, commit-pinned detector repositories is reproducibility evidence only, not a second confirmation. The first three score files were byte-identical (AASIST, SLS and SSL-AASIST). XLSR-Mamba had
 25,866 changed float32 scores, maximum absolute difference
 `1.430511474609375e-6` (conservative ceiling 1.44e-6), unchanged order at the EER threshold, and unchanged EERs and all six
-separation indicators: every EER and separation indicator was unchanged. The detector point EERs are 57.93%, 24.51%, 26.72% and 27.58%. The trial arm of this
+separation indicators: every EER and separation indicator was unchanged. The SpoofCeleb EERs are 57.93%, 24.51%, 26.72%, and 27.58% for AASIST, SLS, SSL-AASIST, and Mamba. Joint resampling retains only the three comparisons with AASIST. The trial arm of this
 check is the pooled (unstratified) trial bootstrap fixed by the archived plan, not the
 class-stratified law of S2. A class-stratified recomputation on the same manifest and score
 tables (EXP-118, B=5000, seed 20260909) also separates 6/6 with the same indicators; band

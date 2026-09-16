@@ -1,23 +1,19 @@
 # When Resampling Changes Paired Audio-Deepfake Detector Comparisons
 
-Artifact version `m1-impact-20260916-v1` is a new, separately tagged snapshot. Existing
-tags remain unchanged. The three supplied evidence files are published byte for byte:
+This revision contains the audited manuscript and supplement, portable diagnostic
+drivers, regenerated evidence JSONs and both replicate archives. The artifact and
+submission are prepared as two local commits on a new branch; existing tags stay
+unchanged. See [republication notes](REPUBLICATION-3-NOTE.md) and the payload
+[receipt](paper/RELEASE-RECEIPT-FINAL.json).
 
-- [Four-arm bands](evidence/ABLATION-RESULTS.json), explained in supplement S4a.
+- [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.
 - [Delete-one-group influence](evidence/influence.json), S4e.
+- [Portable rerun commands](REPRODUCE-DIAGNOSTICS.md) and [provenance](PORTABILITY-NOTE.md).
 
-Read the [supplement](SUPPLEMENT.md) and [manuscript](paper/main.pdf). The attack-only
-result reproduces four or five of the eight joint losses across Monte Carlo repeats;
-the recorded-seed counts carry a dagger. The exploratory and noncausal scope is stated
-in Method. The new evidence files contain historical input locators and hashes, not
-licensed score or audio inputs. `MANIFEST.json` binds every release file.
-
-The prior paper receipts remain historical records for their named commits; they do
-not describe this revision. The current artifact and paper version are identified by
-this version label and the immutable Git commit. A subsequent submission bundle may
-change the manuscript's locator from this label to the exact artifact commit without
-changing the evidence or supplement.
+Read the [supplement](SUPPLEMENT.md) and [manuscript](paper/main.pdf).
+MANIFEST.json binds every release member. Earlier receipts and validation outputs
+remain historical records; the successor receipt identifies the current payload.
 
 ## What this is
 

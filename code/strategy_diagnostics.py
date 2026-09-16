@@ -1,7 +1,7 @@
 """Post-review fixed-score diagnostics; originals are read-only.
 
-Run from workspace: UV_CACHE_DIR=/tmp/m1-strategy-uv uv run --no-project
-  --with numpy==2.4.6 --with numba python exp/strategy_diagnostics.py
+Run from the release: uv run --no-project --with numpy==2.4.6 --with scipy
+  python code/strategy_diagnostics.py
 No inference, audio, training, or GPU work. All results are exploratory.
 """
 import os
@@ -14,57 +14,65 @@ import multiprocessing as mp
 from pathlib import Path
 import time
 import numpy as np
-from numba import njit
 import m1_campaign as campaign
 import exp101_selection as selection
 import exp101_matched_iid as matched
 
-ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / 'strategy-analysis'
-OLD = json.loads((ROOT / 'ABLATION-RESULTS.json').read_text())
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = Path(os.environ['M1_RELEASE_ROOT']).resolve() if 'M1_RELEASE_ROOT' in os.environ else next(
+    (p for p in SCRIPT_DIR.parents if (p / 'MANIFEST.json').is_file()), SCRIPT_DIR.parent)
+EVIDENCE = ROOT / 'evidence'
+OUT = Path(os.environ.get('M1_DIAGNOSTICS_OUT', ROOT / 'regenerated/diagnostics')).resolve()
+OLD = json.loads((EVIDENCE / 'ABLATION-RESULTS.json').read_text())
 NAMES = OLD['inputs']['systems']
 PAIRS = [(a, b) for a in range(8) for b in range(a+1, 8)]
 KEYS = [f'{NAMES[a]} vs {NAMES[b]}' for a,b in PAIRS]
 POINT = np.array([OLD['inputs']['point_eer_percent'][n] for n in NAMES])
 HATS = np.array([POINT[a]-POINT[b] for a,b in PAIRS])
-WORKERS = 20
+WORKERS = int(os.environ.get('M1_DIAGNOSTICS_WORKERS', '20'))
+if WORKERS < 1:
+    raise ValueError('M1_DIAGNOSTICS_WORKERS must be positive')
 ORDERS = SORTED_LABELS = ENDS = LABELS = SPEAKERS = ATTACKS = SPOOF = ATTS = BONA = None
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
-@njit(cache=False)
+def input_paths():
+    """Use the release's manifest-bound portable paths, never historical paths."""
+    manifest = json.loads((ROOT / 'MANIFEST.json').read_text())
+    path_manifest = ROOT / 'ABLATION-RESULTS.json'
+    assert sha(path_manifest) == manifest['ABLATION-RESULTS.json']['sha256']
+    inputs = json.loads(path_manifest.read_text())['inputs']
+    assert inputs['sha256'] == OLD['inputs']['sha256']
+    assert set(inputs['paths']) == set(inputs['sha256'])
+    base = Path(os.environ.get('M1_INPUT_ROOT', ROOT)).resolve()
+    paths = {}
+    for name, value in inputs['paths'].items():
+        relative = Path(value)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError(f'input manifest requires a release-relative path: {name}')
+        path = base / relative
+        if not path.is_file():
+            raise FileNotFoundError(f'{name}: obtain the input listed in data/README.md at {path}')
+        assert sha(path) == inputs['sha256'][name], name
+        paths[name] = path
+    return paths
+
+
 def both_eers(labels, weights, ends):
     # Same ordered accumulation and first-minimum rule as weighted_eer.
     # The second answer restricts candidate positions to distinct-score ends.
-    nb = 0.0
-    ns = 0.0
-    for i in range(len(labels)):
-        if labels[i] == 1:
-            nb += weights[i]
-        else:
-            ns += weights[i]
-    cb = 0.0
-    cs = 0.0
-    best = 2.0
-    best_tie = 2.0
-    value = 0.0
-    value_tie = 0.0
-    for i in range(len(labels)):
-        if labels[i] == 1:
-            cb += weights[i]
-        else:
-            cs += weights[i]
-        frr = cb/nb
-        far = 1.0-cs/ns
-        distance = abs(frr-far)
-        if distance < best:
-            best = distance
-            value = (frr+far)/2.0
-        if ends[i] and distance < best_tie:
-            best_tie = distance
-            value_tie = (frr+far)/2.0
-    return 100.0*value, 100.0*value_tie
+    cb = np.cumsum(weights * labels)
+    cs = np.cumsum(weights * (1 - labels))
+    frr = cb / cb[-1]
+    far = 1.0 - cs / cs[-1]
+    distance = np.abs(frr - far)
+    first = np.argmin(distance)
+    value = (frr[first] + far[first]) / 2.0
+    distance[~ends] = np.inf
+    first_tie = np.argmin(distance)
+    value_tie = (frr[first_tie] + far[first_tie]) / 2.0
+    return 100.0 * value, 100.0 * value_tie
 
 def weights(rng, arm):
     if arm == 'trial':
@@ -142,13 +150,13 @@ def main():
     global ORDERS, SORTED_LABELS, ENDS, LABELS, SPEAKERS, ATTACKS, SPOOF, ATTS, BONA
     start = time.perf_counter()
     main_cpu = time.process_time()
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     assert not (OUT/'diagnostics.json').exists(), 'refuse overwrite completed run'
-    protected = [ROOT/'main-BASE.tex', ROOT/'main-FORK.tex',ROOT/'SUPPLEMENT.md',ROOT/'ABLATION-RESULTS.json', *sorted((ROOT/'exp').glob('results*.json'))]
+    protected = [ROOT/'paper/main.tex', ROOT/'SUPPLEMENT.md', ROOT/'ABLATION-RESULTS.json',
+                 ROOT/'MANIFEST.json', *sorted(EVIDENCE.glob('*.json')),
+                 *sorted((ROOT/'derived').glob('results*.json'))]
     seals = {str(p.relative_to(ROOT)):sha(p) for p in protected}
-    paths = OLD['inputs']['paths']
-    for name, path in paths.items():
-        assert sha(path)==OLD['inputs']['sha256'][name], name
+    paths = input_paths()
     campaign.KEY = selection.KEY = Path(paths['protocol_key'])
     campaign.DF_SCORES = selection.DF_SCORES = {n:Path(paths[n]) for n in NAMES}
     scores,LABELS,SPEAKERS,ATTACKS = selection.load_21df()
@@ -160,7 +168,7 @@ def main():
     BONA = np.flatnonzero(LABELS==1)
     ATTS = np.unique(ATTACKS[SPOOF])
     point_tie = np.array([both_eers(l,np.ones(len(l)),e)[1] for l,e in zip(SORTED_LABELS,ENDS)])
-    saved_path = Path('/tmp/m1-ablation-2122/ABLATION-REPLICATES.npz')
+    saved_path = EVIDENCE / 'ABLATION-REPLICATES.npz'
     assert sha(saved_path)==OLD['replicates']['sha256']
     saved = np.load(saved_path)
     arms = ['trial','speaker_attack','speaker_only','attack_only']
