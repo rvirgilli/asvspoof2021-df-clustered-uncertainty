@@ -1,21 +1,23 @@
-# Resampling-unit and weighting sensitivity in audio-deepfake leaderboards
+# When Resampling Changes Paired Audio-Deepfake Detector Comparisons
 
-This repository accompanies the M1 manuscript in `paper/main.tex` and
-`paper/main.pdf`. Republication 2 publishes the primary-21DF one-factor ablation
-promised by the supplied revision: [ABLATION-RESULTS.json](ABLATION-RESULTS.json)
-and [supplement S4a](paper/SUPPLEMENT.md#s4a-primary-21df-factor-ablation).
-The supplement-relative [JSON copy](paper/ABLATION-RESULTS.json) has identical bytes.
-S4a identifies all eight joint losses, the four reproduced by attack-only, all
-28 pair indicators and bands under each arm, and the estimator and seed rules.
-The PDF is the supplied repaired PDF without rebuilding. The earlier audit's F1
-availability blocker motivates this publication; this is not a new scientific
-audit verdict. F2–F6 wording repairs are carried in the supplied revision.
+Artifact version `m1-impact-20260916-v1` is a new, separately tagged snapshot. Existing
+tags remain unchanged. The three supplied evidence files are published byte for byte:
 
-The cited release tag is `icassp2027-submission`.
-`paper/RELEASE-RECEIPT-FINAL.json` binds the payload and records changes from
-`paper/RELEASE-RECEIPT-20260915-1757.json`. The manifest binds the successor
-receipt, and the Git commit binds the manifest.
-`paper/UPLOAD-CHECKLIST.md` gives reader verification commands.
+- [Four-arm bands](evidence/ABLATION-RESULTS.json), explained in supplement S4a.
+- [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.
+- [Delete-one-group influence](evidence/influence.json), S4e.
+
+Read the [supplement](SUPPLEMENT.md) and [manuscript](paper/main.pdf). The attack-only
+result reproduces four or five of the eight joint losses across Monte Carlo repeats;
+the recorded-seed counts carry a dagger. The exploratory and noncausal scope is stated
+in Method. The new evidence files contain historical input locators and hashes, not
+licensed score or audio inputs. `MANIFEST.json` binds every release file.
+
+The prior paper receipts remain historical records for their named commits; they do
+not describe this revision. The current artifact and paper version are identified by
+this version label and the immutable Git commit. A subsequent submission bundle may
+change the manuscript's locator from this label to the exact artifact commit without
+changing the evidence or supplement.
 
 ## What this is
 

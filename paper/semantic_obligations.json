@@ -1,261 +1,462 @@
 {
- "schema": "m1-semantic-obligations-v1",
- "purpose": "Load-bearing scientific qualifications whose removal must fail check_numbers.py.",
- "obligations": [
-  {
-   "id": "abstract_fixed_score_scope",
-   "section": "Abstract",
-   "match": "These are fixed-score sensitivity bands, not population confidence intervals."
-  },
-  {
-   "id": "scope_no_transfer",
-   "section": "Introduction/Scope",
-   "match": "Four VCC spoof strata contain only 4/4/4/6 speakers, so no 21DF separation result transfers to new speakers or attacks."
-  },
-  {
-   "id": "scope_fixed_score_outputs",
-   "section": "Introduction/Scope",
-   "match": "The bands and reweighting results describe fixed scores under declared procedures, not population confidence or safety."
-  },
-  {
-   "id": "related_no_cell_or_population",
-   "section": "Related work",
-   "match": "We claim neither cell-level agreement with Fig.~4(c) of the ASVspoof 2021 report nor population confidence."
-  },
-  {
-   "id": "deterministic_benchmark",
-   "section": "Method/EER",
-   "match": "Two deterministic systems on a fixed trial list have no sampling uncertainty until a perturbation law is declared."
-  },
-  {
-   "id": "tie_boundary",
-   "section": "Method/EER",
-   "match": "Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point."
-  },
-  {
-   "id": "delta_eer_definition",
-   "section": "Method/EER",
-   "match": "For ordered pair $(A,B)$, $\\Delta\\mathrm{EER}_{A,B}=100(\\mathrm{EER}_A-\\mathrm{EER}_B)$ percentage points (negative favors $A$); every replicate refits both thresholds."
-  },
-  {
-   "id": "separation_definition",
-   "section": "Method/EER",
-   "match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$."
-  },
-  {
-   "id": "identified_object",
-   "section": "Method/EER",
-   "match": "The identified object is the change in $\\Delta\\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty."
-  },
-  {
-   "id": "bands_not_population_sets",
-   "section": "Method/Multiplicity",
-   "match": "Because a population sampling law is not identified for 21DF, we call these procedure-sensitivity bands, not confidence intervals."
-  },
-  {
-   "id": "historical_reconstruction_boundary",
-   "section": "Method/Reconstruction",
-   "match": "The cited derivation assumes thresholds fixed outside the test set, so these are reconstructions of its adaptation to EER rather than exact finite-sample tests."
-  },
-  {
-   "id": "weights_score_blind",
-   "section": "Method/Weights",
-   "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores."
-  },
-  {
-   "id": "exp111_mass_restoration",
-   "section": "Experiments/21DF",
-   "match": "redraws a replicate only when a class loses all support in a stratum (7 of 1,007 attempts, all VCC2018 spoof), and then rescales each source and stratum mass to its observed value; it also separates 18/28 and 0/6."
-  },
-  {
-   "id": "exp111_status",
-   "section": "Experiments/21DF",
-   "match": "This arm was designed after the main result and is a robustness check, not prospective evidence."
-  },
-  {
-   "id": "exp111_attribution_boundary",
-   "section": "Experiments/21DF",
-   "match": "Thus neither threshold handling nor movement of these eight class-specific masses is necessary for the contrast."
-  },
-  {
-   "id": "exp114_pre_access_identifier",
-   "section": "Experiments/SpoofCeleb",
-   "match": "The analysis plan, archived on 29 August 2026 while official access was pending and released with its hash in the repository of Sec.~\\ref{sec:disc}, fixed the four detectors, score orientation, bootstrap laws, seed and six-pair endpoint before the first successful authenticated download."
-  },
-  {
-   "id": "exp114_off_domain_performance_boundary",
-   "section": "Experiments/SpoofCeleb",
-   "match": "this is an off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems."
-  },
-  {
-   "id": "exp114_single_source_boundary",
-   "section": "Experiments/SpoofCeleb",
-   "match": "Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot move"
-  },
-  {
-   "id": "exp115_post_result_status",
-   "section": "Experiments/SpoofCeleb",
-   "match": "After observing this result, separate speaker-only and attack-only bootstraps separated 5/6 and 3/6; attack-only matched the PW indicator vector."
-  },
-  {
-   "id": "exp114_scorer_gap",
-   "section": "Experiments/SpoofCeleb",
-   "match": "The archived plan did not bind the scoring code"
-  },
-  {
-   "id": "exp114_rerun_status",
-   "section": "Experiments/SpoofCeleb",
-   "match": "so a later re-scoring from freshly cloned, commit-pinned detector repositories is reproducibility evidence only"
-  },
-  {
-   "id": "exp114_rerun_numerics",
-   "section": "Experiments/SpoofCeleb",
-   "match": "three score files were byte-identical, the fourth differed by at most $1.44\\times10^{-6}$, and every EER and separation indicator was unchanged."
-  },
-  {
-   "id": "composition_bound_not_minimum",
-   "section": "Experiments/Alternative weights",
-   "match": "This is a found upper bound, not a minimum, and is too small to imply practical superiority."
-  },
-  {
-   "id": "composition_search_no_proof",
-   "section": "Experiments/Alternative weights",
-   "match": "The search found no cross-cohort reversal, which is not a proof that none exists."
-  },
-  {
-   "id": "arena_descriptive_boundary",
-   "section": "Experiments/Independent re-scores",
-   "match": "These are descriptive results for that separate score collection, not population confidence intervals."
-  },
-  {
-   "id": "source_deletion_boundary",
-   "section": "Experiments/Source deletions",
-   "match": "Thus cross-cohort separation survives these source changes, while some within-cohort separation decisions change with them."
-  },
-  {
-   "id": "asv5_metric_boundary",
-   "section": "Experiments/ASVspoof 5",
-   "match": "This check is intentionally EER-only because it transfers the paper's $\\Delta$EER comparison; ASVspoof~5's primary Track~1 metric is minDCF."
-  },
-  {
-   "id": "asv5_inference_boundary",
-   "section": "Experiments/ASVspoof 5",
-   "match": "It is not a system-performance replication or population claim."
-  },
-  {
-   "id": "coverage_dgp_boundary",
-   "section": "Experiments/Coverage",
-   "match": "This simulation evaluates pointwise candidate intervals under those imposed models, not the all-pair bands above; it does not establish that either model describes 21DF."
-  },
-  {
-   "id": "historical_provenance_limits",
-   "section": "Discussion",
-   "match": "The ASVspoof~5 SSL-AASIST and AASIST score files lack their originating run logs."
-  },
-  {
-   "id": "report_units",
-   "section": "Discussion",
-   "match": "Benchmark reports should publish trial-to-speaker/attack membership and source weights, not only trial counts, and report separation under a declared perturbation law and weighting next to the point EER."
-  },
-  {
-   "id": "zero_boundary",
-   "section": "Discussion",
-   "match": "A band containing zero means the procedure does not separate that pair; it does not establish equality."
-  },
-  {
-   "id": "no_population_or_arena_claim",
-   "section": "Discussion",
-   "match": "Neither the primary-score analysis nor the Arena-score analysis supplies population confidence intervals or confidence sets for ranks."
-  },
-  {
-   "id": "conclusion_tested_scope",
-   "section": "Conclusion",
-   "match": "All 16 pairs between the four SSL detectors and the four organizer baselines remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules, and none reverses its point ordering in the searched directions; within-cohort separation changes with the resampling procedure and with source deletion, and within-cohort point ordering reverses under some weighting rules."
-  },
-  {
-   "id": "conclusion_population_boundary",
-   "section": "Conclusion",
-   "match": "Population confidence requires a defensible acquisition model and an inferential procedure valid under its dependence structure."
-  },
-  {
-   "id": "exp116_post_result_verification",
-   "section": "Experiments/Alternative weights",
-   "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points."
-  },
-  {
-   "id": "abstract_tested_scope",
-   "section": "Abstract",
-   "match": "All 16 SSL-versus-baseline pairs remain separated under resampling, group reweighting and source omission with jackknife-based bands, while some within-group comparisons change."
-  },
-  {
-   "id": "release_locator",
-   "section": "Discussion",
-   "match": "at \\texttt{github.com/rvirgilli/\\allowbreak asvspoof2021-df-\\allowbreak clustered-uncertainty}, tag \\texttt{icassp2027-submission}"
-  },
-  {
-   "id": "asv5_resampling_law",
-   "section": "Experiments/ASVspoof 5",
-   "match": "resampling the 367 target speakers, the 370 bona-fide-only speakers and the 16 attacks as three independent multinomial draws"
-  },
-  {
-   "id": "coverage_formulas",
-   "section": "Experiments/Coverage",
-   "match": "The candidates are the raw exact-cell inclusion--exclusion interval $\\hat\\Delta\\pm1.96\\sqrt{V_s+V_a-V_{sa}}$ with the jackknife variances defined above, its variance-floor version using $\\max(V_s+V_a-V_{sa},V_s,V_a)$"
-  },
-  {
-   "id": "loco_construction",
-   "section": "Experiments/Source deletions",
-   "match": "Source deletion uses a third construction: with delete-one speaker, attack and observed-cell jackknife variances $V_s$, $V_a$ and $V_{sa}$ of each contrast, the interval is $\\hat\\Delta\\pm q\\sqrt{\\max(V_s+V_a-V_{sa},V_s,V_a,0)}$, where $q$ is a Gaussian max-$t$ critical value recomputed over all 28 contrasts for each remaining subset (200,000 draws)."
-  },
-  {
-   "id": "loco_full_data_reference",
-   "section": "Experiments/Source deletions",
-   "match": "On the full data this construction separates 18/28 pairs (16 cross-cohort, 2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap."
-  },
-  {
-   "id": "matched_seed",
-   "section": "Experiments/Setup",
-   "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs."
-  },
-  {
-   "id": "arena_same_trials",
-   "section": "Experiments/Arena",
-   "match": "for the same 533,928 trials"
-  },
-  {
-   "id": "interaction_share_definition",
-   "section": "Experiments/Coverage",
-   "match": "(0, .25, .50, .75: the fraction of the fitted spoof speaker-plus-attack variance moved into a speaker$\\times$attack interaction, total held fixed)"
-  },
-  {
-   "id": "spoofceleb_trial_law_exception",
-   "section": "Method/Bootstraps",
-   "match": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates"
-  },
-  {
-   "id": "primary_ablation_abstract_exploratory",
-   "section": "Abstract",
-   "match": "The one-factor analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect."
-  },
-  {
-   "id": "primary_ablation_method_status",
-   "section": "Experiments/Primary ablation",
-   "match": "The exploratory one-factor analyses were performed after the primary comparison. Both use the EER estimator of Sec.~\\ref{sec:eer}, refit thresholds in every replicate with $B{=}5000$, and retain the 28-pair construction of Sec.~\\ref{sec:family}; the deterministic seed derivation is in the attached supplement, Sec.~S4a."
-  },
-  {
-   "id": "primary_ablation_interpretation",
-   "section": "Experiments/Primary ablation",
-   "match": "Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect. This does not establish a causal attribution to speaker identity."
-  },
-  {
-   "id": "primary_ablation_table_status",
-   "section": "Table 1",
-   "match": "Speaker-only and attack-only are exploratory analyses performed after the primary comparison. All four arms retain 16/16 cross-cohort separations; complete pair bands are in the attached supplement, Sec.~S4a."
-  },
-  {
-   "id": "primary_ablation_conclusion_exploratory",
-   "section": "Conclusion",
-   "match": "The speaker-only and attack-only analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect."
-  }
- ]
+  "schema": "m1-semantic-obligations-v1",
+  "purpose": "Load-bearing scientific qualifications whose removal must fail check_numbers.py.",
+  "obligations": [
+    {
+      "id": "abstract_fixed_score_scope",
+      "section": "Manuscript / revised location",
+      "match": "These are fixed-score sensitivity bands, not population confidence intervals or confidence sets for ranks.",
+      "source": "main.tex"
+    },
+    {
+      "id": "scope_no_transfer",
+      "section": "Manuscript / revised location",
+      "match": "Four VCC spoof strata contain only 4/4/4/6 speakers, so no 21DF separation result transfers to new speakers or attacks.",
+      "source": "main.tex"
+    },
+    {
+      "id": "scope_fixed_score_outputs",
+      "section": "Supplement / revised location",
+      "match": "the outputs describe fixed scores under declared laws and weights, not population confidence\nor safety.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "related_no_cell_or_population",
+      "section": "Supplement / revised location",
+      "match": "produced its matrix, so we make no cell-level attribution.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "deterministic_benchmark",
+      "section": "Manuscript / revised location",
+      "match": "Two deterministic systems on a fixed trial list have no sampling uncertainty until a perturbation law is declared.",
+      "source": "main.tex"
+    },
+    {
+      "id": "tie_boundary",
+      "section": "Manuscript / revised location",
+      "match": "Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point.",
+      "source": "main.tex"
+    },
+    {
+      "id": "delta_eer_definition",
+      "section": "Manuscript / revised location",
+      "match": "For ordered pair $(A,B)$, $\\Delta\\mathrm{EER}_{A,B}=100(\\mathrm{EER}_A-\\mathrm{EER}_B)$ percentage points (negative favors $A$); every replicate refits both thresholds.",
+      "source": "main.tex"
+    },
+    {
+      "id": "separation_definition",
+      "section": "Manuscript / revised location",
+      "match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$.",
+      "source": "main.tex"
+    },
+    {
+      "id": "identified_object",
+      "section": "Manuscript / revised location",
+      "match": "The identified object is the change in $\\Delta\\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty.",
+      "source": "main.tex"
+    },
+    {
+      "id": "bands_not_population_sets",
+      "section": "Manuscript / revised location",
+      "match": "No population error-control guarantee is asserted.",
+      "source": "main.tex"
+    },
+    {
+      "id": "historical_reconstruction_boundary",
+      "section": "Supplement / revised location",
+      "match": "The cited derivation assumes thresholds fixed outside the test set, so these are\nreconstructions of its adaptation to EER rather than exact finite-sample tests.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "weights_score_blind",
+      "section": "Manuscript / revised location",
+      "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores.",
+      "source": "main.tex"
+    },
+    {
+      "id": "exp111_mass_restoration",
+      "section": "Supplement / revised location",
+      "match": "stratum (7 rejected attempts out of 1,007 for VCC2018, all for lost spoof support; no\nrejections elsewhere), and then rescales each class-specific source or stratum mass exactly\nto its observed value.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp111_status",
+      "section": "Manuscript / revised location",
+      "match": "This arm was designed after the main result and is a robustness check, not prospective evidence (S6).",
+      "source": "main.tex"
+    },
+    {
+      "id": "exp111_attribution_boundary",
+      "section": "Manuscript / revised location",
+      "match": "Thus neither threshold handling nor movement of these eight class-specific masses is necessary for the contrast.",
+      "source": "main.tex"
+    },
+    {
+      "id": "exp114_pre_access_identifier",
+      "section": "Supplement / revised location",
+      "match": "in the authors' working repository while official repository access was pending and no\nSpoofCeleb audio, scores or metrics were present locally.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp114_off_domain_performance_boundary",
+      "section": "Supplement / revised location",
+      "match": "This is an off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp114_single_source_boundary",
+      "section": "Manuscript / revised location",
+      "match": "Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot move",
+      "source": "main.tex"
+    },
+    {
+      "id": "exp115_post_result_status",
+      "section": "Supplement / revised location",
+      "match": "After observing this result, separate speaker-only and attack-only bootstraps separated 5/6\nand 3/6; attack-only matched the PW indicator vector.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp114_scorer_gap",
+      "section": "Supplement / revised location",
+      "match": "The archived plan did not bind the scoring code or full runtime surface.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp114_rerun_status",
+      "section": "Supplement / revised location",
+      "match": "A later re-scoring from freshly cloned, commit-pinned detector repositories is reproducibility evidence only, not a second confirmation.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "exp114_rerun_numerics",
+      "section": "Supplement / revised location",
+      "match": "`1.430511474609375e-6` (conservative ceiling 1.44e-6), unchanged order at the EER threshold, and unchanged EERs and all six\nseparation indicators: every EER and separation indicator was unchanged.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "composition_bound_not_minimum",
+      "section": "Supplement / revised location",
+      "match": "verified constructive upper bound, not a minimum, and is too small to imply practical superiority.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "composition_search_no_proof",
+      "section": "Supplement / revised location",
+      "match": "The search found no cross-cohort reversal, which is not a proof that none exists; failure to find\na witness is not an absence result.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "arena_descriptive_boundary",
+      "section": "Manuscript / revised location",
+      "match": "The identified object is the change in $\\Delta\\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty.",
+      "source": "main.tex"
+    },
+    {
+      "id": "source_deletion_boundary",
+      "section": "Supplement / revised location",
+      "match": "Thus cross-cohort separation survives these\nsource changes, while some within-cohort separation decisions change with them.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "asv5_metric_boundary",
+      "section": "Supplement / revised location",
+      "match": "ASVspoof 5's primary Track 1 metric is\nminDCF.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "asv5_inference_boundary",
+      "section": "Supplement / revised location",
+      "match": "It is not a system-performance replication or population claim.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "coverage_dgp_boundary",
+      "section": "Manuscript / revised location",
+      "match": "These imposed-model simulations evaluate different intervals from the principal all-pair bands and do not establish a population sampling model for 21DF.",
+      "source": "main.tex"
+    },
+    {
+      "id": "historical_provenance_limits",
+      "section": "Manuscript / revised location",
+      "match": "the SSL-AASIST and AASIST score files lack their originating run logs (S8).",
+      "source": "main.tex"
+    },
+    {
+      "id": "report_units",
+      "section": "Manuscript / revised location",
+      "match": "Publish trial-to-speaker/attack membership and source weights alongside these results.",
+      "source": "main.tex"
+    },
+    {
+      "id": "zero_boundary",
+      "section": "Manuscript / revised location",
+      "match": "A band containing zero means the procedure does not separate that pair; it does not establish equality.",
+      "source": "main.tex"
+    },
+    {
+      "id": "no_population_or_arena_claim",
+      "section": "Manuscript / revised location",
+      "match": "not population confidence intervals or confidence sets for ranks.",
+      "source": "main.tex"
+    },
+    {
+      "id": "conclusion_tested_scope",
+      "section": "Manuscript / revised location",
+      "match": "Cross-cohort separation survives the tested laws, weights and source deletions, while modern within-cohort comparisons expose concentrated group sensitivity.",
+      "source": "main.tex"
+    },
+    {
+      "id": "conclusion_population_boundary",
+      "section": "Manuscript / revised location",
+      "match": "Population confidence requires a defensible acquisition model and an inferential procedure valid under its dependence structure.",
+      "source": "main.tex"
+    },
+    {
+      "id": "exp116_post_result_verification",
+      "section": "Manuscript / revised location",
+      "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points.",
+      "source": "main.tex"
+    },
+    {
+      "id": "abstract_tested_scope",
+      "section": "Manuscript / revised location",
+      "match": "all SSL-versus-baseline comparisons survive the tested perturbations.",
+      "source": "main.tex"
+    },
+    {
+      "id": "release_locator",
+      "section": "Manuscript / revised location",
+      "match": "artifact version \\texttt{m1-impact-20260916-v1} at \\texttt{github.com/\\allowbreak rvirgilli/\\allowbreak asvspoof2021-\\allowbreak df-clustered-\\allowbreak uncertainty}",
+      "source": "main.tex"
+    },
+    {
+      "id": "asv5_resampling_law",
+      "section": "Supplement / revised location",
+      "match": "Its resampling law draws 367 target-speaker\nmultiplicities, 370 bona-fide-only speaker multiplicities and 16 attack multiplicities as three\nindependent multinomial samples;",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "coverage_formulas",
+      "section": "Supplement / revised location",
+      "match": "`V_raw=V_s+V_a-V_sa`; the component-floor version uses\n`V_floor=max(V_raw,V_s,V_a)`. Both use `1.9599639845*sqrt(V)`. The third method is the\nspeaker\u00d7attack PW percentile interval.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "loco_construction",
+      "section": "Supplement / revised location",
+      "match": "contrast, the interval is `Delta_hat +/- q * sqrt(max(V_s+V_a-V_sa, V_s, V_a, 0))`, where `q` is\nthe 0.95 quantile of the Gaussian max-t statistic over all 28 contrasts under the jackknife\nsystem covariance, recomputed for each remaining subset from 200,000 draws",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "loco_full_data_reference",
+      "section": "Supplement / revised location",
+      "match": "On the full data this construction separates 18/28 pairs (16 cross-cohort,\n2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "matched_seed",
+      "section": "Manuscript / revised location",
+      "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.",
+      "source": "main.tex"
+    },
+    {
+      "id": "arena_same_trials",
+      "section": "Manuscript / revised location",
+      "match": "for the same 533,928 trials",
+      "source": "main.tex"
+    },
+    {
+      "id": "interaction_share_definition",
+      "section": "Supplement / revised location",
+      "match": "For\ninteraction share `h`, speaker and attack SDs are multiplied by `sqrt(1-h)`, interaction SD\nis `sqrt(h*(speaker_SD^2+attack_SD^2))`, and its cross-system correlation is the mean of the\nspeaker and attack correlations.",
+      "source": "SUPPLEMENT.md"
+    },
+    {
+      "id": "spoofceleb_trial_law_exception",
+      "section": "Manuscript / revised location",
+      "match": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates",
+      "source": "main.tex"
+    },
+    {
+      "id": "primary_ablation_abstract_exploratory",
+      "section": "Manuscript / revised location",
+      "match": "The one-factor analyses and added Monte Carlo, mean/sign, pairing, tie and influence diagnostics are exploratory and post-review; they were not preregistered (S4a--S4e).",
+      "source": "main.tex"
+    },
+    {
+      "id": "primary_ablation_method_status",
+      "section": "Manuscript / revised location",
+      "match": "We use 5,000 replicates per procedure, with each replicate's weights shared across systems; procedures have separate random streams (S4a).",
+      "source": "main.tex"
+    },
+    {
+      "id": "primary_ablation_interpretation",
+      "section": "Manuscript / revised location",
+      "match": "Indicator agreement is not a decomposition of the effect or a causal attribution to speaker identity: observed groups bundle trials, attacks and recording provenance, not intrinsic voice properties.",
+      "source": "main.tex"
+    },
+    {
+      "id": "primary_ablation_table_status",
+      "section": "Manuscript / revised location",
+      "match": "*One-factor status: Method.",
+      "source": "main.tex"
+    },
+    {
+      "id": "primary_ablation_conclusion_exploratory",
+      "section": "Manuscript / revised location",
+      "match": "Different detector rosters prevent attributing the primary/SpoofCeleb factor contrast to dataset alone.",
+      "source": "main.tex"
+    },
+    {
+      "id": "attack_monte_carlo_scope",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "attack-only reproduces four or five of the eight joint losses across Monte Carlo repeats (S4b)."
+    },
+    {
+      "id": "attack_recorded_seed_dagger",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "$\\dagger$Recorded-seed attack counts: four of five fresh seeds give 21/28 and 2/6 organizer separations (S4b)."
+    },
+    {
+      "id": "mean_sign_separation",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "The joint mean displacement is only 0.032 SD, so band centering does not explain inclusion of zero;"
+    },
+    {
+      "id": "mean_sign_finite_counts",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "A finite zero count of opposite-sign\ndraws is not proof of a zero reversal probability."
+    },
+    {
+      "id": "paired_cancellation",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "Under the joint law, Mamba and Conformer EERs correlate 0.777; pairing removes about 75\\% of the sum of their marginal variances"
+    },
+    {
+      "id": "influence_observed_group",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "The measured\nconcentration concerns observed groups and is not a population effective sample size."
+    },
+    {
+      "id": "influence_no_exclusion",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "No group is excluded from the principal analysis."
+    },
+    {
+      "id": "influence_centering",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "The sum of squares uses the mean of the delete-one estimates, not\nthe full-data estimate;"
+    },
+    {
+      "id": "weighted_tie_scope",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "This check covers the primary empirical-weight arms and the five fresh\nattack-only streams; it does not cover all alternative-weight cells or external datasets."
+    },
+    {
+      "id": "weighted_tie_replicate_boundary",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "Consequently, the less-than-0.001 point-estimate statement must not be applied to every\nweighted replicate."
+    },
+    {
+      "id": "operational_decision_rule",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "If the separation indicators disagree, label the comparison procedure-sensitive within the full comparison family and do not present trial-only separation as evidence that it survives the group check."
+    },
+    {
+      "id": "pass_both_boundary",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "Passing both checks does not guarantee an ordering under every possible reweighting or select a deployment ranking."
+    },
+    {
+      "id": "source_deletion_separate_construction",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "Source deletion uses a third construction, a marginal-floor jackknife with Gaussian max-$t$ calibration over all 28 pairs (S2)"
+    },
+    {
+      "id": "max_se_coverage_boundary",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "Their regression results do not establish coverage\nfor refitted EER contrasts."
+    },
+    {
+      "id": "repeat_scope",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "The repeat study covers attack-only; it is not a fresh-seed stability study of speaker-only\nor joint resampling."
+    },
+    {
+      "id": "six_family_scope",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "these are not the subset counts\nin Table 1, which retain the full 28-pair maximum."
+    },
+    {
+      "id": "witness_distinct_boundary",
+      "source": "main.tex",
+      "section": "New material",
+      "match": "The reversing sign also holds at distinct-score boundaries (supplement, Sec.~S5)."
+    },
+    {
+      "id": "evidence_release_members",
+      "source": "SUPPLEMENT.md",
+      "section": "New material",
+      "match": "The release ships [evidence/ABLATION-RESULTS.json](evidence/ABLATION-RESULTS.json),\n[evidence/diagnostics.json](evidence/diagnostics.json) and\n[evidence/influence.json](evidence/influence.json) without numerical modification."
+    },
+    {
+      "id": "mc_repeat_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Attack-only calculation | Draws | Upper endpoint (points) | Separated /28 | Organizer /6 |\n|---|---:|---:|---:|---:|\n| Recorded seed\u2020 | 5,000 | -0.003639 | 22/28 | 3/6 |\n| Fresh stream 0 | 5,000 | +0.030313 | 21/28 | 2/6 |\n| Fresh stream 1 | 5,000 | +0.011967 | 21/28 | 2/6 |\n| Fresh stream 2 | 5,000 | +0.046927 | 21/28 | 2/6 |\n| Fresh stream 3 | 5,000 | -0.032615 | 22/28 | 3/6 |\n| Fresh stream 4 | 5,000 | +0.025310 | 21/28 | 2/6 |\n| Five fresh streams pooled | 25,000 | +0.014968 | 21/28 | 2/6 |"
+    },
+    {
+      "id": "mean_sign_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Law | Mean shift (points) | Pair SD (points) | Opposite-sign draws | Frequency | Full-family band excludes zero? |\n|---|---:|---:|---:|---:|:---:|\n| Trial | -0.002492 | 0.061488 | 0/5,000 | 0.00% | yes |\n| Speaker-only | -0.003175 | 0.270826 | 210/5,000 | 4.20% | no |\n| Attack-only | -0.010235 | 0.147333 | 37/5,000 | 0.74% | no |\n| Joint | -0.010135 | 0.319971 | 463/5,000 | 9.26% | no |"
+    },
+    {
+      "id": "family_roster_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Law | Six-SSL-family separated /6 | Shared Mamba/SLS/SSL-AASIST subset under original 28-pair maximum |\n|---|---:|---:|\n| Trial | 5/6 | 2/3 |\n| Speaker-only | 2/6 | 2/3 |\n| Attack-only | 4/6 | 2/3 |\n| Joint | 2/6 | 2/3 |"
+    },
+    {
+      "id": "weighted_tie_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Run | Replicates | Max single EER change (points) | Max pair-band endpoint change (points) | Changed indicators |\n|---|---:|---:|---:|---:|\n| trial | 5,000 | 0.010088 | 0.000110 | 0 |\n| speaker_only | 5,000 | 0.007122 | 0.000100 | 0 |\n| attack_only | 5,000 | 0.003363 | 0.000233 | 0 |\n| speaker_attack | 5,000 | 0.019166 | 0.000121 | 0 |\n| attack_repeat_0 | 5,000 | 0.003363 | 0.000109 | 0 |\n| attack_repeat_1 | 5,000 | 0.003363 | 0.000109 | 0 |\n| attack_repeat_2 | 5,000 | 0.003363 | 0.000112 | 0 |\n| attack_repeat_3 | 5,000 | 0.003363 | 0.000118 | 0 |\n| attack_repeat_4 | 5,000 | 0.003363 | 0.000160 | 0 |"
+    },
+    {
+      "id": "influence_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Pair | Largest speaker contributor | Share of squared deviations | Top five share | Full gap | Gap after deleting largest contributor |\n|---|---|---:|---:|---:|---:|\n| XLSR-Mamba vs XLSR-Conformer | VCC2SM3 | 77.09% | 90.03% | -0.389234 | -0.129429 |\n| XLS-R+SLS vs XLSR-Conformer | VCC2SM3 | 55.85% | 78.47% | -0.357105 | -0.130970 |\n| XLSR-Conformer vs SSL-AASIST | VCC2SF2 | 23.85% | 75.73% | -0.578369 | -0.441137 |"
+    },
+    {
+      "id": "named_source_table",
+      "source": "SUPPLEMENT.md",
+      "section": "New numerical table",
+      "match": "| Joint-surviving pair | Source omitted | Full gap (points) | Omission gap (points) | Omission separates? |\n|---|---|---:|---:|:---:|\n| XLSR-Mamba vs SSL-AASIST | VCC2018 | -0.968 | -0.270 | no |\n| XLS-R+SLS vs SSL-AASIST | VCC2020 | -0.935 | -0.760 | no |"
+    },
+    {
+      "id": "main_influence_result",
+      "source": "main.tex",
+      "section": "New influence result",
+      "match": "The observed speaker group VCC2SM3 supplies 77.09\\% of Mamba--Conformer's delete-one-speaker sum of squared deviations and 55.85\\% for SLS--Conformer. Deleting that group moves the Mamba--Conformer gap from $-0.389$ to $-0.129$ points, locating much of the sensitivity in this observed group (S4e)."
+    }
+  ]
 }

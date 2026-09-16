@@ -1,21 +1,13 @@
-% M1 — ICASSP 2027 submission candidate.
-% Restructured 2026-08-14 (second pass) after re-adjudication + correctness re-audit.
-%   - LEADS with the reversal of published significance verdicts (Act 1).
-%   - Act 2 is the structural result (between-cohort vs within-cohort).
-%   - Act 3 is the finite-A speaker component, replacing the withdrawn A^-0.2 power law;
-%     its fit was vulnerable to finite-population flattening and the interaction term
-%     prevents interpreting a component ratio as a derivative in A.
-%   - Withdrawn earlier: the power prescription, the pigeonhole variant, the
-%     unweighted "ICC", the In-the-Wild rows, the floor-vs-span comparison.
-% Numbers trace to experiments/EXP-101-m1-campaign/results_*.json, except: the
-% per-attack EER spread (EXP-003), the balanced-grid coverage and width ratio
-% (EXP-009), and the released-trial count (EXP-101 PREREG).
+% M1 impact revision: matched fixed-score measurement, September 2026.
+\RequirePackage{fix-cm}
 \documentclass{article}
 \usepackage{spconf,amsmath,graphicx,booktabs}
 % Enforce the minimum also in mathematical subscripts and superscripts.
-\DeclareMathSizes{9}{9}{9}{9}
+\DeclareMathSizes{9.1}{9.1}{9.1}{9.1}
+\DeclareMathSizes{10}{10}{9.1}{9.1}
+\renewcommand{\small}{\fontsize{9.1pt}{10.5pt}\selectfont}
 
-\title{SENSITIVITY OF AN AUDIO-DEEPFAKE LEADERBOARD TO THE RESAMPLING UNIT AND TO SOURCE, SPEAKER, AND ATTACK WEIGHTING}
+\title{WHEN RESAMPLING CHANGES PAIRED AUDIO-DEEPFAKE DETECTOR COMPARISONS}
 %
 \name{\shortstack{Rafaello Virgilli \quad Lucas Alc\^antara Souza \quad Alexandre Costa Ferro Filho \quad Daniel Tunnermann\\[3pt]
 Gustavo dos Reis Oliveira \quad Arlindo Rodrigues Galv\~ao Filho \quad Anderson da Silva Soares}}
@@ -23,86 +15,62 @@ Gustavo dos Reis Oliveira \quad Arlindo Rodrigues Galv\~ao Filho \quad Anderson 
 rafaello.virgilli@discente.ufg.br}
 
 \begin{document}
-\ninept
 \maketitle
 
 \begin{abstract}\small
-We study how audio-deepfake detector comparisons change when fixed scores are resampled by trial or jointly by speaker and attack. On ASVspoof~2021~DF, we compare four self-supervised (SSL) detectors and four organizer baselines using simultaneous bands for pairwise equal error rate (EER) differences. A pair is separated when its band, adjusted across all system pairs, excludes zero. Trial resampling separates 26 of 28 pairs and joint resampling 18. These are fixed-score sensitivity bands, not population confidence intervals. The one-factor analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect. Alternative source, speaker and attack weights reverse five of six organizer-baseline orderings and one of six within-SSL orderings; the latter pair is already unseparated under trial resampling. All 16 SSL-versus-baseline pairs remain separated under resampling, group reweighting and source omission with jackknife-based bands, while some within-group comparisons change. A separate four-detector check on single-source SpoofCeleb also loses separations from pooled trial to joint resampling.
+A 2.153-point EER advantage between two Speech DF Arena detectors loses simultaneous-band separation when speakers and attacks replace trials as the resampling unit. The same change occurs for XLSR-Mamba versus XLSR-Conformer, despite substantial cancellation from system pairing. With thresholds refitted and the comparison family held fixed, trial and joint resampling separate 26/28 and 18/28 pairs on primary ASVspoof~2021~DF; a separate four-detector SpoofCeleb roster changes from 6/6 to 3/6. Speaker-only perturbations match the joint separation indicators on the primary roster, and attack-only perturbations do so on SpoofCeleb. Measured sensitivity concentrates in particular observed groups, while all SSL-versus-baseline comparisons survive the tested perturbations. Paired comparisons can therefore remain sensitive to group perturbations after substantial common variation cancels.
 \end{abstract}
 
 \begin{keywords}
-Anti-spoofing, audio deepfake detection, evaluation methodology, clustered bootstrap, ranking uncertainty
+Audio deepfake detection, paired evaluation, resampling, EER
 \end{keywords}
 
 \section{Introduction}
 \label{sec:intro}
-In 2021 the ASVspoof organizers tested every pair of submitted systems for significance, applied a Holm--Bonferroni correction, and published the deepfake task's systems in four groups, noting that the top two were not separated \cite{asvspoof21}. We found no uncertainty analysis in the later journal overview \cite{asvspoof21journal}, ASVspoof 5 \cite{asvspoof5eval}, or Speech DF Arena report \cite{shim25}; a 2026 self-supervised-model benchmark also reports point EERs \cite{spoofsuperb26}. AT-ADD reports trial-bootstrap rank stability \cite{xie26atadd}. Here we compare matched trial-versus-speaker/attack resampling of paired EER contrasts: XLSR-Mamba versus XLSR-Conformer loses separation under PW resampling (Fig.~\ref{fig:forest}).
+Does pairing detectors on the same trials cancel the effect of perturbing speakers and attacks? For HuBERT-ECAPA versus WavLM-ECAPA in Speech DF Arena \cite{shim25}, a $-2.153$-point EER gap has a trial-resampling band excluding zero, yet its joint speaker--attack band includes zero. XLSR-Mamba versus XLSR-Conformer shows the same change at $-0.389$ points (Fig.~\ref{fig:forest}). In both comparisons the scores and point gap stay fixed. What changes is the unit whose multiplicities vary.
 
-That matters more than it would if the analyses the field did run had represented the dependence. ASVspoof~2017 reported 95\% EER confidence intervals and read their overlap \cite{delgado18}, and 2021 tested every pair \cite{asvspoof21}; both use \cite{bengio04}. The three later benchmark reports named above contain no such analysis, although bootstrap EER spreads \cite{pascu24}, Holm-corrected pairwise EER tests \cite{martindonas24}, and bootstrap intervals at a fixed threshold \cite{weizman25} do appear in recent detector and benchmark papers. Both variants of the cited test \cite{bengio04} treat trials within a class as independent Bernoulli draws; the dependent form accounts for two systems sharing trials, not for trials sharing speakers and attacks. ASVspoof~2021~DF contains 533,928 evaluation trials but only 93 speakers and 110 attacks, and per-attack EERs for SSL-AASIST span 0.4--10.7\%. Across the eight detectors, the one-way random-intercept ICC $\sigma_s^2/(\sigma_s^2+\sigma_e^2)$ on bona-fide scores ranges from 0.15 to 0.77, where $\sigma_s^2$ and $\sigma_e^2$ are the speaker-intercept and residual variances. ICC alone does not establish dependence in paired EER differences; below we measure how paired contrasts respond to two declared perturbation laws on the joint scores, and repeat the comparison on two external datasets.
+ASVspoof~2021~DF has 533,928 evaluation trials but only 93 speakers and 110 attacks. Detectors can move together when an observed group gains weight, reducing the variation of their difference. Dependence in individual scores therefore does not by itself establish sensitivity of a paired EER contrast. The measurement question is which comparisons change when the perturbation unit changes while threshold refitting, system pairing and the comparison family are held fixed.
 
-We audit two evaluation choices on fixed released scores: whether trials or speakers and attacks are resampled, and how observed source, speaker and attack groups are weighted. The primary question is whether pairwise separation survives those choices; we propose no new bootstrap and claim no identified population sampling law.
-
-\textbf{Scope.} The primary set comprises eight score files released by the corresponding model authors or ASVspoof organizers, not the universe of public re-scores. We analyze all eleven Speech DF Arena score files for the same trials \cite{shim25} separately. Four VCC spoof strata contain only 4/4/4/6 speakers, so no 21DF separation result transfers to new speakers or attacks. The bands and reweighting results describe fixed scores under declared procedures, not population confidence or safety.
+We measure whether paired detector comparisons survive changes in the resampling unit and in observed-group weights. The primary roster contains four author-released self-supervised (SSL) detectors and four organizer baselines; eleven Arena score files for the same trials form a separate roster. Named modern comparisons lose separation even after pairing cancels much of their marginal variation. One-factor perturbations and delete-one-group refits localize that sensitivity, and a single-source SpoofCeleb check gives a contrasting factor pattern. The SSL-versus-baseline boundary survives every tested resampling, fixed-weight and source-deletion check.
 
 \section{Related work}
 \label{sec:related}
-\textbf{This benchmark's own reporting.} ASVspoof 2021 Fig.~4(c) pairs systems with the Bengio--Mari\'ethoz test \cite{bengio04} under Holm correction and publishes group structure \cite{asvspoof21}; Wang and Yamagishi \cite{wang21_comparative} showed that changing only the training seed moves ADD rankings---a variance component our intervals do \emph{not} include.
+\textbf{Benchmark reporting.} ASVspoof~2017 reported EER intervals \cite{delgado18}; ASVspoof~2021 Fig.~4(c) used the Bengio--Mari\'ethoz test \cite{bengio04} with Holm correction \cite{asvspoof21}. Its shared-trial variant accounts for two systems using the same trials, not repeated speakers and attacks. We found no uncertainty analysis in the later journal overview \cite{asvspoof21journal}, ASVspoof~5 \cite{asvspoof5eval}, or Arena report \cite{shim25}; a recent SSL benchmark reports point EERs \cite{spoofsuperb26}. Other work reports trial-bootstrap ranks \cite{xie26atadd}, EER spreads \cite{pascu24}, corrected pairwise tests \cite{martindonas24}, or fixed-threshold intervals \cite{weizman25}. Training-seed variation also moves rankings \cite{wang21_comparative}; our scores hold training fixed.
 
-\textbf{Clustered resampling.} Poh, Martin and Bengio \cite{poh07} showed that biometric uncertainty is governed by users rather than sample count; Wu et al.\ carried user-aware resampling into speech \cite{wu17} and developed a paired correlation-corrected two-system test \cite{wu16}. Our trials instead have one speaker and, for spoof, one attack: two crossed factors \cite{cgm11}, a delicate design \cite{mccullagh00,owen07} distinct from the nested-observation designs studied in \cite{anglin26}. Our contribution is the audited fixed-data result: after EER threshold refitting and all-pair multiplicity are aligned, outputs change with the declared perturbation unit. We claim neither cell-level agreement with Fig.~4(c) of the ASVspoof 2021 report nor population confidence.
+\textbf{Dependent paired comparison.} User-aware biometric and speech resampling \cite{poh07,wu17}, correlation-corrected paired tests \cite{wu16}, and synchronized resampling for correlated classifiers \cite{wukacker24} precede this study. Our speaker and spoof-attack factors are crossed \cite{cgm11,mccullagh00,owen07}, distinct from the nested-observation designs studied in \cite{anglin26}. The contribution is a matched measurement of paired EER comparisons under these perturbations, with every threshold refitted.
 
-\textbf{Evaluation-design audits.} In audio deepfakes, aggregation weights change conclusions \cite{kwok25}, channel presentation can dominate model choice \cite{delgado26presentation}, and other audits question representations \cite{benchaudit26}, attribution under controlled generator and speaker perturbations \cite{pirlogeanu26} and corpus overlap \cite{stanek26}. Speaker-conditioned detector-score sensitivity has also been probed through identity perturbations \cite{dar26} and speaker-adversarial training \cite{dao26}, and TwinShift separately evaluates speaker and synthesizer familiarity \cite{hong25twinshift}; here we vary resampling and evaluation weights on fixed scores. Simultaneous rank intervals are established \cite{almohamad19}; adjacency is score-selected, so we control multiplicity over all 28 contrasts.
+\textbf{Evaluation design.} Aggregation weights \cite{kwok25}, channel presentation \cite{delgado26presentation}, representations \cite{benchaudit26}, controlled generator/speaker perturbations \cite{pirlogeanu26} and corpus overlap \cite{stanek26} affect deepfake evaluation. Identity perturbations \cite{dar26}, speaker-adversarial training \cite{dao26} and speaker/synthesizer familiarity \cite{hong25twinshift} address related sensitivities. Here the scores are fixed and evaluation weights vary. Simultaneous rank intervals are established \cite{almohamad19}; because adjacency is score-selected, we retain all paired contrasts.
 
 \section{Method}
 \label{sec:method}
-
 \subsection{EER contrast and separation event}
 \label{sec:eer}
-Two deterministic systems on a fixed trial list have no sampling uncertainty until a perturbation law is declared. Scores are oriented so larger means bona fide and sorted in ascending order. At each ordered position, bona-fide mass at or below it is the false-reject rate (FRR) and spoof mass above it is the false-accept rate (FAR); the first position minimizing $|\mathrm{FRR}-\mathrm{FAR}|$ is selected and EER is their mean, without interpolation. Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point. For ordered pair $(A,B)$, $\Delta\mathrm{EER}_{A,B}=100(\mathrm{EER}_A-\mathrm{EER}_B)$ percentage points (negative favors $A$); every replicate refits both thresholds. A pair is \emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$. The identified object is the change in $\Delta\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty.
+Two deterministic systems on a fixed trial list have no sampling uncertainty until a perturbation law is declared. Scores are oriented so larger means bona fide and sorted in ascending order. At each ordered position, bona-fide mass at or below it is the false-reject rate (FRR) and spoof mass above it is the false-accept rate (FAR); the first position minimizing $|\mathrm{FRR}-\mathrm{FAR}|$ is selected and EER is their mean, without interpolation. For ordered pair $(A,B)$, $\Delta\mathrm{EER}_{A,B}=100(\mathrm{EER}_A-\mathrm{EER}_B)$ percentage points (negative favors $A$); every replicate refits both thresholds. A pair is \emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$.
 
-\subsection{Trial and speaker$\times$attack bootstraps}
-The trial bootstrap independently resamples trials within class; for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates. In the speaker$\times$attack product-weight (PW) bootstrap \cite{owen07,oweneckles12}, speakers and spoof attacks are independently resampled with replacement; a spoof trial receives the product of its speaker and attack multiplicities, while a bona-fide trial receives only its speaker multiplicity. Product resampling probes sensitivity to observed group composition. Conservatism results for crossed-array means \cite{oweneckles12} do not establish EER coverage. Both procedures use the same scores, threshold rule, $B{=}5000$ shared draws and all-pair multiplicity correction.
+Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point. Recomputing distinct-score thresholds on all 45,000 checked weighted replicates preserved every separation indicator; the maximum band-endpoint change was 0.00024 point (supplement, S4d).
 
-\subsection{All-pair multiplicity for procedure bands}
+\subsection{Perturbation laws and scope}
+The trial bootstrap independently resamples trials within class; for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates. In the speaker$\times$attack product-weight (PW) bootstrap \cite{owen07,oweneckles12}, speakers and spoof attacks are independently resampled with replacement; a spoof trial receives the product of its speaker and attack multiplicities, while a bona-fide trial receives only its speaker multiplicity. Speaker-only fixes attack multiplicities at one; attack-only fixes speaker and bona-fide trial weights at one. We use 5,000 replicates per procedure, with each replicate's weights shared across systems; procedures have separate random streams (S4a).
+
+\textbf{Interpretation.} The identified object is the change in $\Delta\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty. These are fixed-score sensitivity bands, not population confidence intervals or confidence sets for ranks. Four VCC spoof strata contain only 4/4/4/6 speakers, so no 21DF separation result transfers to new speakers or attacks. Conservatism results for crossed-array means \cite{oweneckles12} do not establish EER coverage. The one-factor analyses and added Monte Carlo, mean/sign, pairing, tie and influence diagnostics are exploratory and post-review; they were not preregistered (S4a--S4e). Indicator agreement is not a decomposition of the effect or a causal attribution to speaker identity: observed groups bundle trials, attacks and recording provenance, not intrinsic voice properties. Different detector rosters prevent attributing the primary/SpoofCeleb factor contrast to dataset alone. A band containing zero means the procedure does not separate that pair; it does not establish equality. Passing both checks does not guarantee an ordering under every possible reweighting or select a deployment ranking. Population confidence requires a defensible acquisition model and an inferential procedure valid under its dependence structure.
+
+\subsection{All-pair simultaneous bands}
 \label{sec:family}
-For procedure $h$, let $s_{p,h}=\operatorname{sd}_b(\Delta_{p,h}^{(b)})$. We set $q_{.95,h}$ to the empirical 95th percentile of $\max_{p=1}^{28}|\Delta_{p,h}^{(b)}-\bar\Delta_{p,h}|/s_{p,h}$ and report $\hat\Delta_p\pm q_{.95,h}s_{p,h}$ \cite{montiel19}. The quantile centers deviations on the bootstrap mean, whereas the bands center on the original estimate; band inclusion is not an empirical reversal probability. The maximum runs over all 28 contrasts, so each procedure yields one simultaneous band construction; no population error-control guarantee is asserted. Because a population sampling law is not identified for 21DF, we call these procedure-sensitivity bands, not confidence intervals.
-
-\textbf{Reconstructing the cited test.} Fig.~4(c) of Yamagishi et al.\ \cite{asvspoof21} does not disclose which Bengio--Mari\'ethoz variant produced its matrix, so we make no cell-level attribution. Both reconstructions of Fig.~4(c) (independent-trial and shared-trial) separate the same five of six baseline pairs; we claim no cell-level agreement. The published 34-system matrix has $\binom{\textstyle 34}{\textstyle 2}=561$ tests. In the independent-trial reconstruction, the largest $p$ among the five separated pairs, $9.7\times10^{-6}$, is below even its Bonferroni threshold $.05/561\approx8.9\times10^{-5}$, while the sixth has $p=.217$. The cited derivation assumes thresholds fixed outside the test set, so these are reconstructions of its adaptation to EER rather than exact finite-sample tests.
+For procedure $h$, let $s_{p,h}=\operatorname{sd}_b(\Delta_{p,h}^{(b)})$. We set $q_{.95,h}$ to the empirical 95th percentile of $\max_{p=1}^{28}|\Delta_{p,h}^{(b)}-\bar\Delta_{p,h}|/s_{p,h}$ and report $\hat\Delta_p\pm q_{.95,h}s_{p,h}$ \cite{montiel19}. The quantile centers deviations on the bootstrap mean, whereas the bands center on the original estimate; band inclusion is not an empirical reversal probability. The maximum includes all 28 primary contrasts, including when reporting within-cohort counts; Arena and SpoofCeleb use their own complete families. No population error-control guarantee is asserted. The historical independent- and shared-trial test reconstructions both separate five of six organizer pairs, without identifying the variant used in the published matrix (S2a).
 
 \subsection{Alternative fixed weighting rules}
-Within each class, every named hierarchy level receives equal conditional mass and trials divide their terminal-group mass equally. Bona-fide rules are empirical trial weights, equal mass over the three sources (ASVspoof, VCC2018, VCC2020), and equal source$\rightarrow$\allowbreak speaker mass. Spoof rules are empirical trial weights, equal mass over the five spoof strata (ASVspoof, VCC2018 HUB, VCC2018 SPO, VCC2020 Task~1, VCC2020 Task~2), equal mass over observed speaker$\times$attack cells within stratum, and equal mass successively over stratum, attack family (the attack-type field of the official 21DF trial metadata), attack and speaker. Their $3\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores. For endpoint $w^1$, the path from empirical weights is $w(\lambda)=(1-\lambda)w^0+\lambda w^1$, $0\leq\lambda\leq1$. We measure its distance by maximum classwise total variation, $\max_c(1/2)\sum_i|w_{c,i}-w_{c,i}^0|$.
+Within each class, every named hierarchy level receives equal conditional mass and trials divide their terminal-group mass equally. Bona-fide rules are empirical trial weights, equal mass over the three sources (ASVspoof, VCC2018, VCC2020), and equal source$\rightarrow$\allowbreak speaker mass. Spoof rules are empirical trial weights, equal mass over the five spoof strata (ASVspoof, VCC2018 HUB, VCC2018 SPO, VCC2020 Task~1, VCC2020 Task~2), equal mass over observed speaker$\times$attack cells within stratum, and equal mass successively over stratum, attack family (the attack-type field of the official 21DF trial metadata), attack and speaker. Their $3\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores. For endpoint $w^1$, the path from empirical weights is $w(\lambda)=(1-\lambda)w^0+\lambda w^1$, $0\leq\lambda\leq1$. Distance is maximum classwise total variation (S5).
 
 \section{Experiments}
 \label{sec:exp}
+\textbf{Setup.} The primary set contains XLSR-Mamba \cite{xiao25}, XLS-R+SLS (SLS below) \cite{zhang24sls}, XLSR-Conformer \cite{rosello23} and SSL-AASIST \cite{tak22}, plus RawNet2, LFCC-LCNN, LFCC-GMM and CQCC-GMM. All 533,928 evaluation-phase trials have every score. The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.
 
-\sloppypar
-\textbf{Setup.} The primary set contains four author-released self-supervised systems (XLSR-Mamba \cite{xiao25}, XLS-R+SLS (abbreviated SLS below) \cite{zhang24sls}, XLSR-Conformer \cite{rosello23}, SSL-AASIST \cite{tak22}) and four organizer-released baselines (RawNet2, LFCC-LCNN, LFCC-GMM, CQCC-GMM). We use all 533,928 evaluation-phase trials for which every score is available. Fig.~\ref{fig:forest} shows all within-SSL pairs; Table~\ref{tab:eers} gives point EERs, selected bands and group counts. The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.
-\par\endsloppypar
+\textbf{Primary 21DF result.} The matched all-28-pair bootstrap refits the same weighted EER in every replicate. Trial and joint bands separate 26/28 and 18/28 pairs (Table~\ref{tab:eers}); within SSL, the counts fall from 5/6 to 2/6. Mamba--Conformer remains at $-0.389$ points: its trial band is $[-0.570,-0.208]$, its joint band $[-1.348,0.570]$. Speaker-only reproduces all eight joint losses; attack-only reproduces four or five of the eight joint losses across Monte Carlo repeats (S4b). All primary within-SSL losses involve Conformer.
 
-\textbf{Primary 21DF result and exploratory ablation.} The matched all-28-pair bootstrap refits the same weighted EER in every replicate. Table~\ref{tab:eers} compares trial, speaker-only, attack-only and joint speaker$\times$attack resampling. The exploratory one-factor analyses were performed after the primary comparison. Both use the EER estimator of Sec.~\ref{sec:eer}, refit thresholds in every replicate with $B{=}5000$, and retain the 28-pair construction of Sec.~\ref{sec:family}; the deterministic seed derivation is in the attached supplement, Sec.~S4a. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect. This does not establish a causal attribution to speaker identity.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{figs/forest.pdf}
-\caption{All six within-SSL pairs on primary 21DF. Dots and right-hand labels are point gaps ($A-B$; negative favors $A$). Thick orange: trial bands; thin blue with end caps: PW bands. Both retain the full 28-pair simultaneous max-$t$ construction. Five trial bands and two PW bands exclude zero; the point estimates do not change.}
-\label{fig:forest}
-\end{figure}
-
-\textbf{Reading Fig.~\ref{fig:forest}.} Mamba--Conformer stays at $-0.389$ points but only its trial band excludes zero. Separation supports an ordering under the declared law. Request trial bands for perturbations of individual observations, and speaker/attack bands when the concern is reweighting observed groups. If only trial separates, withhold a winner claim meant to survive group reweighting; report the gap and both bands (Table~\ref{tab:eers}). This neither estimates a reversal probability nor proves the trial conclusion false; it does not establish equality or determine a deployment ranking.
-
-\textbf{Composition-preserving control.} A constrained PW bootstrap (1,000 draws, seed 20260824) resamples speakers and attacks within each bona-fide source or spoof stratum, redraws a replicate only when a class loses all support in a stratum (7 of 1,007 attempts, all VCC2018 spoof), and then rescales each source and stratum mass to its observed value; it also separates 18/28 and 0/6. This arm was designed after the main result and is a robustness check, not prospective evidence. Thus neither threshold handling nor movement of these eight class-specific masses is necessary for the contrast.
-
-\textbf{Check on single-source SpoofCeleb.} The pre-access chronology below is documented in the authors' records, without independent timing attestation. The analysis plan, archived on 29 August 2026 while official access was pending and released with its hash in the repository of Sec.~\ref{sec:disc}, fixed the four detectors, score orientation, bootstrap laws, seed and six-pair endpoint before the first successful authenticated download. On all 91,130 evaluation trials \cite{jung25spoofceleb}, pooled trial resampling separates 6/6 pairs (a class-stratified recomputation also separates 6/6) and the PW bootstrap separates 3/6. AASIST, SLS, SSL-AASIST and XLSR-Mamba have EERs 57.93\%, 24.51\%, 26.72\% and 27.58\%; this is an off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems. Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot move; speaker and spoof-attack multiplicities still vary under PW draws. After observing this result, separate speaker-only and attack-only bootstraps separated 5/6 and 3/6; attack-only matched the PW indicator vector. The archived plan did not bind the scoring code, so a later re-scoring from freshly cloned, commit-pinned detector repositories is reproducibility evidence only: three score files were byte-identical, the fourth differed by at most $1.44\times10^{-6}$, and every EER and separation indicator was unchanged.
-
-\textbf{Alternative released scores on 21DF.} On the eleven complete Speech DF Arena score files for the same 533,928 trials, trial and PW bootstraps separate 52/55 and 38/55 pairs; the median ratio of PW to trial bootstrap standard deviations over the 55 pairs is 8.45. For HuBERT-ECAPA versus WavLM-ECAPA ($-2.153$ points), the bands are $[-2.761,-1.544]$ and $[-5.241,0.936]$. These are descriptive results for that separate score collection, not population confidence intervals.
-
-\textbf{ASVspoof 5 check.} For SSL-AASIST, AASIST, XLS-R+SLS and XLSR-Mamba on all 680,774 Track~1 trials \cite{asvspoof5eval}, resampling the 367 target speakers, the 370 bona-fide-only speakers and the 16 attacks as three independent multinomial draws changes the separated count from 6/6 under trial resampling to 5/6 and gives a median simultaneous-band width ratio of $27.27\times$; both criteria (at least one lost separation, median ratio at least 2) were fixed in the released plan before scoring completed. This check is intentionally EER-only because it transfers the paper's $\Delta$EER comparison; ASVspoof~5's primary Track~1 metric is minDCF. It is not a system-performance replication or population claim.
-
-\textbf{Alternative weights.} Under at least one of the 12 fixed rules, six of the 12 within-cohort pairs reverse their point ordering (five within-baseline; the SSL one is XLSR-Mamba versus XLS-R+SLS, gap 0.032 points) and none of the 16 cross-cohort pairs does; one of the 11 nonempirical linear paths reverses before maximum classwise total variation .10. Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\times$law cells; the closest band endpoint to zero is $-12.79$ points. An exploratory post-result search found a witness reversing XLSR-Mamba minus XLS-R+SLS under the original EER sweep at maximum classwise total variation .010218, with bona-fide masses $(.544,.244,.212)$ and spoof-stratum masses $(.133,.234,.117,.223,.294)$, in the order above and rounded (greater precision in S5).
-The reversing sign also holds at distinct-score boundaries (supplement, Sec.~S5).
-This is a found upper bound, not a minimum, and is too small to imply practical superiority. The search found no cross-cohort reversal, which is not a proof that none exists.
+\textbf{Arena comparison.} On the eleven complete Speech DF Arena score files for the same 533,928 trials, trial and PW bands separate 52/55 and 38/55 pairs. For HuBERT-ECAPA versus WavLM-ECAPA, the $-2.153$-point gap has bands $[-2.761,-1.544]$ and $[-5.241,0.936]$. A comparison separated under trial perturbations thus loses separation when observed speakers and attacks vary, even at this larger gap.
 
 \begin{table}[tb]
-\caption{Top: primary 21DF point EER (\%); $n=533,928$, empirical class-normalized trial weights. Middle: selected paired EER differences and simultaneous bands (points); primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials. Bottom: primary separated counts; Org. denotes organizer baselines. Speaker-only and attack-only are exploratory analyses performed after the primary comparison. All four arms retain 16/16 cross-cohort separations; complete pair bands are in the attached supplement, Sec.~S4a.}
+\caption{Top: primary 21DF point EER (\%); $n=533,928$, empirical class-normalized trial weights. Middle: paired bands (points); primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials. Bottom: separated pairs; primary subsets retain the 28-pair correction and all four arms retain 16/16 cross-cohort separations. SpoofCeleb uses AASIST, SLS, SSL-AASIST and Mamba, its own six-pair family and pooled trial law (stratified check: S8). *One-factor status: Method. $\dagger$Recorded-seed attack counts: four of five fresh seeds give 21/28 and 2/6 organizer separations (S4b).}
 \label{tab:eers}
 \centering\small
 \vspace{2pt}
@@ -119,35 +87,82 @@ SSL-AASIST & 2.852 & CQCC-GMM & 25.563 \\
 \multicolumn{2}{@{}l}{Trial $[-0.570,-0.208]$} & \multicolumn{2}{l@{}}{PW $[-1.348,0.570]$} \\
 \multicolumn{4}{@{}l@{}}{Arena HuBERT-ECAPA $-$ WavLM-ECAPA: $-2.153$} \\
 \multicolumn{2}{@{}l}{Trial $[-2.761,-1.544]$} & \multicolumn{2}{l@{}}{PW $[-5.241,0.936]$} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Roster / subset & Trial & Spk.* & Atk.* & Joint \\
 \midrule
-Resampling arm & All /28 & Org. /6 & SSL /6 \\
-\midrule
-Trial & 26 & 5 & 5 \\
-Speaker-only & 18 & 0 & 2 \\
-Attack-only & 22 & 3 & 3 \\
-Speaker$\times$attack & 18 & 0 & 2 \\
+21DF, all & 26/28 & 18/28 & $22/28\dagger$ & 18/28 \\
+21DF, SSL & 5/6 & 2/6 & 3/6 & 2/6 \\
+21DF, organizer & 5/6 & 0/6 & $3/6\dagger$ & 0/6 \\
+SpoofCeleb & 6/6 & 5/6 & 3/6 & 3/6 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Source deletions.} Source deletion uses a third construction: with delete-one speaker, attack and observed-cell jackknife variances $V_s$, $V_a$ and $V_{sa}$ of each contrast, the interval is $\hat\Delta\pm q\sqrt{\max(V_s+V_a-V_{sa},V_s,V_a,0)}$, where $q$ is a Gaussian max-$t$ critical value recomputed over all 28 contrasts for each remaining subset (200,000 draws). Covariance details are in supplement, Sec.~S2. On the full data this construction separates 18/28 pairs (16 cross-cohort, 2 within-SSL, 0 within-baseline), the same verdicts as the PW bootstrap. Leave-one-source-out refits preserve separation for all 16 cross-cohort pairs, remove both separated within-SSL pairs and separate three within-baseline pairs in at least one deletion. Thus cross-cohort separation survives these source changes, while some within-cohort separation decisions change with them.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/forest.pdf}
+\caption{All six within-SSL pairs on primary 21DF. Dots and right-hand labels are point gaps ($A-B$; negative favors $A$). Thick orange: trial bands; thin blue with end caps: PW bands. Both retain the full 28-pair simultaneous max-$t$ construction. Five trial bands and two PW bands exclude zero; the point estimates do not change.}
+\label{fig:forest}
+\end{figure}
+
+\textbf{Pairing and band interpretation.} Under the joint law, Mamba and Conformer EERs correlate 0.777; pairing removes about 75\% of the sum of their marginal variances, yet the paired SD rises from 0.06149 under trials to 0.31997 points under joint resampling. Table~\ref{tab:sign} distinguishes mean displacement, sign frequency and band separation. The joint mean displacement is only 0.032 SD, so band centering does not explain inclusion of zero; the trial band excludes zero with 0/5,000 opposite-sign draws, the joint band includes it with 463/5,000 (S4c).
+
+\begin{table}[t]
+\caption{Mamba minus Conformer: mean shift from the point gap, pair SD (points), opposite-sign draws out of 5,000, and zero exclusion under the full 28-pair band.}
+\label{tab:sign}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Law & Mean shift & SD & Opposite & Excludes? \\
+\midrule
+Trial & $-0.002492$ & 0.061488 & 0 & Yes \\
+Speaker & $-0.003175$ & 0.270826 & 210 & No \\
+Attack & $-0.010235$ & 0.147333 & 37 & No \\
+Joint & $-0.010135$ & 0.319971 & 463 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observed-group influence.} The observed speaker group VCC2SM3 supplies 77.09\% of Mamba--Conformer's delete-one-speaker sum of squared deviations and 55.85\% for SLS--Conformer. Deleting that group moves the Mamba--Conformer gap from $-0.389$ to $-0.129$ points, locating much of the sensitivity in this observed group (S4e).
+
+\textbf{Composition-preserving control.} A constrained PW arm resamples within each bona-fide source or spoof stratum, conditions on retained class support, and restores each source and stratum mass to its observed value; it also separates 18/28 and 0/6 organizer pairs. This arm was designed after the main result and is a robustness check, not prospective evidence (S6). Thus neither threshold handling nor movement of these eight class-specific masses is necessary for the contrast.
+
+\textbf{Check on single-source SpoofCeleb.} On all 91,130 evaluation trials \cite{jung25spoofceleb}, pooled trial resampling separates 6/6 pairs (a class-stratified recomputation also separates 6/6) and joint resampling 3/6. This is an off-domain sensitivity check on a different roster: AASIST, SLS, SSL-AASIST and Mamba. Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot move; speaker and spoof-attack multiplicities still vary. Attack-only matches the joint indicator vector, whereas speaker-only retains 5/6. The three detectors shared with primary 21DF have 2/3 separated in every primary arm under the original 28-pair correction (S4c); the contrasting factor patterns therefore depend on the score collections. Access chronology and scoring provenance are in S8.
+
+\textbf{ASVspoof 5 check.} An EER-only four-detector check also changes separation from 6/6 under trial resampling to 5/6; the SSL-AASIST and AASIST score files lack their originating run logs (S8).
+
+
+
+\textbf{Alternative weights.} Fixed rules reverse 5/6 organizer-baseline, 1/6 within-SSL and 0/16 cross-cohort point orderings. The SSL pair is Mamba--SLS (gap $-0.032$ points), already unseparated under trial resampling. Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\times$law cells; the closest band endpoint to zero is $-12.79$ points. S5 gives a constructive Mamba--SLS reversal and its searched masses. The reversing sign also holds at distinct-score boundaries (supplement, Sec.~S5).
+
+\textbf{Surviving modern comparisons.} Of the two within-SSL pairs separated by joint resampling, Mamba--SSL-AASIST loses separation when VCC2018 is omitted (gap $-0.968\to-0.270$ points); SLS--SSL-AASIST loses it when VCC2020 is omitted ($-0.935\to-0.760$). Source deletion uses a third construction, a marginal-floor jackknife with Gaussian max-$t$ calibration over all 28 pairs (S2), related to max-se methods \cite{mackinnon24}; it preserves all 16 cross-cohort separations. The first loss combines gap shrinkage with the changed band; the second retains a sizeable gap but gains uncertainty.
 
 \section{Discussion}
 \label{sec:disc}
+\textbf{Reporting decision rule.} Choose the perturbation to match the reporting question: individual trials, or weights of observed speakers and attacks. Report the point gap and both bands when a comparison is intended to withstand both checks. If the separation indicators disagree, label the comparison procedure-sensitive within the full comparison family and do not present trial-only separation as evidence that it survives the group check. Publish trial-to-speaker/attack membership and source weights alongside these results.
 
-\textbf{Coverage boundary.} The candidates are the raw exact-cell inclusion--exclusion interval $\hat\Delta\pm1.96\sqrt{V_s+V_a-V_{sa}}$ with the jackknife variances defined above, its variance-floor version using $\max(V_s+V_a-V_{sa},V_s,V_a)$, and the 2.5--97.5 percentile PW band. The 48-cell simulation crosses two fitted regimes (supplement, Sec.~S7), four interaction shares (0, .25, .50, .75: the fraction of the fitted spoof speaker-plus-attack variance moved into a speaker$\times$attack interaction, total held fixed), two tail laws and three target gaps. Over the 24 low-EER cells the minimum nominal-95\% coverages are .845, .845 and .855; all three are below .90 in the same 11/24 cells. This simulation evaluates pointwise candidate intervals under those imposed models, not the all-pair bands above; it does not establish that either model describes 21DF.
+\textbf{Coverage boundary.} In the low-EER simulations, all three pointwise candidate intervals had coverage below .90 in the same 11/24 cells (S7). These imposed-model simulations evaluate different intervals from the principal all-pair bands and do not establish a population sampling model for 21DF.
 
-\textbf{Reporting and limits.} The attached \texttt{SUPPLEMENT.md} supplies the complete band tables, data map, weighting formulas, simulation parameters and analysis-plan hashes. Its Sec.~S4a contains all four ablation arms' pair bands from the attached \texttt{ABLATION-RESULTS.json}. These attachments include the exploratory one-factor analyses absent from the earlier release at \texttt{github.com/rvirgilli/\allowbreak asvspoof2021-df-\allowbreak clustered-uncertainty}, tag \texttt{icassp2027-submission}. The ASVspoof~5 SSL-AASIST and AASIST score files lack their originating run logs. Benchmark reports should publish trial-to-speaker/attack membership and source weights, not only trial counts, and report separation under a declared perturbation law and weighting next to the point EER. A band containing zero means the procedure does not separate that pair; it does not establish equality. Neither the primary-score analysis nor the Arena-score analysis supplies population confidence intervals or confidence sets for ranks.
+\begingroup\raggedright
+\textbf{Artifact.} Supplement S4a--S4e supplies the complete four-arm bands, Monte Carlo repeats, mean/sign and pairing diagnostics, weighted-tie checks and group influence. The three evidence JSON files and analysis code accompany artifact version \texttt{m1-impact-20260916-v1} at \texttt{github.com/\allowbreak rvirgilli/\allowbreak asvspoof2021-\allowbreak df-clustered-\allowbreak uncertainty}; S8 gives file selectors and hashes.\par\endgroup
 
 \section{Conclusion}
-On primary 21DF, matched trial and joint PW bands separate 26/28 and 18/28 pairs. The speaker-only and attack-only analyses are exploratory. Speaker-only resampling reproduces the joint procedure's eight lost separations on this roster; attack-only reproduces four. This is a comparison of separation indicators, not a decomposition of the effect. All 16 pairs between the four SSL detectors and the four organizer baselines remain separated under both bootstraps, each leave-one-source-out refit of the declared jackknife construction and all 12 fixed weighting rules, and none reverses its point ordering in the searched directions; within-cohort separation changes with the resampling procedure and with source deletion, and within-cohort point ordering reverses under some weighting rules. Population confidence requires a defensible acquisition model and an inferential procedure valid under its dependence structure.
+Trial-resampling separation can disappear under speaker--attack perturbations for both Arena HuBERT--WavLM and primary Mamba--Conformer, despite paired cancellation. Speaker-only matches the joint indicators on primary 21DF; attack-only does so on the separate SpoofCeleb roster, where trial-to-joint separation falls from 6/6 to 3/6. Cross-cohort separation survives the tested laws, weights and source deletions, while modern within-cohort comparisons expose concentrated group sensitivity.
 
 \section{Acknowledgment}
-During preparation, the authors used a large language model (Anthropic Claude) to help write and edit the text, the LaTeX layout and the supporting code. The authors reviewed all assisted content and take full responsibility.
+During preparation, the authors used large language models (Anthropic Claude and OpenAI Codex) to help edit the text, LaTeX layout and supporting code. The authors reviewed all assisted content and take full responsibility.
 
 \section{Compliance with Ethical Standards}
-This study analyzed previously collected ASVspoof 2021, ASVspoof 5 and SpoofCeleb recordings and detector scores. It involved no new recording or interaction with human participants; no ethical approval was required. The authors declare no competing interests.
+This study analyzed previously collected ASVspoof~2021, ASVspoof~5 and SpoofCeleb recordings and detector scores. It involved no new recording or interaction with human participants; no ethical approval was required. The authors declare no competing interests.
 
+\clearpage
 \let\oldthebibliography\thebibliography
 \renewcommand{\thebibliography}[1]{\oldthebibliography{#1}%
   \setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}\setlength{\topsep}{2pt}}
@@ -155,5 +170,4 @@ This study analyzed previously collected ASVspoof 2021, ASVspoof 5 and SpoofCele
 \bibliographystyle{IEEEbib}
 \bibliography{refs}
 }
-
 \end{document}
