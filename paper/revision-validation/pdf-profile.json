@@ -1,0 +1,36 @@
+{
+  "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5",
+  "pages": 5,
+  "page_five_references_only": true,
+  "overfull_boxes": 0,
+  "minimum_pdf_points": 9.0001802444458,
+  "type3_fonts": 0,
+  "all_fonts_embedded": true,
+  "per_page": [
+    {
+      "page": 1,
+      "minimum_pdf_points": 9.065999984741211,
+      "text_words": 623
+    },
+    {
+      "page": 2,
+      "minimum_pdf_points": 9.065999984741211,
+      "text_words": 800
+    },
+    {
+      "page": 3,
+      "minimum_pdf_points": 9.0001802444458,
+      "text_words": 697
+    },
+    {
+      "page": 4,
+      "minimum_pdf_points": 9.962599754333496,
+      "text_words": 530
+    },
+    {
+      "page": 5,
+      "minimum_pdf_points": 9.065999984741211,
+      "text_words": 949
+    }
+  ]
+}

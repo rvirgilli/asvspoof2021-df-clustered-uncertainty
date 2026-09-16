@@ -1,0 +1,32 @@
+Using CPython 3.11.15
+Creating virtual environment at: .venv
+Installed 14 packages in 11ms
+OK — scientific contract passes: matched trial/PW results, complete system and pair tables, coverage boundaries, source weighting, SpoofCeleb/ASV5 checks, and all caveats are artifact-bound.
+test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.428s
+
+OK
+PASS — EXP-115 receipt, freeze, arrays, results and bindings verify
+test_attack_only_has_no_speaker_multiplier (exp115.test_analyze.ArmTests.test_attack_only_has_no_speaker_multiplier) ... ok
+test_small_run_is_deterministic_and_complete (exp115.test_analyze.ArmTests.test_small_run_is_deterministic_and_complete) ... ok
+test_speaker_only_has_no_attack_multiplier (exp115.test_analyze.ArmTests.test_speaker_only_has_no_attack_multiplier) ... ok
+test_changed_manifest_hash_fails_before_parse (exp115.test_analyze.BindingTests.test_changed_manifest_hash_fails_before_parse) ... ok
+test_changed_score_hash_fails_before_parse (exp115.test_analyze.BindingTests.test_changed_score_hash_fails_before_parse) ... ok
+test_freeze_mutation_fails (exp115.test_analyze.BindingTests.test_freeze_mutation_fails) ... ok
+test_joint_roster_mismatch_fails (exp115.test_analyze.BindingTests.test_joint_roster_mismatch_fails) ... ok
+test_one_class_support_fails (exp115.test_analyze.EERTests.test_one_class_support_fails) ... ok
+test_perfect_and_reversed (exp115.test_analyze.EERTests.test_perfect_and_reversed) ... ok
+test_all_four_reading_branches (exp115.test_analyze.ReadingTests.test_all_four_reading_branches) ... ok
+test_current_delivery_passes (exp115.test_verify_receipt.ReceiptTests.test_current_delivery_passes) ... ok
+test_frozen_source_mutation_fails_before_receipt (exp115.test_verify_receipt.ReceiptTests.test_frozen_source_mutation_fails_before_receipt) ... ok
+test_stale_receipt_rejects_changed_result (exp115.test_verify_receipt.ReceiptTests.test_stale_receipt_rejects_changed_result) ... ok
+test_stale_receipt_rejects_each_changed_array (exp115.test_verify_receipt.ReceiptTests.test_stale_receipt_rejects_each_changed_array) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.070s
+
+OK
+PASS — portable ASV5 package, source bytes, 698-input manifest, hashes and boundaries verify
+PASS — release repository verified

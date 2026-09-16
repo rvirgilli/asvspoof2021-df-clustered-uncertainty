@@ -1,0 +1,46 @@
+{
+  "artifact_commit": "4e2ad2fcf08084244b7e1333773734662f46dff9",
+  "anonymous_https": true,
+  "files": [
+    {
+      "path": "evidence/ABLATION-RESULTS.json",
+      "url": "https://raw.githubusercontent.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/4e2ad2fcf08084244b7e1333773734662f46dff9/evidence/ABLATION-RESULTS.json",
+      "http_status": 200,
+      "bytes": 58760,
+      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3",
+      "matches_local": true
+    },
+    {
+      "path": "evidence/diagnostics.json",
+      "url": "https://raw.githubusercontent.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/4e2ad2fcf08084244b7e1333773734662f46dff9/evidence/diagnostics.json",
+      "http_status": 200,
+      "bytes": 459307,
+      "sha256": "89253c3536f8dd3578756097ea3c5b1da02588ee6989009e9888e2bd0b728d4c",
+      "matches_local": true
+    },
+    {
+      "path": "evidence/influence.json",
+      "url": "https://raw.githubusercontent.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/4e2ad2fcf08084244b7e1333773734662f46dff9/evidence/influence.json",
+      "http_status": 200,
+      "bytes": 76657,
+      "sha256": "cbb9f6cc10db319cac15f8788ed598e6ca99fa2d643e214c7f5ff91621b75099",
+      "matches_local": true
+    },
+    {
+      "path": "SUPPLEMENT.md",
+      "url": "https://raw.githubusercontent.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/4e2ad2fcf08084244b7e1333773734662f46dff9/SUPPLEMENT.md",
+      "http_status": 200,
+      "bytes": 56376,
+      "sha256": "3cdcd93656b08bca14fbfba9265320bdd2320c22948f9f70374a0f4c41261a2a",
+      "matches_local": true
+    },
+    {
+      "path": "MANIFEST.json",
+      "url": "https://raw.githubusercontent.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/4e2ad2fcf08084244b7e1333773734662f46dff9/MANIFEST.json",
+      "http_status": 200,
+      "bytes": 26238,
+      "sha256": "4095a0c96fc10b77f565ac5137baec872bab48126ae92d37fb921dc2aa7472b0",
+      "matches_local": true
+    }
+  ]
+}
