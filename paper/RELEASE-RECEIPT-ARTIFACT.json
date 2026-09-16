@@ -1,19 +1,143 @@
 {
   "added_members": {
-    "paper/RELEASE-RECEIPT-ARTIFACT.json": {
-      "bytes": 127660,
-      "sha256": "7ef6c591ae62a0152dd89b8c98445ea21f87bd6d6b2dd8a549f025f0565bbd5c"
+    "PORTABILITY-NOTE.md": {
+      "bytes": 2530,
+      "sha256": "f5a96d75ceb46122b6f08990926a9e489fc91ce96015c2c530480a47d8c473c9"
+    },
+    "REPRODUCE-DIAGNOSTICS.md": {
+      "bytes": 2893,
+      "sha256": "4e4db38bd38b8a655ae8f2d80f0979970db3d8a61974c61b8b7343dadb798515"
+    },
+    "REPUBLICATION-3-NOTE.md": {
+      "bytes": 2014,
+      "sha256": "e6ed32ea3f3230cce47e114d87d44a54cdfaef99e8f19f340322d0bcf02ca32d"
+    },
+    "SUPPLEMENT.md": {
+      "bytes": 56541,
+      "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
+    },
+    "code/strategy_diagnostics.py": {
+      "bytes": 13745,
+      "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
+    },
+    "code/strategy_influence.py": {
+      "bytes": 3748,
+      "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
+    },
+    "evidence/ABLATION-REPLICATES.npz": {
+      "bytes": 604405,
+      "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
+    },
+    "evidence/ABLATION-RESULTS.json": {
+      "bytes": 58760,
+      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
+    },
+    "evidence/diagnostics.json": {
+      "bytes": 460390,
+      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
+    },
+    "evidence/influence.json": {
+      "bytes": 76657,
+      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
+    },
+    "evidence/replicates.npz": {
+      "bytes": 5220806,
+      "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
+    },
+    "paper/RELEASE-RECEIPT-20260915-2245.json": {
+      "bytes": 102689,
+      "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
+    },
+    "paper/SUBMISSION-VERSION.md": {
+      "bytes": 425,
+      "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
+    },
+    "paper/evidence/ABLATION-RESULTS.json": {
+      "bytes": 58760,
+      "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
+    },
+    "paper/evidence/diagnostics.json": {
+      "bytes": 460390,
+      "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
+    },
+    "paper/evidence/influence.json": {
+      "bytes": 76657,
+      "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
+    },
+    "paper/revision-validation/anonymous-release-audit.txt": {
+      "bytes": 2511,
+      "sha256": "462074d0ad8d0e08af1b445589db5561ef20a5540201278b0c21ce0d6a6e0e38"
+    },
+    "paper/revision-validation/final-numbers.txt": {
+      "bytes": 193,
+      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
+    },
+    "paper/revision-validation/final-public-numbers.txt": {
+      "bytes": 193,
+      "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
+    },
+    "paper/revision-validation/final-public-semantic.txt": {
+      "bytes": 266,
+      "sha256": "540584a67b4952f40e63992ba25c641473a18e8a7a72dd4ffb9269e7a9018b4a"
+    },
+    "paper/revision-validation/final-semantic.txt": {
+      "bytes": 98,
+      "sha256": "6b75eb7141abf732ce63888ffd50b91e41dd50c021ecf687295da16951e84869"
+    },
+    "paper/revision-validation/pdf-profile.json": {
+      "bytes": 771,
+      "sha256": "78deb546d43e2999ef9e58ed09e61e2bb89a699b30a50a1b772537c38245b8e2"
+    },
+    "paper/revision-validation/pdffonts.txt": {
+      "bytes": 1410,
+      "sha256": "be3fde6a75a6ac78275893eb4fe8f97b1e4817b8a19e9365606d3a072465e037"
+    },
+    "paper/revision-validation/public-readback.json": {
+      "bytes": 1976,
+      "sha256": "66dd42259408f7bed9b1e53a6c42ad97e925d7bb1fcdd1ab8ac075ea49904c83"
     }
   },
   "audit": {
-    "identified_pdf_sha256": "d6de194bb27150874bea6b11ae4231a51e4b430d3e0b24f49800707e0e9d3db5",
-    "pdf_role": "rebuilt submission citing artifact commit"
+    "identified_pdf_sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5",
+    "pdf_role": "inherited predecessor PDF; revised submission build deferred"
   },
   "changes_from_predecessor": {
+    "README.md": {
+      "current": {
+        "bytes": 12404,
+        "sha256": "fca027906870d887efbab94727e32dd46180136c9e3971f4cfe768f7a7972e1f"
+      },
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "previous": {
+        "bytes": 12594,
+        "sha256": "3e9232450b89c7c841b4bbddd134a6e63f040742c06c8d883695ddd9dbe8bcc6"
+      },
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+    },
+    "REPRODUCE.md": {
+      "current": {
+        "bytes": 3147,
+        "sha256": "c3fa8b50bf00a56a23bc9e74d0657fac8e28730ec53e509ae93ad71c65dd953b"
+      },
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "previous": {
+        "bytes": 2934,
+        "sha256": "65c51fcbe528336c4d9a3d1c2aab28835a9c5ee51d3407d20589f83a47205f5f"
+      },
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+    },
     "code/check_numbers.py": {
       "current": {
-        "bytes": 74481,
-        "sha256": "d7b85fce7f1ae258f24b0d25b28a58727f38b06ee1c369dcf5aa0f5fdbf2b521"
+        "bytes": 74728,
+        "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
       },
       "findings": [
         "S1",
@@ -22,30 +146,31 @@
         "S5"
       ],
       "previous": {
-        "bytes": 74728,
-        "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
+        "bytes": 65972,
+        "sha256": "191bee06e5a725370ad719eccaea3434f6dcca9b0566a6efa6649adf7caee674"
       },
       "why": "Retain public path adapters and apply only merged scientific and exact producer/archive bindings; submission retires only the withdrawal-specific check."
     },
-    "paper/main.pdf": {
+    "paper/README.md": {
       "current": {
-        "bytes": 181249,
-        "sha256": "d6de194bb27150874bea6b11ae4231a51e4b430d3e0b24f49800707e0e9d3db5"
+        "bytes": 1057,
+        "sha256": "c7fbdf76bb20f901cb5e2d3286ff1329403adead7483c5cedd3e38c588581e95"
       },
       "findings": [
-        "S7",
-        "L1-L4"
+        "S1",
+        "S5",
+        "S7"
       ],
       "previous": {
-        "bytes": 179951,
-        "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
+        "bytes": 2206,
+        "sha256": "19907a7b15f81f0c986d67b821a42620ec1f5f7e895de6ac7a5742ff4b107ce0"
       },
-      "why": "Bind the actual PDF, supplied figures or bibliography style supporting five-page and nine-point compliance; artifact PDF is explicitly inherited."
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
-    "paper/main.tex": {
+    "paper/SUPPLEMENT.md": {
       "current": {
-        "bytes": 21654,
-        "sha256": "560bd07ec0186799d4835bc2659a50fba124d5bacacef11fc31a53e43ebd3d33"
+        "bytes": 56541,
+        "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
       },
       "findings": [
         "S2",
@@ -57,30 +182,108 @@
         "S7"
       ],
       "previous": {
+        "bytes": 45191,
+        "sha256": "fab14d29ec5142505145c0448e86a2e16b6de13885f01960610a7ea98d781218"
+      },
+      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
+    },
+    "paper/UPLOAD-CHECKLIST.md": {
+      "current": {
+        "bytes": 349,
+        "sha256": "dde6a473b4af421dfa93e0bef93faa2e8f5895a31753415e862120bbfaf14efa"
+      },
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "previous": {
+        "bytes": 1988,
+        "sha256": "04b911661652a120508a8a68da9ed1d0407edd930e47b808b66beeacf1490882"
+      },
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
+    },
+    "paper/figs/floor.pdf": {
+      "current": {
+        "bytes": 18556,
+        "sha256": "9b4e6db52f2efae780d58e0e15545d9f7c6060eb3cd775158f3346d253d99cf4"
+      },
+      "findings": [
+        "history"
+      ],
+      "previous": {
+        "bytes": 18556,
+        "sha256": "a3001ac3ee23e39d0233bc13a37742ed36339595e06b90caa120c05251948865"
+      },
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+    },
+    "paper/figs/forest.pdf": {
+      "current": {
+        "bytes": 18953,
+        "sha256": "6921bd0a6184bf47e862bf0444748e11f630e3401f7dd6c3f1893ad638b24454"
+      },
+      "findings": [
+        "history"
+      ],
+      "previous": {
+        "bytes": 18953,
+        "sha256": "d527335803d615a106485aa3cc2d025ed2fe962b98442b3793954eabc4b62a68"
+      },
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+    },
+    "paper/main.pdf": {
+      "current": {
+        "bytes": 179951,
+        "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
+      },
+      "findings": [
+        "history"
+      ],
+      "previous": {
+        "bytes": 165879,
+        "sha256": "59fee3c22a08a7dc627a137c69de639b41579b12d26aa282775d5f31b3a6828b"
+      },
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+    },
+    "paper/main.tex": {
+      "current": {
         "bytes": 21691,
         "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
+      },
+      "findings": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "L1-L4",
+        "S7"
+      ],
+      "previous": {
+        "bytes": 25732,
+        "sha256": "66b3e283b8c43b0263469793cb586a152c99e9282b3750aa0e32263ba967c967"
       },
       "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
     },
     "paper/refs.bib": {
       "current": {
-        "bytes": 9052,
-        "sha256": "011648852e651cce34dc49b5ad12ddcbc69a4fc41236e2db4f787da9c55a8d44"
+        "bytes": 9290,
+        "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
       },
       "findings": [
         "S5",
         "L1-L4"
       ],
       "previous": {
-        "bytes": 9290,
-        "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
+        "bytes": 9127,
+        "sha256": "04d6899edb0328ffdde23f495de8e1c955ef99506b8a483c05d4de4d34a73716"
       },
       "why": "Carry the supplied bibliography repair; submission removes the withdrawn SNAP entry."
     },
     "paper/semantic_obligations.json": {
       "current": {
-        "bytes": 25104,
-        "sha256": "fea93bab395fc9dbc92b2f3847346a7371e9c441f82c1f811c0d03690b0cda09"
+        "bytes": 25416,
+        "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
       },
       "findings": [
         "S2",
@@ -92,20 +295,48 @@
         "S7"
       ],
       "previous": {
-        "bytes": 25416,
-        "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
+        "bytes": 13028,
+        "sha256": "263a3e94df681530a91f580aec13e1b1e87729770d42928c6a9f0804312cb0bd"
       },
       "why": "Carry the merged semantic obligations; submission updates the immutable locator and retires the sole SNAP-sentence obligation."
+    },
+    "paper/test_semantic_guards.py": {
+      "current": {
+        "bytes": 2271,
+        "sha256": "841964bcc96720545b22a6f02d649220755e0382afa2397e6e48682d77045f7d"
+      },
+      "findings": [
+        "history"
+      ],
+      "previous": {
+        "bytes": 2041,
+        "sha256": "3059b05a3facfd2418b0dec7e1f29be2365e03a1541a65b465e86de85a817344"
+      },
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
+    },
+    "verify_release.py": {
+      "current": {
+        "bytes": 4355,
+        "sha256": "bb5101ea446be714aadee8439ae452fd6e36030fc3c6b5e0752bb9c7e508e629"
+      },
+      "findings": [
+        "history"
+      ],
+      "previous": {
+        "bytes": 4030,
+        "sha256": "737789da6b8465d9086b4c2a538b2b7d47a0e8e16ea2340381385d9f581f25ad"
+      },
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     }
   },
   "circularity": "Payload excludes this receipt and MANIFEST.json; manifest binds receipt; Git binds manifest. External final receipt binds every tracked member including both.",
   "counts": {
-    "added_members": 1,
-    "changed_previous_bindings": 5,
-    "payload_members": 201,
-    "previous_payload_members": 200,
+    "added_members": 24,
+    "changed_previous_bindings": 14,
+    "payload_members": 200,
+    "previous_payload_members": 176,
     "removed_members": 0,
-    "unchanged_previous_bindings": 195
+    "unchanged_previous_bindings": 162
   },
   "findings_record": {
     "findings": {
@@ -119,11 +350,6 @@
       "S7": "Bind this assembled revision and PDF with computed member digests and a successor receipt.",
       "history": "Retain prior public artifacts and records with their original scope."
     }
-  },
-  "guard_validation": {
-    "scientific_contract": "PASS",
-    "semantic_deletion_checks": 97,
-    "semantic_deletion_checks_status": "PASS"
   },
   "member_disposition": {
     ".gitignore": {
@@ -199,58 +425,62 @@
       "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "PORTABILITY-NOTE.md": {
-      "baseline": {
-        "bytes": 2530,
-        "sha256": "f5a96d75ceb46122b6f08990926a9e489fc91ce96015c2c530480a47d8c473c9"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "added",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "README.md": {
-      "baseline": {
-        "bytes": 12404,
-        "sha256": "fca027906870d887efbab94727e32dd46180136c9e3971f4cfe768f7a7972e1f"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "changed",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "REPRODUCE-DIAGNOSTICS.md": {
-      "baseline": {
-        "bytes": 2893,
-        "sha256": "4e4db38bd38b8a655ae8f2d80f0979970db3d8a61974c61b8b7343dadb798515"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "added",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "REPRODUCE.md": {
-      "baseline": {
-        "bytes": 3147,
-        "sha256": "c3fa8b50bf00a56a23bc9e74d0657fac8e28730ec53e509ae93ad71c65dd953b"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "changed",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "REPUBLICATION-3-NOTE.md": {
-      "baseline": {
-        "bytes": 2014,
-        "sha256": "e6ed32ea3f3230cce47e114d87d44a54cdfaef99e8f19f340322d0bcf02ca32d"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "added",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "SUPPLEMENT.md": {
-      "baseline": {
-        "bytes": 56541,
-        "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "L1-L4",
+        "S7"
+      ],
+      "status": "added",
+      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
     },
     "audit/PUBLIC-PACKAGING.json": {
       "baseline": {
@@ -767,22 +997,18 @@
       "why": "Retain the exact historical receipt binding."
     },
     "code/strategy_diagnostics.py": {
-      "baseline": {
-        "bytes": 13745,
-        "sha256": "14c25cc62b89e2ae21acf0d9b53e05708495f3aaf746a9fb845b7a9275506b7a"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "code/strategy_influence.py": {
-      "baseline": {
-        "bytes": 3748,
-        "sha256": "8c97a8df91782e4699effc55a8c5792095834e8cae00bb5f7dfe195e98b9a19c"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "code/verify_crosspath_gate.py": {
       "baseline": {
@@ -1109,49 +1335,39 @@
       "why": "Retain the exact historical receipt binding."
     },
     "evidence/ABLATION-REPLICATES.npz": {
-      "baseline": {
-        "bytes": 604405,
-        "sha256": "8b5ebce66140973f49b9fc08c544692811189214c9884358a08ef968ea68cf03"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "evidence/ABLATION-RESULTS.json": {
-      "baseline": {
-        "bytes": 58760,
-        "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "evidence/diagnostics.json": {
-      "baseline": {
-        "bytes": 460390,
-        "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "evidence/influence.json": {
-      "baseline": {
-        "bytes": 76657,
-        "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "evidence/replicates.npz": {
-      "baseline": {
-        "bytes": 5220806,
-        "sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "exp115/AMENDMENT-1-post-run-receipt-verifier.md": {
       "baseline": {
@@ -1469,13 +1685,13 @@
       "why": "Retain the exact historical receipt binding."
     },
     "paper/README.md": {
-      "baseline": {
-        "bytes": 1057,
-        "sha256": "c7fbdf76bb20f901cb5e2d3286ff1329403adead7483c5cedd3e38c588581e95"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "changed",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "paper/RELEASE-RECEIPT-20260914.json": {
       "baseline": {
@@ -1496,15 +1712,6 @@
       "why": "Retain the exact historical receipt binding."
     },
     "paper/RELEASE-RECEIPT-20260915-2245.json": {
-      "baseline": {
-        "bytes": 102689,
-        "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
-    },
-    "paper/RELEASE-RECEIPT-ARTIFACT.json": {
       "findings": [
         "S1",
         "S5",
@@ -1523,76 +1730,70 @@
       "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "paper/SUBMISSION-VERSION.md": {
-      "baseline": {
-        "bytes": 425,
-        "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "added",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "paper/SUPPLEMENT.md": {
-      "baseline": {
-        "bytes": 56541,
-        "sha256": "7780e3fbe062cd93262a7ddf165566206e312b4c8a749e251ae95139847a9229"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "L1-L4",
+        "S7"
+      ],
+      "status": "changed",
+      "why": "Use the supplied audited prose and S4a\u2013S4e supplement; submission changes only the artifact locator and removes the claim-free withdrawn-reference fragment."
     },
     "paper/UPLOAD-CHECKLIST.md": {
-      "baseline": {
-        "bytes": 349,
-        "sha256": "dde6a473b4af421dfa93e0bef93faa2e8f5895a31753415e862120bbfaf14efa"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1",
+        "S5",
+        "S7"
+      ],
+      "status": "changed",
+      "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
     },
     "paper/evidence/ABLATION-RESULTS.json": {
-      "baseline": {
-        "bytes": 58760,
-        "sha256": "41ffd32fa5bd446e0f7777d0d6d70b93b0153779b432516783216558f58fa8a3"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/evidence/diagnostics.json": {
-      "baseline": {
-        "bytes": 460390,
-        "sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "paper/evidence/influence.json": {
-      "baseline": {
-        "bytes": 76657,
-        "sha256": "b3508bdf13f0929e7e8c9532d65e9fedc31c3158334fdb7743a5787614592759"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "S1"
+      ],
+      "status": "added",
+      "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
     },
     "paper/figs/floor.pdf": {
-      "baseline": {
-        "bytes": 18556,
-        "sha256": "9b4e6db52f2efae780d58e0e15545d9f7c6060eb3cd775158f3346d253d99cf4"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "changed",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/figs/forest.pdf": {
-      "baseline": {
-        "bytes": 18953,
-        "sha256": "6921bd0a6184bf47e862bf0444748e11f630e3401f7dd6c3f1893ad638b24454"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "changed",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/figures_m1.py": {
       "baseline": {
@@ -1605,11 +1806,10 @@
     },
     "paper/main.pdf": {
       "findings": [
-        "S7",
-        "L1-L4"
+        "history"
       ],
       "status": "changed",
-      "why": "Bind the actual PDF, supplied figures or bibliography style supporting five-page and nine-point compliance; artifact PDF is explicitly inherited."
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/main.tex": {
       "findings": [
@@ -1705,76 +1905,60 @@
       "why": "Retain the exact historical receipt binding."
     },
     "paper/revision-validation/anonymous-release-audit.txt": {
-      "baseline": {
-        "bytes": 2511,
-        "sha256": "462074d0ad8d0e08af1b445589db5561ef20a5540201278b0c21ce0d6a6e0e38"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/final-numbers.txt": {
-      "baseline": {
-        "bytes": 193,
-        "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/final-public-numbers.txt": {
-      "baseline": {
-        "bytes": 193,
-        "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/final-public-semantic.txt": {
-      "baseline": {
-        "bytes": 266,
-        "sha256": "540584a67b4952f40e63992ba25c641473a18e8a7a72dd4ffb9269e7a9018b4a"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/final-semantic.txt": {
-      "baseline": {
-        "bytes": 98,
-        "sha256": "6b75eb7141abf732ce63888ffd50b91e41dd50c021ecf687295da16951e84869"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/pdf-profile.json": {
-      "baseline": {
-        "bytes": 771,
-        "sha256": "78deb546d43e2999ef9e58ed09e61e2bb89a699b30a50a1b772537c38245b8e2"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/pdffonts.txt": {
-      "baseline": {
-        "bytes": 1410,
-        "sha256": "be3fde6a75a6ac78275893eb4fe8f97b1e4817b8a19e9365606d3a072465e037"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/revision-validation/public-readback.json": {
-      "baseline": {
-        "bytes": 1976,
-        "sha256": "66dd42259408f7bed9b1e53a6c42ad97e925d7bb1fcdd1ab8ac075ea49904c83"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "added",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "paper/semantic_obligations.json": {
       "findings": [
@@ -1799,13 +1983,11 @@
       "why": "Retain the exact historical receipt binding."
     },
     "paper/test_semantic_guards.py": {
-      "baseline": {
-        "bytes": 2271,
-        "sha256": "841964bcc96720545b22a6f02d649220755e0382afa2397e6e48682d77045f7d"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "changed",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     },
     "plans/COHERENT-JACKKNIFE-DIAGNOSTIC.md": {
       "baseline": {
@@ -1952,13 +2134,11 @@
       "why": "Retain the exact historical receipt binding."
     },
     "verify_release.py": {
-      "baseline": {
-        "bytes": 4355,
-        "sha256": "bb5101ea446be714aadee8439ae452fd6e36030fc3c6b5e0752bb9c7e508e629"
-      },
-      "findings": [],
-      "status": "unchanged",
-      "why": "Retain the exact historical receipt binding."
+      "findings": [
+        "history"
+      ],
+      "status": "changed",
+      "why": "Retain the observed public base bytes; any difference from the older receipt predates this assembly."
     }
   },
   "observed_public_base": {
@@ -2022,8 +2202,8 @@
       },
       "code/check_numbers.py": {
         "current": {
-          "bytes": 74481,
-          "sha256": "d7b85fce7f1ae258f24b0d25b28a58727f38b06ee1c369dcf5aa0f5fdbf2b521"
+          "bytes": 74728,
+          "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
         },
         "previous": {
           "bytes": 72789,
@@ -2121,14 +2301,6 @@
         "previous": null,
         "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
       },
-      "paper/RELEASE-RECEIPT-ARTIFACT.json": {
-        "current": {
-          "bytes": 127660,
-          "sha256": "7ef6c591ae62a0152dd89b8c98445ea21f87bd6d6b2dd8a549f025f0565bbd5c"
-        },
-        "previous": null,
-        "why": "Document current reproduction and publication scope or retain the exact predecessor receipt; compute current payload bindings without rewriting history."
-      },
       "paper/SUBMISSION-VERSION.md": {
         "current": {
           "bytes": 425,
@@ -2184,21 +2356,10 @@
         },
         "why": "Publish the exact merged portable producer, regenerated JSON or distinct original replicate archive; preserve scientific values and both evidence locations."
       },
-      "paper/main.pdf": {
-        "current": {
-          "bytes": 181249,
-          "sha256": "d6de194bb27150874bea6b11ae4231a51e4b430d3e0b24f49800707e0e9d3db5"
-        },
-        "previous": {
-          "bytes": 179951,
-          "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
-        },
-        "why": "Bind the actual PDF, supplied figures or bibliography style supporting five-page and nine-point compliance; artifact PDF is explicitly inherited."
-      },
       "paper/main.tex": {
         "current": {
-          "bytes": 21654,
-          "sha256": "560bd07ec0186799d4835bc2659a50fba124d5bacacef11fc31a53e43ebd3d33"
+          "bytes": 21691,
+          "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
         },
         "previous": {
           "bytes": 21090,
@@ -2208,8 +2369,8 @@
       },
       "paper/refs.bib": {
         "current": {
-          "bytes": 9052,
-          "sha256": "011648852e651cce34dc49b5ad12ddcbc69a4fc41236e2db4f787da9c55a8d44"
+          "bytes": 9290,
+          "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
         },
         "previous": {
           "bytes": 9661,
@@ -2219,8 +2380,8 @@
       },
       "paper/semantic_obligations.json": {
         "current": {
-          "bytes": 25104,
-          "sha256": "fea93bab395fc9dbc92b2f3847346a7371e9c441f82c1f811c0d03690b0cda09"
+          "bytes": 25416,
+          "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
         },
         "previous": {
           "bytes": 20510,
@@ -2231,168 +2392,17 @@
     },
     "commit": "886824e172a70cec4089e99173d5b0eddba460fe"
   },
-  "pdf_validation": {
-    "artifact_hash_rendered": "4ee170b035f46097832f0973aff534418fc54157",
-    "fonts": [
-      {
-        "name": "IKIUHB+NimbusRomNo9L-Medi",
-        "type": "Type1",
-        "xref": 4
-      },
-      {
-        "name": "OZUSPY+NimbusRomNo9L-ReguItal",
-        "type": "Type1",
-        "xref": 5
-      },
-      {
-        "name": "LQVCRT+NimbusRomNo9L-Regu",
-        "type": "Type1",
-        "xref": 6
-      },
-      {
-        "name": "SJISBO+NimbusRomNo9L-MediItal",
-        "type": "Type1",
-        "xref": 7
-      },
-      {
-        "name": "VMUPRM+CMSY10",
-        "type": "Type1",
-        "xref": 8
-      },
-      {
-        "name": "ZRTPKM+CMR10",
-        "type": "Type1",
-        "xref": 9
-      },
-      {
-        "name": "TQGSDU+CMMI10",
-        "type": "Type1",
-        "xref": 10
-      },
-      {
-        "name": "ASTOTA+CMMI9",
-        "type": "Type1",
-        "xref": 16
-      },
-      {
-        "name": "VFPBIT+CMR9",
-        "type": "Type1",
-        "xref": 17
-      },
-      {
-        "name": "JZUIBM+CMSY9",
-        "type": "Type1",
-        "xref": 22
-      },
-      {
-        "name": "DYWJSP+DejaVuSans",
-        "type": "Type0",
-        "xref": 24
-      },
-      {
-        "name": "GGEQPZ+DejaVuSans",
-        "type": "Type0",
-        "xref": 25
-      },
-      {
-        "name": "FDBKIH+NimbusMonL-Regu",
-        "type": "Type1",
-        "xref": 41
-      }
-    ],
-    "latex_warnings": 0,
-    "minimum_rendered_pt": 9.0001802444458,
-    "overfull_boxes": 0,
-    "page_4_visual_review": "Body ends on page 4; full artifact hash is legible and fits the column.",
-    "page_5_content": "References heading and entries 1-37 only; extracted text and rendered page visually inspected.",
-    "page_5_reference_numbers": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37
-    ],
-    "pages": 5,
-    "pdf_bytes": 181249,
-    "pdf_sha256": "d6de194bb27150874bea6b11ae4231a51e4b430d3e0b24f49800707e0e9d3db5",
-    "per_page": [
-      {
-        "maximum_rendered_pt": 11.9552001953125,
-        "minimum_rendered_pt": 9.065999984741211,
-        "page": 1,
-        "text_spans": 478
-      },
-      {
-        "maximum_rendered_pt": 9.962599754333496,
-        "minimum_rendered_pt": 9.065999984741211,
-        "page": 2,
-        "text_spans": 642
-      },
-      {
-        "maximum_rendered_pt": 9.962599754333496,
-        "minimum_rendered_pt": 9.0001802444458,
-        "page": 3,
-        "text_spans": 555
-      },
-      {
-        "maximum_rendered_pt": 9.962599754333496,
-        "minimum_rendered_pt": 9.962599754333496,
-        "page": 4,
-        "text_spans": 439
-      },
-      {
-        "maximum_rendered_pt": 9.065999984741211,
-        "minimum_rendered_pt": 9.065999984741211,
-        "page": 5,
-        "text_spans": 592
-      }
-    ],
-    "status": "PASS",
-    "type_3_fonts": 0
-  },
-  "phase": "submission",
+  "phase": "artifact",
   "predecessor": {
     "binding": {
-      "bytes": 127660,
-      "sha256": "7ef6c591ae62a0152dd89b8c98445ea21f87bd6d6b2dd8a549f025f0565bbd5c"
+      "bytes": 102689,
+      "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
     },
-    "commit": "4ee170b035f46097832f0973aff534418fc54157",
-    "path": "paper/RELEASE-RECEIPT-ARTIFACT.json"
+    "commit": "a171aad9bd949fdc92c67344c51153f1c69217dd",
+    "path": "paper/RELEASE-RECEIPT-20260915-2245.json"
   },
   "publication": {
-    "artifact_commit": "4ee170b035f46097832f0973aff534418fc54157",
+    "artifact_commit": null,
     "new_branch": "m1-republished-3-20260916-0235",
     "push_attempted": false,
     "remote": "git@github.com:rvirgilli/asvspoof2021-df-clustered-uncertainty.git",
@@ -2538,8 +2548,8 @@
       "sha256": "6728375eec9674300806eecb85431a861ec2771823e60fd1899ad4a9b01bc5e5"
     },
     "code/check_numbers.py": {
-      "bytes": 74481,
-      "sha256": "d7b85fce7f1ae258f24b0d25b28a58727f38b06ee1c369dcf5aa0f5fdbf2b521"
+      "bytes": 74728,
+      "sha256": "4d89428efa51274c2fd10295a9494972f78d00d2520185485aa5dd8519884ca5"
     },
     "code/check_tie_safety.py": {
       "bytes": 2793,
@@ -3009,10 +3019,6 @@
       "bytes": 102689,
       "sha256": "8f265b3bc78e23d65e6e7a1953cb1465977f3a7c53b2234d5a752971113c435b"
     },
-    "paper/RELEASE-RECEIPT-ARTIFACT.json": {
-      "bytes": 127660,
-      "sha256": "7ef6c591ae62a0152dd89b8c98445ea21f87bd6d6b2dd8a549f025f0565bbd5c"
-    },
     "paper/SUBMISSION-VERSION.md": {
       "bytes": 425,
       "sha256": "6eaf17fdea0ade46862dc9f3cf3b762b99fcfbc5e50a833a9be3c1df1dc0245e"
@@ -3050,16 +3056,16 @@
       "sha256": "b3d3b92e5ada46cf86b971365c6d928d8315348803d91c98a1c5dc5b1eacb13c"
     },
     "paper/main.pdf": {
-      "bytes": 181249,
-      "sha256": "d6de194bb27150874bea6b11ae4231a51e4b430d3e0b24f49800707e0e9d3db5"
+      "bytes": 179951,
+      "sha256": "9ef8cbd90342801c59ab50dcc926051dff1c58a6187f0bb7a03bfef5fad0eca5"
     },
     "paper/main.tex": {
-      "bytes": 21654,
-      "sha256": "560bd07ec0186799d4835bc2659a50fba124d5bacacef11fc31a53e43ebd3d33"
+      "bytes": 21691,
+      "sha256": "70417f92632469bbdc71cff986d0a6fb2ba5befb0342a4d36a98d910903e06ce"
     },
     "paper/refs.bib": {
-      "bytes": 9052,
-      "sha256": "011648852e651cce34dc49b5ad12ddcbc69a4fc41236e2db4f787da9c55a8d44"
+      "bytes": 9290,
+      "sha256": "a013bcf56a5367e1f514f9f16d35a04778202c50fa836d39dccf5bb68f4c27b6"
     },
     "paper/release-validation/check_numbers.stderr.txt": {
       "bytes": 0,
@@ -3126,8 +3132,8 @@
       "sha256": "66dd42259408f7bed9b1e53a6c42ad97e925d7bb1fcdd1ab8ac075ea49904c83"
     },
     "paper/semantic_obligations.json": {
-      "bytes": 25104,
-      "sha256": "fea93bab395fc9dbc92b2f3847346a7371e9c441f82c1f811c0d03690b0cda09"
+      "bytes": 25416,
+      "sha256": "bb6bc5ba228866f0c562ed1c3ff90cc8ca66c0b3cedc67a4071ca684e297dc78"
     },
     "paper/spconf.sty": {
       "bytes": 8798,
@@ -3207,34 +3213,6 @@
     }
   },
   "schema": "m1-republication-receipt-v1",
-  "semantic_retirement": {
-    "artifact": "4ee170b035f46097832f0973aff534418fc54157",
-    "baseline": "../merged/.textfix-baseline/semantic_obligations.json",
-    "baseline_obligations_retained": 76,
-    "obligations_after": 97,
-    "obligations_before": 98,
-    "reason": "Retirement of a sentence fragment carrying no scientific claim; no scientific check weakened.",
-    "receipt_copy": "Byte-identical copy of artifact RELEASE-RECEIPT-FINAL.json",
-    "retained_categories": [
-      "identity perturbations",
-      "speaker-adversarial training",
-      "speaker/synthesizer familiarity"
-    ],
-    "retired_check": "# S5: retain the withdrawal status of the newly cited neighboring proposal.\nsnap_entry = re.search(r\"@article\\{jung26snap,.*?\\n[^\\S\\n]*[^\\n]*note=\\{Withdrawn\\}\\}\", bib, re.S)\nif not snap_entry:\n    fail(\"BIB SNAP must be identified as withdrawn\")\n",
-    "retired_obligation": {
-      "id": "speaker_interventions_snap_withdrawn",
-      "match": "Identity perturbations \\cite{dar26}, speaker-adversarial training \\cite{dao26}, speaker-subspace projection (SNAP, withdrawn) \\cite{jung26snap} and speaker/synthesizer familiarity \\cite{hong25twinshift} address related sensitivities.",
-      "section": "Related work"
-    },
-    "source_files": [
-      "code/check_numbers.py",
-      "paper/main.tex",
-      "paper/refs.bib",
-      "paper/semantic_obligations.json"
-    ],
-    "status": "PASS",
-    "unicode_serialization": "Restored original escapes; no unrelated byte changes."
-  },
   "source_delivery_members": {
     ".textfix-baseline/SUPPLEMENT.md": {
       "bytes": 56376,

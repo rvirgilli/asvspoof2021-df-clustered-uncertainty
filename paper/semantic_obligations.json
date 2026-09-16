@@ -205,7 +205,7 @@
   {
    "id": "release_locator",
    "section": "Discussion",
-   "match": "artifact version \\texttt{4e2ad2fcf080} at \\texttt{github.com/\\allowbreak rvirgilli/\\allowbreak asvspoof2021-\\allowbreak df-clustered-\\allowbreak uncertainty}"
+   "match": "artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\texttt{github.com/\\allowbreak rvirgilli/\\allowbreak asvspoof2021-\\allowbreak df-clustered-\\allowbreak uncertainty}"
   },
   {
    "id": "asv5_resampling_law",
@@ -500,11 +500,6 @@
    "id": "composition_control_replicates",
    "section": "Experiments",
    "match": "Using 1,000 retained replicates, a constrained PW arm resamples within each bona-fide source or spoof stratum, conditions on retained class support, and restores each source and stratum mass to its observed value; it also separates 18/28 and 0/6 organizer pairs."
-  },
-  {
-   "id": "speaker_interventions_snap_withdrawn",
-   "section": "Related work",
-   "match": "Identity perturbations \\cite{dar26}, speaker-adversarial training \\cite{dao26}, speaker-subspace projection (SNAP, withdrawn) \\cite{jung26snap} and speaker/synthesizer familiarity \\cite{hong25twinshift} address related sensitivities."
   },
   {
    "id": "fixed_score_intervention_distinction",

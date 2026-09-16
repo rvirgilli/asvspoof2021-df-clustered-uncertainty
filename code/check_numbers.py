@@ -1292,10 +1292,6 @@ for pattern, why in (
 
 # 10. Bibliography closure.
 bib = (PAPER / "refs.bib").read_text()
-# S5: retain the withdrawal status of the newly cited neighboring proposal.
-snap_entry = re.search(r"@article\{jung26snap,.*?\n[^\S\n]*[^\n]*note=\{Withdrawn\}\}", bib, re.S)
-if not snap_entry:
-    fail("BIB SNAP must be identified as withdrawn")
 bib_keys = set(re.findall(r"@\w+\{([^,]+),", bib))
 cited = {key.strip() for match in re.findall(r"\\cite\{([^}]*)\}", TEX) for key in match.split(",")}
 for key in sorted(bib_keys - cited):
