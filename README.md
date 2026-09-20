@@ -1,7 +1,7 @@
 # When Resampling Changes Paired Detector Comparisons on ASVspoof 2021 DF
 
 This revision contains the audited manuscript and supplement, portable diagnostic
-drivers, regenerated evidence JSONs and both replicate archives. The reconsideration artifact and submission are prepared as new commits on the existing branch; existing tags stay unchanged. See [revision details](REVISION-CHANGES.md) and the payload [receipt](paper/RELEASE-RECEIPT-REVISION-ARTIFACT.json).
+drivers, regenerated evidence JSONs and both replicate archives. The reconsideration artifact and submission are prepared as new commits on the existing branch; existing tags stay unchanged. See [revision details](REVISION-CHANGES.md) and the payload [receipt](paper/RELEASE-RECEIPT-REVISION-FINAL.json).
 
 - [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.

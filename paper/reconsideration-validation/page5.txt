@@ -1,0 +1,63 @@
+                       9. REFERENCES                                       Bernoulli, vol. 6, 2000.
+                                                                      [19] Art B. Owen, “The pigeonhole bootstrap,” Ann. Appl. Stat.,
+ [1] Sandipana Dowerah, Atharva Kulkarni, Ajinkya Kulkarni,                vol. 1, 2007.
+     et al., “Speech DF Arena: a leaderboard for speech deep-         [20] Kylie Anglin, “Estimating uncertainty in classifier perfor-
+     fake detection models,” IEEE Open J. Signal Process., vol. 7,         mance with applications to large language models and nested
+     pp. 73–81, 2026.                                                      data,” arXiv:2606.26422, 2026.
+ [2] Héctor Delgado, Massimiliano Todisco, Md Sahidullah, et al.,    [21] Chin Yuen Kwok et al., “Bona fide cross testing reveals weak
+     “ASVspoof 2017 Version 2.0: meta-data analysis and baseline           spot in audio deepfake detection systems,” in Proc. Inter-
+     enhancements,” in Proc. Odyssey, 2018, pp. 296–303.                   speech, 2025, arXiv:2509.09204.
+ [3] Samy Bengio and Johnny Mariéthoz, “A statistical signifi-       [22] Héctor Delgado, Giorgio Ramondetti, Emanuele Dalmasso,
+     cance test for person authentication,” in Proc. Odyssey, 2004.        et al., “On deepfake voice detection—it’s all in the presen-
+ [4] Junichi Yamagishi, Xin Wang, Massimiliano Todisco, et al.,            tation,” in Proc. ICASSP, 2026.
+     “ASVspoof 2021: accelerating progress in spoofed and deep-       [23] Samuel Pagon, Yixuan Shen, et al., “What do deepfake bench-
+     fake speech detection,” in Proc. ASVspoof Challenge Work-             marks measure? An audit using frozen self-supervised repre-
+     shop, 2021, pp. 47–54.                                                sentations,” arXiv:2606.26384, 2026.
+ [5] Xuechen Liu, Xin Wang, Md Sahidullah, et al., “ASVspoof          [24] Gabriel Pı̂rlogeanu, Adriana Stan, and Horia Cucu, “Un-
+     2021: towards spoofed and deepfake speech detection in the            derstanding the strengths and weaknesses of SSL models for
+     wild,” IEEE/ACM Trans. Audio, Speech, Language Process.,              audio deepfake model attribution,” in Proc. ICASSP, 2026,
+     vol. 31, 2023.                                                        arXiv:2603.13488.
+ [6] Xin Wang, Héctor Delgado, Nicholas Evans, et al.,               [25] Vojtěch Staněk, Eva Trnovská, Kamil Malinka, et al., “Ethical
+     “ASVspoof 5: evaluation of spoofing, deepfake, and adversar-          and technical limits of deepfake speech datasets,” in Proc.
+     ial attack detection using crowdsourced speech,” IEEE Trans.          Interspeech, 2026.
+     Audio, Speech, Language Process., 2026, arXiv:2601.03944.        [26] Daniyal Kabir Dar and Arun Ross, “Probing speaker identity
+ [7] Hashim Ali, Nithin Sai Adupa, et al., “A SUPERB-style                 sensitivity in audio deepfake detectors,” arXiv:2607.21820,
+     benchmark of self-supervised speech models for audio deep-            2026.
+     fake detection,” in Proc. ICASSP, 2026.                          [27] Anh-Tuan Dao, Driss Matrouf, and Nicholas Evans, “Assess-
+ [8] Yuankun Xie, Haonan Cheng, Jiayi Zhou, et al., “AT-ADD: a             ing the impact of speaker identity in speech spoofing detec-
+     benchmark and challenge for robust and all-type audio deep-           tion,” arXiv:2602.20805, 2026.
+     fake detection,” arXiv:2608.23437, 2026.                         [28] Jiyoung Hong, Yoonseo Chung, Seungyeon Oh, et al., “Twin-
+ [9] Octavian Pascu, Adriana Stan, Dan Oneata, et al., “Towards            Shift: benchmarking audio deepfake detection across synthe-
+     generalisable and calibrated audio deepfake detection with            sizer and speaker shifts,” arXiv:2510.23096, 2025.
+     self-supervised representations,” in Proc. Interspeech, 2024,    [29] Diaa Al Mohamad, Jelle J. Goeman, et al., “Simultaneous
+     pp. 4828–4832.                                                        confidence intervals for ranks,” arXiv:1812.05507, 2019.
+[10] Juan M. Martı́n-Doñas, Aitor Álvarez, Eros Rosello, et al.,    [30] Art B. Owen and Dean Eckles, “Bootstrapping data arrays of
+     “Exploring self-supervised embeddings and synthetic data              arbitrary order,” Ann. Appl. Stat., vol. 6, no. 3, pp. 895–927,
+     augmentation for robust audio deepfake detection,” in Proc.           2012.
+     Interspeech, 2024, pp. 2085–2089.                                [31] José Luis Montiel Olea and Mikkel Plagborg-Møller, “Simul-
+[11] Avishai Weizman, Yehuda Ben-Shimol, and Itshak Lapidot,               taneous confidence bands: theory, implementation, and an ap-
+     “ASVspoof2019 vs. ASVspoof5: assessment and compari-                  plication to SVARs,” J. Appl. Econom., vol. 34, 2019.
+     son,” in Proc. Interspeech, 2025, pp. 4568–4572.                 [32] Yang Xiao and Rohan Kumar Das, “XLSR-Mamba: a dual-
+[12] Xin Wang and Junichi Yamagishi, “A comparative study on               column bidirectional state space model for spoofing attack de-
+     recent neural spoofing countermeasures for synthetic speech           tection,” IEEE Signal Process. Lett., 2025.
+     detection,” in Proc. Interspeech, 2021.                          [33] Qishan Zhang, Shuangbing Wen, and Tao Hu, “Audio deep-
+[13] Norman Poh, Alvin Martin, and Samy Bengio, “Performance               fake detection with self-supervised XLS-R and SLS classi-
+     generalization in biometric authentication using joint user-          fier,” in Proc. ACM Multimedia, 2024, pp. 6765–6773.
+     specific and sample bootstraps,” IEEE Trans. Pattern Anal.       [34] Eros Rosello et al., “A conformer-based classifier for variable-
+     Mach. Intell., vol. 29, 2007.                                         length utterance processing in anti-spoofing,” in Proc. Inter-
+[14] Jin Chu Wu, Alvin F. Martin, et al., “The impact of data              speech, 2023.
+     dependence on speaker recognition evaluation,” IEEE/ACM          [35] Hemlata Tak et al., “Automatic speaker verification spoofing
+     Trans. Audio, Speech, Language Process., vol. 25, 2017.               and deepfake detection using wav2vec 2.0 and data augmen-
+[15] Jin Chu Wu, Alvin F. Martin, Craig S. Greenberg, et al., “Sig-        tation,” in Proc. Odyssey, 2022.
+     nificance test in speaker recognition data analysis with data    [36] Jee-Weon Jung, Yihan Wu, Xin Wang, et al., “SpoofCeleb:
+     dependency,” Tech. Rep. NISTIR 7884, National Institute of            Speech deepfake detection and SASV in the wild,” IEEE Open
+     Standards and Technology, 2012.                                       Journal of Signal Processing, vol. 6, pp. 68–77, 2025.
+[16] Jin Chu Wu and Raghu N. Kacker, “Statistical analysis for
+     speaker recognition evaluation with data dependence and three
+     score distributions,” IEEE/ACM Trans. Audio, Speech, Lan-
+     guage Process., vol. 32, pp. 1–14, 2024.
+[17] A. Colin Cameron, Jonah B. Gelbach, and Douglas L. Miller,
+     “Robust inference with multiway clustering,” J. Bus. Econ.
+     Stat., vol. 29, no. 2, pp. 238–249, 2011.
+[18] Peter McCullagh, “Resampling and exchangeable arrays,”
+

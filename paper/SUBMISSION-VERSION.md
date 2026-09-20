@@ -1,7 +1,10 @@
-# Reconsideration artifact preparation stage
+# Reconsideration submission
 
-This commit archives the revised source, supplement and independently verified
-Monte Carlo evidence. The PDF is inherited byte-for-byte from submission 8813962
-and is not the revised submission PDF. The next commit on this branch will cite
-this artifact commit and rebuild the manuscript. Historical validation and
-receipts describe their named revisions. No tag is moved and no push is made.
+Artifact commit: `d3310baf83f8a1f2e64e0159c5cedf38e53366e0`.
+
+This submission rebuilds `main.pdf` after writing that immutable artifact commit
+into the Artifact paragraph. The PDF has five pages, with references only on
+page five; acknowledgment and ethics remain on page four. The exact PDF checks
+are recorded in `reconsideration-validation/pdf-audit.json`.
+The artifact commit retains the predecessor PDF only for historical provenance.
+No commit was amended, no tag moved, and no push performed.

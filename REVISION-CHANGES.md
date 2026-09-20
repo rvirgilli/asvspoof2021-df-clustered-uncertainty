@@ -508,7 +508,7 @@ Before:
 After:
 
 ```tex
-\textbf{Artifact.} Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact. Artifact version \texttt{4ee170b035f46097832f0973aff534418fc54157} at \mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.
+\textbf{Artifact.} Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact. Artifact version \texttt{d3310baf83f8a1f2e64e0159c5cedf38e53366e0} at \mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.
 ```
 
 ### 31. MAJOR-3 fresh-stream verification
@@ -526,3 +526,7 @@ After:
 ```tex
 This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability. Five fresh 5,000-draw runs for each of the trial, speaker-only and joint arms also preserve every recorded separation indicator.
 ```
+
+## Commit stages
+
+The immutable artifact is `d3310baf83f8a1f2e64e0159c5cedf38e53366e0`. The submission is the subsequent commit containing this file and the rebuilt PDF; the external REVISION-NOTE.md records its full hash after commit creation.

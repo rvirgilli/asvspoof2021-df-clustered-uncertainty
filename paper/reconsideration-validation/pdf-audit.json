@@ -1,0 +1,19 @@
+{
+  "pdf_sha256": "dfb2e551ed5a561f7698a1e9eb31fbb8c2be0bade142469419a2c1745c0a7bc7",
+  "tex_sha256": "414efd6ad91c1552c54bc8f585a1e90cf8e26388dfe1d0ca0441a16e243c8b1a",
+  "page_count": 5,
+  "overfull_boxes": 0,
+  "undefined_reference_or_citation_warnings": 0,
+  "minimum_font_size_points": 9.0001802444458,
+  "type3_fonts": 0,
+  "acknowledgment_page": [
+    4
+  ],
+  "ethics_page": [
+    4
+  ],
+  "page5_references_only": true,
+  "extracted_url_line": "github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty.",
+  "artifact_commit": "d3310baf83f8a1f2e64e0159c5cedf38e53366e0",
+  "layout_extracted_url_line": "group-resampling bands for the same comparison family.          github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty."
+}
