@@ -652,8 +652,8 @@
     "sha256": "5818afc4a9b38beef988fca0d8a34218f5c86a12cba29da9a9b05c214dafabfd"
   },
   "paper/OBLIGATION-FIX5.json": {
-    "bytes": 25112,
-    "sha256": "d3da9d1e9cb1989a9bcfb4847ff55a8e9a3fe6ed965b2e1151ba7f98038c2225"
+    "bytes": 26488,
+    "sha256": "949e6a24c2417e73326a3ff545236a9002f1890800a1e9714a921ac7dfb07ee3"
   },
   "paper/OBLIGATION-REVISION.json": {
     "bytes": 35557,
@@ -699,6 +699,10 @@
     "bytes": 122084,
     "sha256": "0107309504596157245b14e4cfa452712aa102837bbeda57c806772488118b47"
   },
+  "paper/RELEASE-RECEIPT-FIX5-FINAL.json": {
+    "bytes": 123041,
+    "sha256": "0975bbac86d1306e1773e3431885c591cac39226149551587840ce4597ca0745"
+  },
   "paper/RELEASE-RECEIPT-REVISION-ARTIFACT.json": {
     "bytes": 102123,
     "sha256": "1321ef7c8a79d0fa0146d8b06ee80a7884888593e27986420174e8e4315ac0ca"
@@ -716,8 +720,8 @@
     "sha256": "72ab45398bcc2c5e2a154bc426d9e57d02465168c8d83f1ebb6cc3c2d57e0618"
   },
   "paper/SUBMISSION-VERSION.md": {
-    "bytes": 994,
-    "sha256": "b38f936bba09fbfb3b7b78cf5222cf6263b566354df0eb46ade0723b0508cff9"
+    "bytes": 1279,
+    "sha256": "7a36e15a90eb96e927be65499e6221cab0bd32444140524ae63b061457849fc2"
   },
   "paper/SUPPLEMENT.md": {
     "bytes": 67656,
@@ -831,6 +835,22 @@
     "bytes": 267,
     "sha256": "a3feec0d445c3d5d290185552417253f6a510947690fdaa2ba1e3951d5ad50ae"
   },
+  "paper/fix5-validation/clean-reproduction.json": {
+    "bytes": 719,
+    "sha256": "ec481cf21a400c67f2996191206c51524f14de558ca7816bb19861b7f1fad819"
+  },
+  "paper/fix5-validation/latex-build.txt": {
+    "bytes": 4718,
+    "sha256": "b73608eeaa2580230d696e3f96a261784136431fb3afb6dafffc09d46e082ac3"
+  },
+  "paper/fix5-validation/main-layout.txt": {
+    "bytes": 31891,
+    "sha256": "cc4a3146e01ba2db8a37f2ccdd2109c2b40fac51f491237049e7b106362b3b08"
+  },
+  "paper/fix5-validation/main.txt": {
+    "bytes": 24799,
+    "sha256": "087881e8f38701d5fa6c515b1827faab0fc259eb93dc1962c05b09a94fa2ae69"
+  },
   "paper/fix5-validation/package-check_numbers.txt": {
     "bytes": 193,
     "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
@@ -838,6 +858,26 @@
   "paper/fix5-validation/package-test_semantic_guards.txt": {
     "bytes": 267,
     "sha256": "0ad83d68276842cd1fc25187fc2a96e44ac08941617f4e53e0bff8c218b58d32"
+  },
+  "paper/fix5-validation/pdf-audit.json": {
+    "bytes": 5436,
+    "sha256": "6865bccaa3aa8199ae44e72becfd6044330862baf33a4e1a3a7bfbf583bda181"
+  },
+  "paper/fix5-validation/pdffonts.txt": {
+    "bytes": 1316,
+    "sha256": "a4dfee458869e619c16774ce5e5f988a5c3aa954a7caa6ac5859454498f60de2"
+  },
+  "paper/fix5-validation/pin-check_numbers.txt": {
+    "bytes": 193,
+    "sha256": "056d90e059c884bf7565a160923a98a8a2cb87d6684706fa6e68fbe493127818"
+  },
+  "paper/fix5-validation/pin-test_semantic_guards.txt": {
+    "bytes": 267,
+    "sha256": "953da565c61c62d324e8db0bdf4f0c511752437cc993ee3ca4fce991e1e55cef"
+  },
+  "paper/fix5-validation/prior-art.json": {
+    "bytes": 542,
+    "sha256": "07a352155755b13c7b072cf02d079e60dc448180913ad4253ffcc5e8fca77a63"
   },
   "paper/fix5-validation/producer-check_numbers.txt": {
     "bytes": 193,
@@ -868,12 +908,12 @@
     "sha256": "61beffe17f69fa8cfbe765014d5d77fac11d0be4d40a1904a00fd2b7f39f455c"
   },
   "paper/main.pdf": {
-    "bytes": 166075,
-    "sha256": "c6113592f1af790d205b33ac585a0ea29cf89e019ee7eab480f84b192f873a36"
+    "bytes": 164816,
+    "sha256": "69f963d928391bd7319afff014ca1569eff6a2bad14412a1334cd6caaf337f10"
   },
   "paper/main.tex": {
     "bytes": 22119,
-    "sha256": "caa7b92abc734cac0cd5461ef6a977e637a7dc446230f799908ea1466fc35e36"
+    "sha256": "423b39f7bbf50bba62f80d5c9b3ec7c60c7d913752b577aeaa41e1285bc7e02b"
   },
   "paper/reconsideration-validation/artifact-numbers.txt": {
     "bytes": 193,
@@ -1037,7 +1077,7 @@
   },
   "paper/semantic_obligations.json": {
     "bytes": 80830,
-    "sha256": "23bf546425f17ac3903e5a0dfd2e336bdd381392a4285ddcaa8ec3ecb6df1916"
+    "sha256": "3457280e42951a2d6bb2d51c5d7a2ff36012ef078ad95e8e174506031e73ad37"
   },
   "paper/spconf.sty": {
     "bytes": 8798,

@@ -1,0 +1,15 @@
+{
+  "paper": "From Scores to Evidence: Auditable Decisions Can Improve Speech Deepfake Detection",
+  "authors": [
+    "Mengzhe Geng",
+    "Yujia Lu",
+    "Patrick Littell",
+    "Manuela Kunz",
+    "Xie Chen"
+  ],
+  "version": "arXiv:2609.08899v1",
+  "posted": "2026-09-08",
+  "url": "https://arxiv.org/html/2609.08899v1",
+  "checked": "Section 4 Metrics and uncertainty; appendix Tables 27\u201328: paired and speaker-resampled EER differences, nominal unadjusted intervals.",
+  "manuscript_citation": "geng26; reference [20] in final PDF"
+}

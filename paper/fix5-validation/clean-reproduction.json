@@ -1,0 +1,18 @@
+{
+  "artifact_commit": "ef1be20cd8f6de8006c10a4dc04983ec96626af1",
+  "fresh_local_clone": true,
+  "environment": "uv run --frozen; Python 3.11, NumPy 2.4.6",
+  "command": "M1_INPUT_ROOT=/path/to/public-input-root uv run --frozen python code/influence_trial_id.py",
+  "all_nine_public_input_hashes_checked": true,
+  "comparison": "cmp evidence/influence-trial-id.json regenerated/influence-trial-id.json",
+  "comparison_exit_code": 0,
+  "result_sha256": "d98e06ff279dd5d1378462c7cab67c2590197d42bb062ccf0a86ba460c75cb45",
+  "all_output_fields_byte_identical": true,
+  "manuscript_source_change_since_artifact": "artifact pin only",
+  "tags_unchanged": true,
+  "pdf_pages_visually_inspected": [
+    1,
+    4,
+    5
+  ]
+}

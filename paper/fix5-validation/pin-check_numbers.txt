@@ -1,0 +1,1 @@
+OK — scientific contract passes: matched trial/PW results, complete system and pair tables, coverage boundaries, source weighting, SpoofCeleb/ASV5 checks, and all caveats are artifact-bound.
