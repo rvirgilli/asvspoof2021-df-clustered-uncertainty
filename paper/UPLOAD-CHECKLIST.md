@@ -1,11 +1,15 @@
-# FIX4 artifact stage
+# FIX4 submission
 
-Do not submit the inherited predecessor PDF at this stage. After committing this
-artifact, insert its hash in the Artifact paragraph, build, run both guards and
-`code/audit_submission_pdf.py`, extract and check the intact URL, then produce the
-FIX4 submission receipt and manifest. Keep five pages, page five references only,
-acknowledgment and ethics on page four, minimum nine-point text, zero overfull
-boxes, zero Type 3 fonts and no undefined references or citations.
+The current receipt is `RELEASE-RECEIPT-FIX4-FINAL.json`, following
+`RELEASE-RECEIPT-FIX4-ARTIFACT.json`. `MANIFEST.json` binds the release payload.
+The manuscript cites artifact `9a7e6ae2c37c6ae30ef72122184f5b0159a64703`.
 
-The four P2 repairs preserve all scientific obligations. The new commits remain
-local; no push or tag movement is authorized. Historical audit records remain intact.
+`fix4-validation/pdf-audit.json` checks exactly five pages, references only on
+page five, acknowledgment and ethics on page four, actual minimum font size,
+Type 3 fonts, overfull boxes, undefined citations/references, all five tables and
+the intact repository URL. Both guard outputs are in the same directory.
+`OBLIGATION-FIX4.json` records nine wording and three locator changes with no removed IDs.
+
+The new commits are local. Do not submit the artifact-stage predecessor PDF.
+The new artifact pin is not public until publication is separately authorized;
+this revision does not push, move tags or upload a submission.

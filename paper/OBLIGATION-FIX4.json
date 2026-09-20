@@ -57,5 +57,25 @@
       "after": "For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list",
       "forced_by": "Finding 3 replaces the process reference with the operational pooled sampling rule."
     }
+  ],
+  "submission_locator_updates": [
+    {
+      "id": "release_locator",
+      "before": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}",
+      "after": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}",
+      "forced_by": "Finding 2 requires a new artifact commit and pin."
+    },
+    {
+      "id": "revision_sentence_50",
+      "before": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.",
+      "after": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.",
+      "forced_by": "Finding 2 requires a new artifact commit and pin."
+    },
+    {
+      "id": "rewrite_pdf_288",
+      "before": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup",
+      "after": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup",
+      "forced_by": "Finding 2 requires a new artifact commit and pin."
+    }
   ]
 }

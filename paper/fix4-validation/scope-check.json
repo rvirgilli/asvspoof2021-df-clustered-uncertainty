@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "baseline_submission": "6f54787a92cc99b1f73b8729355a77a9e5515240",
+  "artifact_commit": "9a7e6ae2c37c6ae30ef72122184f5b0159a64703",
+  "obligation_count_before": 303,
+  "obligation_count_after": 303,
+  "removed_ids": [],
+  "updated_match_ids": [
+    "abstract_tested_scope",
+    "release_locator",
+    "spoofceleb_trial_law_exception",
+    "abstract_fixed_score_estimand",
+    "revision_sentence_50",
+    "rewrite_pdf_140",
+    "rewrite_pdf_141",
+    "rewrite_pdf_142",
+    "rewrite_pdf_143",
+    "rewrite_pdf_166",
+    "rewrite_pdf_247",
+    "rewrite_pdf_288"
+  ],
+  "all_five_tables_byte_identical": true,
+  "references_and_both_supplements_byte_identical": true,
+  "experimental_payloads_unchanged": true,
+  "only_derived_metadata_change": "derived/results_matched_iid.provenance.json",
+  "new_manuscript_numeric_literals_excluding_artifact_hash": [],
+  "artifact_to_submission_tex_change": "artifact hash only",
+  "helper_executable_ast_unchanged": true,
+  "unresolvable_phrase_and_process_reference_absent_from_pdf": true
+}

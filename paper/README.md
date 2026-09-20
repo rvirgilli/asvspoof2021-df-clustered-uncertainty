@@ -17,9 +17,9 @@ uv run --frozen python verify_release.py
 All 303 semantic obligations are deletion-tested; all 138 predecessor obligations
 and all 97 originals are retained. `OBLIGATION-REWRITE.json` records each relocation
 and the manuscript edit forcing each checker change.
-The FIX4 artifact receipt is `RELEASE-RECEIPT-FIX4-ARTIFACT.json` (pass it with
-`--receipt` during this artifact stage). `OBLIGATION-FIX4.json` records the nine
-wording-match changes and the forced sampling-sentence checker change.
-The inherited PDF is historical, from `6f54787`. The submission stage will pin
-this artifact and rebuild it; see `SUBMISSION-VERSION.md`.
+The current submission receipt is `RELEASE-RECEIPT-FIX4-FINAL.json`. `OBLIGATION-FIX4.json` records the nine
+wording-match changes, three submission locator matches and the forced
+sampling-sentence checker change.
+The submission pins artifact `9a7e6ae2c37c6ae30ef72122184f5b0159a64703`
+and rebuilds the PDF; see `SUBMISSION-VERSION.md`.
 Prior receipts and validation directories describe their named historical revisions.

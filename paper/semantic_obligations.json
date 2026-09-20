@@ -211,7 +211,7 @@
   {
    "id": "release_locator",
    "section": "Discussion",
-   "match": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+   "match": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
   },
   {
    "id": "asv5_resampling_law",
@@ -691,7 +691,7 @@
   {
    "id": "revision_sentence_50",
    "section": "Reconsideration/new sentence",
-   "match": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+   "match": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
   },
   {
    "id": "revision_fresh_streams",
@@ -1686,7 +1686,7 @@
    "id": "rewrite_pdf_288",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
+   "match": "Artifact version \\texttt{9a7e6ae2c37c6ae30ef72122184f5b0159a64703} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
   },
   {
    "id": "rewrite_pdf_289",

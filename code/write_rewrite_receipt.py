@@ -51,7 +51,7 @@ def main():
     if fix4:
         reasons.update({
             'paper/main.tex': 'Apply audit findings 1, 3 and 4, add verified score provenance, then pin the new artifact.',
-            'paper/semantic_obligations.json': 'Update only nine matches forced by the authorized wording changes; retain all 303 IDs.',
+            'paper/semantic_obligations.json': 'Update nine wording matches and, at submission, three locator matches forced by the artifact pin; retain all 303 IDs.',
             'code/check_numbers.py': 'Finding 3 changes the exact pooled-sampling sentence required by this guard.',
             'code/exp101_selection.py': 'Finding 2 scopes historical inferential labels; executable AST unchanged.',
             'derived/results_matched_iid.provenance.json': 'Refresh the edited helper byte binding and retain its prior and campaign hashes.',
