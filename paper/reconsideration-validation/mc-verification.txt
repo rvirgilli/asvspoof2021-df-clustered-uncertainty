@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "conditional_resamples_checked": 3000,
+  "fresh_streams_checked": 15,
+  "composition": {
+    "group": "VCC2SM3",
+    "n": 315,
+    "bona_fide": 315,
+    "spoof": 0,
+    "sources": [
+      "vcc2018"
+    ]
+  },
+  "protocol_sha256": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800",
+  "conditional_max_arithmetic_difference": 3.863576125695545e-14,
+  "fresh_changed_pairs_by_stream": {
+    "trial": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "speaker_attack": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "speaker_only": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "bindings": {
+    "revision-conditional.json": "01499443b6afc847851f8057d5688b7326cd249d26430f55f49b730c83c08a7e",
+    "revision-conditional-traces.npz": "087da256283d96e75af14d8673a212972d0e9f7746c83248b0dccec822194f91",
+    "revision-fresh.json": "93ca4947dc8738af5e845c9939bba0319b5e1f455a1bdab92640625745ca7b7d",
+    "revision-fresh-replicates.npz": "c29e470f3bb71e2c3f6c8c471548c2c2f124eea9b6cd434e3068251ffcefead0",
+    "replicates.npz": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972",
+    "diagnostics.json": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff",
+    "REVISION-MC-PLAN.md": "939e9c5ad9193c83f5a06ec44892126dfb7cf0533d3180c1b87d4285839cd515"
+  },
+  "verifier_sha256": "2343208114f6d3261f053b447b0e2d1ce1db904df12cc4b4b76141c9d0c3c9d5"
+}

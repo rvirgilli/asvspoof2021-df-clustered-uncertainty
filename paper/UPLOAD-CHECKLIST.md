@@ -1,6 +1,7 @@
-# Current local release
+# Reconsideration local release
 
-The successor payload receipt is RELEASE-RECEIPT-FINAL.json. MANIFEST.json binds
-it and every other payload member. Refer to ../REPUBLICATION-3-NOTE.md and the
-external REPUBLICATION-3-RECEIPT.md for the two local commits and exact future push.
-Existing tags retain their prior targets. This run performs no upload or push.
+The successor receipt is RELEASE-RECEIPT-REVISION-ARTIFACT.json; the final
+submission stage replaces this pointer with its own receipt. MANIFEST.json
+binds every release member. See ../REVISION-CHANGES.md for the scientific edits
+and OBLIGATION-REVISION.json for the nondecreasing guard registry.
+No upload or push is part of this revision; tags keep their previous targets.

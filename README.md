@@ -1,14 +1,12 @@
-# When Resampling Changes Paired Audio-Deepfake Detector Comparisons
+# When Resampling Changes Paired Detector Comparisons on ASVspoof 2021 DF
 
 This revision contains the audited manuscript and supplement, portable diagnostic
-drivers, regenerated evidence JSONs and both replicate archives. The artifact and
-submission are prepared as two local commits on a new branch; existing tags stay
-unchanged. See [republication notes](REPUBLICATION-3-NOTE.md) and the payload
-[receipt](paper/RELEASE-RECEIPT-FINAL.json).
+drivers, regenerated evidence JSONs and both replicate archives. The reconsideration artifact and submission are prepared as new commits on the existing branch; existing tags stay unchanged. See [revision details](REVISION-CHANGES.md) and the payload [receipt](paper/RELEASE-RECEIPT-REVISION-ARTIFACT.json).
 
 - [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.
 - [Delete-one-group influence](evidence/influence.json), S4e.
+- [Additional primary Monte Carlo verification](evidence/revision-mc-verification.json).
 - [Portable rerun commands](REPRODUCE-DIAGNOSTICS.md) and [provenance](PORTABILITY-NOTE.md).
 
 Read the [supplement](SUPPLEMENT.md) and [manuscript](paper/main.pdf).

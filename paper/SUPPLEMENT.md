@@ -1,9 +1,9 @@
 # Supplementary methods and complete numerical results
 
-Artifact version: `m1-impact-20260916-v1` (a new version; prior tags are unchanged).
+Revision: September 20 reconsideration. The manuscript cites the immutable artifact commit; prior tags are unchanged.
 
 This document supplies the methods and complete numerical tables cited by the manuscript
-*When Resampling Changes Paired Audio-Deepfake Detector Comparisons*. All paths below
+*When Resampling Changes Paired Detector Comparisons on ASVspoof 2021 DF*. All paths below
 are relative to the release root unless stated otherwise. The paper's Method defines the
 fixed-score scope and design chronology of the added diagnostics. Read S4a for the
 four-arm comparison, S4b for Monte Carlo stability, S4c for mean/sign and pairing,
@@ -447,10 +447,26 @@ recomputing pair SDs and all-pair max-t each time) gives endpoint percentiles
 [-0.052384, +0.046514]; 56.2% remain below zero. These measure simulation noise conditional
 on the saved perturbation distribution, not detector-performance uncertainty. The exact
 seed and endpoint quantiles are at `seed_rule.mc_rows_seed` and `saved_attack_endpoint_mc`.
-The repeat study covers attack-only; it is not a fresh-seed stability study of speaker-only
-or joint resampling. Selectors: `results.attack_only`, `results.attack_repeat_0` through
+The historical 2026091601 repeat study covers attack-only; the separate September 20 study below adds fresh streams for trial, speaker-only and joint resampling. Selectors: `results.attack_only`, `results.attack_repeat_0` through
 `results.attack_repeat_4`, and `results.attack_repeats_pooled_25000`, with `.count` and
 `.pairs["LFCC-LCNN vs CQCC-GMM"].hi`.
+
+### S4b.1. Additional primary Monte Carlo verification
+
+The new conditional check uses NumPy 2.4.6 and `SeedSequence(2026092001).spawn(3)` in trial, speaker_attack, speaker_only order, with 1,000 successive complete-row resamples of size 5,000 per arm.
+Every resample recomputes all 28 contrasts, sample SDs with `ddof=1`, the centered maximum and the default linear 0.95 quantile, using unrounded original hats from `evidence/diagnostics.json`.
+No separation indicator changes; all-pair, SSL and organizer count ranges are respectively 26–26/28, 5–5/6 and 5–5/6 for trial, and 18–18/28, 2–2/6 and 0–0/6 for speaker-only and joint.
+This assesses Monte Carlo noise conditional on the saved rows, not independent streams, unobserved tails or population coverage.
+
+The separate fresh study fixes `SeedSequence(2026092002).spawn(3)` in the same arm order, then `.spawn(5)` for each arm, before examining results, with 5,000 score-level draws per stream.
+All 15 streams preserve every recorded primary separation indicator, including all sixteen cross-cohort contrasts; trial counts are 26/28 overall, 5/6 SSL and 5/6 organizer, while speaker-only and joint give 18/28, 2/6 and 0/6.
+Every draw refits all eight thresholds under the original first-minimum EER rule; the Numba loop (no fastmath) matches both the NumPy estimator and the first ten archived draws per primary arm with zero maximum error.
+The fresh study measures stability under the declared resampling laws, without validating them as population sampling models.
+
+`evidence/REVISION-MC-PLAN.md` fixes both protocols; `code/revision_mc.py` produces the checks.
+`evidence/revision-conditional.json` and `revision-conditional-traces.npz` contain the conditional counts and complete q/SD/indicator traces; `revision-fresh.json` and `revision-fresh-replicates.npz` contain every fresh endpoint and all fifteen eight-system arrays.
+The separately implemented `code/verify_revision_mc.py` recomputes conditional results using row multiplicities and weighted moments, then explicitly interpolates the sorted maximum distribution; it also reconstructs every fresh band from the archived arrays.
+The conditional arithmetic differs by at most 3.87e-14, with identical indicators; `evidence/revision-mc-verification.json` binds all inputs and outputs and records the verification.
 
 ### S4c. Mean displacement, sign frequency and paired cancellation
 
@@ -529,6 +545,8 @@ The diagnostic reports exact original-summary reproduction for all four primary 
 zero estimator-validation error (`primary_validation_max_error`); input hashes match S4a.
 
 ### S4e. Delete-one-group influence
+
+VCC2SM3 contains 315 evaluation trials, all bona fide from VCC2018 and none spoof; independent protocol parsing and its input hash are recorded in `evidence/revision-mc-verification.json`.
 
 Delete each of the 93 speaker groups and each of the 110 attack groups in turn, removing
 all of its trials and refitting all eight EERs. For pair p and grouping G, define
@@ -769,10 +787,9 @@ ratio is at least 2. Both passed; the observed median ratio was 27.2676 (27.27 a
 
 ### Artifact paths and content bindings
 
-This submission's new artifact version is `m1-impact-20260916-v1`, in
+The preceding submission's artifact version was `m1-impact-20260916-v1`, in
 [`rvirgilli/asvspoof2021-df-clustered-uncertainty`](https://github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty/tree/m1-impact-20260916-v1).
-Its immutable commit is recorded in the manuscript and publication receipt; this version
-adds the three `evidence/` files and S4b–S4e, replacing the prior supplement. The prior
+That historical version added the three `evidence/` files and S4b–S4e. The revised manuscript cites a successor commit containing the additional Monte Carlo checks below. The prior
 release remains at commit `a171aad9bd949fdc92c67344c51153f1c69217dd`.
 Paths below are relative to the root of that release, not to `paper/`.
 `MANIFEST.json` supplies byte counts and SHA-256 digests for the released files.
@@ -852,3 +869,15 @@ the records; they do not supply independent timing attestation or rerun the expe
 The public release excludes upstream-licensed score/audio inputs. Its manifest binds every
 released code, aggregate, paper and provenance member; the data README gives upstream
 retrieval and hash instructions.
+
+## S9. Retained scope of secondary checks
+
+Passing both checks does not guarantee an ordering under every possible reweighting or select a deployment ranking.
+
+Speaker-only matches the primary joint indicators; attack-only does so on SpoofCeleb.
+
+The source-deletion construction preserves all 16 cross-cohort separations without a coverage guarantee.
+
+The reversing sign also holds at distinct-score boundaries.
+
+The factor agreement concerns these particular score collections and different rosters; it does not identify a causal factor or a corpus-general variance pattern. Source-deletion methods and endpoints remain in S2, and the constructive search remains in S5; neither is needed to interpret the revised submission.

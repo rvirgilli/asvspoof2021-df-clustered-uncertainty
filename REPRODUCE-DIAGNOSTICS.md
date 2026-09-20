@@ -50,3 +50,20 @@ comparison, including those differences, belongs in its validation record.
 Do not substitute historical timings or protected-file hashes into a rerun.
 See [PORTABILITY-NOTE.md](PORTABILITY-NOTE.md) for the historical acceptance
 failure and this revision's evidence identities.
+
+## September 20 primary Monte Carlo checks
+
+The original drivers and evidence are unchanged. The revision adds conditional
+row-resampling and five fresh score-level streams for each other primary arm.
+The predeclared protocol is [REVISION-MC-PLAN.md](evidence/REVISION-MC-PLAN.md).
+Run `code/revision_mc.py` as documented there, then independently verify the
+released arrays with:
+
+```bash
+M1_INPUT_ROOT=/path/to/input-root uv run --frozen python code/verify_revision_mc.py
+```
+
+The input root contains the hash-checked `external-inputs/` layout above. The
+verifier also reparses the protocol to confirm the influential group's class
+composition. The two supplementary copies remain byte-identical. These CPU
+checks do not run detector inference or training.

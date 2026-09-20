@@ -5,12 +5,12 @@
   {
    "id": "abstract_fixed_score_scope",
    "section": "Method",
-   "match": "These are fixed-score sensitivity bands, not population confidence intervals or confidence sets for ranks."
+   "match": "These bands describe sensitivity of fixed scores to the stated weights, not confidence about future speakers or attacks."
   },
   {
    "id": "scope_no_transfer",
    "section": "Method",
-   "match": "Four VCC spoof strata contain only 4/4/4/6 speakers, so no 21DF separation result transfers to new speakers or attacks."
+   "match": "Four VCC spoof strata contain only 4, 4, 4 and 6 speakers."
   },
   {
    "id": "scope_fixed_score_outputs",
@@ -31,8 +31,9 @@
   },
   {
    "id": "tie_boundary",
-   "section": "Method/EER",
-   "match": "Across the eight systems and twelve fixed weighting rules, evaluating EER only at distinct-score boundaries changes each point EER by less than 0.001 percentage point."
+   "section": "Supplement/retained technical record",
+   "match": "An independent distinct-score-boundary recomputation changes every point EER and every\npairwise delta by less than 0.001 EER point on the released score files.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "delta_eer_definition",
@@ -47,7 +48,7 @@
   {
    "id": "identified_object",
    "section": "Method/EER",
-   "match": "The identified object is the change in $\\Delta\\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty."
+   "match": "These bands describe sensitivity of fixed scores to the stated weights, not confidence about future speakers or attacks."
   },
   {
    "id": "bands_not_population_sets",
@@ -74,12 +75,12 @@
   {
    "id": "exp111_status",
    "section": "Experiments/21DF",
-   "match": "This arm was designed after the main result and is a robustness check, not prospective evidence (S6)."
+   "match": "A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
   },
   {
    "id": "exp111_attribution_boundary",
    "section": "Experiments/21DF",
-   "match": "Thus neither threshold handling nor movement of these eight class-specific masses is necessary for the contrast."
+   "match": "Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum."
   },
   {
    "id": "exp114_pre_access_identifier",
@@ -96,7 +97,7 @@
   {
    "id": "exp114_single_source_boundary",
    "section": "Experiments/SpoofCeleb",
-   "match": "Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot move"
+   "match": "Every base item has one bona-fide and nine spoof renditions under one source label, so between-source mass cannot change."
   },
   {
    "id": "exp115_post_result_status",
@@ -137,7 +138,7 @@
   {
    "id": "arena_descriptive_boundary",
    "section": "Method",
-   "match": "The identified object is the change in $\\Delta\\mathrm{EER}$ and $I_{p,h}$ on the fixed scores, not population uncertainty."
+   "match": "These bands describe sensitivity of fixed scores to the stated weights, not confidence about future speakers or attacks."
   },
   {
    "id": "source_deletion_boundary",
@@ -160,37 +161,38 @@
   {
    "id": "coverage_dgp_boundary",
    "section": "Discussion",
-   "match": "These imposed-model simulations evaluate different intervals from the principal all-pair bands and do not establish a population sampling model for 21DF."
+   "match": "These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands."
   },
   {
    "id": "historical_provenance_limits",
-   "section": "Experiments",
-   "match": "the SSL-AASIST and AASIST score files lack their originating run logs (S8)."
+   "section": "Supplement/retained technical record",
+   "match": "The ASVspoof 5 SSL-AASIST and AASIST score files lack their originating run logs.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "report_units",
    "section": "Discussion",
-   "match": "Publish trial-to-speaker/attack membership and source weights alongside these results."
+   "match": "Publish the group memberships and weighting rules needed to reproduce the check."
   },
   {
    "id": "zero_boundary",
    "section": "Method",
-   "match": "A band containing zero means the procedure does not separate that pair; it does not establish equality."
+   "match": "A band containing zero establishes neither equality nor a deployment ranking."
   },
   {
    "id": "no_population_or_arena_claim",
    "section": "Method",
-   "match": "not population confidence intervals or confidence sets for ranks."
+   "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
   },
   {
    "id": "conclusion_tested_scope",
    "section": "Conclusion",
-   "match": "Cross-cohort separation survives the tested laws, weights and source deletions, while modern within-cohort comparisons expose concentrated group sensitivity."
+   "match": "The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules."
   },
   {
    "id": "conclusion_population_boundary",
    "section": "Method",
-   "match": "Population confidence requires a defensible acquisition model and an inferential procedure valid under its dependence structure."
+   "match": "These results support reporting sensitivity to observed-group weights, without establishing population confidence or a universal factor pattern across corpora."
   },
   {
    "id": "exp116_post_result_verification",
@@ -200,12 +202,12 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "all SSL-versus-baseline comparisons survive the tested perturbations."
+   "match": "All sixteen comparisons between the four self-supervised detectors and four organizer baselines survive."
   },
   {
    "id": "release_locator",
    "section": "Discussion",
-   "match": "artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+   "match": "Artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
   },
   {
    "id": "asv5_resampling_law",
@@ -255,7 +257,7 @@
   {
    "id": "primary_ablation_abstract_exploratory",
    "section": "Method",
-   "match": "The one-factor, Monte Carlo, mean/sign, pairing, tie and influence diagnostics (S4a--S4e) were designed after examining the primary trial-versus-joint results and are exploratory, not preregistered."
+   "match": "The one-factor, Monte Carlo, mean/sign, pairing, tie and group-deletion diagnostics were designed after the primary results and are exploratory."
   },
   {
    "id": "primary_ablation_method_status",
@@ -265,27 +267,27 @@
   {
    "id": "primary_ablation_interpretation",
    "section": "Method",
-   "match": "Indicator agreement is not a decomposition of the effect or a causal attribution to speaker identity: observed groups bundle trials, attacks and recording provenance, not intrinsic voice properties."
+   "match": "Matching separation decisions does not decompose variance or identify a causal speaker effect."
   },
   {
    "id": "primary_ablation_table_status",
    "section": "Experiments",
-   "match": "*One-factor status: Method."
+   "match": "One-factor analyses are exploratory."
   },
   {
    "id": "primary_ablation_conclusion_exploratory",
    "section": "Method",
-   "match": "Different detector rosters prevent attributing the primary/SpoofCeleb factor contrast to dataset alone."
+   "match": "This is a control on a weakly transferred, off-domain roster, not evidence that attack effects generally dominate speaker effects on another corpus."
   },
   {
    "id": "attack_monte_carlo_scope",
    "section": "Experiments",
-   "match": "attack-only reproduces four or five of the eight joint losses across Monte Carlo repeats (S4b)."
+   "match": "attack-only reproduces four or five of the eight joint losses across Monte Carlo repeats."
   },
   {
    "id": "attack_recorded_seed_dagger",
    "section": "Experiments",
-   "match": "$\\dagger$Recorded-seed attack counts: four of five fresh seeds give 21/28 and 2/6 organizer separations (S4b)."
+   "match": "Attack ranges span the original and five fresh 5,000-draw runs; other entries are recorded-run counts."
   },
   {
    "id": "mean_sign_separation",
@@ -336,17 +338,19 @@
   {
    "id": "operational_decision_rule",
    "section": "Discussion",
-   "match": "If the separation indicators disagree, label the comparison procedure-sensitive within the full comparison family and do not present trial-only separation as evidence that it survives the group check."
+   "match": "If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band."
   },
   {
    "id": "pass_both_boundary",
-   "section": "Method",
-   "match": "Passing both checks does not guarantee an ordering under every possible reweighting or select a deployment ranking."
+   "section": "Supplement/retained technical record",
+   "match": "Passing both checks does not guarantee an ordering under every possible reweighting or select a deployment ranking.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "source_deletion_separate_construction",
-   "section": "Experiments",
-   "match": "For source deletion we use our jackknife sensitivity construction defined in S2, with the contrast variance floored at the larger one-factor variance and Gaussian max-$t$ calibration over all 28 pairs."
+   "section": "Supplement/retained technical record",
+   "match": "contrast, the interval is `Delta_hat +/- q * sqrt(max(V_s+V_a-V_sa, V_s, V_a, 0))`, where `q` is\nthe 0.95 quantile of the Gaussian max-t statistic over all 28 contrasts under the jackknife\nsystem covariance, recomputed for each remaining subset from 200,000 draws (seed components\n`20260822/900/k`).",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "max_se_coverage_boundary",
@@ -358,7 +362,7 @@
    "id": "repeat_scope",
    "source": "SUPPLEMENT.md",
    "section": "Supplement/S4b. Attack-only Monte Carlo stability",
-   "match": "The repeat study covers attack-only; it is not a fresh-seed stability study of speaker-only\nor joint resampling."
+   "match": "The historical 2026091601 repeat study covers attack-only; the separate September 20 study below adds fresh streams for trial, speaker-only and joint resampling."
   },
   {
    "id": "six_family_scope",
@@ -368,8 +372,9 @@
   },
   {
    "id": "witness_distinct_boundary",
-   "section": "Experiments",
-   "match": "The reversing sign also holds at distinct-score boundaries (supplement, Sec.~S5)."
+   "section": "Supplement/retained technical record",
+   "match": "The reversing sign also holds at distinct-score boundaries.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "evidence_release_members",
@@ -416,32 +421,34 @@
   {
    "id": "main_influence_result",
    "section": "Experiments",
-   "match": "The observed speaker group VCC2SM3 supplies 77.09\\% of Mamba--Conformer's delete-one-speaker sum of squared deviations and 55.85\\% for SLS--Conformer. Deleting that group moves the Mamba--Conformer gap from $-0.389$ to $-0.129$ points, locating much of the sensitivity in this observed group (S4e)."
+   "match": "Deleting VCC2SM3, which contains 315 bona-fide VCC2018 trials and no spoof trials, changes the Mamba--Conformer gap from $-0.389$ to $-0.129$ percentage points."
   },
   {
    "id": "abstract_fixed_score_estimand",
    "section": "Abstract",
-   "match": "We measure the sensitivity of paired equal-error-rate (EER) differences on fixed detector scores."
+   "match": "On fixed ASVspoof~2021~DF scores from eight detectors, we refit equal-error-rate (EER) thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
   },
   {
    "id": "abstract_zero_exclusion_scope",
    "section": "Abstract",
-   "match": "We call a pair separated when its all-pair sensitivity band excludes zero; these bands carry no population-coverage claim."
+   "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
   },
   {
    "id": "abstract_roster_counts",
    "section": "Abstract",
-   "match": "Trial-to-joint separation falls from 26/28 to 18/28 on primary ASVspoof~2021~DF; a separate four-detector SpoofCeleb roster changes from 6/6 to 3/6."
+   "match": "The number of bands excluding zero falls from 26 to 18."
   },
   {
    "id": "abstract_factor_matches",
-   "section": "Abstract",
-   "match": "Speaker-only matches the primary joint indicators; attack-only does so on SpoofCeleb."
+   "section": "Supplement/retained technical record",
+   "match": "Speaker-only matches the primary joint indicators; attack-only does so on SpoofCeleb.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "source_deletion_retention_scope",
-   "section": "Experiments",
-   "match": "Related to max-se methods \\cite{mackinnon24}, it preserves all 16 cross-cohort separations without a coverage guarantee."
+   "section": "Supplement/retained technical record",
+   "match": "The source-deletion construction preserves all 16 cross-cohort separations without a coverage guarantee.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "related_rank_intervals",
@@ -456,17 +463,17 @@
   {
    "id": "spoofceleb_different_roster",
    "section": "Experiments/SpoofCeleb",
-   "match": "This is an off-domain sensitivity check on a different roster."
+   "match": "This is a control on a weakly transferred, off-domain roster, not evidence that attack effects generally dominate speaker effects on another corpus."
   },
   {
    "id": "spoofceleb_named_eers",
    "section": "Experiments/SpoofCeleb",
-   "match": "The SpoofCeleb EERs are 57.93\\%, 24.51\\%, 26.72\\%, and 27.58\\% for AASIST, SLS, SSL-AASIST, and Mamba."
+   "match": "EERs are 57.93\\%, 24.51\\%, 26.72\\% and 27.58\\% for AASIST, SLS, SSL-AASIST and Mamba."
   },
   {
    "id": "spoofceleb_joint_survivors",
    "section": "Experiments/SpoofCeleb",
-   "match": "Joint resampling retains only the three comparisons with AASIST."
+   "match": "Under the original six-pair correction, all three comparisons among SLS, SSL-AASIST and Mamba lose separation; the three AASIST contrasts retain it."
   },
   {
    "id": "supplement_spoofceleb_named_eers",
@@ -482,8 +489,9 @@
   },
   {
    "id": "coverage_individual_and_common_counts",
-   "section": "Discussion",
-   "match": "Coverage fell below .90 in 16/24 low-EER cells for each jackknife interval and 11/24 for PW percentile; all three failed in the same 11 cells (S7)."
+   "section": "Supplement/retained technical record",
+   "match": "Coverage fell below .90 in 16/24 low-EER cells for each jackknife interval and 11/24 for PW percentile; all three failed in the same 11 cells.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "supplement_coverage_individual_and_common_counts",
@@ -494,12 +502,12 @@
   {
    "id": "replicate_pairing_and_streams",
    "section": "Method",
-   "match": "Each replicate's weights are shared across systems; procedures have separate random streams (S4a)."
+   "match": "Each replicate's weights are shared across systems; procedures have separate random streams."
   },
   {
    "id": "composition_control_replicates",
    "section": "Experiments",
-   "match": "Using 1,000 retained replicates, a constrained PW arm resamples within each bona-fide source or spoof stratum, conditions on retained class support, and restores each source and stratum mass to its observed value; it also separates 18/28 and 0/6 organizer pairs."
+   "match": "Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs."
   },
   {
    "id": "fixed_score_intervention_distinction",
@@ -509,7 +517,7 @@
   {
    "id": "conclusion_cancellation_pair_scope",
    "section": "Conclusion",
-   "match": "Trial-resampling separation disappears under speaker--attack perturbations for Arena HuBERT--WavLM and primary Mamba--Conformer; for the latter, this occurs despite 75\\% marginal-variance cancellation from pairing."
+   "match": "Mamba--Conformer illustrates this with about 75\\% covariance cancellation and a 5.2-fold increase in paired standard deviation."
   },
   {
    "id": "supplement_low_eer_minima",
@@ -528,6 +536,225 @@
    "section": "Supplement/S4a",
    "source": "SUPPLEMENT.md",
    "match": "The Method states the one-factor diagnostics' design chronology and exploratory scope."
+  },
+  {
+   "id": "revision_sentence_01",
+   "section": "Reconsideration/new sentence",
+   "match": "WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF"
+  },
+  {
+   "id": "revision_sentence_02",
+   "section": "Reconsideration/new sentence",
+   "match": "Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?"
+  },
+  {
+   "id": "revision_sentence_05",
+   "section": "Reconsideration/new sentence",
+   "match": "For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\\% of summed marginal variance; the paired standard deviation increases 5.2-fold."
+  },
+  {
+   "id": "revision_sentence_06",
+   "section": "Reconsideration/new sentence",
+   "match": "A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero."
+  },
+  {
+   "id": "revision_sentence_09",
+   "section": "Reconsideration/new sentence",
+   "match": "One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary."
+  },
+  {
+   "id": "revision_sentence_10",
+   "section": "Reconsideration/new sentence",
+   "match": "All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules."
+  },
+  {
+   "id": "revision_sentence_11",
+   "section": "Reconsideration/new sentence",
+   "match": "On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors."
+  },
+  {
+   "id": "revision_sentence_16",
+   "section": "Reconsideration/new sentence",
+   "match": "This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect."
+  },
+  {
+   "id": "revision_sentence_17",
+   "section": "Reconsideration/new sentence",
+   "match": "On all 91,130 SpoofCeleb evaluation trials \\cite{jung25spoofceleb}, pooled trial resampling separates 6/6 pairs and joint resampling 3/6; class-stratified trial resampling also gives 6/6."
+  },
+  {
+   "id": "revision_sentence_22",
+   "section": "Reconsideration/new sentence",
+   "match": "Top: primary 21DF EER (\\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class."
+  },
+  {
+   "id": "revision_sentence_23",
+   "section": "Reconsideration/new sentence",
+   "match": "Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs."
+  },
+  {
+   "id": "revision_sentence_24",
+   "section": "Reconsideration/new sentence",
+   "match": "Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations."
+  },
+  {
+   "id": "revision_sentence_26",
+   "section": "Reconsideration/new sentence",
+   "match": "Primary Monte Carlo checks are described in the text."
+  },
+  {
+   "id": "revision_sentence_27",
+   "section": "Reconsideration/new sentence",
+   "match": "Across five fresh attack-only runs, separation counts range from 21 to 22 overall and from two to three among organizer baselines; within-SSL counts remain three."
+  },
+  {
+   "id": "revision_sentence_28",
+   "section": "Reconsideration/new sentence",
+   "match": "For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged."
+  },
+  {
+   "id": "revision_sentence_29",
+   "section": "Reconsideration/new sentence",
+   "match": "This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability."
+  },
+  {
+   "id": "revision_sentence_30",
+   "section": "Reconsideration/new sentence",
+   "match": "For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family."
+  },
+  {
+   "id": "revision_sentence_33",
+   "section": "Reconsideration/new sentence",
+   "match": "In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\\%) under trial resampling and 196/200 (98.0\\%) under speaker$\\times$attack resampling, using 300 bootstrap draws per dataset."
+  },
+  {
+   "id": "revision_sentence_34",
+   "section": "Reconsideration/new sentence",
+   "match": "In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\\times$attack percentile coverage fell below 90\\% in 11 cells, reaching 85.5\\% (1,000 datasets per cell; 500 bootstrap draws)."
+  },
+  {
+   "id": "revision_sentence_36",
+   "section": "Reconsideration/new sentence",
+   "match": "At each ordered position, the false-reject rate (FRR) is the fraction of bona-fide weight at or below it and the false-accept rate (FAR) the fraction of spoof weight above it; we select the first position minimizing their absolute difference and take their mean as EER, without interpolation."
+  },
+  {
+   "id": "revision_sentence_37",
+   "section": "Reconsideration/new sentence",
+   "match": "In the speaker$\\times$attack product-weight (PW) bootstrap \\cite{owen07,oweneckles12}, we independently draw speakers and spoof attacks uniformly with replacement, drawing as many of each as observed; a spoof trial receives the product of its speaker and attack multiplicities, and a bona-fide trial receives only its speaker multiplicity."
+  },
+  {
+   "id": "revision_sentence_40",
+   "section": "Reconsideration/new sentence",
+   "match": "Coverage results for crossed-array means do not establish coverage for refitted EER differences \\cite{oweneckles12}."
+  },
+  {
+   "id": "revision_sentence_47",
+   "section": "Reconsideration/new sentence",
+   "match": "Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band."
+  },
+  {
+   "id": "revision_sentence_48",
+   "section": "Reconsideration/new sentence",
+   "match": "This study analyzed previously collected ASVspoof~2021 and SpoofCeleb recordings and detector scores."
+  },
+  {
+   "id": "revision_sentence_49",
+   "section": "Reconsideration/new sentence",
+   "match": "Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+  },
+  {
+   "id": "revision_sentence_50",
+   "section": "Reconsideration/new sentence",
+   "match": "Artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+  },
+  {
+   "id": "revision_fresh_streams",
+   "section": "Experiments/Monte Carlo",
+   "match": "Five fresh 5,000-draw runs for each of the trial, speaker-only and joint arms also preserve every recorded separation indicator."
+  },
+  {
+   "id": "revision_supplement_00",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The new conditional check uses NumPy 2.4.6 and `SeedSequence(2026092001).spawn(3)` in trial, speaker_attack, speaker_only order, with 1,000 successive complete-row resamples of size 5,000 per arm."
+  },
+  {
+   "id": "revision_supplement_01",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "Every resample recomputes all 28 contrasts, sample SDs with `ddof=1`, the centered maximum and the default linear 0.95 quantile, using unrounded original hats from `evidence/diagnostics.json`."
+  },
+  {
+   "id": "revision_supplement_02",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "No separation indicator changes; all-pair, SSL and organizer count ranges are respectively 26\u201326/28, 5\u20135/6 and 5\u20135/6 for trial, and 18\u201318/28, 2\u20132/6 and 0\u20130/6 for speaker-only and joint."
+  },
+  {
+   "id": "revision_supplement_03",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "This assesses Monte Carlo noise conditional on the saved rows, not independent streams, unobserved tails or population coverage."
+  },
+  {
+   "id": "revision_supplement_04",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The separate fresh study fixes `SeedSequence(2026092002).spawn(3)` in the same arm order, then `.spawn(5)` for each arm, before examining results, with 5,000 score-level draws per stream."
+  },
+  {
+   "id": "revision_supplement_05",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "All 15 streams preserve every recorded primary separation indicator, including all sixteen cross-cohort contrasts; trial counts are 26/28 overall, 5/6 SSL and 5/6 organizer, while speaker-only and joint give 18/28, 2/6 and 0/6."
+  },
+  {
+   "id": "revision_supplement_06",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "Every draw refits all eight thresholds under the original first-minimum EER rule; the Numba loop (no fastmath) matches both the NumPy estimator and the first ten archived draws per primary arm with zero maximum error."
+  },
+  {
+   "id": "revision_supplement_07",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The fresh study measures stability under the declared resampling laws, without validating them as population sampling models."
+  },
+  {
+   "id": "revision_supplement_08",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "`evidence/REVISION-MC-PLAN.md` fixes both protocols; `code/revision_mc.py` produces the checks."
+  },
+  {
+   "id": "revision_supplement_09",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "`evidence/revision-conditional.json` and `revision-conditional-traces.npz` contain the conditional counts and complete q/SD/indicator traces; `revision-fresh.json` and `revision-fresh-replicates.npz` contain every fresh endpoint and all fifteen eight-system arrays."
+  },
+  {
+   "id": "revision_supplement_10",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The separately implemented `code/verify_revision_mc.py` recomputes conditional results using row multiplicities and weighted moments, then explicitly interpolates the sorted maximum distribution; it also reconstructs every fresh band from the archived arrays."
+  },
+  {
+   "id": "revision_supplement_11",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The conditional arithmetic differs by at most 3.87e-14, with identical indicators; `evidence/revision-mc-verification.json` binds all inputs and outputs and records the verification."
+  },
+  {
+   "id": "revision_supplement_12",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "VCC2SM3 contains 315 evaluation trials, all bona fide from VCC2018 and none spoof; independent protocol parsing and its input hash are recorded in `evidence/revision-mc-verification.json`."
+  },
+  {
+   "id": "revision_supplement_14",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/new verification",
+   "match": "The factor agreement concerns these particular score collections and different rosters; it does not identify a causal factor or a corpus-general variance pattern. Source-deletion methods and endpoints remain in S2, and the constructive search remains in S5; neither is needed to interpret the revised submission."
   }
  ]
 }

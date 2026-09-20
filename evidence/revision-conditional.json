@@ -1,0 +1,102 @@
+{
+  "scope": "Monte Carlo noise conditional on saved rows; not fresh streams or population coverage",
+  "master_seed": 2026092001,
+  "arm_order": [
+    "trial",
+    "speaker_attack",
+    "speaker_only"
+  ],
+  "resamples": 1000,
+  "B": 5000,
+  "numpy": "2.4.6",
+  "driver_sha256": "244a0145e8aa422f868531b114757df73f62b17d4255c2f2852ef946f6d283ad",
+  "replicates_sha256": "3364e1d4eb6030ea538b1c92e831b2fb0eb79131f58e6796a868467a6f75e972",
+  "diagnostics_sha256": "913b096bfe4f699743fe7b58b694c622ad9473df87cef35216880e91ef426dff",
+  "arms": {
+    "trial": {
+      "original_q": 2.9402375896788726,
+      "original_counts": {
+        "all": 26,
+        "ssl": 5,
+        "organizer": 5,
+        "cross": 16
+      },
+      "changed_indicators": 0,
+      "count_ranges": {
+        "all": [
+          26,
+          26
+        ],
+        "ssl": [
+          5,
+          5
+        ],
+        "organizer": [
+          5,
+          5
+        ],
+        "cross": [
+          16,
+          16
+        ]
+      }
+    },
+    "speaker_attack": {
+      "original_q": 2.9966694327230314,
+      "original_counts": {
+        "all": 18,
+        "ssl": 2,
+        "organizer": 0,
+        "cross": 16
+      },
+      "changed_indicators": 0,
+      "count_ranges": {
+        "all": [
+          18,
+          18
+        ],
+        "ssl": [
+          2,
+          2
+        ],
+        "organizer": [
+          0,
+          0
+        ],
+        "cross": [
+          16,
+          16
+        ]
+      }
+    },
+    "speaker_only": {
+      "original_q": 2.8906094509094715,
+      "original_counts": {
+        "all": 18,
+        "ssl": 2,
+        "organizer": 0,
+        "cross": 16
+      },
+      "changed_indicators": 0,
+      "count_ranges": {
+        "all": [
+          18,
+          18
+        ],
+        "ssl": [
+          2,
+          2
+        ],
+        "organizer": [
+          0,
+          0
+        ],
+        "cross": [
+          16,
+          16
+        ]
+      }
+    }
+  },
+  "traces_sha256": "087da256283d96e75af14d8673a212972d0e9f7746c83248b0dccec822194f91"
+}

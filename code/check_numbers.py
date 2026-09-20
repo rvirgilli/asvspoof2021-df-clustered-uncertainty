@@ -284,7 +284,7 @@ require_number("27.27", asv5_cmp["median_primary_over_iid_width_ratio"], 2,
                "ASV5 median width ratio")
 focal_ratio = asv5_cmp["primary_over_iid_simultaneous_width_ratio"][
     "SSL-AASIST vs XLS-R+SLS"]
-require("ASVspoof 5 check", "external result scope")
+require("ASVspoof 5's primary Track 1 metric is", "external result retained in supplement")
 require("not a system-performance replication", "ASV5 external-check scope")
 require("ASVspoof 5 SSL-AASIST and AASIST score files lack their originating run logs",
         "legacy score provenance limit")
@@ -318,7 +318,7 @@ for literal in ("5/6", "0/6", "26/28", "18/28"):
     require(literal, "matched all-pair result must be visible")
 require("matched all-28-pair bootstrap refits the same weighted EER in every replicate",
         "matched threshold refit closes the reviewer confound")
-require("neither threshold handling nor movement of these eight class-specific masses is necessary",
+require("movement of these eight masses is not required for the loss of separation",
         "composition-control attribution is bounded")
 
 # Embedded and sidecar provenance, including imported implementations.
@@ -403,12 +403,12 @@ vcc2018 = exp111_c["conditioned_draw_diagnostics"]["vcc2018"]
 if (vcc2018["attempts"], vcc2018["rejected_attempts"],
         vcc2018["zero_support_reasons"]) != (1007, 7, {"spoof": 7}):
     fail("VALUE EXP-111 conditioning diagnostics changed")
-require("designed after the main result and is a robustness check",
+require("A post-result PW control",
         "EXP-111 chronology and role must be visible")
 require("(1,000 draws, seed 20260824)", "EXP-111 draw count and seed differ from the primary arms and must be stated")
 require("stratum (7 rejected attempts out of 1,007 for VCC2018, all for lost spoof support; no\nrejections elsewhere), and then rescales each class-specific source or stratum mass exactly\nto its observed value",
         "EXP-111 composition control must state its zero-support rule and rejection count")
-require("a robustness check, not prospective evidence",
+require("A post-result PW control",
         "EXP-111 cannot be relabelled as prospective or causal")
 
 
@@ -476,15 +476,15 @@ if (exp114_mamba["classification"] != "reproduced-with-difference"
         or exp114_mamba["delta"]["max_abs"] != 1.430511474609375e-06
         or exp114_mamba["eer"]["absolute_difference_points"] != 0.0):
     fail("VALUE EXP-114 Mamba numerical-difference summary changed")
-require("91,130 evaluation trials", "EXP-114 complete evaluation size must remain visible")
+require("91,130 SpoofCeleb evaluation trials", "EXP-114 complete evaluation size must remain visible")
 require("single-source SpoofCeleb", "EXP-114 source/composition control must remain visible")
 require("while official repository access was pending",
         "EXP-114 prospective chronology must remain visible in field-facing language")
 require("6/6", "EXP-114 trial-i.i.d. endpoint must remain visible")
 require("3/6", "EXP-114 product/source endpoint must remain visible")
-require("one source label, so between-source mass cannot move",
+require("one source label, so between-source mass cannot change",
         "EXP-114 fixes source composition, not all factor multiplicities")
-require("speaker and spoof-attack multiplicities",
+require("a spoof trial receives the product of its speaker and attack multiplicities",
         "EXP-114 must not overstate its composition control")
 require("off-domain sensitivity check, not a comparison of competitive SpoofCeleb systems",
         "EXP-114 external-validity boundary must remain visible")
@@ -737,7 +737,7 @@ if f"{100 * vcc_share:.2f}" != "85.77":
 speaker_counts = sorted(row["n_speakers"] for row in incidence["spoof_strata"].values())
 if speaker_counts != [4, 4, 4, 6, 48]:
     fail(f"VALUE source/task speaker counts changed: {speaker_counts}")
-require("4/4/4/6", "dominant sparse blocks must be visible")
+require("4, 4, 4 and 6 speakers", "dominant sparse blocks must be visible")
 
 loco = source["leave_one_corpus_out"]
 flips = loco["verdict_flips_vs_full_data"]
@@ -845,7 +845,7 @@ cross_layer = arena["cross_layer_sensitivity"]["RawNet2-Arena vs RawNet2"]
 if (f"{cross_layer['arena_eer']:.2f}", f"{cross_layer['primary_eer']:.2f}",
         f"{cross_layer['score_pearson']:.2f}") != ("40.67", "22.38", "0.36"):
     fail("VALUE Arena cross-layer provenance diagnostic changed")
-require("not population confidence intervals", "Arena outputs remain descriptive")
+require("not confidence about future speakers or attacks", "Arena outputs remain descriptive")
 
 matched_width_ratios = sorted(
     (
@@ -987,24 +987,31 @@ for ssl, baseline in zip(order[:4], order[4:]):
     expected_point_rows.append([ssl, eer[ssl], baseline, eer[baseline]])
 expected_point_lines = [" & ".join(row) + r" \\" for row in expected_point_rows]
 arms = ("trial", "speaker_only", "attack_only", "speaker_attack")
-expected_group_rows = [["Roster / subset", "Trial", "Spk.*", "Atk.*", "Joint"]]
+expected_group_rows = [["Roster / subset", "Trial", "Speaker", "Attack", "Joint"]]
 for label, key, denominator in (("21DF, all", "all_28", 28), ("21DF, SSL", "ssl_6", 6),
                                  ("21DF, organizer", "organizer_6", 6)):
     values = []
     for arm in arms:
         value = f"{ablation['arms'][arm]['counts'][key]}/{denominator}"
         if arm == "attack_only" and key != "ssl_6":
-            value = "$" + value + r"\dagger$"
+            # Revised table prints original + all five fresh stream extrema.
+            attack_diagnostics = load(ROOT / "evidence/diagnostics.json")
+            observed = [sum(p["separated"] for p in attack_diagnostics["results"][run]["pairs"].values())
+                        if key == "all_28" else _count(attack_diagnostics["results"][run]["pairs"], "separated")["base"]
+                        for run in ["attack_only"] + [f"attack_repeat_{i}" for i in range(5)]]
+            value = f"{min(observed)}--{max(observed)}/{denominator}"
         values.append(value)
     expected_group_rows.append([label, *values])
-expected_group_rows.append(["SpoofCeleb", "6/6", "5/6", "3/6", "3/6"])
+# The removed SpoofCeleb row is replaced by its explicit control paragraph.
+require("pooled trial resampling separates 6/6 pairs and joint resampling 3/6",
+        "SpoofCeleb table endpoints must survive in the control paragraph")
 expected_lines = expected_point_lines + expected_band_lines + [" & ".join(row) + r" \\" for row in expected_group_rows]
 printed_lines = [line.strip() for line in body.splitlines() if line.rstrip().endswith(r"\\")]
 if printed_lines != expected_lines:
     fail(f"TABLE main table rows differ from artifacts: {printed_lines} != {expected_lines}")
-if r"primary 21DF point EER (\%); $n=533,928$, empirical class-normalized trial weights" not in TEX_RAW:
+if r"primary 21DF EER (\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class" not in TEX_RAW:
     fail("TABLE primary point EERs must name their units, sample size and weighting")
-require("primary 21DF uses a 28-pair family, Arena a separate 55-pair family on the same trials",
+require("primary 21DF uses all 28 pairs, Arena all 55 pairs",
         "main paired-band display must distinguish its multiplicity families")
 if _r != {"ssl": 1, "base": 5, "cross": 0}:
     fail(f"VALUE weighting-rule reversal split changed: {_r}")
@@ -1082,7 +1089,7 @@ asv5_trial_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["trial_i
 asv5_sa_sep = sum(v["numeric_band_excludes_zero"] for v in asv5_pair["speaker_attack"]["pairs"].values())
 if (asv5_trial_sep, asv5_sa_sep) != (6, 5):
     fail(f"VALUE ASV5 separated counts changed: trial {asv5_trial_sep}, speaker-attack {asv5_sa_sep}")
-require("from 6/6 under trial resampling to 5/6", "ASV5 before/after separated counts must be visible")
+require("Trial resampling separates 6/6 pairs and the role-stratified law 5/6", "ASV5 before/after separated counts must be visible")
 require("Its resampling law draws 367 target-speaker\nmultiplicities, 370 bona-fide-only speaker multiplicities and 16 attack multiplicities as three\nindependent multinomial samples",
         "ASV5 resampling law must be stated, not labelled")
 
@@ -1099,7 +1106,7 @@ if "### S4a. Primary-21DF factor ablation" not in SUPPLEMENT_RAW:
 exp118 = load(EXP118 / "RESULTS.json")
 if exp118["registered_reading"] != "exception_declared_and_numerically_immaterial" or exp118["stratified"]["separated"] != 6:
     fail("VALUE EXP-118 class-stratified SpoofCeleb count is not 6/6")
-require("(a class-stratified recomputation also separates 6/6)", "SpoofCeleb class-stratified count must be printed next to the pooled one")
+require("class-stratified trial resampling also gives 6/6", "SpoofCeleb class-stratified count must be printed next to the pooled one")
 
 
 # 8b. Post-review diagnostics newly cited by the impact revision.
@@ -1220,12 +1227,11 @@ if sum(influence["results"][g]["group_count"] for g in ("speaker", "attack")) !=
 
 mamba_influence = influence["results"]["speaker"]["pairs"][pair]
 sls_influence = influence["results"]["speaker"]["pairs"]["XLS-R+SLS vs XLSR-Conformer"]
+# Revised influence claim replaces shares with the interpretable deletion gap.
 expected_influence = (
-    f"The observed speaker group {mamba_influence['top_groups'][0]['speaker_label']} supplies "
-    f"{100*mamba_influence['top_one_ss_share']:.2f}\\% of Mamba--Conformer's delete-one-speaker sum of squared deviations and "
-    f"{100*sls_influence['top_one_ss_share']:.2f}\\% for SLS--Conformer. "
-    f"Deleting that group moves the Mamba--Conformer gap from ${joint['hat']:.3f}$ to "
-    f"${mamba_influence['top_groups'][0]['deletion_gap']:.3f}$ points, locating much of the sensitivity in this observed group (S4e).")
+    f"Deleting {mamba_influence['top_groups'][0]['speaker_label']}, which contains 315 bona-fide VCC2018 trials and no spoof trials, "
+    f"changes the Mamba--Conformer gap from ${joint['hat']:.3f}$ to "
+    f"${mamba_influence['top_groups'][0]['deletion_gap']:.3f}$ percentage points.")
 if TEX_RAW.count(expected_influence) != 1:
     fail("VALUE main influence statement differs from the group-deletion artifact")
 
@@ -1248,19 +1254,83 @@ for p, corpus, source_label in (("XLSR-Mamba vs SSL-AASIST", "vcc2018", "VCC2018
     if deleted["resolved"] or SUPPLEMENT_RAW.count(expected) != 1:
         fail(f"TABLE named source-deletion result missing or changed: {expected}")
 
+# 8c. Forced by the reconsideration's new stability, composition and inline claims.
+# Preserve historical evidence checks above; bind the newly archived checks as well.
+revision_conditional = load(ROOT / "evidence/revision-conditional.json")
+revision_fresh = load(ROOT / "evidence/revision-fresh.json")
+revision_verified = load(ROOT / "evidence/revision-mc-verification.json")
+if (revision_verified["status"] != "PASS"
+        or revision_verified["conditional_resamples_checked"] != 3000
+        or revision_verified["fresh_streams_checked"] != 15
+        or revision_verified["conditional_max_arithmetic_difference"] > 2e-12):
+    fail("GATE revision Monte Carlo independent arithmetic check failed")
+for name, digest in revision_verified["bindings"].items():
+    if sha256(ROOT / "evidence" / name) != digest:
+        fail(f"HASH revision Monte Carlo binding changed: {name}")
+if revision_verified["verifier_sha256"] != sha256(ROOT / "code/verify_revision_mc.py"):
+    fail("HASH revision independent verifier changed")
+if (revision_conditional["driver_sha256"] != sha256(ROOT / "code/revision_mc.py")
+        or revision_fresh["contract"]["driver_sha256"] != sha256(ROOT / "code/revision_mc.py")):
+    fail("HASH revision Monte Carlo producer changed")
+if (revision_conditional["master_seed"], revision_conditional["resamples"], revision_conditional["B"],
+        revision_conditional["arm_order"]) != (2026092001, 1000, 5000, ["trial", "speaker_attack", "speaker_only"]):
+    fail("CONTRACT conditional Monte Carlo protocol changed")
+if (revision_fresh["contract"]["master"], revision_fresh["contract"]["runs"],
+        revision_fresh["contract"]["B"], revision_fresh["contract"]["arms"]) != (
+        2026092002, 5, 5000, ["trial", "speaker_attack", "speaker_only"]):
+    fail("CONTRACT fresh primary streams changed")
+if (revision_fresh["contract"]["inputs_sha256"] != diag["inputs_sha256"]
+        or revision_fresh["estimator_validation_max_error"] != 0):
+    fail("GATE fresh streams must share the original inputs and estimator")
+for arm, expected_counts in (("trial", {"all": 26, "ssl": 5, "organizer": 5, "cross": 16}),
+                             ("speaker_attack", {"all": 18, "ssl": 2, "organizer": 0, "cross": 16}),
+                             ("speaker_only", {"all": 18, "ssl": 2, "organizer": 0, "cross": 16})):
+    cond = revision_conditional["arms"][arm]
+    if cond["changed_indicators"] or cond["count_ranges"] != {k: [v, v] for k,v in expected_counts.items()}:
+        fail(f"VALUE conditional stability changed: {arm}")
+    if revision_verified["fresh_changed_pairs_by_stream"][arm] != [[], [], [], [], []]:
+        fail(f"VALUE fresh indicator stability changed: {arm}")
+    for repeat in range(5):
+        row = revision_fresh["results"][f"{arm}_{repeat}"]
+        if row["counts"] != expected_counts or any(
+                row["pairs"][p]["separated"] != diag["results"][arm]["pairs"][p]["separated"]
+                for p in diag["results"][arm]["pairs"]):
+            fail(f"VALUE fresh stream changed its primary indicators: {arm}/{repeat}")
+expected_composition = {"group": "VCC2SM3", "n": 315, "bona_fide": 315, "spoof": 0, "sources": ["vcc2018"]}
+if (revision_fresh["composition"] != expected_composition or revision_verified["composition"] != expected_composition
+        or revision_verified["protocol_sha256"] != diag["inputs_sha256"]["protocol_key"]):
+    fail("VALUE influence-group class composition differs from independently parsed protocol")
+require_number("5.2", joint["sd"] / diag["results"]["trial"]["pairs"][pair]["sd"], 1,
+               "paired SD increase in abstract and conclusion")
+for literal, endpoint in zip(("-4.252", "-0.277"), _ar["clustered"]["pairs"][_k]["ci95_pointwise"]):
+    require_number(literal, endpoint, 3, "Arena pointwise qualification")
+for literal, value in (("14,869", ablation["inputs"]["n_bonafide"]),
+                       ("519,059", ablation["inputs"]["n_spoof"])):
+    if f"{value:,}" != literal or literal not in TEX_RAW:
+        fail(f"VALUE primary table class count changed: {literal}")
+require_number("98.0", 100 * exp112["arms"]["twoway"]["coverage"], 1,
+               "inline supportive speaker-attack percentile coverage")
+for literal, arm in (("37/200", "iid"), ("196/200", "twoway")):
+    if literal != f"{exp112['arms'][arm]['covered']}/{exp112['R']}" or literal not in TEX_RAW:
+        fail(f"VALUE inline simulation count changed: {arm}")
+if re.search(r"\bS[2-8](?:[a-e]|\b)", TEX):
+    fail("SCOPE submission again depends on supplement section locators")
+if (ROOT / "SUPPLEMENT.md").read_text() != (PAPER / "SUPPLEMENT.md").read_text():
+    fail("RELEASE root and paper supplements differ")
+
 # 9. Scientific scope obligations and retired formulations.
 # Scientific boundaries follow their revised locations; every one is deletion-tested.
 for text, why in (
     ("fixed-score sensitivity bands", "identified scientific object"),
-    ("not population confidence intervals", "Method scope"),
+    ("not confidence about future speakers or attacks", "Method scope"),
     ("not an exact multiway estimator or a coverage guarantee", "Gaussian scope"),
     ("while official repository access was pending", "timing anchored to access state"),
-    ("it does not establish equality", "zero inclusion boundary"),
-    ("trial-to-speaker/attack membership", "report observed units"),
-    ("Cross-cohort separation survives the tested laws, weights and source deletions", "tested scope"),
+    ("A band containing zero establishes neither equality nor a deployment ranking", "zero inclusion boundary"),
+    ("Publish the group memberships and weighting rules needed to reproduce the check", "report observed units"),
+    ("The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules", "tested scope"),
     ("distinct from the nested-observation designs studied in", "crossed versus nested design"),
-    ("not population confidence intervals or confidence sets for ranks", "population/rank boundary"),
-    ("separate four-detector SpoofCeleb roster changes from 6/6 to 3/6", "abstract external result"),
+    ("without population-coverage guarantees", "population/rank boundary"),
+    ("A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero", "abstract separate-roster result"),
     ("for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement", "trial-law exception"),
 ):
     require(text, why)
