@@ -205,7 +205,7 @@
   {
    "id": "release_locator",
    "section": "Discussion",
-   "match": "artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\texttt{github.com/\\allowbreak rvirgilli/\\allowbreak asvspoof2021-\\allowbreak df-clustered-\\allowbreak uncertainty}"
+   "match": "artifact version \\texttt{4ee170b035f46097832f0973aff534418fc54157} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
   },
   {
    "id": "asv5_resampling_law",
