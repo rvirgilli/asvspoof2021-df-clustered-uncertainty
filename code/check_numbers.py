@@ -133,6 +133,15 @@ for obligation in obligation_doc.get("obligations", []):
     if count != 1:
         fail(f"OBLIGATION {obligation_id} expected exactly one occurrence, found {count}")
 
+# Forced by the rewrite's relocation of old claims: original IDs cannot be dropped.
+rewrite_ledger = load(PAPER / "OBLIGATION-REWRITE.json")
+if (len(rewrite_ledger["original_ids"]) != 97 or len(rewrite_ledger["baseline_ids"]) != 138
+        or rewrite_ledger["removed_ids"]
+        or not set(rewrite_ledger["baseline_ids"]) <= obligation_ids
+        or not set(rewrite_ledger["original_ids"]) <= obligation_ids
+        or rewrite_ledger["current_count"] != len(obligation_ids)):
+    fail("OBLIGATION rewrite must retain all 138 baseline and all 97 original IDs")
+
 
 matched = load(DERIVED / "results_matched_iid.json")
 matched_prov = load(DERIVED / "results_matched_iid.provenance.json")
@@ -965,36 +974,45 @@ for key, label in zip(ablation_arm_order, ("Trial", "Speaker-only", "Attack-only
     if s4a.splitlines().count(expected) != 1:
         fail(f"TABLE S4a missing or changed critical value: {expected}")
 
-table_start = TEX_RAW.index(r"\label{tab:eers}")
-body = TEX_RAW[table_start:TEX_RAW.index(r"\end{table}", table_start)]
-# Bind every display row, including pair identity, direction and both band arms.
-examples = [
-    ("XLSR-Mamba $-$ XLSR-Conformer", matched["iid"]["pairs"]["XLSR-Mamba vs XLSR-Conformer"],
-     matched["speaker_attack"]["pairs"]["XLSR-Mamba vs XLSR-Conformer"], "simultaneous"),
-    ("Arena HuBERT-ECAPA $-$ WavLM-ECAPA", arena["schemes"]["iid"]["pairs"]["HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"],
-     arena["schemes"]["clustered"]["pairs"]["HuBERT-ECAPA-Arena vs WavLM-ECAPA-Arena"], "ci95_simultaneous"),
-]
-expected_band_lines = []
-for label, trial, pw, band_key in examples:
-    expected_band_lines.append(
-        r"\multicolumn{4}{@{}l@{}}{" + label + f": ${trial['delta_eer_pts']:.3f}$" + r"} \\")
-    expected_band_lines.append(
-        r"\multicolumn{2}{@{}l}{Trial $[" + f"{trial[band_key][0]:.3f},{trial[band_key][1]:.3f}"
-        + r"]$} & \multicolumn{2}{l@{}}{PW $[" + f"{pw[band_key][0]:.3f},{pw[band_key][1]:.3f}" + r"]$} \\")
-# Finding 2 adds the primary point EERs alongside every existing paired-band row.
-expected_point_rows = [["SSL detector", "EER", "Organizer baseline", "EER"]]
+# Forced by the replacement of the mixed example display with all 28 primary rows.
+# Keep all prior artifact checks; Arena's display obligations now live in S10.
+def table_body(label):
+    marker = rf"\label{{{label}}}"
+    if marker not in TEX_RAW:
+        fail(f"TABLE missing {label}")
+        return ""
+    start = TEX_RAW.index(marker)
+    return TEX_RAW[start:TEX_RAW.index(r"\end{table}", start)]
+
+def table_rows(label):
+    return [line.strip() for line in table_body(label).splitlines()
+            if line.rstrip().endswith(r"\\")]
+
+abbr = dict(zip(order, ("M", "S", "C", "A", "R", "L", "F", "Q")))
+body = table_body("tab:eers")
+expected_lines = []
 for ssl, baseline in zip(order[:4], order[4:]):
-    expected_point_rows.append([ssl, eer[ssl], baseline, eer[baseline]])
-expected_point_lines = [" & ".join(row) + r" \\" for row in expected_point_rows]
-arms = ("trial", "speaker_only", "attack_only", "speaker_attack")
+    expected_lines.append(" & ".join([abbr[ssl], ssl, eer[ssl], abbr[baseline], baseline, eer[baseline]]) + r" \\")
+expected_lines.append(r"Pair & Gap & Trial band & Joint band \\")
+for block, title in (("ssl", "Within SSL"), ("base", "Within organizer baselines"), ("cross", "SSL versus organizer baselines")):
+    expected_lines.append(r"\multicolumn{4}{l}{" + title + r"} \\")
+    for pair, t in matched["iid"]["pairs"].items():
+        if _blk(pair) != block:
+            continue
+        a, b = pair.split(" vs "); j = matched["speaker_attack"]["pairs"][pair]
+        star = "*" if t["resolved_simultaneous"] and not j["resolved_simultaneous"] else ""
+        cells = [f"{abbr[a]}--{abbr[b]}{star}", f"${t['delta_eer_pts']:.3f}$"]
+        cells += [f"$[{r['simultaneous'][0]:.3f},{r['simultaneous'][1]:.3f}]$" for r in (t, j)]
+        expected_lines.append(" & ".join(cells) + r" \\")
+if table_rows("tab:eers") != expected_lines:
+    fail("TABLE full primary point/28-pair table differs from artifacts")
 expected_group_rows = [["Roster / subset", "Trial", "Speaker", "Attack", "Joint"]]
 for label, key, denominator in (("21DF, all", "all_28", 28), ("21DF, SSL", "ssl_6", 6),
-                                 ("21DF, organizer", "organizer_6", 6)):
+                               ("21DF, organizer", "organizer_6", 6)):
     values = []
-    for arm in arms:
+    for arm in ("trial", "speaker_only", "attack_only", "speaker_attack"):
         value = f"{ablation['arms'][arm]['counts'][key]}/{denominator}"
         if arm == "attack_only" and key != "ssl_6":
-            # Revised table prints original + all five fresh stream extrema.
             attack_diagnostics = load(ROOT / "evidence/diagnostics.json")
             observed = [sum(p["separated"] for p in attack_diagnostics["results"][run]["pairs"].values())
                         if key == "all_28" else _count(attack_diagnostics["results"][run]["pairs"], "separated")["base"]
@@ -1002,17 +1020,17 @@ for label, key, denominator in (("21DF, all", "all_28", 28), ("21DF, SSL", "ssl_
             value = f"{min(observed)}--{max(observed)}/{denominator}"
         values.append(value)
     expected_group_rows.append([label, *values])
-# The removed SpoofCeleb row is replaced by its explicit control paragraph.
+if table_rows("tab:arms") != [" & ".join(row) + r" \\" for row in expected_group_rows]:
+    fail("TABLE primary four-arm counts differ from artifacts")
+for text in ("14,869 bona-fide and 519,059 spoof trials, with weights normalized within class",
+             "Abbreviations and point EERs", "using the full 28-pair maximum"):
+    if text not in TEX_RAW:
+        fail(f"TABLE missing units/denominator context: {text}")
 require("pooled trial resampling separates 6/6 pairs and joint resampling 3/6",
-        "SpoofCeleb table endpoints must survive in the control paragraph")
-expected_lines = expected_point_lines + expected_band_lines + [" & ".join(row) + r" \\" for row in expected_group_rows]
-printed_lines = [line.strip() for line in body.splitlines() if line.rstrip().endswith(r"\\")]
-if printed_lines != expected_lines:
-    fail(f"TABLE main table rows differ from artifacts: {printed_lines} != {expected_lines}")
-if r"primary 21DF EER (\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class" not in TEX_RAW:
-    fail("TABLE primary point EERs must name their units, sample size and weighting")
+        "SpoofCeleb trial/joint endpoints remain visible")
 require("primary 21DF uses all 28 pairs, Arena all 55 pairs",
-        "main paired-band display must distinguish its multiplicity families")
+        "historical mixed-display family obligation remains in S10")
+
 if _r != {"ssl": 1, "base": 5, "cross": 0}:
     fail(f"VALUE weighting-rule reversal split changed: {_r}")
 _ar = arena["schemes"]
@@ -1022,6 +1040,16 @@ for _v, _lit in ((_ar["iid"]["pairs"][_k]["ci95_simultaneous"][0], "-2.761"), (_
                  (_ar["clustered"]["pairs"][_k]["ci95_simultaneous"][0], "-5.241"), (_ar["clustered"]["pairs"][_k]["ci95_simultaneous"][1], "0.936")):
     require_number(_lit, _v, 3, "Arena example band endpoint")
 require("For HuBERT-ECAPA versus WavLM-ECAPA", "Arena example pair must be printed")
+
+# Forced by removing Arena from the PDF: retain the same pair/arm association in S10.
+arena_example = (
+    "For HuBERT-ECAPA versus WavLM-ECAPA, the "
+    + f"${_ar['iid']['pairs'][_k]['delta_eer_pts']:.3f}$-point gap has bands "
+    + f"$[{_ar['iid']['pairs'][_k]['ci95_simultaneous'][0]:.3f},{_ar['iid']['pairs'][_k]['ci95_simultaneous'][1]:.3f}]$ and "
+    + f"$[{_ar['clustered']['pairs'][_k]['ci95_simultaneous'][0]:.3f},{_ar['clustered']['pairs'][_k]['ci95_simultaneous'][1]:.3f}]$."
+)
+if SUPPLEMENT_RAW.count(arena_example) != 1:
+    fail("TABLE retained Arena pair/direction/both-arm association differs from artifact")
 
 for pair, iid_row in matched["iid"]["pairs"].items():
     a, b = pair.split(" vs ")
@@ -1310,13 +1338,57 @@ for literal, value in (("14,869", ablation["inputs"]["n_bonafide"]),
         fail(f"VALUE primary table class count changed: {literal}")
 require_number("98.0", 100 * exp112["arms"]["twoway"]["coverage"], 1,
                "inline supportive speaker-attack percentile coverage")
+# Forced by moving both simulation summaries to the retained supplement record.
 for literal, arm in (("37/200", "iid"), ("196/200", "twoway")):
-    if literal != f"{exp112['arms'][arm]['covered']}/{exp112['R']}" or literal not in TEX_RAW:
-        fail(f"VALUE inline simulation count changed: {arm}")
+    if literal != f"{exp112['arms'][arm]['covered']}/{exp112['R']}" or literal not in SUPPLEMENT_RAW:
+        fail(f"VALUE retained simulation count changed: {arm}")
 if re.search(r"\bS[2-8](?:[a-e]|\b)", TEX):
     fail("SCOPE submission again depends on supplement section locators")
 if (ROOT / "SUPPLEMENT.md").read_text() != (PAPER / "SUPPLEMENT.md").read_text():
     fail("RELEASE root and paper supplements differ")
+
+# Forced by newly printed concentration, composition-control and SpoofCeleb tables.
+expected_influence_rows = [r"Pair & Largest group & Full $\to$ deletion & Largest / top five \\"]
+for p in ("XLSR-Mamba vs XLSR-Conformer", "XLS-R+SLS vs XLSR-Conformer", "XLSR-Conformer vs SSL-AASIST"):
+    row = influence["results"]["speaker"]["pairs"][p]
+    group = row["top_groups"][0]; a, b = p.split(" vs ")
+    hat = diag["results"]["trial"]["pairs"][p]["hat"]
+    expected_influence_rows.append(
+        f"{abbr[a]}--{abbr[b]} & {group['speaker_label']} & ${hat:.3f}"
+        + r"\to" + f"{group['deletion_gap']:.3f}$ & {100*row['top_one_ss_share']:.2f}"
+        + r"\% / " + f"{100*row['top_five_ss_share']:.2f}" + r"\% \\")
+if table_rows("tab:influence") != expected_influence_rows:
+    fail("TABLE main three-pair influence table differs from artifact")
+control = exp111_c["pairs"]["XLSR-Conformer vs XLSR-Mamba"]["simultaneous_max_t"]
+expected = f"control band is $[{-control[1]:.3f},{-control[0]:.3f}]$, beside the primary joint band $[-1.348,0.570]$"
+if expected not in TEX_RAW:
+    fail("VALUE main composition-control band missing or changed; reverse direction explicitly")
+for arm, value in (("iid", "2.940"), ("speaker_attack", "2.997")):
+    require_number(value, matched[arm]["supt_critical_value"], 3, "printed full-family critical value")
+for arm, count in (("trial", 5), ("speaker_attack", 2)):
+    if diag["results"][arm]["ssl_six_family"]["count"] != count:
+        fail("VALUE printed six-SSL-family control changed")
+short = {"aasist": "AASIST", "sls": "SLS", "ssl_aasist": "SSL-A", "xlsr_mamba": "Mamba"}
+expected_spoof = [r"Pair & T & S & A & J \\"]
+loss_rows = []
+for p, t in exp114["arm_a_trial_iid"]["pairs"].items():
+    label = "--".join(short[x] for x in p.split(" vs "))
+    j = exp114["arm_b_global_product"]["pairs"][p]
+    rows = [t, exp115["arm_speaker_only"]["pairs"][p], exp115["arm_attack_only"]["pairs"][p], j]
+    expected_spoof.append(label + " & " + " & ".join("Y" if r["simultaneous_excludes_zero"] else "N" for r in rows) + r" \\")
+    if not j["simultaneous_excludes_zero"]:
+        cells = [label, f"${t['delta_eer_points']:.3f}$"]
+        cells += [f"$[{r['simultaneous_max_t'][0]:.3f},{r['simultaneous_max_t'][1]:.3f}]$" for r in (t, j)]
+        loss_rows.append(" & ".join(cells) + r" \\")
+expected_spoof += [r"Separated & 6/6 & 5/6 & 3/6 & 3/6 \\", r"Pair & Gap & Trial & Joint \\"] + loss_rows
+if table_rows("tab:spoof") != expected_spoof:
+    fail("TABLE complete SpoofCeleb decisions/three loss bands differ from artifacts")
+forbid(r"Arena|fixed weighting|Alternative weights|coverage fell|18\.5", "rewrite moves Arena, weighting campaign and simulations out of PDF")
+
+for text in (f"This control uses seed {exp111['seed']}.",
+             f"Trial/joint arms use seed {exp114['seed']}; the post-result one-factor check uses seed {exp115['seed']}."):
+    if text not in TEX_RAW:
+        fail(f"CONTRACT missing printed diagnostic seed: {text}")
 
 # 9. Scientific scope obligations and retired formulations.
 # Scientific boundaries follow their revised locations; every one is deletion-tested.

@@ -1,0 +1,824 @@
+{
+  "baseline_commit": "8276097",
+  "original_registry_commit": "8813962",
+  "original_count": 97,
+  "baseline_count": 138,
+  "current_count": 303,
+  "original_ids": [
+    "abstract_fixed_score_scope",
+    "scope_no_transfer",
+    "scope_fixed_score_outputs",
+    "related_no_cell_or_population",
+    "deterministic_benchmark",
+    "tie_boundary",
+    "delta_eer_definition",
+    "separation_definition",
+    "identified_object",
+    "bands_not_population_sets",
+    "historical_reconstruction_boundary",
+    "weights_score_blind",
+    "exp111_mass_restoration",
+    "exp111_status",
+    "exp111_attribution_boundary",
+    "exp114_pre_access_identifier",
+    "exp114_off_domain_performance_boundary",
+    "exp114_single_source_boundary",
+    "exp115_post_result_status",
+    "exp114_scorer_gap",
+    "exp114_rerun_status",
+    "exp114_rerun_numerics",
+    "composition_bound_not_minimum",
+    "composition_search_no_proof",
+    "arena_descriptive_boundary",
+    "source_deletion_boundary",
+    "asv5_metric_boundary",
+    "asv5_inference_boundary",
+    "coverage_dgp_boundary",
+    "historical_provenance_limits",
+    "report_units",
+    "zero_boundary",
+    "no_population_or_arena_claim",
+    "conclusion_tested_scope",
+    "conclusion_population_boundary",
+    "exp116_post_result_verification",
+    "abstract_tested_scope",
+    "release_locator",
+    "asv5_resampling_law",
+    "coverage_formulas",
+    "loco_construction",
+    "loco_full_data_reference",
+    "matched_seed",
+    "arena_same_trials",
+    "interaction_share_definition",
+    "spoofceleb_trial_law_exception",
+    "primary_ablation_abstract_exploratory",
+    "primary_ablation_method_status",
+    "primary_ablation_interpretation",
+    "primary_ablation_table_status",
+    "primary_ablation_conclusion_exploratory",
+    "attack_monte_carlo_scope",
+    "attack_recorded_seed_dagger",
+    "mean_sign_separation",
+    "mean_sign_finite_counts",
+    "paired_cancellation",
+    "influence_observed_group",
+    "influence_no_exclusion",
+    "influence_centering",
+    "weighted_tie_scope",
+    "weighted_tie_replicate_boundary",
+    "operational_decision_rule",
+    "pass_both_boundary",
+    "source_deletion_separate_construction",
+    "max_se_coverage_boundary",
+    "repeat_scope",
+    "six_family_scope",
+    "witness_distinct_boundary",
+    "evidence_release_members",
+    "mc_repeat_table",
+    "mean_sign_table",
+    "family_roster_table",
+    "weighted_tie_table",
+    "influence_table",
+    "named_source_table",
+    "main_influence_result",
+    "abstract_fixed_score_estimand",
+    "abstract_zero_exclusion_scope",
+    "abstract_roster_counts",
+    "abstract_factor_matches",
+    "source_deletion_retention_scope",
+    "related_rank_intervals",
+    "all_pairs_outcome_selection",
+    "spoofceleb_different_roster",
+    "spoofceleb_named_eers",
+    "spoofceleb_joint_survivors",
+    "supplement_spoofceleb_named_eers",
+    "supplement_spoofceleb_joint_survivors",
+    "coverage_individual_and_common_counts",
+    "supplement_coverage_individual_and_common_counts",
+    "replicate_pairing_and_streams",
+    "composition_control_replicates",
+    "fixed_score_intervention_distinction",
+    "conclusion_cancellation_pair_scope",
+    "supplement_low_eer_minima",
+    "supplement_method_scope_locator",
+    "supplement_ablation_method_locator"
+  ],
+  "baseline_ids": [
+    "abstract_fixed_score_scope",
+    "scope_no_transfer",
+    "scope_fixed_score_outputs",
+    "related_no_cell_or_population",
+    "deterministic_benchmark",
+    "tie_boundary",
+    "delta_eer_definition",
+    "separation_definition",
+    "identified_object",
+    "bands_not_population_sets",
+    "historical_reconstruction_boundary",
+    "weights_score_blind",
+    "exp111_mass_restoration",
+    "exp111_status",
+    "exp111_attribution_boundary",
+    "exp114_pre_access_identifier",
+    "exp114_off_domain_performance_boundary",
+    "exp114_single_source_boundary",
+    "exp115_post_result_status",
+    "exp114_scorer_gap",
+    "exp114_rerun_status",
+    "exp114_rerun_numerics",
+    "composition_bound_not_minimum",
+    "composition_search_no_proof",
+    "arena_descriptive_boundary",
+    "source_deletion_boundary",
+    "asv5_metric_boundary",
+    "asv5_inference_boundary",
+    "coverage_dgp_boundary",
+    "historical_provenance_limits",
+    "report_units",
+    "zero_boundary",
+    "no_population_or_arena_claim",
+    "conclusion_tested_scope",
+    "conclusion_population_boundary",
+    "exp116_post_result_verification",
+    "abstract_tested_scope",
+    "release_locator",
+    "asv5_resampling_law",
+    "coverage_formulas",
+    "loco_construction",
+    "loco_full_data_reference",
+    "matched_seed",
+    "arena_same_trials",
+    "interaction_share_definition",
+    "spoofceleb_trial_law_exception",
+    "primary_ablation_abstract_exploratory",
+    "primary_ablation_method_status",
+    "primary_ablation_interpretation",
+    "primary_ablation_table_status",
+    "primary_ablation_conclusion_exploratory",
+    "attack_monte_carlo_scope",
+    "attack_recorded_seed_dagger",
+    "mean_sign_separation",
+    "mean_sign_finite_counts",
+    "paired_cancellation",
+    "influence_observed_group",
+    "influence_no_exclusion",
+    "influence_centering",
+    "weighted_tie_scope",
+    "weighted_tie_replicate_boundary",
+    "operational_decision_rule",
+    "pass_both_boundary",
+    "source_deletion_separate_construction",
+    "max_se_coverage_boundary",
+    "repeat_scope",
+    "six_family_scope",
+    "witness_distinct_boundary",
+    "evidence_release_members",
+    "mc_repeat_table",
+    "mean_sign_table",
+    "family_roster_table",
+    "weighted_tie_table",
+    "influence_table",
+    "named_source_table",
+    "main_influence_result",
+    "abstract_fixed_score_estimand",
+    "abstract_zero_exclusion_scope",
+    "abstract_roster_counts",
+    "abstract_factor_matches",
+    "source_deletion_retention_scope",
+    "related_rank_intervals",
+    "all_pairs_outcome_selection",
+    "spoofceleb_different_roster",
+    "spoofceleb_named_eers",
+    "spoofceleb_joint_survivors",
+    "supplement_spoofceleb_named_eers",
+    "supplement_spoofceleb_joint_survivors",
+    "coverage_individual_and_common_counts",
+    "supplement_coverage_individual_and_common_counts",
+    "replicate_pairing_and_streams",
+    "composition_control_replicates",
+    "fixed_score_intervention_distinction",
+    "conclusion_cancellation_pair_scope",
+    "supplement_low_eer_minima",
+    "supplement_method_scope_locator",
+    "supplement_ablation_method_locator",
+    "revision_sentence_01",
+    "revision_sentence_02",
+    "revision_sentence_05",
+    "revision_sentence_06",
+    "revision_sentence_09",
+    "revision_sentence_10",
+    "revision_sentence_11",
+    "revision_sentence_16",
+    "revision_sentence_17",
+    "revision_sentence_22",
+    "revision_sentence_23",
+    "revision_sentence_24",
+    "revision_sentence_26",
+    "revision_sentence_27",
+    "revision_sentence_28",
+    "revision_sentence_29",
+    "revision_sentence_30",
+    "revision_sentence_33",
+    "revision_sentence_34",
+    "revision_sentence_36",
+    "revision_sentence_37",
+    "revision_sentence_40",
+    "revision_sentence_47",
+    "revision_sentence_48",
+    "revision_sentence_49",
+    "revision_sentence_50",
+    "revision_fresh_streams",
+    "revision_supplement_00",
+    "revision_supplement_01",
+    "revision_supplement_02",
+    "revision_supplement_03",
+    "revision_supplement_04",
+    "revision_supplement_05",
+    "revision_supplement_06",
+    "revision_supplement_07",
+    "revision_supplement_08",
+    "revision_supplement_09",
+    "revision_supplement_10",
+    "revision_supplement_11",
+    "revision_supplement_12",
+    "revision_supplement_14"
+  ],
+  "removed_ids": [],
+  "changed_existing": [
+    {
+      "id": "weights_score_blind",
+      "before": {
+        "id": "weights_score_blind",
+        "section": "Method/Weights",
+        "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores."
+      },
+      "after": {
+        "id": "weights_score_blind",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "coverage_dgp_boundary",
+      "before": {
+        "id": "coverage_dgp_boundary",
+        "section": "Discussion",
+        "match": "These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands."
+      },
+      "after": {
+        "id": "coverage_dgp_boundary",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "conclusion_tested_scope",
+      "before": {
+        "id": "conclusion_tested_scope",
+        "section": "Conclusion",
+        "match": "The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules."
+      },
+      "after": {
+        "id": "conclusion_tested_scope",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "exp116_post_result_verification",
+      "before": {
+        "id": "exp116_post_result_verification",
+        "section": "Experiments/Alternative weights",
+        "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points."
+      },
+      "after": {
+        "id": "exp116_post_result_verification",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "matched_seed",
+      "before": {
+        "id": "matched_seed",
+        "section": "Experiments/Setup",
+        "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs."
+      },
+      "after": {
+        "id": "matched_seed",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "arena_same_trials",
+      "before": {
+        "id": "arena_same_trials",
+        "section": "Experiments/Arena",
+        "match": "for the same 533,928 trials"
+      },
+      "after": {
+        "id": "arena_same_trials",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "for the same 533,928 trials",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "operational_decision_rule",
+      "before": {
+        "id": "operational_decision_rule",
+        "section": "Discussion",
+        "match": "If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band."
+      },
+      "after": {
+        "id": "operational_decision_rule",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "conclusion_cancellation_pair_scope",
+      "before": {
+        "id": "conclusion_cancellation_pair_scope",
+        "section": "Conclusion",
+        "match": "Mamba--Conformer illustrates this with about 75\\% covariance cancellation and a 5.2-fold increase in paired standard deviation."
+      },
+      "after": {
+        "id": "conclusion_cancellation_pair_scope",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Mamba--Conformer illustrates this with about 75\\% covariance cancellation and a 5.2-fold increase in paired standard deviation.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_01",
+      "before": {
+        "id": "revision_sentence_01",
+        "section": "Reconsideration/new sentence",
+        "match": "WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF"
+      },
+      "after": {
+        "id": "revision_sentence_01",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_02",
+      "before": {
+        "id": "revision_sentence_02",
+        "section": "Reconsideration/new sentence",
+        "match": "Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?"
+      },
+      "after": {
+        "id": "revision_sentence_02",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_05",
+      "before": {
+        "id": "revision_sentence_05",
+        "section": "Reconsideration/new sentence",
+        "match": "For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\\% of summed marginal variance; the paired standard deviation increases 5.2-fold."
+      },
+      "after": {
+        "id": "revision_sentence_05",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\\% of summed marginal variance; the paired standard deviation increases 5.2-fold.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_06",
+      "before": {
+        "id": "revision_sentence_06",
+        "section": "Reconsideration/new sentence",
+        "match": "A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero."
+      },
+      "after": {
+        "id": "revision_sentence_06",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_09",
+      "before": {
+        "id": "revision_sentence_09",
+        "section": "Reconsideration/new sentence",
+        "match": "One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary."
+      },
+      "after": {
+        "id": "revision_sentence_09",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_10",
+      "before": {
+        "id": "revision_sentence_10",
+        "section": "Reconsideration/new sentence",
+        "match": "All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules."
+      },
+      "after": {
+        "id": "revision_sentence_10",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_11",
+      "before": {
+        "id": "revision_sentence_11",
+        "section": "Reconsideration/new sentence",
+        "match": "On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors."
+      },
+      "after": {
+        "id": "revision_sentence_11",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_16",
+      "before": {
+        "id": "revision_sentence_16",
+        "section": "Reconsideration/new sentence",
+        "match": "This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect."
+      },
+      "after": {
+        "id": "revision_sentence_16",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_22",
+      "before": {
+        "id": "revision_sentence_22",
+        "section": "Reconsideration/new sentence",
+        "match": "Top: primary 21DF EER (\\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class."
+      },
+      "after": {
+        "id": "revision_sentence_22",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Top: primary 21DF EER (\\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_23",
+      "before": {
+        "id": "revision_sentence_23",
+        "section": "Reconsideration/new sentence",
+        "match": "Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs."
+      },
+      "after": {
+        "id": "revision_sentence_23",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_24",
+      "before": {
+        "id": "revision_sentence_24",
+        "section": "Reconsideration/new sentence",
+        "match": "Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations."
+      },
+      "after": {
+        "id": "revision_sentence_24",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_26",
+      "before": {
+        "id": "revision_sentence_26",
+        "section": "Reconsideration/new sentence",
+        "match": "Primary Monte Carlo checks are described in the text."
+      },
+      "after": {
+        "id": "revision_sentence_26",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Primary Monte Carlo checks are described in the text.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_28",
+      "before": {
+        "id": "revision_sentence_28",
+        "section": "Reconsideration/new sentence",
+        "match": "For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged."
+      },
+      "after": {
+        "id": "revision_sentence_28",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_29",
+      "before": {
+        "id": "revision_sentence_29",
+        "section": "Reconsideration/new sentence",
+        "match": "This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability."
+      },
+      "after": {
+        "id": "revision_sentence_29",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_30",
+      "before": {
+        "id": "revision_sentence_30",
+        "section": "Reconsideration/new sentence",
+        "match": "For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family."
+      },
+      "after": {
+        "id": "revision_sentence_30",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_33",
+      "before": {
+        "id": "revision_sentence_33",
+        "section": "Reconsideration/new sentence",
+        "match": "In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\\%) under trial resampling and 196/200 (98.0\\%) under speaker$\\times$attack resampling, using 300 bootstrap draws per dataset."
+      },
+      "after": {
+        "id": "revision_sentence_33",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\\%) under trial resampling and 196/200 (98.0\\%) under speaker$\\times$attack resampling, using 300 bootstrap draws per dataset.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_34",
+      "before": {
+        "id": "revision_sentence_34",
+        "section": "Reconsideration/new sentence",
+        "match": "In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\\times$attack percentile coverage fell below 90\\% in 11 cells, reaching 85.5\\% (1,000 datasets per cell; 500 bootstrap draws)."
+      },
+      "after": {
+        "id": "revision_sentence_34",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\\times$attack percentile coverage fell below 90\\% in 11 cells, reaching 85.5\\% (1,000 datasets per cell; 500 bootstrap draws).",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_47",
+      "before": {
+        "id": "revision_sentence_47",
+        "section": "Reconsideration/new sentence",
+        "match": "Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band."
+      },
+      "after": {
+        "id": "revision_sentence_47",
+        "section": "Supplement/S10 historical obligation retained",
+        "match": "Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    }
+  ],
+  "added_ids": [
+    "rewrite_pdf_138",
+    "rewrite_pdf_139",
+    "rewrite_pdf_140",
+    "rewrite_pdf_141",
+    "rewrite_pdf_142",
+    "rewrite_pdf_143",
+    "rewrite_pdf_144",
+    "rewrite_pdf_145",
+    "rewrite_pdf_146",
+    "rewrite_pdf_147",
+    "rewrite_pdf_148",
+    "rewrite_pdf_149",
+    "rewrite_pdf_150",
+    "rewrite_pdf_151",
+    "rewrite_pdf_152",
+    "rewrite_pdf_153",
+    "rewrite_pdf_154",
+    "rewrite_pdf_155",
+    "rewrite_pdf_156",
+    "rewrite_pdf_157",
+    "rewrite_pdf_158",
+    "rewrite_pdf_159",
+    "rewrite_pdf_160",
+    "rewrite_pdf_161",
+    "rewrite_pdf_162",
+    "rewrite_pdf_163",
+    "rewrite_pdf_164",
+    "rewrite_pdf_165",
+    "rewrite_pdf_166",
+    "rewrite_pdf_167",
+    "rewrite_pdf_168",
+    "rewrite_pdf_169",
+    "rewrite_pdf_170",
+    "rewrite_pdf_171",
+    "rewrite_pdf_172",
+    "rewrite_pdf_173",
+    "rewrite_pdf_174",
+    "rewrite_pdf_175",
+    "rewrite_pdf_176",
+    "rewrite_pdf_177",
+    "rewrite_pdf_178",
+    "rewrite_pdf_179",
+    "rewrite_pdf_180",
+    "rewrite_pdf_181",
+    "rewrite_pdf_182",
+    "rewrite_pdf_183",
+    "rewrite_pdf_184",
+    "rewrite_pdf_185",
+    "rewrite_pdf_186",
+    "rewrite_pdf_187",
+    "rewrite_pdf_188",
+    "rewrite_pdf_189",
+    "rewrite_pdf_190",
+    "rewrite_pdf_191",
+    "rewrite_pdf_192",
+    "rewrite_pdf_193",
+    "rewrite_pdf_194",
+    "rewrite_pdf_195",
+    "rewrite_pdf_196",
+    "rewrite_pdf_197",
+    "rewrite_pdf_198",
+    "rewrite_pdf_199",
+    "rewrite_pdf_200",
+    "rewrite_pdf_201",
+    "rewrite_pdf_202",
+    "rewrite_pdf_203",
+    "rewrite_pdf_204",
+    "rewrite_pdf_205",
+    "rewrite_pdf_206",
+    "rewrite_pdf_207",
+    "rewrite_pdf_208",
+    "rewrite_pdf_209",
+    "rewrite_pdf_210",
+    "rewrite_pdf_211",
+    "rewrite_pdf_212",
+    "rewrite_pdf_213",
+    "rewrite_pdf_214",
+    "rewrite_pdf_215",
+    "rewrite_pdf_216",
+    "rewrite_pdf_217",
+    "rewrite_pdf_218",
+    "rewrite_pdf_219",
+    "rewrite_pdf_220",
+    "rewrite_pdf_221",
+    "rewrite_pdf_222",
+    "rewrite_pdf_223",
+    "rewrite_pdf_224",
+    "rewrite_pdf_225",
+    "rewrite_pdf_226",
+    "rewrite_pdf_227",
+    "rewrite_pdf_228",
+    "rewrite_pdf_229",
+    "rewrite_pdf_230",
+    "rewrite_pdf_231",
+    "rewrite_pdf_232",
+    "rewrite_pdf_233",
+    "rewrite_pdf_234",
+    "rewrite_pdf_235",
+    "rewrite_pdf_236",
+    "rewrite_pdf_237",
+    "rewrite_pdf_238",
+    "rewrite_pdf_239",
+    "rewrite_pdf_240",
+    "rewrite_pdf_241",
+    "rewrite_pdf_242",
+    "rewrite_pdf_243",
+    "rewrite_pdf_244",
+    "rewrite_pdf_245",
+    "rewrite_pdf_246",
+    "rewrite_pdf_247",
+    "rewrite_pdf_248",
+    "rewrite_pdf_249",
+    "rewrite_pdf_250",
+    "rewrite_pdf_251",
+    "rewrite_pdf_252",
+    "rewrite_pdf_253",
+    "rewrite_pdf_254",
+    "rewrite_pdf_255",
+    "rewrite_pdf_256",
+    "rewrite_pdf_257",
+    "rewrite_pdf_258",
+    "rewrite_pdf_259",
+    "rewrite_pdf_260",
+    "rewrite_pdf_261",
+    "rewrite_pdf_262",
+    "rewrite_pdf_263",
+    "rewrite_pdf_264",
+    "rewrite_pdf_265",
+    "rewrite_pdf_266",
+    "rewrite_pdf_267",
+    "rewrite_pdf_268",
+    "rewrite_pdf_269",
+    "rewrite_pdf_270",
+    "rewrite_pdf_271",
+    "rewrite_pdf_272",
+    "rewrite_pdf_273",
+    "rewrite_pdf_274",
+    "rewrite_pdf_275",
+    "rewrite_pdf_276",
+    "rewrite_pdf_277",
+    "rewrite_pdf_278",
+    "rewrite_pdf_279",
+    "rewrite_pdf_280",
+    "rewrite_pdf_281",
+    "rewrite_pdf_282",
+    "rewrite_pdf_283",
+    "rewrite_pdf_284",
+    "rewrite_pdf_285",
+    "rewrite_pdf_286",
+    "rewrite_pdf_287",
+    "rewrite_pdf_288",
+    "rewrite_pdf_289",
+    "rewrite_pdf_290",
+    "rewrite_pdf_291",
+    "rewrite_pdf_292",
+    "rewrite_pdf_293",
+    "rewrite_pdf_294",
+    "rewrite_pdf_295",
+    "rewrite_archive_296",
+    "rewrite_archive_297",
+    "rewrite_archive_298",
+    "rewrite_archive_299",
+    "rewrite_archive_300",
+    "rewrite_archive_301",
+    "rewrite_archive_302"
+  ],
+  "checker_hunks": [
+    {
+      "edit": "Replace mixed example/point/count table and forest with full primary table plus separate count table.",
+      "check": "Every primary gap, both endpoint pairs, system abbreviation, point EER, loss star and arm count is bound to the original artifacts; the Arena example remains bound in the supplement."
+    },
+    {
+      "edit": "Move both simulation summaries out of the PDF.",
+      "check": "37/200 and 196/200 are required in the supplement instead; all simulation arithmetic, provenance and scope checks remain."
+    },
+    {
+      "edit": "Add deletion table, control band and SpoofCeleb decisions/loss bands.",
+      "check": "Bind all new displayed rows and endpoints to existing JSON, including direction reversal for the control."
+    },
+    {
+      "edit": "Remove Arena, fixed weighting and simulation headlines from the PDF.",
+      "check": "Forbid their reintroduction and retain all original IDs."
+    }
+  ]
+}

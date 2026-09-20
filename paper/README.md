@@ -1,9 +1,9 @@
-# Audited M1 manuscript
+# Concentration rewrite manuscript
 
-This manuscript measures paired comparison sensitivity. The supplement includes
-S4a–S4e, and its three evidence JSONs are byte-identical to the root evidence.
-The portable drivers, both replicate archives and input acquisition instructions
-are described in [REPRODUCE-DIAGNOSTICS.md](../REPRODUCE-DIAGNOSTICS.md).
+The PDF prints all 28 primary point gaps and trial/joint bands, the three-row
+speaker-deletion table, four-arm counts, mean/sign diagnostics, the composition
+control band and the SpoofCeleb factor contrast. The full technical record remains
+in the byte-identical root and paper supplements.
 
 From the repository root:
 
@@ -14,10 +14,11 @@ uv run --frozen python code/verify_release_receipt.py
 uv run --frozen python verify_release.py
 ```
 
-Every registered semantic obligation is deletion-tested. The artifact stage
-contains the revised source and an inherited predecessor PDF; the submission stage
-updates the artifact locator and rebuilds the PDF. See [revision details](../REVISION-CHANGES.md). The current payload is
-bound by RELEASE-RECEIPT-REVISION-FINAL.json and MANIFEST.json. Earlier receipts and
-validation directories are historical records for their named revisions.
-
-The revised source is self-contained; the supplement is additional provenance. The new Monte Carlo checks and independent arithmetic verifier are documented in ../REPRODUCE-DIAGNOSTICS.md.
+All 303 semantic obligations are deletion-tested; all 138 predecessor obligations
+and all 97 originals are retained. `OBLIGATION-REWRITE.json` records each relocation
+and the manuscript edit forcing each checker change.
+The current artifact-stage receipt is `RELEASE-RECEIPT-REWRITE-ARTIFACT.json`.
+The artifact-stage PDF is inherited from the audited predecessor and does not
+render this stage's revised source. A subsequent submission commit updates the
+locator and rebuilds it. Prior receipts and validation directories describe their
+named historical revisions. See `../REWRITE-CHANGES.md`.

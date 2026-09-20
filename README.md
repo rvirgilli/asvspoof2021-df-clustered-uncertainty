@@ -1,7 +1,14 @@
-# When Resampling Changes Paired Detector Comparisons on ASVspoof 2021 DF
+# Speaker-Group Sensitivity of Paired Detector Comparisons on ASVspoof 2021 DF
 
-This revision contains the audited manuscript and supplement, portable diagnostic
-drivers, regenerated evidence JSONs and both replicate archives. The reconsideration artifact and submission are prepared as new commits on the existing branch; existing tags stay unchanged. See [revision details](REVISION-CHANGES.md) and the payload [receipt](paper/RELEASE-RECEIPT-REVISION-FINAL.json).
+This concentration rewrite starts from the audited submission at `8276097`.
+The PDF prints the complete primary 28-pair evidence, the three affected SSL
+pairs' delete-one concentration, the composition control and a limited SpoofCeleb
+factor counterexample. Arena, fixed weighting and simulations remain in this
+artifact without being premises of the submitted argument.
+See [rewrite decisions](REWRITE-CHANGES.md), the [guard ledger](paper/OBLIGATION-REWRITE.json)
+and the current payload [receipt](paper/RELEASE-RECEIPT-REWRITE-ARTIFACT.json).
+The artifact-stage PDF is inherited from `8276097`; the submission stage pins
+this new artifact commit and rebuilds the PDF. Existing tags stay unchanged.
 
 - [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.

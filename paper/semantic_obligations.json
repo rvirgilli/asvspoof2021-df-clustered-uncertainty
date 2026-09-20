@@ -63,8 +63,9 @@
   },
   {
    "id": "weights_score_blind",
-   "section": "Method/Weights",
-   "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Their $3\\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "exp111_mass_restoration",
@@ -160,8 +161,9 @@
   },
   {
    "id": "coverage_dgp_boundary",
-   "section": "Discussion",
-   "match": "These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "historical_provenance_limits",
@@ -186,8 +188,9 @@
   },
   {
    "id": "conclusion_tested_scope",
-   "section": "Conclusion",
-   "match": "The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "conclusion_population_boundary",
@@ -196,8 +199,9 @@
   },
   {
    "id": "exp116_post_result_verification",
-   "section": "Experiments/Alternative weights",
-   "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\\times$law cells; the closest band endpoint to zero is $-12.79$ points.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "abstract_tested_scope",
@@ -235,13 +239,15 @@
   },
   {
    "id": "matched_seed",
-   "section": "Experiments/Setup",
-   "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "arena_same_trials",
-   "section": "Experiments/Arena",
-   "match": "for the same 533,928 trials"
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "for the same 533,928 trials",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "interaction_share_definition",
@@ -337,8 +343,9 @@
   },
   {
    "id": "operational_decision_rule",
-   "section": "Discussion",
-   "match": "If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "pass_both_boundary",
@@ -516,8 +523,9 @@
   },
   {
    "id": "conclusion_cancellation_pair_scope",
-   "section": "Conclusion",
-   "match": "Mamba--Conformer illustrates this with about 75\\% covariance cancellation and a 5.2-fold increase in paired standard deviation."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Mamba--Conformer illustrates this with about 75\\% covariance cancellation and a 5.2-fold increase in paired standard deviation.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "supplement_low_eer_minima",
@@ -539,43 +547,51 @@
   },
   {
    "id": "revision_sentence_01",
-   "section": "Reconsideration/new sentence",
-   "match": "WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF"
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_02",
-   "section": "Reconsideration/new sentence",
-   "match": "Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?"
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_05",
-   "section": "Reconsideration/new sentence",
-   "match": "For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\\% of summed marginal variance; the paired standard deviation increases 5.2-fold."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\\% of summed marginal variance; the paired standard deviation increases 5.2-fold.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_06",
-   "section": "Reconsideration/new sentence",
-   "match": "A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_09",
-   "section": "Reconsideration/new sentence",
-   "match": "One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_10",
-   "section": "Reconsideration/new sentence",
-   "match": "All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_11",
-   "section": "Reconsideration/new sentence",
-   "match": "On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_16",
-   "section": "Reconsideration/new sentence",
-   "match": "This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_17",
@@ -584,23 +600,27 @@
   },
   {
    "id": "revision_sentence_22",
-   "section": "Reconsideration/new sentence",
-   "match": "Top: primary 21DF EER (\\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Top: primary 21DF EER (\\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_23",
-   "section": "Reconsideration/new sentence",
-   "match": "Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_24",
-   "section": "Reconsideration/new sentence",
-   "match": "Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_26",
-   "section": "Reconsideration/new sentence",
-   "match": "Primary Monte Carlo checks are described in the text."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Primary Monte Carlo checks are described in the text.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_27",
@@ -609,28 +629,33 @@
   },
   {
    "id": "revision_sentence_28",
-   "section": "Reconsideration/new sentence",
-   "match": "For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_29",
-   "section": "Reconsideration/new sentence",
-   "match": "This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_30",
-   "section": "Reconsideration/new sentence",
-   "match": "For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_33",
-   "section": "Reconsideration/new sentence",
-   "match": "In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\\%) under trial resampling and 196/200 (98.0\\%) under speaker$\\times$attack resampling, using 300 bootstrap draws per dataset."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\\%) under trial resampling and 196/200 (98.0\\%) under speaker$\\times$attack resampling, using 300 bootstrap draws per dataset.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_34",
-   "section": "Reconsideration/new sentence",
-   "match": "In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\\times$attack percentile coverage fell below 90\\% in 11 cells, reaching 85.5\\% (1,000 datasets per cell; 500 bootstrap draws)."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\\times$attack percentile coverage fell below 90\\% in 11 cells, reaching 85.5\\% (1,000 datasets per cell; 500 bootstrap draws).",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_36",
@@ -649,8 +674,9 @@
   },
   {
    "id": "revision_sentence_47",
-   "section": "Reconsideration/new sentence",
-   "match": "Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band."
+   "section": "Supplement/S10 historical obligation retained",
+   "match": "Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "revision_sentence_48",
@@ -755,6 +781,996 @@
    "source": "SUPPLEMENT.md",
    "section": "Supplement/new verification",
    "match": "The factor agreement concerns these particular score collections and different rosters; it does not identify a causal factor or a corpus-general variance pattern. Source-deletion methods and endpoints remain in S2, and the constructive search remains in S5; neither is needed to interpret the revised submission."
+  },
+  {
+   "id": "rewrite_pdf_138",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\title{SPEAKER-GROUP SENSITIVITY OF PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF}"
+  },
+  {
+   "id": "rewrite_pdf_139",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A small paired detector advantage can depend strongly on a few observed speaker groups."
+  },
+  {
+   "id": "rewrite_pdf_140",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Speaker-only resampling reproduces every primary joint separation decision."
+  },
+  {
+   "id": "rewrite_pdf_141",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the squared, mean-centered delete-one deviations for this pair."
+  },
+  {
+   "id": "rewrite_pdf_142",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Concentration varies across the three affected modern comparisons."
+  },
+  {
+   "id": "rewrite_pdf_143",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A contrasting SpoofCeleb factor pattern limits a universal speaker-only prescription."
+  },
+  {
+   "id": "rewrite_pdf_144",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "On ASVspoof~2021~DF, XLSR-Mamba achieves 1.884\\% EER and XLSR-Conformer 2.273\\%."
+  },
+  {
+   "id": "rewrite_pdf_145",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Those 315 trials are part of 14,869 bona-fide trials in a benchmark with 533,928 trials overall."
+  },
+  {
+   "id": "rewrite_pdf_146",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The gap remains negative, but its magnitude depends strongly on one observed group."
+  },
+  {
+   "id": "rewrite_pdf_147",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "This deletion belongs to a complete family analysis, with all speakers retained in the principal comparison."
+  },
+  {
+   "id": "rewrite_pdf_148",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Across eight detectors, we ask which paired EER differences survive changing the resampling unit, and how concentrated the delete-one speaker influence is in the affected modern comparisons."
+  },
+  {
+   "id": "rewrite_pdf_149",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "ASVspoof~2021~DF has 93 speakers and 110 attacks; a large trial count need not provide broad group support for a close comparison."
+  },
+  {
+   "id": "rewrite_pdf_150",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Shared group variation may cancel between detectors, so dependence of individual scores alone cannot answer this paired question."
+  },
+  {
+   "id": "rewrite_pdf_151",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Our contribution is an empirical concentration result on fixed scores: speaker-only resampling reproduces the joint decisions, and delete-one influence is concentrated to differing degrees across the three affected self-supervised (SSL) comparisons."
+  },
+  {
+   "id": "rewrite_pdf_152",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "We print every primary trial and joint band, then test comparison-family and source-composition objections."
+  },
+  {
+   "id": "rewrite_pdf_153",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A limited SpoofCeleb counterexample retains the reason to examine both factors."
+  },
+  {
+   "id": "rewrite_pdf_154",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The reporting consequence is to disclose influential-group sensitivity when claiming a small paired EER advantage."
+  },
+  {
+   "id": "rewrite_pdf_155",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Benchmark reporting.} ASVspoof~2017 reported EER intervals \\cite{delgado18}; ASVspoof~2021 Fig.~4(c) used the Bengio--Mari\\'ethoz test \\cite{bengio04} with Holm correction \\cite{asvspoof21}."
+  },
+  {
+   "id": "rewrite_pdf_156",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Its shared-trial variant accounts for two systems using the same trials, not repeated speakers and attacks."
+  },
+  {
+   "id": "rewrite_pdf_157",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "We found no uncertainty analysis in the later journal overview \\cite{asvspoof21journal} or ASVspoof~5 \\cite{asvspoof5eval}; a recent SSL benchmark reports point EERs \\cite{spoofsuperb26}."
+  },
+  {
+   "id": "rewrite_pdf_158",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Other work reports trial-bootstrap ranks \\cite{xie26atadd}, EER spreads \\cite{pascu24}, corrected pairwise tests \\cite{martindonas24}, or fixed-threshold intervals \\cite{weizman25}."
+  },
+  {
+   "id": "rewrite_pdf_159",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Training-seed variation also moves rankings \\cite{wang21_comparative}; our scores hold training fixed."
+  },
+  {
+   "id": "rewrite_pdf_160",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Dependent paired comparison.} User-aware biometric and speech resampling \\cite{poh07,wu17}, correlation-corrected paired tests \\cite{wu16}, and synchronized resampling for correlated classifiers \\cite{wukacker24} precede this study."
+  },
+  {
+   "id": "rewrite_pdf_161",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Our speaker and spoof-attack factors are crossed \\cite{cgm11,mccullagh00,owen07}, distinct from the nested-observation designs studied in \\cite{anglin26}."
+  },
+  {
+   "id": "rewrite_pdf_162",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "We use these established tools to measure concentrated group influence on paired EER comparisons, with every threshold refitted."
+  },
+  {
+   "id": "rewrite_pdf_163",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Evaluation design.} Aggregation weights \\cite{kwok25}, channel presentation \\cite{delgado26presentation}, representations \\cite{benchaudit26}, controlled generator/speaker perturbations \\cite{pirlogeanu26} and corpus overlap \\cite{stanek26} affect deepfake evaluation."
+  },
+  {
+   "id": "rewrite_pdf_164",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Identity perturbations \\cite{dar26}, speaker-adversarial training \\cite{dao26} and speaker/synthesizer familiarity \\cite{hong25twinshift} address related sensitivities."
+  },
+  {
+   "id": "rewrite_pdf_165",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Scores are oriented so larger means bona fide and sorted in ascending order."
+  },
+  {
+   "id": "rewrite_pdf_166",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The trial bootstrap independently resamples trials within class; for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates."
+  },
+  {
+   "id": "rewrite_pdf_167",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Speaker-only fixes attack multiplicities at one; attack-only fixes speaker and bona-fide trial weights at one."
+  },
+  {
+   "id": "rewrite_pdf_168",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Interpretation.} These bands describe sensitivity of fixed scores to the stated weights, not confidence about future speakers or attacks."
+  },
+  {
+   "id": "rewrite_pdf_169",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "For procedure $h$, let $s_{p,h}=\\operatorname{sd}_b(\\Delta_{p,h}^{(b)})$."
+  },
+  {
+   "id": "rewrite_pdf_170",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "We set $q_{.95,h}$ to the empirical 95th percentile of $\\max_{p=1}^{28}|\\Delta_{p,h}^{(b)}-\\bar\\Delta_{p,h}|/s_{p,h}$ and report $\\hat\\Delta_p\\pm q_{.95,h}s_{p,h}$ \\cite{montiel19}."
+  },
+  {
+   "id": "rewrite_pdf_171",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The quantile centers deviations on the bootstrap mean, whereas the bands center on the original estimate; band inclusion is not an empirical reversal probability."
+  },
+  {
+   "id": "rewrite_pdf_172",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The maximum includes all 28 primary contrasts, including when reporting within-cohort counts; SpoofCeleb uses its own complete six-pair family."
+  },
+  {
+   "id": "rewrite_pdf_173",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "For each of the 93 speakers, we remove all its trials, renormalize within class and refit both thresholds."
+  },
+  {
+   "id": "rewrite_pdf_174",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "For pair $p$, define $d_{p,g}=\\hat\\Delta_{p,-g}-\\overline{\\hat\\Delta}_{p,-\\cdot}$, where the bar averages the 93 delete-one estimates."
+  },
+  {
+   "id": "rewrite_pdf_175",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The influence share is $d_{p,g}^2/\\sum_{h=1}^{93}d_{p,h}^2$; top-five shares sum the five largest terms of this same denominator."
+  },
+  {
+   "id": "rewrite_pdf_176",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "These are shares of squared deletion deviations, not fractions of the original gap or population effective sample sizes."
+  },
+  {
+   "id": "rewrite_pdf_177",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Setup.} The primary set contains XLSR-Mamba \\cite{xiao25}, XLS-R+SLS (SLS below) \\cite{zhang24sls}, XLSR-Conformer \\cite{rosello23} and SSL-AASIST \\cite{tak22}, plus RawNet2, LFCC-LCNN, LFCC-GMM and CQCC-GMM."
+  },
+  {
+   "id": "rewrite_pdf_178",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "All 533,928 evaluation-phase trials have every score: 14,869 bona-fide and 519,059 spoof trials, with weights normalized within class."
+  },
+  {
+   "id": "rewrite_pdf_179",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; NumPy SeedSequence children are trial, joint, speaker-only and attack-only in that order."
+  },
+  {
+   "id": "rewrite_pdf_180",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Complete paired evidence.} The matched all-28-pair bootstrap refits the same weighted EER in every replicate."
+  },
+  {
+   "id": "rewrite_pdf_181",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Table~\\ref{tab:eers} prints all point differences and both simultaneous bands."
+  },
+  {
+   "id": "rewrite_pdf_182",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Trial and joint bands separate 26/28 and 18/28 pairs; within SSL, the counts fall from 5/6 to 2/6."
+  },
+  {
+   "id": "rewrite_pdf_183",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "All primary within-SSL losses involve Conformer."
+  },
+  {
+   "id": "rewrite_pdf_184",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "All sixteen SSL-versus-baseline comparisons remain separated under every primary arm (Table~\\ref{tab:arms})."
+  },
+  {
+   "id": "rewrite_pdf_185",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Restricting the maximum to the six SSL pairs also gives 5/6 trial and 2/6 joint separations; the losses do not require the organizer comparisons in the family."
+  },
+  {
+   "id": "rewrite_pdf_186",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\caption{Complete primary 21DF sensitivity bands in percentage points, using the full 28-pair maximum."
+  },
+  {
+   "id": "rewrite_pdf_187",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Pair labels mean first minus second; negative favors the first."
+  },
+  {
+   "id": "rewrite_pdf_188",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A star marks trial separation lost under joint resampling."
+  },
+  {
+   "id": "rewrite_pdf_189",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Abbreviations and point EERs (\\%) are defined above the bands.}"
+  },
+  {
+   "id": "rewrite_pdf_190",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M & XLSR-Mamba & 1.884 & R & RawNet2 & 22.383 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_191",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S & XLS-R+SLS & 1.916 & L & LFCC-LCNN & 23.477 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_192",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C & XLSR-Conformer & 2.273 & F & LFCC-GMM & 25.247 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_193",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A & SSL-AASIST & 2.852 & Q & CQCC-GMM & 25.563 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_194",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Pair & Gap & Trial band & Joint band \\\\"
+  },
+  {
+   "id": "rewrite_pdf_195",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\multicolumn{4}{l}{Within SSL} \\\\"
+  },
+  {
+   "id": "rewrite_pdf_196",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--S & $-0.032$ & $[-0.144,0.080]$ & $[-0.725,0.661]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_197",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--C* & $-0.389$ & $[-0.570,-0.208]$ & $[-1.348,0.570]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_198",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--A & $-0.968$ & $[-1.175,-0.760]$ & $[-1.828,-0.107]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_199",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--C* & $-0.357$ & $[-0.538,-0.177]$ & $[-1.493,0.779]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_200",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--A & $-0.935$ & $[-1.141,-0.730]$ & $[-1.784,-0.087]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_201",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--A* & $-0.578$ & $[-0.835,-0.322]$ & $[-1.637,0.480]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_202",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\multicolumn{4}{l}{Within organizer baselines} \\\\"
+  },
+  {
+   "id": "rewrite_pdf_203",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "R--L* & $-1.094$ & $[-1.722,-0.466]$ & $[-5.528,3.341]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_204",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "R--F* & $-2.864$ & $[-3.654,-2.074]$ & $[-9.949,4.221]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_205",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "R--Q* & $-3.180$ & $[-4.003,-2.356]$ & $[-9.284,2.925]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_206",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "L--F* & $-1.770$ & $[-2.426,-1.114]$ & $[-6.490,2.950]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_207",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "L--Q* & $-2.086$ & $[-2.765,-1.407]$ & $[-6.173,2.001]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_208",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "F--Q & $-0.316$ & $[-0.929,0.297]$ & $[-3.370,2.738]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_209",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\multicolumn{4}{l}{SSL versus organizer baselines} \\\\"
+  },
+  {
+   "id": "rewrite_pdf_210",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--R & $-20.499$ & $[-21.070,-19.929]$ & $[-26.950,-14.049]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_211",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--L & $-21.593$ & $[-22.123,-21.063]$ & $[-27.445,-15.742]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_212",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--F & $-23.363$ & $[-23.981,-22.746]$ & $[-29.462,-17.264]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_213",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--Q & $-23.679$ & $[-24.364,-22.994]$ & $[-29.247,-18.112]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_214",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--R & $-20.467$ & $[-21.039,-19.896]$ & $[-26.958,-13.976]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_215",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--L & $-21.561$ & $[-22.090,-21.032]$ & $[-27.440,-15.682]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_216",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--F & $-23.331$ & $[-23.948,-22.714]$ & $[-29.469,-17.194]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_217",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--Q & $-23.647$ & $[-24.330,-22.964]$ & $[-29.216,-18.078]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_218",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--R & $-20.110$ & $[-20.673,-19.547]$ & $[-26.307,-13.914]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_219",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--L & $-21.204$ & $[-21.726,-20.682]$ & $[-26.757,-15.651]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_220",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--F & $-22.974$ & $[-23.587,-22.361]$ & $[-28.899,-17.049]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_221",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--Q & $-23.290$ & $[-23.964,-22.616]$ & $[-28.709,-17.871]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_222",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A--R & $-19.532$ & $[-20.118,-18.945]$ & $[-25.739,-13.325]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_223",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A--L & $-20.626$ & $[-21.171,-20.080]$ & $[-26.215,-15.036]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_224",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A--F & $-22.396$ & $[-23.028,-21.763]$ & $[-28.399,-16.392]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_225",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A--Q & $-22.712$ & $[-23.406,-22.017]$ & $[-28.123,-17.301]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_226",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\caption{Primary zero-exclusion counts under the full 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations."
+  },
+  {
+   "id": "rewrite_pdf_227",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "One-factor analyses are exploratory.}"
+  },
+  {
+   "id": "rewrite_pdf_228",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Roster / subset & Trial & Speaker & Attack & Joint \\\\"
+  },
+  {
+   "id": "rewrite_pdf_229",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "21DF, all & 26/28 & 18/28 & 21--22/28 & 18/28 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_230",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "21DF, SSL & 5/6 & 2/6 & 3/6 & 2/6 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_231",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "21DF, organizer & 5/6 & 0/6 & 2--3/6 & 0/6 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_232",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Factor pattern and pairing.} Speaker-only reproduces every primary joint separation decision; attack-only reproduces four or five of the eight joint losses across Monte Carlo repeats."
+  },
+  {
+   "id": "rewrite_pdf_233",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Matching indicators does not make attacks inert: Table~\\ref{tab:sign} shows different SDs and opposite-sign counts under speaker-only and joint resampling."
+  },
+  {
+   "id": "rewrite_pdf_234",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Under the joint law, Mamba and Conformer EERs correlate 0.777; pairing removes about 75\\% of the sum of their marginal variances, yet the paired SD rises from 0.06149 under trials to 0.31997 points under joint resampling."
+  },
+  {
+   "id": "rewrite_pdf_235",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The trial and joint critical values are 2.940 and 2.997, so SD inflation drives the band widening."
+  },
+  {
+   "id": "rewrite_pdf_236",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The joint mean displacement is only 0.032 SD, so band centering does not explain inclusion of zero; the trial band excludes zero with 0/5,000 opposite-sign draws, the joint band includes it with 463/5,000."
+  },
+  {
+   "id": "rewrite_pdf_237",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A finite zero count does not establish zero reversal probability."
+  },
+  {
+   "id": "rewrite_pdf_238",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\caption{Mamba minus Conformer: mean shift from the point gap, pair SD (points), opposite-sign draws out of 5,000, and zero exclusion under the full 28-pair band.}"
+  },
+  {
+   "id": "rewrite_pdf_239",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Law & Mean shift & SD & Opposite & Excludes?"
+  },
+  {
+   "id": "rewrite_pdf_240",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Trial & $-0.002492$ & 0.061488 & 0 & Yes \\\\"
+  },
+  {
+   "id": "rewrite_pdf_241",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Speaker & $-0.003175$ & 0.270826 & 210 & No \\\\"
+  },
+  {
+   "id": "rewrite_pdf_242",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Attack & $-0.010235$ & 0.147333 & 37 & No \\\\"
+  },
+  {
+   "id": "rewrite_pdf_243",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Joint & $-0.010135$ & 0.319971 & 463 & No \\\\"
+  },
+  {
+   "id": "rewrite_pdf_244",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Concentration across affected SSL pairs.} Table~\\ref{tab:influence} reports the largest speaker contributor for each SSL comparison losing separation."
+  },
+  {
+   "id": "rewrite_pdf_245",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The two comparisons of Mamba and SLS with Conformer share VCC2SM3 as their largest contributor, whereas Conformer--SSL-AASIST has a different and less dominant contributor."
+  },
+  {
+   "id": "rewrite_pdf_246",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "All speakers remain in the principal analysis."
+  },
+  {
+   "id": "rewrite_pdf_247",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Deletion changes class normalization and refits thresholds; it measures influence without isolating a causal speaker effect or an exclusive tail mechanism."
+  },
+  {
+   "id": "rewrite_pdf_248",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\caption{Speaker deletion influence for the three affected SSL pairs (abbreviations as in Table~\\ref{tab:eers})."
+  },
+  {
+   "id": "rewrite_pdf_249",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Gaps are in points; shares use the squared-deviation denominator in Method.}"
+  },
+  {
+   "id": "rewrite_pdf_250",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Pair & Largest group & Full $\\to$ deletion & Largest / top five \\\\"
+  },
+  {
+   "id": "rewrite_pdf_251",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "M--C & VCC2SM3 & $-0.389\\to-0.129$ & 77.09\\% / 90.03\\% \\\\"
+  },
+  {
+   "id": "rewrite_pdf_252",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "S--C & VCC2SM3 & $-0.357\\to-0.131$ & 55.85\\% / 78.47\\% \\\\"
+  },
+  {
+   "id": "rewrite_pdf_253",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "C--A & VCC2SF2 & $-0.578\\to-0.441$ & 23.85\\% / 75.73\\% \\\\"
+  },
+  {
+   "id": "rewrite_pdf_254",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Composition-preserving control.} A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
+  },
+  {
+   "id": "rewrite_pdf_255",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "This control uses seed 20260824. The bona-fide sources are ASVspoof, VCC2018 and VCC2020; the spoof strata split VCC2018 into HUB/SPO and VCC2020 into Task~1/Task~2."
+  },
+  {
+   "id": "rewrite_pdf_256",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "VCC2018 required 1,007 attempts, with seven rejected for lost spoof support; no other stratum required rejections."
+  },
+  {
+   "id": "rewrite_pdf_257",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "For Mamba--Conformer, the control band is $[-1.280,0.501]$, beside the primary joint band $[-1.348,0.570]$."
+  },
+  {
+   "id": "rewrite_pdf_258",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Numerical checks.} Across five fresh attack-only runs, separation counts range from 21 to 22 overall and from two to three among organizer baselines; within-SSL counts remain three."
+  },
+  {
+   "id": "rewrite_pdf_259",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A distinct-score-boundary tie check over the four primary arms and five fresh attack streams changes no indicator; the largest pair-band endpoint change is 0.000233 points."
+  },
+  {
+   "id": "rewrite_pdf_260",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Counterexample on single-source SpoofCeleb.} On all 91,130 SpoofCeleb evaluation trials \\cite{jung25spoofceleb}, pooled trial resampling separates 6/6 pairs and joint resampling 3/6; class-stratified trial resampling also gives 6/6."
+  },
+  {
+   "id": "rewrite_pdf_261",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The roster has 40 speakers and nine attacks. Trial/joint arms use seed 20260829; the post-result one-factor check uses seed 20260830."
+  },
+  {
+   "id": "rewrite_pdf_262",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Table~\\ref{tab:spoof} prints the four-arm decisions and bands for the joint losses."
+  },
+  {
+   "id": "rewrite_pdf_263",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Here attack-only reproduces the joint indicator vector, while speaker-only separates 5/6 pairs."
+  },
+  {
+   "id": "rewrite_pdf_264",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Different rosters and poor transfer prevent a causal attribution of this contrast to the corpus; the mirrored factor pattern nevertheless counters a universal speaker-only prescription."
+  },
+  {
+   "id": "rewrite_pdf_265",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\caption{SpoofCeleb: all six pairs under their own six-pair maximum."
+  },
+  {
+   "id": "rewrite_pdf_266",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "T/S/A/J denote trial/speaker/attack/joint; Y means the band excludes zero, N means it includes zero."
+  },
+  {
+   "id": "rewrite_pdf_267",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SSL-A denotes SSL-AASIST. Below: point gaps and trial/joint bands (points) for the three joint losses.}"
+  },
+  {
+   "id": "rewrite_pdf_268",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Pair & T & S & A & J \\\\"
+  },
+  {
+   "id": "rewrite_pdf_269",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "AASIST--SLS & Y & Y & Y & Y \\\\"
+  },
+  {
+   "id": "rewrite_pdf_270",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "AASIST--SSL-A & Y & Y & Y & Y \\\\"
+  },
+  {
+   "id": "rewrite_pdf_271",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "AASIST--Mamba & Y & Y & Y & Y \\\\"
+  },
+  {
+   "id": "rewrite_pdf_272",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SLS--Mamba & Y & Y & N & N \\\\"
+  },
+  {
+   "id": "rewrite_pdf_273",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SSL-A--SLS & Y & Y & N & N \\\\"
+  },
+  {
+   "id": "rewrite_pdf_274",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SSL-A--Mamba & Y & N & N & N \\\\"
+  },
+  {
+   "id": "rewrite_pdf_275",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Separated & 6/6 & 5/6 & 3/6 & 3/6 \\\\"
+  },
+  {
+   "id": "rewrite_pdf_276",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Pair & Gap & Trial & Joint \\\\"
+  },
+  {
+   "id": "rewrite_pdf_277",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SLS--Mamba & $-3.063$ & $[-3.771,-2.355]$ & $[-16.062,9.936]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_278",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SSL-A--SLS & $2.207$ & $[1.592,2.821]$ & $[-7.392,11.806]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_279",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "SSL-A--Mamba & $-0.856$ & $[-1.446,-0.266]$ & $[-14.805,13.093]$ \\\\"
+  },
+  {
+   "id": "rewrite_pdf_280",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The contribution is measured concentration across paired comparisons on this fixed benchmark, not a new confidence procedure."
+  },
+  {
+   "id": "rewrite_pdf_281",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A diffuse delete-one profile across the affected SSL pairs would contradict the concentration claim; Table~\\ref{tab:influence} exposes both the strong flagship case and the weaker third pair."
+  },
+  {
+   "id": "rewrite_pdf_282",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "A changed speaker-only decision would contradict the reported primary factor agreement."
+  },
+  {
+   "id": "rewrite_pdf_283",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Neither finding establishes why those groups matter, and SpoofCeleb shows why the factor pattern should not become a universal prescription."
+  },
+  {
+   "id": "rewrite_pdf_284",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "For a small paired EER advantage on this benchmark, report the point difference, trial and group bands for the same family, and influential-group deletion sensitivity."
+  },
+  {
+   "id": "rewrite_pdf_285",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "If only the trial band excludes zero, describe the advantage as sensitive to evaluation composition and seek broader group support before claiming robust superiority."
+  },
+  {
+   "id": "rewrite_pdf_286",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The sixteen SSL-versus-baseline contrasts survive all four primary resampling laws, while close within-cohort comparisons are sensitive."
+  },
+  {
+   "id": "rewrite_pdf_287",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "\\textbf{Artifact.} Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+  },
+  {
+   "id": "rewrite_pdf_288",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "Artifact version \\texttt{d3310baf83f8a1f2e64e0159c5cedf38e53366e0} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
+  },
+  {
+   "id": "rewrite_pdf_289",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "During preparation, the authors used large language models (Anthropic Claude and OpenAI Codex) to help edit the text, LaTeX layout and supporting code."
+  },
+  {
+   "id": "rewrite_pdf_290",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The authors reviewed all assisted content and take full responsibility."
+  },
+  {
+   "id": "rewrite_pdf_291",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "It involved no new recording or interaction with human participants; no ethical approval was required."
+  },
+  {
+   "id": "rewrite_pdf_292",
+   "source": "main.tex",
+   "section": "Concentration rewrite / sentence or table row",
+   "match": "The authors declare no competing interests."
+  },
+  {
+   "id": "rewrite_pdf_293",
+   "source": "main.tex",
+   "section": "Concentration rewrite / seed or table abbreviation",
+   "match": "This control uses seed 20260824."
+  },
+  {
+   "id": "rewrite_pdf_294",
+   "source": "main.tex",
+   "section": "Concentration rewrite / seed or table abbreviation",
+   "match": "Trial/joint arms use seed 20260829; the post-result one-factor check uses seed 20260830."
+  },
+  {
+   "id": "rewrite_pdf_295",
+   "source": "main.tex",
+   "section": "Concentration rewrite / seed or table abbreviation",
+   "match": "SSL-A denotes SSL-AASIST."
+  },
+  {
+   "id": "rewrite_archive_296",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": " Historical manuscript record retained by the concentration rewrite"
+  },
+  {
+   "id": "rewrite_archive_297",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "The following superseded manuscript excerpts preserve prior semantic obligations and"
+  },
+  {
+   "id": "rewrite_archive_298",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "secondary results. They are not premises of the rewritten PDF; its table numbers and"
+  },
+  {
+   "id": "rewrite_archive_299",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "artifact locator supersede those in these historical excerpts."
+  },
+  {
+   "id": "rewrite_archive_300",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "\\textbf{Arena comparison.} On the eleven complete Speech DF Arena score files for the same 533,928 trials, trial and PW bands separate 52/55 and 38/55 pairs. For HuBERT-ECAPA versus WavLM-ECAPA, the $-2.153$-point gap has bands $[-2.761,-1.544]$ and $[-5.241,0.936]$. Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band."
+  },
+  {
+   "id": "rewrite_archive_301",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "The SSL pair is Mamba--SLS (gap -0.032 points), already unseparated under trial resampling."
+  },
+  {
+   "id": "rewrite_archive_302",
+   "source": "SUPPLEMENT.md",
+   "section": "Supplement/S10 retained historical statement",
+   "match": "Fixed rules reverse 5/6 organizer-baseline, 1/6 within-SSL and 0/16 cross-cohort point orderings."
   }
  ]
 }

@@ -1,3 +1,11 @@
+# Current submission scope
+
+The concentration rewrite centers observed speaker-group influence on paired
+ASVspoof 2021 DF comparisons. See `REWRITE-CHANGES.md` for the current frame,
+PDF evidence and exclusions. The inventory below is retained as the historical
+scientific contract of the broader artifact; its secondary findings do not expand
+the rewritten PDF's claim.
+
 # Scientific claim and stopping contract
 
 This document fixes the scientific identity of the accompanying paper. It

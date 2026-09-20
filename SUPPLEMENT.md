@@ -1,9 +1,10 @@
 # Supplementary methods and complete numerical results
 
-Revision: September 20 reconsideration. The manuscript cites the immutable artifact commit; prior tags are unchanged.
+Revision: September 20 concentration rewrite. The manuscript cites the immutable artifact commit; prior tags are unchanged.
 
-This document supplies the methods and complete numerical tables cited by the manuscript
-*When Resampling Changes Paired Detector Comparisons on ASVspoof 2021 DF*. All paths below
+This document retains the complete technical record for
+*Speaker-Group Sensitivity of Paired Detector Comparisons on ASVspoof 2021 DF*.
+The submission prints its primary evidence; Arena, fixed weighting and simulations remain artifact-only. All paths below
 are relative to the release root unless stated otherwise. The paper's Method defines the
 fixed-score scope and design chronology of the added diagnostics. Read S4a for the
 four-arm comparison, S4b for Monte Carlo stability, S4c for mean/sign and pairing,
@@ -881,3 +882,68 @@ The source-deletion construction preserves all 16 cross-cohort separations witho
 The reversing sign also holds at distinct-score boundaries.
 
 The factor agreement concerns these particular score collections and different rosters; it does not identify a causal factor or a corpus-general variance pattern. Source-deletion methods and endpoints remain in S2, and the constructive search remains in S5; neither is needed to interpret the revised submission.
+
+
+## S10. Historical manuscript record retained by the concentration rewrite
+
+The following superseded manuscript excerpts preserve prior semantic obligations and
+secondary results. They are not premises of the rewritten PDF; its table numbers and
+artifact locator supersede those in these historical excerpts.
+
+In a separate simulation using the 21DF incidence and Gaussian speaker/attack effects fitted to RawNet2/LFCC-LCNN scores, nominal 95\% pointwise percentile intervals covered a true 0.5-point EER difference in 37/200 datasets (18.5\%) under trial resampling and 196/200 (98.0\%) under speaker$\times$attack resampling, using 300 bootstrap draws per dataset.
+
+Recomputing both bootstraps with each rule's weights as base weights (computed after the primary results, 5,000 draws per rule and bootstrap) separates all 16 cross-cohort pairs in all 24 rule$\times$law cells; the closest band endpoint to zero is $-12.79$ points.
+
+In a separate 24-cell low-EER grid varying interaction strength, effect tails and the true gap, speaker$\times$attack percentile coverage fell below 90\% in 11 cells, reaching 85.5\% (1,000 datasets per cell; 500 bootstrap draws).
+
+For comparisons intended to withstand changes in the weights of observed speakers and attacks, report the point EER difference and both trial and group-resampling bands for the same comparison family.
+
+One-factor perturbations and group deletions locate sensitivity within the observed 21DF score collection; a single-source SpoofCeleb check tests whether between-source reweighting is necessary.
+
+For XLSR-Mamba versus XLSR-Conformer, this occurs despite pairing removing about 75\% of summed marginal variance; the paired standard deviation increases 5.2-fold.
+
+These models have not been validated for 21DF, and these pointwise intervals differ from our all-pair bands; neither result establishes coverage for those bands.
+
+If only the trial band excludes zero, report that separation depends on the resampling law; do not infer equality or population significance from the group band.
+
+On the observed ASVspoof~2021~DF scores, changing the resampling unit changes paired EER separation even after substantial variation cancels between detectors.
+
+For each other primary arm, 1,000 resamples of its saved 5,000 complete detector-output rows, recomputing all bands, leave every indicator unchanged.
+
+Comparing detectors on the same trials cancels shared variation, but does it remove sensitivity to which speakers and attacks receive weight?
+
+The matched trial/PW comparison uses 5,000 replicates and seed 2026081604; seeds of the other analyses accompany their released outputs.
+
+Mamba--Conformer illustrates this with about 75\% covariance cancellation and a 5.2-fold increase in paired standard deviation.
+
+Bottom: primary separation counts, retaining the 28-pair correction; every arm retains 16/16 SSL-versus-baseline separations.
+
+Top: primary 21DF EER (\%), with 14,869 bona-fide and 519,059 spoof trials and weights normalized within class.
+
+A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero.
+
+All sixteen SSL-versus-baseline comparisons survive the tested resampling laws and fixed weighting rules.
+
+This locates influence in an observed genuine-speech group; it does not identify a causal speaker effect.
+
+The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules.
+
+Their $3\times4$ crossing gives 12 positive, class-normalized rules fixed without inspecting scores.
+
+Middle: paired bands in percentage points; primary 21DF uses all 28 pairs, Arena all 55 pairs.
+
+This assesses Monte Carlo noise conditional on saved draws, not independent-seed stability.
+
+WHEN RESAMPLING CHANGES PAIRED DETECTOR COMPARISONS ON ASVSPOOF 2021 DF
+
+Primary Monte Carlo checks are described in the text.
+
+### Arena example, retained numerical provenance
+
+\textbf{Arena comparison.} On the eleven complete Speech DF Arena score files for the same 533,928 trials, trial and PW bands separate 52/55 and 38/55 pairs. For HuBERT-ECAPA versus WavLM-ECAPA, the $-2.153$-point gap has bands $[-2.761,-1.544]$ and $[-5.241,0.936]$. Its joint pointwise percentile interval remains below zero, [$-4.252$, $-0.277$]; the loss is specifically under the 55-pair simultaneous band.
+
+
+The SSL pair is Mamba--SLS (gap -0.032 points), already unseparated under trial resampling.
+
+
+Fixed rules reverse 5/6 organizer-baseline, 1/6 within-SSL and 0/16 cross-cohort point orderings.

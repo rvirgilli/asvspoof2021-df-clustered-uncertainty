@@ -1,8 +1,8 @@
-# Reconsideration local submission
+# Concentration rewrite assembly
 
-The successor receipt is RELEASE-RECEIPT-REVISION-FINAL.json; it follows
-RELEASE-RECEIPT-REVISION-ARTIFACT.json. MANIFEST.json binds every release member.
-The manuscript cites artifact commit `d3310baf83f8a1f2e64e0159c5cedf38e53366e0`.
-See ../REVISION-CHANGES.md for edits and OBLIGATION-REVISION.json for the guard
-registry. The exact guard outputs and PDF audit are in reconsideration-validation/.
-No upload or push is part of this revision; tags retain their previous targets.
+The artifact-stage receipt is `RELEASE-RECEIPT-REWRITE-ARTIFACT.json`.
+`MANIFEST.json` binds every release member. The inherited PDF is the fallback
+from `8276097`; it is not the revised submission. The subsequent submission
+commit supplies the artifact hash, rebuilt PDF and final layout audit.
+The current guard registry and edit-to-check mapping are in
+`OBLIGATION-REWRITE.json`. The rewrite does not authorize a push or tag move.

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Sampling-Unit and Composition Sensitivity of an Audio Deepfake Leaderboard"
+title: "Speaker-Group Sensitivity of Paired Detector Comparisons on ASVspoof 2021 DF"
 message: "Please cite the accompanying paper when using this repository."
 type: software
 authors:
