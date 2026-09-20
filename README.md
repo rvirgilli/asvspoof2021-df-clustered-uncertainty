@@ -1,25 +1,19 @@
 # Speaker-Group Sensitivity of Paired Detector Comparisons on ASVspoof 2021 DF
 
-This FIX4 presentation revision starts from the audited submission at `6f54787`.
-The PDF prints the complete primary 28-pair evidence, the three affected SSL
-pairs' delete-one concentration, the composition control and a limited SpoofCeleb
-factor counterexample. Arena, fixed weighting and simulations remain in this
-artifact without being premises of the submitted argument.
-See [rewrite decisions](REWRITE-CHANGES.md), the [guard ledger](paper/OBLIGATION-REWRITE.json)
-and the [FIX4 wording ledger](paper/OBLIGATION-FIX4.json). The current submission
-[receipt](paper/RELEASE-RECEIPT-FIX4-FINAL.json) binds the rebuilt PDF, which pins
-artifact `9a7e6ae2c37c6ae30ef72122184f5b0159a64703`.
-The artifact commit retains the predecessor PDF as identified history. Existing tags stay unchanged.
+FIX5 applies the five findings in the September 20 audit to submission `36bc6c0`.
+The complete primary evidence and concentration frame are retained. The secondary
+composition-preserving control is withdrawn from the paper and regeneration
+promise; its result remains explicitly historical in supplement S6/S14.
+The abstract is replaced, recent paired/speaker-resampling work is cited,
+metadata identities are clarified, and Table 2 uses deterministic trial-ID ties.
 
-- [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
-- [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.
-- [Delete-one-group influence](evidence/influence.json), S4e.
-- [Additional primary Monte Carlo verification](evidence/revision-mc-verification.json).
-- [Portable rerun commands](REPRODUCE-DIAGNOSTICS.md) and [provenance](PORTABILITY-NOTE.md).
+- [Current deletion producer](code/influence_trial_id.py) and [result](evidence/influence-trial-id.json).
+- [Reproduction guide](REPRODUCE.md) and [diagnostic commands](REPRODUCE-DIAGNOSTICS.md).
+- [Guard changes](paper/OBLIGATION-FIX5.json) and [manuscript](paper/main.pdf).
 
-Read the [supplement](SUPPLEMENT.md) and [manuscript](paper/main.pdf).
-MANIFEST.json binds every release member. Earlier receipts and validation outputs
-remain historical records; the successor receipt identifies the current payload.
+The artifact stage retains the predecessor PDF as history; the submission stage
+rebuilds it after pinning the new artifact. Existing public commits and tags are
+unchanged. See [submission version](paper/SUBMISSION-VERSION.md).
 
 ## What this is
 
@@ -44,10 +38,8 @@ cells evaluate procedure behavior under their imposed DGP, not that DGP as a mod
 the benchmark. A separate eleven-system Speech DF Arena re-score layer is included for
 provenance and descriptive sensitivity and is never mixed into the primary ranking.
 
-A constrained PW arm designed after the main result resamples within each source or spoof
-stratum, redraws only on zero support (7 of 1,007 VCC2018 attempts) and rescales each
-source and stratum mass to its observed value; it retains the 0/6 organizer endpoint. It is
-a robustness check, not prospective evidence. A post-audit verification run (`exp116/`)
+The former composition-preserving PW control remains an archived result only;
+its producer and complete draw law are not publicly available. A post-audit verification run (`exp116/`)
 recomputes both bootstraps with each of the 12 registered weighting rules as base weights:
 all 16 SSL-versus-baseline pairs stay separated in all 24 rule×law cells. A SpoofCeleb analysis fixed
 while official access was pending supplies the single-source check: 6/6 trial-bootstrap
@@ -62,8 +54,8 @@ XLSR-Mamba differed by at most 1.44e-6, with every EER and separation indicator 
 An additional trace-retaining EXP-112 run replaces an unauthenticated coverage aggregate but remains strictly
 conditional on its fitted Gaussian DGP.
 
-The committed release is the artifact a reader needs to check every reported
-number and the boundaries placed on its interpretation.
+The current manuscript is checked against the committed results; the reproduction
+guide distinguishes public regeneration paths from historical arithmetic checks.
 
 ## Contents
 

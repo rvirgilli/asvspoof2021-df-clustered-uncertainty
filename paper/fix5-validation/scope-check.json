@@ -1,0 +1,18 @@
+{
+  "baseline": "36bc6c0",
+  "tables_changed": [
+    2
+  ],
+  "sole_table_change": "75.73% -> 75.74%",
+  "new_manuscript_numeric_literals": [
+    "75.74"
+  ],
+  "new_literal_source": "evidence/influence-trial-id.json",
+  "historical_payload_files_checked_unchanged": 110,
+  "inherited_obligations": 303,
+  "current_obligations": 310,
+  "removed_ids": [],
+  "disclosure_and_ethics_unchanged": true,
+  "supplements_identical": true,
+  "title_and_frame_unchanged": true
+}

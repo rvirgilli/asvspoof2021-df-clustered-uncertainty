@@ -1,0 +1,30 @@
+FAIL — 28 problem(s):
+
+  OBLIGATION exp111_status expected exactly one occurrence, found 0
+  OBLIGATION exp111_attribution_boundary expected exactly one occurrence, found 0
+  OBLIGATION no_population_or_arena_claim expected exactly one occurrence, found 0
+  OBLIGATION abstract_tested_scope expected exactly one occurrence, found 0
+  OBLIGATION abstract_fixed_score_estimand expected exactly one occurrence, found 0
+  OBLIGATION abstract_zero_exclusion_scope expected exactly one occurrence, found 0
+  OBLIGATION abstract_roster_counts expected exactly one occurrence, found 0
+  OBLIGATION composition_control_replicates expected exactly one occurrence, found 0
+  OBLIGATION revision_sentence_49 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_139 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_140 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_141 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_142 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_143 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_152 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_253 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_254 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_255 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_256 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_257 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_287 expected exactly one occurrence, found 0
+  OBLIGATION rewrite_pdf_293 expected exactly one occurrence, found 0
+  TABLE influence row missing or changed: | XLSR-Mamba vs XLSR-Conformer | VCC2SM3 | 77.09% | 90.03% | -0.389234 | -0.129429 |
+  TABLE influence row missing or changed: | XLS-R+SLS vs XLSR-Conformer | VCC2SM3 | 55.85% | 78.47% | -0.357105 | -0.130970 |
+  TABLE main three-pair influence table differs from artifact
+  VALUE main composition-control band missing or changed; reverse direction explicitly
+  CONTRACT missing printed diagnostic seed: This control uses seed 20260824.
+  PRESENT missing 'without population-coverage guarantees' — population/rank boundary

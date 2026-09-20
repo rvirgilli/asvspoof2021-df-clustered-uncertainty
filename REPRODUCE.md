@@ -1,5 +1,10 @@
 # Reproduction guide
 
+FIX5 excludes the withdrawn composition-preserving control (EXP-111) from
+regeneration claims. Its archived result and arithmetic checks remain available,
+but its exact producer and full draw law are not public. The current paper does
+not use it to resolve source-composition effects.
+
 ## Level 1 — paper from frozen public artifacts
 
 This CPU-only level uses only versioned repository files:
@@ -49,8 +54,9 @@ uv run --frozen python code/compare_audit_core.py
 The builder writes `audit-regenerated/audit-core.json`. The comparator requires
 all 16 reconstructed blocks to equal the corresponding blocks in the canonical
 composite package. The nine later closures embedded in `audit/audit.json` are
-verified from their hash-bound public envelopes at Level 1 and regenerated through
-their documented campaigns; Level 2 does not claim to rerun them.
+checked against their hash-bound public envelopes at Level 1; regeneration is
+limited to the runnable campaigns explicitly documented here and in the diagnostic
+guide. EXP-111 is excluded as stated above; Level 2 does not rerun these closures.
 
 ## Level 3 — full CPU campaigns
 

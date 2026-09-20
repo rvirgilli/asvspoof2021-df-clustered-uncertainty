@@ -1,0 +1,205 @@
+Local release paths replaced with <release>; all other output retained.
+test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) ... 
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='exp111_status') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='exp111_attribution_boundary') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='no_population_or_arena_claim') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_tested_scope') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_fixed_score_estimand') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_zero_exclusion_scope') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_roster_counts') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='composition_control_replicates') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='revision_sentence_49') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_139') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_140') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_141') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_142') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_143') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_152') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_253') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_254') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_255') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_256') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_257') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_287') ... FAIL
+  test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_293') ... FAIL
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='exp111_status')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation exp111_status must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='exp111_attribution_boundary')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation exp111_attribution_boundary must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='no_population_or_arena_claim')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation no_population_or_arena_claim must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_tested_scope')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation abstract_tested_scope must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_fixed_score_estimand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation abstract_fixed_score_estimand must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_zero_exclusion_scope')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation abstract_zero_exclusion_scope must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='abstract_roster_counts')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation abstract_roster_counts must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='composition_control_replicates')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation composition_control_replicates must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='revision_sentence_49')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation revision_sentence_49 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_139')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_139 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_140')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_140 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_141')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_141 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_142')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_142 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_143')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_143 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_152')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_152 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_253')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_253 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_254')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_254 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_255')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_255 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_256')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_256 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_257')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_257 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_287')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_287 must match exactly once
+
+======================================================================
+FAIL: test_every_registered_deletion_fails_its_named_guard (paper.test_semantic_guards.SemanticGuardMutationTests.test_every_registered_deletion_fails_its_named_guard) (obligation='rewrite_pdf_293')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<release>/paper/test_semantic_guards.py", line 33, in test_every_registered_deletion_fails_its_named_guard
+    self.assertEqual(
+AssertionError: 0 != 1 : obligation rewrite_pdf_293 must match exactly once
+
+----------------------------------------------------------------------
+Ran 1 test in 30.042s
+
+FAILED (failures=22)

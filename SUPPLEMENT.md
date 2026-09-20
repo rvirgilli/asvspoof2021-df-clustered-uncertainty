@@ -545,7 +545,11 @@ Selectors: `results.<run>.tie_check.max_replicate_eer_difference`,
 The diagnostic reports exact original-summary reproduction for all four primary arms and
 zero estimator-validation error (`primary_validation_max_error`); input hashes match S4a.
 
-### S4e. Delete-one-group influence
+### S4e. Delete-one-group influence (historical ordering)
+
+This subsection retains the original producer's score-tie convention and result
+for provenance. FIX5's Table 2 uses the explicit trial-ID ordering in S4f; the
+Conformer–SSL-AASIST top-five share changes from 75.73% to 75.74%.
 
 VCC2SM3 contains 315 evaluation trials, all bona fide from VCC2018 and none spoof; independent protocol parsing and its input hash are recorded in `evidence/revision-mc-verification.json`.
 
@@ -573,6 +577,26 @@ Fields are `jackknife_variance`, `top_one_ss_share`, `top_five_ss_share`, and
 The 203 group refits agree with `exp/results_floor.json` components to that file's
 four-decimal precision. Input and driver hashes accompany the output; this analysis uses
 the same fixed scores as S4a.
+
+### S4f. FIX5 deterministic delete-one ordering
+
+For the delete-one analysis, equal scores are ordered by trial ID (ascending
+lexicographic order). The ordered-position EER and squared, mean-centered
+speaker-deletion definition in S4e are otherwise unchanged. The public producer
+`code/influence_trial_id.py` and result `evidence/influence-trial-id.json` supersede
+S4e's three printed speaker rows for the current manuscript. The producer checks
+all nine public input hashes and refits the four SSL systems after each of the
+93 speaker deletions. It uses stable score sorting on ascending trial IDs.
+
+| Pair | Largest speaker contributor | Share of squared deviations | Top five share | Full gap | Gap after deleting largest contributor |
+|---|---|---:|---:|---:|---:|
+| **XLSR-Mamba vs XLSR-Conformer** | VCC2SM3 | 77.09% | 90.03% | -0.389234 | -0.129429 |
+| **XLS-R+SLS vs XLSR-Conformer** | VCC2SM3 | 55.85% | 78.47% | -0.357105 | -0.130970 |
+| **XLSR-Conformer vs SSL-AASIST** | VCC2SF2 | 23.85% | 75.74% | -0.578369 | -0.441137 |
+
+The resampling-band tie check in S4d remains a separate check. No bootstrap
+replicates were regenerated for this deletion-order repair.
+
 
 ## S5. Fixed alternative weighting rules
 
@@ -661,7 +685,13 @@ verified constructive upper bound, not a minimum, and is too small to imply prac
 The search found no cross-cohort reversal, which is not a proof that none exists; failure to find
 a witness is not an absence result.
 
-## S6. Composition-preserving PW control
+## S6. Composition-preserving PW control (withdrawn from the manuscript)
+
+FIX5 withdraws this control from the manuscript and from the public regeneration
+promise. The exact producer and complete joint draw law are unavailable in this
+release; the embedded results permit arithmetic checks, not independent
+regeneration. S6 and the archived paragraph below are historical records, not
+support for a current claim that source-composition movement has been ruled out.
 
 The constrained PW arm resamples speakers and attacks within each bona-fide source and each
 of the five spoof strata, redraws a replicate only when a class loses all support in a
@@ -947,3 +977,14 @@ The SSL pair is Mamba--SLS (gap -0.032 points), already unseparated under trial 
 
 
 Fixed rules reverse 5/6 organizer-baseline, 1/6 within-SSL and 0/16 cross-cohort point orderings.
+
+## S14. FIX5 archived composition paragraph
+
+The following is the withdrawn paragraph from submission `36bc6c0`. It preserves
+its exact text and deletion-tested obligations as history. Its final inference
+is not asserted by the current paper; the incomplete producer/draw law prevents
+public regeneration. No composition-control result has been rerun for FIX5.
+
+```latex
+\textbf{Composition-preserving control.} A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values. This control uses seed 20260824. The bona-fide sources are ASVspoof, VCC2018 and VCC2020; the spoof strata split VCC2018 into HUB/SPO and VCC2020 into Task~1/Task~2. VCC2018 required 1,007 attempts, with seven rejected for lost spoof support; no other stratum required rejections. Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs. For Mamba--Conformer, the control band is $[-1.280,0.501]$, beside the primary joint band $[-1.348,0.570]$. Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum.
+```

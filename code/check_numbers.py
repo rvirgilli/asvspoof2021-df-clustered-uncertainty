@@ -135,11 +135,15 @@ for obligation in obligation_doc.get("obligations", []):
 
 # Forced by the rewrite's relocation of old claims: original IDs cannot be dropped.
 rewrite_ledger = load(PAPER / "OBLIGATION-REWRITE.json")
+fix5_ledger = load(PAPER / "OBLIGATION-FIX5.json")
 if (len(rewrite_ledger["original_ids"]) != 97 or len(rewrite_ledger["baseline_ids"]) != 138
         or rewrite_ledger["removed_ids"]
         or not set(rewrite_ledger["baseline_ids"]) <= obligation_ids
         or not set(rewrite_ledger["original_ids"]) <= obligation_ids
-        or rewrite_ledger["current_count"] != len(obligation_ids)):
+        or rewrite_ledger["current_count"] != fix5_ledger["count_before"]
+        or fix5_ledger["count_after"] != len(obligation_ids)
+        or fix5_ledger["removed_ids"]
+        or not set(fix5_ledger["baseline_ids"]) <= obligation_ids):
     fail("OBLIGATION rewrite must retain all 138 baseline and all 97 original IDs")
 
 
@@ -1347,10 +1351,19 @@ if re.search(r"\bS[2-8](?:[a-e]|\b)", TEX):
 if (ROOT / "SUPPLEMENT.md").read_text() != (PAPER / "SUPPLEMENT.md").read_text():
     fail("RELEASE root and paper supplements differ")
 
+# FIX5 finding 5 changes the printed deletion table's tie convention.
+influence_trial_id = load(ROOT / "evidence/influence-trial-id.json")
+if (sha256(ROOT / "evidence/influence-trial-id.json") != "d98e06ff279dd5d1378462c7cab67c2590197d42bb062ccf0a86ba460c75cb45"
+        or influence_trial_id["driver_sha256"] != sha256(ROOT / "code/influence_trial_id.py")
+        or influence_trial_id["inputs_sha256"] != influence["inputs_sha256"]
+        or influence_trial_id["group_count"] != 93
+        or influence_trial_id["tie_order"] != "ascending score, then ascending trial ID"):
+    fail("HASH/CONTRACT FIX5 deterministic deletion evidence changed")
+
 # Forced by newly printed concentration, composition-control and SpoofCeleb tables.
 expected_influence_rows = [r"Pair & Largest group & Full $\to$ deletion & Largest / top five \\"]
 for p in ("XLSR-Mamba vs XLSR-Conformer", "XLS-R+SLS vs XLSR-Conformer", "XLSR-Conformer vs SSL-AASIST"):
-    row = influence["results"]["speaker"]["pairs"][p]
+    row = influence_trial_id["pairs"][p]
     group = row["top_groups"][0]; a, b = p.split(" vs ")
     hat = diag["results"]["trial"]["pairs"][p]["hat"]
     expected_influence_rows.append(
@@ -1361,8 +1374,9 @@ if table_rows("tab:influence") != expected_influence_rows:
     fail("TABLE main three-pair influence table differs from artifact")
 control = exp111_c["pairs"]["XLSR-Conformer vs XLSR-Mamba"]["simultaneous_max_t"]
 expected = f"control band is $[{-control[1]:.3f},{-control[0]:.3f}]$, beside the primary joint band $[-1.348,0.570]$"
-if expected not in TEX_RAW:
-    fail("VALUE main composition-control band missing or changed; reverse direction explicitly")
+# FIX5 finding 1 withdraws this paragraph; keep its historical numerical guard.
+if expected not in SUPPLEMENT_RAW:
+    fail("VALUE archived composition-control band missing or changed; reverse direction explicitly")
 for arm, value in (("iid", "2.940"), ("speaker_attack", "2.997")):
     require_number(value, matched[arm]["supt_critical_value"], 3, "printed full-family critical value")
 for arm, count in (("trial", 5), ("speaker_attack", 2)):
@@ -1385,9 +1399,9 @@ if table_rows("tab:spoof") != expected_spoof:
     fail("TABLE complete SpoofCeleb decisions/three loss bands differ from artifacts")
 forbid(r"Arena|fixed weighting|Alternative weights|coverage fell|18\.5", "rewrite moves Arena, weighting campaign and simulations out of PDF")
 
-for text in (f"This control uses seed {exp111['seed']}.",
-             f"Trial/joint arms use seed {exp114['seed']}; the post-result one-factor check uses seed {exp115['seed']}."):
-    if text not in TEX_RAW:
+for text, source_text in ((f"This control uses seed {exp111['seed']}.", SUPPLEMENT_RAW),
+             (f"Trial/joint arms use seed {exp114['seed']}; the post-result one-factor check uses seed {exp115['seed']}.", TEX_RAW)):
+    if text not in source_text:
         fail(f"CONTRACT missing printed diagnostic seed: {text}")
 
 # 9. Scientific scope obligations and retired formulations.
@@ -1401,7 +1415,7 @@ for text, why in (
     ("Publish the group memberships and weighting rules needed to reproduce the check", "report observed units"),
     ("The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules", "tested scope"),
     ("distinct from the nested-observation designs studied in", "crossed versus nested design"),
-    ("without population-coverage guarantees", "population/rank boundary"),
+    ("they do not establish population coverage or a universal resampling prescription", "population/rank boundary"),
     ("A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero", "abstract separate-roster result"),
     ("For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list", "trial-law exception"),
 ):

@@ -1,0 +1,686 @@
+{
+  "baseline_submission_commit": "36bc6c0",
+  "count_before": 303,
+  "count_after": 310,
+  "removed_ids": [],
+  "baseline_ids": [
+    "abstract_fixed_score_scope",
+    "scope_no_transfer",
+    "scope_fixed_score_outputs",
+    "related_no_cell_or_population",
+    "deterministic_benchmark",
+    "tie_boundary",
+    "delta_eer_definition",
+    "separation_definition",
+    "identified_object",
+    "bands_not_population_sets",
+    "historical_reconstruction_boundary",
+    "weights_score_blind",
+    "exp111_mass_restoration",
+    "exp111_status",
+    "exp111_attribution_boundary",
+    "exp114_pre_access_identifier",
+    "exp114_off_domain_performance_boundary",
+    "exp114_single_source_boundary",
+    "exp115_post_result_status",
+    "exp114_scorer_gap",
+    "exp114_rerun_status",
+    "exp114_rerun_numerics",
+    "composition_bound_not_minimum",
+    "composition_search_no_proof",
+    "arena_descriptive_boundary",
+    "source_deletion_boundary",
+    "asv5_metric_boundary",
+    "asv5_inference_boundary",
+    "coverage_dgp_boundary",
+    "historical_provenance_limits",
+    "report_units",
+    "zero_boundary",
+    "no_population_or_arena_claim",
+    "conclusion_tested_scope",
+    "conclusion_population_boundary",
+    "exp116_post_result_verification",
+    "abstract_tested_scope",
+    "release_locator",
+    "asv5_resampling_law",
+    "coverage_formulas",
+    "loco_construction",
+    "loco_full_data_reference",
+    "matched_seed",
+    "arena_same_trials",
+    "interaction_share_definition",
+    "spoofceleb_trial_law_exception",
+    "primary_ablation_abstract_exploratory",
+    "primary_ablation_method_status",
+    "primary_ablation_interpretation",
+    "primary_ablation_table_status",
+    "primary_ablation_conclusion_exploratory",
+    "attack_monte_carlo_scope",
+    "attack_recorded_seed_dagger",
+    "mean_sign_separation",
+    "mean_sign_finite_counts",
+    "paired_cancellation",
+    "influence_observed_group",
+    "influence_no_exclusion",
+    "influence_centering",
+    "weighted_tie_scope",
+    "weighted_tie_replicate_boundary",
+    "operational_decision_rule",
+    "pass_both_boundary",
+    "source_deletion_separate_construction",
+    "max_se_coverage_boundary",
+    "repeat_scope",
+    "six_family_scope",
+    "witness_distinct_boundary",
+    "evidence_release_members",
+    "mc_repeat_table",
+    "mean_sign_table",
+    "family_roster_table",
+    "weighted_tie_table",
+    "influence_table",
+    "named_source_table",
+    "main_influence_result",
+    "abstract_fixed_score_estimand",
+    "abstract_zero_exclusion_scope",
+    "abstract_roster_counts",
+    "abstract_factor_matches",
+    "source_deletion_retention_scope",
+    "related_rank_intervals",
+    "all_pairs_outcome_selection",
+    "spoofceleb_different_roster",
+    "spoofceleb_named_eers",
+    "spoofceleb_joint_survivors",
+    "supplement_spoofceleb_named_eers",
+    "supplement_spoofceleb_joint_survivors",
+    "coverage_individual_and_common_counts",
+    "supplement_coverage_individual_and_common_counts",
+    "replicate_pairing_and_streams",
+    "composition_control_replicates",
+    "fixed_score_intervention_distinction",
+    "conclusion_cancellation_pair_scope",
+    "supplement_low_eer_minima",
+    "supplement_method_scope_locator",
+    "supplement_ablation_method_locator",
+    "revision_sentence_01",
+    "revision_sentence_02",
+    "revision_sentence_05",
+    "revision_sentence_06",
+    "revision_sentence_09",
+    "revision_sentence_10",
+    "revision_sentence_11",
+    "revision_sentence_16",
+    "revision_sentence_17",
+    "revision_sentence_22",
+    "revision_sentence_23",
+    "revision_sentence_24",
+    "revision_sentence_26",
+    "revision_sentence_27",
+    "revision_sentence_28",
+    "revision_sentence_29",
+    "revision_sentence_30",
+    "revision_sentence_33",
+    "revision_sentence_34",
+    "revision_sentence_36",
+    "revision_sentence_37",
+    "revision_sentence_40",
+    "revision_sentence_47",
+    "revision_sentence_48",
+    "revision_sentence_49",
+    "revision_sentence_50",
+    "revision_fresh_streams",
+    "revision_supplement_00",
+    "revision_supplement_01",
+    "revision_supplement_02",
+    "revision_supplement_03",
+    "revision_supplement_04",
+    "revision_supplement_05",
+    "revision_supplement_06",
+    "revision_supplement_07",
+    "revision_supplement_08",
+    "revision_supplement_09",
+    "revision_supplement_10",
+    "revision_supplement_11",
+    "revision_supplement_12",
+    "revision_supplement_14",
+    "rewrite_pdf_138",
+    "rewrite_pdf_139",
+    "rewrite_pdf_140",
+    "rewrite_pdf_141",
+    "rewrite_pdf_142",
+    "rewrite_pdf_143",
+    "rewrite_pdf_144",
+    "rewrite_pdf_145",
+    "rewrite_pdf_146",
+    "rewrite_pdf_147",
+    "rewrite_pdf_148",
+    "rewrite_pdf_149",
+    "rewrite_pdf_150",
+    "rewrite_pdf_151",
+    "rewrite_pdf_152",
+    "rewrite_pdf_153",
+    "rewrite_pdf_154",
+    "rewrite_pdf_155",
+    "rewrite_pdf_156",
+    "rewrite_pdf_157",
+    "rewrite_pdf_158",
+    "rewrite_pdf_159",
+    "rewrite_pdf_160",
+    "rewrite_pdf_161",
+    "rewrite_pdf_162",
+    "rewrite_pdf_163",
+    "rewrite_pdf_164",
+    "rewrite_pdf_165",
+    "rewrite_pdf_166",
+    "rewrite_pdf_167",
+    "rewrite_pdf_168",
+    "rewrite_pdf_169",
+    "rewrite_pdf_170",
+    "rewrite_pdf_171",
+    "rewrite_pdf_172",
+    "rewrite_pdf_173",
+    "rewrite_pdf_174",
+    "rewrite_pdf_175",
+    "rewrite_pdf_176",
+    "rewrite_pdf_177",
+    "rewrite_pdf_178",
+    "rewrite_pdf_179",
+    "rewrite_pdf_180",
+    "rewrite_pdf_181",
+    "rewrite_pdf_182",
+    "rewrite_pdf_183",
+    "rewrite_pdf_184",
+    "rewrite_pdf_185",
+    "rewrite_pdf_186",
+    "rewrite_pdf_187",
+    "rewrite_pdf_188",
+    "rewrite_pdf_189",
+    "rewrite_pdf_190",
+    "rewrite_pdf_191",
+    "rewrite_pdf_192",
+    "rewrite_pdf_193",
+    "rewrite_pdf_194",
+    "rewrite_pdf_195",
+    "rewrite_pdf_196",
+    "rewrite_pdf_197",
+    "rewrite_pdf_198",
+    "rewrite_pdf_199",
+    "rewrite_pdf_200",
+    "rewrite_pdf_201",
+    "rewrite_pdf_202",
+    "rewrite_pdf_203",
+    "rewrite_pdf_204",
+    "rewrite_pdf_205",
+    "rewrite_pdf_206",
+    "rewrite_pdf_207",
+    "rewrite_pdf_208",
+    "rewrite_pdf_209",
+    "rewrite_pdf_210",
+    "rewrite_pdf_211",
+    "rewrite_pdf_212",
+    "rewrite_pdf_213",
+    "rewrite_pdf_214",
+    "rewrite_pdf_215",
+    "rewrite_pdf_216",
+    "rewrite_pdf_217",
+    "rewrite_pdf_218",
+    "rewrite_pdf_219",
+    "rewrite_pdf_220",
+    "rewrite_pdf_221",
+    "rewrite_pdf_222",
+    "rewrite_pdf_223",
+    "rewrite_pdf_224",
+    "rewrite_pdf_225",
+    "rewrite_pdf_226",
+    "rewrite_pdf_227",
+    "rewrite_pdf_228",
+    "rewrite_pdf_229",
+    "rewrite_pdf_230",
+    "rewrite_pdf_231",
+    "rewrite_pdf_232",
+    "rewrite_pdf_233",
+    "rewrite_pdf_234",
+    "rewrite_pdf_235",
+    "rewrite_pdf_236",
+    "rewrite_pdf_237",
+    "rewrite_pdf_238",
+    "rewrite_pdf_239",
+    "rewrite_pdf_240",
+    "rewrite_pdf_241",
+    "rewrite_pdf_242",
+    "rewrite_pdf_243",
+    "rewrite_pdf_244",
+    "rewrite_pdf_245",
+    "rewrite_pdf_246",
+    "rewrite_pdf_247",
+    "rewrite_pdf_248",
+    "rewrite_pdf_249",
+    "rewrite_pdf_250",
+    "rewrite_pdf_251",
+    "rewrite_pdf_252",
+    "rewrite_pdf_253",
+    "rewrite_pdf_254",
+    "rewrite_pdf_255",
+    "rewrite_pdf_256",
+    "rewrite_pdf_257",
+    "rewrite_pdf_258",
+    "rewrite_pdf_259",
+    "rewrite_pdf_260",
+    "rewrite_pdf_261",
+    "rewrite_pdf_262",
+    "rewrite_pdf_263",
+    "rewrite_pdf_264",
+    "rewrite_pdf_265",
+    "rewrite_pdf_266",
+    "rewrite_pdf_267",
+    "rewrite_pdf_268",
+    "rewrite_pdf_269",
+    "rewrite_pdf_270",
+    "rewrite_pdf_271",
+    "rewrite_pdf_272",
+    "rewrite_pdf_273",
+    "rewrite_pdf_274",
+    "rewrite_pdf_275",
+    "rewrite_pdf_276",
+    "rewrite_pdf_277",
+    "rewrite_pdf_278",
+    "rewrite_pdf_279",
+    "rewrite_pdf_280",
+    "rewrite_pdf_281",
+    "rewrite_pdf_282",
+    "rewrite_pdf_283",
+    "rewrite_pdf_284",
+    "rewrite_pdf_285",
+    "rewrite_pdf_286",
+    "rewrite_pdf_287",
+    "rewrite_pdf_288",
+    "rewrite_pdf_289",
+    "rewrite_pdf_290",
+    "rewrite_pdf_291",
+    "rewrite_pdf_292",
+    "rewrite_pdf_293",
+    "rewrite_pdf_294",
+    "rewrite_pdf_295",
+    "rewrite_archive_296",
+    "rewrite_archive_297",
+    "rewrite_archive_298",
+    "rewrite_archive_299",
+    "rewrite_archive_300",
+    "rewrite_archive_301",
+    "rewrite_archive_302"
+  ],
+  "updated_obligations": [
+    {
+      "id": "exp111_status",
+      "before": {
+        "id": "exp111_status",
+        "section": "Experiments/21DF",
+        "match": "A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
+      },
+      "after": {
+        "id": "exp111_status",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "exp111_attribution_boundary",
+      "before": {
+        "id": "exp111_attribution_boundary",
+        "section": "Experiments/21DF",
+        "match": "Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum."
+      },
+      "after": {
+        "id": "exp111_attribution_boundary",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "no_population_or_arena_claim",
+      "before": {
+        "id": "no_population_or_arena_claim",
+        "section": "Method",
+        "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
+      },
+      "after": {
+        "id": "no_population_or_arena_claim",
+        "section": "Method",
+        "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "abstract_tested_scope",
+      "before": {
+        "id": "abstract_tested_scope",
+        "section": "Abstract",
+        "match": "All sixteen self-supervised-versus-organizer-baseline bands still exclude zero."
+      },
+      "after": {
+        "id": "abstract_tested_scope",
+        "section": "Abstract",
+        "match": "All sixteen comparisons between the four self-supervised systems and four organizer baselines remain separated."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "abstract_fixed_score_estimand",
+      "before": {
+        "id": "abstract_fixed_score_estimand",
+        "section": "Abstract",
+        "match": "We use public ASVspoof~2021~DF score files from four model-author releases and four organizer baselines; recomputed equal-error rates (EERs) match the values reported for these releases at reported precision. We refit EER thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
+      },
+      "after": {
+        "id": "abstract_fixed_score_estimand",
+        "section": "Abstract",
+        "match": "Using public scores from eight ASVspoof~2021~DF systems, we compare resampling individual trials with resampling observed speakers and spoof attacks, keeping detector comparisons paired and refitting EER thresholds."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "abstract_zero_exclusion_scope",
+      "before": {
+        "id": "abstract_zero_exclusion_scope",
+        "section": "Abstract",
+        "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
+      },
+      "after": {
+        "id": "abstract_zero_exclusion_scope",
+        "section": "Abstract",
+        "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "abstract_roster_counts",
+      "before": {
+        "id": "abstract_roster_counts",
+        "section": "Abstract",
+        "match": "The number of bands excluding zero falls from 26 to 18."
+      },
+      "after": {
+        "id": "abstract_roster_counts",
+        "section": "Abstract",
+        "match": "Across all 28 system pairs, jointly constructed sensitivity bands exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "composition_control_replicates",
+      "before": {
+        "id": "composition_control_replicates",
+        "section": "Experiments",
+        "match": "Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs."
+      },
+      "after": {
+        "id": "composition_control_replicates",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs.",
+        "source": "SUPPLEMENT.md"
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "revision_sentence_49",
+      "before": {
+        "id": "revision_sentence_49",
+        "section": "Reconsideration/new sentence",
+        "match": "Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+      },
+      "after": {
+        "id": "revision_sentence_49",
+        "section": "Reconsideration/new sentence",
+        "match": "The public artifact provides the primary-analysis code, score provenance, numerical results and the additional checks identified in its reproduction guide."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_139",
+      "before": {
+        "id": "rewrite_pdf_139",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "A small paired detector advantage can depend strongly on a few observed speaker groups."
+      },
+      "after": {
+        "id": "rewrite_pdf_139",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "We examine how the composition of an evaluation set affects small differences in equal-error rate (EER) between speech deepfake detectors."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "rewrite_pdf_140",
+      "before": {
+        "id": "rewrite_pdf_140",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "Resampling only speakers gives the same 18-pair zero-exclusion pattern as joint resampling."
+      },
+      "after": {
+        "id": "rewrite_pdf_140",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "Speaker-only resampling gives the same decisions."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "rewrite_pdf_141",
+      "before": {
+        "id": "rewrite_pdf_141",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the sum of squared, mean-centered deviations across all 93 speaker deletions for this pair."
+      },
+      "after": {
+        "id": "rewrite_pdf_141",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "Removing one group of 315 bona-fide trials reduces the XLSR-Mamba advantage over XLSR-Conformer from 0.389 to 0.129 percentage points."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "rewrite_pdf_142",
+      "before": {
+        "id": "rewrite_pdf_142",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "Deletion influence differs across the three self-supervised detector pairs that lose zero exclusion."
+      },
+      "after": {
+        "id": "rewrite_pdf_142",
+        "source": "main.tex",
+        "section": "FIX5 / retained body detail removed from abstract",
+        "match": "Our contribution is an empirical concentration result on fixed scores: speaker-only resampling reproduces the joint decisions, and delete-one influence is concentrated to differing degrees across the three affected self-supervised (SSL) comparisons."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "rewrite_pdf_143",
+      "before": {
+        "id": "rewrite_pdf_143",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "On SpoofCeleb, resampling attacks alone matches the joint decisions, whereas resampling speakers alone does not."
+      },
+      "after": {
+        "id": "rewrite_pdf_143",
+        "source": "main.tex",
+        "section": "FIX5 / retained body detail removed from abstract",
+        "match": "Here attack-only reproduces the joint indicator vector, while speaker-only separates 5/6 pairs."
+      },
+      "forced_by": "Finding 2 abstract replacement"
+    },
+    {
+      "id": "rewrite_pdf_152",
+      "before": {
+        "id": "rewrite_pdf_152",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "We print every primary trial and joint band, then test comparison-family and source-composition objections."
+      },
+      "after": {
+        "id": "rewrite_pdf_152",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "We print every primary trial and joint band and repeat the analysis within the six SSL comparisons."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_253",
+      "before": {
+        "id": "rewrite_pdf_253",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "C--A & VCC2SF2 & $-0.578\\to-0.441$ & 23.85\\% / 75.73\\% \\\\"
+      },
+      "after": {
+        "id": "rewrite_pdf_253",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "C--A & VCC2SF2 & $-0.578\\to-0.441$ & 23.85\\% / 75.74\\% \\\\"
+      },
+      "forced_by": "Finding 5 tie order"
+    },
+    {
+      "id": "rewrite_pdf_254",
+      "before": {
+        "id": "rewrite_pdf_254",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "\\textbf{Composition-preserving control.} A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
+      },
+      "after": {
+        "id": "rewrite_pdf_254",
+        "source": "SUPPLEMENT.md",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "\\textbf{Composition-preserving control.} A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_255",
+      "before": {
+        "id": "rewrite_pdf_255",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "This control uses seed 20260824. The bona-fide sources are ASVspoof, VCC2018 and VCC2020; the spoof strata split VCC2018 into HUB/SPO and VCC2020 into Task~1/Task~2."
+      },
+      "after": {
+        "id": "rewrite_pdf_255",
+        "source": "SUPPLEMENT.md",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "This control uses seed 20260824. The bona-fide sources are ASVspoof, VCC2018 and VCC2020; the spoof strata split VCC2018 into HUB/SPO and VCC2020 into Task~1/Task~2."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_256",
+      "before": {
+        "id": "rewrite_pdf_256",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "VCC2018 required 1,007 attempts, with seven rejected for lost spoof support; no other stratum required rejections."
+      },
+      "after": {
+        "id": "rewrite_pdf_256",
+        "source": "SUPPLEMENT.md",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "VCC2018 required 1,007 attempts, with seven rejected for lost spoof support; no other stratum required rejections."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_257",
+      "before": {
+        "id": "rewrite_pdf_257",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "For Mamba--Conformer, the control band is $[-1.280,0.501]$, beside the primary joint band $[-1.348,0.570]$."
+      },
+      "after": {
+        "id": "rewrite_pdf_257",
+        "source": "SUPPLEMENT.md",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "For Mamba--Conformer, the control band is $[-1.280,0.501]$, beside the primary joint band $[-1.348,0.570]$."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_287",
+      "before": {
+        "id": "rewrite_pdf_287",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "\\textbf{Artifact.} Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+      },
+      "after": {
+        "id": "rewrite_pdf_287",
+        "source": "main.tex",
+        "section": "Concentration rewrite / sentence or table row",
+        "match": "\\textbf{Artifact.} The public artifact provides the primary-analysis code, score provenance, numerical results and the additional checks identified in its reproduction guide."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    },
+    {
+      "id": "rewrite_pdf_293",
+      "before": {
+        "id": "rewrite_pdf_293",
+        "source": "main.tex",
+        "section": "Concentration rewrite / seed or table abbreviation",
+        "match": "This control uses seed 20260824."
+      },
+      "after": {
+        "id": "rewrite_pdf_293",
+        "source": "SUPPLEMENT.md",
+        "section": "S14 / withdrawn composition-control history",
+        "match": "This control uses seed 20260824."
+      },
+      "forced_by": "Finding 1 withdrawal"
+    }
+  ],
+  "added_ids": [
+    "fix5_prior_art",
+    "fix5_metadata_fields",
+    "fix5_target_voice",
+    "fix5_deletion_ties",
+    "fix5_abstract_family",
+    "fix5_abstract_counterexample",
+    "fix5_withdrawn_control_scope"
+  ],
+  "checker_changes": [
+    {
+      "file": "code/check_numbers.py",
+      "hunk": "inherited-obligation count",
+      "forced_by": "Seven new guards for findings 1\u20134 raise 303 to 310. Bind both counts and require every inherited ID; the historical rewrite ledger remains unchanged."
+    },
+    {
+      "file": "code/check_numbers.py",
+      "hunk": "deterministic deletion evidence and Table 2",
+      "forced_by": "Finding 5 changes score-tie order: bind the new producer/result and read current Table 2 from it, retaining every old influence hash and supplementary-table check."
+    },
+    {
+      "file": "code/check_numbers.py",
+      "hunk": "composition band and seed source",
+      "forced_by": "Finding 1 removes the paragraph from the PDF: check the identical withdrawn band/seed in the historical supplement, with no arithmetic check removed."
+    },
+    {
+      "file": "code/check_numbers.py",
+      "hunk": "population boundary exact wording",
+      "forced_by": "Finding 2 replaces the abstract: require its new no-population-coverage sentence."
+    },
+    {
+      "file": "code/verify_release_receipt.py",
+      "hunk": "default receipt path",
+      "forced_by": "Findings 1 and 5 require new artifact packaging; select the FIX5 successor receipt."
+    }
+  ]
+}

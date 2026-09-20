@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from verify_release import release_files
 
-RECEIPT = 'paper/RELEASE-RECEIPT-FIX4-FINAL.json'
+RECEIPT = 'paper/RELEASE-RECEIPT-FIX5-FINAL.json'
 
 def binding(path):
     data = path.read_bytes()

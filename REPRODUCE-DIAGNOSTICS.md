@@ -67,3 +67,20 @@ The input root contains the hash-checked `external-inputs/` layout above. The
 verifier also reparses the protocol to confirm the influential group's class
 composition. The two supplementary copies remain byte-identical. These CPU
 checks do not run detector inference or training.
+
+## FIX5 deterministic speaker deletions
+
+The historical driver and evidence above remain unchanged. For the current
+Table 2, use the same nine public inputs and the locked environment, then run:
+
+```bash
+uv run --frozen python code/influence_trial_id.py
+cmp evidence/influence-trial-id.json regenerated/influence-trial-id.json
+```
+
+The new producer depends only on Python and NumPy (2.4.6 in `uv.lock`), validates
+all nine input hashes and orders score ties by ascending trial ID. It recomputes
+all 93 speaker deletions for the four SSL systems and saves the three printed
+pairs' top-five summaries. It refuses an existing output; use `--out` for a new
+path. There are no timings or machine paths in this deterministic output.
+The composition control was withdrawn; this command does not regenerate it.

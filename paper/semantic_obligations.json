@@ -75,13 +75,15 @@
   },
   {
    "id": "exp111_status",
-   "section": "Experiments/21DF",
-   "match": "A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
+   "section": "S14 / withdrawn composition-control history",
+   "match": "A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "exp111_attribution_boundary",
-   "section": "Experiments/21DF",
-   "match": "Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum."
+   "section": "S14 / withdrawn composition-control history",
+   "match": "Thus movement of these eight masses is not required for the loss of separation; this does not remove influence from groups within a source or stratum.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "exp114_pre_access_identifier",
@@ -184,7 +186,7 @@
   {
    "id": "no_population_or_arena_claim",
    "section": "Method",
-   "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
+   "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
   },
   {
    "id": "conclusion_tested_scope",
@@ -206,7 +208,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen self-supervised-versus-organizer-baseline bands still exclude zero."
+   "match": "All sixteen comparisons between the four self-supervised systems and four organizer baselines remain separated."
   },
   {
    "id": "release_locator",
@@ -433,17 +435,17 @@
   {
    "id": "abstract_fixed_score_estimand",
    "section": "Abstract",
-   "match": "We use public ASVspoof~2021~DF score files from four model-author releases and four organizer baselines; recomputed equal-error rates (EERs) match the values reported for these releases at reported precision. We refit EER thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
+   "match": "Using public scores from eight ASVspoof~2021~DF systems, we compare resampling individual trials with resampling observed speakers and spoof attacks, keeping detector comparisons paired and refitting EER thresholds."
   },
   {
    "id": "abstract_zero_exclusion_scope",
    "section": "Abstract",
-   "match": "These are sensitivity results for observed score collections, without population-coverage guarantees."
+   "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
   },
   {
    "id": "abstract_roster_counts",
    "section": "Abstract",
-   "match": "The number of bands excluding zero falls from 26 to 18."
+   "match": "Across all 28 system pairs, jointly constructed sensitivity bands exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
   },
   {
    "id": "abstract_factor_matches",
@@ -513,8 +515,9 @@
   },
   {
    "id": "composition_control_replicates",
-   "section": "Experiments",
-   "match": "Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs."
+   "section": "S14 / withdrawn composition-control history",
+   "match": "Across 1,000 retained draws it separates 18/28 pairs and 0/6 organizer pairs.",
+   "source": "SUPPLEMENT.md"
   },
   {
    "id": "fixed_score_intervention_distinction",
@@ -686,7 +689,7 @@
   {
    "id": "revision_sentence_49",
    "section": "Reconsideration/new sentence",
-   "match": "Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+   "match": "The public artifact provides the primary-analysis code, score provenance, numerical results and the additional checks identified in its reproduction guide."
   },
   {
    "id": "revision_sentence_50",
@@ -792,31 +795,31 @@
    "id": "rewrite_pdf_139",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "A small paired detector advantage can depend strongly on a few observed speaker groups."
+   "match": "We examine how the composition of an evaluation set affects small differences in equal-error rate (EER) between speech deepfake detectors."
   },
   {
    "id": "rewrite_pdf_140",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Resampling only speakers gives the same 18-pair zero-exclusion pattern as joint resampling."
+   "match": "Speaker-only resampling gives the same decisions."
   },
   {
    "id": "rewrite_pdf_141",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the sum of squared, mean-centered deviations across all 93 speaker deletions for this pair."
+   "match": "Removing one group of 315 bona-fide trials reduces the XLSR-Mamba advantage over XLSR-Conformer from 0.389 to 0.129 percentage points."
   },
   {
    "id": "rewrite_pdf_142",
    "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
-   "match": "Deletion influence differs across the three self-supervised detector pairs that lose zero exclusion."
+   "section": "FIX5 / retained body detail removed from abstract",
+   "match": "Our contribution is an empirical concentration result on fixed scores: speaker-only resampling reproduces the joint decisions, and delete-one influence is concentrated to differing degrees across the three affected self-supervised (SSL) comparisons."
   },
   {
    "id": "rewrite_pdf_143",
    "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
-   "match": "On SpoofCeleb, resampling attacks alone matches the joint decisions, whereas resampling speakers alone does not."
+   "section": "FIX5 / retained body detail removed from abstract",
+   "match": "Here attack-only reproduces the joint indicator vector, while speaker-only separates 5/6 pairs."
   },
   {
    "id": "rewrite_pdf_144",
@@ -870,7 +873,7 @@
    "id": "rewrite_pdf_152",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "We print every primary trial and joint band, then test comparison-family and source-composition objections."
+   "match": "We print every primary trial and joint band and repeat the analysis within the six SSL comparisons."
   },
   {
    "id": "rewrite_pdf_153",
@@ -1476,30 +1479,30 @@
    "id": "rewrite_pdf_253",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "C--A & VCC2SF2 & $-0.578\\to-0.441$ & 23.85\\% / 75.73\\% \\\\"
+   "match": "C--A & VCC2SF2 & $-0.578\\to-0.441$ & 23.85\\% / 75.74\\% \\\\"
   },
   {
    "id": "rewrite_pdf_254",
-   "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
+   "source": "SUPPLEMENT.md",
+   "section": "S14 / withdrawn composition-control history",
    "match": "\\textbf{Composition-preserving control.} A post-result PW control resamples speakers and attacks within each bona-fide source or spoof stratum, rejects draws with no class support in any required stratum, and rescales the three bona-fide source masses and five spoof-stratum masses to their observed values."
   },
   {
    "id": "rewrite_pdf_255",
-   "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
+   "source": "SUPPLEMENT.md",
+   "section": "S14 / withdrawn composition-control history",
    "match": "This control uses seed 20260824. The bona-fide sources are ASVspoof, VCC2018 and VCC2020; the spoof strata split VCC2018 into HUB/SPO and VCC2020 into Task~1/Task~2."
   },
   {
    "id": "rewrite_pdf_256",
-   "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
+   "source": "SUPPLEMENT.md",
+   "section": "S14 / withdrawn composition-control history",
    "match": "VCC2018 required 1,007 attempts, with seven rejected for lost spoof support; no other stratum required rejections."
   },
   {
    "id": "rewrite_pdf_257",
-   "source": "main.tex",
-   "section": "Concentration rewrite / sentence or table row",
+   "source": "SUPPLEMENT.md",
+   "section": "S14 / withdrawn composition-control history",
    "match": "For Mamba--Conformer, the control band is $[-1.280,0.501]$, beside the primary joint band $[-1.348,0.570]$."
   },
   {
@@ -1680,7 +1683,7 @@
    "id": "rewrite_pdf_287",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "\\textbf{Artifact.} Code, score provenance, complete numerical results and additional reproducibility checks are available in the public artifact."
+   "match": "\\textbf{Artifact.} The public artifact provides the primary-analysis code, score provenance, numerical results and the additional checks identified in its reproduction guide."
   },
   {
    "id": "rewrite_pdf_288",
@@ -1714,8 +1717,8 @@
   },
   {
    "id": "rewrite_pdf_293",
-   "source": "main.tex",
-   "section": "Concentration rewrite / seed or table abbreviation",
+   "source": "SUPPLEMENT.md",
+   "section": "S14 / withdrawn composition-control history",
    "match": "This control uses seed 20260824."
   },
   {
@@ -1771,6 +1774,48 @@
    "source": "SUPPLEMENT.md",
    "section": "Supplement/S10 retained historical statement",
    "match": "Fixed rules reverse 5/6 organizer-baseline, 1/6 within-SSL and 0/16 cross-cohort point orderings."
+  },
+  {
+   "id": "fix5_prior_art",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "Recent audio-deepfake work also reports paired and speaker-resampled EER-difference intervals \\cite{geng26}; here we examine a complete comparison family and the concentration of speaker-deletion influence."
+  },
+  {
+   "id": "fix5_metadata_fields",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "Groups use the speaker-ID and attack-ID fields in the official DF metadata."
+  },
+  {
+   "id": "fix5_target_voice",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "For converted speech, the speaker ID denotes the target voice; it need not identify the source recording's speaker."
+  },
+  {
+   "id": "fix5_deletion_ties",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "For the delete-one analysis, equal scores are ordered by trial ID."
+  },
+  {
+   "id": "fix5_abstract_family",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "Across all 28 system pairs, jointly constructed sensitivity bands exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+  },
+  {
+   "id": "fix5_abstract_counterexample",
+   "source": "main.tex",
+   "section": "FIX5 audit repair",
+   "match": "A limited SpoofCeleb analysis gives a different speaker-versus-attack pattern."
+  },
+  {
+   "id": "fix5_withdrawn_control_scope",
+   "source": "SUPPLEMENT.md",
+   "section": "S6 / reproduction boundary",
+   "match": "FIX5 withdraws this control from the manuscript and from the public regeneration\npromise. The exact producer and complete joint draw law are unavailable in this\nrelease; the embedded results permit arithmetic checks, not independent\nregeneration. S6 and the archived paragraph below are historical records, not\nsupport for a current claim that source-composition movement has been ruled out."
   }
  ]
 }

@@ -1,0 +1,116 @@
+{
+  "status": "FIX5 tie-order repair; exploratory speaker-deletion influence",
+  "tie_order": "ascending score, then ascending trial ID",
+  "group_count": 93,
+  "inputs_sha256": {
+    "protocol_key": "70e0e7d5964562cb0166e79143f73beaeaf77ee18e799fa4156355a57006d800",
+    "XLSR-Mamba": "0698327cafdadec1f7d4f16a5c7769ead2c0aba1d805098c175307d53136397d",
+    "XLS-R+SLS": "b0c20e37bd67899f736b03497e35e67665a1a9f238bee4dfb573e6495045149b",
+    "XLSR-Conformer": "fd00e8ddb2838a9a0760609c029cb344474d85fe9b7a040969b89544502630fc",
+    "SSL-AASIST": "b58885aef1322f48098d0d7379f4e8a9fc5a831ac869e01cd4b567169a0122ce",
+    "RawNet2": "a9ac140df41ec0638b287605283e8a4163f12b6da48eb2706a0e21efcc262797",
+    "LFCC-LCNN": "ae95b18160ab0132e0c9ee4c9745d379c50629ebf6d0b4ddfee86bf0b3b993d0",
+    "LFCC-GMM": "488c214482d5f4fb9500c7c6b90e3cdec714741b42f0d3d8440371676f97aafc",
+    "CQCC-GMM": "97e05bdbbbe671303b7f5bee9b55663d1903c424ae16cffa56a7f5abc267a04d"
+  },
+  "driver_sha256": "11d0842523499c4c17db682ae7db592c3a58bc611ef77ab25659534d38ad2093",
+  "numpy_version": "2.4.6",
+  "pairs": {
+    "XLSR-Mamba vs XLSR-Conformer": {
+      "full_gap": -0.3892342302087721,
+      "top_one_ss_share": 0.7709452859912473,
+      "top_five_ss_share": 0.9003268648923124,
+      "top_groups": [
+        {
+          "speaker_label": "VCC2SM3",
+          "ss_share": 0.7709452859912473,
+          "deletion_gap": -0.12942870804712703
+        },
+        {
+          "speaker_label": "VCC2SF1",
+          "ss_share": 0.06609447916605526,
+          "deletion_gap": -0.3153360464174826
+        },
+        {
+          "speaker_label": "TMF1",
+          "ss_share": 0.029649801174783604,
+          "deletion_gap": -0.4438595891831707
+        },
+        {
+          "speaker_label": "TEM1",
+          "ss_share": 0.020119619386159207,
+          "deletion_gap": -0.34983959910967477
+        },
+        {
+          "speaker_label": "VCC2TF1",
+          "ss_share": 0.013517679174067028,
+          "deletion_gap": -0.35749751337451774
+        }
+      ]
+    },
+    "XLS-R+SLS vs XLSR-Conformer": {
+      "full_gap": -0.3571045476721968,
+      "top_one_ss_share": 0.558542396169559,
+      "top_five_ss_share": 0.7847309008920103,
+      "top_groups": [
+        {
+          "speaker_label": "VCC2SM3",
+          "ss_share": 0.558542396169559,
+          "deletion_gap": -0.13096995865640415
+        },
+        {
+          "speaker_label": "VCC2SF2",
+          "ss_share": 0.08225248968005977,
+          "deletion_gap": -0.45330562876236646
+        },
+        {
+          "speaker_label": "VCC2SF1",
+          "ss_share": 0.05706439802547425,
+          "deletion_gap": -0.28945677125132385
+        },
+        {
+          "speaker_label": "VCC2SF3",
+          "ss_share": 0.056727026950021055,
+          "deletion_gap": -0.43815044342845333
+        },
+        {
+          "speaker_label": "VCC2TM1",
+          "ss_share": 0.030144590066896067,
+          "deletion_gap": -0.4180300943855939
+        }
+      ]
+    },
+    "XLSR-Conformer vs SSL-AASIST": {
+      "full_gap": -0.5783694248040292,
+      "top_one_ss_share": 0.2384923726802542,
+      "top_five_ss_share": 0.7574053668306714,
+      "top_groups": [
+        {
+          "speaker_label": "VCC2SF2",
+          "ss_share": 0.2384923726802542,
+          "deletion_gap": -0.44113661648392233
+        },
+        {
+          "speaker_label": "VCC2SF3",
+          "ss_share": 0.21675293170366738,
+          "deletion_gap": -0.4474619430308402
+        },
+        {
+          "speaker_label": "VCC2SM3",
+          "ss_share": 0.14209278083518165,
+          "deletion_gap": -0.6813070374266621
+        },
+        {
+          "speaker_label": "VCC2SM4",
+          "ss_share": 0.09897374789861021,
+          "deletion_gap": -0.48936335699863287
+        },
+        {
+          "speaker_label": "VCC2TM1",
+          "ss_share": 0.06109353371295794,
+          "deletion_gap": -0.5080788276856216
+        }
+      ]
+    }
+  }
+}
