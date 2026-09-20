@@ -1,0 +1,64 @@
+{
+  "accessed": "2026-09-20",
+  "provenance_source": "data/README.md; paper/SUPPLEMENT.md S3",
+  "stored_values_source": "audit/audit.json:eer_rule.demonstration.observed_weights_all_ones",
+  "scope": "Released checkpoint scores, not training-run means or independent retraining. Conformer: Table 4 fixed-length DA row; organizer baselines: Table 6 DF B04/B03/B02/B01.",
+  "systems": [
+    {
+      "system": "XLSR-Mamba",
+      "stored_eer_percent": 1.8839,
+      "reported_eer_percent": "1.88",
+      "match_at_reported_precision": true,
+      "source": "https://github.com/swagshaw/XLSR-Mamba#results"
+    },
+    {
+      "system": "XLS-R+SLS",
+      "stored_eer_percent": 1.9161,
+      "reported_eer_percent": "1.92",
+      "match_at_reported_precision": true,
+      "source": "https://github.com/QiShanZhang/SLSforASVspoof-2021-DF#results-using-pre-trained-model"
+    },
+    {
+      "system": "XLSR-Conformer",
+      "stored_eer_percent": 2.2732,
+      "reported_eer_percent": "2.27",
+      "match_at_reported_precision": true,
+      "source": "https://www.isca-archive.org/interspeech_2023/rosello23_interspeech.pdf"
+    },
+    {
+      "system": "SSL-AASIST",
+      "stored_eer_percent": 2.8515,
+      "reported_eer_percent": "2.85",
+      "match_at_reported_precision": true,
+      "source": "https://github.com/TakHemlata/SSL_Anti-spoofing#results-using-pre-trained-model"
+    },
+    {
+      "system": "RawNet2",
+      "stored_eer_percent": 22.3833,
+      "reported_eer_percent": "22.38",
+      "match_at_reported_precision": true,
+      "source": "https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf"
+    },
+    {
+      "system": "LFCC-LCNN",
+      "stored_eer_percent": 23.4771,
+      "reported_eer_percent": "23.48",
+      "match_at_reported_precision": true,
+      "source": "https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf"
+    },
+    {
+      "system": "LFCC-GMM",
+      "stored_eer_percent": 25.2472,
+      "reported_eer_percent": "25.25",
+      "match_at_reported_precision": true,
+      "source": "https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf"
+    },
+    {
+      "system": "CQCC-GMM",
+      "stored_eer_percent": 25.5632,
+      "reported_eer_percent": "25.56",
+      "match_at_reported_precision": true,
+      "source": "https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf"
+    }
+  ]
+}

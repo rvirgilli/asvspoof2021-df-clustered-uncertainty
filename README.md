@@ -1,14 +1,15 @@
 # Speaker-Group Sensitivity of Paired Detector Comparisons on ASVspoof 2021 DF
 
-This concentration rewrite starts from the audited submission at `8276097`.
+This FIX4 presentation revision starts from the audited submission at `6f54787`.
 The PDF prints the complete primary 28-pair evidence, the three affected SSL
 pairs' delete-one concentration, the composition control and a limited SpoofCeleb
 factor counterexample. Arena, fixed weighting and simulations remain in this
 artifact without being premises of the submitted argument.
 See [rewrite decisions](REWRITE-CHANGES.md), the [guard ledger](paper/OBLIGATION-REWRITE.json)
-and the current payload [receipt](paper/RELEASE-RECEIPT-REWRITE-FINAL.json).
-The submission pins artifact `260e1e15e1ac6f79d4a7b083f5a51716dc8d7516` and rebuilds the PDF.
-The artifact commit retains the predecessor PDF as identified history. Existing tags stay unchanged.
+and the [FIX4 wording ledger](paper/OBLIGATION-FIX4.json). The current artifact-stage
+[receipt](paper/RELEASE-RECEIPT-FIX4-ARTIFACT.json) retains the PDF from `6f54787`
+as identified history. The next submission commit will pin this artifact and
+rebuild the PDF. Existing tags stay unchanged.
 
 - [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.

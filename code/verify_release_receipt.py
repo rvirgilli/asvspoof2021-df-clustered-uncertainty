@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Verify the successor M1 receipt and its change ledger against release bytes."""
+import argparse
 import hashlib
 import json
 import sys
@@ -9,13 +10,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from verify_release import release_files
 
-RECEIPT = 'paper/RELEASE-RECEIPT-REWRITE-FINAL.json'
+RECEIPT = 'paper/RELEASE-RECEIPT-FIX4-FINAL.json'
 
 def binding(path):
     data = path.read_bytes()
     return {'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)}
 
 def main():
+    global RECEIPT
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--receipt', default=RECEIPT)
+    RECEIPT = parser.parse_args().receipt
     receipt = json.loads((ROOT/RECEIPT).read_text())
     assert receipt['schema'] == 'm1-republication-receipt-v1'
     members = receipt['release_members']

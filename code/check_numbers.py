@@ -1403,7 +1403,7 @@ for text, why in (
     ("distinct from the nested-observation designs studied in", "crossed versus nested design"),
     ("without population-coverage guarantees", "population/rank boundary"),
     ("A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero", "abstract separate-roster result"),
-    ("for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement", "trial-law exception"),
+    ("For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list", "trial-law exception"),
 ):
     require(text, why)
 require_re(r"no.{0,20}sampling uncertainty", "deterministic fixed benchmark")

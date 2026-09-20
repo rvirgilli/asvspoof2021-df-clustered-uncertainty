@@ -1,14 +1,9 @@
-# Concentration rewrite submission
+# FIX4 artifact stage
 
-Artifact commit: `260e1e15e1ac6f79d4a7b083f5a51716dc8d7516`.
+This stage applies the four P2 repairs from AUDIT-REVISE and adds verified public
+score provenance to the abstract. All 303 obligations remain. No numerical
+result, table, supplement or reference is removed or changed.
 
-This submission inserts that immutable artifact hash in the Artifact paragraph,
-then rebuilds `main.pdf`. The artifact commit contains the complete evidence and
-revised supplement; its inherited PDF is explicitly historical. The source change
-between artifact and submission is only the artifact locator.
-
-The exact PDF, font, text extraction and all-table checks are recorded in
-`rewrite-validation/pdf-audit.json`. The acknowledgment disclosing language-model
-use and the ethics statement remain on page four; page five has references only.
-Neither `8276097` nor `d3310ba` was amended, no tag moved, and no push performed.
-The external `REWRITE-NOTE.md` records both final commit hashes and gate status.
+The inherited `main.pdf` belongs to submission `6f54787`; it is historical and
+is not a rendering of the revised source. The next submission commit will insert
+this artifact commit hash and then build the revised PDF. No push or tag movement.

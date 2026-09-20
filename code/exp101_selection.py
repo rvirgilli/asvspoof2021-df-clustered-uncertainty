@@ -7,14 +7,16 @@ inferring over the complete family instead:
   - all C(K,2) pairs from one clustered bootstrap (21DF: 28, ITW: 6);
   - sup-t simultaneous bands (Montiel Olea & Plagborg-Moller): the 95th
     percentile of max_p |Delta_b^p - mean_b Delta^p| / sd^p, applied to every
-    pair, so the whole family holds jointly at 95%;
+    pair, as an empirical all-pair sensitivity summary;
   - Holm-Bonferroni over the full family (percentile bootstrap p-values);
-  - rank intervals built from the simultaneous verdicts, which inherit the sup-t
-    family's joint validity (a bootstrap rank percentile is a stability interval,
+  - rank intervals are derived from those band decisions (a bootstrap rank
+    percentile is a stability interval,
     not a confidence set, and is reported separately under that name).
 
-Certified variants after the correctness audit: two-way percentile and two-way
-delete-one-cluster jackknife (the pigeonhole variant is withdrawn).
+Historical routines retained for provenance. The current manuscript uses this
+module's data loader and makes no population-coverage claim. Legacy 'certified'
+output labels below name historical, unvalidated routines; they do not establish
+inferential authority for the current manuscript.
 """
 
 import csv
@@ -53,10 +55,10 @@ def clustered_eer_replicates(rng, scores, labels, spk_idx, att_idx, names):
 
 
 def jackknife_cis(rng, scores, labels, spk_idx, att_idx, names, pairs, hat):
-    """Delete-one-cluster jackknife normal CI per pair (the second certified variant).
+    """Historical, unvalidated delete-one-cluster jackknife normal CI per pair.
 
-    Same estimator as the campaign's per-pair analysis (audited as a correct
-    Cameron-Gelbach-Miller two-way form): V = V_spk + V_att - V_intersection,
+    Same estimator as the historical campaign's per-pair analysis:
+    V = V_spk + V_att - V_intersection,
     with the intersection term approximated by the i.i.d. bootstrap variance and
     the whole floored at max(V_spk, V_att).
     """
@@ -158,10 +160,9 @@ def analyse(tag, scores, labels, spk_idx, att_idx):
         per_pair[key]["certified_agree"] = bool(
             per_pair[key]["resolved_pointwise"] == per_pair[key]["resolved_jackknife"])
 
-    # Rank intervals from the SIMULTANEOUS verdicts. The sup-t family is jointly
-    # valid at 95%, so
+    # Historical rank intervals are derived from the simultaneous band decisions:
     #     rank_i in [1 + #{j significantly better than i}, K - #{j : i sig. better}]
-    # inherits that joint validity. The bootstrap-percentile alternative is a
+    # No joint coverage is established. The bootstrap-percentile alternative is a
     # *stability* interval (challengeR-style): marginal, no simultaneity, and the
     # bootstrap is inconsistent for ranks near ties -- it is retained alongside,
     # named for what it is, never called a confidence set.

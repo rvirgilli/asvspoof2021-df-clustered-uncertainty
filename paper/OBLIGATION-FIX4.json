@@ -1,0 +1,61 @@
+{
+  "baseline_submission_commit": "6f54787a92cc99b1f73b8729355a77a9e5515240",
+  "count_before": 303,
+  "count_after": 303,
+  "removed_ids": [],
+  "updated_obligations": [
+    {
+      "id": "abstract_tested_scope",
+      "before": "All sixteen comparisons between the four self-supervised detectors and four organizer baselines survive.",
+      "after": "All sixteen self-supervised-versus-organizer-baseline bands still exclude zero."
+    },
+    {
+      "id": "spoofceleb_trial_law_exception",
+      "before": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates",
+      "after": "For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list, so class counts vary across replicates"
+    },
+    {
+      "id": "abstract_fixed_score_estimand",
+      "before": "On fixed ASVspoof~2021~DF scores from eight detectors, we refit equal-error-rate (EER) thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences.",
+      "after": "We use public ASVspoof~2021~DF score files from four model-author releases and four organizer baselines; recomputed equal-error rates (EERs) match the values reported for these releases at reported precision. We refit EER thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
+    },
+    {
+      "id": "rewrite_pdf_140",
+      "before": "Speaker-only resampling reproduces every primary joint separation decision.",
+      "after": "Resampling only speakers gives the same 18-pair zero-exclusion pattern as joint resampling."
+    },
+    {
+      "id": "rewrite_pdf_141",
+      "before": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the squared, mean-centered delete-one deviations for this pair.",
+      "after": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the sum of squared, mean-centered deviations across all 93 speaker deletions for this pair."
+    },
+    {
+      "id": "rewrite_pdf_142",
+      "before": "Concentration varies across the three affected modern comparisons.",
+      "after": "Deletion influence differs across the three self-supervised detector pairs that lose zero exclusion."
+    },
+    {
+      "id": "rewrite_pdf_143",
+      "before": "A contrasting SpoofCeleb factor pattern limits a universal speaker-only prescription.",
+      "after": "On SpoofCeleb, resampling attacks alone matches the joint decisions, whereas resampling speakers alone does not."
+    },
+    {
+      "id": "rewrite_pdf_166",
+      "before": "The trial bootstrap independently resamples trials within class; for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates.",
+      "after": "The trial bootstrap independently resamples trials within class. For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list, so class counts vary across replicates."
+    },
+    {
+      "id": "rewrite_pdf_247",
+      "before": "Deletion changes class normalization and refits thresholds; it measures influence without isolating a causal speaker effect or an exclusive tail mechanism.",
+      "after": "Deletion changes class normalization and refits thresholds; it measures influence without isolating a causal speaker effect."
+    }
+  ],
+  "checker_changes": [
+    {
+      "file": "code/check_numbers.py",
+      "before": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement",
+      "after": "For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list",
+      "forced_by": "Finding 3 replaces the process reference with the operational pooled sampling rule."
+    }
+  ]
+}

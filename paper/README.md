@@ -1,4 +1,4 @@
-# Concentration rewrite manuscript
+# FIX4 manuscript
 
 The PDF prints all 28 primary point gaps and trial/joint bands, the three-row
 speaker-deletion table, four-arm counts, mean/sign diagnostics, the composition
@@ -17,7 +17,9 @@ uv run --frozen python verify_release.py
 All 303 semantic obligations are deletion-tested; all 138 predecessor obligations
 and all 97 originals are retained. `OBLIGATION-REWRITE.json` records each relocation
 and the manuscript edit forcing each checker change.
-The current submission receipt is `RELEASE-RECEIPT-REWRITE-FINAL.json`.
-The submission cites artifact `260e1e15e1ac6f79d4a7b083f5a51716dc8d7516` and rebuilds the PDF.
-The artifact commit retains the predecessor PDF as identified history. Prior receipts and validation directories describe their
-named historical revisions. See `../REWRITE-CHANGES.md`.
+The FIX4 artifact receipt is `RELEASE-RECEIPT-FIX4-ARTIFACT.json` (pass it with
+`--receipt` during this artifact stage). `OBLIGATION-FIX4.json` records the nine
+wording-match changes and the forced sampling-sentence checker change.
+The inherited PDF is historical, from `6f54787`. The submission stage will pin
+this artifact and rebuild it; see `SUBMISSION-VERSION.md`.
+Prior receipts and validation directories describe their named historical revisions.

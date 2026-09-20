@@ -206,7 +206,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen comparisons between the four self-supervised detectors and four organizer baselines survive."
+   "match": "All sixteen self-supervised-versus-organizer-baseline bands still exclude zero."
   },
   {
    "id": "release_locator",
@@ -258,7 +258,7 @@
   {
    "id": "spoofceleb_trial_law_exception",
    "section": "Method/Bootstraps",
-   "match": "for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates"
+   "match": "For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list, so class counts vary across replicates"
   },
   {
    "id": "primary_ablation_abstract_exploratory",
@@ -433,7 +433,7 @@
   {
    "id": "abstract_fixed_score_estimand",
    "section": "Abstract",
-   "match": "On fixed ASVspoof~2021~DF scores from eight detectors, we refit equal-error-rate (EER) thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
+   "match": "We use public ASVspoof~2021~DF score files from four model-author releases and four organizer baselines; recomputed equal-error rates (EERs) match the values reported for these releases at reported precision. We refit EER thresholds under trial and joint speaker--attack resampling and construct simultaneous bands for all 28 EER differences."
   },
   {
    "id": "abstract_zero_exclusion_scope",
@@ -798,25 +798,25 @@
    "id": "rewrite_pdf_140",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Speaker-only resampling reproduces every primary joint separation decision."
+   "match": "Resampling only speakers gives the same 18-pair zero-exclusion pattern as joint resampling."
   },
   {
    "id": "rewrite_pdf_141",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the squared, mean-centered delete-one deviations for this pair."
+   "match": "Deleting one genuine-only speaker group changes the XLSR-Mamba minus XLSR-Conformer gap from $-0.389$ to $-0.129$ percentage points; that group accounts for 77.09\\% of the sum of squared, mean-centered deviations across all 93 speaker deletions for this pair."
   },
   {
    "id": "rewrite_pdf_142",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Concentration varies across the three affected modern comparisons."
+   "match": "Deletion influence differs across the three self-supervised detector pairs that lose zero exclusion."
   },
   {
    "id": "rewrite_pdf_143",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "A contrasting SpoofCeleb factor pattern limits a universal speaker-only prescription."
+   "match": "On SpoofCeleb, resampling attacks alone matches the joint decisions, whereas resampling speakers alone does not."
   },
   {
    "id": "rewrite_pdf_144",
@@ -954,7 +954,7 @@
    "id": "rewrite_pdf_166",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "The trial bootstrap independently resamples trials within class; for SpoofCeleb only, the archived plan samples the 91,130 trial indices from the pooled list with replacement, so class counts vary across replicates."
+   "match": "The trial bootstrap independently resamples trials within class. For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list, so class counts vary across replicates."
   },
   {
    "id": "rewrite_pdf_167",
@@ -1440,7 +1440,7 @@
    "id": "rewrite_pdf_247",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Deletion changes class normalization and refits thresholds; it measures influence without isolating a causal speaker effect or an exclusive tail mechanism."
+   "match": "Deletion changes class normalization and refits thresholds; it measures influence without isolating a causal speaker effect."
   },
   {
    "id": "rewrite_pdf_248",
