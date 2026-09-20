@@ -6,9 +6,9 @@ pairs' delete-one concentration, the composition control and a limited SpoofCele
 factor counterexample. Arena, fixed weighting and simulations remain in this
 artifact without being premises of the submitted argument.
 See [rewrite decisions](REWRITE-CHANGES.md), the [guard ledger](paper/OBLIGATION-REWRITE.json)
-and the current payload [receipt](paper/RELEASE-RECEIPT-REWRITE-ARTIFACT.json).
-The artifact-stage PDF is inherited from `8276097`; the submission stage pins
-this new artifact commit and rebuilds the PDF. Existing tags stay unchanged.
+and the current payload [receipt](paper/RELEASE-RECEIPT-REWRITE-FINAL.json).
+The submission pins artifact `260e1e15e1ac6f79d4a7b083f5a51716dc8d7516` and rebuilds the PDF.
+The artifact commit retains the predecessor PDF as identified history. Existing tags stay unchanged.
 
 - [Four-arm bands](evidence/ABLATION-RESULTS.json), supplement S4a.
 - [Monte Carlo, mean/sign, pairing and tie diagnostics](evidence/diagnostics.json), S4b–S4d.

@@ -306,6 +306,20 @@
       "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
     },
     {
+      "id": "release_locator",
+      "before": {
+        "id": "release_locator",
+        "section": "Discussion",
+        "match": "Artifact version \\texttt{d3310baf83f8a1f2e64e0159c5cedf38e53366e0} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+      },
+      "after": {
+        "id": "release_locator",
+        "section": "Discussion",
+        "match": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+      },
+      "forced_by": "Pin the newly committed artifact in the submission."
+    },
+    {
       "id": "matched_seed",
       "before": {
         "id": "matched_seed",
@@ -634,6 +648,20 @@
         "source": "SUPPLEMENT.md"
       },
       "forced_by": "Concentration rewrite relocates superseded PDF wording to the retained historical supplement; no obligation is removed."
+    },
+    {
+      "id": "revision_sentence_50",
+      "before": {
+        "id": "revision_sentence_50",
+        "section": "Reconsideration/new sentence",
+        "match": "Artifact version \\texttt{d3310baf83f8a1f2e64e0159c5cedf38e53366e0} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+      },
+      "after": {
+        "id": "revision_sentence_50",
+        "section": "Reconsideration/new sentence",
+        "match": "Artifact version \\texttt{260e1e15e1ac6f79d4a7b083f5a51716dc8d7516} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+      },
+      "forced_by": "Pin the newly committed artifact in the submission."
     }
   ],
   "added_ids": [
@@ -820,5 +848,6 @@
       "edit": "Remove Arena, fixed weighting and simulation headlines from the PDF.",
       "check": "Forbid their reintroduction and retain all original IDs."
     }
-  ]
+  ],
+  "artifact_commit": "260e1e15e1ac6f79d4a7b083f5a51716dc8d7516"
 }

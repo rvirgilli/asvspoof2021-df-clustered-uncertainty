@@ -17,8 +17,7 @@ uv run --frozen python verify_release.py
 All 303 semantic obligations are deletion-tested; all 138 predecessor obligations
 and all 97 originals are retained. `OBLIGATION-REWRITE.json` records each relocation
 and the manuscript edit forcing each checker change.
-The current artifact-stage receipt is `RELEASE-RECEIPT-REWRITE-ARTIFACT.json`.
-The artifact-stage PDF is inherited from the audited predecessor and does not
-render this stage's revised source. A subsequent submission commit updates the
-locator and rebuilds it. Prior receipts and validation directories describe their
+The current submission receipt is `RELEASE-RECEIPT-REWRITE-FINAL.json`.
+The submission cites artifact `260e1e15e1ac6f79d4a7b083f5a51716dc8d7516` and rebuilds the PDF.
+The artifact commit retains the predecessor PDF as identified history. Prior receipts and validation directories describe their
 named historical revisions. See `../REWRITE-CHANGES.md`.
