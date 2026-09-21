@@ -1,0 +1,5 @@
+Downloading pymupdf (24.6MiB)
+ Downloaded pymupdf
+Installed 1 package in 2ms
+PASS — PDF: 5 pages, references only on page 5; acknowledgment and ethics on page 4; 0 overfull boxes, 0 undefined citations/references, 0 Type 3 fonts; minimum font 9.066000 pt.
+PASS — all five tables survive PDF extraction; URL intact on one line: github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty.

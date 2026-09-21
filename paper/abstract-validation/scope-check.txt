@@ -1,0 +1,3 @@
+PASS — only the abstract changes in manuscript sources; both supplements, bibliography and style are byte-identical.
+PASS — all 310 obligation IDs retained; 10 forced text bindings updated, 300 unchanged; one forced checker phrase updated.
+PASS — release files, HEAD and refs unchanged; artifact pin unchanged; no tag moved.

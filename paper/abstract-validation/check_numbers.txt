@@ -1,0 +1,23 @@
+Using CPython 3.11.15
+Creating virtual environment at: .venv
+Downloading fonttools (4.8MiB)
+Downloading numpy (16.1MiB)
+Downloading numba (3.6MiB)
+Downloading matplotlib (9.6MiB)
+Downloading scipy (33.7MiB)
+Downloading llvmlite (57.1MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading pillow (6.6MiB)
+ Downloaded kiwisolver
+ Downloaded numba
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded matplotlib
+ Downloaded numpy
+ Downloaded scipy
+ Downloaded llvmlite
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 14 packages in 90ms
+OK — scientific contract passes: matched trial/PW results, complete system and pair tables, coverage boundaries, source weighting, SpoofCeleb/ASV5 checks, and all caveats are artifact-bound.

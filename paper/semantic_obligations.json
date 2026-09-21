@@ -186,7 +186,7 @@
   {
    "id": "no_population_or_arena_claim",
    "section": "Method",
-   "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
+   "match": "These fixed-score results describe sensitivity to observed groups, without population-coverage claims, causal attribution or a universal resampling prescription. Small EER advantages should therefore be reported alongside their sensitivity to influential evaluation groups."
   },
   {
    "id": "conclusion_tested_scope",
@@ -208,7 +208,7 @@
   {
    "id": "abstract_tested_scope",
    "section": "Abstract",
-   "match": "All sixteen comparisons between the four self-supervised systems and four organizer baselines remain separated."
+   "match": "All four self-supervised systems retain their advantage over the four organizer baselines, with bands excluding zero for all sixteen comparisons."
   },
   {
    "id": "release_locator",
@@ -435,17 +435,17 @@
   {
    "id": "abstract_fixed_score_estimand",
    "section": "Abstract",
-   "match": "Using public scores from eight ASVspoof~2021~DF systems, we compare resampling individual trials with resampling observed speakers and spoof attacks, keeping detector comparisons paired and refitting EER thresholds."
+   "match": "Using public scores from eight speech deepfake detectors, we resample trials, observed speakers and spoof attacks, keeping comparisons paired and refitting EER thresholds."
   },
   {
    "id": "abstract_zero_exclusion_scope",
    "section": "Abstract",
-   "match": "These results motivate reporting sensitivity to observed evaluation groups; they do not establish population coverage or a universal resampling prescription."
+   "match": "These fixed-score results describe sensitivity to observed groups, without population-coverage claims, causal attribution or a universal resampling prescription. Small EER advantages should therefore be reported alongside their sensitivity to influential evaluation groups."
   },
   {
    "id": "abstract_roster_counts",
    "section": "Abstract",
-   "match": "Across all 28 system pairs, jointly constructed sensitivity bands exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+   "match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
   },
   {
    "id": "abstract_factor_matches",
@@ -795,19 +795,19 @@
    "id": "rewrite_pdf_139",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "We examine how the composition of an evaluation set affects small differences in equal-error rate (EER) between speech deepfake detectors."
+   "match": "The gap between XLSR-Mamba's 1.884\\% equal-error rate (EER) and XLSR-Conformer's 2.273\\% on ASVspoof~2021~DF depends strongly on one speaker group."
   },
   {
    "id": "rewrite_pdf_140",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Speaker-only resampling gives the same decisions."
+   "match": "Speaker-only resampling gives the same zero-exclusion decisions."
   },
   {
    "id": "rewrite_pdf_141",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Removing one group of 315 bona-fide trials reduces the XLSR-Mamba advantage over XLSR-Conformer from 0.389 to 0.129 percentage points."
+   "match": "Removing VCC2SM3's 315 bona-fide trials reduces Mamba's advantage from 0.389 to 0.129 percentage points."
   },
   {
    "id": "rewrite_pdf_142",
@@ -1803,13 +1803,13 @@
    "id": "fix5_abstract_family",
    "source": "main.tex",
    "section": "FIX5 audit repair",
-   "match": "Across all 28 system pairs, jointly constructed sensitivity bands exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+   "match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
   },
   {
    "id": "fix5_abstract_counterexample",
    "source": "main.tex",
    "section": "FIX5 audit repair",
-   "match": "A limited SpoofCeleb analysis gives a different speaker-versus-attack pattern."
+   "match": "A limited SpoofCeleb analysis instead finds that attack-only resampling reproduces the speaker--attack decisions."
   },
   {
    "id": "fix5_withdrawn_control_scope",

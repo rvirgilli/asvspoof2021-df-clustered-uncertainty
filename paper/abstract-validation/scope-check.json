@@ -1,0 +1,32 @@
+{
+  "baseline_submission": "7e0084d6981d8ec2dfed237c3d0c156519638e7e",
+  "manuscript_outside_abstract_byte_identical": true,
+  "supplements_bibliography_and_style_byte_identical": true,
+  "artifact_commit_unchanged": "ef1be20cd8f6de8006c10a4dc04983ec96626af1",
+  "obligations_before": 310,
+  "obligations_after": 310,
+  "removed_obligations": [],
+  "changed_binding_ids": [
+    "no_population_or_arena_claim",
+    "abstract_tested_scope",
+    "abstract_fixed_score_estimand",
+    "abstract_zero_exclusion_scope",
+    "abstract_roster_counts",
+    "rewrite_pdf_139",
+    "rewrite_pdf_140",
+    "rewrite_pdf_141",
+    "fix5_abstract_family",
+    "fix5_abstract_counterexample"
+  ],
+  "other_300_bindings_unchanged": true,
+  "guard_algorithms_unchanged": true,
+  "checker_change": "One exact-text scope requirement follows the rewritten abstract; no numerical or semantic check removed.",
+  "release_worktree_head_and_refs_unchanged": true,
+  "tags_unchanged": true,
+  "changed_tracked_paths": [
+    "code/check_numbers.py",
+    "paper/main.pdf",
+    "paper/main.tex",
+    "paper/semantic_obligations.json"
+  ]
+}

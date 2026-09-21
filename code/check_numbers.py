@@ -1415,7 +1415,7 @@ for text, why in (
     ("Publish the group memberships and weighting rules needed to reproduce the check", "report observed units"),
     ("The sixteen SSL-versus-baseline contrasts survive the tested resampling laws and fixed weighting rules", "tested scope"),
     ("distinct from the nested-observation designs studied in", "crossed versus nested design"),
-    ("they do not establish population coverage or a universal resampling prescription", "population/rank boundary"),
+    ("without population-coverage claims, causal attribution or a universal resampling prescription", "population/causal/universal-prescription boundary"),
     ("A separate eleven-detector roster on the same corpus changes from 52 of 55 to 38 of 55 bands excluding zero", "abstract separate-roster result"),
     ("For SpoofCeleb only, it samples 91,130 trial indices with replacement from the pooled list", "trial-law exception"),
 ):
