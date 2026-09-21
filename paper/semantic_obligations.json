@@ -10,7 +10,7 @@
   {
    "id": "scope_no_transfer",
    "section": "Method",
-   "match": "Four VCC spoof strata contain only 4, 4, 4 and 6 speakers."
+   "match": "The VCC2018 HUB and SPO tasks and the VCC2020 Task1 and Task2 subsets contain only 4, 4, 4 and 6 spoof-speaker IDs, respectively; the product-weight bootstrap does not stratify by these source/task subsets."
   },
   {
    "id": "scope_fixed_score_outputs",
@@ -43,7 +43,7 @@
   {
    "id": "separation_definition",
    "section": "Method/EER",
-   "match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$."
+   "match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero."
   },
   {
    "id": "identified_object",
@@ -213,7 +213,7 @@
   {
    "id": "release_locator",
    "section": "Discussion",
-   "match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+   "match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
   },
   {
    "id": "asv5_resampling_law",
@@ -445,7 +445,7 @@
   {
    "id": "abstract_roster_counts",
    "section": "Abstract",
-   "match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+   "match": "Across all 28 detector pairs, simultaneous bootstrap sensitivity bands exclude zero for 26 EER differences when resampling trials and 18 when jointly resampling speaker and attack IDs."
   },
   {
    "id": "abstract_factor_matches",
@@ -694,7 +694,7 @@
   {
    "id": "revision_sentence_50",
    "section": "Reconsideration/new sentence",
-   "match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+   "match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
   },
   {
    "id": "revision_fresh_streams",
@@ -801,7 +801,7 @@
    "id": "rewrite_pdf_140",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Speaker-only resampling gives the same zero-exclusion decisions."
+   "match": "Resampling speakers alone yields the same 28 decisions as joint resampling."
   },
   {
    "id": "rewrite_pdf_141",
@@ -1689,7 +1689,7 @@
    "id": "rewrite_pdf_288",
    "source": "main.tex",
    "section": "Concentration rewrite / sentence or table row",
-   "match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
+   "match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
   },
   {
    "id": "rewrite_pdf_289",
@@ -1803,13 +1803,13 @@
    "id": "fix5_abstract_family",
    "source": "main.tex",
    "section": "FIX5 audit repair",
-   "match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling."
+   "match": "Across all 28 detector pairs, simultaneous bootstrap sensitivity bands exclude zero for 26 EER differences when resampling trials and 18 when jointly resampling speaker and attack IDs."
   },
   {
    "id": "fix5_abstract_counterexample",
    "source": "main.tex",
    "section": "FIX5 audit repair",
-   "match": "A limited SpoofCeleb analysis instead finds that attack-only resampling reproduces the speaker--attack decisions."
+   "match": "A limited SpoofCeleb analysis instead finds that resampling attacks alone yields the same decisions as joint resampling."
   },
   {
    "id": "fix5_withdrawn_control_scope",

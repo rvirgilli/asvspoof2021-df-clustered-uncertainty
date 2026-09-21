@@ -1,0 +1,75 @@
+{
+  "baseline_submission": "aa34fbf07fbf84fe27bff10cc039eb576e2819e8",
+  "artifact_commit": "ee63bf13f909262da81284816f95f5c96cedccad",
+  "count_before": 310,
+  "count_after": 310,
+  "removed_ids": [],
+  "added_ids": [],
+  "forced_bindings": [
+    {
+      "id": "separation_definition",
+      "finding": "Optional consistency fix: unused indicator notation",
+      "old_match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero; write this indicator as $I_{p,h}$.",
+      "new_match": "A pair is \\emph{separated under procedure $h$} when its simultaneous band excludes zero.",
+      "reason": "Remove the unused symbol only; retain the complete separation definition and its named deletion guard."
+    },
+    {
+      "id": "scope_no_transfer",
+      "finding": "F2",
+      "old_match": "Four VCC spoof strata contain only 4, 4, 4 and 6 speakers.",
+      "new_match": "The VCC2018 HUB and SPO tasks and the VCC2020 Task1 and Task2 subsets contain only 4, 4, 4 and 6 spoof-speaker IDs, respectively; the product-weight bootstrap does not stratify by these source/task subsets."
+    },
+    {
+      "id": "release_locator",
+      "finding": "F3",
+      "old_match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}",
+      "new_match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}"
+    },
+    {
+      "id": "abstract_roster_counts",
+      "finding": "F1",
+      "old_match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling.",
+      "new_match": "Across all 28 detector pairs, simultaneous bootstrap sensitivity bands exclude zero for 26 EER differences when resampling trials and 18 when jointly resampling speaker and attack IDs."
+    },
+    {
+      "id": "revision_sentence_50",
+      "finding": "F3",
+      "old_match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.",
+      "new_match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}."
+    },
+    {
+      "id": "rewrite_pdf_140",
+      "finding": "F1",
+      "old_match": "Speaker-only resampling gives the same zero-exclusion decisions.",
+      "new_match": "Resampling speakers alone yields the same 28 decisions as joint resampling."
+    },
+    {
+      "id": "rewrite_pdf_288",
+      "finding": "F3",
+      "old_match": "Artifact version \\texttt{ef1be20cd8f6de8006c10a4dc04983ec96626af1} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup",
+      "new_match": "Artifact version \\texttt{ee63bf13f909262da81284816f95f5c96cedccad} at \\mbox{github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty}.\\par\\endgroup"
+    },
+    {
+      "id": "fix5_abstract_family",
+      "finding": "F1",
+      "old_match": "Across all 28 pairs, bands constructed together for the EER differences exclude zero for 26 pairs under trial resampling and 18 under speaker--attack resampling.",
+      "new_match": "Across all 28 detector pairs, simultaneous bootstrap sensitivity bands exclude zero for 26 EER differences when resampling trials and 18 when jointly resampling speaker and attack IDs."
+    },
+    {
+      "id": "fix5_abstract_counterexample",
+      "finding": "F1",
+      "old_match": "A limited SpoofCeleb analysis instead finds that attack-only resampling reproduces the speaker--attack decisions.",
+      "new_match": "A limited SpoofCeleb analysis instead finds that resampling attacks alone yields the same decisions as joint resampling."
+    }
+  ],
+  "checker_code_changes": [
+    {
+      "path": "code/check_numbers.py",
+      "finding": "F2",
+      "old": "require(\"4, 4, 4 and 6 speakers\", \"dominant sparse blocks must be visible\")",
+      "new": "require(\"4, 4, 4 and 6 spoof-speaker IDs\", \"dominant sparse blocks must be visible\")",
+      "reason": "Forced by the audited replacement identifying spoof-speaker IDs; the count requirement and numerical incidence check remain."
+    }
+  ],
+  "reason": "Only exact-text bindings forced by F1, F2, the F3 artifact pin and removal of unused indicator notation changed; all IDs, sources and semantic duties retained."
+}

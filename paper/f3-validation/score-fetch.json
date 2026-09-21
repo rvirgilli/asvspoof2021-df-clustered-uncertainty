@@ -1,0 +1,39 @@
+{
+  "artifact_commit": "ee63bf13f909262da81284816f95f5c96cedccad",
+  "guide_git_blob": "bdde3a7992ffa3cd75df3330042929cc23899cee",
+  "guide_sha256": "6324b2d3433153504f03cfc7a8ed9525be392b8e2090eabcb0df982f4130ee9b",
+  "fetched_at_utc": "2026-09-21T02:35:39.311161+00:00",
+  "method": "Read paths and provenance with git show; resolve upstream HEAD; HTTP GET complete immutable raw files into memory; compare full SHA-256, bytes and lines.",
+  "fetches": [
+    {
+      "system": "XLSR-Mamba",
+      "documented_repository": "https://github.com/swagshaw/XLSR-Mamba",
+      "documented_path": "Scores/DF/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
+      "upstream_commit": "10ec73810d24091028a2aa5454c8dfd1a239e441",
+      "requested_url": "https://raw.githubusercontent.com/swagshaw/XLSR-Mamba/10ec73810d24091028a2aa5454c8dfd1a239e441/Scores/DF/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
+      "final_url": "https://raw.githubusercontent.com/swagshaw/XLSR-Mamba/10ec73810d24091028a2aa5454c8dfd1a239e441/Scores/DF/Bmamba3_LA_WCE_1e-06_ES144_NE12.txt",
+      "http_status": 200,
+      "observed": {
+        "sha256": "0698327cafdadec1f7d4f16a5c7769ead2c0aba1d805098c175307d53136397d",
+        "bytes": 19572585,
+        "lines": 611829
+      },
+      "full_hash_bytes_lines_match": true
+    },
+    {
+      "system": "XLSR-Conformer",
+      "documented_repository": "https://github.com/ErosRos/conformer-based-classifier-for-anti-spoofing",
+      "documented_path": "Scores/DF/Scores_Best_DF_Fixed_size_train.txt",
+      "upstream_commit": "e8e195938b898d21ac0105076f883b1571db2664",
+      "requested_url": "https://raw.githubusercontent.com/ErosRos/conformer-based-classifier-for-anti-spoofing/e8e195938b898d21ac0105076f883b1571db2664/Scores/DF/Scores_Best_DF_Fixed_size_train.txt",
+      "final_url": "https://raw.githubusercontent.com/ErosRos/conformer-based-classifier-for-anti-spoofing/e8e195938b898d21ac0105076f883b1571db2664/Scores/DF/Scores_Best_DF_Fixed_size_train.txt",
+      "http_status": 200,
+      "observed": {
+        "sha256": "fd00e8ddb2838a9a0760609c029cb344474d85fe9b7a040969b89544502630fc",
+        "bytes": 19590147,
+        "lines": 611829
+      },
+      "full_hash_bytes_lines_match": true
+    }
+  ]
+}

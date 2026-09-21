@@ -1,0 +1,299 @@
+SPEAKER-GROUP SENSITIVITY OF PAIRED DETECTOR COMPARISONS ON ASVSPOOF
+                                2021 DF
+
+     Rafaello Virgilli Lucas Alcântara Souza Alexandre Costa Ferro Filho Daniel Tunnermann
+        Gustavo dos Reis Oliveira Arlindo Rodrigues Galvão Filho Anderson da Silva Soares
+
+                          AKCIT, Federal University of Goiás (UFG), Goiânia, GO, Brazil
+                                        rafaello.virgilli@discente.ufg.br
+
+
+                          ABSTRACT                                     cancel between detectors, so dependence of individual scores
+                                                                       alone cannot answer this paired question.
+The gap between XLSR-Mamba’s 1.884% equal-error rate (EER)
+                                                                           Our contribution is an empirical concentration result on
+and XLSR-Conformer’s 2.273% on ASVspoof 2021 DF depends
+strongly on one speaker group. Removing VCC2SM3’s 315 bona-            fixed scores: speaker-only resampling reproduces the joint
+fide trials reduces Mamba’s advantage from 0.389 to 0.129 percent-     decisions, and delete-one influence is concentrated to differ-
+age points. Using public scores from eight speech deepfake detec-      ing degrees across the three affected self-supervised (SSL)
+tors, we resample trials, observed speakers and spoof attacks, keep-   comparisons. We print every primary trial and joint band
+ing comparisons paired and refitting EER thresholds. Across all        and repeat the analysis within the six SSL comparisons. A
+28 detector pairs, simultaneous bootstrap sensitivity bands exclude    limited SpoofCeleb counterexample retains the reason to ex-
+zero for 26 EER differences when resampling trials and 18 when
+                                                                       amine both factors. The reporting consequence is to disclose
+jointly resampling speaker and attack IDs. Resampling speakers
+alone yields the same 28 decisions as joint resampling. All four       influential-group sensitivity when claiming a small paired
+self-supervised systems retain their advantage over the four orga-     EER advantage.
+nizer baselines, with bands excluding zero for all sixteen compar-
+isons. A limited SpoofCeleb analysis instead finds that resampling
+attacks alone yields the same decisions as joint resampling. These                        2. RELATED WORK
+fixed-score results describe sensitivity to observed groups, without
+population-coverage claims, causal attribution or a universal resam-   Benchmark reporting. ASVspoof 2017 reported EER
+pling prescription. Small EER advantages should therefore be re-       intervals [1]; ASVspoof 2021 Fig. 4(c) used the Bengio–
+ported alongside their sensitivity to influential evaluation groups.   Mariéthoz test [2] with Holm correction [3]. Its shared-trial
+    Index Terms— Audio deepfake detection, paired evalua-              variant accounts for two systems using the same trials, not
+tion, speaker influence, EER                                           repeated speakers and attacks. We found no uncertainty anal-
+                                                                       ysis in the later journal overview [4] or ASVspoof 5 [5]; a
+                                                                       recent SSL benchmark reports point EERs [6]. Other work
+                     1. INTRODUCTION                                   reports trial-bootstrap ranks [7], EER spreads [8], corrected
+                                                                       pairwise tests [9], or fixed-threshold intervals [10]. Training-
+On ASVspoof 2021 DF, XLSR-Mamba achieves 1.884%                        seed variation also moves rankings [11]; our scores hold
+EER and XLSR-Conformer 2.273%. Deleting VCC2SM3,                       training fixed.
+which contains 315 bona-fide VCC2018 trials and no spoof                    Dependent paired comparison. User-aware biometric
+trials, changes the Mamba–Conformer gap from −0.389 to                 and speech resampling [12, 13], correlation-corrected paired
+−0.129 percentage points. Those 315 trials are part of 14,869          tests [14], and synchronized resampling for correlated clas-
+bona-fide trials in a benchmark with 533,928 trials overall.           sifiers [15] precede this study. Our speaker and spoof-attack
+The gap remains negative, but its magnitude depends strongly           factors are crossed [16, 17, 18], distinct from the nested-
+on one observed group.                                                 observation designs studied in [19]. We use these established
+     This deletion belongs to a complete family analysis, with         tools to measure concentrated group influence on paired EER
+all speakers retained in the principal comparison. Across              comparisons, with every threshold refitted. Recent audio-
+eight detectors, we ask which paired EER differences sur-              deepfake work also reports paired and speaker-resampled
+vive changing the resampling unit, and how concentrated                EER-difference intervals [20]; here we examine a complete
+the delete-one speaker influence is in the affected modern             comparison family and the concentration of speaker-deletion
+comparisons. ASVspoof 2021 DF has 93 speakers and 110                  influence.
+attacks; a large trial count need not provide broad group                   Evaluation design. Aggregation weights [21], channel
+support for a close comparison. Shared group variation may             presentation [22], representations [23], controlled genera-
+tor/speaker perturbations [24] and corpus overlap [25] affect        were designed after the primary results and are exploratory.
+deepfake evaluation. Identity perturbations [26], speaker-           Matching separation decisions does not decompose variance
+adversarial training [27] and speaker/synthesizer familiarity        or identify a causal speaker effect. A band containing zero
+[28] address related sensitivities. Speaker-subspace pro-            establishes neither equality nor a deployment ranking.
+jection also targets identity-dependent representations [29].
+Here the scores are fixed and evaluation weights vary. Simul-        3.3. All-pair simultaneous bands
+taneous rank intervals are established [30]. Because selecting
+                                                                                                            (b)
+only neighbors in the observed point-EER ordering uses the           For procedure h, let sp,h = sdb (∆p,h ). We set q.95,h to
+outcomes, we include every detector pair.                                                                        (b) ¯
+                                                                     the empirical 95th percentile of max28
+                                                                                                          p=1 |∆p,h − ∆p,h |/sp,h
+                                                                     and report ∆ˆp ±q
+                         3. METHOD                                                      .95,h sp,h [32]. The quantile centers devia-
+                                                                     tions on the bootstrap mean, whereas the bands center on the
+3.1. EER contrast and separation event                               original estimate; band inclusion is not an empirical reversal
+                                                                     probability. The maximum includes all 28 primary contrasts,
+Two deterministic systems on a fixed trial list have no sam-         including when reporting within-cohort counts; SpoofCeleb
+pling uncertainty until a perturbation law is declared. Scores       uses its own complete six-pair family. No population error-
+are oriented so larger means bona fide and sorted in ascending       control guarantee is asserted.
+order. At each ordered position, the false-reject rate (FRR) is
+the fraction of bona-fide weight at or below it and the false-
+accept rate (FAR) the fraction of spoof weight above it; we          3.4. Delete-one concentration
+select the first position minimizing their absolute difference       For the delete-one analysis, equal scores are ordered by
+and take their mean as EER, without interpolation. For or-           trial ID. For each of the 93 speakers, we remove all its tri-
+dered pair (A, B), ∆EERA,B = 100(EERA − EERB ) per-                  als, renormalize within class and refit both thresholds. For
+centage points (negative favors A); every replicate refits both      pair p, define dp,g = ∆   ˆ p,−g − ∆ ˆ p,−· , where the bar av-
+thresholds. A pair is separated under procedure h when its           erages the 93 delete-one estimates. The influence share is
+simultaneous band excludes zero.
+                                                                     d2p,g / 93     2
+                                                                            P
+                                                                               h=1 dp,h ; top-five shares sum the five largest terms
+                                                                     of this same denominator. These are shares of squared dele-
+3.2. Perturbation laws and scope                                     tion deviations, not fractions of the original gap or population
+Groups use the speaker-ID and attack-ID fields in the official       effective sample sizes.
+DF metadata. For converted speech, the speaker ID denotes
+the target voice; it need not identify the source recording’s                                4. RESULTS
+speaker.
+    The trial bootstrap independently resamples trials within        Setup. The primary set contains XLSR-Mamba [33], XLS-
+class. For SpoofCeleb only, it samples 91,130 trial indices          R+SLS (SLS below) [34], XLSR-Conformer [35] and SSL-
+with replacement from the pooled list, so class counts vary          AASIST [36], plus RawNet2, LFCC-LCNN, LFCC-GMM
+across replicates. In the speaker×attack product-weight (PW)         and CQCC-GMM. All 533,928 evaluation-phase trials have
+bootstrap [18, 31], we independently draw speakers and spoof         every score: 14,869 bona-fide and 519,059 spoof trials, with
+attacks uniformly with replacement, drawing as many of each          weights normalized within class. The matched trial/PW
+as observed; a spoof trial receives the product of its speaker       comparison uses 5,000 replicates and seed 2026081604;
+and attack multiplicities, and a bona-fide trial receives only its   NumPy SeedSequence children are trial, joint, speaker-only
+speaker multiplicity. Speaker-only fixes attack multiplicities       and attack-only in that order.
+at one; attack-only fixes speaker and bona-fide trial weights            Complete paired evidence. The matched all-28-pair
+at one. Each of these four procedures uses 5,000 replicates.         bootstrap refits the same weighted EER in every replicate.
+Each replicate’s weights are shared across systems; proce-           Table 1 prints all point differences and both simultaneous
+dures have separate random streams.                                  bands. Trial and joint bands separate 26/28 and 18/28 pairs;
+    Interpretation. These bands describe sensitivity of fixed        within SSL, the counts fall from 5/6 to 2/6. All primary
+scores to the stated weights, not confidence about future            within-SSL losses involve Conformer. All sixteen SSL-
+speakers or attacks. The VCC2018 HUB and SPO tasks and               versus-baseline comparisons remain separated under every
+the VCC2020 Task1 and Task2 subsets contain only 4, 4, 4             primary arm (Table 3). Restricting the maximum to the six
+and 6 spoof-speaker IDs, respectively; the product-weight            SSL pairs also gives 5/6 trial and 2/6 joint separations; the
+bootstrap does not stratify by these source/task subsets. Cov-       losses do not require the organizer comparisons in the family.
+erage results for crossed-array means do not establish cover-            Concentration across affected SSL pairs. Table 2 re-
+age for refitted EER differences [31]. The one-factor, Monte         ports the largest speaker contributor for each SSL comparison
+Carlo, mean/sign, pairing, tie and group-deletion diagnostics        losing separation. The two comparisons of Mamba and SLS
+Table 1. Complete primary 21DF sensitivity bands in per-        Table 2. Speaker deletion influence for the three affected SSL
+centage points, using the full 28-pair maximum. Pair labels     pairs (abbreviations as in Table 1). Gaps are in points; shares
+mean first minus second; negative favors the first. A star      use the squared-deviation denominator in Method.
+marks trial separation lost under joint resampling. Abbrevia-     Pair     Largest group      Full → deletion Largest / top five
+tions and point EERs (%) are defined above the bands.
+                                                                  M–C VCC2SM3              −0.389 → −0.129 77.09% / 90.03%
+      M XLSR-Mamba     1.884 R RawNet2   22.383                   S–C VCC2SM3              −0.357 → −0.131 55.85% / 78.47%
+      S XLS-R+SLS      1.916 L LFCC-LCNN 23.477                   C–A VCC2SF2              −0.578 → −0.441 23.85% / 75.74%
+      C XLSR-Conformer 2.273 F LFCC-GMM 25.247
+      A SSL-AASIST     2.852 Q CQCC-GMM 25.563
+   Pair       Gap      Trial band          Joint band           Table 3. Primary zero-exclusion counts under the full 28-
+   Within SSL                                                   pair correction; every arm retains 16/16 SSL-versus-baseline
+   M–S     −0.032    [−0.144, 0.080]     [−0.725, 0.661]        separations. Attack ranges span the original and five fresh
+   M–C* −0.389      [−0.570, −0.208]     [−1.348, 0.570]        5,000-draw runs; other entries are recorded-run counts. One-
+   M–A −0.968       [−1.175, −0.760]    [−1.828, −0.107]        factor analyses are exploratory.
+   S–C* −0.357      [−0.538, −0.177]     [−1.493, 0.779]
+                                                                         Roster / subset   Trial Speaker    Attack    Joint
+   S–A     −0.935   [−1.141, −0.730]    [−1.784, −0.087]
+   C–A* −0.578      [−0.835, −0.322]     [−1.637, 0.480]                 21DF, all       26/28    18/28    21–22/28 18/28
+                                                                         21DF, SSL        5/6      2/6       3/6     2/6
+   Within organizer baselines
+                                                                         21DF, organizer 5/6       0/6      2–3/6    0/6
+   R–L* −1.094 [−1.722, −0.466]          [−5.528, 3.341]
+   R–F* −2.864 [−3.654, −2.074]          [−9.949, 4.221]
+   R–Q* −3.180 [−4.003, −2.356]          [−9.284, 2.925]
+   L–F* −1.770 [−2.426, −1.114]          [−6.490, 2.950]        removes about 75% of the sum of their marginal variances,
+   L–Q* −2.086 [−2.765, −1.407]          [−6.173, 2.001]        yet the paired SD rises from 0.06149 under trials to 0.31997
+   F–Q     −0.316 [−0.929, 0.297]        [−3.370, 2.738]        points under joint resampling. The trial and joint critical
+   SSL versus organizer baselines                               values are 2.940 and 2.997, so SD inflation drives the band
+   M–R −20.499 [−21.070, −19.929] [−26.950, −14.049]            widening. The joint mean displacement is only 0.032 SD, so
+   M–L −21.593 [−22.123, −21.063] [−27.445, −15.742]            band centering does not explain inclusion of zero; the trial
+   M–F −23.363 [−23.981, −22.746] [−29.462, −17.264]
+                                                                band excludes zero with 0/5,000 opposite-sign draws, the
+   M–Q −23.679 [−24.364, −22.994] [−29.247, −18.112]
+   S–R −20.467 [−21.039, −19.896] [−26.958, −13.976]            joint band includes it with 463/5,000. A finite zero count
+   S–L −21.561 [−22.090, −21.032] [−27.440, −15.682]            does not establish zero reversal probability.
+   S–F −23.331 [−23.948, −22.714] [−29.469, −17.194]                Numerical checks. Across five fresh attack-only runs,
+   S–Q −23.647 [−24.330, −22.964] [−29.216, −18.078]            separation counts range from 21 to 22 overall and from two
+   C–R −20.110 [−20.673, −19.547] [−26.307, −13.914]            to three among organizer baselines; within-SSL counts re-
+   C–L −21.204 [−21.726, −20.682] [−26.757, −15.651]
+                                                                main three. Five fresh 5,000-draw runs for each of the trial,
+   C–F −22.974 [−23.587, −22.361] [−28.899, −17.049]
+   C–Q −23.290 [−23.964, −22.616] [−28.709, −17.871]            speaker-only and joint arms also preserve every recorded sep-
+   A–R −19.532 [−20.118, −18.945] [−25.739, −13.325]            aration indicator. A distinct-score-boundary tie check over
+   A–L −20.626 [−21.171, −20.080] [−26.215, −15.036]            the four primary arms and five fresh attack streams changes no
+   A–F −22.396 [−23.028, −21.763] [−28.399, −16.392]            indicator; the largest pair-band endpoint change is 0.000233
+   A–Q −22.712 [−23.406, −22.017] [−28.123, −17.301]            points.
+                                                                    Counterexample on single-source SpoofCeleb. On
+                                                                all 91,130 SpoofCeleb evaluation trials [37], pooled trial
+with Conformer share VCC2SM3 as their largest contributor,      resampling separates 6/6 pairs and joint resampling 3/6;
+whereas Conformer–SSL-AASIST has a different and less           class-stratified trial resampling also gives 6/6. EERs are
+dominant contributor. All speakers remain in the principal      57.93%, 24.51%, 26.72% and 27.58% for AASIST, SLS,
+analysis. Deletion changes class normalization and refits       SSL-AASIST and Mamba. The roster has 40 speakers and
+thresholds; it measures influence without isolating a causal    nine attacks. Trial/joint arms use seed 20260829; the post-
+speaker effect.                                                 result one-factor check uses seed 20260830. Every base item
+    Factor pattern and pairing. Speaker-only reproduces         has one bona-fide and nine spoof renditions under one source
+every primary joint separation decision; attack-only repro-     label, so between-source mass cannot change. Under the orig-
+duces four or five of the eight joint losses across Monte       inal six-pair correction, all three comparisons among SLS,
+Carlo repeats. Matching indicators does not make attacks        SSL-AASIST and Mamba lose separation; the three AASIST
+inert: Table 4 shows different SDs and opposite-sign counts     contrasts retain it. Table 5 prints the four-arm decisions and
+under speaker-only and joint resampling. Under the joint        bands for the joint losses. Here attack-only reproduces the
+law, Mamba and Conformer EERs correlate 0.777; pairing          joint indicator vector, while speaker-only separates 5/6 pairs.
+                                                                  before claiming robust superiority. Publish the group mem-
+Table 4. Mamba minus Conformer: mean shift from the point
+                                                                  berships and weighting rules needed to reproduce the check.
+gap, pair SD (points), opposite-sign draws out of 5,000, and
+                                                                  The sixteen SSL-versus-baseline contrasts survive all four
+zero exclusion under the full 28-pair band.
+                                                                  primary resampling laws, while close within-cohort compar-
+       Law       Mean shift        SD Opposite Excludes?          isons are sensitive. These results support reporting sensitivity
+       Trial     −0.002492    0.061488          0           Yes   to observed-group weights, without establishing population
+       Speaker   −0.003175    0.270826        210           No    confidence or a universal factor pattern across corpora.
+       Attack    −0.010235    0.147333         37           No    Artifact. The public artifact provides the primary-analysis
+       Joint     −0.010135    0.319971        463           No    code, score provenance, numerical results and the additional
+                                                                  checks identified in its reproduction guide. Artifact version
+                                                                  ee63bf13f909262da81284816f95f5c96cedccad
+Table 5. SpoofCeleb: all six pairs under their own six-pair       at
+maximum. T/S/A/J denote trial/speaker/attack/joint; Y means       github.com/rvirgilli/asvspoof2021-df-clustered-uncertainty.
+the band excludes zero, N means it includes zero. SSL-A
+denotes SSL-AASIST. Below: point gaps and trial/joint bands
+(points) for the three joint losses.                                              6. ACKNOWLEDGMENT
+                 Pair              T      S   A     J             During preparation, the authors used large language models
+                 AASIST–SLS       Y       Y   Y   Y               (Anthropic Claude and OpenAI Codex) to help edit the text,
+                 AASIST–SSL-A     Y       Y   Y   Y               LaTeX layout and supporting code. The authors reviewed all
+                 AASIST–Mamba     Y       Y   Y   Y               assisted content and take full responsibility.
+                 SLS–Mamba        Y       Y   N   N
+                 SSL-A–SLS        Y       Y   N   N
+                 SSL-A–Mamba      Y       N   N   N                 7. COMPLIANCE WITH ETHICAL STANDARDS
+                 Separated        6/6 5/6 3/6 3/6
+                                                                  This study analyzed previously collected ASVspoof 2021 and
+Pair                    Gap       Trial                 Joint     SpoofCeleb recordings and detector scores. It involved no
+SLS–Mamba   −3.063 [−3.771, −2.355] [−16.062, 9.936]              new recording or interaction with human participants; no eth-
+SSL-A–SLS    2.207 [1.592, 2.821]    [−7.392, 11.806]             ical approval was required. The authors declare no competing
+SSL-A–Mamba −0.856 [−1.446, −0.266] [−14.805, 13.093]             interests.
+
+
+
+This is a control on a weakly transferred, off-domain roster,
+not evidence that attack effects generally dominate speaker
+effects on another corpus. Different rosters and poor transfer
+prevent a causal attribution of this contrast to the corpus;
+the mirrored factor pattern nevertheless counters a universal
+speaker-only prescription.
+
+
+             5. DISCUSSION AND CONCLUSION
+
+The contribution is measured concentration across paired
+comparisons on this fixed benchmark, not a new confidence
+procedure. A diffuse delete-one profile across the affected
+SSL pairs would contradict the concentration claim; Table 2
+exposes both the strong flagship case and the weaker third
+pair. A changed speaker-only decision would contradict the
+reported primary factor agreement. Neither finding estab-
+lishes why those groups matter, and SpoofCeleb shows why
+the factor pattern should not become a universal prescription.
+     For a small paired EER advantage on this benchmark,
+report the point difference, trial and group bands for the same
+family, and influential-group deletion sensitivity. If only the
+trial band excludes zero, describe the advantage as sensitive
+to evaluation composition and seek broader group support
+                       8. REFERENCES                                       mance with applications to large language models and nested
+                                                                           data,” arXiv:2606.26422, 2026.
+ [1] Héctor Delgado, Massimiliano Todisco, Md Sahidullah, et al.,    [20] Mengzhe Geng, Yujia Lu, Patrick Littell, Manuela Kunz,
+     “ASVspoof 2017 Version 2.0: meta-data analysis and baseline           and Xie Chen, “From scores to evidence: Auditable deci-
+     enhancements,” in Proc. Odyssey, 2018, pp. 296–303.                   sions can improve speech deepfake detection,” arXiv preprint
+ [2] Samy Bengio and Johnny Mariéthoz, “A statistical signifi-            arXiv:2609.08899v1, 2026.
+     cance test for person authentication,” in Proc. Odyssey, 2004.   [21] Chin Yuen Kwok et al., “Bona fide cross testing reveals weak
+ [3] Junichi Yamagishi, Xin Wang, Massimiliano Todisco, et al.,            spot in audio deepfake detection systems,” in Proc. Inter-
+     “ASVspoof 2021: accelerating progress in spoofed and deep-            speech, 2025, arXiv:2509.09204.
+     fake speech detection,” in Proc. ASVspoof Challenge Work-        [22] Héctor Delgado, Giorgio Ramondetti, Emanuele Dalmasso,
+     shop, 2021, pp. 47–54.                                                et al., “On deepfake voice detection—it’s all in the presen-
+ [4] Xuechen Liu, Xin Wang, Md Sahidullah, et al., “ASVspoof               tation,” in Proc. ICASSP, 2026.
+     2021: towards spoofed and deepfake speech detection in the       [23] Samuel Pagon, Yixuan Shen, et al., “What do deepfake bench-
+     wild,” IEEE/ACM Trans. Audio, Speech, Language Process.,              marks measure? An audit using frozen self-supervised repre-
+     vol. 31, 2023.                                                        sentations,” arXiv:2606.26384, 2026.
+ [5] Xin Wang, Héctor Delgado, Nicholas Evans, et al.,               [24] Gabriel Pı̂rlogeanu, Adriana Stan, and Horia Cucu, “Un-
+     “ASVspoof 5: evaluation of spoofing, deepfake, and adversar-          derstanding the strengths and weaknesses of SSL models for
+     ial attack detection using crowdsourced speech,” IEEE Trans.          audio deepfake model attribution,” in Proc. ICASSP, 2026,
+     Audio, Speech, Language Process., 2026, arXiv:2601.03944.             arXiv:2603.13488.
+ [6] Hashim Ali, Nithin Sai Adupa, et al., “A SUPERB-style            [25] Vojtěch Staněk, Eva Trnovská, Kamil Malinka, et al., “Ethical
+     benchmark of self-supervised speech models for audio deep-            and technical limits of deepfake speech datasets,” in Proc.
+     fake detection,” in Proc. ICASSP, 2026.                               Interspeech, 2026.
+ [7] Yuankun Xie, Haonan Cheng, Jiayi Zhou, et al., “AT-ADD: a        [26] Daniyal Kabir Dar and Arun Ross, “Probing speaker identity
+     benchmark and challenge for robust and all-type audio deep-           sensitivity in audio deepfake detectors,” arXiv:2607.21820,
+     fake detection,” arXiv:2608.23437, 2026.                              2026.
+ [8] Octavian Pascu, Adriana Stan, Dan Oneata, et al., “Towards       [27] Anh-Tuan Dao, Driss Matrouf, and Nicholas Evans, “Assess-
+     generalisable and calibrated audio deepfake detection with            ing the impact of speaker identity in speech spoofing detec-
+     self-supervised representations,” in Proc. Interspeech, 2024,         tion,” arXiv:2602.20805, 2026.
+     pp. 4828–4832.                                                   [28] Jiyoung Hong, Yoonseo Chung, Seungyeon Oh, et al., “Twin-
+ [9] Juan M. Martı́n-Doñas, Aitor Álvarez, Eros Rosello, et al.,         Shift: benchmarking audio deepfake detection across synthe-
+     “Exploring self-supervised embeddings and synthetic data              sizer and speaker shifts,” arXiv:2510.23096, 2025.
+     augmentation for robust audio deepfake detection,” in Proc.      [29] Kyudan Jung, Jihwan Kim, Minwoo Lee, et al., “SNAP:
+     Interspeech, 2024, pp. 2085–2089.                                     Speaker nulling for artifact projection in speech deepfake de-
+[10] Avishai Weizman, Yehuda Ben-Shimol, and Itshak Lapidot,               tection,” arXiv:2603.20686v1, 2026, Subsequently with-
+     “ASVspoof2019 vs. ASVspoof5: assessment and compari-                  drawn.
+     son,” in Proc. Interspeech, 2025, pp. 4568–4572.                 [30] Diaa Al Mohamad, Jelle J. Goeman, et al., “Simultaneous
+[11] Xin Wang and Junichi Yamagishi, “A comparative study on               confidence intervals for ranks,” arXiv:1812.05507, 2019.
+     recent neural spoofing countermeasures for synthetic speech      [31] Art B. Owen and Dean Eckles, “Bootstrapping data arrays of
+     detection,” in Proc. Interspeech, 2021.                               arbitrary order,” Ann. Appl. Stat., vol. 6, no. 3, pp. 895–927,
+[12] Norman Poh, Alvin Martin, and Samy Bengio, “Performance               2012.
+     generalization in biometric authentication using joint user-     [32] José Luis Montiel Olea and Mikkel Plagborg-Møller, “Simul-
+     specific and sample bootstraps,” IEEE Trans. Pattern Anal.            taneous confidence bands: theory, implementation, and an ap-
+     Mach. Intell., vol. 29, 2007.                                         plication to SVARs,” J. Appl. Econom., vol. 34, 2019.
+[13] Jin Chu Wu, Alvin F. Martin, et al., “The impact of data         [33] Yang Xiao and Rohan Kumar Das, “XLSR-Mamba: a dual-
+     dependence on speaker recognition evaluation,” IEEE/ACM               column bidirectional state space model for spoofing attack de-
+     Trans. Audio, Speech, Language Process., vol. 25, 2017.               tection,” IEEE Signal Process. Lett., 2025.
+[14] Jin Chu Wu, Alvin F. Martin, Craig S. Greenberg, et al., “Sig-   [34] Qishan Zhang, Shuangbing Wen, and Tao Hu, “Audio deep-
+     nificance test in speaker recognition data analysis with data         fake detection with self-supervised XLS-R and SLS classi-
+     dependency,” Tech. Rep. NISTIR 7884, National Institute of            fier,” in Proc. ACM Multimedia, 2024, pp. 6765–6773.
+     Standards and Technology, 2012.                                  [35] Eros Rosello et al., “A conformer-based classifier for variable-
+[15] Jin Chu Wu and Raghu N. Kacker, “Statistical analysis for             length utterance processing in anti-spoofing,” in Proc. Inter-
+     speaker recognition evaluation with data dependence and three         speech, 2023.
+     score distributions,” IEEE/ACM Trans. Audio, Speech, Lan-        [36] Hemlata Tak et al., “Automatic speaker verification spoofing
+     guage Process., vol. 32, pp. 1–14, 2024.                              and deepfake detection using wav2vec 2.0 and data augmen-
+[16] A. Colin Cameron, Jonah B. Gelbach, and Douglas L. Miller,            tation,” in Proc. Odyssey, 2022.
+     “Robust inference with multiway clustering,” J. Bus. Econ.       [37] Jee-Weon Jung, Yihan Wu, Xin Wang, et al., “SpoofCeleb:
+     Stat., vol. 29, no. 2, pp. 238–249, 2011.                             Speech deepfake detection and SASV in the wild,” IEEE Open
+[17] Peter McCullagh, “Resampling and exchangeable arrays,”                Journal of Signal Processing, vol. 6, pp. 68–77, 2025.
+     Bernoulli, vol. 6, 2000.
+[18] Art B. Owen, “The pigeonhole bootstrap,” Ann. Appl. Stat.,
+     vol. 1, 2007.
+[19] Kylie Anglin, “Estimating uncertainty in classifier perfor-
+

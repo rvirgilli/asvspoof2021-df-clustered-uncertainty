@@ -1,0 +1,30 @@
+{
+  "baseline_submission": "aa34fbf07fbf84fe27bff10cc039eb576e2819e8",
+  "artifact_commit": "ee63bf13f909262da81284816f95f5c96cedccad",
+  "abstract_opening_unchanged": true,
+  "abstract_finding": "repair taken without changing the concentration opening; not accepted debt",
+  "joint_terminology_consistent": true,
+  "unused_indicator_symbol_removed_definition_preserved": true,
+  "only_authorized_manuscript_changes": true,
+  "tables_unchanged": true,
+  "supplement_unchanged": true,
+  "obligations_before": 310,
+  "obligations_after": 310,
+  "removed_ids": [],
+  "added_ids": [],
+  "changed_match_ids": [
+    "scope_no_transfer",
+    "separation_definition",
+    "release_locator",
+    "abstract_roster_counts",
+    "revision_sentence_50",
+    "rewrite_pdf_140",
+    "rewrite_pdf_288",
+    "fix5_abstract_family",
+    "fix5_abstract_counterexample"
+  ],
+  "obligation_metadata_unchanged": true,
+  "semantic_test_code_unchanged": true,
+  "checker_code_only_forced_f2_phrase_change": true,
+  "prior_immutable_fetch_receipts_retained": true
+}

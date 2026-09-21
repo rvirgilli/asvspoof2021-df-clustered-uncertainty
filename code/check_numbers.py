@@ -750,7 +750,7 @@ if f"{100 * vcc_share:.2f}" != "85.77":
 speaker_counts = sorted(row["n_speakers"] for row in incidence["spoof_strata"].values())
 if speaker_counts != [4, 4, 4, 6, 48]:
     fail(f"VALUE source/task speaker counts changed: {speaker_counts}")
-require("4, 4, 4 and 6 speakers", "dominant sparse blocks must be visible")
+require("4, 4, 4 and 6 spoof-speaker IDs", "dominant sparse blocks must be visible")
 
 loco = source["leave_one_corpus_out"]
 flips = loco["verdict_flips_vs_full_data"]
